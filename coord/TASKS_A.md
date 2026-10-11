@@ -48,7 +48,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Gap-driven questions (5 to 9, each with `why` + evidence ids), run waits in `waiting_input`, `POST /api/runs/[id]/answers`, `POST /api/runs/[id]/chat` SSE (tokens + new question cards), answers written into the dossier with provenance.
   - Accept: demo run pauses at consult and resumes after answers (test); chat streams tokens (curl -N).
 
-- [ ] **A10 Direction phase**
+- [x] **A10 Direction phase** (commit 66c5b5a)
   - Score all candidate channels on the six axes with explicit weights; ChannelPlan with rationale, evidence ids, formats, cadence, first steps, KPIs, targets (named subreddits, hashtags); notNow with reasons; versioned PATCH.
   - Accept: a.clinic plan puts `meta_ads` in notNow citing RX4; Evreon ranks LinkedIn first and has no TikTok in its top 3; Hound includes TikTok/Reels and named subreddits.
 
