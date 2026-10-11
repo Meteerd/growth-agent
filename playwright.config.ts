@@ -19,6 +19,6 @@ export default defineConfig({
     url: `http://localhost:${PORT}`,
     reuseExistingServer: true,
     timeout: 180_000,
-    env: { NEXT_PUBLIC_DATA_MODE: DATA },
+    env: { NEXT_PUBLIC_DATA_MODE: DATA, NEXT_PUBLIC_MOCK_RUN_MS: process.env.MOCK_RUN_MS ?? "20000" },
   },
 });
