@@ -50,7 +50,7 @@ Names are camelCase in TS; DB columns snake_case. Every entity has `id` (uuid v7
 type Vertical = 'telehealth_rx' | 'consumer_app' | 'health_wellness_dtc' | 'b2b_saas' | 'other'
 type Channel = 'tiktok' | 'instagram_reels' | 'youtube_shorts' | 'x' | 'linkedin' | 'reddit'
   | 'meta_ads' | 'tiktok_ads' | 'google_ads' | 'email' | 'seo' | 'communities' | 'app_store'
-type Phase = 'intake' | 'research' | 'consult' | 'direction' | 'production' | 'compliance' | 'pack' | 'measure'
+type Phase = 'intake' | 'research' | 'reverse_engineer' | 'consult' | 'direction' | 'production' | 'review' | 'compliance' | 'pack' | 'measure'
 type ProviderId = 'anthropic' | 'openai' | 'firecrawl' | 'apify' | 'manus' | 'fal' | 'higgsfield' | 'youtube' | 'spiral'
   | 'revenuecat' | 'posthog' | 'stripe' | 'paddle' | 'meta' | 'instagram'
 
@@ -71,7 +71,7 @@ Run { id, brandId, kind: 'full' | 'research_only' | 'production_only', status: '
   phase: Phase, costUsd: number, startedAt?, finishedAt?, error?: string, demo: boolean }
 
 RunEvent { id: number /*monotonic per run, used as SSE id*/, runId, ts, phase: Phase,
-  type: 'phase_started' | 'phase_completed' | 'thinking' | 'tool_call' | 'tool_result' | 'evidence' | 'question'
+  type: 'phase_started' | 'phase_completed' | 'thinking' | 'tool_call' | 'tool_result' | 'evidence' | 'blueprint' | 'review' | 'question'
       | 'plan' | 'concept' | 'asset' | 'compliance' | 'pack' | 'cost' | 'warning' | 'error' | 'log',
   title: string, detail?: string, refId?: string /*id of the entity created*/, costUsd?: number, data?: unknown }
 
@@ -94,10 +94,23 @@ ChannelRec { channel: Channel, priority: number, score: number /*0-100*/, scores
   mode: 'organic' | 'paid' | 'both', rationale: string, evidenceIds: string[], formats: string[], cadence: string,
   firstSteps: string[], kpis: string[], targets: string[] /*subreddits, hashtags, creator types*/ }
 
+Blueprint { id, evidenceId, brandId, runId, sourceUrl?: string, durationSec: number, aspect: '9:16' | '4:5' | '1:1' | '16:9',
+  structure: 'problem_agitate_solve' | 'story' | 'listicle' | 'myth_vs_fact' | 'demo' | 'founder_story' | 'testimonial_style' | 'other',
+  hook: {endSec: number, visual: string, spoken?: string, onScreenText?: string, mechanism: string, whyItStops: string},
+  shots: BlueprintShot[], pacing: {cutsPer10s: number, avgShotSec: number}, emotionalArc: string,
+  cta: {atSec: number, mechanic: string, text?: string}, whyItWins: string, transcript?: string,
+  frames: {t: number, url: string}[] /*local files under ASSETS_DIR, may be missing on other machines*/, demo: boolean, createdAt }
+BlueprintShot { idx, t0: number, t1: number, shotType: 'talking_head' | 'ugc_selfie' | 'broll' | 'product_closeup' | 'screen_recording' | 'text_card' | 'other',
+  camera: string, subject: string, action: string, onScreenText?: string, voiceover?: string, audioCue?: string, transition?: string,
+  purpose: 'hook' | 'problem' | 'agitate' | 'solution' | 'demo' | 'proof' | 'offer' | 'cta' }
+Review { id, conceptId, assetId, round: number, overall: number /*0-100*/, blueprintMatch: number /*0-100*/,
+  perShot: {idx: number, score: number, issues: string[]}[], complianceOk: boolean, decision: 'accept' | 'regenerate', notes: string, createdAt }
+
 Concept { id, runId, brandId, channel: Channel, format: 'ugc_talking_head' | 'faceless_broll' | 'product_demo' | 'founder_story'
     | 'listicle' | 'myth_vs_fact' | 'static' | 'carousel' | 'text_post',
   title: string, hook: string, angle: string, language: string, shots: Shot[], caption: string, hashtags: string[],
-  cta: string, remakesEvidenceIds: string[], compliance: 'pending' | 'pass' | 'warn' | 'fail', estimatedCostUsd: number,
+  cta: string, remakesEvidenceIds: string[], blueprintId?: string, shotMap?: {shotIdx: number, blueprintShotIdx: number}[],
+  variantOf?: string /*concept id this is a format variant of*/, aspect: '9:16' | '4:5' | '1:1' | '16:9', compliance: 'pending' | 'pass' | 'warn' | 'fail', estimatedCostUsd: number,
   status: 'draft' | 'keyframes' | 'approved' | 'rendering' | 'rendered' | 'failed', createdAt }
 Shot { idx: number, durationSec: number, visualPrompt: string, onScreenText?: string, voiceover?: string,
   keyframeAssetId?: string, clipAssetId?: string, approved: boolean }
@@ -145,6 +158,9 @@ All paths below are prefixed with `/api` (e.g. `GET /api/brands`). Route handler
 | POST | `/concepts/:id/approve` | `{shotIdx[]}` | `Concept` |
 | POST | `/concepts/:id/render` | `{tier: 'draft' | 'final'}` | `{concept, estimatedCostUsd}` (async; progress via run events) |
 | GET | `/concepts/:id/assets` | | `Asset[]` |
+| GET | `/runs/:id/blueprints` | | `Blueprint[]` |
+| GET | `/blueprints/:id` | | `Blueprint` (with its evidence) |
+| GET | `/concepts/:id/reviews` | | `Review[]` (all rounds) |
 | GET | `/runs/:id/packs` | | `PublishPack[]` |
 | GET | `/packs/:id/download` | | zip |
 | POST | `/packs/:id/posted` | `{postedUrl, postedAt?}` | `PublishPack` |
