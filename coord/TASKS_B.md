@@ -84,7 +84,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Pass every screen against the quality bar in `docs/DESIGN.md`; fix spacing, motion timing, empty/loading states, mobile. Write `coord/MORNING_B.md`: how to run, what works (link screenshots), mock vs live status, known issues, and the 2-minute demo click path.
 
 ## STRETCH (after CORE, in this order)
-- [ ] **BS1** Presentation mode (`?present=1`): hides dev UI, enlarges type, replays a recorded live run at chosen speed for the pitch.
+- [x] **BS1** Presentation mode (commit 851c0e9) (`?present=1`): hides dev UI, enlarges type, replays a recorded live run at chosen speed for the pitch.
 - [ ] **BS2** Command palette (Cmd+K): jump to brand/run/screen.
 - [ ] **BS3** Page transitions (shared-element between portfolio card and brand home; vortex on run start).
 - [ ] **BS4** Live parity: run the full journey against the real API routes and fix every mismatch (send contract requests to Lane A).
