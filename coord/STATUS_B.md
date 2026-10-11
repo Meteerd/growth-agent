@@ -7,7 +7,7 @@
 - Blockers: none. `@/contracts` not landed yet (Lane A A02); B02 to B04 do not need it.
 - Next 3: B03 field shader -> B04 component kit -> B05 data client + mock
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
-- ack A01 landed (INBOX_B 23:17). ack real brand assets added (INBOX_B 23:12).
+- ack new signature screen: Reverse-engineer view (B12b) (INBOX_B 23:24): planned after B12, budgeted as the main demo moment. ack A01 landed (INBOX_B 23:17). ack real brand assets added (INBOX_B 23:12).
 
 ## Design notes (boot, 11 Oct 23:16; measured with a throwaway Playwright probe of computed styles on linear.app, vercel.com, resend.com, rauno.me, igloo.inc)
 1. Dark is never pure black: Linear's body is `rgb(8,9,10)`, cool and close to our `#06070A`. Resend uses true `#000` but lifts it with a soft diagonal light beam, so the depth comes from light, not from a grey surface.
