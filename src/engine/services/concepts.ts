@@ -40,11 +40,12 @@ export async function generateKeyframes(
   const shots = [...c.shots];
   const targets = o.shotIdx !== undefined ? shots.filter((s) => s.idx === o.shotIdx) : shots;
   if (o.shotIdx !== undefined && !targets.length) throw new HttpError(400, "bad_shot", `No shot ${o.shotIdx}`);
-  for (const s of targets) {
+  // up to 3 images at once (each live image takes ~30 s)
+  const one = async (s: (typeof targets)[number]) => {
     const style = brand.dossier.visual.styleNotes ? ` Style: ${brand.dossier.visual.styleNotes}` : "";
     const prompt = `${s.visualPrompt}.${style} Vertical 9:16, no text, no logos, no watermarks.`;
     const img = await generateImage(db, prompt, { runId: c.runId, demo: () => demoKeyframe(brand, s) });
-    const n = Date.now().toString(36);
+    const n = `${Date.now().toString(36)}${s.idx}`;
     const file = writeAsset(path.join("runs", c.runId, c.id, `kf_${s.idx}_${n}.png`), img.png);
     const asset: Asset = {
       id: newId("asset"),
@@ -72,7 +73,13 @@ export async function generateKeyframes(
         data: { conceptId: c.id, shotIdx: s.idx, url: asset.url },
       },
     );
-  }
+  };
+  const queue = [...targets];
+  await Promise.all(
+    Array.from({ length: Math.min(3, queue.length) }, async () => {
+      for (let s = queue.shift(); s; s = queue.shift()) await one(s);
+    }),
+  );
   const next: Concept = {
     ...c,
     shots,
