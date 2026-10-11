@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { Evidence, EvidenceSource } from "@/contracts";
 import { instagramSearch, metaAdsSearch, redditSearch, tiktokSearch } from "../../providers/apify";
+import { isLive } from "../../providers/env";
 import { finishLandscape, startLandscape } from "../../providers/manus";
 import { spiralWinners } from "../../providers/spiral";
 import { youtubeShorts } from "../../providers/youtube";
@@ -24,6 +25,40 @@ export const ResearchPlan = z.object({
   rationale: z.string(),
 });
 export type ResearchPlan = z.infer<typeof ResearchPlan>;
+
+export const Relevance = z.object({ keep: z.array(z.string()) });
+
+/** Drop off-topic live items before they enter the evidence base (one cheap Claude call per source). */
+async function relevant(ctx: PhaseCtx, r: SourceResult): Promise<SourceResult> {
+  const live = r.items.filter((e) => !e.demo);
+  if (live.length < 3 || r.source === "website" || r.source === "manus_research") return r;
+  const out = await structured(
+    { db: ctx.db, runId: ctx.run.id, phase: "research" },
+    {
+      route: "chat",
+      system: loadPrompt("relevance"),
+      user: JSON.stringify({
+        brand: ctx.brand.name,
+        what: ctx.brand.dossier.oneLiner,
+        buyerProblems: ctx.brand.dossier.personas.flatMap((p) => p.pains).slice(0, 6),
+        items: live.map((e) => ({ id: e.id, title: e.title, author: e.author, text: e.text?.slice(0, 200) })),
+      }),
+      schema: Relevance,
+      note: `research: relevance ${r.source}`,
+      maxTokens: 4000,
+      demo: () => ({ keep: live.map((e) => e.id) }),
+    },
+  ).catch(() => null);
+  if (!out) return r;
+  const keep = new Set(out.value.keep);
+  const kept = r.items.filter((e) => e.demo || keep.has(e.id));
+  const dropped = r.items.length - kept.length;
+  if (dropped > 0)
+    await ctx.emit("thinking", `Dropped ${dropped} off-topic ${r.source} items`, {
+      data: { source: r.source, dropped },
+    });
+  return { ...r, items: kept };
+}
 
 export const Deconstructions = z.object({
   items: z.array(
@@ -131,7 +166,8 @@ export async function research(ctx: PhaseCtx): Promise<void> {
 
   // 3. Sources in parallel; each result is stored and streamed as it lands
   const all: Evidence[] = [];
-  const store = async (r: SourceResult) => {
+  const store = async (r0: SourceResult) => {
+    const r = r0.mode === "live" ? await relevant(ctx, r0) : r0;
     const label = SOURCE_LABEL[r.source] ?? r.source;
     await ctx.emit("tool_call", `${label} (${r.mode})`, { data: { tool: label, source: r.source, mode: r.mode } });
     scoreOutliers(r.items);
@@ -156,8 +192,9 @@ export async function research(ctx: PhaseCtx): Promise<void> {
       });
     });
 
-  // own site as evidence (from intake)
-  const site = ctx.demo?.evidence.filter((e) => e.source === "website") ?? [];
+  // own site as evidence: real (from the intake crawl) when the crawl was live, else the demo item
+  const siteLive = isLive("firecrawl");
+  const site = siteLive ? [] : (ctx.demo?.evidence.filter((e) => e.source === "website") ?? []);
   if (!site.length) {
     const e = baseEvidence(sctx, "website", "page", `${brand.name} website: ${brand.dossier.oneLiner}`);
     e.url = brand.url;
@@ -174,14 +211,12 @@ export async function research(ctx: PhaseCtx): Promise<void> {
     guard(instagramSearch(sctx, plan.instagramHashtags), "instagram"),
     guard(youtubeShorts(sctx, plan.youtubeQueries, brand.languages[0]), "youtube"),
     guard(
-      redditSearch(sctx, [
-        ...plan.subreddits.map((s) => `subreddit:${s} ${plan.redditQueries[0] ?? ""}`.trim()),
-        ...plan.redditQueries,
-      ]),
+      redditSearch(sctx, plan.redditQueries.length ? plan.redditQueries : plan.subreddits, plan.subreddits[0]),
       "reddit",
     ),
-    // demo-only sources the bundle has (reviews) pass through as-is
+    // demo-only sources the bundle has (reviews) pass through as-is, only when Apify itself is in demo
     (async () => {
+      if (isLive("apify")) return;
       const extra = (ctx.demo?.evidence ?? []).filter((e) =>
         ["app_store", "play_store", "google_maps", "trustpilot"].includes(e.source),
       );
@@ -216,7 +251,12 @@ export async function research(ctx: PhaseCtx): Promise<void> {
         note: `research: deconstruct ${todo.length} winners`,
         demo: () => ({ items: [] }),
       },
-    );
+    ).catch(async (e) => {
+      await ctx.emit("warning", "Deconstruction failed; continuing with raw evidence", {
+        detail: e instanceof Error ? e.message : String(e),
+      });
+      return { value: { items: [] as z.infer<typeof Deconstructions>["items"] }, mode: "demo" as const, usd: 0 };
+    });
     for (const d of dec.value.items) {
       const e = todo.find((x) => x.id === d.id);
       if (!e) continue;

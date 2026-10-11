@@ -1,0 +1,55 @@
+{
+  "recordedAt": "2026-10-11T21:26:09.168Z",
+  "imageModel": "gpt-image-2",
+  "image": {
+    "mode": "live",
+    "bytes": 2293841,
+    "file": "openai_keyframe.png"
+  },
+  "tts": {
+    "mode": "live",
+    "bytes": 83328,
+    "line": "Ten minutes a day. Same dog. Calmer goodbyes."
+  },
+  "transcript": {
+    "text": "10 minutes a day. Same dog, calmer, goodbyes.",
+    "language": "english",
+    "segments": [
+      {
+        "start": 0,
+        "end": 7,
+        "text": "10 minutes a day. Same dog, calmer, goodbyes."
+      }
+    ],
+    "source": "openai"
+  },
+  "spend": [
+    {
+      "id": "spend_mv4c1s3681604e2211",
+      "provider": "openai",
+      "runId": "smoke_openai",
+      "usd": 0.07,
+      "units": "1 image",
+      "note": "image: A beagle lying calmly on a rug by the front door, morning li",
+      "ts": "2026-10-11T21:26:05.682Z"
+    },
+    {
+      "id": "spend_mv4c1tgg7635fa82da",
+      "provider": "openai",
+      "runId": "smoke_openai",
+      "usd": 0.0008,
+      "units": "45 chars",
+      "note": "tts 45 chars",
+      "ts": "2026-10-11T21:26:07.456Z"
+    },
+    {
+      "id": "spend_mv4c1ury30c3c5d9ed",
+      "provider": "openai",
+      "runId": "smoke_openai",
+      "usd": 0.0006,
+      "units": "0.10 min",
+      "note": "transcribe 5s",
+      "ts": "2026-10-11T21:26:09.166Z"
+    }
+  ]
+}

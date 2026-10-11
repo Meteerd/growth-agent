@@ -117,6 +117,16 @@ describe("Claude agent core (recorded responses, no network)", () => {
     expect(js.properties.a.minimum).toBeUndefined();
   });
 
+  it("regression: properties named like JSON-schema keywords (format, pattern) survive", () => {
+    const js = outputSchema(
+      z.object({ items: z.array(z.object({ format: z.string(), pattern: z.string(), default: z.string() })) }),
+    ) as {
+      properties: { items: { items: { properties: Record<string, unknown>; required: string[] } } };
+    };
+    expect(Object.keys(js.properties.items.items.properties).sort()).toEqual(["default", "format", "pattern"]);
+    expect(js.properties.items.items.required.sort()).toEqual(["default", "format", "pattern"]);
+  });
+
   it("prompt loader fills variables", () => {
     expect(loadPrompt("_test", { name: "Hound" })).toContain("Hello Hound");
   });

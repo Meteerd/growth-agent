@@ -53,6 +53,8 @@ export const API = {
   packDownload: (id: string) => `/api/packs/${id}/download`,
   packPosted: (id: string) => `/api/packs/${id}/posted`,
   packMetrics: (id: string) => `/api/packs/${id}/metrics`,
+  /** additive: POST, Manus builds a landing page for the pack (link in pack.landingUrl; never published by us) */
+  packLanding: (id: string) => `/api/packs/${id}/landing`,
   spend: () => "/api/spend",
   providers: () => "/api/providers",
   asset: (path: string) => `/api/assets/${path.replace(/^\/+/, "")}`,
@@ -110,7 +112,14 @@ export type CreateConnectionRequest = z.infer<typeof CreateConnectionRequest>;
 
 // ---------------------------------------------------------------- runs
 
-export const CreateRunRequest = z.object({ kind: RunKind.default("full") });
+export const CreateRunRequest = z.object({
+  kind: RunKind.default("full"),
+  /**
+   * additive: start from an earlier run's research (evidence + blueprints are copied, intake/research/reverse_engineer
+   * are marked done) and go straight to the consultation. A run id, or "recorded" for the brand's recorded live pass.
+   */
+  reuseResearchFrom: z.string().optional(),
+});
 export type CreateRunRequest = z.input<typeof CreateRunRequest>;
 
 export const RunsResponse = z.array(Run);
