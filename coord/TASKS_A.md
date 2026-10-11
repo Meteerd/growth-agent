@@ -76,7 +76,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - `pnpm smoke <provider> --live` for anthropic, openai, firecrawl, youtube, apify, manus, fal, spiral, higgsfield, each within cap, recorded. Then one live research pass for Hound and a.clinic with small limits, INCLUDING reverse-engineering 3 real winning videos per brand into blueprints (Spiral/Apify media; media stays in `data/`, only blueprint JSON is committed), recorded as their default dataset (`demo: false`, `capturedAt`). Update `docs/APIS.md` with every verified detail.
   - Accept: `/api/spend` totals under caps; recorded fixtures exist; STATUS_A lists spend per provider.
 
-- [ ] **A15 Engine e2e**
+- [x] **A15 Engine e2e** (commit 5cb9e8d)
   - `pnpm test:engine-e2e`: full run through every phase for all four brands in demo mode, asserting schemas, phase order, compliance outcomes, at least one blueprint per brand, a remake concept with a shotMap, at least one Review, and that an MP4 exists for at least one Hound concept.
   - Accept: command exits 0 (output shown).
 
