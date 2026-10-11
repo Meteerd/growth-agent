@@ -8,3 +8,5 @@ const r = await seed(db);
 console.log(
   `seed ok: ${r.brandsCreated} brands created (others kept), ${r.runsImported} demo runs imported (existing kept)`,
 );
+const { prepareDemoMedia } = await import("@/engine/demo-media");
+console.log(`demo media: ${await prepareDemoMedia(db)} files built`);

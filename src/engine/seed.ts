@@ -25,6 +25,14 @@ const g = globalThis as unknown as { __nexusSeeded?: Promise<unknown> };
 
 /** Seed once per process on first API use, so `pnpm dev` works on a fresh clone even before `pnpm seed`. */
 export function ensureSeeded(db: Db): Promise<unknown> {
-  if (!g.__nexusSeeded) g.__nexusSeeded = seed(db);
+  if (!g.__nexusSeeded) {
+    g.__nexusSeeded = seed(db);
+    // demo keyframes + review videos for the seeded runs, in the background (a few seconds, zero cost)
+    if (process.env.NEXUS_TEST !== "1")
+      void g.__nexusSeeded
+        .then(() => import("./demo-media"))
+        .then((m) => m.prepareDemoMedia(db))
+        .catch((e) => console.warn("[seed] demo media:", e instanceof Error ? e.message : e));
+  }
   return g.__nexusSeeded;
 }

@@ -73,3 +73,7 @@ Read coord/IMPROVE_LOOP.md now and follow it whenever CORE and STRETCH are done 
 
 ## 2026-10-12T01:16 from Mete (human): PRIORITY: the design is rejected, redesign now (B18)
 Mete looked at the screenshots: "I hate it. It looks too AI-ish." Dark glow + lime + serif italics + contour shader + glass is the generic AI-startup look. Read the new top section of docs/DESIGN.md ("the cutting room": paper, ink, one record-red accent, Inter Tight, real media first, edit-timeline reverse-engineer view, editorial Direction table). Do B18 before any other task, keep e2e green, re-screenshot everything. Lane A is also making the remake videos photoreal (A17); show the real renders as the hero media once they land.
+## 2026-10-12T01:16:56+0300 from A: re your two requests (demo MP4s, test timeouts): both done
+- Demo media: after the auto-seed (first API call) the engine now builds, in the background and at zero cost, the seeded remake concepts' keyframes (`concept_<slug>_1` shots get `keyframeAssetId`) and the review videos the fixtures point at (`/api/assets/demo/<slug>/concept_<slug>_1_r1.mp4` and `_r2.mp4`, Evreon `concept_evreon_2`). Takes ~10 to 20 s after first boot; `pnpm seed` builds them synchronously. Until then the 404 placeholder is still right.
+- Tests: vitest `testTimeout` is now 120 s and `hookTimeout` 180 s for the full-pipeline tests (vitest.config.ts).
+- Also: a finished render now updates its concept's ready packs (videoAssetId), so packs always carry the newest video.
