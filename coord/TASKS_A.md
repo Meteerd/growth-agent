@@ -2,6 +2,16 @@
 
 Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (commit <hash>)`. Work top to bottom unless blocked; note reorders in STATUS_A.
 
+## PRIORITY NOW (from Mete, 12 Oct 01:25): remakes must look like real winning ads
+- [ ] **A17 Realistic remakes (not panned illustrations)**
+  - Problem: renders are brand illustrations with Ken Burns + captions ("Demo keyframe"/"Demo render"). Winning ads in these niches are mostly real-looking phone footage (UGC, POV, talking head). A cartoon remake of a phone-filmed TikTok misses the point.
+  - Keyframes must match the blueprint's visual style: if the original is phone-filmed real footage, generate photoreal, phone-camera-looking frames (natural light, handheld framing, real homes, real dogs/people, no plastic AI look) with the OpenAI image model at high quality; use `assets/brands/` only as references for the product itself (app screens, logo, packaging) and the end card. Illustrated style only when the original winner is animated.
+  - Motion: animate final keyframes with fal image-to-video (Kling/Seedance) within the fal cap; check whether OpenAI's video API (Sora) is available on our key and, if so, use it for clips within the OpenAI cap (OpenAI credits are plentiful). Record which worked in docs/APIS.md.
+  - Mete, 01:30: "take the images that we have and turn them into actual videos that are actually good, based on the existing ads and competitors". So per shot, in this order: (1) if a real brand image in `assets/brands/<brand>/` fits the shot (product, app, packaging, clinic/doctor illustration, Dynova lab/product photos), animate THAT image with fal image-to-video into a proper moving shot that follows the blueprint's camera move and timing (not a Ken Burns pan); (2) otherwise generate a new frame matched to the winner's style (photoreal for footage, reusing brand images as references), then animate it. The final cut must feel like the competitor's winning ad, made with our brand's real material.
+  - Self-review rubric adds: "passes as native, real footage for this platform; no AI tells (warped hands/paws, garbled text, plastic skin, impossible physics)". Regenerate failing shots.
+  - Produce one flagship final video each for Hound and a.clinic from their real recorded blueprints, set them as the default renders shown in the cockpit, and commit small preview frames (not the media of third-party ads).
+  - Accept: contact sheet (one frame per shot) of both flagship videos saved under `docs/renders/` and described in STATUS_A; review scores >= 80 on every shot; spend within caps.
+
 ## CORE
 
 - [x] **A01 Scaffold the app** (commit 8e73900)
@@ -105,3 +115,5 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
 - [x] **I11** A crashed script left its run "running" and a stale queued run would be auto-resumed (and spend) on the next server start: resume only stale runs, live-pass marks failures, stale runs cancelled.
 - [x] **I12** Captions were missing on fal clip shots (they were burned into the still the clip replaces) and drifted with the Ken Burns zoom: compositor now overlays a fixed caption layer. Regression test (commit 8747d6c).
 - [x] **I13** A leftover smoke-test run (queued) was resumed by the stale-run hook and started spending: smokes now close their runs, and runs interrupted more than 6 hours ago are failed instead of resumed. Test (commit fc358d7).
+- [x] **I14** The live plan cited skipped questions as "because you said ..." (they are assumptions). Digest now marks them NOT ANSWERED with the working assumption, prompts say "assuming ...", and `pnpm eval-run` fails on misattribution.
+- [x] **I15** A pack kept pointing at the draft video after a later final render: finished renders now update the concept's ready packs. Test.

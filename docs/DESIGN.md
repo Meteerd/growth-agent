@@ -1,3 +1,48 @@
+# Design direction v2: "the cutting room" (SUPERSEDES the observatory below, 12 Oct 01:25)
+
+Mete's verdict on v1 (dark observatory): "I hate it. It looks too AI-ish." He is right: dark background + glowing glass + acid-lime accent + elegant serif with italics + contour/noise shader + mono micro-labels is the default look of every AI startup since 2024. Judges will pattern-match it to "another AI wrapper" in one second. Everything below the line "Design direction" (v1) is superseded where it conflicts.
+
+## The idea
+This product watches ads and re-cuts them. So the UI is a **professional editing room and an editorial desk**, not a sci-fi console. Think Frame.io, DaVinci Resolve's edit page, an NYT graphics desk, a printed creative brief, Teenage Engineering's site. Credible, human, precise, content-first. The color and the drama come from the **real media** (winning ads, our renders, brand photos), never from UI effects.
+
+## Hard bans (remove all of these)
+- No WebGL/contour/noise shader backgrounds, no glow, no neon, no gradients on text, no glassmorphism/backdrop blur, no grain overlay, no floating particles, no orbit "planets" with glow rings.
+- No Instrument Serif, no italic serif flourishes, no lime/acid accent, no purple-to-cyan spectral ramps.
+- No decorative mono micro-labels everywhere (mono only for timecodes, ids, numbers).
+- No "AI" sparkle iconography, no "thinking" shimmer.
+
+## Palette
+- Paper `#F3F1EC` (app background), white `#FFFFFF` (panels/cards), ink `#111111` (text), graphite `#5C5C5C` (secondary), rule `#D9D6CF` (1px dividers), muted surface `#E9E6DF`.
+- One functional accent: **record red `#E5322D`**, only for the playhead, "watching/recording" state and the primary action. Status: pass `#1F7A4D`, warn `#B7791F`, fail `#C0352B` (muted, never neon).
+- Beat colors on timelines (hook, problem, agitate, solution, demo, proof, offer, CTA): flat, print-like tones (e.g. ochre, brick, rust, teal, slate, olive, plum, ink), like colored tape on an edit, at full opacity on small bars only.
+- Dark mode only for the video player surfaces (a black viewer, like an editor's program monitor).
+
+## Type
+- One grotesk family, free: **Inter Tight** (or Geist if already wired) for everything, with real weight contrast: display 600 to 700 at 56 to 88 px tight (-0.03em), UI 13 to 15 px 400/500.
+- Numbers and timecodes: Geist Mono or JetBrains Mono, tabular, small.
+- Headlines are plain statements, sentence case, no italics, no gradient. Example: "We took apart the ad that's winning. Then we rebuilt it for Hound."
+
+## Layout
+- Strict 12-column grid, 1px rules, generous white space between sections, dense inside tools.
+- Media is big: video thumbnails and players are the largest objects on every screen. Autoplay muted loops of real winning ads and our renders where available.
+- Square-ish corners (4 to 6 px), flat cards with a 1px rule, no shadows except a single subtle one on floating menus.
+
+## Motion
+- Functional only, 120 to 200 ms. The only continuous motion: the playhead and real videos playing. No ambient animation, no page vortex.
+
+## Signature screens, restated
+0. **Reverse-engineer = an edit timeline.** Program monitor on top (two viewers side by side: ORIGINAL left, OUR REMAKE right, synced play/scrub). Below: track lanes like an NLE: V1 original shots as filmstrip thumbnails, V2 our remake shots aligned via shotMap, T1 transcript words on the time axis, a beat lane with flat colored tape (hook, problem, ...). Red playhead across all lanes; click a shot to see its blueprint card (what is seen/said/written, purpose, why it works) and its review score. "Why it wins" as a short editorial paragraph with the numbers (views, x account median, days running).
+1. **Direction = a ranked editorial table**, not an orbit: channel, score bar, mode, why (one line), evidence thumbnails, first steps. "Not now" as a separate struck-through list with reasons. A small, honest bar chart of the six axes per channel.
+2. **Landing:** paper background, a big plain headline, a URL field, and below it a real example strip: a winning ad's frames on one row and our remake's frames on the row below (from the recorded Hound data). Proof over decoration.
+3. **Consultation:** a clean form-like conversation on paper, one question at a time, evidence thumbnails beside it (the actual ads that triggered the question).
+4. **Portfolio:** brand cards led by real brand imagery and the latest render thumbnail, numbers below.
+
+## Quality bar
+- Squint test: it should look like a tool a creative director pays for, not an AI demo.
+- Screenshot every route (desktop + mobile) and compare against the bans list; any banned element is a bug.
+
+---
+
 # Design direction
 
 Owner: Lane B. Update this file with the real tokens once they exist.
