@@ -58,7 +58,6 @@ export function Remake() {
         </div>
         <Strip
           shots={bp.shots.map((s) => ({ t0: s.t0, t1: s.t1, purpose: s.purpose, text: s.onScreenText ?? s.action }))}
-          total={total}
         />
         <div className="my-4 flex items-center gap-3 font-mono text-[10.5px] text-bone-3">
           <span className="h-px flex-1 bg-line" />
@@ -67,7 +66,6 @@ export function Remake() {
         </div>
         <Strip
           remake
-          total={total}
           shots={bp.shots.map((s, i) => ({
             t0: s.t0,
             t1: s.t1,
@@ -85,11 +83,9 @@ export function Remake() {
 
 function Strip({
   shots,
-  total,
   remake,
 }: {
   shots: { t0: number; t1: number; purpose: keyof typeof PURPOSE_COLOR; text: string }[];
-  total: number;
   remake?: boolean;
 }) {
   return (

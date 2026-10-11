@@ -364,3 +364,24 @@
     transform: translateY(14px);
   }
 }
+
+/* typing caret while a line types itself in */
+.typed[data-typing="1"]::after {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.12em;
+  background: var(--color-signal);
+}
+.stream-in {
+  animation: stream-in 420ms var(--ease-out) both;
+}
+@keyframes stream-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+    background: rgb(212 255 58 / 0.06);
+  }
+}
