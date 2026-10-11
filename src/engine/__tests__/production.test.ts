@@ -151,3 +151,15 @@ describe("A12 compliance", () => {
     await expect(renderConcept(db, dirty.id, "draft")).rejects.toThrow(/compliance/);
   });
 });
+
+describe("packs follow the newest render", () => {
+  it("re-rendering a concept updates its ready packs' video", async () => {
+    const { listPacksByRun: packsOf } = await import("@/engine/repo");
+    const remake = (await listConcepts(db, runId)).find((c) => c.blueprintId)!;
+    const before = (await packsOf(db, runId)).find((p) => p.conceptId === remake.id)!;
+    const { asset } = await renderConcept(db, remake.id, "draft", { label: "again" });
+    const after = (await packsOf(db, runId)).find((p) => p.conceptId === remake.id)!;
+    expect(after.videoAssetId).toBe(asset.id);
+    expect(after.videoAssetId).not.toBe(before.videoAssetId);
+  });
+});

@@ -7,7 +7,17 @@ import { newId, nowIso } from "../ids";
 import { imageToVideo } from "../providers/fal";
 import { generateImage, speak } from "../providers/openai";
 import { renderEstimate } from "../providers/prices";
-import { appendEvent, getAsset, getBrand, getConcept, listAssets, upsertAsset, upsertConcept } from "../repo";
+import {
+  appendEvent,
+  getAsset,
+  getBrand,
+  getConcept,
+  listAssets,
+  listPacksByRun,
+  upsertAsset,
+  upsertConcept,
+  upsertPack,
+} from "../repo";
 import { fileToUrl, urlToFile } from "../video/files";
 import { demoKeyframe, writeAsset } from "../video/keyframes";
 import { renderAd } from "../video/render";
@@ -268,6 +278,12 @@ export async function renderConcept(
     await upsertAsset(db, asset);
     const next: Concept = { ...((await getConcept(db, c.id)) ?? c), status: "rendered", videoAssetId: asset.id };
     await upsertConcept(db, next);
+    // packs of this concept that are not posted yet carry the newest video
+    for (const p of (await listPacksByRun(db, next.runId)).filter(
+      (x) => x.conceptId === next.id && x.status === "ready",
+    )) {
+      await upsertPack(db, { ...p, videoAssetId: asset.id });
+    }
     await emit(
       "asset",
       `Video rendered: ${asset.durationSec}s ${asset.width}x${asset.height}${demo ? " (demo)" : ""}`,
