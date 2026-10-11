@@ -1,16 +1,18 @@
 import type { Metadata, Viewport } from "next";
 import { Instrument_Serif, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { Backdrop, Grain } from "@/components/shell/Backdrop";
+import { SmoothScroll } from "@/components/shell/SmoothScroll";
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/client/product";
 import "./globals.css";
 
 const serif = Instrument_Serif({
-  variable: "--font-serif",
+  variable: "--nf-serif",
   subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
 });
-const sans = Inter_Tight({ variable: "--font-sans", subsets: ["latin", "latin-ext"] });
-const mono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin", "latin-ext"] });
+const sans = Inter_Tight({ variable: "--nf-sans", subsets: ["latin", "latin-ext"] });
+const mono = JetBrains_Mono({ variable: "--nf-mono", subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
   title: { default: PRODUCT_NAME, template: `%s / ${PRODUCT_NAME}` },
@@ -22,7 +24,12 @@ export const viewport: Viewport = { themeColor: "#06070A", colorScheme: "dark" }
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Backdrop />
+        <SmoothScroll />
+        {children}
+        <Grain />
+      </body>
     </html>
   );
 }

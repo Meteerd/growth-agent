@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  devIndicators: false,
   serverExternalPackages: ["@libsql/client", "libsql", "sharp", "@remotion/renderer", "@remotion/bundler"],
   turbopack: {
     rules: {
