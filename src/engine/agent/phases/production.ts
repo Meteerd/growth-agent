@@ -54,9 +54,16 @@ export function draftsToConcepts(
   brand: Brand,
   drafts: ConceptDrafts["concepts"],
   evidence: Evidence[],
-  blueprintIds: Set<string>,
+  blueprints: { id: string; shots: number }[],
 ): Concept[] {
   const ev = new Set(evidence.map((e) => e.id));
+  const byId = new Map(blueprints.map((b) => [b.id, b]));
+  // a draft whose blueprint id is unknown in this run (e.g. demo drafts on reused research) still gets linked:
+  // the first multi-shot video concept takes the best-matching blueprint of the run
+  let fallbackUsed = drafts.some((d) => d.blueprintId && byId.has(d.blueprintId));
+  const pick = (n: number) => blueprints.find((b) => b.shots === n) ?? blueprints[0];
+  const proportional = (n: number, m: number) =>
+    Array.from({ length: n }, (_, i) => ({ shotIdx: i, blueprintShotIdx: Math.min(m - 1, Math.floor((i * m) / n)) }));
   const sfx = runId.slice(-8);
   const ids = drafts.map((_, i) => `concept_${sfx}_${i + 1}`);
   return drafts.map((d, i) => {
@@ -71,7 +78,19 @@ export function draftsToConcepts(
       voiceover: s.voiceover,
       approved: false,
     }));
-    const bp = d.blueprintId && blueprintIds.has(d.blueprintId) ? d.blueprintId : undefined;
+    let bp = d.blueprintId ? byId.get(d.blueprintId) : undefined;
+    const videoLike =
+      shots.length > 1 && !["static", "carousel", "text_post"].includes(d.format) && d.variantOfIndex === undefined;
+    if (!bp && !fallbackUsed && blueprints.length && (d.blueprintId || d.shotMap?.length || videoLike)) {
+      bp = pick(shots.length);
+      fallbackUsed = true;
+    }
+    const validMap =
+      bp &&
+      d.shotMap?.length &&
+      d.shotMap.every((m) => m.shotIdx < shots.length && m.blueprintShotIdx < (bp?.shots ?? 0))
+        ? d.shotMap
+        : undefined;
     const c: Concept = {
       id: ids[i],
       runId,
@@ -95,12 +114,7 @@ export function draftsToConcepts(
       remakeNote: d.remakeNote,
       body: d.body,
       revisions: 0,
-      ...(bp
-        ? {
-            blueprintId: bp,
-            shotMap: d.shotMap?.length ? d.shotMap : shots.map((s) => ({ shotIdx: s.idx, blueprintShotIdx: s.idx })),
-          }
-        : {}),
+      ...(bp ? { blueprintId: bp.id, shotMap: validMap ?? proportional(shots.length, bp.shots) } : {}),
       ...(d.variantOfIndex !== undefined && ids[d.variantOfIndex] && d.variantOfIndex !== i
         ? { variantOf: ids[d.variantOfIndex] }
         : {}),
@@ -197,7 +211,7 @@ export async function production(ctx: PhaseCtx): Promise<void> {
     brand,
     out.value.concepts.slice(0, 7),
     evidence,
-    new Set(bps.map((b) => b.id)),
+    bps.map((b) => ({ id: b.id, shots: b.shots.length })),
   );
   for (const c0 of concepts) {
     ctx.check();

@@ -1,8 +1,9 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { POST as createRun } from "@/app/api/brands/[id]/runs/route";
+import { submitAnswers } from "@/engine/agent/phases/consult";
 import type { Db } from "@/engine/db/client";
 import { waitForRun } from "@/engine/jobs/runner";
-import { getRun, listBlueprints, listEvents, listEvidence } from "@/engine/repo";
+import { getRun, listBlueprints, listConcepts, listEvents, listEvidence, listQuestions } from "@/engine/repo";
 import { seed } from "@/engine/seed";
 import { ctx, freshDb, req } from "@/engine/test-utils";
 
@@ -39,5 +40,34 @@ describe("reuse research (recorded data powers a live consultation)", () => {
       ctx({ id: "evreon" }),
     );
     expect(res.status).toBe(404);
+  });
+
+  it("Lane B repro: a demo run on recorded research links its remake to one of that run's blueprints", async () => {
+    process.env.MANUS_WAIT_SEC = "1";
+    const res = await createRun(
+      req("/api/brands/hound/runs", { method: "POST", json: { kind: "full", reuseResearchFrom: "recorded" } }),
+      ctx({ id: "hound" }),
+    );
+    expect(res.status).toBe(201);
+    const run = await res.json();
+    await waitForRun(run.id);
+    const qs = await listQuestions(db, run.id);
+    await submitAnswers(
+      db,
+      run.id,
+      qs.map((q) => ({ questionId: q.id, skip: true })),
+    );
+    const { startRun } = await import("@/engine/jobs/runner");
+    startRun(run.id);
+    await waitForRun(run.id);
+    expect((await getRun(db, run.id))?.status).toBe("done");
+    const bps = await listBlueprints(db, run.id);
+    expect(bps.length).toBeGreaterThan(0);
+    const remake = (await listConcepts(db, run.id)).find((c) => c.blueprintId);
+    expect(remake).toBeDefined();
+    const bp = bps.find((b) => b.id === remake?.blueprintId)!;
+    expect(bp).toBeDefined();
+    expect(remake?.shotMap?.length).toBe(remake?.shots.length);
+    for (const m of remake!.shotMap!) expect(m.blueprintShotIdx).toBeLessThan(bp.shots.length);
   });
 });
