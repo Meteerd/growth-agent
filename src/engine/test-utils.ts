@@ -23,3 +23,30 @@ export function req(url: string, init?: RequestInit & { json?: unknown }): Reque
     ...(json !== undefined ? { body: JSON.stringify(json), headers: { "content-type": "application/json" } } : {}),
   });
 }
+
+/** Run a full pipeline in demo mode, answering every question with its default. Returns the run id. */
+export async function runToEnd(
+  db: import("./db/client").Db,
+  brandId: string,
+  kind: "full" | "research_only" = "full",
+): Promise<string> {
+  const { createRun } = await import("./runs");
+  const { runPipeline } = await import("./agent/pipeline");
+  const { listQuestions, getRun } = await import("./repo");
+  const { submitAnswers } = await import("./agent/phases/consult");
+  const run = await createRun(db, brandId, kind);
+  const signal = new AbortController().signal;
+  await runPipeline(db, run.id, signal);
+  if ((await getRun(db, run.id))?.status === "waiting_input") {
+    const qs = await listQuestions(db, run.id);
+    await submitAnswers(
+      db,
+      run.id,
+      qs.map((q) =>
+        q.defaultAnswer !== undefined ? { questionId: q.id, value: q.defaultAnswer } : { questionId: q.id, skip: true },
+      ),
+    );
+    await runPipeline(db, run.id, signal);
+  }
+  return run.id;
+}
