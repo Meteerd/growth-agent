@@ -2,6 +2,15 @@
 
 Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (commit <hash>)`. Work top to bottom unless blocked; note reorders in STATUS_A.
 
+## PRIORITY NOW (from Mete, 12 Oct 01:25): remakes must look like real winning ads
+- [ ] **A17 Realistic remakes (not panned illustrations)**
+  - Problem: renders are brand illustrations with Ken Burns + captions ("Demo keyframe"/"Demo render"). Winning ads in these niches are mostly real-looking phone footage (UGC, POV, talking head). A cartoon remake of a phone-filmed TikTok misses the point.
+  - Keyframes must match the blueprint's visual style: if the original is phone-filmed real footage, generate photoreal, phone-camera-looking frames (natural light, handheld framing, real homes, real dogs/people, no plastic AI look) with the OpenAI image model at high quality; use `assets/brands/` only as references for the product itself (app screens, logo, packaging) and the end card. Illustrated style only when the original winner is animated.
+  - Motion: animate final keyframes with fal image-to-video (Kling/Seedance) within the fal cap; check whether OpenAI's video API (Sora) is available on our key and, if so, use it for clips within the OpenAI cap (OpenAI credits are plentiful). Record which worked in docs/APIS.md.
+  - Self-review rubric adds: "passes as native, real footage for this platform; no AI tells (warped hands/paws, garbled text, plastic skin, impossible physics)". Regenerate failing shots.
+  - Produce one flagship final video each for Hound and a.clinic from their real recorded blueprints, set them as the default renders shown in the cockpit, and commit small preview frames (not the media of third-party ads).
+  - Accept: contact sheet (one frame per shot) of both flagship videos saved under `docs/renders/` and described in STATUS_A; review scores >= 80 on every shot; spend within caps.
+
 ## CORE
 
 - [x] **A01 Scaffold the app** (commit 8e73900)

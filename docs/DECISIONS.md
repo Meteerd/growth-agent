@@ -27,6 +27,9 @@
 
 | 11 Oct 23:30 | Core of the product: agents WATCH winning videos (frames + transcript, Claude vision), produce shot-by-shot blueprints, remake the same ad for our brand in every winning format, then watch their own render and fix weak shots (max 2 rounds) | Mete |
 
+| 12 Oct 01:25 | UI v1 (dark observatory) rejected as too AI-ish; v2 'the cutting room': paper/ink/record red, real media first, edit-timeline reverse-engineer view | Mete |
+| 12 Oct 01:25 | Remake videos must look like the real winning footage (photoreal keyframes + real motion), not panned brand illustrations | Mete |
+
 ## Still open
 1. Product name (constant `PRODUCT_NAME`)
 2. Which TikTok / Instagram accounts exist for Hound and a.clinic (for the morning posts)

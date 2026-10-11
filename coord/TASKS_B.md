@@ -2,6 +2,13 @@
 
 Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (commit <hash>)`. Work top to bottom unless blocked; note reorders in STATUS_B.
 
+## PRIORITY NOW (from Mete, 12 Oct 01:25): redesign, before anything else
+- [ ] **B18 Redesign to v2 "the cutting room"** (docs/DESIGN.md top section; the v1 dark/glow/lime/serif/shader look is rejected as "too AI-ish")
+  - New tokens (paper, ink, record red, flat beat colors), Inter Tight only + mono for numbers; delete the shader, glow, glass, grain, lime, Instrument Serif and orbit visuals from every screen and from `/lab`.
+  - Rebuild the reverse-engineer view as an edit timeline (two synced viewers, V1/V2/T1/beat lanes, red playhead) and Direction as a ranked editorial table; landing with the real example strip.
+  - Use real media wherever it exists (recorded live Hound/a.clinic runs, `assets/brands/`, renders); demo media must be visibly labelled.
+  - Accept: all e2e green; new screenshots of every route (desktop + mobile) committed; a written self-audit in STATUS_B confirming zero banned elements per route.
+
 ## CORE
 
 - [x] **B01 Wait for scaffold, then UI foundations** (commit fa070a7)
