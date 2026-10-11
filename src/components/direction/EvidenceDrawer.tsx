@@ -6,9 +6,12 @@ import { Sheet } from "@/components/ui/Overlay";
 import { SkeletonCard } from "@/components/ui/Skeleton";
 import { ErrorState } from "@/components/ui/States";
 import { CHANNEL_LABELS, type Channel, type ChannelPlan, type Evidence } from "@/contracts";
-import { MODE_HUE, MODE_TEXT, ModeBadge, notNowReason, pad2, Radar, ScoreBar } from "./parts";
+import { AxisBars, MODE_TEXT, ModeBadge, ScoreBar } from "./parts";
+import { notNowReason, pad2 } from "./rank";
 
-/** Evidence drawer for one channel: the full recommendation (or the not-now reason) and the evidence behind it. */
+type EvidenceQuery = { data?: Evidence[]; isLoading: boolean; error: unknown; refetch: () => void };
+
+/** Drawer for one channel: the full recommendation (or the not-now reason) and the evidence behind it. */
 export function EvidenceDrawer({
   plan,
   channel,
@@ -20,33 +23,29 @@ export function EvidenceDrawer({
   channel: Channel | null;
   open: boolean;
   onOpenChange: (o: boolean) => void;
-  evidence: { data?: Evidence[]; isLoading: boolean; error: unknown; refetch: () => void };
+  evidence: EvidenceQuery;
 }) {
   const rec = channel ? plan.channels.find((c) => c.channel === channel) : undefined;
   const nn = channel && !rec ? plan.notNow.find((n) => n.channel === channel) : undefined;
+  const scored = !rec && channel ? plan.considered?.find((c) => c.channel === channel) : undefined;
   const ids = rec?.evidenceIds ?? nn?.evidenceIds ?? [];
-  const label = channel ? CHANNEL_LABELS[channel] : "";
   return (
     <Sheet
       open={open && !!channel}
       onOpenChange={onOpenChange}
-      title={label}
-      label={rec ? `Priority ${pad2(rec.priority)} / ${MODE_TEXT[rec.mode].toLowerCase()}` : "Not now"}
+      title={channel ? CHANNEL_LABELS[channel] : ""}
+      label={rec ? `Priority ${pad2(rec.priority)} / ${MODE_TEXT[rec.mode]}` : "Not now"}
     >
       <div data-testid="evidence-drawer" data-channel={channel ?? undefined} className="flex flex-col gap-7">
         {rec ? (
           <>
             <div className="flex items-end justify-between gap-4">
-              <ScoreBar score={rec.score} hue={MODE_HUE[rec.mode]} className="w-40" />
+              <ScoreBar score={rec.score} size="lg" className="w-40" />
               <ModeBadge mode={rec.mode} />
             </div>
-            <Radar
-              scores={rec.scores}
-              hue={MODE_HUE[rec.mode]}
-              drawKey={`drawer-${rec.channel}`}
-              className="mx-auto w-full max-w-[260px]"
-              title={`${label} scores on six axes`}
-            />
+            <Block label="Six axes">
+              <AxisBars scores={rec.scores} weights={plan.weights} />
+            </Block>
             <Block label="Why">
               <p className="text-bone text-body leading-relaxed">{rec.rationale}</p>
             </Block>
@@ -55,14 +54,14 @@ export function EvidenceDrawer({
                 <Chips items={rec.formats} />
               </Block>
               <Block label="Cadence">
-                <p className="font-mono text-[12px] text-bone-2 leading-relaxed">{rec.cadence}</p>
+                <p className="text-bone text-ui leading-relaxed">{rec.cadence}</p>
               </Block>
             </div>
             <Block label="First steps">
               <ol className="flex flex-col gap-2.5">
-                {rec.firstSteps.slice(0, 3).map((s, i) => (
-                  <li key={s} className="flex gap-3 text-bone text-ui">
-                    <span className="mt-px font-mono text-[11px] text-bone-3 tabular-nums">{pad2(i + 1)}</span>
+                {rec.firstSteps.map((s, i) => (
+                  <li key={s} className="flex gap-3 text-bone text-ui leading-relaxed">
+                    <span className="font-mono text-[11px] text-bone-3 tabular-nums leading-[1.9]">{pad2(i + 1)}</span>
                     {s}
                   </li>
                 ))}
@@ -72,7 +71,7 @@ export function EvidenceDrawer({
               <ul className="flex flex-col gap-1.5">
                 {rec.kpis.map((k) => (
                   <li key={k} className="flex gap-3 text-bone-2 text-ui">
-                    <span aria-hidden className="mt-[7px] size-1 shrink-0 rounded-full bg-bone-3" />
+                    <span aria-hidden className="mt-[8px] h-px w-2 shrink-0 bg-bone-3" />
                     {k}
                   </li>
                 ))}
@@ -80,14 +79,21 @@ export function EvidenceDrawer({
             </Block>
             {rec.targets.length > 0 && (
               <Block label="Targets">
-                <Chips items={rec.targets} mono />
+                <Chips items={rec.targets} />
               </Block>
             )}
           </>
         ) : nn ? (
-          <Block label="Why not now">
-            <p className="font-display text-[22px] text-bone leading-snug">{notNowReason(nn.channel, nn.reason)}</p>
-          </Block>
+          <>
+            <Block label="Why not now">
+              <p className="text-[17px] text-bone leading-relaxed">{notNowReason(nn.channel, nn.reason)}</p>
+            </Block>
+            {scored && (
+              <Block label={`Scored ${scored.score} before it was ruled out`}>
+                <AxisBars scores={scored.scores} weights={plan.weights} />
+              </Block>
+            )}
+          </>
         ) : null}
 
         <Block label={`Evidence / ${ids.length}`}>
@@ -98,13 +104,7 @@ export function EvidenceDrawer({
   );
 }
 
-function EvidenceList({
-  ids,
-  evidence,
-}: {
-  ids: string[];
-  evidence: { data?: Evidence[]; isLoading: boolean; error: unknown; refetch: () => void };
-}) {
+function EvidenceList({ ids, evidence }: { ids: string[]; evidence: EvidenceQuery }) {
   const [expanded, setExpanded] = useState<string | null>(null);
   if (!ids.length) return <p className="text-bone-3 text-ui">No evidence is linked. This was an operator decision.</p>;
   if (evidence.error)
@@ -124,7 +124,7 @@ function EvidenceList({
         />
       ))}
       {missing > 0 && (
-        <p className="font-mono text-[11px] text-bone-3">
+        <p className="text-bone-3 text-ui">
           {missing} linked {missing === 1 ? "item is" : "items are"} not in this run's evidence yet.
         </p>
       )}
@@ -141,18 +141,11 @@ function Block({ label, children }: { label: string; children: React.ReactNode }
   );
 }
 
-function Chips({ items, mono }: { items: string[]; mono?: boolean }) {
+function Chips({ items }: { items: string[] }) {
   return (
     <ul className="flex flex-wrap gap-1.5">
       {items.map((t) => (
-        <li
-          key={t}
-          className={
-            mono
-              ? "rounded-chip px-2.5 py-1 font-mono text-[11px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)]"
-              : "rounded-chip bg-glass px-3 py-1 text-[12px] text-bone shadow-[inset_0_0_0_1px_var(--color-line)]"
-          }
-        >
+        <li key={t} className="rounded-card border border-line bg-raised-2 px-2 py-0.5 text-[12px] text-bone">
           {t}
         </li>
       ))}

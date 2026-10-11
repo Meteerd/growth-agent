@@ -1,18 +1,17 @@
-"use client";
-
-import { motion, useReducedMotion } from "motion/react";
 import { Badge } from "@/components/ui/Badge";
+import { sourceHue } from "@/components/ui/EvidenceCard";
 import {
-  CHANNEL_LABELS,
-  type Channel,
   type ChannelMode,
   type ChannelScores,
+  type ChannelWeights,
+  type Evidence,
   SCORE_AXES,
   SCORE_AXIS_LABELS,
   type ScoreAxis,
 } from "@/contracts";
 import { cn } from "@/lib/client/cn";
-import { polar, radarAngle, radarPoints, toPath } from "./geometry";
+import { SOURCE_LABELS } from "@/lib/client/format";
+import { evidenceStat } from "./rank";
 
 export const AXIS_SHORT: Record<ScoreAxis, string> = {
   audience: "Audience",
@@ -22,27 +21,8 @@ export const AXIS_SHORT: Record<ScoreAxis, string> = {
   speedToSignal: "Speed",
   modelFit: "Model fit",
 };
-export const AXIS_ABBR: Record<ScoreAxis, string> = {
-  audience: "AUD",
-  provenWins: "WIN",
-  productionFit: "PRD",
-  complianceRisk: "CMP",
-  speedToSignal: "SPD",
-  modelFit: "FIT",
-};
 
-/** Mode hue: organic cyan, paid violet, both bone. Not-now bodies use bone-3. */
-export const MODE_HUE: Record<ChannelMode, string> = { organic: "#3CE0FF", paid: "#8C6BFF", both: "#ECE7DD" };
 export const MODE_TEXT: Record<ChannelMode, string> = { organic: "Organic", paid: "Paid", both: "Organic + paid" };
-export const NOT_NOW_HUE = "rgb(17 17 17 / 0.5)";
-
-export const pad2 = (n: number) => String(n).padStart(2, "0");
-
-/** The mock and engine prefix operator drops with the channel label; the row already shows it. */
-export function notNowReason(channel: Channel, reason: string) {
-  const prefix = `${CHANNEL_LABELS[channel]}: `;
-  return reason.startsWith(prefix) ? reason.slice(prefix.length) : reason;
-}
 
 export function ModeBadge({ mode, className }: { mode: ChannelMode; className?: string }) {
   return (
@@ -52,129 +32,102 @@ export function ModeBadge({ mode, className }: { mode: ChannelMode; className?: 
   );
 }
 
-/** Score in mono with a hairline bar under it. */
-export function ScoreBar({ score, hue = "#ECE7DD", className }: { score: number; hue?: string; className?: string }) {
+/** A flat 0 to 100 bar: rule-coloured track, ink fill. */
+export function Bar({ value, className }: { value: number; className?: string }) {
+  return (
+    <span aria-hidden className={cn("relative block h-[3px] w-full bg-raised-2", className)}>
+      <span className="absolute inset-y-0 left-0 bg-bone" style={{ width: `${Math.min(100, Math.max(0, value))}%` }} />
+    </span>
+  );
+}
+
+/** Score in mono over a thin bar on the absolute 0 to 100 scale. */
+export function ScoreBar({ score, size = "md", className }: { score: number; size?: "md" | "lg"; className?: string }) {
   return (
     <div className={cn("flex flex-col gap-1.5", className)}>
       <p className="flex items-baseline gap-1 font-mono tabular-nums leading-none">
-        <span className="text-[30px] text-bone tracking-[-0.02em]">{Math.round(score)}</span>
+        <span className={cn("text-bone", size === "lg" ? "text-[34px] tracking-[-0.02em]" : "text-[19px]")}>
+          {Math.round(score)}
+        </span>
         <span className="text-[11px] text-bone-3">/100</span>
       </p>
-      <span aria-hidden className="relative block h-px w-full bg-line-strong">
-        <span
-          className="absolute inset-y-0 left-0 h-px origin-left"
-          style={{ width: `${score}%`, background: hue, boxShadow: `0 0 8px ${hue}` }}
-        />
-      </span>
+      <Bar value={score} />
     </div>
   );
 }
 
-/** Six vertical mini bars, one per axis, values in the accessible text and the tooltip. */
+/** The six axes as a small table of horizontal bars: axis, bar, score, weight. */
 export function AxisBars({
   scores,
-  hue = "#ECE7DD",
+  weights,
   className,
 }: {
   scores: ChannelScores;
-  hue?: string;
+  weights: ChannelWeights;
   className?: string;
 }) {
   return (
-    <dl className={cn("flex items-end gap-2.5", className)}>
-      {SCORE_AXES.map((a) => (
-        <div key={a} className="flex flex-col items-center gap-1.5" title={`${SCORE_AXIS_LABELS[a]}: ${scores[a]}`}>
-          <dt className="order-2 font-mono text-[9px] text-bone-3 tracking-[0.06em]">
-            <span aria-hidden>{AXIS_ABBR[a]}</span>
-            <span className="sr-only">{SCORE_AXIS_LABELS[a]}</span>
-          </dt>
-          <dd className="order-1 flex flex-col items-center gap-1.5">
-            <span className="font-mono text-[10px] text-bone-2 tabular-nums leading-none">{scores[a]}</span>
-            <span aria-hidden className="relative block h-7 w-[5px] overflow-hidden rounded-cell bg-line">
-              <span
-                className="absolute inset-x-0 bottom-0 rounded-cell"
-                style={{ height: `${scores[a]}%`, background: hue, opacity: 0.35 + (scores[a] / 100) * 0.6 }}
-              />
-            </span>
-          </dd>
-        </div>
-      ))}
-    </dl>
+    <table data-testid="axis-bars" className={cn("w-full border-collapse text-ui", className)}>
+      <caption className="sr-only">Scores on the six axes, 0 to 100, with each axis weight</caption>
+      <thead>
+        <tr className="border-line border-b text-left">
+          <th scope="col" className="mono-label pb-2 font-semibold">
+            Axis
+          </th>
+          <th scope="col" className="pb-2">
+            <span className="sr-only">Bar</span>
+          </th>
+          <th scope="col" className="mono-label pb-2 text-right font-semibold">
+            Score
+          </th>
+          <th scope="col" className="mono-label pb-2 pl-4 text-right font-semibold">
+            Weight
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {SCORE_AXES.map((a) => (
+          <tr key={a} data-axis={a} className="border-line-faint border-b last:border-b-0">
+            <th
+              scope="row"
+              className="w-[96px] py-2 pr-3 text-left font-normal text-bone-2"
+              title={SCORE_AXIS_LABELS[a]}
+            >
+              {AXIS_SHORT[a]}
+            </th>
+            <td className="py-2">
+              <Bar value={scores[a]} className="h-1.5" />
+            </td>
+            <td className="w-10 py-2 text-right font-mono text-bone tabular-nums">{scores[a]}</td>
+            <td className="w-14 py-2 pl-4 text-right font-mono text-bone-3 tabular-nums">
+              {Math.round(weights[a] * 100)}%
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }
 
-const RC = 150;
-const R = 76;
-const C = { x: RC, y: RC };
-const RINGS = [0.25, 0.5, 0.75, 1];
-
-/** Six-axis radar: hairline hexagon, polygon drawn in 300 ms whenever `drawKey` changes. */
-export function Radar({
-  scores,
-  hue,
-  drawKey,
-  className,
-  title,
-}: {
-  scores: ChannelScores;
-  hue: string;
-  drawKey: string;
-  className?: string;
-  title: string;
-}) {
-  const reduce = useReducedMotion();
-  const pts = radarPoints(scores, R, C);
-  const hex = (f: number) => toPath(SCORE_AXES.map((_, i) => polar(R * f, radarAngle(i), C)));
+/** A small evidence thumbnail: the real thumbnail when we have one, else a muted tile with the source name. */
+export function EvidenceTile({ evidence, className }: { evidence?: Evidence; className?: string }) {
+  const base = "relative h-11 w-[52px] shrink-0 overflow-hidden rounded-card border border-line bg-raised-2";
+  if (evidence?.thumbnailUrl)
+    // biome-ignore lint/performance/noImgElement: evidence thumbnails come from arbitrary hosts
+    return <img src={evidence.thumbnailUrl} alt="" loading="lazy" className={cn(base, "object-cover", className)} />;
+  const stat = evidence && evidenceStat(evidence);
   return (
-    <svg viewBox="0 28 300 244" className={cn("overflow-visible", className)} role="img" aria-label={title}>
-      {RINGS.map((f) => (
-        <path
-          key={f}
-          d={hex(f)}
-          fill="none"
-          stroke={f === 1 ? "rgb(17 17 17 / 0.16)" : "rgb(17 17 17 / 0.07)"}
-          strokeWidth="1"
-        />
-      ))}
-      {SCORE_AXES.map((a, i) => {
-        const p = polar(R, radarAngle(i), C);
-        return <line key={a} x1={RC} y1={RC} x2={p.x} y2={p.y} stroke="rgb(17 17 17 / 0.07)" strokeWidth="1" />;
-      })}
-      <motion.path
-        key={drawKey}
-        d={toPath(pts)}
-        fill={hue}
-        stroke={hue}
-        strokeWidth="1.25"
-        strokeLinejoin="round"
-        initial={reduce ? false : { pathLength: 0, fillOpacity: 0 }}
-        animate={{ pathLength: 1, fillOpacity: 0.14 }}
-        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        style={{ filter: `drop-shadow(0 0 10px ${hue}55)` }}
-      />
-      {pts.map((p, i) => (
-        <circle key={`${drawKey}-${SCORE_AXES[i]}`} cx={p.x} cy={p.y} r="2.2" fill={hue} />
-      ))}
-      {SCORE_AXES.map((a, i) => {
-        const th = radarAngle(i);
-        const p = polar(R + 18, th, C);
-        const cos = Math.cos(th);
-        const anchor = Math.abs(cos) < 0.2 ? "middle" : cos > 0 ? "start" : "end";
-        const top = Math.sin(th) < -0.9;
-        const bottom = Math.sin(th) > 0.9;
-        const y = top ? p.y - 14 : bottom ? p.y + 6 : p.y - 4;
-        return (
-          <text key={a} x={p.x} y={y} textAnchor={anchor} className="font-mono">
-            <tspan x={p.x} fontSize="8.5" letterSpacing="0.08em" fill="rgb(17 17 17 / 0.5)">
-              {AXIS_SHORT[a].toUpperCase()}
-            </tspan>
-            <tspan x={p.x} dy="13" fontSize="12" fill="#ECE7DD">
-              {scores[a]}
-            </tspan>
-          </text>
-        );
-      })}
-    </svg>
+    <span aria-hidden className={cn(base, "flex flex-col justify-between px-1 pt-1.5 pb-1 text-left", className)}>
+      {evidence && (
+        <>
+          <span className="absolute inset-x-0 top-0 h-0.5" style={{ background: sourceHue(evidence.source) }} />
+          <span className="line-clamp-2 font-semibold text-[9px] text-bone-2 leading-[1.1]">
+            {SOURCE_LABELS[evidence.source]}
+          </span>
+          {stat && <span className="font-mono text-[10px] text-bone tabular-nums leading-none">{stat}</span>}
+        </>
+      )}
+    </span>
   );
 }
 

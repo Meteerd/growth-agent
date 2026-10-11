@@ -5,28 +5,35 @@ import { useId, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Dialog } from "@/components/ui/Overlay";
 import { toast } from "@/components/ui/Toast";
-import { CHANNEL_LABELS, type Channel, type ChannelPlan, type PatchPlanRequest, SCORE_AXES } from "@/contracts";
+import { CHANNEL_LABELS, type Channel, type ChannelPlan, type Evidence, type PatchPlanRequest } from "@/contracts";
 import { getClient } from "@/lib/client/api";
 import { cn } from "@/lib/client/cn";
 import { qk, useAction } from "@/lib/client/queries";
-import { moveItem } from "./geometry";
-import { ArrowGlyph, AXIS_ABBR, AxisBars, MODE_HUE, ModeBadge, notNowReason, pad2, ScoreBar } from "./parts";
+import { ArrowGlyph, EvidenceTile, ModeBadge, ScoreBar } from "./parts";
+import { firstSentence, moveItem, notNowReason, pad2 } from "./rank";
 
-const EASE = [0.22, 1, 0.36, 1] as const;
+// Desktop columns: rank, channel, score, why, evidence, first steps, actions. Below xl each row is a stacked card.
+const COLS = "xl:grid-cols-[36px_164px_100px_minmax(0,1.3fr)_192px_minmax(0,1fr)_128px]";
 
-/** Ranked list: reorder and drop write a new plan version through PATCH /plan. */
+/** Click anywhere on a row to open its drawer; buttons inside the row keep their own action. */
+const rowClick = (open: () => void) => (e: React.MouseEvent) => {
+  if (!(e.target as HTMLElement).closest("button, a, input")) open();
+};
+
+/** The ranked table and the Not now list. Reorder and drop write a new plan version through PATCH /plan. */
 export function RankedList({
   plan,
   runId,
-  evidenceCount,
+  evidence,
   onOpen,
 }: {
   plan: ChannelPlan;
   runId: string;
-  evidenceCount: (c: Channel) => number;
+  evidence?: Evidence[];
   onOpen: (c: Channel) => void;
 }) {
   const recs = [...plan.channels].sort((a, b) => a.priority - b.priority);
+  const byId = new Map((evidence ?? []).map((e) => [e.id, e]));
   const [busy, setBusy] = useState<string | null>(null);
   const [dropFor, setDropFor] = useState<Channel | null>(null);
   const [dropOpen, setDropOpen] = useState(false);
@@ -93,59 +100,102 @@ export function RankedList({
   };
 
   return (
-    <div className="flex flex-col gap-16">
-      <section aria-labelledby="ranked-h" data-testid="ranked-list">
-        <h2 id="ranked-h" className="sr-only">
-          Recommended channels in priority order
-        </h2>
+    <div className="flex flex-col gap-14">
+      <section aria-labelledby="ranked-h" data-testid="ranked-list" className="flex flex-col gap-4">
+        <SectionHead id="ranked-h" title="Ranked channels">
+          Open a row for the full brief and the evidence behind it.
+        </SectionHead>
         {recs.length === 0 ? (
           <p className="rounded-panel border border-line border-dashed px-6 py-10 text-center text-bone-2 text-ui">
-            Every channel was dropped. The plan keeps them under Not now with your reasons.
+            Every channel was dropped. They are under Not now with your reasons.
           </p>
         ) : (
-          <ol className="flex flex-col gap-3">
-            {recs.map((c, i) => {
-              const label = CHANNEL_LABELS[c.channel];
-              const hue = MODE_HUE[c.mode];
-              return (
-                <motion.li
-                  key={c.channel}
-                  layout="position"
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.45,
-                    delay: i * 0.05,
-                    ease: EASE,
-                    layout: { type: "spring", stiffness: 380, damping: 36 },
-                  }}
-                  data-testid={`rank-row-${c.channel}`}
-                  data-priority={c.priority}
-                  className="glass-flat relative grid gap-6 overflow-hidden p-5 md:grid-cols-[minmax(0,1fr)_272px] md:gap-10 md:p-6"
-                >
-                  <span
-                    aria-hidden
-                    className="absolute inset-y-4 left-0 w-px"
-                    style={{ background: `linear-gradient(180deg, transparent, ${hue}, transparent)` }}
-                  />
-                  <div className="flex min-w-0 flex-col gap-4">
-                    <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-                      <span className="font-mono text-[13px] text-bone-3 tabular-nums">{pad2(c.priority)}</span>
-                      <h3 className="font-display text-[30px] leading-none md:text-[34px]">{label}</h3>
-                      <ModeBadge mode={c.mode} className="self-center" />
+          <div className="glass-flat overflow-hidden">
+            <div aria-hidden className={cn("hidden border-line border-b px-6 py-3 xl:grid xl:gap-x-5", COLS)}>
+              {["Rank", "Channel", "Score", "Why", "Evidence", "First steps"].map((h) => (
+                <span key={h} className="mono-label">
+                  {h}
+                </span>
+              ))}
+              <span className="mono-label text-right">Edit</span>
+            </div>
+            <ol>
+              {recs.map((c, i) => {
+                const label = CHANNEL_LABELS[c.channel];
+                const ids = c.evidenceIds;
+                // the channel name button is the keyboard path; a row click is a mouse shortcut
+                return (
+                  <motion.li
+                    key={c.channel}
+                    layout="position"
+                    transition={{ layout: { duration: 0.18, ease: [0.2, 0, 0, 1] } }}
+                    data-testid={`rank-row-${c.channel}`}
+                    data-priority={c.priority}
+                    onClick={rowClick(() => onOpen(c.channel))}
+                    className={cn(
+                      "grid cursor-pointer grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-x-3 gap-y-4 border-line border-b bg-raised px-4 py-5",
+                      "transition-colors duration-150 last:border-b-0 hover:bg-glass-strong md:px-6 xl:gap-x-5 xl:gap-y-0 xl:py-4",
+                      COLS,
+                    )}
+                  >
+                    <span className="font-mono text-[15px] text-bone-3 tabular-nums leading-[1.5]">
+                      <span className="sr-only">Priority </span>
+                      {pad2(c.priority)}
+                    </span>
+                    <div className="flex min-w-0 flex-wrap items-center gap-x-2.5 gap-y-1.5 xl:flex-col xl:items-start">
+                      <button
+                        type="button"
+                        onClick={() => onOpen(c.channel)}
+                        data-testid={`rank-open-${c.channel}`}
+                        className="text-left font-semibold text-[17px] text-bone leading-snug tracking-[-0.01em] underline-offset-4 hover:underline"
+                      >
+                        {label}
+                      </button>
+                      <ModeBadge mode={c.mode} />
                     </div>
-                    <p className="max-w-[74ch] text-bone-2 text-ui leading-relaxed">{c.rationale}</p>
-                    <p className="flex flex-wrap gap-x-3 gap-y-1 font-mono text-[11.5px]">
-                      <span className="text-bone-3 uppercase tracking-[0.08em]">cadence</span>
-                      <span className="text-bone-2">{c.cadence}</span>
+                    <ScoreBar score={c.score} className="w-16 pt-0.5 xl:w-full xl:max-w-24" />
+                    <p
+                      className="col-span-3 line-clamp-3 text-bone-2 text-ui leading-[1.45] xl:col-span-1 xl:line-clamp-2"
+                      title={c.rationale}
+                    >
+                      {firstSentence(c.rationale)}
                     </p>
-                  </div>
-                  <div className="flex flex-col gap-5 md:border-line md:border-l md:pl-8">
-                    <div className="flex items-end justify-between gap-6">
-                      <ScoreBar score={c.score} hue={hue} className="w-24" />
-                      <AxisBars scores={c.scores} hue={hue} />
+                    <div className="col-span-3 xl:col-span-1">
+                      <p className="mono-label mb-2 xl:sr-only">Evidence</p>
+                      <button
+                        type="button"
+                        onClick={() => onOpen(c.channel)}
+                        data-testid={`rank-evidence-${c.channel}`}
+                        aria-label={`Evidence for ${label}, ${ids.length} ${ids.length === 1 ? "item" : "items"}`}
+                        className="group flex items-center gap-1.5 rounded-card"
+                      >
+                        {ids.slice(0, 3).map((id) => (
+                          <EvidenceTile
+                            key={id}
+                            evidence={byId.get(id)}
+                            className="transition-colors duration-150 group-hover:border-bone-4"
+                          />
+                        ))}
+                        {ids.length > 3 && (
+                          <span className="pl-1 font-mono text-[11px] text-bone-3 tabular-nums">+{ids.length - 3}</span>
+                        )}
+                        {ids.length === 0 && <span className="text-bone-3 text-ui">None linked</span>}
+                      </button>
                     </div>
-                    <div className="flex flex-wrap items-center gap-2">
+                    <div className="col-span-3 min-w-0 xl:col-span-1">
+                      <p className="mono-label mb-2 xl:sr-only">First steps</p>
+                      <ol className="flex flex-col gap-1">
+                        {c.firstSteps.slice(0, 2).map((s, k) => (
+                          <li key={s} className="flex min-w-0 gap-2 text-bone text-ui leading-[1.45]" title={s}>
+                            <span className="font-mono text-[11px] text-bone-3 tabular-nums leading-[1.75]">
+                              {k + 1}
+                            </span>
+                            <span className="min-w-0 xl:truncate">{s}</span>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                    <div className="col-span-3 flex items-center gap-1.5 xl:col-span-1 xl:justify-end">
                       <Button
                         size="sm"
                         className="w-8 px-0"
@@ -171,18 +221,7 @@ export function RankedList({
                       <Button
                         size="sm"
                         variant="quiet"
-                        onClick={() => onOpen(c.channel)}
-                        data-testid={`rank-evidence-${c.channel}`}
-                      >
-                        Evidence
-                        <span className="font-mono text-[11px] text-bone-3 tabular-nums">
-                          {evidenceCount(c.channel)}
-                        </span>
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="danger"
-                        className="ml-auto"
+                        aria-label={`Drop ${label}`}
                         data-testid={`rank-drop-${c.channel}`}
                         disabled={locked}
                         onClick={() => askDrop(c.channel)}
@@ -190,16 +229,15 @@ export function RankedList({
                         Drop
                       </Button>
                     </div>
-                  </div>
-                </motion.li>
-              );
-            })}
-          </ol>
+                  </motion.li>
+                );
+              })}
+            </ol>
+          </div>
         )}
       </section>
 
-      <NotNowList plan={plan} evidenceCount={evidenceCount} onOpen={onOpen} />
-      {plan.considered && plan.considered.length > 0 && <Considered plan={plan} />}
+      <NotNowList plan={plan} onOpen={onOpen} />
 
       <Dialog
         open={dropOpen}
@@ -221,12 +259,7 @@ export function RankedList({
               maxLength={240}
               placeholder="For example: nobody can film this month"
               aria-invalid={!!dropError || undefined}
-              className={cn(
-                "h-11 w-full min-w-0 rounded-card bg-[rgb(255_255_255/0.03)] px-3.5 text-bone text-ui outline-none",
-                "shadow-[inset_0_0_0_1px_var(--color-line-strong)] transition-shadow duration-150 placeholder:text-bone-4",
-                "hover:shadow-[inset_0_0_0_1px_rgb(17_17_17/0.22)] focus-visible:outline-none",
-                "focus:shadow-[inset_0_0_0_1px_rgb(229_50_45/0.65),0_0_0_3px_rgb(229_50_45/0.12)]",
-              )}
+              className="h-11 w-full min-w-0 rounded-card border border-line-strong bg-raised px-3.5 text-bone text-ui outline-none transition-colors duration-150 placeholder:text-bone-4 hover:border-bone-4 focus:border-bone"
             />
           </div>
           {dropError && (
@@ -248,144 +281,69 @@ export function RankedList({
   );
 }
 
-function NotNowList({
-  plan,
-  evidenceCount,
-  onOpen,
-}: {
-  plan: ChannelPlan;
-  evidenceCount: (c: Channel) => number;
-  onOpen: (c: Channel) => void;
-}) {
+function NotNowList({ plan, onOpen }: { plan: ChannelPlan; onOpen: (c: Channel) => void }) {
   const scoreOf = new Map((plan.considered ?? []).map((c) => [c.channel, c.score]));
   return (
-    <section
-      aria-labelledby="notnow-h"
-      data-testid="notnow-list"
-      className="grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"
-    >
-      <header className="lg:sticky lg:top-48 lg:self-start">
-        <h2 id="notnow-h" className="font-display text-[36px] leading-none">
-          Not now
-        </h2>
-        <p className="mt-3 max-w-[36ch] text-bone-2 text-ui">
-          Where the plan does not go, and why. Each reason links to the evidence that ruled it out.
-        </p>
-      </header>
+    <section aria-labelledby="notnow-h" data-testid="notnow-list" className="flex flex-col gap-4">
+      <SectionHead id="notnow-h" title="Not now">
+        Where the plan does not go, and why. Open a row for the evidence that ruled it out.
+      </SectionHead>
       {plan.notNow.length === 0 ? (
-        <p className="text-bone-3 text-ui">Nothing was ruled out for this brand.</p>
+        <p className="border-line border-t pt-4 text-bone-3 text-ui">Nothing was ruled out for this brand.</p>
       ) : (
-        <ul className="flex flex-col border-line border-t">
-          {plan.notNow.map((n, i) => (
-            <motion.li
-              key={n.channel}
-              layout="position"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.04, ease: EASE }}
-              data-testid={`notnow-row-${n.channel}`}
-              className="grid gap-3 border-line border-b py-5 md:grid-cols-[200px_minmax(0,1fr)_auto] md:gap-8"
-            >
-              <div className="flex items-baseline gap-3">
-                <span
-                  aria-hidden
-                  className="relative top-[3px] size-3.5 shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgb(17_17_17/0.3)]"
-                >
-                  <span className="absolute top-1/2 left-1/2 h-px w-2.5 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-bone-3" />
-                </span>
-                <span className="font-medium text-body text-bone">{CHANNEL_LABELS[n.channel]}</span>
-                {scoreOf.has(n.channel) && (
-                  <span
-                    className="font-mono text-[11px] text-bone-3 tabular-nums"
-                    title="Weighted score before it was ruled out"
-                  >
-                    {scoreOf.get(n.channel)}
-                  </span>
-                )}
-              </div>
-              <p className="max-w-[80ch] text-bone-2 text-ui leading-relaxed">{notNowReason(n.channel, n.reason)}</p>
-              <Button
-                size="sm"
-                variant="quiet"
-                className="justify-self-start md:justify-self-end"
-                onClick={() => onOpen(n.channel)}
-                aria-label={`Evidence for not using ${CHANNEL_LABELS[n.channel]}`}
+        <ul className="border-line border-t">
+          {plan.notNow.map((n) => {
+            const label = CHANNEL_LABELS[n.channel];
+            const score = scoreOf.get(n.channel);
+            return (
+              // biome-ignore lint/a11y/useKeyWithClickEvents: the Evidence button is the keyboard path; a row click is a mouse shortcut
+              <li
+                key={n.channel}
+                data-testid={`notnow-row-${n.channel}`}
+                onClick={rowClick(() => onOpen(n.channel))}
+                // xl: the reason column lines up with the table's Why column
+                className="grid cursor-pointer gap-x-8 gap-y-2 border-line border-b px-4 py-4 transition-colors duration-150 hover:bg-raised md:grid-cols-[176px_minmax(0,1fr)_auto] md:items-baseline md:px-6 xl:grid-cols-[340px_minmax(0,1fr)_auto] xl:gap-x-5"
               >
-                Evidence
-                <span className="font-mono text-[11px] text-bone-3 tabular-nums">{evidenceCount(n.channel)}</span>
-              </Button>
-            </motion.li>
-          ))}
+                <p className="flex items-baseline gap-2.5">
+                  <s className="font-medium text-body text-bone-2 line-through decoration-bone-3">{label}</s>
+                  {score != null && (
+                    <span
+                      className="font-mono text-[11px] text-bone-3 tabular-nums"
+                      title="Weighted score before it was ruled out"
+                    >
+                      {score}/100
+                    </span>
+                  )}
+                </p>
+                <p className="min-w-0 max-w-[78ch] break-words text-bone text-ui leading-relaxed">
+                  {notNowReason(n.channel, n.reason)}
+                </p>
+                <Button
+                  size="sm"
+                  variant="quiet"
+                  className="-ml-2 justify-self-start px-2 md:-mr-2 md:ml-0 md:justify-self-end"
+                  onClick={() => onOpen(n.channel)}
+                  aria-label={`Evidence for not using ${label}, ${n.evidenceIds.length} items`}
+                >
+                  Evidence
+                  <span className="font-mono text-[12px] text-bone-3 tabular-nums">{n.evidenceIds.length}</span>
+                </Button>
+              </li>
+            );
+          })}
         </ul>
       )}
     </section>
   );
 }
 
-function Considered({ plan }: { plan: ChannelPlan }) {
-  const rows = [...(plan.considered ?? [])].sort((a, b) => b.score - a.score);
-  const pick = new Map(plan.channels.map((c) => [c.channel, c.priority]));
-  const out = new Set(plan.notNow.map((n) => n.channel));
+function SectionHead({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
-    <section aria-labelledby="considered-h" className="grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
-      <header>
-        <h2 id="considered-h" className="font-display text-[28px] leading-none">
-          Every channel scored
-        </h2>
-        <p className="mt-3 max-w-[36ch] text-bone-2 text-ui">
-          The score is the weighted sum of the six axes. Weights sit under each column.
-        </p>
-      </header>
-      <div className="min-w-0 overflow-x-auto rounded-panel hairline">
-        <table className="w-full min-w-[620px] border-collapse font-mono text-[12px] tabular-nums">
-          <thead>
-            <tr className="border-line border-b text-left">
-              <th scope="col" className="px-4 py-3 font-normal text-bone-3">
-                <span className="mono-label">channel</span>
-              </th>
-              {SCORE_AXES.map((a) => (
-                <th key={a} scope="col" className="px-2 py-3 text-right font-normal">
-                  <span className="mono-label block">{AXIS_ABBR[a]}</span>
-                  <span className="block text-[10px] text-bone-3">{Math.round(plan.weights[a] * 100)}%</span>
-                </th>
-              ))}
-              <th scope="col" className="px-4 py-3 text-right font-normal">
-                <span className="mono-label">score</span>
-              </th>
-              <th scope="col" className="px-4 py-3 text-right font-normal">
-                <span className="mono-label">verdict</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r) => {
-              const p = pick.get(r.channel);
-              return (
-                <tr key={r.channel} className={cn("border-line border-b last:border-b-0", !p && "text-bone-3")}>
-                  <th scope="row" className="px-4 py-2.5 text-left font-sans font-normal text-[13px] text-bone">
-                    {CHANNEL_LABELS[r.channel]}
-                  </th>
-                  {SCORE_AXES.map((a) => (
-                    <td key={a} className="px-2 py-2.5 text-right text-bone-2">
-                      {r.scores[a]}
-                    </td>
-                  ))}
-                  <td className="px-4 py-2.5 text-right text-bone">{r.score}</td>
-                  <td className="px-4 py-2.5 text-right">
-                    {p ? (
-                      <span className="text-bone">P{p}</span>
-                    ) : out.has(r.channel) ? (
-                      <span className="text-bone-3">not now</span>
-                    ) : (
-                      <span className="text-bone-4">scored</span>
-                    )}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <header className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between md:gap-6">
+      <h2 id={id} className="font-display text-[26px] leading-none md:text-[28px]">
+        {title}
+      </h2>
+      <p className="text-bone-2 text-ui">{children}</p>
+    </header>
   );
 }

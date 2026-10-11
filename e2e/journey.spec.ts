@@ -53,14 +53,11 @@ test("full journey: brand, run, consult, reverse-engineer, direction, studio, pa
   await expect(page.locator('[data-testid^="remake-shot-"]').first()).toBeVisible();
   await expect(page.getByTestId("remake-score-0")).toBeVisible();
 
-  // direction: orbit and list, evidence behind a channel
+  // direction: the ranked table, evidence behind a channel
   await tab("Direction").click();
-  await expect(page.getByTestId("orbit-map")).toBeVisible();
-  await page.getByTestId("orbit-body-tiktok").focus(); // bodies drift on their orbits; the keyboard path is stable
-  await page.keyboard.press("Enter");
+  await page.getByTestId("rank-row-tiktok").click();
   await expect(page.getByRole("dialog", { name: "TikTok" })).toBeVisible();
   await page.keyboard.press("Escape");
-  await page.getByRole("tab", { name: "Ranked list" }).click();
   await expect(page.getByTestId("ranked-list")).toBeVisible();
 
   // studio: approve the storyboard and render a draft
