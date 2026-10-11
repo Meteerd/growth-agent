@@ -1,0 +1,200 @@
+import fs from "node:fs";
+import path from "node:path";
+import { z } from "zod";
+import type { Blueprint, Concept, Review } from "@/contracts";
+import { newId } from "../../ids";
+import { extractFrame, probe } from "../../media/ffmpeg";
+import { getAsset, getBlueprint, getConcept, listConcepts, upsertReview } from "../../repo";
+import { rulePackText } from "../../rules";
+import { generateKeyframes, renderConcept } from "../../services/concepts";
+import { urlToFile } from "../../video/files";
+import { type BetaContentBlockParam, loadPrompt, structured } from "../claude";
+import type { PhaseCtx } from "../context";
+
+export const ReviewDraft = z.object({
+  overall: z.number(),
+  blueprintMatch: z.number(),
+  perShot: z.array(z.object({ idx: z.number(), score: z.number(), issues: z.array(z.string()) })),
+  complianceOk: z.boolean(),
+  decision: z.enum(["accept", "regenerate"]),
+  notes: z.string(),
+});
+
+const clamp = (n: number) => Math.max(0, Math.min(100, Math.round(n)));
+
+/** Demo review: deterministic placeholder scores (labelled demo); the round-1 weakest shot gets regenerated. */
+export function demoReview(c: Concept, round: number, regenerated: number[]): z.infer<typeof ReviewDraft> {
+  const seed = [...c.id].reduce((a, ch) => a + ch.charCodeAt(0), 0);
+  const scores = c.shots.map((s) => {
+    const base = 72 + ((seed + s.idx * 37) % 17);
+    return regenerated.includes(s.idx) ? Math.min(95, base + 14) : round > 1 ? Math.min(95, base + 3) : base;
+  });
+  if (round === 1 && scores.length) scores[(seed % scores.length) as number] = 58;
+  const weakest = scores.indexOf(Math.min(...scores));
+  const overall = Math.round(scores.reduce((a, b) => a + b, 0) / Math.max(1, scores.length));
+  const regen = round === 1;
+  return {
+    overall,
+    blueprintMatch: Math.min(100, overall + 5),
+    perShot: scores.map((score, idx) => ({
+      idx,
+      score,
+      issues:
+        regen && idx === weakest ? ["Demo review: weakest frame by placeholder score; regenerate its keyframe"] : [],
+    })),
+    complianceOk: true,
+    decision: regen ? "regenerate" : "accept",
+    notes: regen
+      ? `Demo review: shot ${weakest + 1} scored lowest (${scores[weakest]}); regenerating it.`
+      : "Demo review: accepted after one regeneration.",
+  };
+}
+
+async function watchOwn(c: Concept, videoUrl: string, key: string) {
+  const file = urlToFile(videoUrl)!;
+  const info = await probe(file);
+  const times: { t: number; shot: number }[] = [];
+  let t0 = 0;
+  for (const s of c.shots) {
+    times.push({ t: Math.min(info.durationSec - 0.05, t0 + Math.min(0.6, s.durationSec / 2)), shot: s.idx });
+    if (s.durationSec > 2.5) times.push({ t: t0 + s.durationSec * 0.75, shot: s.idx });
+    t0 += s.durationSec;
+  }
+  times.push({ t: Math.max(0, info.durationSec - 1), shot: -1 });
+  const frames = [];
+  for (const x of times) {
+    const out = path.resolve(process.env.ASSETS_DIR || "data/assets", "review_frames", key, `${x.t.toFixed(2)}.jpg`);
+    await extractFrame(file, x.t, out, 360);
+    frames.push({ ...x, file: out });
+  }
+  return { info, frames };
+}
+
+export async function reviewRender(
+  ctx: PhaseCtx,
+  c: Concept,
+  bp: Blueprint | null,
+  assetId: string,
+  round: number,
+  regenerated: number[],
+): Promise<Review> {
+  const asset = await getAsset(ctx.db, assetId);
+  if (!asset) throw new Error("render asset missing");
+  const { frames } = await watchOwn(c, asset.url, `${c.id}_r${round}`);
+  const content: BetaContentBlockParam[] = [
+    {
+      type: "text",
+      text: JSON.stringify({
+        concept: {
+          title: c.title,
+          hook: c.hook,
+          language: c.language,
+          shots: c.shots.map((s) => ({
+            idx: s.idx,
+            durationSec: s.durationSec,
+            onScreenText: s.onScreenText,
+            voiceover: s.voiceover,
+          })),
+        },
+        blueprint: bp
+          ? {
+              structure: bp.structure,
+              hook: bp.hook,
+              shots: bp.shots.map((s) => ({
+                idx: s.idx,
+                t0: s.t0,
+                t1: s.t1,
+                purpose: s.purpose,
+                shotType: s.shotType,
+              })),
+            }
+          : null,
+        round,
+      }),
+    },
+  ];
+  for (const f of frames) {
+    content.push({ type: "text", text: `t=${f.t.toFixed(2)}s ${f.shot >= 0 ? `(shot ${f.shot})` : "(end card)"}` });
+    content.push({
+      type: "image",
+      source: { type: "base64", media_type: "image/jpeg", data: fs.readFileSync(f.file).toString("base64") },
+    });
+  }
+  const r = await structured(
+    { db: ctx.db, runId: ctx.run.id, phase: "review" },
+    {
+      route: "vision",
+      system: loadPrompt("review", { rulePack: rulePackText(ctx.brand.rulePack) }),
+      user: content,
+      schema: ReviewDraft,
+      note: `review: ${c.id} round ${round}`,
+      maxTokens: 8000,
+      demo: () => demoReview(c, round, regenerated),
+    },
+  );
+  const v = r.value;
+  const perShot = c.shots.map((s) => {
+    const p = v.perShot.find((x) => x.idx === s.idx);
+    return { idx: s.idx, score: clamp(p?.score ?? v.overall), issues: p?.issues ?? [] };
+  });
+  return {
+    id: newId("review"),
+    conceptId: c.id,
+    assetId,
+    round,
+    overall: clamp(v.overall),
+    blueprintMatch: clamp(v.blueprintMatch),
+    perShot,
+    complianceOk: v.complianceOk,
+    decision: v.decision,
+    notes: v.notes,
+    createdAt: new Date().toISOString(),
+    demo: r.mode === "demo",
+  };
+}
+
+/** Render the remake, watch it, regenerate the weakest shot, re-render: at most 2 rounds. */
+export async function review(ctx: PhaseCtx): Promise<void> {
+  const { db, run } = ctx;
+  const concepts = await listConcepts(db, run.id);
+  const c0 = concepts.find(
+    (c) =>
+      c.blueprintId &&
+      c.shots.length > 1 &&
+      c.compliance !== "fail" &&
+      c.format !== "static" &&
+      c.format !== "carousel",
+  );
+  if (!c0) {
+    await ctx.emit("warning", "No remake concept to render and review in this run");
+    return;
+  }
+  const bp = c0.blueprintId ? await getBlueprint(db, c0.blueprintId) : null;
+  const regenerated: number[] = [];
+  for (let round = 1; round <= 2; round++) {
+    ctx.check();
+    const { asset } = await renderConcept(db, c0.id, "draft", {
+      emit: ctx.emit,
+      label: `review_r${round}`,
+      phase: "review",
+    });
+    const c = (await getConcept(db, c0.id))!;
+    const rv = await reviewRender(ctx, c, bp, asset.id, round, regenerated);
+    if (round === 2 && rv.decision === "regenerate") rv.decision = "accept";
+    const weakest = rv.perShot.reduce((a, b) => (b.score < a.score ? b : a), rv.perShot[0]);
+    if (rv.decision === "regenerate" && weakest) rv.regeneratedShots = [weakest.idx];
+    await upsertReview(db, rv);
+    await ctx.emit("review", `Round ${round}: ${rv.overall}/100, ${rv.decision}`, {
+      refId: rv.id,
+      detail: rv.notes,
+      data: { conceptId: c.id, round, decision: rv.decision, perShot: rv.perShot },
+    });
+    if (rv.decision === "accept" || !weakest) break;
+    regenerated.push(weakest.idx);
+    await generateKeyframes(db, c.id, {
+      shotIdx: weakest.idx,
+      emit: ctx.emit,
+      reason: `review round ${round}: ${weakest.issues[0] ?? "lowest score"}`,
+    });
+  }
+}
