@@ -5,7 +5,7 @@ Read this file first in every session, then in this order:
 2. `docs/ARCHITECTURE.md`: stack, repo layout, data contracts, API, events (the source of truth for interfaces)
 3. `coord/PROTOCOL.md`: how the two build machines coordinate through git (mandatory)
 4. Your lane file: `coord/LANE_A.md` (engine) or `coord/LANE_B.md` (cockpit), and your task list `coord/TASKS_A.md` / `coord/TASKS_B.md`
-5. As needed: `docs/DESIGN.md` (visual direction), `docs/BRANDS.md` (the four real brands + compliance), `docs/APIS.md` (providers, verified API facts, costs, fallbacks)
+5. As needed: `docs/DESIGN.md` (visual direction), `docs/BRANDS.md` (the four real brands + compliance), `docs/APIS.md` (providers, verified API facts, costs, fallbacks), `assets/brands/` (real logos and imagery per brand, see its README)
 
 ## One paragraph
 A GTM agent for operators who run many brands. You enter a brand (URL), connect data sources, and the agent gathers everything it can (site, competitors, winning ads and organic posts, communities, reviews, the brand's own revenue and analytics). Then it interviews the operator like a clinician taking a patient history, asking only what the data could not answer. Then it decides **where to go** (TikTok, Reels, Shorts, X, LinkedIn, which subreddits, paid or organic, and where NOT to go), with evidence. Then it **makes the content** that wins there (videos, statics, posts) by remaking proven structures, checks every piece against the brand's legal rules, and hands over ready-to-post packs (download and post, or auto-post where a platform allows). Then it reads results and learns. One brain, many brands.
