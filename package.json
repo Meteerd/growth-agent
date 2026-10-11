@@ -15,10 +15,11 @@
     "db:migrate": "tsx scripts/db-migrate.ts",
     "seed": "tsx scripts/seed.ts",
     "e2e": "playwright test",
-    "smoke": "echo 'smoke lands in A06/A14'",
+    "smoke": "tsx scripts/smoke.ts",
     "e2e:live": "E2E_DATA=live playwright test"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
     "@libsql/client": "^0.18.0",
     "@tanstack/react-query": "^5.104.1",
     "clsx": "^2.1.1",
