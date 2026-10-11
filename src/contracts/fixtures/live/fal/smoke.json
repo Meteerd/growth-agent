@@ -1,0 +1,12 @@
+{
+  "recordedAt": "2026-10-11T21:41:06.762Z",
+  "model": "fal-ai/kling-video/v2.1/standard/image-to-video",
+  "mode": "live",
+  "usd": 0.25,
+  "clip": {
+    "durationSec": 5.04,
+    "width": 1080,
+    "height": 1920,
+    "hasAudio": false
+  }
+}

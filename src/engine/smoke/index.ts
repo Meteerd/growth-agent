@@ -1,6 +1,8 @@
 import type { Db } from "../db/client";
 import { smokeAnthropic } from "./anthropic";
 import { smokeBlueprint } from "./blueprint";
+import { smokeFal } from "./fal";
+import { smokeHiggsfield } from "./higgsfield";
 import { smokeFirecrawl, smokeIntake } from "./intake";
 import { smokeOpenai } from "./openai";
 import { smokeYoutube } from "./sources";
@@ -13,6 +15,8 @@ export const SMOKES: Record<string, Smoke> = {
   firecrawl: smokeFirecrawl,
   youtube: smokeYoutube,
   openai: smokeOpenai,
+  fal: smokeFal,
+  higgsfield: smokeHiggsfield,
   intake: (db) => smokeIntake(db, process.env.SMOKE_BRAND || "hound"),
 };
 

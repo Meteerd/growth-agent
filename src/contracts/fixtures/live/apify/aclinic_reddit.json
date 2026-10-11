@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-11T21:38:40.611Z",
+  "actor": "trudax/reddit-scraper-lite",
+  "input": {
+    "searches": [
+      "chudnutie lekár Slovensko",
+      "hubnutí lékař obezitolog čekací doba",
+      "obezitológ Slovensko skúsenosti"
+    ],
+    "searchCommunityName": "loseit",
+    "searchPosts": true,
+    "searchComments": false,
+    "searchCommunities": false,
+    "searchUsers": false,
+    "ignoreStartUrls": true,
+    "startUrls": [],
+    "sort": "relevance",
+    "time": "year",
+    "maxItems": 25,
+    "maxPostCount": 25,
+    "skipComments": true,
+    "skipUserPosts": true,
+    "skipCommunity": true,
+    "includeNSFW": false
+  },
+  "items": []
+}
