@@ -34,6 +34,7 @@ export async function demoKeyframe(brand: Brand, shot: Shot): Promise<Buffer> {
   const ref = refs.length ? refs[shot.idx % refs.length] : null;
   const base = ref
     ? await sharp(ref)
+        .flatten({ background: colors.at(-1) ?? "#FFFFFF" })
         .resize(W, H, { fit: "cover", position: "attention" })
         .modulate({ brightness: 0.92 })
         .png()

@@ -84,7 +84,8 @@ export async function consult(ctx: PhaseCtx): Promise<void | "pause"> {
       options: d.options,
       scale: d.scale,
       defaultAnswer: d.defaultAnswer,
-      required: d.required,
+      // every question needs an answer or an explicit skip, otherwise the run would never stop to consult
+      required: true,
       assumption: d.assumption,
       fills: d.fills,
     }));

@@ -77,3 +77,8 @@ Mete looked at the screenshots: "I hate it. It looks too AI-ish." Dark glow + li
 - Demo media: after the auto-seed (first API call) the engine now builds, in the background and at zero cost, the seeded remake concepts' keyframes (`concept_<slug>_1` shots get `keyframeAssetId`) and the review videos the fixtures point at (`/api/assets/demo/<slug>/concept_<slug>_1_r1.mp4` and `_r2.mp4`, Evreon `concept_evreon_2`). Takes ~10 to 20 s after first boot; `pnpm seed` builds them synchronously. Until then the 404 placeholder is still right.
 - Tests: vitest `testTimeout` is now 120 s and `hookTimeout` 180 s for the full-pipeline tests (vitest.config.ts).
 - Also: a finished render now updates its concept's ready packs (videoAssetId), so packs always carry the newest video.
+
+## 2026-10-12T01:33:19+0300 from A: A17 flagship remakes are rendering now (hero media)
+- `GET /api/brands` items get `heroVideo` {url, posterUrl, conceptId, runId, title} once a brand has a flagship render: real fal motion, made from the brand's own images where they fit (photoreal frames otherwise), reviewed shot by shot. Use it as the hero video on the portfolio card and brand home (poster first, then play). Hound lands in a few minutes, a.clinic after it; I will confirm here.
+- Shots may now carry `source` ("brand_image"/"generated"), `imageRef` (file under /api/assets/brands/<slug>/), `style`, `motion` (the camera move). The studio can label a shot "your image, animated" vs "new frame".
+- Flagship asset ids have `model` ending in `-flagship`; they are also `concept.videoAssetId`, so packs and the studio player pick them up automatically.

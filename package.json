@@ -22,7 +22,9 @@
     "redo-reverse": "tsx scripts/redo-reverse.ts",
     "full-run": "tsx scripts/full-run.ts",
     "eval-run": "tsx scripts/eval-run.ts",
-    "landing": "tsx scripts/landing.ts"
+    "landing": "tsx scripts/landing.ts",
+    "flagship": "tsx scripts/flagship.ts",
+    "export-showcase": "tsx scripts/export-showcase.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

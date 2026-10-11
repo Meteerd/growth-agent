@@ -35,6 +35,7 @@ describe("consult phase", () => {
       expect(q.answer).toBeUndefined();
     }
     expect(qs.some((q) => q.evidenceIds.length > 0)).toBe(true);
+    expect(qs.every((q) => q.required)).toBe(true);
 
     // answer all but one; still waiting
     const first = qs.slice(0, -1).map((q) => ({ questionId: q.id, value: q.defaultAnswer ?? "ok" }));

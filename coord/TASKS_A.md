@@ -94,7 +94,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - `coord/MORNING_A.md` + README "Run it": exact commands from a fresh clone (`pnpm i`, `cp .env.example .env`, `pnpm db:migrate`, `pnpm seed`, `pnpm dev`), live vs demo, spend, known issues, and the 2-minute demo path.
 
 ## STRETCH (after CORE, in this order)
-- [ ] **AS1** Manus landing page for a chosen concept (Manus builds it; store the link via `website.status`; show it in the pack).
+- [x] **AS1** Manus landing page for a chosen concept (Manus builds it; store the link via `website.status`; show it in the pack). (pack_0569d023_1 landingUrl https://manus.im/app/495LAe3t6NDkJcXULHZL4T; website.status: unpublished, "Hound: Calm alone time, practiced daily"; commit 705f13c)
 - [x] **AS2** One real fal draft render (cheapest tier) for one Hound concept within the fal cap; keep the demo render as fallback. (6 Kling 2.1 standard clips, $1.50; 23 s 1080x1920 non-demo MP4 for concept_0569d023_1 in run_mv4cox1z4e0569d023; commit 8747d6c)
 - [x] **AS3** Harden: retries with backoff on 429/5xx; resume interrupted runs from the DB on server restart. (fetchRetry + SDK retries; stale-run resume on first API call; commit 05d4764)
 - [x] **AS4** Prompt caching check: `cache_read_input_tokens > 0` on repeated phase calls. (verified live: repeated blueprint calls read 2,321 cached tokens, re-run intake 2,515; commit 05d4764)
@@ -117,3 +117,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
 - [x] **I13** A leftover smoke-test run (queued) was resumed by the stale-run hook and started spending: smokes now close their runs, and runs interrupted more than 6 hours ago are failed instead of resumed. Test (commit fc358d7).
 - [x] **I14** The live plan cited skipped questions as "because you said ..." (they are assumptions). Digest now marks them NOT ANSWERED with the working assumption, prompts say "assuming ...", and `pnpm eval-run` fails on misattribution.
 - [x] **I15** A pack kept pointing at the draft video after a later final render: finished renders now update the concept's ready packs. Test.
+- [x] **I16** Live runs skipped the consultation: Claude marked every question optional, so the run never paused, and the old digest passed each question's default answer off as the operator's. Questions are now always required (the operator can skip), unanswered ones are digested as NOT ANSWERED, and `pnpm eval-run` fails a run that never consulted.
+- [x] **I17** The dev server's resume hook judged staleness by the last event only; a long Claude call in another process (scripts, a second server) could get the same run driven twice. Runs now keep a file heartbeat while driven, and resume skips runs with a fresh heartbeat. Test.
+- [x] **I18** API sweep over the real local data (198 requests across every route for all brands and runs): 0 errors, all under 3 s.
+- [x] **I19** Flagship round 1 for Hound scored 64: transparent brand webp art rendered as black bars, and photo/cartoon shots alternated. Frames now flatten onto the brand color, wide art is contained not cropped, the sourcing prompt keeps one look per cut and puts brand art on screens/posters via an image-edit reference.

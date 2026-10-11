@@ -1,6 +1,7 @@
 import type { Run } from "@/contracts";
 import { getDb } from "../db/client";
 import { appendEvent, getRun, listEvents, listRunsByStatus, updateRun } from "../repo";
+import { heartbeatAge } from "./heartbeat";
 
 /**
  * In-process job runner. One async task per run inside the Node process (fine on localhost).
@@ -87,6 +88,8 @@ export async function resumeInterruptedRuns(staleMs = 120_000): Promise<string[]
     const last = (await listEvents(db, r.id)).at(-1);
     const age = Date.now() - Date.parse(last?.ts ?? r.createdAt);
     if (age < staleMs) continue;
+    // another process is still driving it (its heartbeat is fresh): leave it alone
+    if (heartbeatAge(r.id) < 60_000) continue;
     if (age > 6 * 3600_000) {
       // abandoned long ago: never resume (and spend) on a cold start
       await updateRun(db, r.id, {

@@ -5,6 +5,7 @@ import { smokeFal } from "./fal";
 import { smokeHiggsfield } from "./higgsfield";
 import { smokeFirecrawl, smokeIntake } from "./intake";
 import { smokeOpenai } from "./openai";
+import { smokeSora } from "./sora";
 import { smokeYoutube } from "./sources";
 
 type Smoke = (db: Db) => Promise<{ mode: "live" | "demo"; usd: number; file?: string; [k: string]: unknown }>;
@@ -15,6 +16,7 @@ export const SMOKES: Record<string, Smoke> = {
   firecrawl: smokeFirecrawl,
   youtube: smokeYoutube,
   openai: smokeOpenai,
+  sora: smokeSora,
   fal: smokeFal,
   higgsfield: smokeHiggsfield,
   intake: (db) => smokeIntake(db, process.env.SMOKE_BRAND || "hound"),

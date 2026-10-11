@@ -22,6 +22,10 @@ const EM = /[—–]/;
 const evidence = await repo.listEvidence(db, runId);
 const ids = new Set(evidence.map((e) => e.id));
 const qs = await repo.listQuestions(db, runId);
+check(
+  qs.length === 0 || qs.every((q) => q.answer !== undefined || q.skipped),
+  "every question was answered or explicitly skipped (the run paused to consult)",
+);
 for (const q of qs) {
   check(q.why.length > 20, `question has a why: ${q.prompt.slice(0, 50)}`);
   check(
@@ -45,7 +49,7 @@ if (plan) {
     check(!plan.channels.slice(0, 3).some((c) => c.channel === "tiktok"), "B2B: TikTok not in the top 3");
   check(!EM.test(plan.summary), "no em dash in plan summary");
   // a skipped question must never be cited as something the operator said
-  const skipped = qs.filter((q) => q.skipped).map((q) => q.id);
+  const skipped = qs.filter((q) => q.skipped || q.answer === undefined).map((q) => q.id);
   const planText = `${plan.summary} ${plan.channels.map((c) => c.rationale).join(" ")} ${plan.notNow.map((n) => n.reason).join(" ")}`;
   const misattributed = skipped.filter((id) => new RegExp(`you said[^.]*\\(?${id}`, "i").test(planText));
   check(
