@@ -94,7 +94,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - `coord/MORNING_A.md` + README "Run it": exact commands from a fresh clone (`pnpm i`, `cp .env.example .env`, `pnpm db:migrate`, `pnpm seed`, `pnpm dev`), live vs demo, spend, known issues, and the 2-minute demo path.
 
 ## STRETCH (after CORE, in this order)
-- [ ] **AS1** Manus landing page for a chosen concept (Manus builds it; store the link via `website.status`; show it in the pack).
+- [x] **AS1** Manus landing page for a chosen concept (Manus builds it; store the link via `website.status`; show it in the pack). (pack_0569d023_1 landingUrl https://manus.im/app/495LAe3t6NDkJcXULHZL4T; website.status: unpublished, "Hound: Calm alone time, practiced daily"; commit 705f13c)
 - [x] **AS2** One real fal draft render (cheapest tier) for one Hound concept within the fal cap; keep the demo render as fallback. (6 Kling 2.1 standard clips, $1.50; 23 s 1080x1920 non-demo MP4 for concept_0569d023_1 in run_mv4cox1z4e0569d023; commit 8747d6c)
 - [x] **AS3** Harden: retries with backoff on 429/5xx; resume interrupted runs from the DB on server restart. (fetchRetry + SDK retries; stale-run resume on first API call; commit 05d4764)
 - [x] **AS4** Prompt caching check: `cache_read_input_tokens > 0` on repeated phase calls. (verified live: repeated blueprint calls read 2,321 cached tokens, re-run intake 2,515; commit 05d4764)
