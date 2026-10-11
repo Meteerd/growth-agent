@@ -33,7 +33,7 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 | Hound | `run_mv4e0ud7671d68be0a` | Full live run on that research: consultation (questions skipped, so the plan states its assumptions), plan TikTok 79 > Shorts 73 > Reels 55 > Reddit 54, 6 concepts, review, packs. `pnpm eval-run` 47/47. Flagship remake `concept_1d68be0a_1`. |
 | Hound | `run_mv4cox1z4e0569d023` | Earlier full live run (on demo research) with the first fal final render (6 Kling clips) and a Manus-built landing page for its TikTok pack (unpublished). |
 | a.clinic | `run_mv4cgiqt5f95119dba` | Recorded live research pass: 82 real items (TikTok, Instagram, Meta Ad Library, Spiral, YouTube, site) + Manus task. 3 blueprints. |
-| a.clinic | `run_mv4e8sfdbc1e6575ad` | Full live run on that research, all Slovak concepts, Meta paid "not now" (RX4), SEO/Reels/TikTok organic. `pnpm eval-run` 52/52. Flagship remake `concept_1e6575ad_1`. |
+| a.clinic | `run_mv4e8sfdbc1e6575ad` | Full live run on that research, all Slovak concepts, Meta paid "not now" (RX4), SEO/Reels/TikTok organic. Flagship remake `concept_1e6575ad_1`. |
 | all four | `run_<slug>_demo` | Deterministic demo runs (labelled demo), with locally built demo keyframes and review videos. |
 
 ## The 2-minute demo path
@@ -50,8 +50,31 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 - `LIVE_PROVIDERS` = anthropic, openai, firecrawl, youtube. fal, Apify, Manus, Spiral, Higgsfield ran only in smoke tests and the recorded live passes.
 - Demo data is always labelled (`demo: true`, "Demo data" in the UI, "Demo keyframe" / "Demo render" burned into demo images and videos).
 
-## Known issues
-(filled in at the end of the night)
+## Flagship videos (A17, the hero media)
+- **Hound** `concept_1d68be0a_1`: 29 s, six photoreal phone-footage shots remaking a real TikTok myth-vs-fact winner ("Just let them cry it out"? ...), CTA shot holds a phone showing Hound's real beagle art. Review 83/100, every shot >= 80. `docs/renders/hound-flagship.jpg` / `.mp4`.
+- **a.clinic** `concept_1e6575ad_1`: Slovak 4-step listicle remake: home, sticky notes, laptop and phone with a.clinic's real doctor art, local pharmacy, checklist, the a.clinic page. Review 82/100, every shot >= 80. `docs/renders/aclinic-flagship.jpg` / `.mp4`.
+- How: Claude picks per shot a real brand image or a frame in the winner's look (photoreal for real-footage winners), OpenAI gpt-image-2 renders frames (brand art goes onto screens through an image-edit reference), fal Kling 2.1 animates the shots (screens stay still), ffmpeg composes captions, voiceover and end card, Claude reviews against the blueprint and an AI-tells rubric, weak shots are fixed (keep-best per shot). `pnpm flagship <conceptId> [--repair] [--sheet docs/renders/x.jpg]`.
 
-## Spend per provider
-(filled in at the end of the night from `/api/spend`)
+## Known issues
+- **fal is nearly at its cap** ($7.25 of $8, including a $1.00 conservative estimate for clips submitted by a process I stopped). New final renders fall back to animated stills when the cap is hit. Raise `BUDGET_USD_FAL` (event credits) before rendering more.
+- **Sora**: the OpenAI video endpoint returns 404 for our key (model listed, API not enabled). `soraClip()` is ready if access is enabled.
+- **Remotion** composition is in `remotion/` but timed out loading in headless Chrome here; the same Ad916 spec renders with sharp + ffmpeg (fast, no browser). `RENDERER=remotion` retries it.
+- **Review scores move by up to ~20 points between reviews of an unchanged shot** (model judgment). The repair pass keeps the best version of each shot; the last review is the shipped cut.
+- **Blueprint frames of third-party videos** exist only on this machine (`data/`, never committed). Other machines show placeholders; blueprint JSON is in the repo.
+- **Evreon and Dynova** have demo data only (no live research pass tonight).
+- In the recorded full runs the consultation questions were **skipped by script** (no human), so plans say "assuming ...". In the demo a person answers.
+- `pnpm build` passes; Turbopack prints file-tracing warnings for dynamic asset paths (harmless locally).
+- Starting the dev server resumes interrupted runs only if their heartbeat is stale and they were interrupted less than 6 hours ago (older ones are marked failed, never resumed, so no surprise spend).
+
+## Spend per provider (ledger, 12 Oct 02:35; caps from .env)
+| Provider | Spent | Cap |
+|---|---|---|
+| Anthropic | $7.01 | $150 |
+| OpenAI | $7.33 | $60 |
+| fal | $7.25 | $8 |
+| Apify | $1.38 | $4 |
+| Firecrawl | $0.05 | $3 |
+| YouTube | $0 (free quota) | none |
+| Spiral | credits (~20 ads analysed) | none |
+| Manus | 3 lite tasks (credits) | 500 credits |
+| Higgsfield | $0 (auth check only) | $8 |
