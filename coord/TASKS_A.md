@@ -39,6 +39,11 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Spiral as the primary Meta/TikTok ad source (brand winners, ad transcripts, creative analysis, EU reach), Apify ads library as fallback; Apify for organic TikTok, Instagram, Reddit, reviews; YouTube Shorts search; Manus deep-research task (structured output, poll, keep `task_url`); optional connectors. Normalize to Evidence; outlier score; longevity tiers; OpenAI transcription of top outlier videos when live; batched deconstruction with Claude.
   - Accept: demo run yields >= 30 evidence from >= 5 sources for Hound and a.clinic; unit tests for outlier score and longevity; Manus provider tested against a recorded fixture.
 
+- [ ] **A08b Reverse-engineering engine (HIGH PRIORITY, the heart of the product, see PRODUCT_SPEC 2.3b)**
+  - `reverse_engineer` phase: pick top 3 to 5 winning videos from evidence; download to `data/media/`; `ffmpeg-static` for scene detection (`select='gt(scene,0.3)'`), frame sampling (dense in first 3 s) and audio; OpenAI transcription with timestamps; Claude vision over ordered frames + transcript -> `Blueprint` (structured output). Emit `blueprint` RunEvents.
+  - Demo mode: analyze a synthetic test video you generate locally (Remotion or ffmpeg: colored scenes with text cards and a TTS line), never a downloaded third-party video in tests. Real blueprints come from the A14 live pass.
+  - Accept: unit test detects the scene cuts of the synthetic video within +/- 0.2 s; a blueprint for it validates against the schema with correct shot count and hook text; `GET /api/runs/[id]/blueprints` returns it.
+
 - [ ] **A09 Consult phase + chat**
   - Gap-driven questions (5 to 9, each with `why` + evidence ids), run waits in `waiting_input`, `POST /api/runs/[id]/answers`, `POST /api/runs/[id]/chat` SSE (tokens + new question cards), answers written into the dossier with provenance.
   - Accept: demo run pauses at consult and resumes after answers (test); chat streams tokens (curl -N).
@@ -51,6 +56,14 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Concepts for top channels (3 to 6), shot lists, keyframes (OpenAI image when live; demo: locally generated branded frames via `sharp`/SVG, labelled demo), approve endpoints, render draft/final (fal image-to-video when live; demo: Remotion Ken Burns), OpenAI TTS voiceover, Remotion assembly to MP4, cost estimate before render.
   - Accept: demo render produces a playable 1080x1920 MP4 for one Hound concept (show its metadata); cost estimate returns numbers from the provider price table.
 
+- [ ] **A11b Remake from blueprint + every winning format**
+  - Production builds concepts from blueprints: same structure, timing, shot types and hook mechanism, our brand's product/claims/visuals (`assets/brands/`), `shotMap` to the blueprint; then format variants (`variantOf`) for each channel the plan picked (9:16 video, 4:5 static, carousel, text post).
+  - Accept: for one Hound blueprint, a 9:16 concept whose shots map 1:1 to blueprint purposes, plus at least one static and one text variant; all pass compliance.
+
+- [ ] **A11c Self-review loop (the agent watches our own video)**
+  - After each render: sample frames + transcript of our MP4, Claude vision scores against the blueprint and the rubric in PRODUCT_SPEC 2.3b step 6, `Review` per round; regenerate the weakest shots (keyframe or clip) and re-render, max 2 rounds, within caps; final decision recorded.
+  - Accept: demo run produces at least 2 review rounds for one concept with per-shot scores, and the second round's lowest-scoring shot was regenerated (show the review JSON).
+
 - [ ] **A12 Compliance**
   - Rule packs from `docs/BRANDS.md` into `src/engine/rules/`, checker with structured output, auto-revise up to 2 times, blocks render/export on fail.
   - Accept: tests: an a.clinic caption naming "Ozempic" fails RX1; a Hound script promising "cure separation anxiety in 7 days" fails P1; clean versions pass.
@@ -60,11 +73,11 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Accept: download a zip and list its contents; results return snapshots ordered by time.
 
 - [ ] **A14 Live smoke tests + real dataset**
-  - `pnpm smoke <provider> --live` for anthropic, openai, firecrawl, youtube, apify, manus, fal, spiral, higgsfield, each within cap, recorded. Then one live research pass for Hound and a.clinic with small limits, recorded as their default dataset (`demo: false`, `capturedAt`). Update `docs/APIS.md` with every verified detail.
+  - `pnpm smoke <provider> --live` for anthropic, openai, firecrawl, youtube, apify, manus, fal, spiral, higgsfield, each within cap, recorded. Then one live research pass for Hound and a.clinic with small limits, INCLUDING reverse-engineering 3 real winning videos per brand into blueprints (Spiral/Apify media; media stays in `data/`, only blueprint JSON is committed), recorded as their default dataset (`demo: false`, `capturedAt`). Update `docs/APIS.md` with every verified detail.
   - Accept: `/api/spend` totals under caps; recorded fixtures exist; STATUS_A lists spend per provider.
 
 - [ ] **A15 Engine e2e**
-  - `pnpm test:engine-e2e`: full run through every phase for all four brands in demo mode, asserting schemas, phase order, compliance outcomes and that an MP4 exists for at least one Hound concept.
+  - `pnpm test:engine-e2e`: full run through every phase for all four brands in demo mode, asserting schemas, phase order, compliance outcomes, at least one blueprint per brand, a remake concept with a shotMap, at least one Review, and that an MP4 exists for at least one Hound concept.
   - Accept: command exits 0 (output shown).
 
 - [ ] **A16 Morning report**

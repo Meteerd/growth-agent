@@ -4,11 +4,11 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
 
 ## CORE
 
-- [ ] **B01 Wait for scaffold, then UI foundations**
+- [x] **B01 Wait for scaffold, then UI foundations** (commit fa070a7)
   - Sync every 3 to 5 min until Lane A's A01 (Next.js app at the repo root) is on main; meanwhile update `docs/DESIGN.md` with your motion plan per screen. Then: fonts via `next/font` (Instrument Serif, Inter Tight or Geist, JetBrains Mono or Geist Mono), root layout, Playwright installed and configured (`e2e/`, `playwright.config.ts`, script `e2e` in package.json, additive).
   - Accept: `pnpm build` succeeds; `pnpm e2e` runs one smoke test that loads `/` (output shown).
 
-- [ ] **B02 Design tokens + base layer**
+- [x] **B02 Design tokens + base layer** (commit 0e1fd56)
   - Tokens from `docs/DESIGN.md` as CSS variables + Tailwind theme; grain overlay; hairline grid; glass panel; custom scrollbars, selection, focus rings; Lenis smooth scroll; reduced-motion handling.
   - Accept: `/lab` page renders tokens (colors, type scale, spacing) and the base layers; screenshot committed.
 
@@ -51,6 +51,11 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
 - [ ] **B12 Studio `/runs/[id]/studio`**
   - Concept cards (hook, angle, channel, compliance badge, estimated cost), storyboard strip (9:16 keyframes per shot), approve/regenerate per shot, render draft/final with cost meter, PhoneFrame player for the MP4, compliance findings panel.
   - Accept: e2e: approve shots and trigger a render in mock mode; player shows the video (mock serves a sample MP4 or Lane A's demo render).
+
+- [ ] **B12b Reverse-engineer view (THE demo moment, see PRODUCT_SPEC 2.3b)**
+  - `/runs/[id]/blueprints/[blueprintId]` (and reachable from the evidence wall and the studio): the original winning ad as a horizontal timeline of shots (frame thumbnails, time ranges, purpose color-coded: hook, problem, agitate, solution, demo, proof, offer, CTA), the hook zoomed in (first 3 s with what is seen/said/written and "why it stops the scroll"), transcript under the timeline, "why it wins" with its longevity/outlier numbers; below it, OUR remake aligned shot-for-shot via `shotMap` (our keyframes/clips), with the self-review score per shot and the round history; the format variants (static, carousel, text) as cards.
+  - Handle missing frames gracefully (frames of third-party ads exist only on the machine that analyzed them): show a styled placeholder with the shot description.
+  - Accept: e2e in mock mode opens a blueprint, scrubs the timeline, and shows the aligned remake with scores; screenshots desktop + mobile.
 
 - [ ] **B13 Packs `/runs/[id]/packs`**
   - Ready-to-post cards per platform (cover, caption, hashtags, post time, checklist), download zip, copy caption, mark posted (URL), metrics entry form.

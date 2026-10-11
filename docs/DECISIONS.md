@@ -25,6 +25,8 @@
 | 11 Oct 23:30 | Providers trimmed to six core (Anthropic, OpenAI, Firecrawl, Apify, Manus, fal) + optional Higgsfield/YouTube/Spiral/brand connectors. OpenAI covers TTS and transcription. Dropped: ElevenLabs, Deepgram, Tavus, sync., Langfuse, AWS, Browser Use | Mete |
 | 11 Oct 23:30 | Deploy to Vercel/Netlify later, after the local demo works | Mete |
 
+| 11 Oct 23:30 | Core of the product: agents WATCH winning videos (frames + transcript, Claude vision), produce shot-by-shot blueprints, remake the same ad for our brand in every winning format, then watch their own render and fix weak shots (max 2 rounds) | Mete |
+
 ## Still open
 1. Product name (constant `PRODUCT_NAME`)
 2. Which TikTok / Instagram accounts exist for Hound and a.clinic (for the morning posts)
@@ -35,3 +37,5 @@
 | When | Decision | By |
 |---|---|---|
 | 11 Oct 23:18 | A01: Next.js 16.4 (create-next-app latest), React 19.3, Tailwind 4, Biome 2.5 (2-space), Vitest 5. Removed `cacheComponents`/`partialPrefetching` defaults so API routes stay plainly dynamic (SSE + SQLite). `pnpm check` runs `next typegen` first so route/layout types exist for tsc | Lane A |
+| 11 Oct 23:22 | B01: replaced Lane A's placeholder `e2e` script (it said "until Lane B adds Playwright") with `playwright test`, added `e2e:live`. Playwright runs its own `next dev` on port 3100 with NEXT_PUBLIC_DATA_MODE=mock so it never collides with a dev server on 3000. Fonts: Instrument Serif, Inter Tight, JetBrains Mono via next/font. PRODUCT_NAME = "Nexus" in src/lib/client/product.ts | Lane B |
+| 11 Oct 23:35 | B02: tertiary text token bone-3 raised from 38% to 50% bone so readable text stays >= 4.5:1 on ink (38% measured about 3.1:1); 30% kept as bone-4 for decoration only. Screenshots are viewport-sized (1440x900, 390x844) because fixed back layers do not extend in full-page captures. Next dev indicator disabled (devIndicators: false) so it never shows in screenshots or the demo | Lane B |
