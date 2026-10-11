@@ -20,7 +20,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Glass Panel, Button (primary/ghost/quiet, magnetic primary), URL Input, Answer Chip (single/multi), Badge (status/demo/compliance), Tabs, Tooltip, Dialog, Sheet, Skeleton (glass shimmer), NumberTicker, MonoLabel, PhaseRail, EvidenceCard, CostMeter, StatusDot, ProviderTile, PhoneFrame player, Toasts. All on Radix primitives, fully restyled.
   - Accept: every component in `/lab` with states (default/hover/focus/disabled/loading); Vitest render tests for logic-bearing components.
 
-- [ ] **B05 Data client + mock mode**
+- [x] **B05 Data client + mock mode** (commit e0a53be)
   - Typed client for `/api/...`, SSE wrapper, in-browser mock with scripted full run (~60 s), consult pause/resume, packs and results data. Switch via `NEXT_PUBLIC_DATA_MODE` (`mock` | `live`).
   - Accept: Vitest tests for the SSE wrapper (reconnect + Last-Event-ID) and mock run script; a dev page logs the full mock event stream.
 
