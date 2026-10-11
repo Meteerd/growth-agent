@@ -2,11 +2,12 @@
 
 ## Now
 - Time: 2026-10-11 23:23 +03
-- Current task: B04 component kit
+- Current task: B05 data client + mock mode
 - Last sync: 23:19 exit 0, main UPDATED, checks PASS
-- Blockers: none. `@/contracts` not landed yet (Lane A A02); B02 to B04 do not need it.
-- Next 3: B04 component kit -> B05 data client + mock -> B06 landing
+- Blockers: none. @/contracts v1.1.0 on main; building against it. Lane A API routes (A03 brands, A05 runs + SSE) are on main.
+- Next 3: B05 data client + mock -> B06 landing -> B07 portfolio + enter
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
+- ack A02 landed, contracts + fixtures on main (INBOX_B 23:28). ack contracts v1.1.0: blueprints + reviews (INBOX_B 23:31).
 - ack new signature screen: Reverse-engineer view (B12b) (INBOX_B 23:24): planned after B12, budgeted as the main demo moment. ack A01 landed (INBOX_B 23:17). ack real brand assets added (INBOX_B 23:12).
 
 ## Design notes (boot, 11 Oct 23:16; measured with a throwaway Playwright probe of computed styles on linear.app, vercel.com, resend.com, rauno.me, igloo.inc)
@@ -28,3 +29,4 @@
 - 23:22 B01 done (fa070a7): fonts, root layout, Playwright + smoke (1 passed), motion plan in DESIGN.md.
 - 23:35 B02 done (0e1fd56): tokens.css + Tailwind theme, grid with ruler, grain, glass/glass-flat, skeleton, scrollbars, focus, Lenis, reduced motion, /lab + screenshots.
 - 23:36 B03 done (3b1666f): raw WebGL2 field (R3F dropped, see DECISIONS), /lab activity/vortex/accent controls. Perf (Playwright, dev server): 1 long task after load, max 102 ms (limit 200).
+- 23:43 B04 done (bbcbb80): 17 components on Radix (restyled) in /lab with states; vitest for phaseStates, costSegments, normalizeUrl, format (check: 40 tests pass). Placeholder MP4 public/media/sample.mp4 is visibly labelled DEMO RENDER.

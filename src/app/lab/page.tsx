@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { FieldControls } from "./FieldControls";
+import { Kit } from "./Kit";
 
 export const metadata: Metadata = { title: "Lab" };
 
@@ -152,7 +153,11 @@ export default function LabPage() {
         </div>
       </Section>
 
-      <Section index="05" title="Motion">
+      <Section index="05" title="Components">
+        <Kit />
+      </Section>
+
+      <Section index="06" title="Motion">
         <div className="grid gap-3 md:grid-cols-4">
           {[
             ["micro", "140 ms", "hover, press, focus"],

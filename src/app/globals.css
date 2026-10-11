@@ -227,3 +227,114 @@
 .range:active::-webkit-slider-thumb {
   transform: scale(1.15);
 }
+
+/* ---------- component motion (Radix data-state) ---------- */
+@keyframes dot {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.97);
+  }
+}
+@keyframes dialog-out {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -49%) scale(0.98);
+  }
+}
+@keyframes sheet-in {
+  from {
+    transform: translateX(calc(100% + 16px));
+  }
+}
+@keyframes sheet-out {
+  to {
+    transform: translateX(calc(100% + 16px));
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.98);
+  }
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+.overlay[data-state="open"] {
+  animation: fade-in 240ms var(--ease-out);
+}
+.overlay[data-state="closed"] {
+  animation: fade-out 180ms var(--ease-std);
+}
+.dialog[data-state="open"] {
+  animation: dialog-in 380ms var(--ease-out);
+}
+.dialog[data-state="closed"] {
+  animation: dialog-out 180ms var(--ease-std);
+}
+.sheet[data-state="open"] {
+  animation: sheet-in var(--dur-drawer) var(--ease-drawer);
+}
+.sheet[data-state="closed"] {
+  animation: sheet-out 260ms var(--ease-drawer);
+}
+.tooltip[data-state="delayed-open"],
+.tooltip[data-state="instant-open"] {
+  animation: pop-in 160ms var(--ease-out);
+}
+.toast[data-state="open"] {
+  animation: toast-in 380ms var(--ease-out);
+}
+.toast[data-state="closed"] {
+  animation: fade-out 200ms var(--ease-std);
+}
+.toast[data-swipe="move"] {
+  transform: translateX(var(--radix-toast-swipe-move-x));
+}
+
+/* phase rail: a comet of light travels from the top to the active phase */
+.rail-light {
+  background: linear-gradient(180deg, transparent, rgb(212 255 58 / 0.85) 75%, #fbffe8);
+  box-shadow: 0 0 14px rgb(212 255 58 / 0.55);
+  animation: rail-light 2.6s var(--ease-std) infinite;
+}
+@keyframes rail-light {
+  0% {
+    top: -40px;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: calc(8px + (100% - 16px) * var(--p) - 50px);
+    opacity: 0;
+  }
+}
