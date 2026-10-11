@@ -1,5 +1,5 @@
 {
- "recordedAt": "2026-10-11T21:51:59.901Z",
+ "recordedAt": "2026-10-11T22:44:15.042Z",
  "brand": {
   "id": "brand_aclinic",
   "slug": "aclinic",
@@ -15,10 +15,10 @@
   "startedAt": "2026-10-11T21:37:33.415Z",
   "finishedAt": "2026-10-11T21:51:59.892Z",
   "demo": false,
-  "manusTaskUrl": "https://manus.im/app/V88LCYMnD2cFpADzWjjoMU",
-  "createdAt": "2026-10-11T21:37:33.413Z",
   "dataset": "live_recorded",
-  "capturedAt": "2026-10-11T21:37:33.415Z"
+  "capturedAt": "2026-10-11T21:37:33.415Z",
+  "manusTaskUrl": "https://manus.im/app/V88LCYMnD2cFpADzWjjoMU",
+  "createdAt": "2026-10-11T21:37:33.413Z"
  },
  "evidence": [
   {
@@ -610,16 +610,50 @@
    "runId": "run_mv4cgiqt5f95119dba",
    "source": "manus_research",
    "kind": "research",
-   "title": "Manus deep research (running)",
+   "title": "Manus: GTM landscape for a.clinic",
    "metrics": {},
    "tags": [
     "research",
-    "manus"
+    "landscape"
    ],
-   "capturedAt": "2026-10-11T21:51:15.573Z",
+   "capturedAt": "2026-10-11T22:44:15.040Z",
    "demo": false,
    "url": "https://manus.im/app/V88LCYMnD2cFpADzWjjoMU",
-   "text": "Still running; open the task link for live progress."
+   "text": "This report maps the go-to-market landscape for a.clinic in Slovakia and Czechia, detailing buyer-discovery channels with evidence, a set of eight direct competitors and observable marketing patterns, relevant communities with self-promotion rules (where publicly available), and a structured set of source URLs. Key gaps include country-specific search volumes, concrete conversion metrics by channel, and verifiable long-running or viral marketing formats for weight-care ads.\nSearch/SEO discovery (Google Trends): Direct evidence of local interest in weight-care topics; does not prove purchase intent but signals touchpoints for initial discovery. (Google Trends CZ: hubnuti, obezita, Ozempic; SK: chudnutie, obezita, Ozempic. These are normalized relative indices, not volumes or intent.)\nVideo/social discovery (YouTube, Facebook, Instagram, TikTok): Indicates broad potential for discovery through video/social content, not guaranteed conversion to weight-care services. (DataReportal 2024 shows YouTube reach in CZ 8.05M and SK 4.16M; Instagram reach CZ 3.60M and SK 1.60M; TikTok adult reach CZ 2.09M and SK 1.06M.)\nOnline health-information seeking (EU-level): Shows online health information as a discovery behavior; not a country-specific funnel into doctor-led weight care. (Eurostat notes 55% of EU residents aged 16–74 sought health information online in 2021; country-level Czechia/SK values not specified in the accessible dataset.)\nPhysician/pharmacy-mediated discovery: Highlights pathways through doctors and pharmacies; direct online weight-care purchase evidence remains limited. (Slovakia pharmacy survey (216 Hungarian-speaking consumers) shows staff information affects OTC purchases; Czechia has physician-led online/offline clinics (e.g., Asklepion) with online consultations.)\nMedia/social discussion and awareness: Shows public discourse that can influence demand and trust in weight-care providers; not direct conversion data. (CZ media coverage of Ozempic/Wegovy debates; SK coverage of Wegovy access issues and Ozempic off-label use; public discussions shape awareness and perceived access barriers.)"
+  },
+  {
+   "id": "ev_aclinic_119dba_manus_research_mv4euaf42",
+   "brandId": "brand_aclinic",
+   "runId": "run_mv4cgiqt5f95119dba",
+   "source": "manus_research",
+   "kind": "research",
+   "title": "Manus: 8 competitors and what works for them",
+   "metrics": {},
+   "tags": [
+    "research",
+    "competitors"
+   ],
+   "capturedAt": "2026-10-11T22:44:15.040Z",
+   "demo": false,
+   "url": "https://manus.im/app/V88LCYMnD2cFpADzWjjoMU",
+   "text": "GoOn Health (https://www.goon.health/en): Online GLP-1 weight-care with Czech-doctor video consultations, Czech e-prescriptions, and follow-up; observable positioning in Czechia.\nHi-Doctor (https://hi-doctor.ai/weight-loss): Online weight-management with EU-doctor review, questionnaire, pharmacy fulfilment and monthly follow-up; public ad evidence shows all-country weight ads (not CZ/SK-targeted longevity ranking).\nAsklepion — Czechia (https://www.asklepion.cz/en/gastroenterology/lose-weight-with-our-doctor): Doctor-supervised pharmacotherapy with online entry via video-consultation; pricing and packages marketed online.\nMediambulancia (https://mediambulancia.sk/sluzby/liecba-obezity): Slovak obesity program with GLP-1 meds, labs, InBody, monthly checks; ad archive shows general recruitment, not necessarily weight-care-specific campaigns.\nKlinika ENVY (https://www.envyclinic.sk/en/oddelenia-a-zakroky/liecba-regulacie-hmotnosti): Physician-led weight management with weekly in-clinic administration and monitoring; competitions and explainer videos observed.\nDermaPoint Obesity Clinic (https://dermapoint.sk/riesenie/inovativna-liecba-obezity/): Slovak obesity clinic offering GLP-1 medicines with entry exam and physician-set treatment; observable education content.\nLE CLINIC (https://www.leclinic.cz/sluzby/farmakologicke-hubnuti): Doctor-led prescription injections with online initial consultation; social channels positioning.\nMedic Kral (https://www.medickral.cz/en/our-services/obesity-treatment/): Specialist-supervised pharmacological obesity treatment; emphasis on medical supervision and lifestyle support."
+  },
+  {
+   "id": "ev_aclinic_119dba_manus_research_mv4euaf43",
+   "brandId": "brand_aclinic",
+   "runId": "run_mv4cgiqt5f95119dba",
+   "source": "manus_research",
+   "kind": "research",
+   "title": "Manus: communities where the problem is discussed",
+   "metrics": {},
+   "tags": [
+    "research",
+    "communities"
+   ],
+   "capturedAt": "2026-10-11T22:44:15.040Z",
+   "demo": false,
+   "url": "https://manus.im/app/V88LCYMnD2cFpADzWjjoMU",
+   "text": "eMimino.cz — Czechia (https://www.emimino.cz/diskuse/mounjaro-injekce-hubnuti-540935/): Discussions exist; terms prohibit commercial-subtext posts, advertising/spam, personal sales/offers; commercial use requires provider permission.\nr/czech — Czechia (https://www.reddit.com/r/czech/about/rules/): Public threads exist; explicit self-promotion rules text not publicly readable in the retrieved page.\nr/Slovakia — Slovakia (https://www.reddit.com/r/Slovakia/comments/1iklykl/ozempic_v_bratislave/): Public threads exist; explicit self-promotion rules text not publicly readable in the retrieved page.\nModrý koník — Slovakia (https://www.modrykonik.sk/pravidla/): Public threads exist; readable self-promotion policy not found in the retrieved pages; rules unknown.\nSchudni s DaVe — Slovakia (https://schudnisdave.sk/diskusne-forum/kategoria/lieky-na-chudnutie-Ntzz): Public category; explicit self-promotion rules not publicly readable; treat as unknown.\nPublic Slovak GLP-1 Facebook group (https://www.facebook.com/groups/3075186179535612/): Public group description mentions GLP-1 discussions; no public self-promotion policy visible.\nExpats in Slovakia — English (https://www.facebook.com/groups/expatsinslovakiagroup/): Public expat groups state strict no advertising; ads may be deleted and posters removed; posts in English."
   },
   {
    "id": "ev_aclinic_119dba_meta_ad_library_mv4chu6f13",
