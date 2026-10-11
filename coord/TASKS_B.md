@@ -32,7 +32,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Living brand cards (vertical, countries, connections live/demo, last run, packs ready/posted, total views with ticker). New brand: URL in, live intake events, lands on brand home.
   - Accept: e2e: create a brand in mock mode and see it in the portfolio.
 
-- [ ] **B08 Brand home + Connect**
+- [x] **B08 Brand home + Connect** (commit ceb08ab)
   - Dossier view with inline editing (PATCH), sources list, runs list, start run. Connect page: provider tiles with Live/Demo/Missing, per-brand config fields (non-secret ids only), honest copy about what each connection adds.
   - Accept: e2e: edit a dossier field and see it persist (mock); connect page shows all providers.
 
