@@ -45,4 +45,20 @@ describe("AS3 resume after restart", () => {
     expect((await getRun(db, fresh.id))?.status).toBe("running");
     void runPipeline;
   });
+
+  it("does not resume runs abandoned more than 6 hours ago (marks them failed)", async () => {
+    const old = await createRun(db, "brand_dynova", "research_only");
+    await setStatus(db, old.id, "running");
+    await appendEvent(db, {
+      runId: old.id,
+      phase: "intake",
+      type: "log",
+      title: "x",
+      ts: new Date(Date.now() - 7 * 3600_000).toISOString(),
+    });
+    (globalThis as { __nexusResumed?: boolean }).__nexusResumed = false;
+    // createdAt is now, but the last event is 7 h old
+    expect(await resumeInterruptedRuns(60_000)).toEqual([]);
+    expect((await getRun(db, old.id))?.status).toBe("failed");
+  });
 });

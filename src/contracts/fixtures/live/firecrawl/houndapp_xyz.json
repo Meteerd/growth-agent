@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-11T21:32:32.269Z",
+  "recordedAt": "2026-10-11T22:05:32.945Z",
   "page": {
     "url": "https://houndapp.xyz",
     "markdown": "[Hound App](https://houndapp.xyz/)\n\n[Log in](https://houndapp.xyz/sign-in) [Get started](https://houndapp.xyz/f/s1-age)\n\n# A daily behavior plan built for your dog\n\nFor separation anxiety, barking, destruction, pulling, reactivity and extra weight. About ten minutes a day, in the app.\n\n\n\n## How old is your dog?\n\nThis sets the pace of the whole plan.\n\n![](https://houndapp.xyz/art/age-puppy.webp)PuppyUnder 1 year![](https://houndapp.xyz/art/age-adolescent.webp)Adolescent1 to 2 years![](https://houndapp.xyz/art/age-adult.webp)Adult3 to 7 years![](https://houndapp.xyz/art/age-senior.webp)Senior8+ years\n\nBy choosing an answer and continuing you agree to our [Terms of Service](https://houndapp.xyz/terms) \\| [Privacy Policy](https://houndapp.xyz/privacy). Please review before continuing.\n\n[Subscription terms](https://houndapp.xyz/subscription-terms) [Money-back policy](https://houndapp.xyz/money-back-policy)\n\n## What we help with\n\n- [![](https://houndapp.xyz/art/problem-barking.webp)Barking](https://houndapp.xyz/f/s1-age)\n- [![](https://houndapp.xyz/art/problem-separation.webp)Separation anxiety](https://houndapp.xyz/f/s1-age)\n- [![](https://houndapp.xyz/art/problem-destruction.webp)Destruction](https://houndapp.xyz/f/s1-age)\n- [![](https://houndapp.xyz/art/problem-pulling.webp)Pulling on lead](https://houndapp.xyz/f/s1-age)\n- [![](https://houndapp.xyz/art/problem-reactivity.webp)Reactive to dogs / people](https://houndapp.xyz/f/s1-age)\n- [![](https://houndapp.xyz/art/problem-weight.webp)Extra weightA feeding plan worked out for your dog, a treat budget, gentle walks and help with the begging.](https://houndapp.xyz/weight)\n\n## How it works\n\n1. 1\n\n\n### Tell us about your dog\n\n\n\nTheir age, what is going wrong, how long it has been happening and how much time you have.\n\n2. 2\n\n\n### Get a plan for them\n\n\n\nA day-by-day plan of 12 to 52 weeks, built on established desensitization and counter-conditioning protocols.\n\n3. 3\n\n\n### Follow it in the app\n\n\n\nOne short exercise a day, with your progress and streak tracked as you go.\n\n\n## Start your dog's plan today\n\nAnswer a few questions and get a plan built around your dog, one short exercise at a time.\n\n[Get started](https://houndapp.xyz/f/s1-age)\n\nHound App is an educational training product. It is not veterinary advice. If your dog is unwell, in pain, has changed suddenly or has injured someone, see a vet or a qualified behaviorist.\n\n[Get started](https://houndapp.xyz/f/s1-age) [Terms of service](https://houndapp.xyz/terms) [Privacy policy](https://houndapp.xyz/privacy) [Subscription terms](https://houndapp.xyz/subscription-terms) [Pricing](https://houndapp.xyz/subscription-terms#prices) [Money-back policy](https://houndapp.xyz/money-back-policy) [Contact](https://houndapp.xyz/contact)\n\nWe will process your personal data in accordance with our [privacy policy](https://houndapp.xyz/privacy).\n\n© 2026DUNA YAZILIM DANIŞMANLIK LİMİTED ŞİRKETİ, Etiler Mah., İncesu Sk. No 14/5, 34337 Beşiktaş, İstanbul, Türkiye. [info@houndapp.xyz](mailto:info@houndapp.xyz)\n\nThis website uses cookies. We use Meta's cookies to measure our ads, only if you allow them. [Cookie policy](https://houndapp.xyz/privacy#cookies)\n\nDenyAllow all",
@@ -17,16 +17,16 @@
       },
       "fonts": [
         {
+          "family": "Quicksand",
+          "role": "body"
+        },
+        {
           "family": "Roboto",
           "role": "body"
         },
         {
-          "family": "Quicksand",
-          "role": "heading"
-        },
-        {
           "family": "SF Pro Rounded",
-          "role": "display"
+          "role": "heading"
         }
       ],
       "colorScheme": "light"

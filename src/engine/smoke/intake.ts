@@ -3,7 +3,7 @@ import { intake } from "../agent/phases/intake";
 import type { Db } from "../db/client";
 import { scrape } from "../providers/firecrawl";
 import { getBrand, listEvents, listSpend } from "../repo";
-import { createRun } from "../runs";
+import { createRun, setStatus } from "../runs";
 import { ensureSeeded } from "../seed";
 import { saveFixture } from "./record";
 
@@ -31,6 +31,7 @@ export async function smokeIntake(db: Db, slug = "hound") {
   const spend = await listSpend(db, run.id);
   const usd = spend.reduce((a, s) => a + s.usd, 0);
   const live = spend.some((s) => s.provider === "anthropic");
+  await setStatus(db, run.id, "done", "Smoke test finished").catch(() => undefined);
   const file = saveFixture("intake", slug, { runId: run.id, dossier: after?.dossier, events, spend });
   return {
     mode: live ? ("live" as const) : ("demo" as const),
