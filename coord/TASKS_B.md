@@ -85,8 +85,8 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
 
 ## STRETCH (after CORE, in this order)
 - [x] **BS1** Presentation mode (commit 851c0e9) (`?present=1`): hides dev UI, enlarges type, replays a recorded live run at chosen speed for the pitch.
-- [ ] **BS2** Command palette (Cmd+K): jump to brand/run/screen.
-- [ ] **BS3** Page transitions (shared-element between portfolio card and brand home; vortex on run start).
+- [x] **BS2** Command palette (commit 39619ca) (Cmd+K): jump to brand/run/screen.
+- [ ] **BS3** Page transitions (skipped on purpose: DESIGN v2 allows functional motion only and drops the vortex; see DECISIONS 12 Oct 02:15) (shared-element between portfolio card and brand home; vortex on run start).
 - [ ] **BS4** Live parity: run the full journey against the real API routes and fix every mismatch (send contract requests to Lane A).
 - [x] **BS5** Manus task card (commit 0acf539): when evidence has `source: manus_research`, show a card linking to the Manus task with its status.
 
