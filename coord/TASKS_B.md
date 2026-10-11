@@ -57,15 +57,15 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Handle missing frames gracefully (frames of third-party ads exist only on the machine that analyzed them): show a styled placeholder with the shot description.
   - Accept: e2e in mock mode opens a blueprint, scrubs the timeline, and shows the aligned remake with scores; screenshots desktop + mobile.
 
-- [ ] **B13 Packs `/runs/[id]/packs`**
+- [x] **B13 Packs `/runs/[id]/packs`** (commit c92a75c)
   - Ready-to-post cards per platform (cover, caption, hashtags, post time, checklist), download zip, copy caption, mark posted (URL), metrics entry form.
   - Accept: e2e: mark a pack posted and enter metrics.
 
-- [ ] **B14 Results `/brands/[slug]/results`**
+- [x] **B14 Results `/brands/[slug]/results`** (commit 1819f15)
   - Posted packs with "posted X h ago" and live tickers, small-multiples chart per post (views over time), learnings list, honest empty state "Waiting for first metrics".
   - Accept: e2e: after metrics entry the chart and counters update.
 
-- [ ] **B15 Settings `/settings`**
+- [x] **B15 Settings `/settings`** (commit c5c11d8)
   - Provider status (live/demo/key present/verified), budgets vs spent bars, spend ledger table, `PROVIDER_MODE` shown read-only.
   - Accept: screenshot.
 
