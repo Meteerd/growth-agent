@@ -1,15 +1,13 @@
 # STATUS lane B
 
 ## Now
-- Time: 2026-10-11 23:17 +03
-- Current task: boot complete (setup + verification only); overnight goal not started yet
-- Last sync: 23:14 exit 0, lane-b pushed, main UPDATED, checks skipped (no package.json yet)
-- Blockers: none. Waiting for Lane A's A01 scaffold (package.json + src/app) before any app code; design prep meanwhile.
-- Next 3: B01 (sync every 3 to 5 min until scaffold lands, motion plan in docs/DESIGN.md, fonts, root layout, Playwright config) -> B02 tokens + base layer + /lab -> B03 field shader
-- Spend so far (USD per provider): 0 (key checks only)
-- Keys (check-keys 23:13): anthropic, openai, apify, manus, firecrawl, fal, youtube, spiral OK; higgsfield present; revenuecat, posthog, stripe, paddle, meta MISSING (demo). Lane B runs mock mode first, so none of these block UI work.
-- Toolchain: node 22.17.0, pnpm 11.21.0, git 2.54.0, gh (mrsrmn), claude 2.1.294, Playwright Chromium installed.
-- ack real brand assets added (INBOX_B 23:12): will copy `assets/brands/*` into `public/brands/` for cards, dossier header and portfolio once the scaffold exists.
+- Time: 2026-10-11 23:23 +03
+- Current task: B02 tokens + base layer + /lab
+- Last sync: 23:19 exit 0, main UPDATED, checks PASS
+- Blockers: none. `@/contracts` not landed yet (Lane A A02); B02 to B04 do not need it.
+- Next 3: B02 tokens + base layer -> B03 field shader -> B04 component kit
+- Spend so far (USD per provider): 0 (Lane B makes no provider calls)
+- ack A01 landed (INBOX_B 23:17). ack real brand assets added (INBOX_B 23:12).
 
 ## Design notes (boot, 11 Oct 23:16; measured with a throwaway Playwright probe of computed styles on linear.app, vercel.com, resend.com, rauno.me, igloo.inc)
 1. Dark is never pure black: Linear's body is `rgb(8,9,10)`, cool and close to our `#06070A`. Resend uses true `#000` but lifts it with a soft diagonal light beam, so the depth comes from light, not from a grey surface.
@@ -27,3 +25,4 @@
 
 ## Log (one line per finished task, newest last)
 - 23:17 boot: env verified, toolchain ready, lane-b created, first sync exit 0, design notes written.
+- 23:22 B01 done (fa070a7): fonts, root layout, Playwright + smoke (1 passed), motion plan in DESIGN.md.

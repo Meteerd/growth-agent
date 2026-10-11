@@ -4,7 +4,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
 
 ## CORE
 
-- [ ] **B01 Wait for scaffold, then UI foundations**
+- [x] **B01 Wait for scaffold, then UI foundations** (commit fa070a7)
   - Sync every 3 to 5 min until Lane A's A01 (Next.js app at the repo root) is on main; meanwhile update `docs/DESIGN.md` with your motion plan per screen. Then: fonts via `next/font` (Instrument Serif, Inter Tight or Geist, JetBrains Mono or Geist Mono), root layout, Playwright installed and configured (`e2e/`, `playwright.config.ts`, script `e2e` in package.json, additive).
   - Accept: `pnpm build` succeeds; `pnpm e2e` runs one smoke test that loads `/` (output shown).
 

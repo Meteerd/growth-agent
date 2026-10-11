@@ -35,3 +35,4 @@
 | When | Decision | By |
 |---|---|---|
 | 11 Oct 23:18 | A01: Next.js 16.4 (create-next-app latest), React 19.3, Tailwind 4, Biome 2.5 (2-space), Vitest 5. Removed `cacheComponents`/`partialPrefetching` defaults so API routes stay plainly dynamic (SSE + SQLite). `pnpm check` runs `next typegen` first so route/layout types exist for tsc | Lane A |
+| 11 Oct 23:22 | B01: replaced Lane A's placeholder `e2e` script (it said "until Lane B adds Playwright") with `playwright test`, added `e2e:live`. Playwright runs its own `next dev` on port 3100 with NEXT_PUBLIC_DATA_MODE=mock so it never collides with a dev server on 3000. Fonts: Instrument Serif, Inter Tight, JetBrains Mono via next/font. PRODUCT_NAME = "Nexus" in src/lib/client/product.ts | Lane B |
