@@ -23,7 +23,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Provider interface, registry, live/demo resolution (key present AND id in `LIVE_PROVIDERS`; smoke `--live` override), `SpendEntry` writes, `BudgetExceededError`, `GET /api/spend`.
   - Accept: unit tests: demo returns fixture; live call blocked past cap; ledger sums per provider.
 
-- [ ] **A05 Runs, job runner, SSE**
+- [x] **A05 Runs, job runner, SSE** (commit cb7e886)
   - In-process job runner (survives within the dev server process; resumable from DB on restart is stretch), Run state machine (`queued` -> `running` -> `waiting_input` -> `running` -> `done`/`failed`/`cancelled`), RunEvent persistence with monotonic ids, `GET /api/runs/[id]/events` SSE with `Last-Event-ID` resume and heartbeat, cancel.
   - Accept: `curl -N localhost:3000/api/runs/<id>/events` streams a demo run; reconnect with `Last-Event-ID` resumes without duplicates (test).
 
