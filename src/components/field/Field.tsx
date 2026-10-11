@@ -11,6 +11,7 @@ export function Field() {
   const [mount, setMount] = useState(false);
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (new URLSearchParams(window.location.search).get("field") === "0") return;
     if (!document.createElement("canvas").getContext("webgl2")) return;
     const idle = window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 300));
     const id = idle(() => setMount(true), { timeout: 1500 });

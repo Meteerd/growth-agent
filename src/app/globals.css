@@ -338,3 +338,29 @@
     opacity: 0;
   }
 }
+
+/* entrance: rise, and headline lines revealed through a mask */
+.rise {
+  animation: rise 0.8s var(--ease-out) both;
+}
+.mask-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+.mask-line > span {
+  display: inline-block;
+  animation: mask-up 0.9s var(--ease-out) both;
+}
+@keyframes mask-up {
+  from {
+    transform: translateY(105%);
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}

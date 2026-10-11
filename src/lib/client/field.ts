@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { create } from "zustand";
 
 // UI state for the background field: pages set a target, the shader eases toward it.
@@ -28,3 +29,10 @@ export const ACCENT_RGB: Record<FieldAccent, [number, number, number]> = {
 
 // Exposed for Playwright and presentation mode (BS1) to drive the field without UI.
 if (typeof window !== "undefined") (window as unknown as { __nexusField: typeof useField }).__nexusField = useField;
+
+/** Pages declare how alive the field should be; it eases there. Resets vortex so arrivals settle the swirl. */
+export function useFieldActivity(activity: number, accent: FieldAccent = "signal") {
+  useEffect(() => {
+    useField.getState().set({ activity, accent, vortex: 0 });
+  }, [activity, accent]);
+}

@@ -2,10 +2,10 @@
 
 ## Now
 - Time: 2026-10-11 23:23 +03
-- Current task: B06 landing
+- Current task: B07 portfolio + enter
 - Last sync: 23:19 exit 0, main UPDATED, checks PASS
 - Blockers: none. @/contracts v1.1.0 on main; building against it. Lane A API routes (A03 brands, A05 runs + SSE) are on main.
-- Next 3: B06 landing -> B07 portfolio + enter -> B08 brand home + connect
+- Next 3: B07 portfolio + enter -> B08 brand home + connect -> B09 run cockpit
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - ack A03 landed: real /api/brands (INBOX_B 23:37). ack A05 landed: runs + SSE live (INBOX_B 23:40).
 - ack A02 landed, contracts + fixtures on main (INBOX_B 23:28). ack contracts v1.1.0: blueprints + reviews (INBOX_B 23:31).
@@ -32,3 +32,4 @@
 - 23:36 B03 done (3b1666f): raw WebGL2 field (R3F dropped, see DECISIONS), /lab activity/vortex/accent controls. Perf (Playwright, dev server): 1 long task after load, max 102 ms (limit 200).
 - 23:43 B04 done (bbcbb80): 17 components on Radix (restyled) in /lab with states; vitest for phaseStates, costSegments, normalizeUrl, format (check: 40 tests pass). Placeholder MP4 public/media/sample.mp4 is visibly labelled DEMO RENDER.
 - 23:51 B05 done (e0a53be): DataClient live + mock, SSE wrapper, TanStack hooks, /lab/stream. vitest: sse reconnect/Last-Event-ID/dedupe/end, parser, mock pacing 60 s, pause/resume, brand create, post + metrics (8 tests). e2e mock-stream passed.
+- 23:58 B06 done (e2e2310): landing + app header. Lighthouse (prod build, perf only): 89 (FCP 0.8 s, LCP 3.8 s, TBT 10 ms, CLS 0). Screenshots e2e/screens/landing-*.png.
