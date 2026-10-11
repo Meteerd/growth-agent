@@ -23,6 +23,12 @@ test.describe("brand home and connect", () => {
       await expect(page.getByRole("heading", { name: info.label, exact: true })).toBeVisible();
   });
 
+  test("unknown route shows the designed 404", async ({ page }) => {
+    await page.goto("/no/such/page");
+    await expect(page.getByText("Nothing is plotted here.")).toBeVisible();
+    await expect(page.getByRole("link", { name: "Open the portfolio" })).toBeVisible();
+  });
+
   test("unknown brand shows a designed not-found state", async ({ page }) => {
     await page.goto("/brands/no-such-brand");
     await expect(page.getByText("This brand is not in the portfolio")).toBeVisible();

@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Page, PageHead } from "@/components/shell/PageHead";
-import { DemoBadge } from "@/components/ui/Badge";
+import { PageHead } from "@/components/shell/PageHead";
 import { Button } from "@/components/ui/Button";
 import { NumberTicker } from "@/components/ui/NumberTicker";
 import { Skeleton } from "@/components/ui/Skeleton";
@@ -37,19 +36,8 @@ export function PacksScreen({ runId }: { runId: string }) {
   const posted = list.filter((p) => p.status === "posted").length;
 
   return (
-    <Page>
-      <PageHead
-        eyebrow={`Packs / ${runId}`}
-        title="Ready to post."
-        actions={
-          <>
-            {demo && <DemoBadge />}
-            <Button asChild>
-              <Link href={`/runs/${runId}`}>Run cockpit</Link>
-            </Button>
-          </>
-        }
-      >
+    <div>
+      <PageHead className="pt-2 md:pt-4" eyebrow="Packs / ready to post" title="Ready to post.">
         Each pack holds the file, the caption, the hashtags and a checklist. You post it; {PRODUCT_NAME} never posts.
       </PageHead>
 
@@ -142,7 +130,7 @@ export function PacksScreen({ runId }: { runId: string }) {
           })}
         </div>
       )}
-    </Page>
+    </div>
   );
 }
 

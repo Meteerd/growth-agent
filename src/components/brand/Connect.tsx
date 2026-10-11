@@ -6,10 +6,10 @@ import { ProviderTile } from "@/components/ui/ProviderTile";
 import { SkeletonCard } from "@/components/ui/Skeleton";
 import { ErrorState } from "@/components/ui/States";
 import { toast } from "@/components/ui/Toast";
-import { type Connection, PROVIDER_IDS, PROVIDER_INFO, type ProviderId } from "@/contracts";
+import { type Connection, PROVIDER_IDS, PROVIDER_INFO, type ProviderId, type ProviderStatus } from "@/contracts";
 import { getClient } from "@/lib/client/api";
 import { useFieldActivity } from "@/lib/client/field";
-import { qk, useAction, useBrand, useConnections } from "@/lib/client/queries";
+import { qk, useAction, useBrand, useConnections, useProviders } from "@/lib/client/queries";
 
 // What each connection adds, in plain words, and the non-secret id the engine needs per brand.
 const ADDS: Partial<Record<ProviderId, { adds: string; field?: { key: string; label: string; placeholder: string } }>> =
@@ -60,6 +60,8 @@ const ROLE_TITLE = { engine: "Engines", tool: "Tools", connector: "Your business
 export function Connect({ slug }: { slug: string }) {
   const { data: brand } = useBrand(slug);
   const { data: conns, isLoading, error, refetch } = useConnections(brand?.id);
+  const { data: providers } = useProviders();
+  const global = new Map((providers ?? []).map((p) => [p.provider, p]));
   useFieldActivity(0.2);
   if (error) return <ErrorState title="Could not load connections" error={error} onRetry={() => refetch()} />;
   const byProvider = new Map((conns ?? []).map((c) => [c.provider, c]));
@@ -80,7 +82,12 @@ export function Connect({ slug }: { slug: string }) {
               isLoading || !brand ? (
                 <SkeletonCard key={p} lines={2} />
               ) : (
-                <Tile key={p} provider={p} brandId={brand.id} conn={byProvider.get(p)} />
+                <Tile
+                  key={p}
+                  provider={p}
+                  brandId={brand.id}
+                  conn={byProvider.get(p) ?? globalConn(p, global.get(p))}
+                />
               ),
             )}
           </div>
@@ -88,6 +95,24 @@ export function Connect({ slug }: { slug: string }) {
       ))}
     </div>
   );
+}
+
+/** Engines and tools are global (keys in the engine's .env): their tile mirrors /api/providers, never "Missing". */
+function globalConn(p: ProviderId, st?: ProviderStatus): Connection | undefined {
+  if (!st || PROVIDER_INFO[p].role === "connector") return undefined;
+  return {
+    id: `global_${p}`,
+    brandId: "",
+    provider: p,
+    status: st.mode === "live" ? "live" : "demo",
+    config: {},
+    summary:
+      st.mode === "live"
+        ? "Live for every brand"
+        : st.keyPresent
+          ? "Key present, runs on demo data"
+          : "No key: labelled demo data",
+  };
 }
 
 function Tile({ provider, brandId, conn }: { provider: ProviderId; brandId: string; conn?: Connection }) {
