@@ -90,7 +90,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - `pnpm test:engine-e2e`: full run through every phase for all four brands in demo mode, asserting schemas, phase order, compliance outcomes, at least one blueprint per brand, a remake concept with a shotMap, at least one Review, and that an MP4 exists for at least one Hound concept.
   - Accept: command exits 0 (output shown).
 
-- [ ] **A16 Morning report**
+- [x] **A16 Morning report** (commit 35622d0; kept current until 07:00)
   - `coord/MORNING_A.md` + README "Run it": exact commands from a fresh clone (`pnpm i`, `cp .env.example .env`, `pnpm db:migrate`, `pnpm seed`, `pnpm dev`), live vs demo, spend, known issues, and the 2-minute demo path.
 
 ## STRETCH (after CORE, in this order)
