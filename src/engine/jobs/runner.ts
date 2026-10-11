@@ -1,0 +1,86 @@
+import type { Run } from "@/contracts";
+import { getDb } from "../db/client";
+import { appendEvent, getRun, listRunsByStatus, updateRun } from "../repo";
+
+/**
+ * In-process job runner. One async task per run inside the Node process (fine on localhost).
+ * The pipeline itself lives in ../agent/pipeline and is loaded lazily to keep route bundles small.
+ */
+
+export class RunCancelled extends Error {
+  constructor() {
+    super("Run cancelled");
+  }
+}
+
+interface Job {
+  runId: string;
+  controller: AbortController;
+  promise: Promise<void>;
+}
+
+const g = globalThis as unknown as { __nexusJobs?: Map<string, Job>; __nexusResumed?: boolean };
+if (!g.__nexusJobs) g.__nexusJobs = new Map<string, Job>();
+const jobs = g.__nexusJobs;
+
+export function isRunning(runId: string): boolean {
+  return jobs.has(runId);
+}
+
+/** Start (or resume) a run in the background. No-op if it is already running in this process. */
+export function startRun(runId: string): void {
+  if (jobs.has(runId)) return;
+  const controller = new AbortController();
+  const promise = (async () => {
+    const db = await getDb();
+    try {
+      const { runPipeline } = await import("../agent/pipeline");
+      await runPipeline(db, runId, controller.signal);
+    } catch (e) {
+      const cancelled = e instanceof RunCancelled || controller.signal.aborted;
+      const run = await getRun(db, runId);
+      if (run && !["done", "cancelled", "failed"].includes(run.status)) {
+        const status: Run["status"] = cancelled ? "cancelled" : "failed";
+        const error = cancelled ? undefined : e instanceof Error ? e.message : String(e);
+        await updateRun(db, runId, { status, error, finishedAt: new Date().toISOString() });
+        await appendEvent(db, {
+          runId,
+          phase: run.phase,
+          type: cancelled ? "status" : "error",
+          title: cancelled ? "Run cancelled" : `Run failed: ${error}`,
+          data: { status },
+        });
+      }
+      if (!cancelled) console.error(`[runner] ${runId}`, e);
+    } finally {
+      jobs.delete(runId);
+    }
+  })();
+  jobs.set(runId, { runId, controller, promise });
+}
+
+export function cancelJob(runId: string): boolean {
+  const j = jobs.get(runId);
+  if (!j) return false;
+  j.controller.abort();
+  return true;
+}
+
+/** Await a running job (tests). */
+export async function waitForRun(runId: string): Promise<void> {
+  await jobs.get(runId)?.promise;
+}
+
+/** On first use after a server restart, resume runs that were mid-flight (stretch AS3). */
+export async function resumeInterruptedRuns(): Promise<number> {
+  if (g.__nexusResumed) return 0;
+  g.__nexusResumed = true;
+  const db = await getDb();
+  const runs = await listRunsByStatus(db, ["queued", "running"]);
+  for (const r of runs) startRun(r.id);
+  return runs.length;
+}
+
+export function throwIfCancelled(signal: AbortSignal) {
+  if (signal.aborted) throw new RunCancelled();
+}

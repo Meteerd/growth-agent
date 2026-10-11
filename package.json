@@ -12,16 +12,18 @@
     "format": "biome check --write .",
     "test": "vitest run",
     "check": "next typegen >/dev/null && tsc --noEmit && biome check . && vitest run",
-    "db:migrate": "echo 'db:migrate lands in A03'",
-    "seed": "echo 'seed lands in A03'",
+    "db:migrate": "tsx scripts/db-migrate.ts",
+    "seed": "tsx scripts/seed.ts",
     "e2e": "playwright test",
     "smoke": "echo 'smoke lands in A06/A14'",
     "e2e:live": "E2E_DATA=live playwright test"
   },
   "dependencies": {
+    "@libsql/client": "^0.18.0",
     "@react-three/fiber": "^9.8.1",
     "@tanstack/react-query": "^5.104.1",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.45.4",
     "gsap": "^3.15.0",
     "lenis": "^1.3.26",
     "motion": "^14.1.0",
@@ -30,8 +32,8 @@
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "sharp": "^0.35.5",
-    "zod": "^4.6.5",
     "three": "^0.186.1",
+    "zod": "^4.6.5",
     "zustand": "^5.0.15"
   },
   "devDependencies": {
@@ -42,7 +44,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/three": "^0.186.0",
+    "drizzle-kit": "^0.31.11",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5",
     "vitest": "^5.0.3"
   },
