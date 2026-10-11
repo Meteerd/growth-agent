@@ -4,6 +4,7 @@ import type { Asset, Concept, RenderTier, RunEvent } from "@/contracts";
 import type { Db } from "../db/client";
 import { HttpError } from "../http";
 import { newId, nowIso } from "../ids";
+import { imageToVideo } from "../providers/fal";
 import { generateImage, speak } from "../providers/openai";
 import { renderEstimate } from "../providers/prices";
 import { appendEvent, getAsset, getBrand, getConcept, listAssets, upsertAsset, upsertConcept } from "../repo";
@@ -157,6 +158,57 @@ export async function renderConcept(
           createdAt: nowIso(),
         });
       }
+    }
+    // final tier: animate each keyframe with fal (live only; demo keeps Ken Burns on the stills)
+    if (tier === "final") {
+      const updated = [...c.shots];
+      for (const s of c.shots) {
+        if (s.clipAssetId) continue;
+        const kf = s.keyframeAssetId ? await getAsset(db, s.keyframeAssetId) : null;
+        const kfFile = kf ? urlToFile(kf.url) : null;
+        if (!kfFile) continue;
+        const outClip = path.resolve(process.env.ASSETS_DIR || "data/assets", dir, `clip_${s.idx}_${n}.mp4`);
+        fs.mkdirSync(path.dirname(outClip), { recursive: true });
+        const r = await imageToVideo(db, {
+          imageFile: kfFile,
+          prompt: `${s.visualPrompt}. Subtle natural motion, gentle camera push-in, no text.`,
+          durationSec: s.durationSec > 5 ? 10 : 5,
+          out: outClip,
+          runId: c.runId,
+          demo: async () => null,
+        }).catch(async (e) => {
+          await emit("warning", `Clip for shot ${s.idx + 1} failed; using the still`, {
+            detail: e instanceof Error ? e.message : String(e),
+          });
+          return null;
+        });
+        if (!r?.file) continue;
+        const clip: Asset = {
+          id: newId("asset"),
+          brandId: c.brandId,
+          conceptId: c.id,
+          kind: "clip",
+          url: fileToUrl(r.file),
+          provider: "fal",
+          model: r.model,
+          costUsd: r.usd,
+          width: 1080,
+          height: 1920,
+          durationSec: s.durationSec,
+          demo: false,
+          createdAt: nowIso(),
+          shotIdx: s.idx,
+        };
+        await upsertAsset(db, clip);
+        updated[s.idx] = { ...s, clipAssetId: clip.id };
+        await emit("asset", `Clip ${s.idx + 1}/${c.shots.length} animated (fal)`, {
+          refId: clip.id,
+          costUsd: r.usd,
+          data: { conceptId: c.id, shotIdx: s.idx, url: clip.url, kind: "clip" },
+        });
+      }
+      c = { ...c, shots: updated };
+      await upsertConcept(db, { ...c, status: "rendering" });
     }
     const shots = [];
     for (const s of c.shots) {

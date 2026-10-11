@@ -1,0 +1,11 @@
+{
+  "recordedAt": "2026-10-11T21:41:53.126Z",
+  "results": [
+    {
+      "name": "Key <single key>",
+      "status": 404,
+      "body": "{\"detail\":\"Not found\"}"
+    }
+  ],
+  "works": "Key <single key>"
+}

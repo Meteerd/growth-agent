@@ -1,0 +1,3083 @@
+{
+  "recordedAt": "2026-10-11T21:38:35.986Z",
+  "actor": "clockworks/tiktok-scraper",
+  "input": {
+    "hashtags": [
+      "chudnutie",
+      "hubnuti",
+      "zdravechudnutie"
+    ],
+    "searchQueries": [
+      "neviem schudnúť diéty nefungujú",
+      "jojo efekt chudnutie"
+    ],
+    "resultsPerPage": 9,
+    "shouldDownloadVideos": false,
+    "shouldDownloadCovers": false
+  },
+  "items": [
+    {
+      "id": "7195221668032269610",
+      "text": "Diets don’t work #theapproach #whydietsdontwork #dietssuck #stopdieting #easyweightloss #weightlosstransformation #fastingtiktok #onlineweightlosscoach ",
+      "textLanguage": "en",
+      "createTime": 1675268104,
+      "createTimeISO": "2023-02-01T16:15:04.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "6824959536810656773",
+        "name": "adampotashapproach",
+        "profileUrl": "https://www.tiktok.com/@adampotashapproach",
+        "nickName": "The Approach",
+        "verified": false,
+        "signature": "Chef + Weight Loss Coach \nEat like a chef. Still lose weight.\nStart Losing Today ⬇️",
+        "bioLink": null,
+        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/fdb09dd1ea556f5fe94bd9d38adce610~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=c944e02d&x-expires=1791925200&x-signature=fefcvBQRxNFULw5F8OCD8SNCsHE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 23,
+        "friends": 0,
+        "fans": 607300,
+        "heart": 5500000,
+        "video": 4836,
+        "digg": 4705,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/fdb09dd1ea556f5fe94bd9d38adce610~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=c944e02d&x-expires=1791925200&x-signature=fefcvBQRxNFULw5F8OCD8SNCsHE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Freedom",
+        "musicAuthor": "Kygo & Zak Abel",
+        "musicOriginal": false,
+        "musicAlbum": "Freedom",
+        "playUrl": "https://sf19.tiktokcdn-us.com/obj/tos-alisg-ve-2774/913e124deb9b40b0ae2e04c757f91ba4",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/08861cc5a6c644c99d659ccfda6996ab~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/08861cc5a6c644c99d659ccfda6996ab~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "6813448515964913666"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@adampotashapproach/video/7195221668032269610",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 59,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/0552f65eac41413e8a76c3904535a6fc~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=LdIefpzU7eYdZIh0C5k6HpPwBfE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/135061cc14faaf6fd78405b952d3cc5f/6acea511/video/tos/useast5/tos-useast5-v-0068-tx/cc3c2e9eab484365add11b7cfb94ead4/?a=1988&bti=ODszNWYuMDE6&&bt=3413&ft=aEKq_qT0mIoPD12EFRJI3wUNTXAbMeF~O5&mime_type=video_mp4&rc=ajZ5Mzk6ZnQ7aTMzZzczNEBpajZ5Mzk6ZnQ7aTMzZzczNEAxbTBzcjRncWFgLS1kMS9zYSMxbTBzcjRncWFgLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/135061cc14faaf6fd78405b952d3cc5f/6acea511/video/tos/useast5/tos-useast5-v-0068-tx/cc3c2e9eab484365add11b7cfb94ead4/?a=1988&bti=ODszNWYuMDE6&&bt=3413&ft=aEKq_qT0mIoPD12EFRJI3wUNTXAbMeF~O5&mime_type=video_mp4&rc=ajZ5Mzk6ZnQ7aTMzZzczNEBpajZ5Mzk6ZnQ7aTMzZzczNEAxbTBzcjRncWFgLS1kMS9zYSMxbTBzcjRncWFgLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/0552f65eac41413e8a76c3904535a6fc~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=LdIefpzU7eYdZIh0C5k6HpPwBfE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 319,
+      "shareCount": 34,
+      "playCount": 11400,
+      "collectCount": 42,
+      "commentCount": 31,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "1609100123254789",
+          "name": "theapproach",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1682638681204742",
+          "name": "whydietsdontwork",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1578607",
+          "name": "dietssuck",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1656017361187845",
+          "name": "stopdieting",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1641731467642886",
+          "name": "easyweightloss",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "32620900",
+          "name": "weightlosstransformation",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1665507293597702",
+          "name": "fastingtiktok",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1664043017472001",
+          "name": "onlineweightlosscoach",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "neviem schudnúť diéty nefungujú",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7493245030757403946",
+      "text": "Replying to @user⭐️🦀🦋☘️☀️ also psa 250g is so high for protein lmao #highprotein #highfiber #dietitian #fatlosstips #fatlossdiet ",
+      "textLanguage": "en",
+      "createTime": 1744657111,
+      "createTimeISO": "2025-04-14T18:58:31.000Z",
+      "isAd": false,
+      "isMuted": true,
+      "authorMeta": {
+        "id": "6801918714163561478",
+        "name": "sororitynutritionist",
+        "profileUrl": "https://www.tiktok.com/@sororitynutritionist",
+        "nickName": "Lauren Hubert MS, RD Dietitian",
+        "verified": false,
+        "signature": "Simplifying fat loss for women\nPodcast: Hot, Healthy, Never Hungry\nBoston, MA\n💌support@thesororitynutritionist.com\nFree cal calculator⬇️",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/c7ada147d7cbb0b02532b35ed4a2e5f7~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=bf9962d0&x-expires=1791925200&x-signature=LHkfV6awaiOBoDIyOcffea9ytoE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 96,
+        "friends": 0,
+        "fans": 411800,
+        "heart": 9600000,
+        "video": 3078,
+        "digg": 19600,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/c7ada147d7cbb0b02532b35ed4a2e5f7~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=bf9962d0&x-expires=1791925200&x-signature=LHkfV6awaiOBoDIyOcffea9ytoE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Avoid Copyright",
+        "musicAuthor": "Wolf",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast2a/tos-useast2a-v-2370-euttp/owwSADCE1AFADgrfUQk8fPlKACJcvCFTEELBAu/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7Th5YmOGXq8Zmo&mime_type=audio_mpeg&rc=ampncWw5cmQzcDMzZjU8M0BpampncWw5cmQzcDMzZjU8M0BubW0xMmRzLnJgLS1kMWNzYSNubW0xMmRzLnJgLS1kMWNzcw%3D%3D&expire=1791776562&l=20261011213829A95607D56F7DE59EB35E&ply_type=3&policy=3&signature=e5ae5df9fba8885a94e2a1a0ab1fcc51&tk=0&btag=e00058000",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/cdb2a58d0a79eb3f5d81882e062804bb~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b54af3d8&x-expires=1791925200&x-signature=vFAZVFgim78%2FNyZjhwh8XI3onsQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/cdb2a58d0a79eb3f5d81882e062804bb~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b54af3d8&x-expires=1791925200&x-signature=vFAZVFgim78%2FNyZjhwh8XI3onsQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7330735020210588449"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@sororitynutritionist/video/7493245030757403946",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 99,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/ooQr9fPiMKreUAMOJHgAfLIcHWGZaeFZPeMFtQ~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=P1hBKhxhZxbxR4v43MlBXhLz%2Bnk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/d1025abe69049f971b7c10aba3a7ed36/6acea539/video/tos/useast5/tos-useast5-v-0068-tx/1a8305dc820e4d00a734c4d2a42d4520/?a=1988&bti=ODszNWYuMDE6&&bt=7941&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=anA6dmw5cnJveTMzZzczNEBpanA6dmw5cnJveTMzZzczNEBlNHA2MmRrZXJgLS1kMS9zYSNlNHA2MmRrZXJgLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:big_caption",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/d1025abe69049f971b7c10aba3a7ed36/6acea539/video/tos/useast5/tos-useast5-v-0068-tx/1a8305dc820e4d00a734c4d2a42d4520/?a=1988&bti=ODszNWYuMDE6&&bt=7941&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=anA6dmw5cnJveTMzZzczNEBpanA6dmw5cnJveTMzZzczNEBlNHA2MmRrZXJgLS1kMS9zYSNlNHA2MmRrZXJgLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/ooQr9fPiMKreUAMOJHgAfLIcHWGZaeFZPeMFtQ~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=P1hBKhxhZxbxR4v43MlBXhLz%2Bnk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 192,
+      "shareCount": 5,
+      "playCount": 8140,
+      "collectCount": 22,
+      "commentCount": 2,
+      "repostCount": 0,
+      "mentions": [
+        "@user⭐️🦀🦋☘️☀️"
+      ],
+      "detailedMentions": [
+        {
+          "id": "6823831808799835142",
+          "name": "gabrhomou",
+          "nickName": "user⭐️🦀🦋☘️☀️",
+          "profileUrl": "https://www.tiktok.com/@6823831808799835142"
+        }
+      ],
+      "hashtags": [
+        {
+          "id": "32022289",
+          "name": "highprotein",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1605293263703041",
+          "name": "highfiber",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1953236",
+          "name": "dietitian",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1633059562397702",
+          "name": "fatlosstips",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1623241706066950",
+          "name": "fatlossdiet",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "name": "pure eyes",
+          "ID": "1524150",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "neviem schudnúť diéty nefungujú",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7158532605812411694",
+      "text": "WHY your next diet plan isn’t going to work…\n#healthcoach #ditchthediets #emotionaleating #healthyhabits #successfulweightloss ",
+      "textLanguage": "en",
+      "createTime": 1666725768,
+      "createTimeISO": "2022-10-25T19:22:48.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7066880383635932207",
+        "name": "daniellemartel9",
+        "profileUrl": "https://www.tiktok.com/@daniellemartel9",
+        "nickName": "Danielle Martel",
+        "verified": false,
+        "signature": "Health Coach who helps women create healthy habits to lose the weight for good!",
+        "bioLink": null,
+        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/7066882269264232494~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=6dc653fb&x-expires=1791925200&x-signature=95x4k07SCFmOXMV6xGWKZkb8EZ8%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 12,
+        "friends": 0,
+        "fans": 39,
+        "heart": 147,
+        "video": 7,
+        "digg": 9,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/7066882269264232494~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=6dc653fb&x-expires=1791925200&x-signature=95x4k07SCFmOXMV6xGWKZkb8EZ8%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Taste It",
+        "musicAuthor": "TELL YOUR STORY music by Ikson™",
+        "musicOriginal": false,
+        "musicAlbum": "Taste It",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/oE6iEB88EBoRlyAW4AViADvAOEDswAixykA8Tf~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=aaf0a90c&x-expires=1791774000&x-signature=BLPN9BrChA93avthyvkomCJgAaI%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/oE6iEB88EBoRlyAW4AViADvAOEDswAixykA8Tf~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=aaf0a90c&x-expires=1791774000&x-signature=BLPN9BrChA93avthyvkomCJgAaI%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "6810180997917722626"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@daniellemartel9/video/7158532605812411694",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 57,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/b9a0942534ce4538b451517f37f231a4~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=nMGShmbbMnfVl5n8pyBAckTHExI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/1b9bfe0193fdd37bd804aa4eeaea4e94/6acea50f/video/tos/useast5/tos-useast5-v-0068-tx/362a03ef7586472fa55d4bb1a55cbca4/?a=1988&bti=ODszNWYuMDE6&&bt=815&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=M205cGY6Zjw2ZzMzZzczNEBpM205cGY6Zjw2ZzMzZzczNEA1Y2hfcjRnYWBgLS1kMS9zYSM1Y2hfcjRnYWBgLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/1b9bfe0193fdd37bd804aa4eeaea4e94/6acea50f/video/tos/useast5/tos-useast5-v-0068-tx/362a03ef7586472fa55d4bb1a55cbca4/?a=1988&bti=ODszNWYuMDE6&&bt=815&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=M205cGY6Zjw2ZzMzZzczNEBpM205cGY6Zjw2ZzMzZzczNEA1Y2hfcjRnYWBgLS1kMS9zYSM1Y2hfcjRnYWBgLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/b9a0942534ce4538b451517f37f231a4~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=nMGShmbbMnfVl5n8pyBAckTHExI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 109,
+      "shareCount": 2,
+      "playCount": 940,
+      "collectCount": 0,
+      "commentCount": 0,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "95385",
+          "name": "healthcoach",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1669624032615429",
+          "name": "ditchthediets",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1615189264484358",
+          "name": "emotionaleating",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "14398029",
+          "name": "healthyhabits",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1674683318540294",
+          "name": "successfulweightloss",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "name": "pure eyes",
+          "ID": "1524150",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "neviem schudnúť diéty nefungujú",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7636239359628430622",
+      "text": "Tried it all, but it never worked? Most of them don’t address the root of the problem! There is support if you know the struggle #fyp #foryou ",
+      "textLanguage": "en",
+      "createTime": 1777950541,
+      "createTimeISO": "2026-05-05T03:09:01.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7501666867921896491",
+        "name": "wellnesswolivia",
+        "profileUrl": "https://www.tiktok.com/@wellnesswolivia",
+        "nickName": "Wellness with Liv",
+        "verified": false,
+        "signature": "Christ Follower, PA, GLP-1 Advocate\nUse \"LIV25\" at checkout to Save $ @\nOrderlyMeds.com",
+        "bioLink": null,
+        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/0967709218ce566aa3fa7bb4219a2ebd~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=6c0521a6&x-expires=1791925200&x-signature=ecD1lGerVSKPTl%2F8pJeJhWQHBSo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 946,
+        "friends": 0,
+        "fans": 6331,
+        "heart": 24400,
+        "video": 319,
+        "digg": 758,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/0967709218ce566aa3fa7bb4219a2ebd~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=6c0521a6&x-expires=1791925200&x-signature=ecD1lGerVSKPTl%2F8pJeJhWQHBSo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Instant Eternity",
+        "musicAuthor": "Fawn Brooks",
+        "musicOriginal": false,
+        "playUrl": "https://sf16.tiktokcdn-us.com/obj/tos-alisg-ve-2774/o4jJxhghfCQ59mcPgDZpwPBoNEACFtFdnJIYfn",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oYYgA00EE9aBBAGmQ0hmkfihiWBsCAwyktqFAE~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oYYgA00EE9aBBAGmQ0hmkfihiWBsCAwyktqFAE~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "7603370411384817683"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@wellnesswolivia/video/7636239359628430622",
+      "videoMeta": {
+        "height": 1280,
+        "width": 720,
+        "duration": 29,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oMTeP4vXIGVDCLZIIgh5MIA4Dji08qflbAOBei~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=YjT0ANo0y%2Fl7goIF1lzd6Du09pY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "720p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/a4324dd149951bb5f97b87fcb622d959/6acea4f3/video/tos/useast8/tos-useast8-v-0068-tx2/27108a8a2ef1470d92a6153e4dc788dc/?a=1988&bti=ODszNWYuMDE6&&bt=6973&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=amlyc3I5cmpvOjMzaTczNEBpamlyc3I5cmpvOjMzaTczNEAuazZgMmRjcnBhLS1kMTJzYSMuazZgMmRjcnBhLS1kMTJzcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00078000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "8:big_caption",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/a4324dd149951bb5f97b87fcb622d959/6acea4f3/video/tos/useast8/tos-useast8-v-0068-tx2/27108a8a2ef1470d92a6153e4dc788dc/?a=1988&bti=ODszNWYuMDE6&&bt=6973&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=amlyc3I5cmpvOjMzaTczNEBpamlyc3I5cmpvOjMzaTczNEAuazZgMmRjcnBhLS1kMTJzYSMuazZgMmRjcnBhLS1kMTJzcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00078000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oMTeP4vXIGVDCLZIIgh5MIA4Dji08qflbAOBei~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=YjT0ANo0y%2Fl7goIF1lzd6Du09pY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 5,
+      "shareCount": 0,
+      "playCount": 137,
+      "collectCount": 1,
+      "commentCount": 1,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "229207",
+          "name": "fyp",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "42164",
+          "name": "foryou",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "name": "pure eyes",
+          "ID": "1524150",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": true,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "neviem schudnúť diéty nefungujú",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7193121576588430638",
+      "text": "dieting is the worst #antidiet #antidietculture #antidieting #dietsdontwork #intuitiveeating #foodfreedom #weightloss #weightlosstips #dietculturedropout ",
+      "textLanguage": "en",
+      "createTime": 1674779136,
+      "createTimeISO": "2023-01-27T00:25:36.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "6805347259710997510",
+        "name": "alexanoban",
+        "profileUrl": "https://www.tiktok.com/@alexanoban",
+        "nickName": "Alexa Noban | Health Coach",
+        "verified": false,
+        "signature": "NBHWC Health Coach | NASM-CPT\n\nhelping you get lean & fit with habits that last \nnyc | alexa@zink-talent.com",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/31bab7f6a9c96a6c964c25eebec63d12~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=33050fab&x-expires=1791925200&x-signature=dd8stcwGzukMsOjoWTyhl1Slurc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 863,
+        "friends": 0,
+        "fans": 78600,
+        "heart": 2500000,
+        "video": 959,
+        "digg": 83000,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/31bab7f6a9c96a6c964c25eebec63d12~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=33050fab&x-expires=1791925200&x-signature=dd8stcwGzukMsOjoWTyhl1Slurc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "original sound",
+        "musicAuthor": "Alexa Noban | Health Coach",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast5/tos-useast5-v-27dcd7-tx/03e53e7977ac42978b824f15d1097be9/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7Th5YmOGXq8Zmo&mime_type=audio_mpeg&rc=ajZrZWY6ZjNraTMzZzU8NEBpajZrZWY6ZjNraTMzZzU8NEBqMG82cjRnaDZgLS1kMS9zYSNqMG82cjRnaDZgLS1kMS9zcw%3D%3D&expire=1791776421&l=20261011213829A95607D56F7DE59EB35E&ply_type=3&policy=3&signature=79b6bd46171c6a585c4e2fc7f0ecd54c&tk=0&btag=e00050000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/31bab7f6a9c96a6c964c25eebec63d12~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=33050fab&x-expires=1791925200&x-signature=dd8stcwGzukMsOjoWTyhl1Slurc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/31bab7f6a9c96a6c964c25eebec63d12~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=33050fab&x-expires=1791925200&x-signature=dd8stcwGzukMsOjoWTyhl1Slurc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7193121586554325806"
+      },
+      "locationMeta": {
+        "address": "United States",
+        "city": "",
+        "cityCode": "5128581",
+        "countryCode": "6252001",
+        "locationName": "New York",
+        "locationId": "22535865201205278"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@alexanoban/video/7193121576588430638",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 111,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/b900235807d44d06965404f5091eb075~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=phXyHpN88h7cQLocYnK0Vk%2F8IaE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/277583aff0fa5ee66bc159e67cdf1ea2/6acea545/video/tos/useast5/tos-useast5-v-0068-tx/4b68aa28528c4e52936e33359d6c29c9/?a=1988&bti=ODszNWYuMDE6&&bt=777&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=ams1Zjk6ZjdraTMzZzczNEBpams1Zjk6ZjdraTMzZzczNEAxZWtycjRnZzZgLS1kMS9zYSMxZWtycjRnZzZgLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "8",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/277583aff0fa5ee66bc159e67cdf1ea2/6acea545/video/tos/useast5/tos-useast5-v-0068-tx/4b68aa28528c4e52936e33359d6c29c9/?a=1988&bti=ODszNWYuMDE6&&bt=777&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=ams1Zjk6ZjdraTMzZzczNEBpams1Zjk6ZjdraTMzZzczNEAxZWtycjRnZzZgLS1kMS9zYSMxZWtycjRnZzZgLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000"
+          },
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/b51b5d388d105ff8b07ab3dd92b4d828/6acea545/video/tos/useast5/tos-useast5-v-0068-tx/0863d36257e4472f9231524d1bd42444/?a=1988&bti=ODszNWYuMDE6&&bt=777&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=ams1Zjk6ZjdraTMzZzczNEBpams1Zjk6ZjdraTMzZzczNEAxZWtycjRnZzZgLS1kMS9zYSMxZWtycjRnZzZgLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000",
+            "source": "LC",
+            "sourceUnabbreviated": "creator caption",
+            "version": "8",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/b51b5d388d105ff8b07ab3dd92b4d828/6acea545/video/tos/useast5/tos-useast5-v-0068-tx/0863d36257e4472f9231524d1bd42444/?a=1988&bti=ODszNWYuMDE6&&bt=777&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=ams1Zjk6ZjdraTMzZzczNEBpams1Zjk6ZjdraTMzZzczNEAxZWtycjRnZzZgLS1kMS9zYSMxZWtycjRnZzZgLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/b900235807d44d06965404f5091eb075~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=phXyHpN88h7cQLocYnK0Vk%2F8IaE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 339,
+      "shareCount": 9,
+      "playCount": 4181,
+      "collectCount": 50,
+      "commentCount": 2,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "59657000",
+          "name": "antidiet",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1649279280498693",
+          "name": "antidietculture",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1662122011089986",
+          "name": "antidieting",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "3843062",
+          "name": "dietsdontwork",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1629360581970949",
+          "name": "intuitiveeating",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "23328829",
+          "name": "foodfreedom",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "41472",
+          "name": "weightloss",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "44919727",
+          "name": "weightlosstips",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1650206173749254",
+          "name": "dietculturedropout",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "name": "pure eyes",
+          "ID": "1524150",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "neviem schudnúť diéty nefungujú",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7653122698641526029",
+      "text": "#Fyp #viraltiktok #mefinding out why my diet is not working#dietitiansoftiktok.",
+      "textLanguage": "en",
+      "createTime": 1781881511,
+      "createTimeISO": "2026-06-19T15:05:11.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "6864316766190846982",
+        "name": "queenpeter52",
+        "profileUrl": "https://www.tiktok.com/@queenpeter52",
+        "nickName": "ANDZIA❤️",
+        "verified": false,
+        "signature": "Put God first . I have come this far by faith.Motivating and inspiring others is my goal 🙏🎯",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/5131226d2cd972916d378bbf0f1099f7~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=90c52674&x-expires=1791925200&x-signature=tL83XUPpHshd3F6QirxqA%2FoR%2FYw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 4909,
+        "friends": 0,
+        "fans": 7286,
+        "heart": 17800,
+        "video": 655,
+        "digg": 7051,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/5131226d2cd972916d378bbf0f1099f7~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=90c52674&x-expires=1791925200&x-signature=tL83XUPpHshd3F6QirxqA%2FoR%2FYw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "original sound",
+        "musicAuthor": "Favour Njan Obim",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast5/tos-useast5-v-27dcd7c799-tx/okAfBPyWKiSkEFA6dAzoiAm2EmEYBA2dDgiA0z/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7Th5YmOGXq8Zmo&mime_type=audio_mpeg&rc=anRtc2w5cnAzeTMzNzU8M0BpanRtc2w5cnAzeTMzNzU8M0BiYWpiMmQ0LW9gLS1kMTZzYSNiYWpiMmQ0LW9gLS1kMTZzcw%3D%3D&expire=1791776324&l=20261011213829A95607D56F7DE59EB35E&ply_type=3&policy=3&signature=87ce6fcb4c222cc99fe8c86fcbead21b&tk=0&btag=e00078000",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/b90408a83f385cde13d189307db969c8~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=734fa452&x-expires=1791925200&x-signature=zY74lyx3Qh1d0azw2xgRnrQkqZc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/b90408a83f385cde13d189307db969c8~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=734fa452&x-expires=1791925200&x-signature=zY74lyx3Qh1d0azw2xgRnrQkqZc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7491175374669187895"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@queenpeter52/video/7653122698641526029",
+      "videoMeta": {
+        "height": 1280,
+        "width": 720,
+        "duration": 9,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/o0EiqAaZ0b4t4z2Ki1EFgIPjBA1biUBoWyUVI~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=VsqZKBJQjj2nxCs14PPkwAXfO%2BU%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "720p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/o0EiqAaZ0b4t4z2Ki1EFgIPjBA1biUBoWyUVI~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=VsqZKBJQjj2nxCs14PPkwAXfO%2BU%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 12,
+      "shareCount": 0,
+      "playCount": 156,
+      "collectCount": 1,
+      "commentCount": 6,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "229207",
+          "name": "fyp",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1592528792523778",
+          "name": "viraltiktok",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1675629372439558",
+          "name": "mefinding",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1659666770711553",
+          "name": "dietitiansoftiktok",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "name": "pure eyes",
+          "ID": "1524150",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "neviem schudnúť diéty nefungujú",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7518168470773583118",
+      "text": "Why Diets NEVER Work 🥗 #weightloss #diet #losingweight ",
+      "textLanguage": "en",
+      "createTime": 1750460018,
+      "createTimeISO": "2025-06-20T22:53:38.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7258457286589695019",
+        "name": "thekevintrudeau",
+        "profileUrl": "https://www.tiktok.com/@thekevintrudeau",
+        "nickName": "Kevin Trudeau",
+        "verified": false,
+        "signature": "Learn the Truth\n⬇️",
+        "bioLink": null,
+        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/20f7655dcaa42c9937a9483d8b6d5bb2~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=f1568d51&x-expires=1791925200&x-signature=%2FSFRTcD6vHF5PK3jW2gPyDHLMWk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 1,
+        "friends": 0,
+        "fans": 375600,
+        "heart": 3700000,
+        "video": 1171,
+        "digg": 74,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/20f7655dcaa42c9937a9483d8b6d5bb2~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=f1568d51&x-expires=1791925200&x-signature=%2FSFRTcD6vHF5PK3jW2gPyDHLMWk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "original sound",
+        "musicAuthor": "Kevin Trudeau",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast5/tos-useast5-v-27dcd7-tx/owfZPhEYQHAQ0hqfv5FkVFBlWnZzRoEqDCeTc0/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7Th5YmOGXq8Zmo&mime_type=audio_mpeg&rc=aDs0NGU1Njc4ZWY7ZzM4N0Bpajo6b3Q5cnd4NDMzZzU8NEBeYjAzXjNjXmAxNjY2LTM2YSNpMnNeMmQ0YF5hLS1kMS9zcw%3D%3D&expire=1791776369&l=20261011213829A95607D56F7DE59EB35E&ply_type=3&policy=3&signature=1be4ef4b8454f4eb3e39ffbe727bc80f&tk=0&btag=e000d0000",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/20f7655dcaa42c9937a9483d8b6d5bb2~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=f1568d51&x-expires=1791925200&x-signature=%2FSFRTcD6vHF5PK3jW2gPyDHLMWk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/20f7655dcaa42c9937a9483d8b6d5bb2~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=f1568d51&x-expires=1791925200&x-signature=%2FSFRTcD6vHF5PK3jW2gPyDHLMWk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7518168480269617975"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@thekevintrudeau/video/7518168470773583118",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 59,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/osMB4AfMpKIBz5IRCgw7ERiiFDBTb0VnB0BvAQ~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/ogEj0qECzAqnBrkOIvZwzfAIDfALFHAMlEAQeQ.image?dr=9634&x-expires=1791925200&x-signature=oLUo%2B0vMOE8ZbRzoK5dKRVV5rUM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/1118edbbd51d67e579f0dfa8db6eefde/6acea511/video/tos/useast5/tos-useast5-v-0068-tx/da7ad3d981bc4c12a2400f67d13e5a81/?a=1988&bti=ODszNWYuMDE6&&bt=10518&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=am1nbXI5cmp4NDMzZzczNEBpam1nbXI5cmp4NDMzZzczNEBtLzQtMmRjYF5hLS1kMS9zYSNtLzQtMmRjYF5hLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:big_caption",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/1118edbbd51d67e579f0dfa8db6eefde/6acea511/video/tos/useast5/tos-useast5-v-0068-tx/da7ad3d981bc4c12a2400f67d13e5a81/?a=1988&bti=ODszNWYuMDE6&&bt=10518&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=am1nbXI5cmp4NDMzZzczNEBpam1nbXI5cmp4NDMzZzczNEBtLzQtMmRjYF5hLS1kMS9zYSNtLzQtMmRjYF5hLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/osMB4AfMpKIBz5IRCgw7ERiiFDBTb0VnB0BvAQ~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/ogEj0qECzAqnBrkOIvZwzfAIDfALFHAMlEAQeQ.image?dr=9634&x-expires=1791925200&x-signature=oLUo%2B0vMOE8ZbRzoK5dKRVV5rUM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 133,
+      "shareCount": 3,
+      "playCount": 3104,
+      "collectCount": 28,
+      "commentCount": 3,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "41472",
+          "name": "weightloss",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "43471",
+          "name": "diet",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "201234",
+          "name": "losingweight",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "name": "pure eyes",
+          "ID": "1524150",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "neviem schudnúť diéty nefungujú",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7655417201280748831",
+      "text": "Diets Don’t Work! Here’s Why! #nutritiontips #shorts #weightloss #motivation #wellnesstips \n\nMy name is Josh, and I’d love to be your Wellness Coach! Whether your goal is to quit bad habits like drinking or smoking, eat healthier, lose some serious weight or change your perspective on life, I’ve been there and done that! I want that for you too! I offer in person, virtual and even email and text coaching for individuals who are either too busy or have phone anxiety, and your discovery session is always free. You quite literally have nothing but a few minutes to lose and everything to gain, so what are you waiting for?  As always, be well, and I’m proud of you! \n\nContact me via:\nFacebook or Facebook Messenger at Phoenix Lifestyle & Wellness LLC\n\nGmail: phoenixlwllc@gmail.com",
+      "textLanguage": "en",
+      "createTime": 1782415726,
+      "createTimeISO": "2026-06-25T19:28:46.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7641357692561802254",
+        "name": "joshrepka",
+        "profileUrl": "https://www.tiktok.com/@joshrepka",
+        "nickName": "Phoenix Lifestyle & Wellness",
+        "verified": false,
+        "signature": "Want to get rid of bad habits? Want to get unstuck? Want to lose weight? Want to live your best life? We needed to start talking like... yesterday! Hit me up!",
+        "bioLink": null,
+        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/9d7db02b1776e7613058fd596484564a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=53f3f350&x-expires=1791925200&x-signature=s8hA%2BdCn5vI28%2ByN52iqfWRfjJw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 194,
+        "friends": 0,
+        "fans": 183,
+        "heart": 1084,
+        "video": 31,
+        "digg": 281,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/9d7db02b1776e7613058fd596484564a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=53f3f350&x-expires=1791925200&x-signature=s8hA%2BdCn5vI28%2ByN52iqfWRfjJw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Aesthetic",
+        "musicAuthor": "Tollan Kim",
+        "musicOriginal": false,
+        "musicAlbum": "Aesthetic",
+        "playUrl": "https://sf16.tiktokcdn-us.com/obj/tos-alisg-ve-2774/oUNeBfzfaiygM4IrCOMAiC17IRzyFjNa9DI1Fs",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oARoug5lACAgAZ0UgEFQNrQD7fGfvnaEBtBA1E~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oARoug5lACAgAZ0UgEFQNrQD7fGfvnaEBtBA1E~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "7072513628145977346"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@joshrepka/video/7655417201280748831",
+      "videoMeta": {
+        "height": 1280,
+        "width": 720,
+        "duration": 50,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/osAVPdrIRXDiwB26EgiajbahiiS29NAFBI4HB~tplv-tiktokx-dmt-logom:tos-useast8-i-0068-tx2/o8xMAAliaPzEABEUAbBW7AI990jAER20BgiDw.image?dr=9634&x-expires=1791925200&x-signature=C0IEXz%2F0IjjOfkfAWi404hBS1Vk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "720p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/faac702fb06b564bb4a9f6257ddd43f8/6acea508/video/tos/useast8/tos-useast8-v-0068-tx2/b556d5cecbdf481881a7fa113c1e4461/?a=1988&bti=ODszNWYuMDE6&&bt=9715&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=anc2bXQ5cnRyOzMzaTczNEBpanc2bXQ5cnRyOzMzaTczNEBkYGNpMmQ0L3JhLS1kMTJzYSNkYGNpMmQ0L3JhLS1kMTJzcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00050000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "8:big_caption",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/faac702fb06b564bb4a9f6257ddd43f8/6acea508/video/tos/useast8/tos-useast8-v-0068-tx2/b556d5cecbdf481881a7fa113c1e4461/?a=1988&bti=ODszNWYuMDE6&&bt=9715&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=anc2bXQ5cnRyOzMzaTczNEBpanc2bXQ5cnRyOzMzaTczNEBkYGNpMmQ0L3JhLS1kMTJzYSNkYGNpMmQ0L3JhLS1kMTJzcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00050000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/osAVPdrIRXDiwB26EgiajbahiiS29NAFBI4HB~tplv-tiktokx-dmt-logom:tos-useast8-i-0068-tx2/o8xMAAliaPzEABEUAbBW7AI990jAER20BgiDw.image?dr=9634&x-expires=1791925200&x-signature=C0IEXz%2F0IjjOfkfAWi404hBS1Vk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 4,
+      "shareCount": 2,
+      "playCount": 158,
+      "collectCount": 0,
+      "commentCount": 0,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "1618150333261829",
+          "name": "nutritiontips",
+          "title": "Share your important tips and inspire people to be healthy and happy!",
+          "cover": "https://p19-common-sign.tiktokcdn-us.com/tiktok-obj/9b6474643a56e7ea11a9bd4346310fa8.png~tplv-tiktokx-origin.image?dr=9627&x-expires=1791774000&x-signature=aX%2F9oFThzQ89sen2sId4xRVLaWE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+        },
+        {
+          "id": "15667",
+          "name": "shorts",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "41472",
+          "name": "weightloss",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "22835",
+          "name": "motivation",
+          "title": "Tell us what helps you to keep your #Motivation",
+          "cover": null
+        },
+        {
+          "id": "1652673142225925",
+          "name": "wellnesstips",
+          "title": "Whether you're a yoga expert, planning the perfect meal or just starting to meditate, share your #WellnessTips.",
+          "cover": "https://p16-common-sign.tiktokcdn-us.com/musically-maliva-obj/7a28d06806225344cddbcf014a968fff~tplv-tiktokx-origin.image?dr=9627&x-expires=1791774000&x-signature=thGjdqd7LjVj7E4tXpWAwKXobJ0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+        }
+      ],
+      "effectStickers": [
+        {
+          "name": "pure eyes",
+          "ID": "1524150",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "neviem schudnúť diéty nefungujú",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7184906962247683370",
+      "text": "Hi, I’m Olivia, a Functional Health Practitioner and I’m here to help 🫶🏼 if you feel like diets never work for you, it’s not your fault. Hormones & metabolism play such a huge roll in our weight and are typically the reason your diets don’t work. Comment below for my free nutrition guide for healthy weight & healthy hormones ❤️ #k18results #pcoscommunity #hormonehealth #womenshealth #womenshealthtips ",
+      "textLanguage": "en",
+      "createTime": 1672866529,
+      "createTimeISO": "2023-01-04T21:08:49.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "6773744179107136518",
+        "name": "redefinefertility",
+        "profileUrl": "https://www.tiktok.com/@redefinefertility",
+        "nickName": "Olivia, Redefine Fertility",
+        "verified": false,
+        "signature": "✨You can get pregnant naturally with PCOS\n🌿Getting you answers when \"labs are normal\"\nMama to 3 rainbow babies 🌈👶",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/9203ef2a758df928efbf3249127d69ae~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=4926024c&x-expires=1791925200&x-signature=%2BI4Gl%2FZLmBjlTNdXlDNcOuzphdY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 535,
+        "friends": 0,
+        "fans": 64900,
+        "heart": 815800,
+        "video": 1415,
+        "digg": 1345,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/9203ef2a758df928efbf3249127d69ae~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=4926024c&x-expires=1791925200&x-signature=%2BI4Gl%2FZLmBjlTNdXlDNcOuzphdY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "original sound",
+        "musicAuthor": "Olivia, Redefine Fertility",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast5/tos-useast5-v-27dcd7-tx/72d52b5fcc7e4d28b6dd710bb7047afd/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7Th5YmOGXq8Zmo&mime_type=audio_mpeg&rc=ank8ZWc6ZnJ4aDMzZzU8NEBpank8ZWc6ZnJ4aDMzZzU8NEAyYmxxcjRvaW5gLS1kMS9zYSMyYmxxcjRvaW5gLS1kMS9zcw%3D%3D&expire=1791776377&l=20261011213829A95607D56F7DE59EB35E&ply_type=3&policy=3&signature=63459109fc17242864e2b011339f8412&tk=0&btag=e00050000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/9203ef2a758df928efbf3249127d69ae~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=4926024c&x-expires=1791925200&x-signature=%2BI4Gl%2FZLmBjlTNdXlDNcOuzphdY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/9203ef2a758df928efbf3249127d69ae~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=4926024c&x-expires=1791925200&x-signature=%2BI4Gl%2FZLmBjlTNdXlDNcOuzphdY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7184906983286246187"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@redefinefertility/video/7184906962247683370",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 67,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/20c029183454488bacca636bfa6c9965_1672866532~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/09bc7a66169844d786d5082b6332c012.image?dr=9634&x-expires=1791925200&x-signature=kb2A93g0WjSUKbZ3WZG2fssI3Fg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/937320568cced6fc3797bb5870b93262/6acea519/video/tos/useast5/tos-useast5-v-0068-tx/33202e68fc2741a694b5d575c59ea8ab/?a=1988&bti=ODszNWYuMDE6&&bt=3886&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=anJyZDU6Znl4aDMzZzczNEBpanJyZDU6Znl4aDMzZzczNEBxLWJzcjRnZW5gLS1kMS9zYSNxLWJzcjRnZW5gLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/937320568cced6fc3797bb5870b93262/6acea519/video/tos/useast5/tos-useast5-v-0068-tx/33202e68fc2741a694b5d575c59ea8ab/?a=1988&bti=ODszNWYuMDE6&&bt=3886&ft=4KLMeMzm8Zmo0LK9ba4jV.AodpWrKsd.&mime_type=video_mp4&rc=anJyZDU6Znl4aDMzZzczNEBpanJyZDU6Znl4aDMzZzczNEBxLWJzcjRnZW5gLS1kMS9zYSNxLWJzcjRnZW5gLS1kMS9zcw%3D%3D&l=20261011213829A95607D56F7DE59EB35E&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/20c029183454488bacca636bfa6c9965_1672866532~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/09bc7a66169844d786d5082b6332c012.image?dr=9634&x-expires=1791925200&x-signature=kb2A93g0WjSUKbZ3WZG2fssI3Fg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 46,
+      "shareCount": 2,
+      "playCount": 705,
+      "collectCount": 8,
+      "commentCount": 0,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "1699575088385030",
+          "name": "k18results",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1666547457242117",
+          "name": "pcoscommunity",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1644762284230661",
+          "name": "hormonehealth",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "50207185",
+          "name": "womenshealth",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1694881661338630",
+          "name": "womenshealthtips",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "name": "pure eyes",
+          "ID": "1524150",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "neviem schudnúť diéty nefungujú",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7641203639549168918",
+      "text": "Zjisti, jak vysoký stresový hormon kortizol blokuje tvé hubnutí, a jak ho můžeš jednoduše restartovat skrze zdravá střeva! 👇\n\n#zdravejidlo #stres #hubnuti",
+      "textLanguage": "cs",
+      "createTime": 1779106371,
+      "createTimeISO": "2026-05-18T12:12:51.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7555746735135179798",
+        "name": "baba_korenarka1",
+        "profileUrl": "https://www.tiktok.com/@baba_korenarka1",
+        "nickName": "baba_korenarka1",
+        "verified": false,
+        "signature": "Přírodní tipy pro zdraví a jídlo\nBylinky • ovoce • domácí triky\n👇 Nauč se léčit tělo přirozeně",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/7c07c3fc9a09624c9aede4f36a052979~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=7c8c5aa6&x-expires=1791925200&x-signature=qdr75Tae3EGRr7JxwPuenwrtX%2Fw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 6,
+        "friends": 0,
+        "fans": 9875,
+        "heart": 62400,
+        "video": 36,
+        "digg": 90,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/7c07c3fc9a09624c9aede4f36a052979~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=7c8c5aa6&x-expires=1791925200&x-signature=qdr75Tae3EGRr7JxwPuenwrtX%2Fw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+      },
+      "musicMeta": {
+        "musicName": "Mysterious and Sad",
+        "musicAuthor": "Beats by Lucky",
+        "musicOriginal": false,
+        "musicAlbum": "Mysterious and Sad",
+        "playUrl": "https://sf16-music.tiktokcdn-eu.com/obj/tos-alisg-ve-2774/osqU2BP7oEMQhqs0W2wcIyiiiJFldznuBlAeA7",
+        "coverMediumUrl": "https://p16-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/oATtBw7QKEC5WAcLQzmkDfAvZgEfsBDDmETZAF.jpeg",
+        "originalCoverMediumUrl": "https://p16-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/oATtBw7QKEC5WAcLQzmkDfAvZgEfsBDDmETZAF.jpeg",
+        "musicId": "7361039820154341392"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@baba_korenarka1/video/7641203639549168918",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 178,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocFEk6DqCAmoFfhDEo0wMRABkVLfIQX9E1ogID~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=ane1Z019DD4VfczvGj5iOeYgT%2FQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/914f8fde8681493521a1ffa0e4aa5e1d/6acea588/video/tos/no1a/tos-no1a-v-0037-no/3068acecdeba44c18ed2b91023bffde9/?a=1988&bti=ODszNWYuMDE6&&bt=2261&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=M3lpaG45cjtqOzMzbzczNUBpM3lpaG45cjtqOzMzbzczNUBoNWVhMmRjLzJhLS1kMTFzYSNoNWVhMmRjLzJhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/914f8fde8681493521a1ffa0e4aa5e1d/6acea588/video/tos/no1a/tos-no1a-v-0037-no/3068acecdeba44c18ed2b91023bffde9/?a=1988&bti=ODszNWYuMDE6&&bt=2261&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=M3lpaG45cjtqOzMzbzczNUBpM3lpaG45cjtqOzMzbzczNUBoNWVhMmRjLzJhLS1kMTFzYSNoNWVhMmRjLzJhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000"
+          },
+          {
+            "language": "ces-CZ",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/e63c11e05b6b8f24aa07b26c1ff30566/6acea588/video/tos/no1a/tos-no1a-v-0037-no/709d0b3fac3d4102806761750425cf9c/?a=1988&bti=ODszNWYuMDE6&&bt=2261&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=M3lpaG45cjtqOzMzbzczNUBpM3lpaG45cjtqOzMzbzczNUBoNWVhMmRjLzJhLS1kMTFzYSNoNWVhMmRjLzJhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/e63c11e05b6b8f24aa07b26c1ff30566/6acea588/video/tos/no1a/tos-no1a-v-0037-no/709d0b3fac3d4102806761750425cf9c/?a=1988&bti=ODszNWYuMDE6&&bt=2261&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=M3lpaG45cjtqOzMzbzczNUBpM3lpaG45cjtqOzMzbzczNUBoNWVhMmRjLzJhLS1kMTFzYSNoNWVhMmRjLzJhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocFEk6DqCAmoFfhDEo0wMRABkVLfIQX9E1ogID~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=ane1Z019DD4VfczvGj5iOeYgT%2FQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a"
+      },
+      "diggCount": 788,
+      "shareCount": 145,
+      "playCount": 35200,
+      "collectCount": 233,
+      "commentCount": 500,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "zdravejidlo",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "stres",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "hubnuti",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "2767658843",
+          "name": "🤍",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1575706288",
+          "name": "Rim Khabbazeh",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "hubnuti",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "hubnuti",
+        "views": 463300000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7623511515655638294",
+      "text": "✅🤗 Chceš zhubnout, ale nemáš čas, energii ani ideální podmínky?\n\nZapomeň na drastické plány, po kterých jsi za pár týdnů vyčerpaná a začínáš znovu. Ukážu ti, jak si nastavit jednoduchý a dlouhodobě udržitelný systém ve stravě a v pohybu, který funguje i když máš práci, děti, pracuješ na směny a večer padáš únavou.\n\n👉 Přihlas se na můj první workshop a zajisti si své místo ještě dnes.\nOdkaz najdeš na profilu v biu a v komentářích.\n\n#personaltrainer  #hubnuti #martinkostal #fitnesstok ",
+      "textLanguage": "cs",
+      "createTime": 1774987100,
+      "createTimeISO": "2026-03-31T19:58:20.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7331788113838146592",
+        "name": "martin.kostal",
+        "profileUrl": "https://www.tiktok.com/@martin.kostal",
+        "nickName": "Martin Kostal",
+        "verified": false,
+        "signature": "Coach. Fitness | Mindset | Lifestyle.\n#extremnipromeny\n\nNajdete mě ve Volcano Fitness v Praze.\nBe the best you can be.",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/12e9b7c78c0c32ff1ea0d4e232bbda3c~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=7db6ca65&x-expires=1791925200&x-signature=dWlUD8Yokiirn4CkCvcLEpYNtPc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 23,
+        "friends": 0,
+        "fans": 7468,
+        "heart": 27700,
+        "video": 36,
+        "digg": 142,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/12e9b7c78c0c32ff1ea0d4e232bbda3c~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=7db6ca65&x-expires=1791925200&x-signature=dWlUD8Yokiirn4CkCvcLEpYNtPc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+      },
+      "musicMeta": {
+        "musicName": "Motivation And Hope",
+        "musicAuthor": "Jhonatan Rodrigues & Piano Sky & Dee Piano",
+        "musicOriginal": false,
+        "musicAlbum": "Motivation And Reflection",
+        "playUrl": "https://sf16-music.tiktokcdn-eu.com/obj/tos-alisg-ve-2774/o4x1kgEEH8QHoDUoCugYZcbFJfeu0GtQBDQBg5",
+        "coverMediumUrl": "https://p16-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/oojapCLQQEG43gAFJYAAeeIfRgEvzEXDgATOcC.jpeg",
+        "originalCoverMediumUrl": "https://p16-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/oojapCLQQEG43gAFJYAAeeIfRgEvzEXDgATOcC.jpeg",
+        "musicId": "7539149907623528465"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@martin.kostal/video/7623511515655638294",
+      "videoMeta": {
+        "height": 848,
+        "width": 480,
+        "duration": 21,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocAACIKZnWAiVzReAGKbG20NLAfIQQeGeRMtac~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=yGSAo4BX2emBNrMHZbDK3b5%2B4MA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+        "definition": "480p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/9521e40fc5c1398e28226a37de60d6e8/6acea4eb/video/tos/no1a/tos-no1a-v-0037-no/9d2311c9acca474a86f080c9d9286196/?a=1988&bti=ODszNWYuMDE6&&bt=861&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=M2pweGo5cms1OjMzbzczNUBpM2pweGo5cms1OjMzbzczNUBtLzRpMmRjXzNhLS1kMTFzYSNtLzRpMmRjXzNhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00078000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/9521e40fc5c1398e28226a37de60d6e8/6acea4eb/video/tos/no1a/tos-no1a-v-0037-no/9d2311c9acca474a86f080c9d9286196/?a=1988&bti=ODszNWYuMDE6&&bt=861&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=M2pweGo5cms1OjMzbzczNUBpM2pweGo5cms1OjMzbzczNUBtLzRpMmRjXzNhLS1kMTFzYSNtLzRpMmRjXzNhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00078000"
+          },
+          {
+            "language": "ces-CZ",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/e5e2ca95195544a09d7f3343c28f2841/6acea4eb/video/tos/no1a/tos-no1a-v-0037-no/d49c4402139945afa253b69b4b4ff563/?a=1988&bti=ODszNWYuMDE6&&bt=861&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=M2pweGo5cms1OjMzbzczNUBpM2pweGo5cms1OjMzbzczNUBtLzRpMmRjXzNhLS1kMTFzYSNtLzRpMmRjXzNhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00078000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/e5e2ca95195544a09d7f3343c28f2841/6acea4eb/video/tos/no1a/tos-no1a-v-0037-no/d49c4402139945afa253b69b4b4ff563/?a=1988&bti=ODszNWYuMDE6&&bt=861&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=M2pweGo5cms1OjMzbzczNUBpM2pweGo5cms1OjMzbzczNUBtLzRpMmRjXzNhLS1kMTFzYSNtLzRpMmRjXzNhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00078000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocAACIKZnWAiVzReAGKbG20NLAfIQQeGeRMtac~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=yGSAo4BX2emBNrMHZbDK3b5%2B4MA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a"
+      },
+      "diggCount": 3975,
+      "shareCount": 201,
+      "playCount": 158200,
+      "collectCount": 630,
+      "commentCount": 336,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "personaltrainer",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "hubnuti",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "martinkostal",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "fitnesstok",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "2767658843",
+          "name": "🤍",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1575706288",
+          "name": "Rim Khabbazeh",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "hubnuti",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "hubnuti",
+        "views": 463300000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7684251442646945046",
+      "text": "Hubnutí nemusí začínat tím, že si zakážeš půlku jídelníčku.\n\nČasto udělá mnohem větší rozdíl to, že si srovnáš úplné základy — spánek, pohyb, pravidelnou stravu a pitný režim.\n\nPrávě tyhle „obyčejné“ věci totiž ovlivňují hlad, chutě, energii, regeneraci i to, jak dobře dokážeš svůj režim dlouhodobě držet.\n\nA to je podle mě přesně ten problém. Všichni hledáme něco speciálního, ale přitom často nefungují ani ty nejjednodušší věci.\n\nTakže než začneš řešit další dietu, spalovač nebo zákaz sacharidů, zkus se podívat, jestli máš vůbec pevný základ. 🍓\n\n#fyp #hubnuti #redukce #xyzabc #vyziva     ",
+      "textLanguage": "cs",
+      "createTime": 1789129219,
+      "createTimeISO": "2026-09-11T12:20:19.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7571942256552477718",
+        "name": "zdraviodnuly",
+        "profileUrl": "https://www.tiktok.com/@zdraviodnuly",
+        "nickName": "Zdraví od nuly",
+        "verified": false,
+        "signature": "Balance over perfection. 🍓\nKaždodenní tipy a triky, které ti pomůžou cítit se líp. 🤍\nig: zdraviodnuly",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/241f9677f72896a9d2dc65e7a4a8ed05~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=27947680&x-expires=1791925200&x-signature=sBsS%2Bv5IQEyY7d9P50RVdhm76Uo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 7,
+        "friends": 0,
+        "fans": 842,
+        "heart": 10000,
+        "video": 29,
+        "digg": 119,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/241f9677f72896a9d2dc65e7a4a8ed05~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=27947680&x-expires=1791925200&x-signature=sBsS%2Bv5IQEyY7d9P50RVdhm76Uo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+      },
+      "musicMeta": {
+        "musicName": "Beauty And A Beat（阿康 Remix）",
+        "musicAuthor": "阿康",
+        "musicOriginal": false,
+        "coverMediumUrl": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-v-2774/oE1AEdoWBBiw7QAAxvvAPi20fgh7bEQVstDVTA~200x200.jpeg?lk3s=08d74b56&x-expires=1791776310&x-signature=l2OD5J8O%2FdcoxY4QAz7SF%2B4eJgw%3D",
+        "originalCoverMediumUrl": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-v-2774/oE1AEdoWBBiw7QAAxvvAPi20fgh7bEQVstDVTA~200x200.jpeg?lk3s=08d74b56&x-expires=1791776310&x-signature=l2OD5J8O%2FdcoxY4QAz7SF%2B4eJgw%3D",
+        "musicId": "7646369990869813274"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@zdraviodnuly/video/7684251442646945046",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 77,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocvAiiyIBBAjiPA5sWEgCaY8L2AqEIApWBQPH~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=msPfH2ry1ogazqG9P4z7KPzODvI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/b955fe0de03625e52a1083a7083a2e09/6acea523/video/tos/no1a/tos-no1a-v-0037-no/cc5acc77df9044b5a800adda5a3b6722/?a=1988&bti=ODszNWYuMDE6&&bt=1292&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=amZrOHE5cjh5ZDMzbzczNUBpamZrOHE5cjh5ZDMzbzczNUAxbGJsMmRrMGVhLS1kMTFzYSMxbGJsMmRrMGVhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/b955fe0de03625e52a1083a7083a2e09/6acea523/video/tos/no1a/tos-no1a-v-0037-no/cc5acc77df9044b5a800adda5a3b6722/?a=1988&bti=ODszNWYuMDE6&&bt=1292&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=amZrOHE5cjh5ZDMzbzczNUBpamZrOHE5cjh5ZDMzbzczNUAxbGJsMmRrMGVhLS1kMTFzYSMxbGJsMmRrMGVhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000"
+          },
+          {
+            "language": "ces-CZ",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/62ebe0e4cce7dec23dd6e5580e863d6f/6acea523/video/tos/no1a/tos-no1a-v-0037-no/9886e85805bc4caab51c3c048dc1c715/?a=1988&bti=ODszNWYuMDE6&&bt=1292&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=amZrOHE5cjh5ZDMzbzczNUBpamZrOHE5cjh5ZDMzbzczNUAxbGJsMmRrMGVhLS1kMTFzYSMxbGJsMmRrMGVhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:big_caption",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/62ebe0e4cce7dec23dd6e5580e863d6f/6acea523/video/tos/no1a/tos-no1a-v-0037-no/9886e85805bc4caab51c3c048dc1c715/?a=1988&bti=ODszNWYuMDE6&&bt=1292&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=amZrOHE5cjh5ZDMzbzczNUBpamZrOHE5cjh5ZDMzbzczNUAxbGJsMmRrMGVhLS1kMTFzYSMxbGJsMmRrMGVhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocvAiiyIBBAjiPA5sWEgCaY8L2AqEIApWBQPH~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=msPfH2ry1ogazqG9P4z7KPzODvI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a"
+      },
+      "diggCount": 779,
+      "shareCount": 34,
+      "playCount": 15200,
+      "collectCount": 330,
+      "commentCount": 10,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "fyp",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "hubnuti",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "redukce",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "xyzabc",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "vyziva",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "2767658843",
+          "name": "🤍",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1575706288",
+          "name": "Rim Khabbazeh",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "hubnuti",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "hubnuti",
+        "views": 463300000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7601065575888080161",
+      "text": "Tohle není sranda.\nHovínko ti řekne, jak na tom jsi.\nTvrdé kuličky? Zácpa.\nHrudkovitá klobása? Pořád brzda.\nHladká, měkká klobása? Ideál.\nKaše nebo voda? Trávení nestíhá.\nHubnutí a střeva spolu mluví víc, než si myslíš.\nZačni je poslouchat.\nTýna 💩\n#hovinka #mikrobiom #hubnuti #traveni #zdravi",
+      "textLanguage": "cs",
+      "createTime": 1769760964,
+      "createTimeISO": "2026-01-30T08:16:04.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "6728060769496286214",
+        "name": "restartujem",
+        "profileUrl": "https://www.tiktok.com/@restartujem",
+        "nickName": "RESTARTUJEM",
+        "verified": false,
+        "signature": "Vař lehce a zdravě\n🏆 100k+ knih, co mění zdraví. Díky!\n👇 Kuchařky na hubnutí",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-eu.com/tos-maliva-avt-0068/ce9feb1faf9924f36f4802cd4fdd0ce9~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=a9e579d6&x-expires=1791925200&x-signature=pIGTBAU9GExXDMq%2BpYOM8xF8HYY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 3545,
+        "friends": 0,
+        "fans": 128600,
+        "heart": 1900000,
+        "video": 1289,
+        "digg": 4741,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-maliva-avt-0068/ce9feb1faf9924f36f4802cd4fdd0ce9~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=a9e579d6&x-expires=1791925200&x-signature=pIGTBAU9GExXDMq%2BpYOM8xF8HYY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+      },
+      "musicMeta": {
+        "musicName": "original sound",
+        "musicAuthor": "RESTARTUJEM",
+        "musicOriginal": true,
+        "playUrl": "https://v45.tiktokcdn-eu.com/1a2015ddf084cd7553a84602e90a2353/6acd539d/video/tos/useast2a/tos-useast2a-v-2370-euttp/oEBfMExEDbljGDaYgEfPEGAAyFc8ASGoHxfT98/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=cD1VS7z7ThWHYc0SLGZmo0P&mime_type=audio_mpeg&rc=amZxOnI5cnY5ODMzZjU8NUBpamZxOnI5cnY5ODMzZjU8NUBjZmVrMmRjZXJhLS1kMTNzYSNjZmVrMmRjZXJhLS1kMTNzcw%3D%3D&vvpl=1&l=2026101121382962B37B2975CA6C2DA841&btag=e00055000&sp_exp=hash_v0",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-maliva-avt-0068/ce9feb1faf9924f36f4802cd4fdd0ce9~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=a9e579d6&x-expires=1791925200&x-signature=pIGTBAU9GExXDMq%2BpYOM8xF8HYY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-maliva-avt-0068/ce9feb1faf9924f36f4802cd4fdd0ce9~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=a9e579d6&x-expires=1791925200&x-signature=pIGTBAU9GExXDMq%2BpYOM8xF8HYY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "musicId": "7601065651294145313"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@restartujem/video/7601065575888080161",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 71,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-useast2a-i-4864-euttp/oAB9Ei014X07MaBgopwa8sAAALpxB3kTAIiPN~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=sS%2FgCRvC02DrccOVxgDLrNSxWTc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/0e3caf27f7c03791a6ae90ecf1256d70/6acea51d/video/tos/useast2a/tos-useast2a-v-4864-euttp/0f4ba8775baf4a18b6fb8bce3a5fa4d8/?a=1988&bti=ODszNWYuMDE6&&bt=14833&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=amlpZ3c5cms5ODQzZjM2NUBpamlpZ3c5cms5ODQzZjM2NUA1ZDRqMmQ0ZXJhLS1kLTNzYSM1ZDRqMmQ0ZXJhLS1kLTNzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00050000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/0e3caf27f7c03791a6ae90ecf1256d70/6acea51d/video/tos/useast2a/tos-useast2a-v-4864-euttp/0f4ba8775baf4a18b6fb8bce3a5fa4d8/?a=1988&bti=ODszNWYuMDE6&&bt=14833&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=amlpZ3c5cms5ODQzZjM2NUBpamlpZ3c5cms5ODQzZjM2NUA1ZDRqMmQ0ZXJhLS1kLTNzYSM1ZDRqMmQ0ZXJhLS1kLTNzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00050000"
+          },
+          {
+            "language": "ces-CZ",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/ceffd7f92adeef860c9a26ba30a99569/6acea51d/video/tos/useast2a/tos-useast2a-v-4864-euttp/7aafdf6e32cb490db6f632e3ffeb0192/?a=1988&bti=ODszNWYuMDE6&&bt=14833&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=amlpZ3c5cms5ODQzZjM2NUBpamlpZ3c5cms5ODQzZjM2NUA1ZDRqMmQ0ZXJhLS1kLTNzYSM1ZDRqMmQ0ZXJhLS1kLTNzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00050000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/ceffd7f92adeef860c9a26ba30a99569/6acea51d/video/tos/useast2a/tos-useast2a-v-4864-euttp/7aafdf6e32cb490db6f632e3ffeb0192/?a=1988&bti=ODszNWYuMDE6&&bt=14833&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=amlpZ3c5cms5ODQzZjM2NUBpamlpZ3c5cms5ODQzZjM2NUA1ZDRqMmQ0ZXJhLS1kLTNzYSM1ZDRqMmQ0ZXJhLS1kLTNzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00050000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-useast2a-i-4864-euttp/oAB9Ei014X07MaBgopwa8sAAALpxB3kTAIiPN~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=sS%2FgCRvC02DrccOVxgDLrNSxWTc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a"
+      },
+      "diggCount": 20700,
+      "shareCount": 26100,
+      "playCount": 844900,
+      "collectCount": 4646,
+      "commentCount": 794,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "hovinka",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "mikrobiom",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "hubnuti",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "traveni",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zdravi",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "2767658843",
+          "name": "🤍",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1575706288",
+          "name": "Rim Khabbazeh",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "hubnuti",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "hubnuti",
+        "views": 463300000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7635561296938700054",
+      "text": "Den šestý co hubnu do šatů. 💪🙏🥰 Zitra asi poslední video a budu cvičit jen pro sebe,občas ukážu nějakou změnu ,když teda bude. Nebo chcete videa se cvičením dal ? Napište 🥰#fy #fyp #hubnuti #protozechci ",
+      "textLanguage": "cs",
+      "createTime": 1777792663,
+      "createTimeISO": "2026-05-03T07:17:43.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "6528350186366833679",
+        "name": "michaelqa_1994",
+        "profileUrl": "https://www.tiktok.com/@michaelqa_1994",
+        "nickName": "🌸 Mišul 🌸",
+        "verified": false,
+        "signature": "Hubnu na 70kg abych se mohla vdávat. Jdeš do toho se mnou ? 🙏❤️",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/b255b9314e55b1328be206797696862f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=3fd60209&x-expires=1791925200&x-signature=m0oj5m9tvSxMQKwqhp0WebBR2dA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 969,
+        "friends": 0,
+        "fans": 12900,
+        "heart": 154100,
+        "video": 143,
+        "digg": 15400,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/b255b9314e55b1328be206797696862f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=3fd60209&x-expires=1791925200&x-signature=m0oj5m9tvSxMQKwqhp0WebBR2dA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+      },
+      "musicMeta": {
+        "musicName": "som original",
+        "musicAuthor": "Marcelo Jumps",
+        "musicOriginal": true,
+        "playUrl": "https://v45.tiktokcdn-eu.com/1f827f47befafff86764a5ee33b80e4a/6acd542e/video/tos/alisg/tos-alisg-v-27dcd7/oMYmfFBJQDpAGxUbhgABCns8EfYLWzBE9jEAIA/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=cD1VS7z7ThWHYc0SLGZmo0P&mime_type=audio_mpeg&rc=M3I6M3k5cmw7NzMzODU8NEBpM3I6M3k5cmw7NzMzODU8NEBnbGJfMmRzYWBhLS1kMS1zYSNnbGJfMmRzYWBhLS1kMS1zcw%3D%3D&vvpl=1&l=2026101121382962B37B2975CA6C2DA841&btag=e0005d000&sp_exp=hash_v0",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-alisg-avt-0068/f11a99e85b573b6b1eba8ace0a76f1b9~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=77728068&x-expires=1791925200&x-signature=3ITfbapvV8g1AJACJbLV7v3iXmA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-alisg-avt-0068/f11a99e85b573b6b1eba8ace0a76f1b9~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=77728068&x-expires=1791925200&x-signature=3ITfbapvV8g1AJACJbLV7v3iXmA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "musicId": "7572950982776458002"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@michaelqa_1994/video/7635561296938700054",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 147,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/oofL2kgAFCBiVVgJ6OBrkpIpeIMob9Rm3i0EjE~tplv-tiktokx-dmt-logom:tos-no1a-i-0068-no/osDFapDYFAhW992iAR8xAC2EciBEIkAfgpvevE.image?dr=10393&x-expires=1791925200&x-signature=ebqcSoIxs6CL4d9qXg7neNC1Hzg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/196188811ef47214ad7021379b090623/6acea569/video/tos/no1a/tos-no1a-v-0037-no/857970d2f4404c3d80739660091a13ef/?a=1988&bti=ODszNWYuMDE6&&bt=2978&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=M2Vna3Q5cmppOjMzbzczNUBpM2Vna3Q5cmppOjMzbzczNUBuXy4xMmRjNW9hLS1kMTFzYSNuXy4xMmRjNW9hLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:big_caption",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/196188811ef47214ad7021379b090623/6acea569/video/tos/no1a/tos-no1a-v-0037-no/857970d2f4404c3d80739660091a13ef/?a=1988&bti=ODszNWYuMDE6&&bt=2978&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=M2Vna3Q5cmppOjMzbzczNUBpM2Vna3Q5cmppOjMzbzczNUBuXy4xMmRjNW9hLS1kMTFzYSNuXy4xMmRjNW9hLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/oofL2kgAFCBiVVgJ6OBrkpIpeIMob9Rm3i0EjE~tplv-tiktokx-dmt-logom:tos-no1a-i-0068-no/osDFapDYFAhW992iAR8xAC2EciBEIkAfgpvevE.image?dr=10393&x-expires=1791925200&x-signature=ebqcSoIxs6CL4d9qXg7neNC1Hzg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a"
+      },
+      "diggCount": 1729,
+      "shareCount": 115,
+      "playCount": 107200,
+      "collectCount": 508,
+      "commentCount": 87,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "fy",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "fyp",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "hubnuti",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "protozechci",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "2767658843",
+          "name": "🤍",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1575706288",
+          "name": "Rim Khabbazeh",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "hubnuti",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "hubnuti",
+        "views": 463300000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7458015291587530006",
+      "text": "Fígl číslo jedna ☺️🫶🏼 #hubnuti #hubnu #losingweigthjourney #weightloss #cviceni #zdraverecepty ",
+      "textLanguage": "cs",
+      "createTime": 1736454503,
+      "createTimeISO": "2025-01-09T20:28:23.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "6690463278974370822",
+        "name": "aanshule",
+        "profileUrl": "https://www.tiktok.com/@aanshule",
+        "nickName": "anshule",
+        "verified": false,
+        "signature": "✨Sleduj mě na Instagramu: anshule \n❤️ YouTube: anshule\n🇦🇲🇨🇿",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/c95b7e1fce09dd9a81d55560605125ea~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=eaf35b54&x-expires=1791925200&x-signature=s37EsxjlC21o4RQeNy0fdq%2FnXAE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 18,
+        "friends": 0,
+        "fans": 30800,
+        "heart": 700800,
+        "video": 465,
+        "digg": 78600,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/c95b7e1fce09dd9a81d55560605125ea~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=eaf35b54&x-expires=1791925200&x-signature=s37EsxjlC21o4RQeNy0fdq%2FnXAE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+      },
+      "musicMeta": {
+        "musicName": "Hinoki Wood",
+        "musicAuthor": "Gia Margaret",
+        "musicOriginal": false,
+        "musicAlbum": "Hinoki Wood b/w Cicadas",
+        "playUrl": "https://sf16-music.tiktokcdn-eu.com/obj/tos-alisg-ve-2774/oQQBht7CqJwBub5qM1zZAfvftpBiEoiqgIcMsR",
+        "coverMediumUrl": "https://p16-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/ogfzIaf2ui50EAIJCmClIBoPAAFfDVFTCQDgAE.jpeg",
+        "originalCoverMediumUrl": "https://p16-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/ogfzIaf2ui50EAIJCmClIBoPAAFfDVFTCQDgAE.jpeg",
+        "musicId": "7198380237963560962"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@aanshule/video/7458015291587530006",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 32,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/oYfzuDICCmBwkAniVMiiyEAWCyAVIwB4BEASIA~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=ZxM10rT9WbvHhVwARpLUHrjJ8l4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/e5f913e454fc7d5f56bc60255cf3b806/6acea4f6/video/tos/no1a/tos-no1a-v-0037-no/0111876d9d4e4798ad0c26de16d1b2c7/?a=1988&bti=ODszNWYuMDE6&&bt=738&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmajRxZGw5cng2eDMzbzczNUBpajRxZGw5cng2eDMzbzczNUBjRl5Nc3FePmJKYSNvYF90aHFmOiNlZWwyMmQ0Li1gLS1kMTFzYSNlZWwyMmQ0Li1gLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/e5f913e454fc7d5f56bc60255cf3b806/6acea4f6/video/tos/no1a/tos-no1a-v-0037-no/0111876d9d4e4798ad0c26de16d1b2c7/?a=1988&bti=ODszNWYuMDE6&&bt=738&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmajRxZGw5cng2eDMzbzczNUBpajRxZGw5cng2eDMzbzczNUBjRl5Nc3FePmJKYSNvYF90aHFmOiNlZWwyMmQ0Li1gLS1kMTFzYSNlZWwyMmQ0Li1gLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000"
+          },
+          {
+            "language": "ces-CZ",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/de843efe930c55cbe84ae55e9eb0cfda/6acea4f6/video/tos/no1a/tos-no1a-v-0037-no/c78bca0a31a6487182b9a5f672ecf808/?a=1988&bti=ODszNWYuMDE6&&bt=738&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmajRxZGw5cng2eDMzbzczNUBpajRxZGw5cng2eDMzbzczNUBjRl5Nc3FePmJKYSNvYF90aHFmOiNlZWwyMmQ0Li1gLS1kMTFzYSNlZWwyMmQ0Li1gLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/de843efe930c55cbe84ae55e9eb0cfda/6acea4f6/video/tos/no1a/tos-no1a-v-0037-no/c78bca0a31a6487182b9a5f672ecf808/?a=1988&bti=ODszNWYuMDE6&&bt=738&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmajRxZGw5cng2eDMzbzczNUBpajRxZGw5cng2eDMzbzczNUBjRl5Nc3FePmJKYSNvYF90aHFmOiNlZWwyMmQ0Li1gLS1kMTFzYSNlZWwyMmQ0Li1gLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/oYfzuDICCmBwkAniVMiiyEAWCyAVIwB4BEASIA~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=ZxM10rT9WbvHhVwARpLUHrjJ8l4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a"
+      },
+      "diggCount": 2905,
+      "shareCount": 123,
+      "playCount": 87600,
+      "collectCount": 687,
+      "commentCount": 23,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "hubnuti",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "hubnu",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "losingweigthjourney",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "weightloss",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "cviceni",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zdraverecepty",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "2767658843",
+          "name": "🤍",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1575706288",
+          "name": "Rim Khabbazeh",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "hubnuti",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "hubnuti",
+        "views": 463300000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7595250387385371926",
+      "text": "Primárně jde ale o kalorický deficit!😁❤️\n\n#fyp #hubnuti #zdrave #healthy #jidlo",
+      "textLanguage": "cs",
+      "createTime": 1768407041,
+      "createTimeISO": "2026-01-14T16:10:41.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7402327906226373664",
+        "name": "zdravetelo.cz",
+        "profileUrl": "https://www.tiktok.com/@zdravetelo.cz",
+        "nickName": "Fitness komunita | Zdravé tělo",
+        "verified": false,
+        "signature": "👇🏻 Začni svojí cestu s naší kuchařkou\n💌 A napiš nám zprávu",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/ec9c08a00b415c8a2f4697c2ff622b97~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=5d57e913&x-expires=1791925200&x-signature=GM0gfATHQ6ePQXlxgBDGEsNvGL8%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 4,
+        "friends": 0,
+        "fans": 2614,
+        "heart": 16200,
+        "video": 88,
+        "digg": 330,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/ec9c08a00b415c8a2f4697c2ff622b97~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=5d57e913&x-expires=1791925200&x-signature=GM0gfATHQ6ePQXlxgBDGEsNvGL8%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+      },
+      "musicMeta": {
+        "musicName": "Walking Around",
+        "musicAuthor": "Eldar Kedem",
+        "musicOriginal": false,
+        "musicAlbum": "Something New",
+        "playUrl": "https://sf19-music.tiktokcdn-eu.com/obj/tos-alisg-ve-2774/ooQoCQDEIBBECse2ftCgMJvFaYJLcHgLtlNZQg",
+        "coverMediumUrl": "https://p16-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/ok4T9AABgAGCo8fhF9FEAeDe1hKm87AEEbfHAT.jpeg",
+        "originalCoverMediumUrl": "https://p16-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/ok4T9AABgAGCo8fhF9FEAeDe1hKm87AEEbfHAT.jpeg",
+        "musicId": "6982541213878618114"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@zdravetelo.cz/video/7595250387385371926",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 17,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocCSg3hmDQDAOPmfAQFGI1jpSDfhSgLQEeAYIz~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=Ez0ro%2FMObKZcLx%2FqZ9JLShLp%2FVc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/a2f34f11bf5f553d973e22bc2d77be2c/6acea4e7/video/tos/no1a/tos-no1a-v-0037-no/70061d90adf348fd8ffe7cbaf08fdbde/?a=1988&bti=ODszNWYuMDE6&&bt=1540&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmajw3bW05cnR1ODMzbzczNUBpajw3bW05cnR1ODMzbzczNUBjRl5Nc3FePmJKYSNvYF90aHFmOiMwZC42MmRjc2dhLS1kMTFzYSMwZC42MmRjc2dhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00078000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/a2f34f11bf5f553d973e22bc2d77be2c/6acea4e7/video/tos/no1a/tos-no1a-v-0037-no/70061d90adf348fd8ffe7cbaf08fdbde/?a=1988&bti=ODszNWYuMDE6&&bt=1540&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmajw3bW05cnR1ODMzbzczNUBpajw3bW05cnR1ODMzbzczNUBjRl5Nc3FePmJKYSNvYF90aHFmOiMwZC42MmRjc2dhLS1kMTFzYSMwZC42MmRjc2dhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00078000"
+          },
+          {
+            "language": "ces-CZ",
+            "downloadLink": "https://v16-webapp.tiktokcdn-eu.com/101867fb3da589f444895bcfdfe0c6d3/6acea4e7/video/tos/no1a/tos-no1a-v-0037-no/3da2eb08c7514460982638c960e3dac8/?a=1988&bti=ODszNWYuMDE6&&bt=1540&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmajw3bW05cnR1ODMzbzczNUBpajw3bW05cnR1ODMzbzczNUBjRl5Nc3FePmJKYSNvYF90aHFmOiMwZC42MmRjc2dhLS1kMTFzYSMwZC42MmRjc2dhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00078000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16-webapp.tiktokcdn-eu.com/101867fb3da589f444895bcfdfe0c6d3/6acea4e7/video/tos/no1a/tos-no1a-v-0037-no/3da2eb08c7514460982638c960e3dac8/?a=1988&bti=ODszNWYuMDE6&&bt=1540&ft=_sO_C~0BN12Nvj_ksF7nRfoa4lcI6IxVvYipiX&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmajw3bW05cnR1ODMzbzczNUBpajw3bW05cnR1ODMzbzczNUBjRl5Nc3FePmJKYSNvYF90aHFmOiMwZC42MmRjc2dhLS1kMTFzYSMwZC42MmRjc2dhLS1kMTFzcw%3D%3D&l=2026101121382962B37B2975CA6C2DA841&btag=e00078000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocCSg3hmDQDAOPmfAQFGI1jpSDfhSgLQEeAYIz~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=Ez0ro%2FMObKZcLx%2FqZ9JLShLp%2FVc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a"
+      },
+      "diggCount": 718,
+      "shareCount": 222,
+      "playCount": 26400,
+      "collectCount": 298,
+      "commentCount": 7,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "fyp",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "hubnuti",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zdrave",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "healthy",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "jidlo",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "2767658843",
+          "name": "🤍",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1575706288",
+          "name": "Rim Khabbazeh",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "hubnuti",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "hubnuti",
+        "views": 463300000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7195948064186617094",
+      "text": "Máš chuť na sladké a nechceš překročit denní příjem? Stačí už jen najít doma plechovku s cizrnou 😁 #fyp #fy #foryou #fypage #protebe #0kcal #zerocalorie #hubnuti #dieta #fitness #healthylifestyle #lifehack ",
+      "textLanguage": "cs",
+      "createTime": 1675437224,
+      "createTimeISO": "2023-02-03T15:13:44.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7161539098276480005",
+        "name": "lepsija_",
+        "profileUrl": "https://www.tiktok.com/@lepsija_",
+        "nickName": "lepsija",
+        "verified": false,
+        "signature": "Lepší Kuchyň 💚\nZnačka pro tu nejlepší komunitu! \nNakupuj na lepsikuchyn.cz 🌲",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/de1ce36917cffc6f8df49d18c589c57b~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=9357e568&x-expires=1791925200&x-signature=6zH0lEx8RS%2BHEmdcCRuPigKbCjA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 209,
+        "friends": 0,
+        "fans": 250800,
+        "heart": 14300000,
+        "video": 1859,
+        "digg": 2881,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/de1ce36917cffc6f8df49d18c589c57b~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=9357e568&x-expires=1791925200&x-signature=6zH0lEx8RS%2BHEmdcCRuPigKbCjA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+      },
+      "musicMeta": {
+        "musicName": "Epic",
+        "musicAuthor": "DM Production",
+        "musicOriginal": false,
+        "musicAlbum": "Epic",
+        "playUrl": "https://sf16-ies-music-sg.tiktokcdn.com/obj/tos-alisg-ve-2774/oosYHwBHIiBkMxAs6OiogMWcA4p9fsblzJhBwv",
+        "coverMediumUrl": "https://p16-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/ogEZl2MAivKiU6BEAyCaAWrByYNvADoMcgtAU.jpeg",
+        "originalCoverMediumUrl": "https://p16-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/ogEZl2MAivKiU6BEAyCaAWrByYNvADoMcgtAU.jpeg",
+        "musicId": "7116400670000809985"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@lepsija_/video/7195948064186617094",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 13,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-maliva-p-0068/oM4TIJCHCgUQcjjYfHJK2CeAdi3Pu4fXkSQJsI~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=QGBZbG2A%2FHbsWMVdXqQKRwpAI10%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-maliva-p-0068/oM4TIJCHCgUQcjjYfHJK2CeAdi3Pu4fXkSQJsI~tplv-tiktokx-origin.image?dr=10395&x-expires=1791925200&x-signature=QGBZbG2A%2FHbsWMVdXqQKRwpAI10%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a"
+      },
+      "diggCount": 6730,
+      "shareCount": 215,
+      "playCount": 168300,
+      "collectCount": 2017,
+      "commentCount": 72,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "fyp",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "fy",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "foryou",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "fypage",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "protebe",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "0kcal",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zerocalorie",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "hubnuti",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "dieta",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "fitness",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "healthylifestyle",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "lifehack",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "2767658843",
+          "name": "🤍",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1575706288",
+          "name": "Rim Khabbazeh",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "hubnuti",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "hubnuti",
+        "views": 463300000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7453904333629967638",
+      "text": "JAK VYTRVAT PŘI HUBNUTÍ?🧐⬇️\n\nUložte si video, ať se k němu kdykoliv můžete vrátit a připomenout a také ho pošlete své kamarádce, která je věčná dietářka ❌🍫\n\nMůžete jíst denně saláty🥗 a hodinu cvičit🏃🏼‍♀️‍➡️, ale pokud si správně nenastavíte hlavu🧠, nebudete spokojení.. 🤷🏼‍♀️\n\nAni s výsledky, ani s tou cestou, po které jdete❌\n\n✅Je to o tom přijmout, že je to proces a že se to nestane ze dne na den. \n\n✅Je to o tom si tu cestu užívat, jíst to, co máte rádi, ale zároveň v jídelníčku upřednostňovat bílkoviny a vlákninu.\n\n✅Je to o tom si najít pohyb, který máte rádi a dělá vás šťastným ( i kdyby to bylo jen pilates na 10 minut). Raději cvičte 10 minut s radostí, než hodinu za trest.\n\nMoji cestu s inspirací a tipy, jak si nastavit udržitelný KALORICKÝ DEFICIT jsem popsala ve své eKnize “Jak zdravě zhubnout a váhu si udržet”. \nOdkaz na e-Knihu najdete u mě na profilu ❤️\n\nSledujte simiseligova pro ZDRAVÉ HUBNUTÍ!❇️\n\n#hubnu #hubnuti #zdravehubnuti #zdravyzivotnistyl #zdravyzivotnystyl #hubneme #hubnutizdrave",
+      "textLanguage": "cs",
+      "createTime": 1735497348,
+      "createTimeISO": "2024-12-29T18:35:48.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7220541960870937627",
+        "name": "simiseligova",
+        "profileUrl": "https://www.tiktok.com/@simiseligova",
+        "nickName": "Simi Seligova",
+        "verified": false,
+        "signature": "ZDRAVÉ HUBNUTÍ 🥗🍕\nSleduj mě na Instagramu komunita 160K \n🚀Přidej se k nám do 28 denní VÝZVY!⤵️",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/4699365bf0389e3200771c71b16cb0a0~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=35bc2b5c&x-expires=1791925200&x-signature=A%2BbsTWIlp4fr25Cee5irL4DSfhM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 37,
+        "friends": 0,
+        "fans": 14400,
+        "heart": 98300,
+        "video": 128,
+        "digg": 2,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/4699365bf0389e3200771c71b16cb0a0~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=35bc2b5c&x-expires=1791925200&x-signature=A%2BbsTWIlp4fr25Cee5irL4DSfhM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+      },
+      "musicMeta": {
+        "musicName": "Vítej mezi náma (feat. STEIN27)",
+        "musicAuthor": "Calin",
+        "musicOriginal": false,
+        "musicAlbum": "Bieber Fever Tour Life",
+        "playUrl": "https://sf16-music.tiktokcdn-eu.com/obj/tos-alisg-ve-2774/ooXA1BTf1S4ziABxIICZs5zBwiCWoqOi37qbMd",
+        "coverMediumUrl": "https://p16-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/osC9FzbsuLBANa5AEOIGcyefEAuEA5gODgZXfz.jpeg",
+        "originalCoverMediumUrl": "https://p16-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/osC9FzbsuLBANa5AEOIGcyefEAuEA5gODgZXfz.jpeg",
+        "musicId": "7444079635841124369"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@simiseligova/video/7453904333629967638",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 12,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/oobDFCmCZEmAMDajIAAQEfqDkLcBnQAGUFhRge~tplv-tiktokx-dmt-logom:tos-no1a-i-0068-no/oY7OPF0nAAAOAjkmAELe4lIGHeiegoyILIFBxI.image?dr=10393&x-expires=1791925200&x-signature=WC9K%2BoYUJjMgWwAyPIJTK73rnZI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/oobDFCmCZEmAMDajIAAQEfqDkLcBnQAGUFhRge~tplv-tiktokx-dmt-logom:tos-no1a-i-0068-no/oY7OPF0nAAAOAjkmAELe4lIGHeiegoyILIFBxI.image?dr=10393&x-expires=1791925200&x-signature=WC9K%2BoYUJjMgWwAyPIJTK73rnZI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a"
+      },
+      "diggCount": 562,
+      "shareCount": 9,
+      "playCount": 61500,
+      "collectCount": 114,
+      "commentCount": 2,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "hubnu",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "hubnuti",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zdravehubnuti",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zdravyzivotnistyl",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zdravyzivotnystyl",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "hubneme",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "hubnutizdrave",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "2767658843",
+          "name": "🤍",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1575706288",
+          "name": "Rim Khabbazeh",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "hubnuti",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "hubnuti",
+        "views": 463300000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7694996352240995587",
+      "text": "🥤 Miluješ sladké nápoje, ale chceš schudnúť? 😍🫐🍍\n\nChudnutie nemusí znamenať, že sa vzdáš všetkých sladkých chutí. 😍\nPRETOŽE AJ CHUDNUTIE MÔŽE CHUTIŤ! 🫐🍍\n\nVyskúšaj naše ovocné džúsiky 🍓🍍🥭\n✨ Fantastická ovocná chuť ⚡ Energia počas dňa 💚 Podpora kontroly chuti na sladké ✨ Podpora metabolizmu a spaľovania \n\n📩 Viac info ti rada napíšem do správy. 💌\n#Berry #Tropical  #ZdraveChudnutie #fyp #ZdravyZivotnyStyl",
+      "textLanguage": "sk",
+      "createTime": 1791630959,
+      "createTimeISO": "2026-10-10T11:15:59.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7406725928451507232",
+        "name": "simona.blody",
+        "profileUrl": "https://www.tiktok.com/@simona.blody",
+        "nickName": "Simona Blődy",
+        "verified": false,
+        "signature": "Pomáham s chudnutím pomocou prírodných produktov.Chceš schudnúť,privyrobiť si?📩",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/6e9c21165804fa5d8b168fe7a5bffef1~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=1a05f011&x-expires=1791925200&x-signature=NvfW8qO%2Bp1N8nOHgPfbjcuVcHgk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 459,
+        "friends": 0,
+        "fans": 887,
+        "heart": 5724,
+        "video": 596,
+        "digg": 1780,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/6e9c21165804fa5d8b168fe7a5bffef1~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=1a05f011&x-expires=1791925200&x-signature=NvfW8qO%2Bp1N8nOHgPfbjcuVcHgk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "pôvodný zvuk",
+        "musicAuthor": "Simona Blődy",
+        "musicOriginal": true,
+        "playUrl": "https://v16m.tiktokcdn-us.com/b55c5095d4e6d4a38dc751bc85ca305b/6acc563d/video/tos/no1a/tos-no1a-v-2370-no/oEAchhI8TVQeZILeDqMQFzXDAcvlAE5gYHeAgo/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7Th5YmOGXq8Zmo&mime_type=audio_mpeg&rc=amVva3k5cnY0ZTMzbzU8NUBpamVva3k5cnY0ZTMzbzU8NUBkLi4yMmQ0cDJhLS1kMTFzYSNkLi4yMmQ0cDJhLS1kMTFzcw%3D%3D&vvpl=1&l=20261011213829EC6E26198474B8A04083&btag=e00078000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/6e9c21165804fa5d8b168fe7a5bffef1~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=1a05f011&x-expires=1791925200&x-signature=NvfW8qO%2Bp1N8nOHgPfbjcuVcHgk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/6e9c21165804fa5d8b168fe7a5bffef1~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=1a05f011&x-expires=1791925200&x-signature=NvfW8qO%2Bp1N8nOHgPfbjcuVcHgk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7694996362983443222"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@simona.blody/video/7694996352240995587",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 7,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oE3BeAGlUH3LmLjcV0MVyBIIAIUKDC7QeZfDIu~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=d0wlvsU%2BYDkDhfGEOVwezDeuoFw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oE3BeAGlUH3LmLjcV0MVyBIIAIUKDC7QeZfDIu~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=d0wlvsU%2BYDkDhfGEOVwezDeuoFw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 2,
+      "shareCount": 1,
+      "playCount": 875,
+      "collectCount": 0,
+      "commentCount": 0,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "berry",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "tropical",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zdravechudnutie",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "fyp",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zdravyzivotnystyl",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "zdravechudnutie",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "zdravechudnutie",
+        "views": 8900000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7586707258629754134",
+      "text": "Co jem, żeby schudnąć, czyli kolejny dzień zdrowego jedzenia na redukcji. Odchudzanie w okresie Świątecznym jest szczególnie trudne, ważne, żeby nie popadać w skrajności. Pamiętajcie, że trzy dni lekkiej nadwyżki nie zrujnują waszego progresu🫶🏻 #cojem #redukcja #odchudzanie #zdroweodżywianie #białko ",
+      "textLanguage": "pl",
+      "createTime": 1766417940,
+      "createTimeISO": "2025-12-22T15:39:00.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7553974615895491587",
+        "name": "ami.and.mike",
+        "profileUrl": "https://www.tiktok.com/@ami.and.mike",
+        "nickName": "Ami + Mike",
+        "verified": false,
+        "signature": "",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/293cc32b8a4ccb776df8c20bfbec3388~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=edf95191&x-expires=1791925200&x-signature=Lpu%2B4dnMhrpFpNopuk6fTRO8VlQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 247,
+        "friends": 0,
+        "fans": 6660,
+        "heart": 207500,
+        "video": 73,
+        "digg": 2434,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/293cc32b8a4ccb776df8c20bfbec3388~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=edf95191&x-expires=1791925200&x-signature=Lpu%2B4dnMhrpFpNopuk6fTRO8VlQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "original sound",
+        "musicAuthor": "★",
+        "musicOriginal": true,
+        "playUrl": "https://v16m.tiktokcdn-us.com/c1682c073fa13432db079c5aa85dce5b/6acc566a/video/tos/useast5/tos-useast5-v-27dcd7-tx/o8qNKjgOqEAqtA4nC0ADE0EMfCUBaBDS5DeJTF/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7Th5YmOGXq8Zmo&mime_type=audio_mpeg&rc=M3NkeHg5cmRndzMzZzU8NEBpM3NkeHg5cmRndzMzZzU8NEBuNDJqMmRrLjNgLS1kMS9zYSNuNDJqMmRrLjNgLS1kMS9zcw%3D%3D&vvpl=1&l=20261011213829EC6E26198474B8A04083&btag=e000c8000",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/2f4dba60cf0804f75f3618ca568bbba2~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=6b4d2626&x-expires=1791925200&x-signature=rVfMJIsd2Gal2aKnKsenulmjCgo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/2f4dba60cf0804f75f3618ca568bbba2~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=6b4d2626&x-expires=1791925200&x-signature=rVfMJIsd2Gal2aKnKsenulmjCgo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7443553617305324334"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@ami.and.mike/video/7586707258629754134",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 53,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/owBa4YljJJmZdhAtiiavUIIKwqZq7yBBMAEwB~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=InXQ7i6LZSJTq%2BvBBIOty0vzSy4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/095515e497b99eeb0b43169aaee745a9/6acea50b/video/tos/useast5/tos-useast5-v-0068c799-tx/1f5f834c11a2454cb48434efdbe928b3/?a=1988&bti=ODszNWYuMDE6&&bt=914&ft=4KLMeMzm8Zmo0LK9ba4jVkIbdpWrKsd.&mime_type=video_mp4&rc=M2ZldGo5cjRwODMzbzczNUBpM2ZldGo5cjRwODMzbzczNUBsMWlqMmRrYDFhLS1kMTFzYSNsMWlqMmRrYDFhLS1kMTFzcw%3D%3D&l=20261011213829EC6E26198474B8A04083&btag=e00048000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/095515e497b99eeb0b43169aaee745a9/6acea50b/video/tos/useast5/tos-useast5-v-0068c799-tx/1f5f834c11a2454cb48434efdbe928b3/?a=1988&bti=ODszNWYuMDE6&&bt=914&ft=4KLMeMzm8Zmo0LK9ba4jVkIbdpWrKsd.&mime_type=video_mp4&rc=M2ZldGo5cjRwODMzbzczNUBpM2ZldGo5cjRwODMzbzczNUBsMWlqMmRrYDFhLS1kMTFzYSNsMWlqMmRrYDFhLS1kMTFzcw%3D%3D&l=20261011213829EC6E26198474B8A04083&btag=e00048000"
+          },
+          {
+            "language": "pol-PL",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/90eb08fee2a52d2f7dcb87b90860eeac/6acea50b/video/tos/useast5/tos-useast5-v-0068c799-tx/3fe6ffc84c094348a96434eb350eef0f/?a=1988&bti=ODszNWYuMDE6&&bt=914&ft=4KLMeMzm8Zmo0LK9ba4jVkIbdpWrKsd.&mime_type=video_mp4&rc=M2ZldGo5cjRwODMzbzczNUBpM2ZldGo5cjRwODMzbzczNUBsMWlqMmRrYDFhLS1kMTFzYSNsMWlqMmRrYDFhLS1kMTFzcw%3D%3D&l=20261011213829EC6E26198474B8A04083&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/90eb08fee2a52d2f7dcb87b90860eeac/6acea50b/video/tos/useast5/tos-useast5-v-0068c799-tx/3fe6ffc84c094348a96434eb350eef0f/?a=1988&bti=ODszNWYuMDE6&&bt=914&ft=4KLMeMzm8Zmo0LK9ba4jVkIbdpWrKsd.&mime_type=video_mp4&rc=M2ZldGo5cjRwODMzbzczNUBpM2ZldGo5cjRwODMzbzczNUBsMWlqMmRrYDFhLS1kMTFzYSNsMWlqMmRrYDFhLS1kMTFzcw%3D%3D&l=20261011213829EC6E26198474B8A04083&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/owBa4YljJJmZdhAtiiavUIIKwqZq7yBBMAEwB~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=InXQ7i6LZSJTq%2BvBBIOty0vzSy4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 4280,
+      "shareCount": 125,
+      "playCount": 88600,
+      "collectCount": 1452,
+      "commentCount": 39,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "cojem",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "redukcja",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "odchudzanie",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zdroweodżywianie",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "białko",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "zdravechudnutie",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "zdravechudnutie",
+        "views": 8900000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7029233243320782086",
+      "text": "Toto je úplne úchvatné! 🥳 #jedlo#jesen#fitrecepty#recepty#fitness#zdraverecepty#zdravejedlo#chudnutie",
+      "textLanguage": "sk",
+      "createTime": 1636620904,
+      "createTimeISO": "2021-11-11T08:55:04.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "6798995673284936710",
+        "name": "andy.stech",
+        "profileUrl": "https://www.tiktok.com/@andy.stech",
+        "nickName": "Andy Štěchová",
+        "verified": false,
+        "signature": "Pomáham ľuďom zmeniť pohľad na jedlo, pohyb a samých seba ❤️  \n⬇️ MyProtein -44 % do štvrtku (kód ANDYSTECH)",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/231b86efbce7220c9a29a1af35f31e3f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=34222496&x-expires=1791925200&x-signature=boliKvQXaNdRYSKgb%2FRWD8lAh0k%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 306,
+        "friends": 0,
+        "fans": 420100,
+        "heart": 22100000,
+        "video": 957,
+        "digg": 3855,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/231b86efbce7220c9a29a1af35f31e3f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=34222496&x-expires=1791925200&x-signature=boliKvQXaNdRYSKgb%2FRWD8lAh0k%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Instrumental Piano",
+        "musicAuthor": "Elysian Fade",
+        "musicOriginal": false,
+        "musicAlbum": "Piano Music",
+        "playUrl": "https://sf16.tiktokcdn-us.com/obj/tos-alisg-ve-2774/oo2BeFGPqVcDlLzfTHUbydgaAQGeC6AYrDDKIi",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oYVb0LOaIIEIAAPeKeex8A3FzALuTGguDAtjCD~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oYVb0LOaIIEIAAPeKeex8A3FzALuTGguDAtjCD~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "6777285964369758209"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@andy.stech/video/7029233243320782086",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 49,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/d7569276bdb048d1bab4c223511fa679_1636620908~tplv-tiktokx-dmt-logom:tos-useast2a-v-0068/9851081dc79b46b582e4eb8e5d378fa5.image?dr=9634&x-expires=1791925200&x-signature=2N%2F3PYPieHfYvYi6PyfOUP7lYIY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/d7569276bdb048d1bab4c223511fa679_1636620908~tplv-tiktokx-dmt-logom:tos-useast2a-v-0068/9851081dc79b46b582e4eb8e5d378fa5.image?dr=9634&x-expires=1791925200&x-signature=2N%2F3PYPieHfYvYi6PyfOUP7lYIY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 71700,
+      "shareCount": 1346,
+      "playCount": 580400,
+      "collectCount": 6994,
+      "commentCount": 131,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "jedlo",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "jesen",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "fitrecepty",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "recepty",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "fitness",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zdraverecepty",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zdravejedlo",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "chudnutie",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "zdravechudnutie",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "zdravechudnutie",
+        "views": 8900000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7542808128388140310",
+      "text": "Zakupy bez stresu 🛒\n\nNie musisz spędzać godzin na planowaniu listy zakupów, żeby jeść zdrowo i chudnąć.\nWystarczy prosty system 5️⃣ 4️⃣ 3️⃣ 2️⃣ 1️⃣, który ułatwia wybór produktów i daje gotowe pomysły na posiłki!\n\nJak to działa?\n🥬 5 warzyw\n🍗 4 źródła białka\n🍌 3 owoce\n🍞 2 źródła węglowodanów\n🍫 1 mała przyjemność (bo zero restrykcji = większa motywacja!)\n\nMoje zakupy tym razem:\n✅ Warzywa: sałata, cukinia, papryka, ogórek, warzywa mrożone.\n✅ Białko: kurczak, tuńczyk, jajka, jogurt grecki.\n✅ Owoce: banan, brzoskwinie, maliny.\n✅ Węglowodany: makaron pełnoziarnisty, chleb pełnoziarnisty\n✅ Słodka przekąska: gorzka czekolada 🍫.\n\nZ tego robię m.in.:\n1. Makaron z kurczakiem, cukinią i papryką.\n2. Sałatkę z tuńczykiem, sałat, jajkiem i ogórkiem.\n3. Jajecznicę na grzankach z papryką.\n4. Jogurt z brzoskwinią, malinami i czekoladą.\n5. Jajka sadzone z grillowaną cukinią i chrupiącmi tostami.\n\nTo prosty sposób, żeby mieć zawsze pod ręką szybkie, zdrowe i smaczne posiłki 💡\n\n🔖 Zapisz ten post i przetestuj przy następnych zakupach!\nA w komentarzu napisz 👉 czy Ty też spróbujesz tej metody?\n\n___\nzakupy spożywcze, odchudzanie bez restrykcji, szybkie posiłki, zdrowa lista zakupów, meal prep, równowaga w diecie, odchudzanie, dieta odchudzająca, co jeść na diecie, szybkie przepisy, fit przepisy\n#odchudzanie #dietaodchudzająca #jakschudnąć #wskazówkidietetyczne #dietetyk ",
+      "textLanguage": "pl",
+      "createTime": 1756196878,
+      "createTimeISO": "2025-08-26T08:27:58.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7136944445749052422",
+        "name": "drdietka",
+        "profileUrl": "https://www.tiktok.com/@drdietka",
+        "nickName": "drdietka",
+        "verified": false,
+        "signature": "Pomagam kobietom w:\nodchudzaniu | PCOS | IO | trądziku | zaburzeniach hormonalnych | niedoczynności tarczycy\n\n🌸 Pomogę i Tobie rozwiązać Twój problem! 🌸",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/3717c66937d23c8e31a22a705eafc3f8~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e53697b1&x-expires=1791925200&x-signature=C0E%2B8StQWjF6ecME8qM1VXrJu20%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 12,
+        "friends": 0,
+        "fans": 4115,
+        "heart": 56600,
+        "video": 177,
+        "digg": 397,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/3717c66937d23c8e31a22a705eafc3f8~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e53697b1&x-expires=1791925200&x-signature=C0E%2B8StQWjF6ecME8qM1VXrJu20%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Small Change",
+        "musicAuthor": "DON WEST",
+        "musicOriginal": false,
+        "musicAlbum": "Small Change",
+        "playUrl": "https://sf19.tiktokcdn-us.com/obj/tos-alisg-ve-2774/o0ONe6xfZmErsQB4BADwNdFDh3lMgCzIh3N1Mt",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/osEEEAAAsDVIBvBzdiBSf9EHPYxWtiAwoQgFAM~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/osEEEAAAsDVIBvBzdiBSf9EHPYxWtiAwoQgFAM~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "7363428255024941072"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@drdietka/video/7542808128388140310",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 24,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o8AEFrBkrIAWzlbgpmcftfB47gix0BBWoErRci~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=2hrdWkxJvF7lTXfIMzox0fKUzrs%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o8AEFrBkrIAWzlbgpmcftfB47gix0BBWoErRci~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=2hrdWkxJvF7lTXfIMzox0fKUzrs%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 2208,
+      "shareCount": 296,
+      "playCount": 93000,
+      "collectCount": 806,
+      "commentCount": 39,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "odchudzanie",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "dietaodchudzająca",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "jakschudnąć",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "wskazówkidietetyczne",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "dietetyk",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "zdravechudnutie",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "zdravechudnutie",
+        "views": 8900000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7628695238051253526",
+      "text": "High protein dinner, co tě zasytí na hodiny 🤌\n\nIngredience:\n6 vajec\n1 cottage\n1 mozzarella\ncherry rajčata (cca 130 g)\nnasekaná petržel\nsůl & pepř\n\nPostup:\nDo misky rozklepni vejce, přidej cottage, nakrájený rajčata, petržel, sůl a pepř.\nVšechno promíchej.\n\nNavrch dej na plátky mozzarellu a trochu petržele.\n\nPeč v troubě na 190 °C cca 15–20 minut.\n\nBílkoviny: cca 75–80 g\nTuky: cca 65–70 g\nSacharidy: cca 10–12 g\n\nHotovo 🫶\n\nTIP:\nMůžeš přidat chilli, bylinky nebo koření podle chuti 🌶️\n#protebe #zdraverecepty #recepty #hubnuti #chudnutie ",
+      "textLanguage": "cs",
+      "createTime": 1776194027,
+      "createTimeISO": "2026-04-14T19:13:47.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "24248367",
+        "name": "llauishere",
+        "profileUrl": "https://www.tiktok.com/@llauishere",
+        "nickName": "llauishere",
+        "verified": false,
+        "signature": "Hubnutí 🙋🏼‍♀️ Jídlo🍇🥯 Reakce🗣️Beauty 💄\n💌strazanoval@gmail.com\n📱IG : lauishir",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/6b356472966c8daa26decb3ff0ade200~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=aef9b945&x-expires=1791925200&x-signature=oay9YHZ4CfzVxwtnrvjY36TJFVk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 352,
+        "friends": 0,
+        "fans": 31700,
+        "heart": 1100000,
+        "video": 398,
+        "digg": 13200,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/6b356472966c8daa26decb3ff0ade200~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=aef9b945&x-expires=1791925200&x-signature=oay9YHZ4CfzVxwtnrvjY36TJFVk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Café Terrasse",
+        "musicAuthor": "Adrift in France",
+        "musicOriginal": false,
+        "musicAlbum": "PARIS SPRING CAFE",
+        "playUrl": "https://sf16.tiktokcdn-us.com/obj/tos-alisg-ve-2774/o4jqTCgVbQdJAEYpuyFfBBgfyZRTNiQhZrDltO",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/owAB2Hp3AsZqERrtFbCDZEEDJgGQyAWBJEf0de~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/owAB2Hp3AsZqERrtFbCDZEEDJgGQyAWBJEf0de~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "7622817900958107665"
+      },
+      "locationMeta": {
+        "address": "Nám. Republiky 1078/1, 110 00 Praha 1-Nové Město, Czech Republic",
+        "city": "Prague",
+        "cityCode": "3067696",
+        "countryCode": "3077311",
+        "locationName": "Palladium Prague",
+        "locationId": "21568295478713308"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@llauishere/video/7628695238051253526",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 60,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o0fqAieGppNjIgEoICgFbEbDCUAK3QR9HmkAAF~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=DPL26dS%2B4ueJxV1f1gJRG8O5i24%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/0b664bb5b6a4dd385c4256c92a7228a3/6acea512/video/tos/useast5/tos-useast5-v-0068c799-tx/f620f728e8bf460b9f1c8eebc843fa28/?a=1988&bti=ODszNWYuMDE6&&bt=4101&ft=4KLMeMzm8Zmo0LK9ba4jVkIbdpWrKsd.&mime_type=video_mp4&rc=ajZrcnY5cmc8OjMzbzczNUBpajZrcnY5cmc8OjMzbzczNUBqY2FfMmQ0L2NhLS1kMTFzYSNqY2FfMmQ0L2NhLS1kMTFzcw%3D%3D&l=20261011213829EC6E26198474B8A04083&btag=e00050000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/0b664bb5b6a4dd385c4256c92a7228a3/6acea512/video/tos/useast5/tos-useast5-v-0068c799-tx/f620f728e8bf460b9f1c8eebc843fa28/?a=1988&bti=ODszNWYuMDE6&&bt=4101&ft=4KLMeMzm8Zmo0LK9ba4jVkIbdpWrKsd.&mime_type=video_mp4&rc=ajZrcnY5cmc8OjMzbzczNUBpajZrcnY5cmc8OjMzbzczNUBqY2FfMmQ0L2NhLS1kMTFzYSNqY2FfMmQ0L2NhLS1kMTFzcw%3D%3D&l=20261011213829EC6E26198474B8A04083&btag=e00050000"
+          },
+          {
+            "language": "ces-CZ",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/9e65ff1c42dc9b8503f1ac8b03feed65/6acea512/video/tos/useast5/tos-useast5-v-0068c799-tx/43bfedcb7b7e4aa1ab0b791c782e3dc6/?a=1988&bti=ODszNWYuMDE6&&bt=4101&ft=4KLMeMzm8Zmo0LK9ba4jVkIbdpWrKsd.&mime_type=video_mp4&rc=ajZrcnY5cmc8OjMzbzczNUBpajZrcnY5cmc8OjMzbzczNUBqY2FfMmQ0L2NhLS1kMTFzYSNqY2FfMmQ0L2NhLS1kMTFzcw%3D%3D&l=20261011213829EC6E26198474B8A04083&btag=e00050000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/9e65ff1c42dc9b8503f1ac8b03feed65/6acea512/video/tos/useast5/tos-useast5-v-0068c799-tx/43bfedcb7b7e4aa1ab0b791c782e3dc6/?a=1988&bti=ODszNWYuMDE6&&bt=4101&ft=4KLMeMzm8Zmo0LK9ba4jVkIbdpWrKsd.&mime_type=video_mp4&rc=ajZrcnY5cmc8OjMzbzczNUBpajZrcnY5cmc8OjMzbzczNUBqY2FfMmQ0L2NhLS1kMTFzYSNqY2FfMmQ0L2NhLS1kMTFzcw%3D%3D&l=20261011213829EC6E26198474B8A04083&btag=e00050000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o0fqAieGppNjIgEoICgFbEbDCUAK3QR9HmkAAF~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=DPL26dS%2B4ueJxV1f1gJRG8O5i24%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 6793,
+      "shareCount": 974,
+      "playCount": 198100,
+      "collectCount": 5390,
+      "commentCount": 36,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "protebe",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "zdraverecepty",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "recepty",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "hubnuti",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "chudnutie",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "zdravechudnutie",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "zdravechudnutie",
+        "views": 8900000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7466772814624820502",
+      "text": "",
+      "textLanguage": "un",
+      "createTime": 1738493526,
+      "createTimeISO": "2025-02-02T10:52:06.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7141747386355090437",
+        "name": "zdravieachudnutie",
+        "profileUrl": "https://www.tiktok.com/@zdravieachudnutie",
+        "nickName": "zdravie a chudnutie",
+        "verified": false,
+        "signature": "Pomáham žienkam chudnut a cítiť sa lepšie",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/7da1941921f8f660bd93493196396d82~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b85db3c0&x-expires=1791925200&x-signature=%2FOrcJKM9Srqci6zcTtfafY5H60s%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 9944,
+        "friends": 0,
+        "fans": 13400,
+        "heart": 126800,
+        "video": 8710,
+        "digg": 1456,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/7da1941921f8f660bd93493196396d82~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b85db3c0&x-expires=1791925200&x-signature=%2FOrcJKM9Srqci6zcTtfafY5H60s%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "original sound",
+        "musicAuthor": "zdravie a chudnutie",
+        "musicOriginal": true,
+        "playUrl": "https://v16m.tiktokcdn-us.com/87b3bb44ebca8150b47addc4f9ba0294/6acc5653/video/tos/no1a/tos-no1a-v-2370-no/oMsyCAIGPDnzpecLIAApqEQUoLFeePOA4TQLJz/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7Th5YmOGXq8Zmo&mime_type=audio_mpeg&rc=amQ4bXY5cnBueDMzbzU8NUBpamQ4bXY5cnBueDMzbzU8NUBhYmRuMmRjcGNgLS1kMTFzYSNhYmRuMmRjcGNgLS1kMTFzcw%3D%3D&vvpl=1&l=20261011213829EC6E26198474B8A04083&btag=e00078000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/7da1941921f8f660bd93493196396d82~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b85db3c0&x-expires=1791925200&x-signature=%2FOrcJKM9Srqci6zcTtfafY5H60s%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/7da1941921f8f660bd93493196396d82~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b85db3c0&x-expires=1791925200&x-signature=%2FOrcJKM9Srqci6zcTtfafY5H60s%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7466772811743349526"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@zdravieachudnutie/video/7466772814624820502",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 29,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/ogszryCWIQceYoILpTPIfMlDPQmfIhL8AAyXsj~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=Q8fYPQsPcF1p4naYXeBnSr%2F8Ljk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/ogszryCWIQceYoILpTPIfMlDPQmfIhL8AAyXsj~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=Q8fYPQsPcF1p4naYXeBnSr%2F8Ljk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 218,
+      "shareCount": 21,
+      "playCount": 42900,
+      "collectCount": 47,
+      "commentCount": 205,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "zdravechudnutie",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "zdravechudnutie",
+        "views": 8900000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7423778156936580384",
+      "text": "",
+      "textLanguage": "un",
+      "createTime": 1728483058,
+      "createTimeISO": "2024-10-09T14:10:58.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7423774778589037601",
+        "name": "zdrav.chudnutie.s.mirkou",
+        "profileUrl": "https://www.tiktok.com/@zdrav.chudnutie.s.mirkou",
+        "nickName": "chudni s Mirkou",
+        "verified": false,
+        "signature": "💥pomaham chudnut s prírodnými produktami \n💥ponukam prácu na doma",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/965e9d87fc8431d062f8bb5f87cd3fd3~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=205c1b6a&x-expires=1791925200&x-signature=DaBVAePyAT9YcHtm6Ymh9IgbFhg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 50,
+        "friends": 0,
+        "fans": 135,
+        "heart": 518,
+        "video": 159,
+        "digg": 197,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/965e9d87fc8431d062f8bb5f87cd3fd3~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=205c1b6a&x-expires=1791925200&x-signature=DaBVAePyAT9YcHtm6Ymh9IgbFhg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Positive Vibes",
+        "musicAuthor": "Soundbeaver",
+        "musicOriginal": false,
+        "musicAlbum": "Summer Breeze",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/436c73d4d9494e3394a02d9af34c4407~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=8e58e86f&x-expires=1791774000&x-signature=4Qc17K8hrOTNxGZsczLZuyPHxy4%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/436c73d4d9494e3394a02d9af34c4407~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=8e58e86f&x-expires=1791774000&x-signature=4Qc17K8hrOTNxGZsczLZuyPHxy4%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "6872915740836497410"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@zdrav.chudnutie.s.mirkou/video/7423778156936580384",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 35,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast2a-p-0037-euttp/oUEodDjyA1dC06nzIpVAhcbTviIREAiGEgtgfB~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=0wsCmdVFA7TviMwYPFX16disghM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast2a-p-0037-euttp/oUEodDjyA1dC06nzIpVAhcbTviIREAiGEgtgfB~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=0wsCmdVFA7TviMwYPFX16disghM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 10,
+      "shareCount": 0,
+      "playCount": 734,
+      "collectCount": 1,
+      "commentCount": 1,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "zdravechudnutie",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "zdravechudnutie",
+        "views": 8900000
+      },
+      "commentsDatasetUrl": null
+    }
+  ]
+}
