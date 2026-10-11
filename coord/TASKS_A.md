@@ -89,4 +89,4 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
 - [x] **AS3** Harden: retries with backoff on 429/5xx; resume interrupted runs from the DB on server restart. (fetchRetry + SDK retries; stale-run resume on first API call; commit 05d4764)
 - [x] **AS4** Prompt caching check: `cache_read_input_tokens > 0` on repeated phase calls. (verified live: repeated blueprint calls read 2,321 cached tokens, re-run intake 2,515; commit 05d4764)
 - [x] **AS5** Cross-brand learnings (pattern holds in 2+ brands). (commit 05d4764)
-- [ ] **AS6** MCP endpoint at `/api/mcp` with the brand tools.
+- [x] **AS6** MCP endpoint at `/api/mcp` with the brand tools. (commit 1083355)
