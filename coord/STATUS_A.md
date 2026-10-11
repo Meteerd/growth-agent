@@ -1,14 +1,14 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-12 00:24 +03
+- Time: 2026-10-12 00:38 +03
 - Current task: A14 live smoke tests + real dataset (Hound, a.clinic)
 - Last sync: 23:37 exit 0, main UPDATED, checks PASS
 - Blockers:
   - REVENUECAT, POSTHOG, STRIPE, PADDLE, META keys MISSING: brand "business truth" connectors run demo (labelled fixtures). No CORE task blocked.
   - HIGGSFIELD key present but unvalidated: auth format confirmed in A14 smoke; fal is the default video path.
 - Next 3: A14 live smokes + real dataset -> A16 morning report -> STRETCH AS1 Manus landing page
-- Spend so far (USD per provider): anthropic ~0.13, firecrawl ~0.02, youtube 0 (free)
+- Spend so far (USD per provider, ledger): anthropic ~0.6, openai ~0.08, apify ~0.97 (incl. one crashed pass), firecrawl ~0.04, youtube 0, spiral credits (~11 ads), manus 1 lite task (credits)
 
 ## Log (one line per finished task, newest last)
 - 23:17 A01 done: Next.js 16.4 scaffold, check/build/dev OK
@@ -28,3 +28,4 @@
 - 00:21 A13 done: zip (video+images+caption+hashtags+checklist+cover), posted, metrics, results, learnings
 - 00:21 ack run until 07:00, never finish early (INBOX_A 23:52): IMPROVE_LOOP read; will run it after STRETCH
 - 00:24 A15 done: pnpm test:engine-e2e 15/15 in 27 s (A14 deferred until after A15 so the real-data pass runs on the finished pipeline; noted per protocol)
+- 00:38 A14 in progress: smokes recorded for anthropic, openai (gpt-image-2 + tts + whisper), firecrawl, youtube, spiral (via pass), apify (via pass), manus (via pass, task still running); Hound real dataset recorded (73 evidence/8 sources/3 blueprints); a.clinic pass running. Bugs found and fixed by the live pass: outputSchema dropped a property named `format`; Spiral uuids format; Manus sub-agent wait misread; off-topic items (relevance filter added); demo items mixed into live passes
