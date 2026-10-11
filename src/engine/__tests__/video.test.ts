@@ -37,7 +37,7 @@ describe("Ad916 compositor", () => {
     // sample inside the caption box during the clip: it must be the dark caption background, not the clip color
     const f = await extractFrame(out, 1.5, path.join(dir, "f.png"), 1080);
     const { data, info } = await sharp(f).raw().toBuffer({ resolveWithObject: true });
-    const y = 1920 - 420 - 40;
+    const y = 1920 - 470 - 40;
     const x = 200;
     const i = (y * info.width + x) * info.channels;
     const lum = (data[i] + data[i + 1] + data[i + 2]) / 3;
