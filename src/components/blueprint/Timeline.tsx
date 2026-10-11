@@ -236,6 +236,16 @@ export function Timeline({
 
             {/* remake */}
             <div className="relative h-[138px]">
+              {aligned.every((x) => !x) && (
+                <div
+                  className="absolute inset-0 flex items-center justify-center rounded-[10px] border border-line-strong border-dashed bg-[repeating-linear-gradient(115deg,rgb(236_231_221/0.03)_0_1px,transparent_1px_9px)] text-center"
+                  data-testid="remake-pending"
+                >
+                  <p className="max-w-md font-serif text-[18px] text-bone-2 italic">
+                    The remake lands here, shot for shot, once production runs on this research.
+                  </p>
+                </div>
+              )}
               {bp.shots.map((s, i) => {
                 const ours = aligned[i];
                 const on = i === activeIdx;
@@ -290,11 +300,11 @@ export function Timeline({
                           </span>
                         )}
                       </div>
-                    ) : (
+                    ) : aligned.some(Boolean) ? (
                       <div className="grid h-full place-items-center rounded-[8px] border border-line border-dashed font-mono text-[10px] text-bone-4">
                         no shot
                       </div>
-                    )}
+                    ) : null}
                   </motion.div>
                 );
               })}

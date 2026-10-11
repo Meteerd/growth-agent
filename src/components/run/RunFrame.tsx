@@ -45,7 +45,11 @@ function RunHeader() {
   const { runId, run, liveStatus, events, connection } = useRunCtx();
   const { data: brand } = useBrand(run?.brandId);
   const path = usePathname();
-  const cost = events.reduce((s, e) => s + (e.costUsd ?? 0), 0) || run?.costUsd || 0;
+  // the ledger total on the run is authoritative; the event sum covers a live run before the run refetches
+  const cost = Math.max(
+    events.reduce((s, e) => s + (e.costUsd ?? 0), 0),
+    run?.costUsd ?? 0,
+  );
   const questions = events.filter((e) => e.type === "question").length;
   const base = `/runs/${runId}`;
   const tabs = [

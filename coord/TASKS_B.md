@@ -82,3 +82,9 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
 - [ ] **BS3** Page transitions (shared-element between portfolio card and brand home; vortex on run start).
 - [ ] **BS4** Live parity: run the full journey against the real API routes and fix every mismatch (send contract requests to Lane A).
 - [x] **BS5** Manus task card (commit 0acf539): when evidence has `source: manus_research`, show a card linking to the Manus task with its status.
+
+## IMPROVE (self-generated)
+- [ ] **I01** Research-only runs (recorded live research) end with "0 packs ready to post". Accept: a done run without packs says research is complete with evidence and blueprint counts, and offers "Start a run on this research" (live: reuseResearchFrom = this run).
+- [ ] **I02** Blueprint cards show empty quotes when the hook has no spoken or written text. Accept: fall back to on-screen text, then the visual; never render an empty quote.
+- [ ] **I03** Run header spend sums event costs only ($0.40 shown, ledger says $1.02). Accept: header shows the larger of the event sum and run.costUsd.
+- [ ] **I04** Remake row for a blueprint with no remake shows faint "no shot" boxes. Accept: one designed band explains the remake appears after production.
