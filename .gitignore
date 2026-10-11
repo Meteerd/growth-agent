@@ -39,3 +39,6 @@ test-results/
 playwright-report/
 e2e/refs/
 e2e/_*.spec.ts
+
+# agent worktrees (lane B subagents)
+.claude/worktrees/

@@ -6,6 +6,8 @@ const ROUTES: [name: string, path: string][] = [
   ["lab", "/lab"],
   ["portfolio", "/brands"],
   ["enter", "/brands/new"],
+  ["brand-home", "/brands/hound"],
+  ["connect", "/brands/hound/connect"],
 ];
 const SIZES = { desktop: { width: 1440, height: 900 }, mobile: { width: 390, height: 844 } } as const;
 

@@ -2,7 +2,7 @@
 
 import { useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { EventRow } from "@/components/run/EventRow";
 import { Page, PageHead } from "@/components/shell/PageHead";
@@ -84,6 +84,12 @@ function IntakeStream({ brand, run }: { brand: Brand; run: Run }) {
   const stream = useRunStream(run.id);
   const t0 = useRef(Date.now());
   const intakeDone = stream.completed.includes("intake") || stream.ended;
+  const router = useRouter();
+  useEffect(() => {
+    if (!intakeDone) return;
+    const t = setTimeout(() => router.push(`/brands/${brand.slug}`), 4000);
+    return () => clearTimeout(t);
+  }, [intakeDone, router, brand.slug]);
   return (
     <Panel className="overflow-hidden" data-testid="intake-stream">
       <header className="flex items-center justify-between gap-3 border-line border-b px-5 py-3.5">
