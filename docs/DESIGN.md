@@ -57,3 +57,21 @@ linear.app, vercel.com, lusion.co, igloo.inc, activetheory.net, rauno.me, family
 - Every empty state has a sentence and an action.
 - Keyboard: tab order sane, visible custom focus, Enter submits.
 - Lighthouse performance >= 80 on the landing page in production build.
+
+## Motion plan per screen (Lane B, 11 Oct 23:30)
+Timing tiers (from the reference probe in `coord/STATUS_B.md`): **micro** 120 to 160 ms (hover, press, focus), **state** 300 to 450 ms (`--ease-out: cubic-bezier(0.22,1,0.36,1)`), **sequence** 600 to 900 ms (orchestrated, GSAP timeline), **drawer** 420 ms with `cubic-bezier(0.32,0.72,0,1)`. Stagger 40 ms (lists), 60 ms (cards). Every screen renders its static layout server-side first and animates in from it, so there is never a blank frame. `prefers-reduced-motion`: all transforms collapse to a 150 ms opacity fade, the shader freezes on one frame.
+
+| Screen | Entrance | Live motion | Exit / transition |
+|---|---|---|---|
+| `/` Landing | Field fades up from the static gradient (900 ms). Headline lines rise through a mask, 80 ms apart. Input glass slides up 12 px at +400 ms. | Field drifts at activity 0.15; cursor bends the flow within ~200 px. Primary button is magnetic (max 6 px pull). | Submit: field activity ramps to 1 and the warp centre collapses toward the input (vortex, 700 ms), content scales to 0.96 and fades; route change at 70%. |
+| `/brands` Portfolio | Cards rise 16 px + fade, 60 ms stagger, in grid order. View totals tick from 0. | Status dots pulse only for brands with a running run. Hover lifts a card 2 px and brightens its hairline. | Card to brand home: the card's logo and name keep position (shared element, BS3). |
+| `/brands/new` Enter | URL input centred, then intake events type in below it, one line per event. | Each crawl event lights a tick on the measurement grid. | When the brand exists, its card assembles from the events and the page moves to brand home. |
+| `/brands/[slug]` Brand home | Dossier sections reveal in reading order, 40 ms stagger. | Inline edit: field glass brightens; save shows a 300 ms check, no toast. | |
+| `/brands/[slug]/connect` | Tiles fade in by group. | Live tiles carry a slow signal pulse; Demo tiles a dashed outline. | |
+| `/runs/[id]` Cockpit | Phase rail draws top to bottom (600 ms), then the stream and wall. | Light travels down the rail to the active phase; completed phases settle to bone. Tool calls type at ~45 chars/s, costs tick. Evidence cards drop onto the wall with a spring (stiffness 260, damping 24), grouped by source. Shader activity follows run state: 0.15 idle, 0.6 running, 0.35 waiting input. | |
+| `/runs/[id]/consult` | Question rises through a mask (serif, 600 ms); "why I'm asking" fades at +200 ms; evidence chips settle into orbit around it. | Answer chips are magnetic. Picking one: chip flashes signal, question exits upward, next enters from below (450 ms). Constellation dot fills with a short glow. | All answered: constellation lines connect, then route to the cockpit (run resumes). |
+| `/runs/[id]/direction` | Brand core appears, orbits draw as hairline rings, channel bodies slide in along their orbit to their angle (900 ms sequence). Not-now bodies fade in outside the outer ring at 40% opacity. | Hover a body: others dim to 50%, six-axis radar draws in 300 ms. Bodies rotate very slowly (one turn per ~4 min). | List toggle: bodies morph into ranked rows (layout animation). |
+| `/runs/[id]/studio` | Concept cards fan in; storyboard frames slide in left to right, 50 ms stagger. | Approve: frame border fills with signal and a check draws (stroke animation, 350 ms). Cost meter ticks up in mono. Render progress fills the phone frame bottom-up. | |
+| `/runs/[id]/packs` | Pack cards stack in by platform. | Copy caption: the button text swaps to "Copied" for 1.2 s. Mark posted: the card's status pill morphs from Ready to Posted. | |
+| `/brands/[slug]/results` | Small multiples draw their lines left to right (700 ms). | Counters tick when a new snapshot lands. | |
+| `/settings` | Rows fade in. | Budget bars fill to their value once (600 ms). | |
