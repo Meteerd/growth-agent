@@ -28,7 +28,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Hero with field shader + Instrument Serif headline + URL input; on submit, the vortex transition into `/brands/new` (or the run); short product story sections (the loop, the four brands, the honesty rules: no fake numbers, nothing posts without you); footer.
   - Accept: screenshots desktop + mobile; Lighthouse perf >= 80 on production build (report the score).
 
-- [ ] **B07 Portfolio `/brands` + Enter `/brands/new`**
+- [x] **B07 Portfolio `/brands` + Enter `/brands/new`** (commit 0316da3)
   - Living brand cards (vertical, countries, connections live/demo, last run, packs ready/posted, total views with ticker). New brand: URL in, live intake events, lands on brand home.
   - Accept: e2e: create a brand in mock mode and see it in the portfolio.
 
