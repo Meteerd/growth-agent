@@ -19,7 +19,12 @@ export interface ManusEvent {
   id: string;
   type: string;
   timestamp?: number;
-  status_update?: { agent_status?: string; brief?: string; description?: string };
+  status_update?: {
+    agent_status?: string;
+    brief?: string;
+    description?: string;
+    status_detail?: { waiting_for_event_type?: string; waiting_description?: string };
+  };
   assistant_message?: { content?: string };
   error_message?: { content?: string; error_type?: string };
   structured_output_result?: { success: boolean; value: unknown; error?: string | null };
@@ -91,8 +96,14 @@ export function taskState(events: ManusEvent[]): ManusState {
   const last = statuses.at(-1);
   if (last === "error") return { state: "error", error: err?.error_message?.content ?? "Manus task error" };
   if (last === "waiting") {
-    const q = [...events].reverse().find((e) => e.type === "assistant_message")?.assistant_message?.content;
-    return { state: "waiting", question: q };
+    // waiting on its own sub-agents (e.g. cascadeJobCall) is still running; only ask-user waits need us
+    const st = [...events].reverse().find((e) => e.type === "status_update")?.status_update;
+    const kind = st?.status_detail?.waiting_for_event_type ?? "";
+    if (/AskUser|confirm/i.test(kind)) {
+      const q = [...events].reverse().find((e) => e.type === "assistant_message")?.assistant_message?.content;
+      return { state: "waiting", question: q };
+    }
+    return { state: "running", brief: st?.status_detail?.waiting_description ?? st?.brief };
   }
   if (last === "stopped") {
     const text = [...events].reverse().find((e) => e.type === "assistant_message")?.assistant_message?.content;
@@ -145,7 +156,7 @@ export function landscapePrompt(
     `Map the go-to-market landscape for ${brandName} (${url}): ${oneLiner}`,
     `Markets: ${countries.join(", ") || "not specified"}. Languages: ${languages.join(", ") || "en"}.`,
     "Find: (1) which channels the buyers of this kind of product actually use to discover it in these markets, with evidence; (2) 5 to 8 direct competitors and what marketing works for them (longest-running ads, viral formats); (3) the communities (subreddits, forums, groups) where the problem is discussed, with their self-promotion rules; (4) your sources.",
-    "Facts only, each with a source URL. If something is unknown, say so. Keep it concise.",
+    "Facts only, each with a source URL. If something is unknown, say so. Keep it concise. Do not ask me questions: decide sensibly and continue. Write everything in English.",
   ].join("\n");
 }
 

@@ -1,29 +1,52 @@
 {
   "_note": "Event log in the shape documented at https://open.manus.ai/docs/v2/task.listMessages.md (11 Oct 2026). Replaced by a real recording in fixtures/live/manus/ after the A14 smoke test.",
   "running": [
-    { "id": "e1", "type": "user_message", "timestamp": 1760220000000 },
+    {
+      "id": "e1",
+      "type": "user_message",
+      "timestamp": 1760220000000
+    },
     {
       "id": "e2",
       "type": "status_update",
       "timestamp": 1760220001000,
-      "status_update": { "agent_status": "running", "brief": "Searching competitor ads" }
+      "status_update": {
+        "agent_status": "running",
+        "brief": "Searching competitor ads"
+      }
     }
   ],
   "done": [
-    { "id": "e1", "type": "user_message", "timestamp": 1760220000000 },
+    {
+      "id": "e1",
+      "type": "user_message",
+      "timestamp": 1760220000000
+    },
     {
       "id": "e2",
       "type": "status_update",
       "timestamp": 1760220001000,
-      "status_update": { "agent_status": "running", "brief": "Searching" }
+      "status_update": {
+        "agent_status": "running",
+        "brief": "Searching"
+      }
     },
     {
       "id": "e3",
       "type": "assistant_message",
       "timestamp": 1760220300000,
-      "assistant_message": { "content": "Done." }
+      "assistant_message": {
+        "content": "Done."
+      }
     },
-    { "id": "e4", "type": "status_update", "timestamp": 1760220301000, "status_update": { "agent_status": "stopped" } },
+    {
+      "id": "e4",
+      "type": "status_update",
+      "timestamp": 1760220301000,
+      "status_update": {
+        "agent_status": "stopped"
+      }
+    },
     {
       "id": "e5",
       "type": "structured_output_result",
@@ -34,9 +57,19 @@
         "value": {
           "summary": "Short video dominates discovery.",
           "channels": [
-            { "channel": "TikTok", "why": "Owners search dog problems there", "evidence": "https://example.org/a" }
+            {
+              "channel": "TikTok",
+              "why": "Owners search dog problems there",
+              "evidence": "https://example.org/a"
+            }
           ],
-          "competitors": [{ "name": "Competitor A", "url": "https://example.org/c", "whatWorksForThem": "Quiz ads" }],
+          "competitors": [
+            {
+              "name": "Competitor A",
+              "url": "https://example.org/c",
+              "whatWorksForThem": "Quiz ads"
+            }
+          ],
           "communities": [
             {
               "name": "r/Dogtraining",
@@ -44,14 +77,54 @@
               "selfPromotionRules": "Weekly thread only"
             }
           ],
-          "sources": [{ "title": "Source", "url": "https://example.org/s" }]
+          "sources": [
+            {
+              "title": "Source",
+              "url": "https://example.org/s"
+            }
+          ]
         }
       }
     }
   ],
   "waiting": [
-    { "id": "e2", "type": "status_update", "status_update": { "agent_status": "running" } },
-    { "id": "e3", "type": "assistant_message", "assistant_message": { "content": "Which country first?" } },
-    { "id": "e4", "type": "status_update", "status_update": { "agent_status": "waiting" } }
+    {
+      "id": "e2",
+      "type": "status_update",
+      "status_update": {
+        "agent_status": "running"
+      }
+    },
+    {
+      "id": "e3",
+      "type": "assistant_message",
+      "assistant_message": {
+        "content": "Which country first?"
+      }
+    },
+    {
+      "id": "e4",
+      "type": "status_update",
+      "status_update": {
+        "agent_status": "waiting",
+        "status_detail": {
+          "waiting_for_event_type": "messageAskUser"
+        }
+      }
+    }
+  ],
+  "subagents": [
+    {
+      "id": "e2",
+      "type": "status_update",
+      "status_update": {
+        "agent_status": "waiting",
+        "brief": "Manus is waiting for tasks to finish",
+        "status_detail": {
+          "waiting_for_event_type": "cascadeJobCall",
+          "waiting_description": "Waiting for 4 research sub-agents"
+        }
+      }
+    }
   ]
 }

@@ -134,6 +134,11 @@ describe("Manus provider (recorded event log)", () => {
       expect(items[0].url).toBe("https://manus.im/app/x");
     }
     expect(taskState(fixture.waiting as ManusEvent[])).toEqual({ state: "waiting", question: "Which country first?" });
+    // recorded from the real Hound task: waiting on its own sub-agents is still running
+    expect(taskState(fixture.subagents as ManusEvent[])).toEqual({
+      state: "running",
+      brief: "Waiting for 4 research sub-agents",
+    });
   });
 
   it("schema follows Manus rules: all properties required, additionalProperties false", () => {

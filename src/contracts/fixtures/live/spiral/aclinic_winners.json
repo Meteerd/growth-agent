@@ -1,0 +1,752 @@
+{
+  "recordedAt": "2026-10-11T21:38:29.746Z",
+  "query": "online doctor-led weight care video ads in Slovak or Czech showing a person doing a video consultation at home with no clinic visit, emphasizing medical oversight and support rather than diets or quick fixes",
+  "search": {
+    "query": "online doctor-led weight care video ads in Slovak or Czech showing a person doing a video consultation at home with no clinic visit, emphasizing medical oversight and support rather than diets or quick fixes",
+    "app_type": "app",
+    "multimodal": true,
+    "filters": {
+      "campaign_types": null,
+      "min_run_days": 14,
+      "languages": [
+        "sk",
+        "cs",
+        "en"
+      ],
+      "aspect_ratios": null,
+      "is_active": null,
+      "min_eu_reach": null,
+      "creative_type": "VIDEO",
+      "brand_uuid": null,
+      "meta_page_uuids": null
+    },
+    "total": 10,
+    "data": [
+      {
+        "ad_platform": "meta",
+        "uuid": "af4f4ec6-e6e2-49fa-b0cf-6c964c150b93",
+        "meta_page_uuid": "9f075277-3292-4867-a12a-a8abbd3e0b9d",
+        "brand_uuid": "acfe5a69-4fc4-402f-8b34-0d6e4ca3b699",
+        "similarity_score": 0.484354948632139,
+        "original_media_url": "https://assets.spiral.ad/c/8PkESrSJJNJI7hr95Mn32RUu6CBPopOJiFFDi0ojUri4r9Fy6Mb5gZHMLxtqlW6xW1VjJwopPcnDeB8K4s6Tkica1nambR_azRcnWridbkLYw_mOEMWiGVM5wkvHB9Z_NhL0CrbLw3iOpGvblCgEdkOCF6qFxYs",
+        "resized_media_url": "https://assets.spiral.ad/c/AJNi1_6mYcZKSTG9UX8xT4nkAp7ATkqTNYFJgzlv2TxDmOf-yjymzIp39PXJjhmkL5ZAxR0VcM643zj3MYjIviXVoKlpIsxzEPx0Xpqp-vKNE8d-ksHEEpqNGpWY2FpwDF6AhDdOwaOMCapZUlVH0OLUWw",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LED96TE2-;-U~Us.%2j@-Ta}R.oJ",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/8W1UvB2UtEPUQOcO3nka2CqpuzdDCBKtM97Mv641Oock3kSdpNcTiHaTDtsIZfD9ma7zPGsbfPsQ8kVCc9FpLLxWT-VTXdT_Py5MBFPSw-szvEAuSdzyKwg97iTTivgt9I1l25ndKyBxeAGnuR_zQQOZMbaDdg"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "91aacdc6-ec7e-43f7-98b1-fc36f2a6e834",
+        "meta_page_uuid": "8ae33d24-a779-4ac4-87a7-1df54bcc4023",
+        "brand_uuid": "1b2c7853-de6b-41ef-85e7-eb285cc0091d",
+        "similarity_score": 0.46513410085006,
+        "original_media_url": "https://assets.spiral.ad/c/1RSLw0EgGoXIVPwAkdrRw2LSql0xBriYKVjfQOhN2An1rRQWvh7SRUG54w63UJHyVs6T2XDYZf2T-D4TxFz2rFBwMQbehZ-vBfRO44WwsV1CzPjWnfJvBQMmho31-xfDYNe22VI3yTNkcvKmR8xBMytZ4HjVcqA",
+        "resized_media_url": "https://assets.spiral.ad/c/xtgrCCQAo8-DezWYcDU1hcFh3a43Sw2rMlc8Hat4NQ0n2r6FzCqfH2m6RoeSGWbx9ziTbeWd9WCAx0cGGIoYI4K5Hzab4kGIEDVPGrkmbuTiTxcW9Lns830aEEZMlEz5L9kAaZ6rHBaPfM21i9VuB1Takg",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LdH1x$xtpGNa~As:K1R*^hfi%Mfk",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/lDE7sUnK4P3h8x5mnU3Xydxe6XjyyDQXWhD7kbLH5H-LYBGVbAw2kMay9lqWhWjj-VnW3sW68c-9KEzXBsV_XVn_LPeHl5lrMMaWs_Gi9eRkHyiVInJ7tif35EVz20yyVfizH4iT7VwEb-W-qCoY3JjWLZde9g"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "62917369-dfb8-472b-a7e8-616a825d424f",
+        "meta_page_uuid": "080caff9-129e-4fc0-8932-66474aad7149",
+        "brand_uuid": "8377fd8e-6be1-4172-a037-3ec8888e71eb",
+        "similarity_score": 0.458334865668262,
+        "original_media_url": "https://assets.spiral.ad/c/obWm5RJ2O9XeavnbxJZvuKpHXb-XU_ZQnqli2BmozCHrPa5X1EQbsV5a8xi45JeC7BikJsHNbMccB-k4B0ZpBuAfunNlIjErM7QTlf_6fd_-0Pa6zsONifgs2pEW-BiuZ08zZrBBPYtKhNtwPBTyxPQu-eJf2to",
+        "resized_media_url": "https://assets.spiral.ad/c/cIjnpyds9fqdG1OYSkZa4NOZYbKKvT4umMqM9EDKbHr_VrbKwEJ5xXDl4NGg2tVBfco1RiuBskqqL6rk0NT9PqA9NZ7ZjmzGlrDDlBVhb-xIvmVfRgawJK4azHZkoURk3N0pmrKBMcR1bszTflyySI1WgQ",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LUOqZrt7.At8S6j[ngaxx_fQM^fP",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/oipndQAC52zZl2Yi33UHvZFtwNeyFiZJPyGzYR2cqO6i7zRBpPK0IetNOq7B4EdWQAGBGQ6ghTd1UWJqTwLJLXy1BZMzVc4pYTNztN6A4ruywpH3UczcexWqd9EVVzMal1bh2NGNiSiYjJMRKxMMRDfcOYtYqg"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "5e98cb46-f4aa-4b3d-9897-3dfeacdc9ec4",
+        "meta_page_uuid": "080caff9-129e-4fc0-8932-66474aad7149",
+        "brand_uuid": "8377fd8e-6be1-4172-a037-3ec8888e71eb",
+        "similarity_score": 0.45632968133754,
+        "original_media_url": "https://assets.spiral.ad/c/bVI_Gn6PonEBks2ECuDSy5rVTMBm91ywaFFalAPWziiOpxvZhi_BThgF0O1EV2T5IQfVSkgGpU9Zl8eP2-6SCN2x_0KGcA02yXWzQDAAm-FsHaNu7UrZR19qIAWTr5ylvbQbUXwv5z0icxIeBtnJYxGK5-UrFA",
+        "resized_media_url": "https://assets.spiral.ad/c/BBIzTbi1OoB0lYsoQtVidZNS2NeC0LRfS7sjn3QT-9A19GLa5f_jNT2xD7gbntK1JLi8p7vVfsVZ2mfO4iiivaYOgb8ZoNHRgHpP3lbPbv9ezWStjR03Rf07lCSyKiTGDmM9SeMDUbk8O1sr9521Lf7h",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LOS5Iuxa+]xaysbHbbbHZhfkb^ay",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/4Bmz7DGevHMpt8qWVPksgzcr4I03MJj_REWB2K4675retoF213_nKUZcsq2wYApU2Ad6LInN3P8tKhZhGXgptMPEJQ34SdgDopb70CNyGMZwefbqc_hzCa8E_iSdEFm66TaajI7Ryy0MUUhkZfYlcv6pM1Vx"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "441ba11e-e966-4dcb-9d24-b472835db5c3",
+        "meta_page_uuid": "f5b9875c-20d2-4e11-9e77-2deb0acb153f",
+        "brand_uuid": "8cb93bb6-795a-4ee7-b53d-7461f38cf3b5",
+        "similarity_score": 0.455397635139606,
+        "original_media_url": "https://assets.spiral.ad/c/jqX48Y1ZJxz15RLQDxV5_3eQTAHi9QFqSBI6BLSoo0D9AzPx0STr3VYn5igZbhEK0MrIa4Xz-7mJPnIjnbh7-N1MiX0gXb9rgxijWpRu0SW8n-_PjZ9-0NLBshrCXnJnFIUdqs5QmOx_kxq_zama5px4m_nT-KU",
+        "resized_media_url": "https://assets.spiral.ad/c/Y1eSaBsgFzn_eZGdnzWKnV5jDdHJsBYlB935jna7wdKm9oqRYHM1XuAQRf9HMijd6-hgR36iNWZZc3zKR5-XWPjar-KtTK6pDiYvelo82uS5PaLxgPRp10dlJ-KA71achIyfU5kYE16BqamSpWtSH-9DOQ",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LWIXgRxGE1%#~qRjt6%M%LadxuRk",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/W1ts2y_oSzDng3UWvw1CbvgpjQ_Js3neDpbP_sUcCD7imIc7i0VCZVKfNpFwpEgGPhOx-ee59SIeT7O6cGQNLV-Wq-m-Ev_ScnLVH5WyCBXIrgryg0IrFEj0xErPN4YSq8OCPgNbpHqTSMhH4wt3uRSZCoHwKw"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "24990b44-eb5e-4840-a096-03c7f8dfd8ea",
+        "meta_page_uuid": "9f075277-3292-4867-a12a-a8abbd3e0b9d",
+        "brand_uuid": "acfe5a69-4fc4-402f-8b34-0d6e4ca3b699",
+        "similarity_score": 0.453657164079797,
+        "original_media_url": "https://assets.spiral.ad/c/GH_9ADNjUovj4IaZQEMf1hD5aD0sFkvrsXgFLB2bjDARvTjrvJjumzH5hUOIROQwqZTuhDe0sF2x4eVUvozRkjy1i27QnG4EqjJKZycb2qeLnsb8laZLTnsD93PuM1TJcw1p5Iw4JrmK_80e1RxYQdu9BAsc-RQ",
+        "resized_media_url": "https://assets.spiral.ad/c/wqPFQO56d_Rycf8urwBQrOioNgeIgi06Iqe7xy0qANjLlQR9f9MIpRo0LkJ9CWkwRTZUrEEuzvARutnnGEO-JzkyS2yNqhlFWCQrocsWnaYwdxROqACTPsMdD5-6CkqYotVZS6YYfTllYtw8qvRpkCn9Tg",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LIG8WKRj0Kj[9aoftRWVM{t6-pWV",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/hhYQNajjEpDWQor8Ebe0IbJuQ_zjiVLvvOjVR7mBd4s935KzxNmYvUktkO55PgtoArEnsoFkFbD2bJOvMqwEH3pMEj_A-v9j5uiA5CO7qFne-fHNAkA38o3qv6HDy3hHXsm1RBMarQVyTK0mIPQgCmwL_K5yjQ"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "73efc184-5b3e-4b1d-9c2d-e3723695b752",
+        "meta_page_uuid": "8ae33d24-a779-4ac4-87a7-1df54bcc4023",
+        "brand_uuid": "1b2c7853-de6b-41ef-85e7-eb285cc0091d",
+        "similarity_score": 0.451442168610056,
+        "original_media_url": "https://assets.spiral.ad/c/47um3dom71g-ZELuLACSrOwifdaXrCGHhqJVT-bjjsdtm6ayS4LsHet1vVJrP9uIV8mJ0uH_6kXAN-DnfiXkxFmyhlVhWF0hJ6Q60jA-Xf9lpL7PV2OWzUSlPMk53fq_9fjgySBmhhL6K2kwFvrG9L_dDkEhe3w",
+        "resized_media_url": "https://assets.spiral.ad/c/r1t3bQn3tTCU9kgTcxBbqaPGSIZVkUHNgusc-zatymIM1SjugagNnnr9zzjZ5_Ng5VZCqpF0nkvMJZ2Rc56uRGr9ejTnUqxPf9zPTtioHkiDFklKs-Fdlf6m2cIaYoFqN_GYCKbMzdLRLDpyUPdF3EBzYA",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LCAyjK751A%222;]WrNy9+F#}OV@",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/2a6C7iVpvZzP7Ihe_66j2z0uIw3NBmEbAdADDS_PZW5XIxf2DcwL5KSVbBJGZk9zVDLzZAok0fN3DZi5r5saYjzOSrE7iiMHvzqz0C0xYW9gSpQxts0_UtFvMQcT0w9dZ-cFnYmfEn9loWEGDheBDS0cPlf7MA"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "8f0c2f40-9beb-4d04-a751-e505b3348f18",
+        "meta_page_uuid": "080caff9-129e-4fc0-8932-66474aad7149",
+        "brand_uuid": "8377fd8e-6be1-4172-a037-3ec8888e71eb",
+        "similarity_score": 0.449208504055929,
+        "original_media_url": "https://assets.spiral.ad/c/hJoUJ0PZd8uA1cUjj_Cx5BoCo1yOsbMX6i2_3vaIrviTY15zdoPspJ08bgpxZAarCWES3puFZbW6KQhS9hEFsfxS7nt-b9XwN-06ZRgnVGSjePvHUvz1z_QlaZonz2nF4HcBhTPdRCXiClFxdFC09Q5dSAlgzghz",
+        "resized_media_url": "https://assets.spiral.ad/c/BMdEx4WIk_--OAcFDHsXjeXGHj8b-WBJFovAldKWzoL3EfoSujFswOmqqNe6UWmCWj8Zf3oRPektflA6UvEnGyBjDsg530c2dcuGgGUOy9xEja-XGC1bcvHyJPvstLTqZlBM0vgUmxx1dG4EZninHzcW1Ro",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LOL4Z$t7%1t7%hf5kCayq?WAxaoe",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/AqsrWdIotVId5fSmI37rvfBKLyGkD9aW51MHdsfJa2mJnuJkesDu5I4KUMmhl9GSClMgpUmwCHk4jmM8YUpV79a7eRrIcuKACNo31tR3zswz9dcWMu0zVg6TLvnQomVwqP6e7pm2fgwkyielUdf1t5WRp_C0H0s"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "33d0f27d-ac18-4695-8ba6-a2d532d5278f",
+        "meta_page_uuid": "defc6401-0432-4476-81b3-10a97462ee2f",
+        "brand_uuid": "97183cc9-fcd8-4e7b-a7a2-7577f757d889",
+        "similarity_score": 0.448742209309356,
+        "original_media_url": "https://assets.spiral.ad/c/z3cSMJDArqOeZVY-z9winmIwqnUYNkSIrshjw5ix8Yf7ViRRTP1mr8PXPnQsT1-wXAeZo_88zXyWNdqTqL7t3dtoJYQkhgcA4boqx4BIDLsEJRaCBsXWjiC2i-6SZ9FWeGTG9i78DYSArCJ6DioTobj9oUD__Q",
+        "resized_media_url": "https://assets.spiral.ad/c/O8Blzup0Qn9DqRJGMzxSGvvSPyRyzIFr0cCD7bFaW5bWn-inLL-OZIRXUR_55lNdfZ21wDhC3HO4qzgWflC12mXfKgmDOsebkg2A6q-Rta0VhyYxfux746v2J2TsaSKolzGBHVV_osFu3MNbKDgFdd5H",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LXL4yw9GD%xus:ofj[ay00-:xuRj",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/_cK19DHlmXMW00ikHGRuNuS5xi5uBuuJ1oeXIwdpcelO-wohx-SheTXMBBC0cBgW99b6tK7mZW2mrNxJASPCeDqIzf7wD9x-CMPdH3AZ95waK8x5SKXoyxZf5PfPxZUbyVoEyTKE4x8M6TYWNclKl2G1gzRVWw"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "620537fe-ecb9-405c-863d-abbeb61b8486",
+        "meta_page_uuid": "8c074f02-6114-46cc-83f4-51e131ead5a1",
+        "brand_uuid": "5ba217ed-0ef6-41d2-98d7-f20733b162e9",
+        "similarity_score": 0.444701509266643,
+        "original_media_url": "https://assets.spiral.ad/c/iedFwXxGkfSfZxK6MMsbypvf8UCcc8HcgMvJUe6fAS5-gUkAV7XV-QvHWGXVwNTCO8Gn0oGn1QGnE2skqrx0zqxaptEuD7eqOjF6Hr6V-e5-QHAFNQ9xjEaXDTDCySxdSjBKdrdrS1BK5DNDPEjACrywn0gyFDU",
+        "resized_media_url": "https://assets.spiral.ad/c/GbdtAotBB649r1wgYLi8myGO1B3DRG3K12TNuxdOazzGQGVn_hrvIkXyEWS09_a_7BXewSWA9r79DGnAMCQTxqY5teACTybw56kgQrHz2wjYkbJfsigkqZ098gJBHH9vQFw4NXcEsWg2QZarpCJLTaCEXQ",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LFFh#H.Ttk$gp{^+~BEM~VtSE*xa",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/9vT8i094VWg7cA8CmM8EMBVSQQQ55saeUDL9vgHgi4yl4SBKh5vzh1roHtBx0ssqhbAik9DOO9fSa2A4RRKyVYBWz9yNMUWfeUfNE1odv7h3un9TlKBHSPKAAE8xDHVffQxS5GkUdQKV4PgLLjeyLPrbF4WOlA"
+      }
+    ]
+  },
+  "details": {
+    "total": 10,
+    "data": [
+      {
+        "ad_platform": "meta",
+        "uuid": "af4f4ec6-e6e2-49fa-b0cf-6c964c150b93",
+        "meta_page_uuid": "9f075277-3292-4867-a12a-a8abbd3e0b9d",
+        "brand_uuid": "acfe5a69-4fc4-402f-8b34-0d6e4ca3b699",
+        "created_at": "2026-09-17T20:52:35.312250Z",
+        "body": "😍 Proč byste měli vyzkoušet přerušovaný půst?\n• O nic se neochuzujete.\n• Nemusíte se vzdávat svých oblíbených jídel.\n• Půst ve skutečnosti zrychluje váš metabolismus 🏆\n\n😱 😳 Jaký typ přerušovaného půstu je pro vás ten pravý?\nVyplňte rychlý kvíz a zjistěte to 🍎🥑🥗\n👉 K dispozici zde ⤵️",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/kJlIOkgEvRpnSkB2HD1_U45uLzGhHJTAlVXLtxjHq-dIkR21LJn8uVVSS3F9v_RqSzFd8p5SLc1afSpRGuUHHdzJJfkpbMiq5RGJOMTdsUZ14SktHn9XgPWWzc5M7G3cTPjGxugmNz6lPkQffQVYyhStUc8tJ5c.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/1taLiACASmYZIWHELojD2p26qni6HN_EW1Yq8xvlHT1h96j7gSktd94p5Xn8XYuBePvVR0tVgofZMq4tO5cOHBOjkGwLA2ULy8DdA5l1xSJs-bOjteZf6Hd2R1Zkk48b6Xj_FC8hrlHRd0nkQA7gEdQkLA.jpeg",
+        "start_date": "2026-09-17T07:00:00",
+        "end_date": "2026-10-04T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": 56896,
+        "total_active_time": 43647,
+        "language_code": "cs",
+        "language_codes": [
+          "cs"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://i.certifiedfasting.com/cz-cs/czk?utm_source=facebook&utm_medium=cpc&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term=yb93&fb_placement={{placement}}&fb_adset_id={{adset.id}}&fb_ads_id={{ad.id}}",
+        "meta_page": {
+          "uuid": "9f075277-3292-4867-a12a-a8abbd3e0b9d",
+          "brand": {
+            "uuid": "acfe5a69-4fc4-402f-8b34-0d6e4ca3b699",
+            "name": "Olive - Holistic Food Scanner",
+            "slug": "the-good-food-guide-by-olive",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/b9bae465-d568-4bc4-932c-29e365af1356/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "4f05d806-72b5-4888-b84c-dfb7533eed05",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/UQ4X2xlDbNrGtBdHAd5nibuaesQ29v8kB0jxkC8xifmBpbNQd4lEZaRtrd1XILccEO-yCkIt-5YWrKjA98NES_t7DIzxG9xfk8HP9GLpPdAw6Ue3kfXHC--MHIAwoa_r5JNPpYbqaL7kLhkJ5jH_k4vKfwOJN7E.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/y8zdmvU3Zi6Z8o4FMPQyJwUiJA2EcZSNKrvGmrm-U_jYEdDr_3BuJhZuXZ86wEcf_VpMFL1yhF_OcjcSY_gqk-aDSrO_FzNEKTwsS0LxoIOlC7nedikHcewO1Z0VL0MNNvIs7s47FMH_iP3u0zi_zoJhsvGnwQ.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/gvqE-MIvwIXQ9Ic3aXJ0hwiWFDOiUM9OHTCMbaTsApN1lZUDHfxQ5JBqe1-n1dOeyK2nmhmBaY3mWEcPxqqFF6xdn-n8XsruDBufDdWk9tz3p9rP5Rap69u4DfAXVBUlL8teS6LP_RaB99xvafccRcSp8g.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LED96TE2-;-U~Us.%2j@-Ta}R.oJ",
+            "language_code": "cs"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": false
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "91aacdc6-ec7e-43f7-98b1-fc36f2a6e834",
+        "meta_page_uuid": "8ae33d24-a779-4ac4-87a7-1df54bcc4023",
+        "brand_uuid": "1b2c7853-de6b-41ef-85e7-eb285cc0091d",
+        "created_at": "2026-06-20T12:25:16.752662Z",
+        "body": "Hladovíte při dietě? Představujeme vám dokonalé řešení, jak zkrotit hlad! 😱✨\nZapomeňte na chutě a začněte snadno hubnout. 💪\nZískejte unikátní plán hubnutí, který zohledňuje všechny aspekty vašeho života i laboratorní výsledky. Naše programy schválené lékaři vám pomohou dosáhnout cíle bez zbytečných omezení! 🌟",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/u5mHHrjNkmss7jJvUk37353EwNY_F_aIWGOsTAqjG2b5qCkmbcX-_A4cjzCtbJQEZSke_dOgrCPoBb6PshbOAOf8p99FhuPCw3YmeMiCKoABG5c9kWu0QK0UOkxpuDGFQNzZO9mdhu8xbv0NKiosDLnodOXib-8.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/D36--6izmXcoxVnW2JmTCouzx3oz8UpTziVKhIspyQserAxiKXIEyvNUuoC54Ue87xFR_t_B6-vtBa_7zzDpOtfjAoK7NW-2INdydZTdTrpavQ1Cw1v1ut-9MbAyVhYXtzgnvCKaPs4HAzf9rbnYeg79iw.jpeg",
+        "start_date": "2026-06-19T07:00:00",
+        "end_date": "2026-07-04T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": 48244,
+        "total_active_time": 51790,
+        "language_code": "cs",
+        "language_codes": [
+          "cs"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://ornament-weightloss.com/flow_5512",
+        "meta_page": {
+          "uuid": "8ae33d24-a779-4ac4-87a7-1df54bcc4023",
+          "brand": {
+            "uuid": "1b2c7853-de6b-41ef-85e7-eb285cc0091d",
+            "name": "Ornament: Your Health Coach",
+            "slug": "ornament-health",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/apps/5f49b731-a57a-498e-9da7-0cdb85aee483/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "7f7b2d3a-0858-4470-a3a2-300b815a1652",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/bDGkzvVccHj-AfCh3DcgqTG4jisN4m32HReRsCbHPdEs8BZ03ctXVpbQaCFDsBH7SJUOuQGgk4gLcGdkn6II5a4RMA-kP8_m4sl2_ov-nZK13MQneancictfJIaK_4dRfWzEVrHbFZbn8_S_TRv-0Q1NmFrJ_8o.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/1RnOEkYY8wZMolvYw4DzjSGq-WhjkAHZivvnFRYa_DEaS_bcuM5NSQMrrZEO_RBjWtdX-sRni2FjgRnc6oj65sIpUlg9ju8_XiZYHej0iX1gFxAV6kWURo92WHE0QrN-dq4PZKs7NUK6Up6LvOXgRdJasC_zEQ.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/GjIUqkqUgMSClsq_UwHsGfa4JmT-OsRwBd48S9Gp0l1J7OGbxBrudzE9K2Gr6yCnampREJFbRdBrgwqmEivbyYbhylcvl934oQqFdzsYp_HH8-1NThLoxjz5zRQODuP6472Sq2u3bwZSlrS7GwdDh5bFBA.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LdH1x$xtpGNa~As:K1R*^hfi%Mfk",
+            "language_code": "cs"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": false
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "62917369-dfb8-472b-a7e8-616a825d424f",
+        "meta_page_uuid": "080caff9-129e-4fc0-8932-66474aad7149",
+        "brand_uuid": "8377fd8e-6be1-4172-a037-3ec8888e71eb",
+        "created_at": "2026-05-26T21:37:37.867737Z",
+        "body": "Žádné zázračné diety. Jen aplikace, která ti pomáhá jíst lépe každý den a dosáhnout svého cíle.",
+        "cta_text": "Install now",
+        "original_media_url": "https://assets.spiral.ad/c/xdJ37ROv8W1GiOFLckCuksRhhNogecWh1iOj8aLNKywE6XBB8CybR8hFE2H2lj5FcdDzm6uJm2mki6ORsRPZilvZevVXA7wmv84oxks8rf86L3Ny3wQWexcDUoQLDo21FbKoO1-aMD4pThYkGcAa8w0l4udoeok.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/DrsHa44OQLryZWs_qqCy_BsghCgsx0Hf1RIskyfPnkghcogwOIi3-sU1GnPgE3Z0KxmLB1tvm2Bmz1saTiRBTyx0BV04q1LU1MW9PaGKGK8LFpZ446QTWGByS_5o9ci3p6vYFBZnhh49U8AN3AYGtlVG1w.jpeg",
+        "start_date": "2026-05-26T07:00:00",
+        "end_date": "2026-08-31T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": 232257,
+        "total_active_time": 19867,
+        "language_code": "cs",
+        "language_codes": [
+          "cs"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "ios",
+        "link_url": "http://itunes.apple.com/app/id1064020872",
+        "meta_page": {
+          "uuid": "080caff9-129e-4fc0-8932-66474aad7149",
+          "brand": {
+            "uuid": "8377fd8e-6be1-4172-a037-3ec8888e71eb",
+            "name": "Foodvisor - AI Calorie Counter",
+            "slug": "foodvisor-ai-calorie-counter",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/031f21dc-519b-4ba9-ac9f-2b33fd437f4f/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "3877ea8c-a0a3-4046-8e61-957ad901fc1e",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/Tg9Gc0fkchmHXSlSm1ZWlONiYDOBGBwItzja0-RyhwH9PMAohOPxKM2MlybxEfSU_-UAMT2H6yaWOiCbuqHYtRJTpEAjDBSQDkhulZvkU7NUrWvQiyBVnKxlM4ILkkB8dEX0H8dseOObd0hqwsOkTIEEGhLOBYI.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/LCL3g3XU3fq-LesXjncLfpu5hS2P8MYeVwpdKiMjZ6QsJouoz6vGJjXx_Ft2b87Ul4_hV0n6wVExKmnrrbf85pVbqD9LPWIVPYQ2mXHlVaksotf4Uc6GUxQN52Y8g-AqptdyfDbxYAO1s2cjAGVEcTpVGpC1UQ.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/UB35ItYG8Ymxh_k8ARpwMBalAHUo7YGk88WLG0SjwuHEio9KYsHEtg7KKlOSSc5r5rF1AwutM_8Gn71san1GyhHN42shXfkGTdDPqhlNC7dlkRWAITerW5GRYOW0cpkHNhrt-wW_CZkreZzoMw5h2eu4eA.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LUOqZrt7.At8S6j[ngaxx_fQM^fP",
+            "language_code": "cs"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "5e98cb46-f4aa-4b3d-9897-3dfeacdc9ec4",
+        "meta_page_uuid": "080caff9-129e-4fc0-8932-66474aad7149",
+        "brand_uuid": "8377fd8e-6be1-4172-a037-3ec8888e71eb",
+        "created_at": "2026-04-14T22:55:02.482883Z",
+        "body": "Žádné zázračné diety. Jen aplikace, která ti pomáhá jíst lépe každý den a dosáhnout svého cíle.",
+        "cta_text": "Install now",
+        "original_media_url": "https://assets.spiral.ad/c/zk5qyOaHIRA5st6LsD15_6rjNUP4JAxqEviuAD6KKTxOK6Z-erEeYn-NeFiTWbfDJnG7hWL8kOWhGWX4q7u4h_CRmW8qBzINucz-Zv5Z77tqclGAKh2JudWLX6D-0eaqh04bW54C3-w-9lzTPamxbFxw8DMo_g.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/yW3MLJ7AvvW61V622pRm39br64jrzFCl-TeZtsEi4dYY1gMbqslKQJpuuiMnDR5Kg8V3b6jgWggPAlBdiXAK8aWXFVGc-ruWW_DZUnwBJM5yorjK4eB0WzR13KQYWIlTn6xdRcSf5bLJqhyRAu2BHnQA.jpeg",
+        "start_date": "2026-04-14T07:00:00",
+        "end_date": "2026-07-07T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": 88731,
+        "total_active_time": 31073,
+        "language_code": "cs",
+        "language_codes": [
+          "cs"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "android",
+        "link_url": "http://play.google.com/store/apps/details?id=io.foodvisor.foodvisor",
+        "meta_page": {
+          "uuid": "080caff9-129e-4fc0-8932-66474aad7149",
+          "brand": {
+            "uuid": "8377fd8e-6be1-4172-a037-3ec8888e71eb",
+            "name": "Foodvisor - AI Calorie Counter",
+            "slug": "foodvisor-ai-calorie-counter",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/031f21dc-519b-4ba9-ac9f-2b33fd437f4f/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "e9b3572a-cd18-4fac-8bdd-5c0fb55b173d",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/wKc7dT2Z2H5TI2h3_ADJ9hHTxi63HE5XcQQRyiIdQXwk7L1KQ_ASseunPutoUHabVITb1z9AcdaZEBkrA17ItLhGe_LHFHz0NeCRIhgJFhFnWQcgUJHwNdIY9xGkBImCF1fXLkeUQ5djImOsxRH9SdGSwatkJA.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/YfTVN9V-emco1ekE5sJPEODXfwluHdvwBIAzAKUd_HdCuyN2iWmpdmpcwIohDy-qLhX5Is-2uu7k9MTMor3Koqd56Bqbcm_smmW5cAL7S6kRi8SlCcFWcbeZ1L6ty9TzAt4OFaG4rx7gAd9Sftbap0iEJQ6x.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/ZunssKHntDzEFPBqllsW06TEZr6YR8Sa5e2ie8d48xE3YT4tZfI1qWFfgJNVZrIGdaLtKaIpvpGTeJASceuzMy8N4NN0_LbP7qlQlZamIwyWh8hg4eH35ZYV7sdeQd0nx_NAlOHZB3FyItcJl43Cd3K_.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LOS5Iuxa+]xaysbHbbbHZhfkb^ay",
+            "language_code": "cs"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "441ba11e-e966-4dcb-9d24-b472835db5c3",
+        "meta_page_uuid": "f5b9875c-20d2-4e11-9e77-2deb0acb153f",
+        "brand_uuid": "8cb93bb6-795a-4ee7-b53d-7461f38cf3b5",
+        "created_at": "2026-08-03T12:13:40.502641Z",
+        "body": "Cítíte se silnější a plní energie s cvičením Tai Chi na židli! 🪑\n\n1️⃣ Odpovězte na pár otázek\n2️⃣ Získejte svůj program k vytištění\n3️⃣ Cvičte doma\n4️⃣ Začněte se postupně cítit lépe 😍\n\nJednoduché cvičení s nízkou zátěží, které můžete provádět vsedě na židli.\nZůstaňte aktivní, zlepšete svou rovnováhu a ciťte se skvěle v každém věku.",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/j55tEU_t0QYkol0EkaQHq-Nx_jl6QXbLLdojOo4FJojuc-_cXLffrzHS2QQJltQA0dkgPy4jc9c0-EJqwoqcxUbGLXVwn_ZckR02SB6U5euFNBY969i0Q8Gr6bZlo3A9mhNiMLTmn8RuT0d-BTY1mz0PpezxYMI.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/imVeO763eDk5Z2fIWDGa0163n44CTJ6RiIlGSjxkbUvnNnRhsrwPHWhCU4VEUty7NUyy_Q_MxWR2YjVAlES1ErdSGfyRWy3OzTwnEw5GqZqemU_xyTsFNxbnoSwawfbGmBTtVUFZtWIFpK_LmiLH1muyCQ.jpeg",
+        "start_date": "2026-08-01T07:00:00",
+        "end_date": "2026-08-25T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": 91730,
+        "total_active_time": null,
+        "language_code": "cs",
+        "language_codes": [
+          "cs"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://quiz.fitme.expert/cs/intro-114?cohort=fitme_fl_114&",
+        "meta_page": {
+          "uuid": "f5b9875c-20d2-4e11-9e77-2deb0acb153f",
+          "brand": {
+            "uuid": "8cb93bb6-795a-4ee7-b53d-7461f38cf3b5",
+            "name": "FitMe - Lazy Workout at Home",
+            "slug": "fitme-lazy-workouts",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/fitme__lazy_workouts/profile.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "5adb48ec-ef53-4fe5-9db2-21e394595e59",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/OhJc-BDFTWPbGHTNBmSze1m_yGhJW7y3eVLRPv0MGjTc2mkJbOF7jfgdjCBI4uJ1u6h-KEofeHq7F4RhoR0W96RWVS7eKhaK-hwout_yuYz75VCwGrqGMijjKtKA8UAsaBZ6KLxdAOA1jWZTQzAbnMaQC_VpOYo.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/tWnhP-QsA6WQj73pJMcMSLwJoaCL4mAXO6jJNJdwjtzd0qPZpdSFmU96jsXKA0hiMeejlrkGrZLApJ95Eg0Hn-foBb3By4IFEb1tjOnvKbpsrHSY7713f_U-ipKBaMYEMRnYNCFk3SLNjmomIyCPLosdzMHAKQ.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/D-2S7LsucjQera3NqRBnWPsoUGNWPUlIoEQN2TAs2PEyKSnfIc5rVeGcjP7Qe11-l1499UXzrq2Z5R_rp6zayU261ABrD_6W-Bf_-7upWAfgbu6t097QJDDAJXi5POk-GmJODYTZpv9VxLpxdYcA3YxRkA.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LWIXgRxGE1%#~qRjt6%M%LadxuRk",
+            "language_code": "cs"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "24990b44-eb5e-4840-a096-03c7f8dfd8ea",
+        "meta_page_uuid": "9f075277-3292-4867-a12a-a8abbd3e0b9d",
+        "brand_uuid": "acfe5a69-4fc4-402f-8b34-0d6e4ca3b699",
+        "created_at": "2026-08-03T21:03:53.596176Z",
+        "body": "😍 Proč byste měli vyzkoušet přerušovaný půst?\n• O nic se neochuzujete.\n• Nemusíte se vzdávat svých oblíbených jídel.\n• Půst ve skutečnosti zrychluje váš metabolismus 🏆\n\n😱 😳 Jaký typ přerušovaného půstu je pro vás ten pravý?\nVyplňte rychlý kvíz a zjistěte to 🍎🥑🥗\n👉 K dispozici zde ⤵️",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/lRNb0Rvrbofxvnqc0rFKehbI3jXv5gSN5Q8sfWB2PGn6ZuF62HJzXgxlzTFCezFMntS1dPQic6LSpUp3_Q8FyXrdJNrn64sDbuXmr-rlGC08_dtuwTa8vucNXXdoEHE7EO9b780WV_10890BaRg6Ks_jREEuBkQ.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/g10-CPQUT9vtDLCsAwriyOEHhR0N9xPrdMzrSELQKb5E9uhZUheBuCpFMnZ4Bs02jI9idgwZUBUuyWDwsRAFI7cEfoogXLropfRs5wodtTvLoK7L5cPEb3ak_QWbL4Cu4bERdTffzm4msMAugIAtmSG0bA.jpeg",
+        "start_date": "2026-08-03T07:00:00",
+        "end_date": "2026-08-30T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": 52529,
+        "total_active_time": 22690,
+        "language_code": "cs",
+        "language_codes": [
+          "cs"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://i.certifiedfasting.com/cz-cs/czk?utm_source=facebook&utm_medium=cpc&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term=yb93&fb_placement={{placement}}&fb_adset_id={{adset.id}}&fb_ads_id={{ad.id}}",
+        "meta_page": {
+          "uuid": "9f075277-3292-4867-a12a-a8abbd3e0b9d",
+          "brand": {
+            "uuid": "acfe5a69-4fc4-402f-8b34-0d6e4ca3b699",
+            "name": "Olive - Holistic Food Scanner",
+            "slug": "the-good-food-guide-by-olive",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/b9bae465-d568-4bc4-932c-29e365af1356/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "39be79a8-9024-4a68-9e7b-257b95d681ab",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/aZjqQBzP4h61NuFUN-L-ilBrWlL1j3pd5n510QdBdvVAb8vX9Fd2AN7OS2ONS2NlGy1YEATiDGEs5W76R6qV1xE4EGTzvNwhfrWux4w50FGuoBKW3OObJbLJ2-XmLWo_VlOthE_S7ayUXbiHovdfAXUumWylRB8.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/GlJvITKtbUuILVpEMMKldbOo5ZzlwK5ft1iOtKW4WirbKWhiGYRz5UxClDdPRrMH7ZeFCH1akAigktdCseBbZsCj6ka_mPyU-y3PMxpCG7dhKtUaRguVcnL6pJKR-hfQyIhh4pPeKqimWj7_bu2_rQtpgrLVdQ.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/d_zFobKUzcc5OaCsCm6XVhjbNuvbQRxy-2NbKTDeTWb_z7t1UYkpL0XVtYilQ9dj0ZPuDp8ZyJU58x6BIrdKr0NleysfW2inQ2AYebOzhAOpH6mHU_NF5ynpjNGHP4TjkuSHRWp5ATi-9tBSCw_RwX_qpg.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LIG8WKRj0Kj[9aoftRWVM{t6-pWV",
+            "language_code": "cs"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "73efc184-5b3e-4b1d-9c2d-e3723695b752",
+        "meta_page_uuid": "8ae33d24-a779-4ac4-87a7-1df54bcc4023",
+        "brand_uuid": "1b2c7853-de6b-41ef-85e7-eb285cc0091d",
+        "created_at": "2026-07-10T03:22:52.064327Z",
+        "body": "Hladovíte při dietě? Představujeme vám dokonalé řešení, jak zkrotit hlad! 😱✨\nZapomeňte na chutě a začněte snadno hubnout. 💪\nZískejte unikátní plán hubnutí, který zohledňuje všechny aspekty vašeho života i laboratorní výsledky. Naše programy schválené lékaři vám pomohou dosáhnout cíle bez zbytečných omezení! 🌟",
+        "cta_text": "See details",
+        "original_media_url": "https://assets.spiral.ad/c/s5Y21i9wO32Q6g9WAqansZm1yxcf3G-_qrE8VzFk-vlkQbEZaXVHgz62_s27Xr_vMm-zFsVkMTloSMYqqoKUU1mUPzb_qtTs0hDwIG0StV3oZBXjbFPIyQUNU8GILHfmPdJdUtBaRpiDe5CcKs0tFAVqscKfbbI.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/AxMpyf3cqMh0zelqymBuXIer6GN9oBMZU7xIKru78-m1yCp7HnN8MRyv1XzPiKDW8NRVmOFtRHkNvEfu8lD5dLtKmKopsZ4aZFxt6kdoLwl1JFB-6I1jtk4QsPItL5PKzJhyan1ix9ffbCJSzD1w0xK1Xg.jpeg",
+        "start_date": "2026-07-09T07:00:00",
+        "end_date": "2026-07-23T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": 27789,
+        "total_active_time": 19227,
+        "language_code": "cs",
+        "language_codes": [
+          "cs"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://ornament-weightloss.com/flow_5512",
+        "meta_page": {
+          "uuid": "8ae33d24-a779-4ac4-87a7-1df54bcc4023",
+          "brand": {
+            "uuid": "1b2c7853-de6b-41ef-85e7-eb285cc0091d",
+            "name": "Ornament: Your Health Coach",
+            "slug": "ornament-health",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/apps/5f49b731-a57a-498e-9da7-0cdb85aee483/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "6bdc8fa9-e29a-4481-8fca-fc7d6c15033a",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/Y93gtd8A0jflprCmzqxDy6vKaKahoccwZ9QTWCNGM1cJQnxolZM-ajecalT5LTdMSxnLMcJV2Vt4VXuFI23a6DrRlJDm8S5TBvpev4CN4qVP1UG1uSwxoeJJ94bK5VbIeVDolwSf7HNs3M650scoUY6PX6Vrjks.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/MgGRtSHvNVmeD694laJBmBSJPF3CBKLAzqp2hXDj1ZzBiKXAMhdpw4m8zbkoQTmI2FkHHn9rwoChtgbXDeDdhRk62jTgsO8sx_mbLCQyZMeDxUVlctyQQNBrviO8u1ZT-4BFrxHj-PRe1EEdcAi5jM2MTAe4kw.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/yoVNqzn0MRQoT4rJnmNKBBiLLZMjWNc4XfRlIxiDy_iL0VzMMRNY2GQKba6k7WdCjYsDE7Bo_0kSFkTvmULBuB_ROaalgePJty5a_K2RggL7_sZY-psY_YfqXtGaOMFFc7g7z9y6NPdueccw88cH_lq3LQ.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LCAyjK751A%222;]WrNy9+F#}OV@",
+            "language_code": "cs"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": false
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "8f0c2f40-9beb-4d04-a751-e505b3348f18",
+        "meta_page_uuid": "080caff9-129e-4fc0-8932-66474aad7149",
+        "brand_uuid": "8377fd8e-6be1-4172-a037-3ec8888e71eb",
+        "created_at": "2026-06-09T22:33:28.979655Z",
+        "body": "Žádné zázračné diety. Jen aplikace, která ti pomáhá jíst lépe každý den a dosáhnout svého cíle.",
+        "cta_text": "Install now",
+        "original_media_url": "https://assets.spiral.ad/c/L2HAHjm57PSxH-oXBiJC57KnecBQrdOyRzjDb8qQrbqBV-ImFhO6E3uQynkIyiP1fhZBo-nv7Hrg3Qbo-b4PZCkmmPd6E9jx4FVyFz5o2Oh503MTiQq7aWjeySxFfpPZBWhSfU6qHlQSNsE-s0hWuT8UkFRNH-8V.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/Sbr9ikhERACiQoUzQGGjVEDG-vk0HJ4xkExfNi-SOkcVsWNS_4WfwtgdfzQYBNWNUrFYFHHIeOlMPYOEX3cgf6Pq6x7Poq-Nu0mCsuulkNeKlC_l-F2TEBIkm53KZ2knDv8QLZzW4B8-EdbPWh4K21sHltk.jpeg",
+        "start_date": "2026-06-09T07:00:00",
+        "end_date": "2026-09-01T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": 54971,
+        "total_active_time": 25204,
+        "language_code": "cs",
+        "language_codes": [
+          "cs"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "ios",
+        "link_url": "http://itunes.apple.com/app/id1064020872",
+        "meta_page": {
+          "uuid": "080caff9-129e-4fc0-8932-66474aad7149",
+          "brand": {
+            "uuid": "8377fd8e-6be1-4172-a037-3ec8888e71eb",
+            "name": "Foodvisor - AI Calorie Counter",
+            "slug": "foodvisor-ai-calorie-counter",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/031f21dc-519b-4ba9-ac9f-2b33fd437f4f/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "051af48d-d71f-4b9a-b6c7-cb186680aefd",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/bXD7QMWK8p9y-05oJR94LqDbm50OAjNz699plLoAKiOyiCNH9vxQRvcJz36MGzAy7xQfH11iPXczLL12GlWjdLYKSQTG2l5R7QWdaOnfetZCDElCXpADHKaHR4yaQHg0r5bvMAO83nS6tXWKrE5zenzw8TyS6LAP.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/E4UHAxLEezTI7bb-t6NVM6MvKdHpXnOzkgPX5aMIyq4RViIru7s58LdgmcUaayrAaw0bKYhF364AIRtHhXyZ0X8UiTd9c288Fdm55H7UhMku1c-nHjvCXTctvfhPuF7qnt70kH8Gbr0pHlVfeAOKsYXGySUgddk.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/zfBFL1PaPsw-IQ0ej0r6OOOKF7gWpQk_AymYj_rmerc-Ep7ldgKfYjls77FIJSv1eQwMUCo4zJ3usaD1JV1E7EHGkwao5BocHxR3PSYp_YaSCbdDnbVCKkZD2nb7LlEQ03hHY_D5iMk2zhTNwueUA2c5G4Y.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LOL4Z$t7%1t7%hf5kCayq?WAxaoe",
+            "language_code": "cs"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": false
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "33d0f27d-ac18-4695-8ba6-a2d532d5278f",
+        "meta_page_uuid": "defc6401-0432-4476-81b3-10a97462ee2f",
+        "brand_uuid": "97183cc9-fcd8-4e7b-a7a2-7577f757d889",
+        "created_at": "2026-05-07T23:47:01.676447Z",
+        "body": "1️⃣Fitness plán na míru\n2️⃣900+ cviků\n3️⃣1000+ zdravých receptů\n4️⃣Sledování pokroku",
+        "cta_text": "Sign up",
+        "original_media_url": "https://assets.spiral.ad/c/wqvV2fxg0DX8dekpUBLvibRqzVDAq5k792SyUssPzCCQDNdSCnUrHL214i5gh1BrGt-0XutCsZNMmz6wBIQ6iR8lz-Rb0YDU6BkHaBL-r2ULWBPUjQXYW-Q8vR5KXfBxY-uTPGt4uegamXzPvyf5JCV6vCCZuA.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/JJcEBLM6JazTrvOA10VYFmZnySSM7E0SZWbL4Abps0GJ0N4AsQwxrcYgBhjUsat-h_RVQKqQ1uSUUD5OSSqwhSRFKXi8ZF4r5GmNCJZ5q2Wu7YSqqMpFgqg3Wn1ug9spefxjmTtlF4IFrfXbFYfmtQDu.jpeg",
+        "start_date": "2026-05-07T07:00:00",
+        "end_date": "2026-05-29T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": 34588,
+        "total_active_time": 54034,
+        "language_code": "cs",
+        "language_codes": [
+          "cs"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "ios",
+        "link_url": "http://itunes.apple.com/app/id1463386686",
+        "meta_page": {
+          "uuid": "defc6401-0432-4476-81b3-10a97462ee2f",
+          "brand": {
+            "uuid": "97183cc9-fcd8-4e7b-a7a2-7577f757d889",
+            "name": "Fitify: Home Workout, AI Coach",
+            "slug": "fitify-home-workout-ai-coach",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/2f7a2c62-13da-4a40-86cf-01ea91506acd/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "8c93b04d-6d81-4e60-8e63-5fe17c38d99f",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/NsOp2r9pHlic3LKVl_iEPnuqSExPbfCwmDz89ucPMoq32P8VUtK1LnjZw1tc1m6sds5ZAT3PAxGPQUZ33iWLIsjkOhFjVtJS4FvOhs5AdKDks604kLMmqv-kvOIWedOa-wGEJvlsXo8I3P-BSWbPfHpwpj3Ogw.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/V2JZOY45fZWW9chbcIKgOTK96tgBOp7_veVPXaIwApCOfRbyelLjdWIC5p7_HWgkuo8V4AV8cOaNsLkyFU-BI8NceL0cE8bQ2wgb_2_QIflZwvzQbVnqotCqcDyrYbf9W33pGQcUAZnj_GbPI_cOtBIDnNGzfg.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/3O3WXJoEAIsdNXIxCqP8IQKUSJWBrQtgJ1GW5beZgPOBEVQXZbhQaJ0mROTMNLjfTrqVuStaQ6o-NRLR0BbL7Xuw16Z6utMfOB2jR1549WjBE6CyzDyTDaizwdDtM80fksuG9b6LYLxcRNbzXgo_IIRA.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LXL4yw9GD%xus:ofj[ay00-:xuRj",
+            "language_code": "cs"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "620537fe-ecb9-405c-863d-abbeb61b8486",
+        "meta_page_uuid": "8c074f02-6114-46cc-83f4-51e131ead5a1",
+        "brand_uuid": "5ba217ed-0ef6-41d2-98d7-f20733b162e9",
+        "created_at": "2026-05-13T05:12:12.375061Z",
+        "body": "„Tohle je moje oblíbená houbová káva“\n\nPředstavujeme Coffee 2.0 🪄\n\nZačni své ráno s touto jedinečnou směsí léčivých hub, adaptogenů a kolagenu.\n\nMůžeš očekávat:\n⚡️ Více produktivity a soustředění\n⚡️ Celodenní energii bez pádu\n⚡️ 2 lahodné příchutě, bez přidaného cukru\n\nTvůj nákup je chráněn naší 90denní garancí",
+        "cta_text": "Shop now",
+        "original_media_url": "https://assets.spiral.ad/c/vW7w7TtGcq-Fc2Ipy---iybBHuhQWRZK_LudVcwPAM71UxrTNOqrT5g6Jdi2cWeyfRhwetZQdoVQn3MLm5l8cLKVcm6ZfZnjGJKx1T_PVatKbAGje5cxJUobhafFH6onu_A6XNs8dXvlwiS6XykCyaWBkugqHA4.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/inr9XYlsgfmg0jrvo8d-cyEtEUeKly-HDO05aGb-0Sx4nqT-WqbyMFf8DOS6-2-xh0jRKuuAN4F3UHN4O28O7FjoT_NXQhXmeqUUBSBcfwu7hgX54oylTydx-X2rDEjPjTV8fBw9dNc9g-pDPFXAeTU_Vw.jpeg",
+        "start_date": "2026-05-12T07:00:00",
+        "end_date": "2026-05-29T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": 134237,
+        "total_active_time": 72889,
+        "language_code": "cs",
+        "language_codes": [
+          "cs"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://the2-0brand.com/cs-cs/products/new-cs-sp-coffee-2-0",
+        "meta_page": {
+          "uuid": "8c074f02-6114-46cc-83f4-51e131ead5a1",
+          "brand": {
+            "uuid": "5ba217ed-0ef6-41d2-98d7-f20733b162e9",
+            "name": "The 2.0 Brand",
+            "slug": "the-2-0-brand",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/the_2.0_brand/profile.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "234b0f25-d0f7-4334-b0b6-fc43ff418f65",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/hLAM7dLQav6yrEAvgLjQ94_hQkR2pfDfbhBRZ0HirItbLOjCA1MettKSdkkEvgn6vX-CahMTRO29xmMJ03nfMQrIheK0TRGP_4L8_EJ1Wv-i_FOtIcKC7zXFx34ipwerxJV7FWyKiQd5plgXsB2eob7aZQmMp-o.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/Txx4cqjVkTObzb5d_JEN4pCkjXq3CuVPrM79_wk8db7Dfo2uW6CF1aB11yGj8-0W3Qz62Agslt_Fn911bPKuqeAS6845fjpZMQW8tCLUCgdgwN8scbRmXOoxpL0gYD_0szINiDJHtZ1ESsJhBcr9M6q1xtkC9g.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/8EvQWPzXDVfv1_2_we_V-ZHgWqSISaleDNLg0z_xo0t1fP7hLPxDZ7df6IUtQZQp-vZEtk1fI0DZG7HiBmcn0AdaMkORD7DKHbPvS8_Ev2rsR6-adkpMKqvc0QvXaekiOb4rQSK8-2n-xZO-Zq2u56XXJw.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LFFh#H.Ttk$gp{^+~BEM~VtSE*xa",
+            "language_code": "cs"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": false
+      }
+    ],
+    "missing": []
+  }
+}

@@ -71,15 +71,22 @@ export async function detectScenes(file: string, threshold = 0.3): Promise<numbe
 }
 
 /** Sample times: every 0.25 s in the first 3 s (the hook), then the middle of each scene, capped at `max`. */
-export function sampleTimes(durationSec: number, cuts: number[], max = 20): number[] {
+export function sampleTimes(durationSec: number, cuts: number[], max = 20, everySec?: number): number[] {
   const hook = [];
   for (let t = 0; t < Math.min(3, durationSec); t += 0.25) hook.push(Math.round(t * 100) / 100);
-  const bounds = [0, ...cuts, durationSec];
-  const mids = bounds
-    .slice(0, -1)
-    .map((a, i) => Math.round(((a + bounds[i + 1]) / 2) * 100) / 100)
-    .filter((t) => t > 3);
-  const all = [...hook.filter((_, i) => i % (mids.length > 8 ? 2 : 1) === 0), ...mids];
+  let rest: number[];
+  if (everySec) {
+    // no reliable cuts (continuous take): sample evenly after the hook
+    rest = [];
+    for (let t = 3 + everySec / 2; t < durationSec; t += everySec) rest.push(Math.round(t * 100) / 100);
+  } else {
+    const bounds = [0, ...cuts, durationSec];
+    rest = bounds
+      .slice(0, -1)
+      .map((x, i) => Math.round(((x + bounds[i + 1]) / 2) * 100) / 100)
+      .filter((t) => t > 3);
+  }
+  const all = [...hook.filter((_, i) => i % (rest.length > 8 ? 2 : 1) === 0), ...rest];
   if (all.length <= max) return all;
   const step = all.length / max;
   return Array.from({ length: max }, (_, i) => all[Math.floor(i * step)]);
