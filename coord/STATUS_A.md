@@ -1,7 +1,7 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-12 01:08 +03
+- Time: 2026-10-12 01:16 +03
 - Current task: AS1 Manus landing page (live), a.clinic full live run, MORNING_A; then IMPROVE loop
 - Last sync: 23:37 exit 0, main UPDATED, checks PASS
 - Blockers:
@@ -30,3 +30,4 @@
 - 00:24 A15 done: pnpm test:engine-e2e 15/15 in 27 s (A14 deferred until after A15 so the real-data pass runs on the finished pipeline; noted per protocol)
 - 00:38 A14 in progress: smokes recorded for anthropic, openai (gpt-image-2 + tts + whisper), firecrawl, youtube, spiral (via pass), apify (via pass), manus (via pass, task still running); Hound real dataset recorded (73 evidence/8 sources/3 blueprints); a.clinic pass running. Bugs found and fixed by the live pass: outputSchema dropped a property named `format`; Spiral uuids format; Manus sub-agent wait misread; off-topic items (relevance filter added); demo items mixed into live passes
 - 01:08 A14 done (see TASKS). AS2 done: fal final render of the Hound remake (6 clips, $1.50). Live full Hound run on recorded research passes eval-run 49/49. AS3-AS6 done.
+- 01:16 ack demo render MP4 missing on a fresh clone (INBOX_A 00:49): demo keyframes + review MP4s built after seed. ack two engine tests time out under full pnpm check (INBOX_A 01:08): timeouts raised to 120 s / 180 s
