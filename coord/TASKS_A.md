@@ -44,7 +44,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Demo mode: analyze a synthetic test video you generate locally (Remotion or ffmpeg: colored scenes with text cards and a TTS line), never a downloaded third-party video in tests. Real blueprints come from the A14 live pass.
   - Accept: unit test detects the scene cuts of the synthetic video within +/- 0.2 s; a blueprint for it validates against the schema with correct shot count and hook text; `GET /api/runs/[id]/blueprints` returns it.
 
-- [ ] **A09 Consult phase + chat**
+- [x] **A09 Consult phase + chat** (commit 60d584e)
   - Gap-driven questions (5 to 9, each with `why` + evidence ids), run waits in `waiting_input`, `POST /api/runs/[id]/answers`, `POST /api/runs/[id]/chat` SSE (tokens + new question cards), answers written into the dossier with provenance.
   - Accept: demo run pauses at consult and resumes after answers (test); chat streams tokens (curl -N).
 
