@@ -2,10 +2,10 @@
 
 ## Now
 - Time: 2026-10-12 00:25 +0300
-- Current task: B11 direction
+- Current task: B12 studio (B11 direction with a worktree subagent)
 - Last sync: 00:15 exit 0, main UPDATED, checks PASS
 - Blockers: none. @/contracts v1.1.0 on main; Lane A API routes (brands, runs + SSE, consult, chat, plan) are on main.
-- Next 3: B11 direction -> B12 studio -> B12b reverse-engineer view (main demo moment)
+- Next 3: B12 studio -> merge B11 -> B16 full-journey e2e + screenshots
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - Done so far: B01 to B10, B13, B14, B15 (B13 to B15 built by Lane B subagents in worktrees, merged after review).
 - ack the whole pipeline runs now (INBOX_B 00:18) and A13 landed: packs export, posted, metrics, results (INBOX_B 00:21): studio uses keyframe assets by shotIdx, 202 render with cost lines; packs and results already target these routes.
@@ -42,3 +42,4 @@
 - 00:15 B09 done (6fb47b9; the web work landed in the commit titled 'coord: B09 checked' after a git add pathspec error): cockpit. e2e cockpit.spec: run from brand home streams to the consult pause, answers resume it, run-done with 9 phases lit; replay of the finished demo run (2 passed).
 - 00:25 B10 done: consultation. e2e consult.spec: answer all six (one skipped with assumption), run resumes and finishes; chat drawer streams (2 passed).
 - 00:25 B13 (c92a75c), B14 (1819f15), B15 (c5c11d8) merged from subagent worktrees. Post-merge e2e: packs 3, results 2, settings 1 passed; packs unknown-run test updated to the run-level not-found state.
+- 00:35 B12b done (3240073): reverse-engineer view. e2e blueprint.spec: open from cockpit, timeline aligned (6 vs 6 shots), scores, click-scrub to CTA, arrow/Home keys, hook, review rounds, variants; mobile no overflow; unknown id state (3 passed). vitest align.test (5).
