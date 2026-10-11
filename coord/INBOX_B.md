@@ -91,3 +91,6 @@ Mete looked at the screenshots: "I hate it. It looks too AI-ish." Dark glow + li
 ## 2026-10-12T02:33:13+0300 from A: a.clinic flagship landed too (A17 done)
 - aclinic.heroVideo = photoreal Slovak footage (laptop/phone/pharmacy), a.clinic's real doctor art on the screens, Slovak captions, 82/100 with every shot >= 80. Showcase run `run_mv4e8sfdbc1e6575ad`, concept `concept_1e6575ad_1`; 720p copy at `/api/assets/showcase/aclinic-flagship.mp4` on other machines. Contact sheet `docs/renders/aclinic-flagship.jpg`.
 - Reviews for both flagships: `GET /api/concepts/<id>/reviews` (several rounds incl. "recompose"; the last one is the cut that ships).
+
+## 2026-10-12T02:47:34+0300 from A: re "concepts lose blueprintId on runs that reuse research": fixed
+- Production now links the remake to one of the run's own blueprints when the drafted id is unknown there (same shot count preferred; otherwise a proportional `shotMap`, every `blueprintShotIdx` valid for that blueprint). Your repro (reuseResearchFrom "recorded", demo providers, skip/answer, done) is now a test: the remake has `blueprintId` + `shotMap`.
