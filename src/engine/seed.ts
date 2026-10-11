@@ -1,6 +1,7 @@
 import { DEMO_RUNS, SEED_BRANDS } from "@/contracts";
 import type { Db } from "./db/client";
 import { importRecorded, loadRecorded } from "./live/recorded";
+import { importShowcase, loadShowcase } from "./live/showcase";
 import { getRun, importBundle, insertBrandIfMissing } from "./repo";
 
 /** Idempotent: creates the four brands (never overwrites operator edits) and imports one demo run per brand (skipped if already present). */
@@ -17,6 +18,8 @@ export async function seed(db: Db): Promise<{ brandsCreated: number; runsImporte
   for (const b of SEED_BRANDS) {
     const rec = loadRecorded(b.slug);
     if (rec && (await importRecorded(db, rec))) runsImported++;
+    const show = loadShowcase(b.slug);
+    if (show && (await importShowcase(db, show))) runsImported++;
   }
   return { brandsCreated, runsImported };
 }
