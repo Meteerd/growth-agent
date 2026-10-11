@@ -72,7 +72,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - PublishPack per concept/platform, zip download (mp4 + caption.txt + hashtags + checklist.md + cover.jpg), mark posted, manual metrics, `GET /api/brands/[id]/results`, learnings after metrics.
   - Accept: download a zip and list its contents; results return snapshots ordered by time.
 
-- [ ] **A14 Live smoke tests + real dataset**
+- [x] **A14 Live smoke tests + real dataset** (commit fc358d7; smokes recorded for anthropic, openai, firecrawl, youtube, fal, higgsfield (auth), spiral/apify/manus via the live passes; Hound 73 + a.clinic 82 real evidence items recorded as default datasets; /api/spend $5.62 total, all under caps)
   - `pnpm smoke <provider> --live` for anthropic, openai, firecrawl, youtube, apify, manus, fal, spiral, higgsfield, each within cap, recorded. Then one live research pass for Hound and a.clinic with small limits, INCLUDING reverse-engineering 3 real winning videos per brand into blueprints (Spiral/Apify media; media stays in `data/`, only blueprint JSON is committed), recorded as their default dataset (`demo: false`, `capturedAt`). Update `docs/APIS.md` with every verified detail.
   - Accept: `/api/spend` totals under caps; recorded fixtures exist; STATUS_A lists spend per provider.
 
@@ -104,3 +104,4 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
 - [x] **I10** Unicode brand names (Slovak, Turkish) produce clean slugs. Test (commit 797b8e9).
 - [x] **I11** A crashed script left its run "running" and a stale queued run would be auto-resumed (and spend) on the next server start: resume only stale runs, live-pass marks failures, stale runs cancelled.
 - [x] **I12** Captions were missing on fal clip shots (they were burned into the still the clip replaces) and drifted with the Ken Burns zoom: compositor now overlays a fixed caption layer. Regression test (commit 8747d6c).
+- [x] **I13** A leftover smoke-test run (queued) was resumed by the stale-run hook and started spending: smokes now close their runs, and runs interrupted more than 6 hours ago are failed instead of resumed. Test (commit fc358d7).
