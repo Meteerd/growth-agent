@@ -36,11 +36,11 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Dossier view with inline editing (PATCH), sources list, runs list, start run. Connect page: provider tiles with Live/Demo/Missing, per-brand config fields (non-secret ids only), honest copy about what each connection adds.
   - Accept: e2e: edit a dossier field and see it persist (mock); connect page shows all providers.
 
-- [ ] **B09 Run cockpit `/runs/[id]`**
+- [x] **B09 Run cockpit `/runs/[id]`** (commit 6fb47b9)
   - Phase rail with moving light, live event stream (typed-in tool calls, costs, warnings), evidence wall (cards by source, thumbnails, metrics, outlier/longevity badges, deconstruction on hover/expand), shader activity tied to run state.
   - Accept: e2e: mock run streams to completion with all phases lit; screenshot mid-run and finished.
 
-- [ ] **B10 Consultation `/runs/[id]/consult`**
+- [x] **B10 Consultation `/runs/[id]/consult`** (commit 68a8da8)
   - One question at a time, large serif prompt, mono "why I'm asking", evidence chips, answer chips / text / scale / confirm, skip with assumption, progress constellation, free-text chat drawer streaming from `/runs/:id/chat`.
   - Accept: e2e: answer all questions in mock mode and the run resumes.
 
@@ -57,15 +57,15 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Handle missing frames gracefully (frames of third-party ads exist only on the machine that analyzed them): show a styled placeholder with the shot description.
   - Accept: e2e in mock mode opens a blueprint, scrubs the timeline, and shows the aligned remake with scores; screenshots desktop + mobile.
 
-- [ ] **B13 Packs `/runs/[id]/packs`**
+- [x] **B13 Packs `/runs/[id]/packs`** (commit c92a75c)
   - Ready-to-post cards per platform (cover, caption, hashtags, post time, checklist), download zip, copy caption, mark posted (URL), metrics entry form.
   - Accept: e2e: mark a pack posted and enter metrics.
 
-- [ ] **B14 Results `/brands/[slug]/results`**
+- [x] **B14 Results `/brands/[slug]/results`** (commit 1819f15)
   - Posted packs with "posted X h ago" and live tickers, small-multiples chart per post (views over time), learnings list, honest empty state "Waiting for first metrics".
   - Accept: e2e: after metrics entry the chart and counters update.
 
-- [ ] **B15 Settings `/settings`**
+- [x] **B15 Settings `/settings`** (commit c5c11d8)
   - Provider status (live/demo/key present/verified), budgets vs spent bars, spend ledger table, `PROVIDER_MODE` shown read-only.
   - Accept: screenshot.
 

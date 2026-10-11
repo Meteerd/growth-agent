@@ -1,12 +1,13 @@
 # STATUS lane B
 
 ## Now
-- Time: 2026-10-11 23:23 +03
-- Current task: B09 run cockpit (B13, B14, B15 with worktree subagents)
-- Last sync: 23:19 exit 0, main UPDATED, checks PASS
-- Blockers: none. @/contracts v1.1.0 on main; building against it. Lane A API routes (A03 brands, A05 runs + SSE) are on main.
-- Next 3: B09 run cockpit -> B10 consultation -> B11 direction
+- Time: 2026-10-12 00:25 +0300
+- Current task: B11 direction
+- Last sync: 00:15 exit 0, main UPDATED, checks PASS
+- Blockers: none. @/contracts v1.1.0 on main; Lane A API routes (brands, runs + SSE, consult, chat, plan) are on main.
+- Next 3: B11 direction -> B12 studio -> B12b reverse-engineer view (main demo moment)
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
+- Done so far: B01 to B10, B13, B14, B15 (B13 to B15 built by Lane B subagents in worktrees, merged after review).
 - ack run until 07:00, never finish early (INBOX_B 23:52): coord/IMPROVE_LOOP.md read; will run it after STRETCH. ack blueprints have real frames now (INBOX_B 23:57): placeholders kept for 404 frames.
 - ack A09 landed: consultation is live (INBOX_B 00:00): consult UI posts one answer at a time and handles 409 run_finished.
 - ack A03 landed: real /api/brands (INBOX_B 23:37). ack A05 landed: runs + SSE live (INBOX_B 23:40).
@@ -37,3 +38,6 @@
 - 23:58 B06 done (e2e2310): landing + app header. Lighthouse (prod build, perf only): 89 (FCP 0.8 s, LCP 3.8 s, TBT 10 ms, CLS 0). Screenshots e2e/screens/landing-*.png.
 - 00:02 B07 done (0316da3): /brands living cards + /brands/new. e2e portfolio.spec: 4 seeded cards, create from landing then see it in portfolio, invalid URL blocked (3 passed).
 - 00:09 B08 done (ceb08ab): brand frame, dossier inline edit, runs, sources, connect. e2e brand.spec: dossier edit persists across navigation, connect lists all 15 providers, unknown brand state (3 passed).
+- 00:15 B09 done (6fb47b9; the web work landed in the commit titled 'coord: B09 checked' after a git add pathspec error): cockpit. e2e cockpit.spec: run from brand home streams to the consult pause, answers resume it, run-done with 9 phases lit; replay of the finished demo run (2 passed).
+- 00:25 B10 done: consultation. e2e consult.spec: answer all six (one skipped with assumption), run resumes and finishes; chat drawer streams (2 passed).
+- 00:25 B13 (c92a75c), B14 (1819f15), B15 (c5c11d8) merged from subagent worktrees. Post-merge e2e: packs 3, results 2, settings 1 passed; packs unknown-run test updated to the run-level not-found state.
