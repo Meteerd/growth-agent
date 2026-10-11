@@ -30,3 +30,8 @@
 2. Which TikTok / Instagram accounts exist for Hound and a.clinic (for the morning posts)
 3. Spiral subscription / API key
 4. Emir's GitHub username (repo access)
+
+## Overnight build decisions (append rows)
+| When | Decision | By |
+|---|---|---|
+| 11 Oct 23:18 | A01: Next.js 16.4 (create-next-app latest), React 19.3, Tailwind 4, Biome 2.5 (2-space), Vitest 5. Removed `cacheComponents`/`partialPrefetching` defaults so API routes stay plainly dynamic (SSE + SQLite). `pnpm check` runs `next typegen` first so route/layout types exist for tsc | Lane A |

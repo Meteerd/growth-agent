@@ -4,7 +4,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
 
 ## CORE
 
-- [ ] **A01 Scaffold the app** (target: first 15 min, push immediately)
+- [x] **A01 Scaffold the app** (commit 8e73900)
   - `pnpm create next-app` at the repo root (TypeScript, App Router, `src/` dir, Tailwind, ESLint off in favour of Biome, import alias `@/*`), keep existing `docs/`, `coord/`, `scripts/`, `.env.example`. Add Biome, Vitest. `package.json` scripts: `dev`, `build`, `start`, `check` (tsc --noEmit + biome + vitest run, under ~3 min), `db:migrate`, `seed`, `e2e` (placeholder until Lane B adds Playwright), `smoke`.
   - Create empty owned folders with a README line each: `src/contracts`, `src/engine`, `src/app/api`. Do not build UI pages beyond the default (Lane B owns them).
   - Accept: `pnpm install`, `pnpm check` and `pnpm build` exit 0; `pnpm dev` serves http://localhost:3000. Sync, then write in `coord/INBOX_B.md`: "A01 landed, app scaffolded, you can start".
