@@ -300,7 +300,14 @@ export async function buildFlagship(
 
   // 2. frames
   const shots = [...c.shots];
-  for (const s of shots) shots[s.idx] = { ...s, keyframeAssetId: (await keyframeFor(db, brand, c, s, "")).id };
+  const queue = [...shots];
+  const cur = c;
+  await Promise.all(
+    Array.from({ length: Math.min(3, queue.length) }, async () => {
+      for (let s = queue.shift(); s; s = queue.shift())
+        shots[s.idx] = { ...s, keyframeAssetId: (await keyframeFor(db, brand, cur, s, "")).id };
+    }),
+  );
   c = { ...c, shots, status: "keyframes" };
   await upsertConcept(db, c);
 
