@@ -29,6 +29,12 @@ A GTM agent for operators who run many brands. You enter a brand (URL), connect 
 - Keep test output short; write long logs to `logs/` (git-ignored) and grep them.
 - Commit small and often with clear messages (`engine: ...`, `web: ...`, `contracts: ...`, `coord: ...`).
 
+## Three AI engines, everything else is a tool
+- **Claude (Anthropic)**: the main brain for every decision: research reasoning, consultation, channel direction, scripts, compliance.
+- **OpenAI**: images (keyframes), voiceover, transcription, and a second-opinion model where a cross-check helps.
+- **Manus**: autonomous deep-research tasks and campaign landing pages via its API.
+- Tools they call: Spiral (primary source for Meta and TikTok ad intelligence: winners, transcripts, creative analysis), Apify (fallback ads library + organic TikTok/IG/Reddit/reviews), Firecrawl (websites), YouTube (Shorts), fal and Higgsfield (video).
+
 ## Keep it small
 One Next.js app, one SQLite file, runs on localhost. Six core providers (Anthropic, OpenAI, Firecrawl, Apify, Manus, fal). No extra services, no Docker, no cloud deploy tonight. If a new dependency or service is not needed for the demo, do not add it.
 
