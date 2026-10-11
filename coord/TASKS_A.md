@@ -35,7 +35,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Crawl the site with Firecrawl when live (fallback: direct fetch + readability), extract dossier fields + visual identity with structured output, record sources, never overwrite operator-edited fields.
   - Accept: demo intake for all four brands produces valid dossiers; one live intake of houndapp.xyz recorded.
 
-- [ ] **A08 Research phase**
+- [x] **A08 Research phase** (commit 200a8f2)
   - Spiral as the primary Meta/TikTok ad source (brand winners, ad transcripts, creative analysis, EU reach), Apify ads library as fallback; Apify for organic TikTok, Instagram, Reddit, reviews; YouTube Shorts search; Manus deep-research task (structured output, poll, keep `task_url`); optional connectors. Normalize to Evidence; outlier score; longevity tiers; OpenAI transcription of top outlier videos when live; batched deconstruction with Claude.
   - Accept: demo run yields >= 30 evidence from >= 5 sources for Hound and a.clinic; unit tests for outlier score and longevity; Manus provider tested against a recorded fixture.
 
