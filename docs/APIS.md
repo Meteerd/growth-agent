@@ -50,6 +50,7 @@ Not used (on purpose, to keep the build small): ElevenLabs, Deepgram, Tavus, syn
 ### Higgsfield (auth verified from docs.higgsfield.ai/docs/authentication, 11 Oct 2026; optional)
 - Credentials are created in Higgsfield Cloud (cloud.higgsfield.ai; a help page also names console.higgsfield.ai) and consist of a key ID (`HIGGSFIELD_API_KEY`) and a secret (`HIGGSFIELD_API_SECRET`). API use needs a funded API balance.
 - Auth header: `Authorization: Key <key_id>:<secret>` (legacy `hf-api-key` / `hf-secret` headers still accepted). Server-side only.
+- Our account's dashboard gave a single API key and no separate secret. The provider must handle all three cases: `HIGGSFIELD_API_KEY` alone (send `Authorization: Key <key>`), a key that already contains `id:secret`, or key + `HIGGSFIELD_API_SECRET`. Verify which works in the smoke test and record the answer here.
 - Endpoints and models: read docs.higgsfield.ai before implementing. Community note: Higgsfield's API costs more than fal for the same models; use it as the alternative, not the default.
 
 ### Publishing constraints (verified unless marked)
