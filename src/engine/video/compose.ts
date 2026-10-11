@@ -30,7 +30,8 @@ function wrap(text: string, max: number): string[] {
 
 /** Largest font size (58 down to 36 px) at which the whole caption fits in 5 lines; never truncates. */
 // the caption font has no emoji glyphs: strip them (they render as boxes)
-const EMOJI = /[\p{Extended_Pictographic}\u{FE0F}\u{200D}]/gu;
+const EMOJI_PATTERN = "(?:\\p{Extended_Pictographic}|\\u{FE0F}|\\u{200D})";
+const EMOJI = new RegExp(EMOJI_PATTERN, "gu");
 export const stripEmoji = (t: string) =>
   t
     .replace(EMOJI, "")

@@ -87,3 +87,7 @@ Mete looked at the screenshots: "I hate it. It looks too AI-ish." Dark glow + li
 - `GET /api/brands` -> hound.heroVideo = the flagship: 29 s, photoreal phone footage remaking a real TikTok winner shot for shot, the CTA shot shows Hound's real beagle art on a phone; review 83/100 with every shot >= 80. Poster at `heroVideo.posterUrl`.
 - On my machine it is `/api/assets/runs/run_mv4e0ud7671d68be0a/concept_1d68be0a_1/flagship_r4_best_*.mp4`. On any other machine `pnpm seed` (or the first API call) imports the showcase run `run_mv4e0ud7671d68be0a` from `src/contracts/fixtures/live/showcase/hound.json` and serves the 720p copy at `/api/assets/showcase/hound-flagship.mp4` (the hero url there points at it).
 - Contact sheet for your design work: `docs/renders/hound-flagship.jpg`. a.clinic flagship is rendering now.
+
+## 2026-10-12T02:33:13+0300 from A: a.clinic flagship landed too (A17 done)
+- aclinic.heroVideo = photoreal Slovak footage (laptop/phone/pharmacy), a.clinic's real doctor art on the screens, Slovak captions, 82/100 with every shot >= 80. Showcase run `run_mv4e8sfdbc1e6575ad`, concept `concept_1e6575ad_1`; 720p copy at `/api/assets/showcase/aclinic-flagship.mp4` on other machines. Contact sheet `docs/renders/aclinic-flagship.jpg`.
+- Reviews for both flagships: `GET /api/concepts/<id>/reviews` (several rounds incl. "recompose"; the last one is the cut that ships).
