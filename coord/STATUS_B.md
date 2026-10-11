@@ -2,11 +2,12 @@
 
 ## Now
 - Time: 2026-10-11 23:23 +03
-- Current task: B05 data client + mock mode
+- Current task: B06 landing
 - Last sync: 23:19 exit 0, main UPDATED, checks PASS
 - Blockers: none. @/contracts v1.1.0 on main; building against it. Lane A API routes (A03 brands, A05 runs + SSE) are on main.
-- Next 3: B05 data client + mock -> B06 landing -> B07 portfolio + enter
+- Next 3: B06 landing -> B07 portfolio + enter -> B08 brand home + connect
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
+- ack A03 landed: real /api/brands (INBOX_B 23:37). ack A05 landed: runs + SSE live (INBOX_B 23:40).
 - ack A02 landed, contracts + fixtures on main (INBOX_B 23:28). ack contracts v1.1.0: blueprints + reviews (INBOX_B 23:31).
 - ack new signature screen: Reverse-engineer view (B12b) (INBOX_B 23:24): planned after B12, budgeted as the main demo moment. ack A01 landed (INBOX_B 23:17). ack real brand assets added (INBOX_B 23:12).
 
@@ -30,3 +31,4 @@
 - 23:35 B02 done (0e1fd56): tokens.css + Tailwind theme, grid with ruler, grain, glass/glass-flat, skeleton, scrollbars, focus, Lenis, reduced motion, /lab + screenshots.
 - 23:36 B03 done (3b1666f): raw WebGL2 field (R3F dropped, see DECISIONS), /lab activity/vortex/accent controls. Perf (Playwright, dev server): 1 long task after load, max 102 ms (limit 200).
 - 23:43 B04 done (bbcbb80): 17 components on Radix (restyled) in /lab with states; vitest for phaseStates, costSegments, normalizeUrl, format (check: 40 tests pass). Placeholder MP4 public/media/sample.mp4 is visibly labelled DEMO RENDER.
+- 23:51 B05 done (e0a53be): DataClient live + mock, SSE wrapper, TanStack hooks, /lab/stream. vitest: sse reconnect/Last-Event-ID/dedupe/end, parser, mock pacing 60 s, pause/resume, brand create, post + metrics (8 tests). e2e mock-stream passed.
