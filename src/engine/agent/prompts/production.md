@@ -21,3 +21,5 @@ Dossier (claims allowed and forbidden, voice, visual style, assets), operator an
 
 ## Rule pack
 {{rulePack}}
+
+Operator answers marked "skipped (assumption: ...)" are assumptions, not statements: write "assuming ...", never "you said".

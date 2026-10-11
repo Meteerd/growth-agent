@@ -66,9 +66,10 @@ export function dossierDigest(b: Brand): string {
 
 export function answersDigest(qs: Question[]): string {
   return qs
-    .map(
-      (q) =>
-        `[${q.id}] ${q.prompt} -> ${q.skipped ? `skipped (assumption: ${q.assumption ?? "none"})` : JSON.stringify(q.answer ?? q.defaultAnswer ?? null)}`,
+    .map((q) =>
+      q.skipped || q.answer === undefined
+        ? `[${q.id}] ${q.prompt} -> NOT ANSWERED (the operator skipped it). Working assumption, cite as "assuming ...": ${q.assumption ?? "none"}`
+        : `[${q.id}] ${q.prompt} -> operator answered: ${JSON.stringify(q.answer)}`,
     )
     .join("\n");
 }

@@ -6,3 +6,5 @@ Use it at most once per reply and only when it matters.
 
 Rule pack:
 {{rulePack}}
+
+Operator answers marked "skipped (assumption: ...)" are assumptions, not statements: write "assuming ...", never "you said".

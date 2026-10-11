@@ -44,6 +44,14 @@ if (plan) {
   if (brand.vertical === "b2b_saas")
     check(!plan.channels.slice(0, 3).some((c) => c.channel === "tiktok"), "B2B: TikTok not in the top 3");
   check(!EM.test(plan.summary), "no em dash in plan summary");
+  // a skipped question must never be cited as something the operator said
+  const skipped = qs.filter((q) => q.skipped).map((q) => q.id);
+  const planText = `${plan.summary} ${plan.channels.map((c) => c.rationale).join(" ")} ${plan.notNow.map((n) => n.reason).join(" ")}`;
+  const misattributed = skipped.filter((id) => new RegExp(`you said[^.]*\\(?${id}`, "i").test(planText));
+  check(
+    misattributed.length === 0,
+    `skipped answers are not cited as "you said"${misattributed.length ? ` (${misattributed.join(", ")})` : ""}`,
+  );
 }
 for (const c of await repo.listConcepts(db, runId)) {
   const text = conceptText(c);
