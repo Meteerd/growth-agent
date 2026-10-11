@@ -41,7 +41,7 @@ export function PacksScreen({ runId }: { runId: string }) {
 
       <section
         aria-label="How posting works"
-        className="rise mb-12 grid overflow-hidden rounded-panel border border-line bg-raised md:grid-cols-[minmax(0,1fr)_auto]"
+        className="grid-cols-1 rise mb-12 grid overflow-hidden rounded-panel border border-line bg-raised md:grid-cols-[minmax(0,1fr)_auto]"
       >
         <div className="flex gap-4 p-5 md:p-6">
           <span
@@ -92,7 +92,7 @@ export function PacksScreen({ runId }: { runId: string }) {
                 key={platform}
                 aria-labelledby={`group-${platform}`}
                 data-testid={`pack-group-${platform}`}
-                className="grid gap-5 border-line border-t pt-6 lg:grid-cols-[208px_minmax(0,1fr)] lg:gap-8"
+                className="grid-cols-1 grid gap-5 border-line border-t pt-6 lg:grid-cols-[208px_minmax(0,1fr)] lg:gap-8"
               >
                 <header className="rise flex items-end justify-between gap-4 lg:sticky lg:top-24 lg:flex-col lg:items-start lg:justify-start lg:self-start">
                   <div>
@@ -144,7 +144,7 @@ function Count({ label, value }: { label: string; value?: number }) {
 
 function LoadingGroups() {
   return (
-    <div className="grid gap-5 border-line border-t pt-6 lg:grid-cols-[208px_minmax(0,1fr)] lg:gap-8">
+    <div className="grid-cols-1 grid gap-5 border-line border-t pt-6 lg:grid-cols-[208px_minmax(0,1fr)] lg:gap-8">
       <div className="flex flex-col gap-3">
         <Skeleton className="h-3 w-6" />
         <Skeleton className="h-8 w-32" />
@@ -153,7 +153,7 @@ function LoadingGroups() {
         {[0, 1].map((i) => (
           <div
             key={i}
-            className="glass-flat grid overflow-hidden md:grid-cols-[288px_minmax(0,1fr)] xl:grid-cols-[288px_minmax(0,1fr)_304px]"
+            className="grid-cols-1 glass-flat grid overflow-hidden md:grid-cols-[288px_minmax(0,1fr)] xl:grid-cols-[288px_minmax(0,1fr)_304px]"
           >
             <div className="grid place-items-center border-line border-b p-5 md:border-r md:border-b-0">
               <Skeleton className="aspect-[9/16] w-full max-w-[192px] rounded-card" />

@@ -21,13 +21,13 @@ export function BrandHome({ slug }: { slug: string }) {
   if (error) return <ErrorState title="Could not load the brand" error={error} onRetry={() => refetch()} />;
   if (isLoading || !brand)
     return (
-      <div className="grid gap-4 lg:grid-cols-[1fr_380px]">
+      <div className="grid-cols-1 grid gap-4 lg:grid-cols-[1fr_380px]">
         <SkeletonCard lines={6} className="h-[480px]" />
         <SkeletonCard lines={4} className="h-[320px]" />
       </div>
     );
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_380px]">
+    <div className="grid-cols-1 grid gap-6 lg:grid-cols-[minmax(0,1fr)_380px]">
       <Dossier brand={brand} />
       <aside className="flex flex-col gap-4">
         <HeroVideo slug={brand.slug} />
@@ -68,7 +68,7 @@ function Dossier({ brand }: { brand: Brand }) {
         />
       </Panel>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid-cols-1 grid gap-4 md:grid-cols-2">
         <Panel tone="flat" className="p-5">
           <p className="mono-label">offers</p>
           {d.offers.length ? (
@@ -100,7 +100,7 @@ function Dossier({ brand }: { brand: Brand }) {
       {d.personas.length > 0 && (
         <Panel tone="flat" className="p-5">
           <p className="mono-label">who buys</p>
-          <div className="mt-3 grid gap-4 md:grid-cols-2">
+          <div className="grid-cols-1 mt-3 grid gap-4 md:grid-cols-2">
             {d.personas.map((p) => (
               <div key={p.name} className="rounded-card p-4 hairline">
                 <h3 className="font-medium text-bone text-ui">{p.name}</h3>
@@ -116,7 +116,7 @@ function Dossier({ brand }: { brand: Brand }) {
         </Panel>
       )}
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid-cols-1 grid gap-4 md:grid-cols-2">
         <EditableList label="Proof" items={d.proof} onSave={(v) => patch({ proof: v })} />
         <EditableList label="Still unknown" items={d.gaps} onSave={(v) => patch({ gaps: v })} tone="warn" />
         <EditableList

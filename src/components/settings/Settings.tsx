@@ -201,7 +201,7 @@ function ModePanel({ live, loading, failed }: { live: Row[]; loading: boolean; f
     <section
       aria-label="Modes"
       data-testid="mode-panel"
-      className="glass rise grid overflow-hidden md:grid-cols-[1fr_1.25fr_1fr]"
+      className="grid-cols-1 glass rise grid overflow-hidden md:grid-cols-[1fr_1.25fr_1fr]"
     >
       <Cell label="This cockpit">
         <div className="flex items-center gap-3">
@@ -295,7 +295,7 @@ function ProviderGroup({
   return (
     <section
       aria-labelledby={`group-${role}`}
-      className="grid gap-5 border-line border-t py-8 first:border-t-0 first:pt-0 md:grid-cols-[220px_1fr] md:gap-8"
+      className="grid-cols-1 grid gap-5 border-line border-t py-8 first:border-t-0 first:pt-0 md:grid-cols-[220px_1fr] md:gap-8"
     >
       <header className="md:pt-1">
         <h3 id={`group-${role}`} className="font-medium text-bone text-heading">
@@ -306,7 +306,7 @@ function ProviderGroup({
           {loading ? "Reading status" : `${live} of ${rows.length} live`}
         </p>
       </header>
-      <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+      <ul className="grid-cols-1 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {rows.map((r) => (
           <li key={r.id} className="rise" data-testid={`provider-${r.id}`}>
             {loading ? <SkeletonCard lines={2} className="h-full min-h-[208px]" /> : <Tile row={r} />}
@@ -372,7 +372,7 @@ function Budgets({ rows, spend, loading }: { rows: Row[]; spend?: SpendResponse;
 
   return (
     <div
-      className="grid overflow-hidden rounded-panel border border-line bg-raised lg:grid-cols-[300px_1fr]"
+      className="grid-cols-1 grid overflow-hidden rounded-panel border border-line bg-raised lg:grid-cols-[300px_1fr]"
       data-testid="budgets"
     >
       <div className="flex flex-col justify-between gap-6 border-line border-b p-6 lg:border-r lg:border-b-0">
@@ -400,7 +400,7 @@ function Budgets({ rows, spend, loading }: { rows: Row[]; spend?: SpendResponse;
           )}
         </div>
       </div>
-      <ul className="grid gap-px bg-line sm:grid-cols-3">
+      <ul className="grid-cols-1 grid gap-px bg-line sm:grid-cols-3">
         {paid.map((r) => (
           <li
             key={r.id}

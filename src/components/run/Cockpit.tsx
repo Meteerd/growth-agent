@@ -30,7 +30,7 @@ export function Cockpit() {
   const notes = usePhaseNotes(events);
   return (
     <MotionConfig reducedMotion="user">
-      <div className="grid gap-6 lg:grid-cols-[250px_minmax(0,1fr)_minmax(0,380px)]">
+      <div className="grid-cols-1 grid gap-6 lg:grid-cols-[250px_minmax(0,1fr)_minmax(0,380px)]">
         <aside className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-44 lg:self-start">
           <Panel tone="flat" className="hidden p-5 lg:block">
             <p className="mono-label mb-3">phases</p>
@@ -339,7 +339,7 @@ function Blueprints() {
           {remakeOf.size ? `, ${[...remakeOf.keys()].filter((id) => list.some((b) => b.id === id)).length} remade` : ""}
         </span>
       </div>
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="grid-cols-1 grid gap-3 md:grid-cols-2">
         {list.map((b) => {
           const remake = remakeOf.get(b.id);
           return (
@@ -413,7 +413,7 @@ function EvidenceWall() {
         ))}
       </div>
       {isLoading && !groups.length ? (
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid-cols-1 grid gap-3 sm:grid-cols-2">
           {[0, 1, 2, 3].map((i) => (
             <Skeleton key={i} className="h-40 rounded-panel" />
           ))}
@@ -441,7 +441,7 @@ function EvidenceWall() {
                 <span className="font-mono text-[11px] text-bone-3">{items.length}</span>
                 <span className="h-px flex-1 bg-line" />
               </div>
-              <div className="grid items-start gap-3 sm:grid-cols-2">
+              <div className="grid-cols-1 grid items-start gap-3 sm:grid-cols-2">
                 {items.map((e, i) => (
                   <motion.div
                     key={e.id}

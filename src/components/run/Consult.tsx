@@ -98,7 +98,7 @@ export function Consult() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="grid gap-8 pt-4 pb-28 lg:grid-cols-[232px_minmax(0,1fr)] lg:gap-14 lg:pt-8">
+      <div className="grid-cols-1 grid gap-8 pt-4 pb-28 lg:grid-cols-[232px_minmax(0,1fr)] lg:gap-14 lg:pt-8">
         <Steps questions={questions} index={index} isDone={isDone} local={local} onPick={(i) => setPicked(i)} />
         <div className="min-w-0">
           <AnimatePresence mode="wait">

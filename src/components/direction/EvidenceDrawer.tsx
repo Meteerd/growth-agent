@@ -49,7 +49,7 @@ export function EvidenceDrawer({
             <Block label="Why">
               <p className="text-bone text-body leading-relaxed">{rec.rationale}</p>
             </Block>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid-cols-1 grid gap-6 sm:grid-cols-2">
               <Block label="Formats">
                 <Chips items={rec.formats} />
               </Block>

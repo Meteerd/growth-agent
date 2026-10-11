@@ -85,7 +85,7 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
     );
   if (isLoading || !bp)
     return (
-      <div className="grid gap-4 lg:grid-cols-12">
+      <div className="grid-cols-1 grid gap-4 lg:grid-cols-12">
         <Skeleton className="h-[400px] rounded-panel lg:col-span-8" />
         <Skeleton className="h-[400px] rounded-panel lg:col-span-4" />
       </div>
@@ -106,7 +106,7 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
 
   return (
     <div className="flex flex-col gap-5" data-testid="blueprint-view">
-      <div className="grid gap-5 lg:grid-cols-12">
+      <div className="grid-cols-1 grid gap-5 lg:grid-cols-12">
         <section
           aria-label="Program monitor"
           className="flex flex-col overflow-hidden rounded-panel bg-viewer lg:col-span-8"
@@ -242,7 +242,7 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
         />
       </Panel>
 
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="grid-cols-1 grid gap-4 lg:grid-cols-3">
         <ShotCard
           title={`Their shot ${idx + 1}`}
           sub={`${shot.t0}s to ${shot.t1}s`}
@@ -262,7 +262,7 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
         <Hook bp={bp} onJump={() => scrub(0.01)} />
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_400px]">
+      <div className="grid-cols-1 grid gap-4 lg:grid-cols-[minmax(0,1fr)_400px]">
         <div className="flex min-w-0 flex-col gap-4">
           {bp.transcript && <Transcript text={bp.transcript} highlight={shot.voiceover} />}
           <Variants variants={variants} runId={run?.id} />
@@ -531,7 +531,7 @@ function Variants({ variants, runId }: { variants: Concept[]; runId?: string }) 
   return (
     <div>
       <h3 className="mb-2 font-semibold text-[14px]">The same idea in the other winning formats</h3>
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid-cols-1 grid gap-3 sm:grid-cols-2">
         {variants.map((v) => (
           <Link
             key={v.id}

@@ -3,6 +3,7 @@ import houndRecorded from "@/contracts/fixtures/live/runs/hound.json";
 import { logoOnDark } from "@/lib/client/brandAssets";
 import { countryName, VERTICAL_LABELS } from "@/lib/client/format";
 import { PRODUCT_NAME } from "@/lib/client/product";
+import { displayHost } from "@/lib/client/url";
 import { ExampleStrip, type Winner } from "./ExampleStrip";
 
 const LOOP: [string, string][] = [
@@ -82,7 +83,7 @@ export function Brands() {
   return (
     <section className="mx-auto max-w-[1440px] px-4 py-[var(--spacing-section-sm)] md:px-8">
       <SectionHead index="02" title="Four real brands. Four legal regimes." />
-      <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="grid-cols-1 mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {SEED_BRANDS.map((b) => {
           const cover = b.dossier.visual.referenceImages?.[0];
           return (
@@ -100,7 +101,7 @@ export function Brands() {
                   <img src={logoOnDark(b)} alt="" className="size-8 rounded-[4px] object-contain" />
                   <div>
                     <h3 className="font-semibold text-[16px]">{b.name}</h3>
-                    <p className="font-mono text-[11px] text-bone-3">{new URL(b.url).hostname}</p>
+                    <p className="font-mono text-[11px] text-bone-3">{displayHost(b.url)}</p>
                   </div>
                 </div>
                 <p className="text-[13px] text-bone-2">{b.dossier.oneLiner}</p>
@@ -150,7 +151,7 @@ export function Rules() {
   return (
     <section className="mx-auto max-w-[1440px] px-4 py-[var(--spacing-section-sm)] md:px-8">
       <SectionHead index="03" title="House rules." />
-      <ul className="mt-10 grid border-line border-t md:grid-cols-2">
+      <ul className="grid-cols-1 mt-10 grid border-line border-t md:grid-cols-2">
         {RULES.map(([t, d], i) => (
           <li
             key={t}

@@ -55,7 +55,7 @@ export function Studio() {
   if (error) return <ErrorState title="Could not load the concepts" error={error} onRetry={() => refetch()} />;
   if (isLoading)
     return (
-      <div className="grid gap-4 lg:grid-cols-[300px_1fr]">
+      <div className="grid-cols-1 grid gap-4 lg:grid-cols-[300px_1fr]">
         <SkeletonCard lines={4} />
         <SkeletonCard lines={8} className="h-[420px]" />
       </div>
@@ -76,7 +76,7 @@ export function Studio() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="grid gap-6 xl:grid-cols-[300px_minmax(0,1fr)_300px] lg:grid-cols-[280px_minmax(0,1fr)]">
+      <div className="grid-cols-1 grid gap-6 xl:grid-cols-[300px_minmax(0,1fr)_300px] lg:grid-cols-[280px_minmax(0,1fr)]">
         <nav
           aria-label="Concepts"
           className="flex min-w-0 flex-col gap-2 lg:sticky lg:top-44 lg:self-start"
