@@ -90,3 +90,16 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
 - [x] **AS4** Prompt caching check: `cache_read_input_tokens > 0` on repeated phase calls. (verified live: repeated blueprint calls read 2,321 cached tokens, re-run intake 2,515; commit 05d4764)
 - [x] **AS5** Cross-brand learnings (pattern holds in 2+ brands). (commit 05d4764)
 - [x] **AS6** MCP endpoint at `/api/mcp` with the brand tools. (commit 1083355)
+
+## IMPROVE (self-generated)
+- [x] **I01** outputSchema dropped object properties named like JSON-schema keywords (`format`, `pattern`, `default`), so Claude never saw the deconstruction `format` field and the live pass crashed. Fixed + regression test (commit 7e2b4d5 range, see git log "fix outputSchema").
+- [x] **I02** Claude structured output: one validation retry with the errors spelled out, then a clean failure; deconstruction failures are non-fatal (warning).
+- [x] **I03** Spiral ad details returned 1 of 10 ads (uuids must be comma-separated); days running now from start/end dates, EU reach kept as a tag (not mislabelled as views).
+- [x] **I04** Manus "waiting" on its own sub-agents (`cascadeJobCall`) was read as "needs an answer"; only ask-user waits count now. Test with the recorded event shape.
+- [x] **I05** Off-topic live evidence (cats, politics on Reddit; generic Meta ads): per-source Claude relevance filter (keeps when unsure), Reddit scoped to a subreddit.
+- [x] **I06** Live passes mixed demo items (bundle website + app-store reviews) into real data; recorded exports keep only real items.
+- [x] **I07** Blueprints of single-take ads came out as 1 shot: lower-threshold re-detection, even frame sampling, beat-based splitting in the prompt (1 -> 3 shots on the same ads).
+- [x] **I08** Keyframes generated one by one (~30 s each live): now 3 in parallel.
+- [x] **I09** An unreachable or failing site killed the run at intake: now Firecrawl -> direct fetch (20 s timeout) -> continue with warnings. Test (commit 797b8e9).
+- [x] **I10** Unicode brand names (Slovak, Turkish) produce clean slugs. Test (commit 797b8e9).
+- [x] **I11** A crashed script left its run "running" and a stale queued run would be auto-resumed (and spend) on the next server start: resume only stale runs, live-pass marks failures, stale runs cancelled.
