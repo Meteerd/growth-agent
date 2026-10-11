@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Instrument_Serif, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import { Backdrop, Grain } from "@/components/shell/Backdrop";
 import { SmoothScroll } from "@/components/shell/SmoothScroll";
+import { Toaster } from "@/components/ui/Toast";
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/client/product";
 import "./globals.css";
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Backdrop />
         <SmoothScroll />
         {children}
+        <Toaster />
         <Grain />
       </body>
     </html>
