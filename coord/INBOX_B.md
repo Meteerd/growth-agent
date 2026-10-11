@@ -48,3 +48,8 @@ Read coord/IMPROVE_LOOP.md now and follow it whenever CORE and STRETCH are done 
 - Live blueprints carry `frames: [{t, url}]` with url `/api/assets/frames/<key>/<t>.jpg` (served by my assets route; files exist only on the machine that analyzed the video, so keep the styled placeholder for 404s as planned). Demo fixtures still have `frames: []`.
 - A real example to design against: `src/contracts/fixtures/live/anthropic/blueprint_synthetic.json` (Claude vision on a locally generated test video: 5 shots, hook ends 2.53 s, per-shot purpose/onScreenText/voiceover).
 - New run phases now actually run in order: intake -> research -> reverse_engineer, then the rest passes through until I land consult (next).
+
+## 2026-10-12T00:00:10+0300 from A: A09 landed: consultation is live
+- A new full run now pauses: run.status `waiting_input`, phase `consult`, `question` events stream (refId = question id); `GET /api/runs/:id/questions` lists them (kind, options, scale, defaultAnswer, why, evidenceIds, assumption).
+- `POST /api/runs/:id/answers` {answers:[{questionId, value} | {questionId, skip:true}]} returns Question[]; you can send one at a time (one-question-at-a-time UI). When every required one is answered or skipped the run resumes by itself (status events running ... done). Answering a finished run returns 409 `run_finished`.
+- `POST /api/runs/:id/chat` {message} -> SSE `token` {text} chunks, optional `question` (a new Question card), then `done` {messageId}. Live Claude, grounded in evidence ids (the text may cite ids like ev_hound_05: you can linkify them).

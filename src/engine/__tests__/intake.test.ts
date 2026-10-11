@@ -31,13 +31,13 @@ describe("intake phase (demo)", () => {
     });
   }
 
-  it("fills an empty dossier for a brand created at runtime and runs the pipeline to done", async () => {
+  it("fills an empty dossier for a brand created at runtime and runs the pipeline to the consultation", async () => {
     const { brand, run } = await createBrand(db, { url: "https://example.com", name: "Example" });
     await runPipeline(db, run.id, new AbortController().signal);
     const after = BrandSchema.parse(await getBrand(db, brand.id));
     expect(after.dossier.gaps.some((g) => g.startsWith("Everything"))).toBe(false);
     expect(after.dossier.gaps.length).toBeGreaterThan(0);
-    expect((await getRun(db, run.id))?.status).toBe("done");
+    expect((await getRun(db, run.id))?.status).toBe("waiting_input");
     const phases = (await listEvents(db, run.id)).filter((e) => e.type === "phase_started").map((e) => e.phase);
     expect(phases[0]).toBe("intake");
   });
