@@ -105,3 +105,5 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
 - [x] **I11** A crashed script left its run "running" and a stale queued run would be auto-resumed (and spend) on the next server start: resume only stale runs, live-pass marks failures, stale runs cancelled.
 - [x] **I12** Captions were missing on fal clip shots (they were burned into the still the clip replaces) and drifted with the Ken Burns zoom: compositor now overlays a fixed caption layer. Regression test (commit 8747d6c).
 - [x] **I13** A leftover smoke-test run (queued) was resumed by the stale-run hook and started spending: smokes now close their runs, and runs interrupted more than 6 hours ago are failed instead of resumed. Test (commit fc358d7).
+- [x] **I14** The live plan cited skipped questions as "because you said ..." (they are assumptions). Digest now marks them NOT ANSWERED with the working assumption, prompts say "assuming ...", and `pnpm eval-run` fails on misattribution.
+- [x] **I15** A pack kept pointing at the draft video after a later final render: finished renders now update the concept's ready packs. Test.
