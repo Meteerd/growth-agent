@@ -153,8 +153,10 @@ function Media({ brand, render }: { brand: BrandSummary; render?: Render }) {
   const ok = (u?: string) => (u && !broken.includes(u) ? u : undefined);
   const drop = (u: string) => () => setBroken((b) => [...b, u]);
   const image = ok(art);
-  const video = ok(render?.video?.url);
-  const still = ok(render?.keyframe?.url);
+  // the engine's flagship remake (A17) leads; otherwise the newest render or keyframe of the brand's runs
+  const hero = brand.heroVideo;
+  const video = ok(hero?.url ?? render?.video?.url);
+  const still = ok(hero ? undefined : render?.keyframe?.url);
   const secs = render?.video?.durationSec;
   return (
     <figure className="border-line border-b">
@@ -180,7 +182,7 @@ function Media({ brand, render }: { brand: BrandSummary; render?: Render }) {
             {video ? (
               <video
                 src={video}
-                poster={still}
+                poster={hero?.posterUrl ?? still}
                 muted
                 loop
                 autoPlay
@@ -200,7 +202,11 @@ function Media({ brand, render }: { brand: BrandSummary; render?: Render }) {
         <span className="truncate">{image ? "Brand imagery" : "No brand imagery yet"}</span>
         <span className="shrink-0">
           {video ? (
-            <>Latest render{secs ? <span className="font-mono tabular-nums">, {Math.round(secs)}s</span> : null}</>
+            hero ? (
+              "Flagship remake"
+            ) : (
+              <>Latest render{secs ? <span className="font-mono tabular-nums">, {Math.round(secs)}s</span> : null}</>
+            )
           ) : still ? (
             "Latest keyframe"
           ) : (

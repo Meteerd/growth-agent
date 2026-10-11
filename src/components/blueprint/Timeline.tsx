@@ -6,6 +6,8 @@ import { cn } from "@/lib/client/cn";
 import { PURPOSE_COLOR, PURPOSE_LABEL } from "@/lib/client/purpose";
 import { scoreTone, shotScore } from "./align";
 
+const seen = (v?: string) => (v && !/^not visible/i.test(v.trim()) ? v : undefined);
+
 const TONE_TEXT = { pass: "text-pass", warn: "text-warn", fail: "text-fail" } as const;
 
 /** A frame from the analysed video when this machine has it; otherwise a dark card that describes the shot. */
@@ -135,7 +137,9 @@ export function Timeline({
               <span key={s} className="absolute bottom-0" style={{ left: pct(s) }}>
                 <span className={cn("absolute bottom-0 w-px bg-bone-4", s % tickEvery === 0 ? "h-2.5" : "h-1.5")} />
                 {s % tickEvery === 0 && (
-                  <span className="absolute bottom-3 -translate-x-1/2 font-mono text-[10px] text-bone-3">{tc(s)}</span>
+                  <span className="absolute bottom-3 -translate-x-1/2 whitespace-nowrap font-mono text-[10px] text-bone-3">
+                    {tc(s)}
+                  </span>
                 )}
               </span>
             ))}
@@ -170,7 +174,11 @@ export function Timeline({
                         />
                       ))
                     ) : (
-                      <ShotFrame fallback={`${s.subject}: ${s.action}`} purpose={s.purpose} className="h-full w-full" />
+                      <ShotFrame
+                        fallback={[seen(s.subject), seen(s.action)].filter(Boolean).join(": ")}
+                        purpose={s.purpose}
+                        className="h-full w-full"
+                      />
                     )}
                   </div>
                 </div>
@@ -254,7 +262,7 @@ export function Timeline({
                   )}
                 >
                   <p className="line-clamp-2 text-[10.5px] text-bone-2 leading-tight">
-                    {s.voiceover ?? s.onScreenText ?? ""}
+                    {seen(s.voiceover) ?? seen(s.onScreenText) ?? ""}
                   </p>
                 </div>
               </div>
