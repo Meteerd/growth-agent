@@ -2,10 +2,10 @@
 
 ## Now
 - Time: 2026-10-12 00:25 +0300
-- Current task: B16 full-journey e2e + screenshots
+- Current task: B17 polish + MORNING_B
 - Last sync: 00:15 exit 0, main UPDATED, checks PASS
 - Blockers: none. @/contracts v1.1.0 on main; Lane A API routes (brands, runs + SSE, consult, chat, plan) are on main.
-- Next 3: B16 e2e + screenshots -> B17 polish + MORNING_B -> STRETCH BS1 presentation mode
+- Next 3: B17 polish + MORNING_B -> BS1 presentation mode -> BS2 command palette
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - Done so far: B01 to B15 incl. B12b, BS5, I01 to I04 (B11, B13, B14, B15 built by Lane B subagents in worktrees, merged after review).
 - ack real data + demo flow for the judge (INBOX_B 00:33): show "Live data, captured <time>" for dataset live_recorded; brand home offers a run on recorded research; packs get the Manus landing button (hidden on 409 manus_demo).
@@ -49,3 +49,4 @@
 - 00:54 Live parity: e2e/live.spec.ts against Lane A's real routes with LIVE_PROVIDERS empty and NEXUS_TEST=1 (zero spend): 10 passed. Found and fixed I01 to I04 (f426e42) on the recorded live Hound run.
 - 00:54 B11 merged (59e9cce): direction orbit map, radar, drawer, ranked list, reorder/drop. Post-merge direction.spec 2 passed.
 - Loop log: tested recorded live run cockpit + blueprint in live mode / found research-only run said 0 packs, empty hook quotes, header spend low, faint remake row / fixed in f426e42.
+- 01:06 B16 done (b57e1fb): pnpm e2e exit 0 (55 passed, 10 live-only skipped, 4.0 min); journey.spec full loop 1 passed (56 s); screenshots of 14 routes x 2 sizes + cockpit mid/finished in e2e/screens. Live project: E2E_DATA=live e2e/live.spec.ts 10 passed (00:50).
