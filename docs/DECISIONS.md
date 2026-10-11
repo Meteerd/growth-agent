@@ -21,6 +21,10 @@
 | 11 Oct 23:15 | Credits: Claude ~$5K, OpenAI ~$2K, Deepgram $15K, AWS $10K live; fal/Higgsfield/Apify/Manus small tonight, event credits tomorrow | Mete |
 | 11 Oct 23:15 | Manus has no Meta Ads connector (API v2 docs); Meta paid ads for a.clinic are notNow until LegitScript | research |
 
+| 11 Oct 23:30 | Simplified: ONE Next.js app (UI + API routes), SQLite via Drizzle/libSQL, localhost only; no separate engine server, no Docker, no cloud tonight. Supersedes the 23:00 stack row | Mete |
+| 11 Oct 23:30 | Providers trimmed to six core (Anthropic, OpenAI, Firecrawl, Apify, Manus, fal) + optional Higgsfield/YouTube/Spiral/brand connectors. OpenAI covers TTS and transcription. Dropped: ElevenLabs, Deepgram, Tavus, sync., Langfuse, AWS, Browser Use | Mete |
+| 11 Oct 23:30 | Deploy to Vercel/Netlify later, after the local demo works | Mete |
+
 ## Still open
 1. Product name (constant `PRODUCT_NAME`)
 2. Which TikTok / Instagram accounts exist for Hound and a.clinic (for the morning posts)

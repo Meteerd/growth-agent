@@ -20,6 +20,6 @@ Filled in by the build agents (`coord/MORNING_A.md`, `coord/MORNING_B.md`). Expe
 ```bash
 pnpm install
 cp .env.example .env   # then paste keys
-pnpm db:up && pnpm db:migrate && pnpm seed
-pnpm dev               # engine :4100, web :3100
+pnpm db:migrate && pnpm seed
+pnpm dev               # http://localhost:3000
 ```

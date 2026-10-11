@@ -2,34 +2,21 @@
 
 "Verified" = checked against the provider's docs or store page on 11 Oct 2026. Anything else is marked (unverified); the build agent must confirm it from the official docs before relying on it, and update this file.
 
-## Key matrix
-| Provider | Env | Used for | Tonight | Tomorrow (event) | Fallback if empty/exhausted |
+## Key matrix (kept deliberately small)
+| Provider | Env | Used for | Tonight | Tomorrow (event) | If empty / exhausted |
 |---|---|---|---|---|---|
-| Anthropic | `ANTHROPIC_API_KEY` | The engine: every agent step | ~$5K credits, live | same | Bedrock (AWS credits), then OpenAI |
-| OpenAI | `OPENAI_API_KEY` | Keyframes/statics (image model), TTS fallback, LLM fallback | ~$2K credits, live | same | fal Flux / Nano Banana for images |
-| Apify | `APIFY_TOKEN` | Scrapers (ads library, TikTok, IG, Reddit, Maps, stores, site crawl) | Emir's/Mete's account (free tier has small monthly credit) | event credits ("plenty") | Firecrawl / direct fetch / Manus research |
-| Manus | `MANUS_API_KEY` | Deep research task, landing page builder | Emir's key | 10,000 credits each | Claude + Apify only |
-| fal | `FAL_KEY` | Video (Kling 3.0, Seedance 2.0), images (Flux) | Emir's key, ~$5-10 | $50 each | Higgsfield, OpenAI video, demo clips |
-| Higgsfield | `HIGGSFIELD_API_KEY` (+ secret) | Alternative video | Emir's key | own account | fal |
-| ElevenLabs | `ELEVENLABS_API_KEY` | Voiceover | optional (free tier ~10k chars) | optional | OpenAI TTS |
-| Firecrawl | `FIRECRAWL_API_KEY` | Site crawl | optional (free tier) | optional | Apify website-content-crawler / fetch |
-| YouTube Data API | `YOUTUBE_API_KEY` | Search Shorts by keyword (read only) | optional (free, Google Cloud) | optional | Apify YouTube scraper |
-| Spiral | `SPIRAL_API_KEY` | App ad intelligence (API + MCP) | if subscription exists | | Apify ads library |
-| RevenueCat | `REVENUECAT_API_KEY` | Hound subscriptions truth | Hound project secret key (read) | | demo fixture |
-| PostHog | `POSTHOG_API_KEY` + project | Funnels | if available | | demo fixture |
-| Stripe / Paddle | `STRIPE_SECRET_KEY` / `PADDLE_API_KEY` | Revenue truth | restricted read keys only | | demo fixture |
-| Meta / Instagram | `META_ACCESS_TOKEN`, ids | Ads insights, IG insights, optional Reels publish | tomorrow | | manual metrics entry |
-| Deepgram | `DEEPGRAM_API_KEY` | Transcribe competitor videos (verbatim hooks/scripts); Aura TTS | $15K student credits (live) | same | Claude on captions only |
-| Tavus | `TAVUS_API_KEY` | AI presenter / talking-head videos | student deal (redeem) | | keyframe video |
-| sync. | `SYNC_API_KEY` | Lip-sync, translate a talking head to SK/CZ/ES | student deal (redeem) | | subtitles only |
-| Firecrawl | (above) | Site crawl | student deal (redeem), live | | fetch + readability |
-| Browser Use | `BROWSER_USE_API_KEY` | Cloud browser agent for pages scrapers cannot read | student deal (redeem) | | skip |
-| Langfuse | `LANGFUSE_*` | Trace agent steps, cost, latency | student deal (redeem) | | logs only |
-| AWS Bedrock | `AWS_*` | Backup Claude engine | $10K credits | same | OpenAI |
+| Anthropic | `ANTHROPIC_API_KEY` | The engine: every agent step | ~$5K credits, live | same | nothing works live; demo data only |
+| OpenAI | `OPENAI_API_KEY` | Keyframe images, TTS voiceover, transcription | ~$2K credits, live | same | demo frames, silent video |
+| Firecrawl | `FIRECRAWL_API_KEY` | Crawl brand and competitor websites | live, small cap | same | direct fetch + readability |
+| Apify | `APIFY_TOKEN` | Scrapers: ads library, TikTok, IG, Reddit, reviews | small balance: smoke + real-data pass | event credits | recorded/demo evidence |
+| Manus | `MANUS_API_KEY` | Deep research task, campaign landing page | small balance: smoke + real-data pass | 10,000 credits each | Claude + Apify only |
+| fal | `FAL_KEY` | Image-to-video (Kling/Seedance), extra image models | small balance: smoke + one draft | $50 each | Remotion Ken Burns from keyframes |
+| Higgsfield (optional) | `HIGGSFIELD_API_KEY` (+ secret) | Alternative video | only if key exists | own account | fal |
+| YouTube Data API (optional) | `YOUTUBE_API_KEY` | Search Shorts | optional | optional | Apify |
+| Spiral (optional) | `SPIRAL_API_KEY` | App ad intelligence | if subscription | | Apify ads library |
+| RevenueCat / PostHog / Stripe / Paddle / Meta (optional) | see `.env.example` | Brand business truth, IG insights | optional | optional | demo fixture / manual metrics |
 
-Budget rule tonight: Claude (~$5K credits), OpenAI (~$2K), Deepgram ($15K) and AWS ($10K) are plentiful, so those run live (`LIVE_PROVIDERS`) within guard caps. fal, Higgsfield, Apify, Manus, ElevenLabs hold small balances tonight: one recorded smoke test each plus the A15 real-data pass, then demo replays the recorded data. Tomorrow at the event: fal $50 each, Manus 10,000 credits each, Apify credits; switch them into `LIVE_PROVIDERS` then.
-
-Unredeemed student deals worth redeeming for this product: Firecrawl, Browser Use, Langfuse, Tavus, sync., Supabase, AWS (done), Google Cloud (YouTube Data API), Azure.
+Not used (on purpose, to keep the build small): ElevenLabs, Deepgram, Tavus, sync., Langfuse, AWS, Browser Use, Docker, any cloud deploy. Deploying to Vercel or Netlify is a later step.
 
 ## Verified facts
 

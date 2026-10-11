@@ -1,8 +1,10 @@
 # Coordination protocol (two machines, one repo, no direct messaging)
 
 Two Claude Code agents build this repo overnight on two different computers:
-- **Lane A = engine** (Mete's machine): `packages/contracts`, `apps/engine`, `packages/video`, root config, docker.
-- **Lane B = cockpit** (Emir's machine): `apps/web` (and optional `packages/ui`).
+One Next.js app, one SQLite file, localhost.
+- **Lane A = engine** (Mete's machine): scaffolds the app (A01), owns `src/contracts/`, `src/engine/`, `src/app/api/`, `drizzle/`, `remotion/`.
+- **Lane B = cockpit** (Emir's machine): owns every UI path (`src/app/` except `api/`, `src/components/`, `src/styles/`, `src/lib/client/`, `public/`, `e2e/`, `next.config.ts`, Tailwind/PostCSS config).
+- `package.json`, `tsconfig.json`: shared and additive (add lines, never remove or change the other lane's; on conflict keep both sides' additions).
 
 They cannot talk to each other. **Git is the only channel.** The pattern is the one Anthropic used for 16 parallel agents building a C compiler: shared upstream, small task locks, frequent merges, tests as the judge.
 
@@ -25,7 +27,7 @@ Exit codes: `0` ok; `2` merge conflict outside the lockfile (resolve it: keep bo
 
 ## 3. Ownership
 - Only edit files in your lane (see `docs/ARCHITECTURE.md` section 2). If you need a change in the other lane's files, write it in their INBOX and work around it (adapter, local shim, mock) until it lands.
-- `packages/contracts` belongs to Lane A. Lane B may only request changes. Lane A treats contract requests as top priority at the next task boundary. Contract changes must be additive overnight (new optional fields, new types); breaking changes need a migration note in `coord/CONTRACT_CHANGES.md` and both sides updated in the same sync window.
+- `src/contracts/` belongs to Lane A. Lane B may only request changes. Lane A treats contract requests as top priority at the next task boundary. Contract changes must be additive overnight (new optional fields, new types); breaking changes need a migration note in `coord/CONTRACT_CHANGES.md` and both sides updated in the same sync window.
 - Shared append-only files: `docs/DECISIONS.md`, `coord/CONTRACT_CHANGES.md`. Append rows; never edit others' rows.
 - `scripts/` (sync and helper scripts) is shared: either lane may fix a broken script so everything runs cleanly. Keep the fix minimal, test it (`bash -n` plus one real run), record it in `docs/DECISIONS.md`, and tell the other lane in its INBOX in the same sync.
 
@@ -49,7 +51,7 @@ Exit codes: `0` ok; `2` merge conflict outside the lockfile (resolve it: keep bo
 
 ## 7. Hard rules (both lanes)
 - No questions to humans. Decide, record in `docs/DECISIONS.md`, continue.
-- No spending beyond `.env` caps. Only `LIVE_PROVIDERS` make real calls; scarce providers get one recorded smoke test each plus the A15 real-data pass. Tests never call live APIs.
+- No spending beyond `.env` caps. Only `LIVE_PROVIDERS` make real calls; scarce providers get one recorded smoke test each plus the A14 real-data pass. Tests never call live APIs.
 - No posting, no ad spend, no emails, no messages to any external service on anyone's behalf.
 - Never print or commit secrets; never read `.env` into the conversation.
 - No browser extension. WebFetch/WebSearch to read; Playwright for UI testing.

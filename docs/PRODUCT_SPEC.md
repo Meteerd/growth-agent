@@ -60,7 +60,7 @@ Video pipeline (cost-controlled; this order is mandatory):
 2. **Keyframes first:** one still per shot with an image model (OpenAI image or fal Flux / Nano Banana), brand-consistent via reference images and a fixed style block. Cost: cents.
 3. **Approval gate:** operator approves or regenerates keyframes per shot in the Studio.
 4. **Animate approved keyframes only:** image-to-video, cheapest tier for drafts (e.g. Kling standard / Seedance lite), premium tier (Kling 3.0 Pro, Seedance 2.0, Higgsfield) only for the final render. Audio off at generation.
-5. **Voice + music:** voiceover via ElevenLabs (fallback OpenAI TTS); music bed from a small royalty-free set in the repo or none.
+5. **Voice + music:** voiceover via OpenAI TTS; music bed from a small royalty-free set in the repo or none.
 6. **Assemble in code:** Remotion composition (9:16, 1080x1920, burned captions with safe zones, brand colors, end card with CTA). FFmpeg allowed as fallback.
 7. **Cost meter:** estimated cost shown before every render; actual cost logged to the ledger; hard cap per brand per run.
 

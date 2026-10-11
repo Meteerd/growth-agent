@@ -47,7 +47,7 @@ Layers, back to front (this is the "abstraction over abstraction"):
 - Cursor: subtle magnetic effect on primary buttons and answer chips only.
 - 60 fps target; shader resolution scaled by devicePixelRatio cap 1.5; pause the shader when the tab is hidden.
 
-## References to study (screenshot them with Playwright for the moodboard in `apps/web/design/refs/`)
+## References to study (screenshot them with Playwright for the moodboard in `e2e/refs/` (git-ignored is fine))
 linear.app, vercel.com, lusion.co, igloo.inc, activetheory.net, rauno.me, family.co, stripe.com/sessions, resend.com, cosmos.so. Take the level of craft, not the layouts.
 
 ## Quality bar (check before marking any screen done)

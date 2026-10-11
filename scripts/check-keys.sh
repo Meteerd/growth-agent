@@ -16,9 +16,7 @@ if [ -n "${ANTHROPIC_API_KEY:-}" ]; then row anthropic set "$(verdict "$(code ht
 if [ -n "${OPENAI_API_KEY:-}" ]; then row openai set "$(verdict "$(code https://api.openai.com/v1/models -H "Authorization: Bearer $OPENAI_API_KEY")")"; else row openai MISSING demo; fi
 if [ -n "${APIFY_TOKEN:-}" ]; then row apify set "$(verdict "$(code https://api.apify.com/v2/users/me -H "Authorization: Bearer $APIFY_TOKEN")")"; else row apify MISSING demo; fi
 if [ -n "${MANUS_API_KEY:-}" ]; then row manus set "$(verdict "$(code https://api.manus.ai/v2/user.me -H "x-manus-api-key: $MANUS_API_KEY")")"; else row manus MISSING demo; fi
-if [ -n "${DEEPGRAM_API_KEY:-}" ]; then row deepgram set "$(verdict "$(code https://api.deepgram.com/v1/projects -H "Authorization: Token $DEEPGRAM_API_KEY")")"; else row deepgram MISSING demo; fi
-if [ -n "${ELEVENLABS_API_KEY:-}" ]; then row elevenlabs set "$(verdict "$(code https://api.elevenlabs.io/v1/user -H "xi-api-key: $ELEVENLABS_API_KEY")")"; else row elevenlabs MISSING "demo (TTS falls back)"; fi
-for v in FAL_KEY HIGGSFIELD_API_KEY FIRECRAWL_API_KEY TAVUS_API_KEY SYNC_API_KEY BROWSER_USE_API_KEY YOUTUBE_API_KEY SPIRAL_API_KEY LANGFUSE_PUBLIC_KEY AWS_ACCESS_KEY_ID REVENUECAT_API_KEY POSTHOG_API_KEY STRIPE_SECRET_KEY PADDLE_API_KEY META_ACCESS_TOKEN; do
-  if [ -n "${!v:-}" ]; then row "${v%%_*}" set "present (validated by the engine's smoke test)"; else row "${v%%_*}" MISSING demo; fi
+for v in FIRECRAWL_API_KEY FAL_KEY HIGGSFIELD_API_KEY YOUTUBE_API_KEY SPIRAL_API_KEY REVENUECAT_API_KEY POSTHOG_API_KEY STRIPE_SECRET_KEY PADDLE_API_KEY META_ACCESS_TOKEN; do
+  if [ -n "${!v:-}" ]; then row "${v%%_*}" set "present (validated by the app's smoke test)"; else row "${v%%_*}" MISSING demo; fi
 done
 echo "LIVE_PROVIDERS=${LIVE_PROVIDERS:-}"

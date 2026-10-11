@@ -1,46 +1,49 @@
 # Architecture
 
+Keep it small: **one Next.js app, one SQLite file, runs on localhost.** No separate server, no Docker, no cloud for the demo. Deploying (Vercel or Netlify) is a later step, not tonight.
+
 ## 1. Shape
 
 ```
- apps/web (Next.js cockpit, port 3100)  ── REST + SSE ──>  apps/engine (Hono API + job runner, port 4100)
-        │                                                     │
-        └── mock mode: in-app fixtures from @nexus/contracts  ├── Postgres 17 (docker, port 5433) via Drizzle
-                                                              ├── data/assets (local files served at /assets)
-                                                              ├── agent: Claude (@anthropic-ai/sdk tool runner)
-                                                              ├── providers: Apify, Manus, fal, Higgsfield, OpenAI,
-                                                              │              ElevenLabs, RevenueCat, PostHog, Stripe,
-                                                              │              Paddle, Meta/Instagram, YouTube, Spiral
-                                                              ├── video: @nexus/video (Remotion) assembly
-                                                              └── MCP server at /mcp (Streamable HTTP) exposing brand tools
+ Next.js app (localhost:3000)
+ ├── UI: src/app/(app)/...            pages, components, motion, shader            [Lane B]
+ ├── API: src/app/api/...             route handlers (REST + SSE)                   [Lane A]
+ ├── engine: src/engine/...           agent (Claude), phases, providers, ledger,    [Lane A]
+ │                                    rules, video (Remotion), db (Drizzle)
+ ├── contracts: src/contracts/...     Zod schemas + types + demo fixtures           [Lane A]
+ └── data/ (git-ignored)              nexus.db (SQLite) + assets/ (images, mp4)
 ```
+
+Long jobs (a GTM run) start from an API route and continue in the background inside the Node process (a small in-process job runner backed by the `runs`/`run_events` tables). Progress streams to the UI over SSE. This is fine for localhost; on Vercel it would need `after()`/queues, which is out of scope tonight.
 
 ## 2. Repo layout and ownership
 
 | Path | Owner | Notes |
 |---|---|---|
-| `packages/contracts/` | **Lane A** | Zod v4 schemas + inferred TS types + route constants + demo fixtures. Single source of truth for every shape below. |
-| `apps/engine/` | **Lane A** | Hono server, Drizzle schema + migrations, job runner, agent, providers, ledger, MCP server |
-| `packages/video/` | **Lane A** | Remotion compositions + render function |
-| `docker-compose.yml`, root `package.json` scripts, `pnpm-workspace.yaml`, `tsconfig.base.json` | **Lane A** | Lane B requests changes through `coord/INBOX_A.md` |
-| `apps/web/` | **Lane B** | Next.js App Router cockpit, design system, mock engine, Playwright e2e |
-| `packages/ui/` (optional) | **Lane B** | Only if B wants to split the design system out |
-| `docs/DESIGN.md` | **Lane B** | Keep updated with the real tokens |
-| `coord/*`, `docs/DECISIONS.md` | both, append-only | Each lane writes only its own STATUS/TASKS; INBOX files are written by the *other* lane |
+| `src/contracts/` | **Lane A** | Zod v4 schemas + inferred types + route constants + demo fixtures. Single source of truth for every shape below. Lane B imports it, never edits it. |
+| `src/engine/` | **Lane A** | agent, phases, providers, ledger, rules, db schema, job runner, video (Remotion) |
+| `src/app/api/` | **Lane A** | route handlers only; thin, call into `src/engine` |
+| `drizzle/`, `drizzle.config.ts`, `remotion/` | **Lane A** | migrations, Remotion entry |
+| `src/app/` (everything except `api/`), `src/components/`, `src/styles/`, `src/lib/client/`, `public/`, `e2e/` | **Lane B** | UI, design system, client data layer, mock mode, Playwright |
+| `next.config.ts`, `postcss.config.*`, Tailwind config, `playwright.config.ts` | **Lane B** | |
+| `package.json`, `tsconfig.json`, `biome.json`, `vitest.config.ts` | **shared, additive** | Either lane may ADD dependencies or scripts; never remove or change the other lane's lines. On a merge conflict keep both sides' additions. |
+| `coord/*`, `docs/DECISIONS.md`, `scripts/` | both | see `coord/PROTOCOL.md` |
+
+**Bootstrap:** Lane A scaffolds the Next.js app at the repo root as task A01 in the first ~15 minutes and pushes it. Lane B does not scaffold; until A01 lands it prepares design work and syncs every few minutes.
 
 ## 3. Stack (decided; do not relitigate overnight)
-- Node 22+ (machines have Node 26), pnpm workspaces, TypeScript strict everywhere, ESM.
-- Root scripts: `pnpm dev` (engine + web in parallel), `pnpm check` (typecheck + lint + unit tests for all packages; must stay under ~3 minutes), `pnpm db:up` (docker compose up -d db), `pnpm db:migrate`, `pnpm seed`, `pnpm e2e`.
-- **Engine:** Hono + `@hono/node-server`, Drizzle ORM + `postgres` driver, Postgres 17 in Docker (`docker-compose.yml`, service `db`, port 5433, user/pass/db `nexus`). Job runner: pg-boss (or a small DB-backed queue if pg-boss fights you). SSE via Hono streaming. Zod validation on every route. Vitest.
-- **Agent:** `@anthropic-ai/sdk`, tool runner with Zod tools, streaming, `output_config.effort` set per route (interview chat: `low`; extraction/deconstruction: `medium`; strategy/channel plan/compliance: `high`). Structured outputs for every machine-read result. Refusal handling and the server-side `fallbacks` option per the `claude-api` skill. OpenAI SDK only for images/TTS/fallback.
-- **MCP:** `@modelcontextprotocol/sdk` Streamable HTTP server mounted at `/mcp` on the engine.
-- **Video:** Remotion (`@remotion/renderer`, `@remotion/bundler`) for assembly; ffmpeg optional fallback (not installed on Mete's machine; `brew install ffmpeg` is allowed).
-- **Web:** Next.js 15 App Router, React 19, Tailwind CSS v4, Motion (framer-motion successor), GSAP (+ ScrollTrigger), Lenis, React Three Fiber + drei + custom GLSL, Radix primitives (restyled; do NOT ship default shadcn look), TanStack Query, Zustand, Recharts or visx for charts, Playwright for e2e.
+- Next.js 15 App Router, React 19, TypeScript strict, pnpm, `src/` directory, Node runtime for API routes.
+- Data: SQLite via Drizzle ORM + `@libsql/client` (`DATABASE_URL=file:./data/nexus.db`). Same driver can point at a hosted libSQL/Turso URL later for deployment.
+- Agent: `@anthropic-ai/sdk` (tool runner + Zod tools, streaming, structured outputs, per-route effort). OpenAI SDK for images, TTS and transcription.
+- Video: Remotion (`@remotion/renderer`, `@remotion/bundler`) rendering locally to `data/assets/`.
+- UI: Tailwind CSS v4, Motion, GSAP, Lenis, React Three Fiber + drei + custom GLSL, Radix primitives (fully restyled), TanStack Query, Zustand.
+- Tests: Vitest (unit, no live API calls), Playwright (e2e + screenshots).
+- Scripts in `package.json`: `dev`, `build`, `start`, `check` (typecheck + lint + vitest, under ~3 min), `db:migrate`, `seed`, `e2e`, `smoke`.
 
 ## 4. Environment
-All config from `.env` at the repo root (template `.env.example`). Both apps load it (engine via `dotenv`; Next via `@next/env` or explicit loading in `next.config`). A provider is **live** only if its key is present AND its id is in `LIVE_PROVIDERS` (comma list); otherwise it is **demo**. Live calls stay within `BUDGET_USD_*`. Smoke scripts may force one live call for a non-listed provider with an explicit `--live` flag, still within its cap.
+All config from `.env` at the repo root (template `.env.example`); Next.js loads it automatically. Server-only keys are read only in `src/engine` (never exposed with `NEXT_PUBLIC_`). A provider is **live** only if its key is present AND its id is in `LIVE_PROVIDERS`; otherwise it is **demo** (labelled fixtures). Live calls stay within `BUDGET_USD_*`. Smoke scripts may force one live call for a non-listed provider with `--live`, still within its cap.
 
-## 5. Data contracts (implement exactly in `packages/contracts`)
+## 5. Data contracts (implement exactly in `src/contracts/`)
 Names are camelCase in TS; DB columns snake_case. Every entity has `id` (uuid v7 or cuid2, string) and `createdAt` (ISO string) unless noted. `demo: boolean` marks fixture-derived rows.
 
 ```ts
@@ -48,8 +51,8 @@ type Vertical = 'telehealth_rx' | 'consumer_app' | 'health_wellness_dtc' | 'b2b_
 type Channel = 'tiktok' | 'instagram_reels' | 'youtube_shorts' | 'x' | 'linkedin' | 'reddit'
   | 'meta_ads' | 'tiktok_ads' | 'google_ads' | 'email' | 'seo' | 'communities' | 'app_store'
 type Phase = 'intake' | 'research' | 'consult' | 'direction' | 'production' | 'compliance' | 'pack' | 'measure'
-type ProviderId = 'anthropic' | 'bedrock' | 'openai' | 'apify' | 'manus' | 'fal' | 'higgsfield' | 'elevenlabs' | 'deepgram'
-  | 'tavus' | 'sync' | 'firecrawl' | 'browser_use' | 'youtube' | 'spiral' | 'revenuecat' | 'posthog' | 'stripe' | 'paddle' | 'meta' | 'instagram'
+type ProviderId = 'anthropic' | 'openai' | 'firecrawl' | 'apify' | 'manus' | 'fal' | 'higgsfield' | 'youtube' | 'spiral'
+  | 'revenuecat' | 'posthog' | 'stripe' | 'paddle' | 'meta' | 'instagram'
 
 Brand { id, slug, name, url, vertical: Vertical, countries: string[] /*ISO-2*/, languages: string[] /*BCP-47*/,
   rulePack: string /*e.g. 'eu_rx_telehealth'*/, dossier: BrandDossier, demo: boolean, createdAt, updatedAt }
@@ -116,7 +119,8 @@ SpendEntry { id, provider: ProviderId, runId?, usd: number, units?: string, note
 ProviderStatus { provider: ProviderId, mode: 'live' | 'demo', keyPresent: boolean, verified: boolean, budgetUsd?: number, spentUsd: number, note?: string }
 ```
 
-## 6. HTTP API (engine, JSON, base `http://localhost:4100`)
+## 6. HTTP API (Next.js route handlers under `src/app/api/`, same origin, JSON)
+All paths below are prefixed with `/api` (e.g. `GET /api/brands`). Route handlers run on the Node runtime (`export const runtime = 'nodejs'`).
 | Method | Path | Body / query | Returns |
 |---|---|---|---|
 | GET | `/health` | | `{ok, version, providers: ProviderStatus[]}` |
@@ -148,19 +152,22 @@ ProviderStatus { provider: ProviderId, mode: 'live' | 'demo', keyPresent: boolea
 | GET | `/brands/:id/results` | | `{packs: (PublishPack & {snapshots: MetricSnapshot[]})[], learnings: Learning[]}` |
 | GET | `/spend` | `?runId=` | `{entries: SpendEntry[], byProvider: Record<ProviderId, number>}` |
 | GET | `/providers` | | `ProviderStatus[]` |
-| GET | `/assets/*` | | static files from `ASSETS_DIR` |
-| ALL | `/mcp` | MCP Streamable HTTP | tools: `list_brands`, `get_dossier`, `update_dossier`, `get_rule_pack`, `search_evidence`, `get_channel_plan`, `log_results`, `get_learnings` |
+| GET | `/assets/[...path]` | | files from `ASSETS_DIR` (route handler streaming local files) |
+| ALL | `/mcp` (stretch) | MCP Streamable HTTP | tools: `list_brands`, `get_dossier`, `update_dossier`, `get_rule_pack`, `search_evidence`, `get_channel_plan`, `log_results`, `get_learnings` |
 
-Errors: `{error: {code, message}}` with proper HTTP status. CORS allows `http://localhost:3100`.
+Errors: `{error: {code, message}}` with proper HTTP status.
 
 ## 7. Engine internals (Lane A)
-- `providers/<name>.ts`: each exports `{id, isLive(), estimateCost(input), call(input)}`; demo implementation returns fixtures from `packages/contracts/fixtures/<provider>/`. Live implementation records every call in the ledger and refuses when the cap would be exceeded (throws `BudgetExceededError`, surfaced as a `warning` RunEvent, run continues in demo for that step).
-- `agent/`: phase runners (`intake`, `research`, `consult`, `direction`, `production`, `compliance`, `pack`, `measure`), each a Claude tool-runner loop with a narrow tool set and a structured final output. Every tool call emits RunEvents. Prompts live in `agent/prompts/*.md` (versioned text, not inline strings).
-- Rule packs: `apps/engine/rules/<pack>.md` + parsed rule ids, loaded into the compliance prompt.
-- Seed: `pnpm seed` creates the four brands from `docs/BRANDS.md` data (copy into `packages/contracts/fixtures/brands.ts`).
-- Live smoke tests (`pnpm --filter @nexus/engine smoke:<provider>`): one minimal real call per provider (e.g. 20-item Apify run, one fal 5 s draft clip, one OpenAI image, one Manus `lite` task, one short Claude call), saving the response to `packages/contracts/fixtures/live/<provider>/` so demo mode can replay real data. Run each at most once per night unless it failed.
+- `src/engine/providers/<name>.ts`: each exports `{id, isLive(), estimateCost(input), call(input)}`; the demo implementation returns fixtures from `src/contracts/fixtures/`. Every live call is recorded in the spend ledger and refused past its cap (`BudgetExceededError` -> `warning` RunEvent; that step continues in demo).
+- `src/engine/agent/`: phase runners (`intake`, `research`, `consult`, `direction`, `production`, `compliance`, `pack`, `measure`), each a Claude tool-runner loop with a narrow tool set and a structured final output. Every tool call emits RunEvents. Prompts in `src/engine/agent/prompts/*.md`.
+- Rule packs: `src/engine/rules/<pack>.md` from `docs/BRANDS.md`.
+- Seed: `pnpm seed` creates the four brands from `src/contracts/fixtures/brands.ts`.
+- Live smoke tests (`pnpm smoke <provider>`): one minimal real call per provider, saved to `src/contracts/fixtures/live/<provider>/` so demo mode can replay real data.
 
-## 8. Web internals (Lane B)
-- `lib/engine/client.ts`: typed client from `@nexus/contracts`; `lib/engine/sse.ts`: EventSource wrapper with reconnect + `Last-Event-ID`.
-- `NEXT_PUBLIC_ENGINE_MODE=mock` swaps in `lib/engine/mock/` (in-browser or route-handler mock server built from contracts fixtures, including a scripted SSE run that plays a full GTM run in ~60 s). Mock data shows a "Demo data" badge.
-- Playwright e2e runs against mock mode (always) and against the real engine when it is up (`E2E_ENGINE=live`). Screenshots of every screen at 1440x900 and 390x844 into `apps/web/e2e/screens/` (committed, small PNGs) for the morning review.
+## 8. UI internals (Lane B)
+- `src/lib/client/api.ts`: typed fetch client using `src/contracts` schemas; `src/lib/client/sse.ts`: EventSource wrapper with reconnect + `Last-Event-ID`.
+- `NEXT_PUBLIC_DATA_MODE=mock` swaps in `src/lib/client/mock/` (in-browser mock built from contract fixtures, including a scripted SSE-like run that plays a full GTM run in ~60 s), so every screen works before Lane A's routes exist. Mock data shows a "Demo data" badge. Default for the demo is `live` (real API routes).
+- Playwright e2e runs in mock mode always, and against the real API routes when they respond. Screenshots of every screen at 1440x900 and 390x844 into `e2e/screens/` (committed) for the morning review.
+
+## 9. Later (not tonight)
+Deploy to Vercel or Netlify: hosted libSQL (Turso) or Postgres for data, object storage for assets, background runs via `after()`/a queue, video render kept local or moved to Remotion Lambda.

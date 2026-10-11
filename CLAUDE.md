@@ -17,7 +17,7 @@ A GTM agent for operators who run many brands. You enter a brand (URL), connect 
 - **Remake, never copy.** Extract the structure of winning content (hook, format, pacing, angle, CTA) and produce original content for our brand. Never download-and-reupload someone else's creative.
 - **Compliance gates everything.** Every script, caption and image prompt passes the brand's rule pack (`docs/BRANDS.md`) before rendering or export. Health brands are heavily restricted.
 - **Nothing goes out without a human.** The engine never posts, never spends ad money, never sends messages. Publishing = export pack (default) or an explicit human click on an optional auto-post connector.
-- **Money is capped.** Every paid provider call goes through the spend ledger and refuses to exceed `BUDGET_USD_*`. Only providers in `LIVE_PROVIDERS` make real calls (overnight: Claude, OpenAI, Deepgram, Firecrawl, which have large credits). Scarce providers (fal, Higgsfield, Apify, Manus, ElevenLabs, Tavus, sync.) run demo except their recorded smoke test and the A15 real-data pass. Unit tests and `pnpm check` never call live APIs.
+- **Money is capped.** Every paid provider call goes through the spend ledger and refuses to exceed `BUDGET_USD_*`. Only providers in `LIVE_PROVIDERS` make real calls (overnight: Claude, OpenAI and Firecrawl). fal, Apify, Manus and Higgsfield run demo except one recorded smoke test each and the A14 real-data pass. Unit tests and `pnpm check` never call live APIs.
 - **Secrets:** only in `.env` (git-ignored). Never print, log, commit or echo a key. Do not read `.env` into the conversation; code loads it at runtime.
 - **No browser extension.** Use WebFetch/WebSearch for reading the web and Playwright (its own headless Chromium) for testing and screenshots.
 - **Writing style for anything user-facing:** plain, specific, no em dashes, no AI-sounding filler.
@@ -28,6 +28,9 @@ A GTM agent for operators who run many brands. You enter a brand (URL), connect 
 - Prefer finished and working over broad and broken. Every task has acceptance checks; a task is done only when its checks pass and are pushed.
 - Keep test output short; write long logs to `logs/` (git-ignored) and grep them.
 - Commit small and often with clear messages (`engine: ...`, `web: ...`, `contracts: ...`, `coord: ...`).
+
+## Keep it small
+One Next.js app, one SQLite file, runs on localhost. Six core providers (Anthropic, OpenAI, Firecrawl, Apify, Manus, fal). No extra services, no Docker, no cloud deploy tonight. If a new dependency or service is not needed for the demo, do not add it.
 
 ## Event context (why the deadline is hard)
 10X Your Brand Hackathon (Slush'D x Manus), Istanbul, Mon 12 Oct 2026. Build 09:30 to 15:00, judging after. Judged 20% each on problem/value, execution/quality, use of Manus and tools (Manus, Apify, fal), potential, pitch. Details in `docs/event/`. The app must run locally on a laptop for the demo by 07:00.
