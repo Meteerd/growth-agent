@@ -7,7 +7,8 @@
 import { loadEnv } from "./env";
 
 loadEnv();
-const [runId, manusTaskId] = process.argv.slice(2);
+const [runId, manusTaskId] = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+const manusOnly = process.argv.includes("--manus-only");
 if (!runId) {
   console.error("usage: pnpm redo-reverse <runId> [manusTaskId]");
   process.exit(1);
@@ -48,6 +49,13 @@ if (manusTaskId) {
 }
 
 // drop everything after research, then redo reverse_engineer
+if (manusOnly) {
+  const spend = await repo.listSpend(db, runId);
+  const by: Record<string, number> = {};
+  for (const x of spend) by[x.provider] = Math.round(((by[x.provider] ?? 0) + x.usd) * 10000) / 10000;
+  console.log("exported:", await exportRecorded(db, runId, by));
+  process.exit(0);
+}
 await db.delete(t.runEvents).where(and(eq(t.runEvents.runId, runId), gt(t.runEvents.seq, cut.id)));
 await db.delete(t.blueprints).where(eq(t.blueprints.runId, runId));
 await repo.updateRun(db, runId, { status: "running", phase: "reverse_engineer" });
