@@ -27,7 +27,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - In-process job runner (survives within the dev server process; resumable from DB on restart is stretch), Run state machine (`queued` -> `running` -> `waiting_input` -> `running` -> `done`/`failed`/`cancelled`), RunEvent persistence with monotonic ids, `GET /api/runs/[id]/events` SSE with `Last-Event-ID` resume and heartbeat, cancel.
   - Accept: `curl -N localhost:3000/api/runs/<id>/events` streams a demo run; reconnect with `Last-Event-ID` resumes without duplicates (test).
 
-- [ ] **A06 Claude agent core**
+- [x] **A06 Claude agent core** (commit 41584f1)
   - Anthropic wrapper (model from env, per-route effort, streaming, structured outputs, refusal handling, usage -> ledger cost), tool-runner helper emitting RunEvents, prompt loader, recorded-response mode for tests (no live calls in `pnpm check`).
   - Accept: unit tests with recorded responses; `pnpm smoke anthropic` makes one live call within cap and saves it to fixtures/live.
 

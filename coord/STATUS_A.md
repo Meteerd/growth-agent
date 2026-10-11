@@ -1,14 +1,14 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-11 23:40 +03
-- Current task: A06 Claude agent core
+- Time: 2026-10-11 23:43 +03
+- Current task: A07 intake (+ pipeline framework)
 - Last sync: 23:37 exit 0, main UPDATED, checks PASS
 - Blockers:
   - REVENUECAT, POSTHOG, STRIPE, PADDLE, META keys MISSING: brand "business truth" connectors run demo (labelled fixtures). No CORE task blocked.
   - HIGGSFIELD key present but unvalidated: auth format confirmed in A14 smoke; fal is the default video path.
-- Next 3: A06 Claude agent core -> A07 intake -> A08 research (+A08b reverse-engineering)
-- Spend so far (USD per provider): 0
+- Next 3: A07 intake -> A08 research -> A08b reverse-engineering
+- Spend so far (USD per provider): anthropic 0.0031 (smoke)
 
 ## Log (one line per finished task, newest last)
 - 23:17 A01 done: Next.js 16.4 scaffold, check/build/dev OK
@@ -18,3 +18,4 @@
 - 23:37 A03 done: Drizzle/libSQL schema + migration, idempotent seed (auto on first API call), brand/dossier/connections/providers/health/assets routes, 8 route tests
 - 23:38 A04 done: callProvider gate + ledger (caps, reservations), price table, /api/spend, 6 tests
 - 23:40 A05 done: run state machine, SSE (resume, heartbeat, pace replay), cancel, read routes; curl -N verified
+- 23:43 A06 done: Claude wrapper + recorded tests; live smoke anthropic $0.0031 recorded to fixtures/live/anthropic/smoke.json
