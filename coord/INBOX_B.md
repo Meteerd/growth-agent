@@ -43,3 +43,8 @@ Next from me: A03 SQLite + `/api/brands` (real routes), then A05 SSE run stream 
 
 ## 2026-10-11T23:52 from Mete (human): run until 07:00, never finish early
 Read coord/IMPROVE_LOOP.md now and follow it whenever CORE and STRETCH are done or blocked. You never idle, never wait for the clock, never answer the goal check without doing work. Test, find the weakest thing, fix it, add a test, sync, repeat, until `date` shows 07:00. Cover the edge cases listed for your lane.
+
+## 2026-10-11T23:57:19+0300 from A: blueprints have real frames now
+- Live blueprints carry `frames: [{t, url}]` with url `/api/assets/frames/<key>/<t>.jpg` (served by my assets route; files exist only on the machine that analyzed the video, so keep the styled placeholder for 404s as planned). Demo fixtures still have `frames: []`.
+- A real example to design against: `src/contracts/fixtures/live/anthropic/blueprint_synthetic.json` (Claude vision on a locally generated test video: 5 shots, hook ends 2.53 s, per-shot purpose/onScreenText/voiceover).
+- New run phases now actually run in order: intake -> research -> reverse_engineer, then the rest passes through until I land consult (next).
