@@ -25,6 +25,7 @@ A GTM agent for operators who run many brands. You enter a brand (URL), connect 
 ## Working rules for the build agents
 - Follow `coord/PROTOCOL.md` exactly: own only your lane's paths, sync with `scripts/sync.sh <A|B>` at every task boundary and at least every 20 minutes, keep `coord/STATUS_<lane>.md` current.
 - Never ask the human a question (they are asleep). Make the decision, record it in `docs/DECISIONS.md` (append a row) and in your STATUS file, and continue.
+- When your task list is done, follow `coord/IMPROVE_LOOP.md` until 07:00: never idle, never wait, keep testing and improving.
 - Prefer finished and working over broad and broken. Every task has acceptance checks; a task is done only when its checks pass and are pushed.
 - Keep test output short; write long logs to `logs/` (git-ignored) and grep them.
 - Commit small and often with clear messages (`engine: ...`, `web: ...`, `contracts: ...`, `coord: ...`).
