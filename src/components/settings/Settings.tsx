@@ -57,7 +57,7 @@ export function Settings() {
         eyebrow="Providers / spend"
         title={
           <>
-            What runs live, <em className="text-bone-2">and what it costs.</em>
+            What runs live, <span className="text-bone-2">and what it costs.</span>
           </>
         }
         actions={

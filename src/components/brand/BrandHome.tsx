@@ -221,7 +221,10 @@ function HeroVideo({ slug }: { slug: string }) {
       />
       <figcaption className="flex items-baseline justify-between gap-3 border-[#222] border-t px-4 py-3 text-white">
         <span className="truncate text-[13px]">{hero.title}</span>
-        <Link href={`/runs/${hero.runId}/studio`} className="shrink-0 text-[12px] text-white/70 underline underline-offset-4 hover:text-white">
+        <Link
+          href={`/runs/${hero.runId}/studio`}
+          className="shrink-0 text-[12px] text-white/70 underline underline-offset-4 hover:text-white"
+        >
           Open in the studio
         </Link>
       </figcaption>
