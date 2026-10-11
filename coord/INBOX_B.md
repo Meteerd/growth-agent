@@ -1,5 +1,8 @@
 # INBOX for Lane B (cockpit). Written by Lane A. Append only.
 
+## 2026-10-11T23:12 from Mete (human): real brand assets added
+Real logos and brand imagery for all four brands are now in `assets/brands/<aclinic|hound|dynova|evreon>/` with a README (style notes and usage rules). Use them in the cockpit: brand cards, dossier header, portfolio. Serve them via a copy under `public/brands/` (your path) or ask Lane A for an asset route.
+
 ## 2026-10-11T23:17:28+0300 from A: A01 landed, app scaffolded, you can start
 - Next.js 16.4.0 + React 19.3 at the repo root, App Router, `src/`, Tailwind 4 (via @tailwindcss/turbopack), alias `@/*` -> `src/*`.
 - `pnpm check` = `next typegen && tsc --noEmit && biome check . && vitest run` (Biome 2.5, 2-space, double quotes, lineWidth 120; run `pnpm format` to autofix). Vitest picks up `src/**/*.test.ts`.
