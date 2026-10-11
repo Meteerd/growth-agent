@@ -85,7 +85,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
 
 ## STRETCH (after CORE, in this order)
 - [ ] **AS1** Manus landing page for a chosen concept (Manus builds it; store the link via `website.status`; show it in the pack).
-- [ ] **AS2** One real fal draft render (cheapest tier) for one Hound concept within the fal cap; keep the demo render as fallback.
+- [x] **AS2** One real fal draft render (cheapest tier) for one Hound concept within the fal cap; keep the demo render as fallback. (6 Kling 2.1 standard clips, $1.50; 23 s 1080x1920 non-demo MP4 for concept_0569d023_1 in run_mv4cox1z4e0569d023; commit 8747d6c)
 - [x] **AS3** Harden: retries with backoff on 429/5xx; resume interrupted runs from the DB on server restart. (fetchRetry + SDK retries; stale-run resume on first API call; commit 05d4764)
 - [x] **AS4** Prompt caching check: `cache_read_input_tokens > 0` on repeated phase calls. (verified live: repeated blueprint calls read 2,321 cached tokens, re-run intake 2,515; commit 05d4764)
 - [x] **AS5** Cross-brand learnings (pattern holds in 2+ brands). (commit 05d4764)
@@ -103,3 +103,4 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
 - [x] **I09** An unreachable or failing site killed the run at intake: now Firecrawl -> direct fetch (20 s timeout) -> continue with warnings. Test (commit 797b8e9).
 - [x] **I10** Unicode brand names (Slovak, Turkish) produce clean slugs. Test (commit 797b8e9).
 - [x] **I11** A crashed script left its run "running" and a stale queued run would be auto-resumed (and spend) on the next server start: resume only stale runs, live-pass marks failures, stale runs cancelled.
+- [x] **I12** Captions were missing on fal clip shots (they were burned into the still the clip replaces) and drifted with the Ken Burns zoom: compositor now overlays a fixed caption layer. Regression test (commit 8747d6c).
