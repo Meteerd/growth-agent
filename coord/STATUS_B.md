@@ -2,7 +2,7 @@
 
 ## Now
 - Time: 2026-10-12 00:25 +0300
-- Current task: B17 polish + MORNING_B
+- Current task: B17 polish + MORNING_B (after B18)
 - Last sync: 00:15 exit 0, main UPDATED, checks PASS
 - Blockers: none. @/contracts v1.1.0 on main; Lane A API routes (brands, runs + SSE, consult, chat, plan) are on main.
 - Next 3: B17 polish + MORNING_B -> BS1 presentation mode -> BS2 command palette
@@ -17,6 +17,9 @@
 - ack A03 landed: real /api/brands (INBOX_B 23:37). ack A05 landed: runs + SSE live (INBOX_B 23:40).
 - ack A02 landed, contracts + fixtures on main (INBOX_B 23:28). ack contracts v1.1.0: blueprints + reviews (INBOX_B 23:31).
 - ack new signature screen: Reverse-engineer view (B12b) (INBOX_B 23:24): planned after B12, budgeted as the main demo moment. ack A01 landed (INBOX_B 23:17). ack real brand assets added (INBOX_B 23:12).
+
+## B18 self-audit (v2 bans, 02:02)
+Automated: e2e/bans.spec.ts checks computed styles of every element for the DESIGN.md v2 hard bans (backdrop blur, italics, Instrument Serif, gradient text, lime, non-inset blurred shadows outside floating menus, canvas shaders, infinite ambient animations). Result on the synced tree: 14 of 14 routes with zero hits (/, /brands, /brands/new, /brands/hound, /brands/hound/connect, /brands/hound/results, /runs/run_hound_demo, /consult, /direction, /studio, /packs, /blueprints/bp_hound_1, /settings, /lab). Manual pass on every screenshot in e2e/screens: no shader, grain, grid, glass, glow, neon, orbit, serif or italic anywhere; record red only on the primary action, the playhead and the recording dot; mono only on numbers, ids and timecodes (stream log lines are timecoded and stay mono); media is the largest object on landing, portfolio, reverse-engineer, studio and packs. Full pnpm e2e: 71 passed, 10 live-only skipped.
 
 ## Design notes (boot, 11 Oct 23:16; measured with a throwaway Playwright probe of computed styles on linear.app, vercel.com, resend.com, rauno.me, igloo.inc)
 1. Dark is never pure black: Linear's body is `rgb(8,9,10)`, cool and close to our `#06070A`. Resend uses true `#000` but lifts it with a soft diagonal light beam, so the depth comes from light, not from a grey surface.
@@ -53,3 +56,4 @@
 - Loop log: tested recorded live run cockpit + blueprint in live mode / found research-only run said 0 packs, empty hook quotes, header spend low, faint remake row / fixed in f426e42.
 - 01:06 B16 done (b57e1fb): pnpm e2e exit 0 (55 passed, 10 live-only skipped, 4.0 min); journey.spec full loop 1 passed (56 s); screenshots of 14 routes x 2 sizes + cockpit mid/finished in e2e/screens. Live project: E2E_DATA=live e2e/live.spec.ts 10 passed (00:50).
 - Loop log 01:17: reviewed every mobile screenshot / Connect marked global engines Missing, no 404 or error page, packs nested Page / fixed I05 to I07 in 0d4e1d4; brand.spec 4 passed, packs.spec 3 passed.
+- 02:02 B18 done (fa1277c): v2 the cutting room on every screen (foundation 2c06889, edit timeline, editorial direction table 5ad92e7, portfolio/consult/packs/results/settings from a worktree agent). Fixed two of my own sweep bugs on the way (trimmed string spaces, lost shadow- prefix) with targeted repairs.
