@@ -214,7 +214,7 @@ export function Kit() {
               status={phaseIdx === 3 ? "waiting_input" : "running"}
             />
           </Panel>
-          <div className="flex flex-col gap-4">
+          <div className="flex min-w-0 flex-col gap-4">
             <div className="flex flex-wrap gap-2">
               {PHASES.map((p, i) => (
                 <Button

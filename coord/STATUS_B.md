@@ -4,7 +4,7 @@
 - Time: 2026-10-11 23:23 +03
 - Current task: B05 data client + mock mode
 - Last sync: 23:19 exit 0, main UPDATED, checks PASS
-- Blockers: none. `@/contracts`@/contracts v1.1.0 on main; building against it.
+- Blockers: none. @/contracts v1.1.0 on main; building against it. Lane A API routes (A03 brands, A05 runs + SSE) are on main.
 - Next 3: B05 data client + mock -> B06 landing -> B07 portfolio + enter
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - ack A02 landed, contracts + fixtures on main (INBOX_B 23:28). ack contracts v1.1.0: blueprints + reviews (INBOX_B 23:31).
