@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { type Brand, type BrandDossier, Persona, VERTICALS } from "@/contracts";
-import { type ScrapeResult, scrape } from "../../providers/firecrawl";
+import { directFetch, type ScrapeResult, scrape } from "../../providers/firecrawl";
 import { patchDossier, upsertBrand } from "../../repo";
 import { rulePackText } from "../../rules";
 import { loadPrompt, structured } from "../claude";
@@ -100,7 +100,19 @@ export async function intake(ctx: PhaseCtx): Promise<void> {
   await ctx.emit("tool_call", `crawl_site ${brand.url}`, {
     data: { tool: "crawl_site", provider: "firecrawl", url: brand.url },
   });
-  const { page, mode } = await scrape(db, brand.url, { runId: run.id, signal: ctx.signal });
+  // the crawl never kills the run: Firecrawl -> direct fetch -> empty page with a warning
+  const { page, mode } = await scrape(db, brand.url, { runId: run.id, signal: ctx.signal }).catch(async (e) => {
+    await ctx.emit("warning", "Firecrawl could not read the site; trying a direct fetch", {
+      detail: e instanceof Error ? e.message : String(e),
+    });
+    const direct = await directFetch(brand.url, ctx.signal).catch(async (e2) => {
+      await ctx.emit("warning", "The site could not be read at all; continuing from what we know", {
+        detail: e2 instanceof Error ? e2.message : String(e2),
+      });
+      return { url: brand.url, markdown: "", source: "direct" as const };
+    });
+    return { page: direct as ScrapeResult, mode: "demo" as const };
+  });
   ctx.check();
   await ctx.emit(
     "tool_result",

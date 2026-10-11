@@ -45,20 +45,20 @@ function captionSvg(text: string, accent: string, badge?: string): string {
 </svg>`;
 }
 
-async function shotFrame(
+/** The moving layer (keyframe cropped to 9:16) and the fixed layer (caption + badge, transparent). */
+async function shotLayers(
   src: string,
   text: string | undefined,
   accent: string,
   badge: string | undefined,
-  out: string,
+  base: string,
+  overlay: string,
 ) {
   const file = urlToFile(src) ?? src;
-  // oversize by 12% so the Ken Burns zoom never shows edges
-  const base = await sharp(file).resize(W, H, { fit: "cover", position: "attention" }).png().toBuffer();
-  await sharp(base)
-    .composite([{ input: Buffer.from(captionSvg(text ?? "", accent, badge)) }])
+  await sharp(file).resize(W, H, { fit: "cover", position: "attention" }).png().toFile(base);
+  await sharp(Buffer.from(captionSvg(text ?? "", accent, badge)))
     .png()
-    .toFile(out);
+    .toFile(overlay);
 }
 
 async function endCard(p: Ad916Props, out: string) {
@@ -87,12 +87,13 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
   fs.mkdirSync(workDir, { recursive: true });
   fs.mkdirSync(path.dirname(out), { recursive: true });
   const accent = p.colors[0] ?? "#ffffff";
-  const frames: { file: string; dur: number; clip?: string }[] = [];
+  const frames: { file: string; dur: number; clip?: string; overlay?: string }[] = [];
   for (const [i, s] of p.shots.entries()) {
     const f = path.join(workDir, `shot_${i}.png`);
-    await shotFrame(s.src, s.text, accent, p.badge, f);
+    const o = path.join(workDir, `shot_${i}_caption.png`);
+    await shotLayers(s.src, s.text, accent, p.badge, f, o);
     const clip = s.clipSrc ? (urlToFile(s.clipSrc) ?? undefined) : undefined;
-    frames.push({ file: f, dur: s.durationSec, clip: clip && fs.existsSync(clip) ? clip : undefined });
+    frames.push({ file: f, overlay: o, dur: s.durationSec, clip: clip && fs.existsSync(clip) ? clip : undefined });
     onProgress?.((i + 1) / (p.shots.length + 2));
   }
   const end = path.join(workDir, "end.png");
@@ -101,22 +102,35 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
 
   const inputs: string[] = [];
   const parts: string[] = [];
+  let k = 0; // next input index
   frames.forEach((f, i) => {
     const n = Math.max(1, Math.round(f.dur * 30));
+    const v = k++;
     if (f.clip) {
       inputs.push("-i", f.clip);
       parts.push(
-        `[${i}:v]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[v${i}]`,
+        `[${v}:v]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[b${i}]`,
       );
     } else {
       inputs.push("-i", f.file);
       const last = i === frames.length - 1;
       const z = last ? "1" : i % 2 === 0 ? "min(zoom+0.0009,1.12)" : "if(eq(on,0),1.12,max(zoom-0.0009,1.0))";
       parts.push(
-        `[${i}:v]scale=${Math.round(W * 1.12)}:${Math.round(H * 1.12)},zoompan=z='${z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${n}:s=${W}x${H}:fps=30,format=yuv420p,setsar=1[v${i}]`,
+        `[${v}:v]scale=${Math.round(W * 1.12)}:${Math.round(H * 1.12)},zoompan=z='${z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${n}:s=${W}x${H}:fps=30,format=yuv420p,setsar=1[b${i}]`,
       );
     }
+    if (f.overlay) {
+      const o = k++;
+      inputs.push("-loop", "1", "-t", String(f.dur), "-i", f.overlay);
+      parts.push(
+        `[${o}:v]format=rgba,fps=30[o${i}]`,
+        `[b${i}][o${i}]overlay=0:0:shortest=1,format=yuv420p,setsar=1[v${i}]`,
+      );
+    } else {
+      parts.push(`[b${i}]null[v${i}]`);
+    }
   });
+  const audioIdx = k;
   const vo = p.voiceoverSrc ? urlToFile(p.voiceoverSrc) : null;
   const hasVo = !!vo && fs.existsSync(vo);
   const filter = `${parts.join(";")};${frames.map((_, i) => `[v${i}]`).join("")}concat=n=${frames.length}:v=1:a=0[v]`;
@@ -127,7 +141,7 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
       ...inputs,
       ...(hasVo ? ["-i", vo] : ["-f", "lavfi", "-t", String(total), "-i", "anullsrc=r=44100:cl=stereo"]),
       "-filter_complex",
-      `${filter};[${frames.length}:a]apad,atrim=0:${total}[a]`,
+      `${filter};[${audioIdx}:a]apad,atrim=0:${total}[a]`,
       "-map",
       "[v]",
       "-map",

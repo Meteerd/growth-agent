@@ -1,5 +1,5 @@
 {
- "recordedAt": "2026-10-11T21:37:27.595Z",
+ "recordedAt": "2026-10-11T21:59:10.693Z",
  "brand": {
   "id": "brand_hound",
   "slug": "hound",
@@ -15,10 +15,10 @@
   "startedAt": "2026-10-11T21:32:26.369Z",
   "finishedAt": "2026-10-11T21:37:27.588Z",
   "demo": false,
-  "manusTaskUrl": "https://manus.im/app/DSvVcvXNJhxXVYymV2dXmd",
-  "createdAt": "2026-10-11T21:32:26.367Z",
   "dataset": "live_recorded",
-  "capturedAt": "2026-10-11T21:32:26.369Z"
+  "capturedAt": "2026-10-11T21:32:26.369Z",
+  "manusTaskUrl": "https://manus.im/app/DSvVcvXNJhxXVYymV2dXmd",
+  "createdAt": "2026-10-11T21:32:26.367Z"
  },
  "evidence": [
   {
@@ -584,16 +584,50 @@
    "runId": "run_mv4c9xtr8203508c41",
    "source": "manus_research",
    "kind": "research",
-   "title": "Manus deep research (waiting)",
+   "title": "Manus: GTM landscape for Hound",
    "metrics": {},
    "tags": [
     "research",
-    "manus"
+    "landscape"
    ],
-   "capturedAt": "2026-10-11T21:34:44.026Z",
+   "capturedAt": "2026-10-11T21:59:10.687Z",
    "demo": false,
    "url": "https://manus.im/app/DSvVcvXNJhxXVYymV2dXmd",
-   "text": "Still running; open the task link for live progress."
+   "text": "The GTM landscape for Hound (ES, GB, US) is moving toward a multi-channel mix with a strong emphasis on app-store discovery (organic search, editorial features, and keyword-optimized listings), supported by paid social/video (Meta) and creator-led campaigns (UGC, TikTok). Across markets, the most reliable discovery signals come from App Store search and editorial events, while paid growth relies on Woofz-like funnel strategies and long-running ad creative. UK discovery leans heavily on internet search and trainer referrals; Spain shows veterinary/blog/social sources with active ES store competition. Regulatory constraints in communities (self-promotion rules) significantly shape where organic marketing can occur, pushing paid ads or vendor-approved placements as the viable routes in many communities. Potentially strong plays for Hound: optimize App Store presence (keywords, screenshots, reviews), run Google/YouTube-driven problem-survey funnels similar to Woofz, and leverage editorial/UGC formats on YouTube/TikTok while respecting community rules.\"},\nApp Store search (organic discovery): Primary surface for app discovery; competitors optimize titles/keywords accordingly. (Apple Ads: App Store discovery — 70% of visitors use search; 65% of downloads occur after a search. Sensor Tower: 65% downloads from search for non-game apps.)\nEditorial/app store feature case (editorial uplift): Shows potential for significant short-term lift from editorial exposure. (Dogo case: App of the Day generated a 823% user increase and 251% IAP uplift across 149 countries (Medium write-up).)\nPaid/search funnel with per-problem surveys (survey-to-app): Demonstrates a scalable funnel from search-driven queries to paid app downloads. (Woofz used Google Trends to identify dog-problem queries, then ran Google Ads broad-match surveys with a paywall funnel; >95% of paying users downloaded the app; >5M downloads; ~80k active users. Think with Google case study.)\nUGC-driven, creator-led campaigns (short video content): UGC-driven content fuels awareness and experimentation at scale. (Woofz TikTok Creative Challenge: 800+ creatives; revenue uplift ~70% vs prior campaigns; 5% creative success baseline. TikTok Creative Center case study.)\nPaid social video ads (Meta): Proven long-running video and image ads across markets; supports brand familiarity and direct response. (Meta Ad Library shows Woofz ES/GB, Dogo US, Pupford US ads; durations 0:15–1:54; image ads verified; keywords include Woofz, Dogo, Pupford.)\nBrand/go-to-market narratives from US pet-marketing research (consumer channels): Baseline discovery mix for pet apps in US, useful for validating owned/earned/paid splits. (APPA National Pet Owners Survey (2022): 50% from company websites; 45% YouTube; 42% Facebook; 33% product review sites; 32% Instagram; 25% TikTok.)\nUK behavioral-purchase channels (pre-acquisition): Shows that UK buyers rely on education and professionals; informs partner/channel strategies. (Dogs Trust N"
+  },
+  {
+   "id": "ev_hound_508c41_manus_research_mv4d8bq72",
+   "brandId": "brand_hound",
+   "runId": "run_mv4c9xtr8203508c41",
+   "source": "manus_research",
+   "kind": "research",
+   "title": "Manus: 10 competitors and what works for them",
+   "metrics": {},
+   "tags": [
+    "research",
+    "competitors"
+   ],
+   "capturedAt": "2026-10-11T21:59:10.687Z",
+   "demo": false,
+   "url": "https://manus.im/app/DSvVcvXNJhxXVYymV2dXmd",
+   "text": "Woofz (https://woofz.com/): Google Trends-driven per-problem surveys funnel to paid app; widespread YouTube/TikTok presence; extensive creator-facing campaigns (TikTok Creative Challenge).\nDogo (https://apps.apple.com/us/app/dogo-dog-training-clicker/id1153294767): ASO-focused title and keywords; long-running Meta video ads; App Store feature uplift; multi-language store presence.\nPupford (https://pupford.com/pages/dog-training-app): Free 30-day course as funnel; strong creator/affiliate programs; multi-channel video content.\nZigzag (https://zigzag.dog/en-us/): US launch partnership with Purina; localized European expansion; strong ES/UK presence.\nPuppr (https://www.puppr.app/): Celebrity-led branding; live trainer chat; strong social presence; promo-code campaigns.\nPawChamp (https://paw-champ.com/): Spanish-language availability; product engagement via AI features; product-launch storytelling.\nHundeo (https://www.hundeo.com/): Spanish-language funnel; affiliate program; broad ES visibility and price promotions.\nCanimonia (https://canimonia.com/): Fully Spanish-native, free training model; community-driven growth.\nCalm My Dog (https://apps.apple.com/us/app/training-help-calm-my-dog/id1629500193): App Store listing with a niche, low-friction subscription.\nSeparation Buddy (https://apps.apple.com/us/app/separation-buddy-dog-training/id6747004196): Niche focus on separation anxiety with subscription model."
+  },
+  {
+   "id": "ev_hound_508c41_manus_research_mv4d8bq73",
+   "brandId": "brand_hound",
+   "runId": "run_mv4c9xtr8203508c41",
+   "source": "manus_research",
+   "kind": "research",
+   "title": "Manus: communities where the problem is discussed",
+   "metrics": {},
+   "tags": [
+    "research",
+    "communities"
+   ],
+   "capturedAt": "2026-10-11T21:59:10.687Z",
+   "demo": false,
+   "url": "https://manus.im/app/DSvVcvXNJhxXVYymV2dXmd",
+   "text": "r/dogs (https://www.reddit.com/r/dogs/wiki/rules/): Self-promotion and advertising are prohibited; wall of shame includes examples of app spam; rules emphasize non-promotional, educational content.\nr/DogTraining (https://www.reddit.com/r/DogTraining/wiki/guidelines/): Posting promotional content or linking to your own blog/website is prohibited; DM promotion banned; ads require Reddit ads; content must be genuinely relevant.\nr/puppy101 (https://www.reddit.com/r/puppy101/wiki/community_rules/): Promotional content to attract clients or conduct market research is prohibited; surveys require mod approval; AI content banned.\nr/reactivedogs (https://www.reddit.com/r/reactivedogs/wiki/guidelines/): Promotion of personal services/business prohibited; focus on training and management strategies; harm-reduction guidelines.\nr/Separation_Anxiety (https://www.reddit.com/r/Separation_Anxiety/wiki/index/): Rules emphasize non-promotion of services; discussion around behavior and management only; promo disallowed.\nSpanish-language forums (Spain) (https://www.facebook.com/groups/1233670013459763/): Facebook groups (Educación Canina España, Adiestradores caninos, Zoomalia forum) generally prohibit unsolicited promotions; some groups restrict or remove promotional content."
   },
   {
    "id": "ev_hound_508c41_meta_ad_library_mv4cauje46",
