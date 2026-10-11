@@ -6,7 +6,8 @@ import type { Brand } from "../entities";
  * Colors were sampled from the brands' own logo files in assets/brands/.
  */
 
-const SEEDED_AT = "2026-10-11T20:00:00.000Z";
+/** Staggered so the portfolio lists Hound, a.clinic, Dynova, Evreon in that order. */
+const seededAt = (sec: number) => `2026-10-11T20:00:${String(sec).padStart(2, "0")}.000Z`;
 const asset = (brand: string, file: string) => `/api/assets/brands/${brand}/${file}`;
 
 export const BRAND_IDS = {
@@ -26,8 +27,8 @@ export const aclinic: Brand = {
   languages: ["sk", "cs", "en"],
   rulePack: "eu_rx_telehealth",
   demo: false,
-  createdAt: SEEDED_AT,
-  updatedAt: SEEDED_AT,
+  createdAt: seededAt(1),
+  updatedAt: seededAt(1),
   dossier: {
     oneLiner: "Doctor-led online weight care in Slovakia and Czechia.",
     positioning:
@@ -118,8 +119,8 @@ export const hound: Brand = {
   languages: ["en", "es"],
   rulePack: "consumer_app_pet",
   demo: false,
-  createdAt: SEEDED_AT,
-  updatedAt: SEEDED_AT,
+  createdAt: seededAt(0),
+  updatedAt: seededAt(0),
   dossier: {
     oneLiner: "A daily behavior plan built for your dog.",
     positioning:
@@ -206,8 +207,8 @@ export const dynova: Brand = {
   languages: ["tr", "en"],
   rulePack: "tr_health_wellness",
   demo: false,
-  createdAt: SEEDED_AT,
-  updatedAt: SEEDED_AT,
+  createdAt: seededAt(2),
+  updatedAt: seededAt(2),
   dossier: {
     oneLiner: "Personal health decisions based on your own data.",
     positioning:
@@ -265,8 +266,8 @@ export const evreon: Brand = {
   languages: ["en"],
   rulePack: "b2b_healthtech",
   demo: false,
-  createdAt: SEEDED_AT,
-  updatedAt: SEEDED_AT,
+  createdAt: seededAt(3),
+  updatedAt: seededAt(3),
   dossier: {
     oneLiner: "An agentic operating system for clinics.",
     positioning:

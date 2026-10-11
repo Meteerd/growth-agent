@@ -14,16 +14,16 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Fixtures: the four brands from `docs/BRANDS.md` (full dossiers) and one complete demo run per brand (Hound and a.clinic rich: 30+ evidence across 5+ sources with deconstructions and clearly-demo metrics flagged `demo: true`; 6 questions with whys; a channel plan with scores, evidence links and notNow; 4 concepts with shot lists; packs). Evreon and Dynova lighter but complete.
   - Accept: Vitest parses every fixture with its schema. Sync; tell Lane B in INBOX_B how to import (`@/contracts`).
 
-- [ ] **A03 DB + brands API**
+- [x] **A03 DB + brands API** (commit cd8945c)
   - Drizzle + `@libsql/client`, SQLite at `DATABASE_URL` (`file:./data/nexus.db`), schema for all entities, migrations in `drizzle/`, `pnpm db:migrate`, idempotent `pnpm seed` (four brands).
   - Routes: `GET/POST /api/brands`, `GET /api/brands/[id]`, `PATCH /api/brands/[id]/dossier`, connections, `GET /api/providers`, `GET /api/assets/[...path]`.
   - Accept: `curl localhost:3000/api/brands` returns 4 brands; Vitest route/service tests on a temp SQLite file pass.
 
-- [ ] **A04 Providers + spend ledger**
+- [x] **A04 Providers + spend ledger** (commit d887d0d)
   - Provider interface, registry, live/demo resolution (key present AND id in `LIVE_PROVIDERS`; smoke `--live` override), `SpendEntry` writes, `BudgetExceededError`, `GET /api/spend`.
   - Accept: unit tests: demo returns fixture; live call blocked past cap; ledger sums per provider.
 
-- [ ] **A05 Runs, job runner, SSE**
+- [x] **A05 Runs, job runner, SSE** (commit cb7e886)
   - In-process job runner (survives within the dev server process; resumable from DB on restart is stretch), Run state machine (`queued` -> `running` -> `waiting_input` -> `running` -> `done`/`failed`/`cancelled`), RunEvent persistence with monotonic ids, `GET /api/runs/[id]/events` SSE with `Last-Event-ID` resume and heartbeat, cancel.
   - Accept: `curl -N localhost:3000/api/runs/<id>/events` streams a demo run; reconnect with `Last-Event-ID` resumes without duplicates (test).
 
