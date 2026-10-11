@@ -44,7 +44,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - One question at a time, large serif prompt, mono "why I'm asking", evidence chips, answer chips / text / scale / confirm, skip with assumption, progress constellation, free-text chat drawer streaming from `/runs/:id/chat`.
   - Accept: e2e: answer all questions in mock mode and the run resumes.
 
-- [ ] **B11 Direction `/runs/[id]/direction`**
+- [x] **B11 Direction `/runs/[id]/direction`** (commit 59e9cce)
   - Orbit map (brand center, channels at distance by score, size by priority, six-axis breakdown on hover, evidence drawer), ranked list view toggle, notNow ring with reasons, reorder/drop -> PATCH plan.
   - Accept: e2e: switch views, open a channel's evidence, drop a channel; screenshot.
 
@@ -84,7 +84,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
 - [x] **BS5** Manus task card (commit 0acf539): when evidence has `source: manus_research`, show a card linking to the Manus task with its status.
 
 ## IMPROVE (self-generated)
-- [ ] **I01** Research-only runs (recorded live research) end with "0 packs ready to post". Accept: a done run without packs says research is complete with evidence and blueprint counts, and offers "Start a run on this research" (live: reuseResearchFrom = this run).
-- [ ] **I02** Blueprint cards show empty quotes when the hook has no spoken or written text. Accept: fall back to on-screen text, then the visual; never render an empty quote.
-- [ ] **I03** Run header spend sums event costs only ($0.40 shown, ledger says $1.02). Accept: header shows the larger of the event sum and run.costUsd.
-- [ ] **I04** Remake row for a blueprint with no remake shows faint "no shot" boxes. Accept: one designed band explains the remake appears after production.
+- [x] **I01** (commit f426e42) Research-only runs (recorded live research) end with "0 packs ready to post". Accept: a done run without packs says research is complete with evidence and blueprint counts, and offers "Start a run on this research" (live: reuseResearchFrom = this run).
+- [x] **I02** (commit f426e42) Blueprint cards show empty quotes when the hook has no spoken or written text. Accept: fall back to on-screen text, then the visual; never render an empty quote.
+- [x] **I03** (commit f426e42) Run header spend sums event costs only ($0.40 shown, ledger says $1.02). Accept: header shows the larger of the event sum and run.costUsd.
+- [x] **I04** (commit f426e42) Remake row for a blueprint with no remake shows faint "no shot" boxes. Accept: one designed band explains the remake appears after production.
