@@ -50,3 +50,4 @@
 - 00:54 B11 merged (59e9cce): direction orbit map, radar, drawer, ranked list, reorder/drop. Post-merge direction.spec 2 passed.
 - Loop log: tested recorded live run cockpit + blueprint in live mode / found research-only run said 0 packs, empty hook quotes, header spend low, faint remake row / fixed in f426e42.
 - 01:06 B16 done (b57e1fb): pnpm e2e exit 0 (55 passed, 10 live-only skipped, 4.0 min); journey.spec full loop 1 passed (56 s); screenshots of 14 routes x 2 sizes + cockpit mid/finished in e2e/screens. Live project: E2E_DATA=live e2e/live.spec.ts 10 passed (00:50).
+- Loop log 01:17: reviewed every mobile screenshot / Connect marked global engines Missing, no 404 or error page, packs nested Page / fixed I05 to I07 in 0d4e1d4; brand.spec 4 passed, packs.spec 3 passed.
