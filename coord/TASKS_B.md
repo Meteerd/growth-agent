@@ -87,7 +87,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
 - [x] **BS1** Presentation mode (commit 851c0e9) (`?present=1`): hides dev UI, enlarges type, replays a recorded live run at chosen speed for the pitch.
 - [x] **BS2** Command palette (commit 39619ca) (Cmd+K): jump to brand/run/screen.
 - [ ] **BS3** Page transitions (skipped on purpose: DESIGN v2 allows functional motion only and drops the vortex; see DECISIONS 12 Oct 02:15) (shared-element between portfolio card and brand home; vortex on run start).
-- [ ] **BS4** Live parity: run the full journey against the real API routes and fix every mismatch (send contract requests to Lane A).
+- [x] **BS4** Live parity (commit 4440fc1): run the full journey against the real API routes and fix every mismatch (send contract requests to Lane A).
 - [x] **BS5** Manus task card (commit 0acf539): when evidence has `source: manus_research`, show a card linking to the Manus task with its status.
 
 ## IMPROVE (self-generated)
@@ -98,4 +98,4 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
 - [x] **I05** (commit 0d4e1d4) Connect page shows engines and tools (Claude, OpenAI, Manus...) as "Missing, not connected for this brand" when the brand has no connection row; they are global. Accept: engine/tool tiles take their status from /api/providers (live/demo, key present), only connectors can be Missing; e2e asserts Claude is not Missing.
 - [x] **I06** (commit 0d4e1d4) No designed 404 page or error boundary (Next defaults would show). Accept: `src/app/not-found.tsx` and `src/app/error.tsx` in the observatory style with a way back; e2e visits an unknown route.
 - [x] **I07** Packs screen nested a second Page inside the run frame (double gutters, duplicate demo badge and cockpit button). Accept: one frame, header tightened; packs.spec passes. (commit 0d4e1d4)
-- [ ] **I08** Live run on recorded research: 3 blueprints, only one remade, and the cockpit listed a non-remade one first, so "open the side by side" led to an empty remake lane. Accept: remade blueprints first with a "Remade" marker and the concept title; live journey opens the remade one.
+- [x] **I08** (commit 4440fc1) Live run on recorded research: 3 blueprints, only one remade, and the cockpit listed a non-remade one first, so "open the side by side" led to an empty remake lane. Accept: remade blueprints first with a "Remade" marker and the concept title; live journey opens the remade one.
