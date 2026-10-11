@@ -81,4 +81,4 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
 - [ ] **BS2** Command palette (Cmd+K): jump to brand/run/screen.
 - [ ] **BS3** Page transitions (shared-element between portfolio card and brand home; vortex on run start).
 - [ ] **BS4** Live parity: run the full journey against the real API routes and fix every mismatch (send contract requests to Lane A).
-- [ ] **BS5** Manus task card: when evidence has `source: manus_research`, show a card linking to the Manus task with its status.
+- [x] **BS5** Manus task card (commit 0acf539): when evidence has `source: manus_research`, show a card linking to the Manus task with its status.
