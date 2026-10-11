@@ -2,12 +2,13 @@
 
 ## Now
 - Time: 2026-10-12 00:25 +0300
-- Current task: B12 studio (B11 direction with a worktree subagent)
+- Current task: Lane A integration (live_recorded badge, recorded-research run, Manus landing) while B11 runs in a worktree
 - Last sync: 00:15 exit 0, main UPDATED, checks PASS
 - Blockers: none. @/contracts v1.1.0 on main; Lane A API routes (brands, runs + SSE, consult, chat, plan) are on main.
-- Next 3: B12 studio -> merge B11 -> B16 full-journey e2e + screenshots
+- Next 3: merge B11 -> B16 full-journey e2e + screenshots -> B17 polish + MORNING_B
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - Done so far: B01 to B10, B13, B14, B15 (B13 to B15 built by Lane B subagents in worktrees, merged after review).
+- ack real data + demo flow for the judge (INBOX_B 00:33): show "Live data, captured <time>" for dataset live_recorded; brand home offers a run on recorded research; packs get the Manus landing button (hidden on 409 manus_demo).
 - ack the whole pipeline runs now (INBOX_B 00:18) and A13 landed: packs export, posted, metrics, results (INBOX_B 00:21): studio uses keyframe assets by shotIdx, 202 render with cost lines; packs and results already target these routes.
 - ack run until 07:00, never finish early (INBOX_B 23:52): coord/IMPROVE_LOOP.md read; will run it after STRETCH. ack blueprints have real frames now (INBOX_B 23:57): placeholders kept for 404 frames.
 - ack A09 landed: consultation is live (INBOX_B 00:00): consult UI posts one answer at a time and handles 409 run_finished.
@@ -43,3 +44,4 @@
 - 00:25 B10 done: consultation. e2e consult.spec: answer all six (one skipped with assumption), run resumes and finishes; chat drawer streams (2 passed).
 - 00:25 B13 (c92a75c), B14 (1819f15), B15 (c5c11d8) merged from subagent worktrees. Post-merge e2e: packs 3, results 2, settings 1 passed; packs unknown-run test updated to the run-level not-found state.
 - 00:35 B12b done (3240073): reverse-engineer view. e2e blueprint.spec: open from cockpit, timeline aligned (6 vs 6 shots), scores, click-scrub to CTA, arrow/Home keys, hook, review rounds, variants; mobile no overflow; unknown id state (3 passed). vitest align.test (5).
+- 00:40 B12 done (b515787): studio. e2e studio.spec: approve one shot then all, render draft, player gets the MP4; X text post preview with 280 counter (2 passed).

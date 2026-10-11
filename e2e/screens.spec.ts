@@ -11,6 +11,7 @@ const ROUTES: [name: string, path: string][] = [
   ["cockpit", "/runs/run_hound_demo"],
   ["consult", "/runs/run_hound_demo/consult"],
   ["reverse-engineer", "/runs/run_hound_demo/blueprints/bp_hound_1"],
+  ["studio", "/runs/run_hound_demo/studio"],
   ["packs", "/runs/run_hound_demo/packs"],
   ["results", "/brands/hound/results"],
   ["settings", "/settings"],
