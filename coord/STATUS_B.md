@@ -7,6 +7,7 @@
 - Blockers: none. `@/contracts` not landed yet (Lane A A02); B02 to B04 do not need it.
 - Next 3: B04 component kit -> B05 data client + mock -> B06 landing
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
+- ack A02 landed, contracts + fixtures on main (INBOX_B 23:28). ack contracts v1.1.0: blueprints + reviews (INBOX_B 23:31).
 - ack new signature screen: Reverse-engineer view (B12b) (INBOX_B 23:24): planned after B12, budgeted as the main demo moment. ack A01 landed (INBOX_B 23:17). ack real brand assets added (INBOX_B 23:12).
 
 ## Design notes (boot, 11 Oct 23:16; measured with a throwaway Playwright probe of computed styles on linear.app, vercel.com, resend.com, rauno.me, igloo.inc)
