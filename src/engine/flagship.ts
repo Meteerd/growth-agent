@@ -178,16 +178,29 @@ async function keyframeFor(
         refs = [flat];
       }
     }
-    const img = await generateImage(
-      db,
-      refs ? `${prompt} The screen or print shows exactly the attached brand image.` : prompt,
-      {
+    const gen = (withRefs: boolean) =>
+      generateImage(
+        db,
+        withRefs && refs ? `${prompt} The screen or print shows exactly the attached brand image.` : prompt,
+        {
+          runId: c.runId,
+          quality: "high",
+          refs: withRefs ? refs : undefined,
+          demo: () => demoKeyframe(brand, s),
+        },
+      );
+    // an edit with a reference can be refused; fall back to a plain generation rather than failing the cut
+    const img = await gen(true).catch(async (e) => {
+      if (!refs) throw e;
+      await appendEvent(db, {
         runId: c.runId,
-        quality: "high",
-        refs,
-        demo: () => demoKeyframe(brand, s),
-      },
-    );
+        phase: "production",
+        type: "warning",
+        title: `Reference edit failed for shot ${s.idx + 1}; generating without it`,
+        detail: e instanceof Error ? e.message : String(e),
+      });
+      return gen(false);
+    });
     png = img.png;
     provider = img.mode === "live" ? "openai" : "local";
     model = img.model;

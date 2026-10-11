@@ -79,7 +79,11 @@ export async function generateImage(
         ? await oa().images.edit({
             model: IMAGE_MODEL(),
             image: await Promise.all(
-              o.refs.map((f) => toFile(fs.createReadStream(f), path.basename(f).replace(/\.webp$/i, ".png"))),
+              o.refs.map(async (f) =>
+                toFile(await (await import("sharp")).default(f).png().toBuffer(), `${path.parse(f).name}.png`, {
+                  type: "image/png",
+                }),
+              ),
             ),
             prompt,
             size: o.size ?? "1024x1536",
