@@ -7,7 +7,6 @@ import { NumberTicker } from "@/components/ui/NumberTicker";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { EmptyState, ErrorState } from "@/components/ui/States";
 import { CHANNEL_LABELS, type Channel, type MetricSnapshot, type PublishPack } from "@/contracts";
-import { useFieldActivity } from "@/lib/client/field";
 import { DATA_MODE } from "@/lib/client/mode";
 import { PRODUCT_NAME } from "@/lib/client/product";
 import { useConcepts, usePacks, useResults, useRun } from "@/lib/client/queries";
@@ -20,7 +19,6 @@ export function PacksScreen({ runId }: { runId: string }) {
   const list = packs.data ?? [];
   // Latest stored snapshot per pack, so posted packs keep their numbers across reloads (live mode).
   const { data: results } = useResults(list[0]?.brandId);
-  useFieldActivity(0.2);
 
   const demo = !!run?.demo || DATA_MODE === "mock";
   const conceptById = new Map((concepts.data ?? []).map((c) => [c.id, c]));
@@ -49,7 +47,7 @@ export function PacksScreen({ runId }: { runId: string }) {
         <div className="flex gap-4 p-5 md:p-6">
           <span
             aria-hidden
-            className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full font-mono text-[11px] text-warn shadow-[inset_0_0_0_1px_rgb(255_200_92/0.35)]"
+            className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full font-mono text-[11px] text-warn shadow[inset_0_0_0_1px_rgb(183_121_31/0.35)]"
           >
             !
           </span>
@@ -100,7 +98,7 @@ export function PacksScreen({ runId }: { runId: string }) {
                 <header className="rise flex items-end justify-between gap-4 lg:sticky lg:top-24 lg:flex-col lg:items-start lg:justify-start lg:self-start">
                   <div>
                     <p className="font-mono text-[11px] text-bone-3 tabular-nums">{String(gi + 1).padStart(2, "0")}</p>
-                    <h2 id={`group-${platform}`} className="mt-2 font-serif text-[32px] leading-none md:text-[36px]">
+                    <h2 id={`group-${platform}`} className="mt-2 font-display text-[32px] leading-none md:text-[36px]">
                       {CHANNEL_LABELS[platform]}
                     </h2>
                   </div>

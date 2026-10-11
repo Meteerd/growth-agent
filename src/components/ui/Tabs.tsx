@@ -24,7 +24,7 @@ export function Tabs({
   const id = useId();
   return (
     <T.Root value={value} onValueChange={onValueChange} className={className}>
-      <T.List className="inline-flex rounded-chip bg-glass p-1 shadow-[inset_0_0_0_1px_var(--color-line)]">
+      <T.List className="inline-flex rounded-chip bg-glass p-1 shadow[inset_0_0_0_1px_var(--color-line)]">
         {items.map((it) => (
           <T.Trigger
             key={it.value}

@@ -26,10 +26,10 @@ export function ProviderTile({
       data-status={status}
       className={cn(
         "relative flex flex-col gap-4 rounded-panel p-5 transition-shadow duration-300",
-        status === "live" && "glass-flat shadow-[var(--shadow-panel),inset_0_0_0_1px_rgb(124_255_178/0.18)]",
+        status === "live" && "glass-flat shadow[var(--shadow-panel),inset_0_0_0_1px_rgb(31_122_77/0.18)]",
         status === "demo" && "glass-flat",
         status === "missing" && "border border-line border-dashed bg-transparent",
-        status === "error" && "glass-flat shadow-[var(--shadow-panel),inset_0_0_0_1px_rgb(255_92_122/0.3)]",
+        status === "error" && "glass-flat shadow[var(--shadow-panel),inset_0_0_0_1px_rgb(192_53_43/0.3)]",
         className,
       )}
     >
@@ -41,7 +41,7 @@ export function ProviderTile({
           </h3>
         </div>
         {status === "demo" ? (
-          <span className="inline-flex h-6 items-center gap-1.5 rounded-chip border border-bone-3 border-dashed px-2.5 font-mono text-[10.5px] text-bone-2 uppercase tracking-[0.06em]">
+          <span className="inline-flex h-6 items-center gap-1.5 rounded-chip border border-bone-3 border-dashed px-2.5 font-medium text-[11.5px] text-bone-2">
             Demo
           </span>
         ) : (
@@ -52,7 +52,7 @@ export function ProviderTile({
         )}
       </header>
       <p className="text-bone-2 text-ui">{usedFor}</p>
-      {note && <p className="font-mono text-[11px] text-bone-3">{note}</p>}
+      {note && <p className="text-[12px] text-bone-3">{note}</p>}
       {children}
     </article>
   );

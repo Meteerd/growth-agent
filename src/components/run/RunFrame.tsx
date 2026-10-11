@@ -60,7 +60,7 @@ function RunHeader() {
     { href: `${base}/packs`, label: "Packs" },
   ];
   return (
-    <div className="sticky top-16 z-30 -mx-4 bg-[linear-gradient(180deg,rgb(6_7_10/0.9),rgb(6_7_10/0.75))] px-4 backdrop-blur-md md:-mx-8 md:px-8">
+    <div className="sticky top-16 z-30 -mx-4 bg-raised px-4 md:-mx-8 md:px-8">
       <div className="flex flex-wrap items-center gap-x-5 gap-y-3 pt-5 pb-3">
         <div className="flex min-w-0 items-center gap-3">
           {brand ? <BrandMark brand={brand} size={36} /> : <Skeleton className="size-9 rounded-[10px]" />}
@@ -109,7 +109,7 @@ function RunHeader() {
             >
               {t.label}
               {t.count != null && <span className="font-mono text-[10.5px] text-bone-3">{t.count}</span>}
-              {t.dot && <StatusDot status="warn" className="animate-pulse" />}
+              {t.dot && <StatusDot status="warn" className="" />}
               {active && <span className="absolute inset-x-3 -bottom-px h-px bg-signal" />}
             </Link>
           );

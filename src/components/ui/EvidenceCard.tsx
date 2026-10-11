@@ -7,25 +7,25 @@ import { Badge, DemoBadge } from "./Badge";
 
 // Each source gets a fixed hue from the spectral ramp + status colours, so the wall groups by colour at a glance.
 const SOURCE_HUE: Partial<Record<EvidenceSource, string>> = {
-  website: "#ECE7DD",
-  meta_ad_library: "#5B3CFF",
-  meta_ads: "#5B3CFF",
-  spiral: "#8C6BFF",
-  tiktok: "#3CE0FF",
-  instagram: "#FF5C7A",
-  youtube: "#FF7A5C",
-  reddit: "#FFC85C",
-  google_maps: "#7CFFB2",
-  app_store: "#9FD8FF",
-  play_store: "#9FD8FF",
-  trustpilot: "#7CFFB2",
-  manus_research: "#D4FF3A",
-  revenuecat: "#FFC85C",
-  posthog: "#FFC85C",
-  stripe: "#8C6BFF",
-  paddle: "#8C6BFF",
+  website: "#5C5C5C",
+  meta_ad_library: "#3B5B8C",
+  meta_ads: "#3B5B8C",
+  spiral: "#6B4E71",
+  tiktok: "#2E6F73",
+  instagram: "#A6402B",
+  youtube: "#C46A2A",
+  reddit: "#B7791F",
+  google_maps: "#6F7A35",
+  app_store: "#5B6B7A",
+  play_store: "#5B6B7A",
+  trustpilot: "#1F7A4D",
+  manus_research: "#111111",
+  revenuecat: "#8C6D1F",
+  posthog: "#8C6D1F",
+  stripe: "#4F4A8C",
+  paddle: "#4F4A8C",
 };
-export const sourceHue = (s: EvidenceSource) => SOURCE_HUE[s] ?? "#ECE7DD";
+export const sourceHue = (s: EvidenceSource) => SOURCE_HUE[s] ?? "#5C5C5C";
 
 /** Designed stand-in when there is no thumbnail (third-party media is never re-hosted). */
 export function SourceArt({
@@ -44,19 +44,11 @@ export function SourceArt({
     <div
       aria-hidden
       className={cn("relative overflow-hidden", className)}
-      style={{
-        background: `radial-gradient(120% 90% at 20% 0%, ${hue}26, transparent 60%), linear-gradient(180deg, #12151c, #0a0c10)`,
-      }}
+      style={{ background: "var(--color-raised-2)" }}
     >
-      <div
-        className="absolute inset-0 opacity-50"
-        style={{ backgroundImage: `repeating-linear-gradient(115deg, ${hue}1f 0 1px, transparent 1px 9px)` }}
-      />
       <div className="absolute inset-x-3 bottom-2.5 flex items-end justify-between">
-        <span className="font-serif text-[22px] italic leading-none" style={{ color: hue }}>
-          {label ?? kind}
-        </span>
-        <span className="font-mono text-[9px] text-bone-3 uppercase tracking-[0.08em]">no media kept</span>
+        <span className="font-display text-[18px] leading-none text-bone-2">{label ?? kind}</span>
+        <span className="text-[10.5px] text-bone-3">no media kept</span>
       </div>
     </div>
   );
@@ -84,15 +76,11 @@ export function EvidenceCard({
     <article
       data-source={e.source}
       className={cn(
-        "glass-flat group relative flex flex-col overflow-hidden transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[var(--shadow-panel-strong)]",
+        "glass-flat group relative flex flex-col overflow-hidden transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:shadow[var(--shadow-panel-strong)]",
         className,
       )}
     >
-      <span
-        aria-hidden
-        className="absolute inset-x-0 top-0 h-px"
-        style={{ background: `linear-gradient(90deg, transparent, ${hue}, transparent)` }}
-      />
+      <span aria-hidden className="absolute inset-x-0 top-0 h-px" style={{ background: hue }} />
       {e.thumbnailUrl ? (
         // biome-ignore lint/performance/noImgElement: evidence thumbnails come from arbitrary hosts
         <img src={e.thumbnailUrl} alt="" className="h-28 w-full object-cover" loading="lazy" />
@@ -127,7 +115,7 @@ export function EvidenceCard({
             <button
               onClick={onToggle}
               aria-expanded={!!expanded}
-              className="flex items-center justify-between rounded-[8px] px-0 text-left font-mono text-[11px] text-bone-2 transition-colors hover:text-bone"
+              className="flex items-center justify-between rounded-[4px] px-0 text-left text-[12px] text-bone-2 transition-colors hover:text-bone"
             >
               <span>{expanded ? "Hide deconstruction" : "Deconstruct"}</span>
               <span aria-hidden className={cn("transition-transform duration-300", expanded && "rotate-45")}>
@@ -161,7 +149,10 @@ export function EvidenceCard({
                   )}
                 </dl>
                 {onOpenBlueprint && (
-                  <button onClick={onOpenBlueprint} className="mt-3 font-mono text-[11px] text-signal hover:underline">
+                  <button
+                    onClick={onOpenBlueprint}
+                    className="mt-3 text-[12px] text-bone underline decoration-bone-4 underline-offset-4"
+                  >
                     Open the blueprint
                   </button>
                 )}
@@ -186,7 +177,7 @@ function Row({ k, v, serif }: { k: string; v: string; serif?: boolean }) {
   return (
     <div>
       <dt className="mono-label">{k}</dt>
-      <dd className={cn("mt-0.5 text-bone-2", serif && "font-serif text-[15px] text-bone italic")}>{v}</dd>
+      <dd className={cn("mt-0.5 text-bone-2", serif && "font-display text-[15px] text-bone")}>{v}</dd>
     </div>
   );
 }

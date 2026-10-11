@@ -10,7 +10,6 @@ import { SkeletonCard } from "@/components/ui/Skeleton";
 import { EmptyState, ErrorState } from "@/components/ui/States";
 import { type BrandSummary, PHASES } from "@/contracts";
 import { cn } from "@/lib/client/cn";
-import { useFieldActivity } from "@/lib/client/field";
 import { PHASE_LABELS, timeAgo, VERTICAL_LABELS } from "@/lib/client/format";
 import { useBrands, useConnections } from "@/lib/client/queries";
 import { BrandMark } from "./BrandMark";
@@ -18,7 +17,6 @@ import { BrandMark } from "./BrandMark";
 export function Portfolio() {
   const { data, isLoading, error, refetch } = useBrands();
   const running = data?.some((b) => b.lastRun?.status === "running");
-  useFieldActivity(running ? 0.45 : 0.2);
   return (
     <Page>
       <PageHead
@@ -77,12 +75,12 @@ function BrandCard({ brand: b }: { brand: BrandSummary }) {
       data-testid={`brand-card-${b.slug}`}
       className={cn(
         "glass-flat group relative flex h-full min-h-[360px] flex-col overflow-hidden p-5 transition-[transform,box-shadow] duration-300 ease-out",
-        "hover:-translate-y-0.5 hover:shadow-[var(--shadow-panel-strong)]",
+        "hover:-translate-y-0.5 hover:shadow[var(--shadow-panel-strong)]",
       )}
     >
       <span
         aria-hidden
-        className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(80%_100%_at_20%_0%,rgb(236_231_221/0.06),transparent)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(80%_100%_at_20%_0%,rgb(17_17_17/0.06),transparent)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
       />
       <header className="flex items-start gap-3">
         <BrandMark brand={b} size={44} />
@@ -134,7 +132,7 @@ function BrandCard({ brand: b }: { brand: BrandSummary }) {
 const RUN_PHASES = PHASES.filter((p) => p !== "measure");
 const SEG: Record<PhaseState, string> = {
   done: "bg-bone-3",
-  active: "bg-signal shadow-[0_0_10px_rgb(212_255_58/0.6)]",
+  active: "bg-signal ",
   waiting: "bg-warn",
   failed: "bg-fail",
   pending: "bg-line-strong",

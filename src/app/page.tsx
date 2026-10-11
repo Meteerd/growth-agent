@@ -1,5 +1,5 @@
 import { Hero } from "@/components/landing/Hero";
-import { Brands, Footer, Loop, Remake, Rules } from "@/components/landing/Sections";
+import { Brands, Example, Footer, Loop, Rules } from "@/components/landing/Sections";
 import { DataModeChip, Wordmark } from "@/components/shell/Header";
 
 export default function Landing() {
@@ -13,8 +13,8 @@ export default function Landing() {
       </header>
       <main>
         <Hero />
+        <Example />
         <Loop />
-        <Remake />
         <Brands />
         <Rules />
       </main>

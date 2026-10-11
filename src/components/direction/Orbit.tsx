@@ -188,7 +188,7 @@ export function OrbitView({
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-      <div className="relative overflow-hidden rounded-panel bg-[radial-gradient(70%_60%_at_50%_45%,rgb(91_60_255/0.07),transparent_70%)] p-3 hairline sm:p-5">
+      <div className="relative overflow-hidden rounded-panel bg-[radial-gradient(70%_60%_at_50%_45%,rgb(107_78_113/0.07),transparent_70%)] p-3 hairline sm:p-5">
         <FrameNotes count={plan.channels.length} notNow={plan.notNow.length} />
         <section
           ref={wrap}
@@ -232,7 +232,7 @@ export function OrbitView({
                     y1={a.y}
                     x2={b.x}
                     y2={b.y}
-                    stroke={major ? "rgb(236 231 221 / 0.28)" : "rgb(236 231 221 / 0.12)"}
+                    stroke={major ? "rgb(17 17 17 / 0.28)" : "rgb(17 17 17 / 0.12)"}
                     strokeWidth="1"
                   />
                 );
@@ -246,7 +246,7 @@ export function OrbitView({
                 cy={CENTER}
                 r={orbitRadius(t, outer)}
                 fill="none"
-                stroke={t === outer ? "rgb(236 231 221 / 0.24)" : "rgb(236 231 221 / 0.15)"}
+                stroke={t === outer ? "rgb(17 17 17 / 0.24)" : "rgb(17 17 17 / 0.15)"}
                 strokeWidth="1"
                 transform={`rotate(-90 ${CENTER} ${CENTER})`}
                 initial={reduce ? false : { pathLength: 0, opacity: 0 }}
@@ -260,7 +260,7 @@ export function OrbitView({
                 cy={CENTER}
                 r={R_NOT_NOW}
                 fill="none"
-                stroke="rgb(236 231 221 / 0.16)"
+                stroke="rgb(17 17 17 / 0.16)"
                 strokeWidth="1"
                 strokeDasharray="1.5 7"
                 initial={reduce ? false : { opacity: 0 }}
@@ -286,7 +286,7 @@ export function OrbitView({
               y1={CENTER}
               x2={CENTER}
               y2={CENTER}
-              stroke="rgb(236 231 221 / 0.45)"
+              stroke="rgb(17 17 17 / 0.45)"
               strokeWidth="1"
               strokeDasharray="3 4"
               className={cn("transition-opacity duration-150", active ? "opacity-100" : "opacity-0")}
@@ -297,7 +297,7 @@ export function OrbitView({
                 y1={CENTER - R_CORE - 6}
                 x2={CENTER}
                 y2={CENTER - R_OUTER - 10}
-                stroke="rgb(236 231 221 / 0.18)"
+                stroke="rgb(17 17 17 / 0.18)"
                 strokeWidth="1"
                 strokeDasharray="1 3"
               />
@@ -305,20 +305,13 @@ export function OrbitView({
                 const y = CENTER - orbitRadius(t, outer);
                 return (
                   <g key={t}>
-                    <line
-                      x1={CENTER - 4}
-                      y1={y}
-                      x2={CENTER + 4}
-                      y2={y}
-                      stroke="rgb(236 231 221 / 0.45)"
-                      strokeWidth="1"
-                    />
+                    <line x1={CENTER - 4} y1={y} x2={CENTER + 4} y2={y} stroke="rgb(17 17 17 / 0.45)" strokeWidth="1" />
                     <text
                       x={CENTER + 9}
                       y={y - 5}
                       className="font-mono"
                       style={{ fontSize: "max(11px, calc(9px / var(--k)))" }}
-                      fill="rgb(236 231 221 / 0.55)"
+                      fill="rgb(17 17 17 / 0.55)"
                       stroke="#06070A"
                       strokeWidth="4"
                       paintOrder="stroke"
@@ -338,7 +331,7 @@ export function OrbitView({
                 className="font-mono"
                 style={{ fontSize: "max(10px, calc(8.5px / var(--k)))" }}
                 letterSpacing="0.12em"
-                fill="rgb(236 231 221 / 0.42)"
+                fill="rgb(17 17 17 / 0.42)"
                 stroke="#06070A"
                 strokeWidth="5"
                 paintOrder="stroke"
@@ -356,7 +349,7 @@ export function OrbitView({
           >
             <span
               aria-hidden
-              className="absolute size-[calc(var(--k)*104px)] rounded-full shadow-[inset_0_0_0_1px_rgb(236_231_221/0.14),0_0_60px_rgb(91_60_255/0.25)]"
+              className="absolute size-[calc(var(--k)*104px)] rounded-full shadow[inset_0_0_0_1px_rgb(17_17_17/0.14)]"
             />
             <span style={{ transform: `scale(${Math.max(k, 0.42)})` }}>
               {brand ? (
@@ -446,12 +439,12 @@ function BodyButton({
     >
       <span
         aria-hidden
-        className="absolute inset-0 rounded-full backdrop-blur-md transition-shadow duration-300"
+        className="absolute inset-0 rounded-full transition-shadow duration-300"
         style={{
           background: rec ? `${SPHERE}, radial-gradient(circle at 70% 82%, ${hue}26, transparent 62%)` : SPHERE,
           boxShadow: lit
-            ? `inset 0 0 0 1px rgb(236 231 221 / 0.4), 0 0 0 6px rgb(236 231 221 / 0.04), 0 14px 50px -10px ${hue}88`
-            : `inset 0 0 0 1px rgb(236 231 221 / 0.14), 0 12px 40px -14px ${rec ? `${hue}66` : "transparent"}`,
+            ? `inset 0 0 0 1px rgb(17 17 17 / 0.4), 0 0 0 6px rgb(17 17 17 / 0.04), 0 14px 50px -10px ${hue}88`
+            : `inset 0 0 0 1px rgb(17 17 17 / 0.14), 0 12px 40px -14px ${rec ? `${hue}66` : "transparent"}`,
         }}
       />
       <svg aria-hidden viewBox="0 0 100 100" className="-rotate-90 absolute inset-0 size-full overflow-visible">
@@ -569,7 +562,7 @@ function InspectCard({
             {rec ? `Priority ${pad2(rec.priority)}` : "Not now"}
             {!live && rec?.priority === 1 && <span className="text-bone-3"> / top pick</span>}
           </p>
-          <h3 className="mt-2 truncate font-serif text-[34px] leading-none">{label}</h3>
+          <h3 className="mt-2 truncate font-display text-[34px] leading-none">{label}</h3>
         </div>
         {rec && <ModeBadge mode={rec.mode} className="mt-0.5" />}
       </header>

@@ -27,7 +27,7 @@ const GLYPH: Partial<Record<RunEvent["type"], string>> = {
 
 const TONE: Partial<Record<RunEvent["type"], string>> = {
   tool_call: "text-cyan",
-  thinking: "text-[#a99bff]",
+  thinking: "text-[#6B4E71]",
   evidence: "text-bone",
   warning: "text-warn",
   error: "text-fail",
@@ -54,9 +54,7 @@ export function EventRow({ e, t, fresh }: { e: RunEvent; t?: string; fresh?: boo
       <span aria-hidden className={cn("text-center", TONE[e.type] ?? "text-bone-3")}>
         {GLYPH[e.type] ?? "·"}
       </span>
-      <span
-        className={cn("min-w-0", isPhase ? "text-bone" : e.type === "thinking" ? "text-bone-2 italic" : "text-bone-2")}
-      >
+      <span className={cn("min-w-0", isPhase ? "text-bone" : e.type === "thinking" ? "text-bone-2" : "text-bone-2")}>
         {isPhase && <span className="mr-2 text-signal uppercase tracking-[0.06em]">{PHASE_LABELS[e.phase]}</span>}
         {fresh && (e.type === "tool_call" || e.type === "thinking") ? (
           <TypedText text={e.title} cps={e.type === "thinking" ? 90 : 55} />
@@ -64,7 +62,7 @@ export function EventRow({ e, t, fresh }: { e: RunEvent; t?: string; fresh?: boo
           e.title
         )}
         {e.detail && e.type !== "evidence" && (
-          <span className="mt-0.5 block truncate text-[11px] text-bone-3 not-italic">{e.detail}</span>
+          <span className="mt-0.5 block truncate text-[11px] text-bone-3">{e.detail}</span>
         )}
       </span>
       <span className="text-[11px] text-bone-3 tabular-nums">{e.costUsd ? formatUsd(e.costUsd) : ""}</span>

@@ -25,11 +25,11 @@ export function phaseStates(
 }
 
 const NODE: Record<PhaseState, string> = {
-  done: "bg-bone shadow-[0_0_0_3px_var(--color-ink)]",
-  active: "bg-signal shadow-[0_0_0_3px_var(--color-ink),0_0_18px_2px_rgb(212_255_58/0.7)] animate-pulse-signal",
-  waiting: "bg-warn shadow-[0_0_0_3px_var(--color-ink),0_0_14px_1px_rgb(255_200_92/0.6)]",
-  failed: "bg-fail shadow-[0_0_0_3px_var(--color-ink)]",
-  pending: "bg-ink shadow-[0_0_0_3px_var(--color-ink),inset_0_0_0_1px_var(--color-bone-4)]",
+  done: "bg-bone",
+  active: "bg-signal",
+  waiting: "bg-warn",
+  failed: "bg-fail",
+  pending: "bg-ink shadow-[inset_0_0_0_1.5px_var(--color-bone-4)]",
 };
 const TEXT: Record<PhaseState, string> = {
   done: "text-bone-2",
@@ -71,7 +71,6 @@ export function PhaseRail({
     states.findIndex((s) => s !== "done" && s !== "pending"),
   );
   const progress = phases.length > 1 ? reached / (phases.length - 1) : 0;
-  const moving = states.includes("active");
 
   if (orientation === "horizontal") {
     return (
@@ -104,10 +103,9 @@ export function PhaseRail({
       <span aria-hidden className="absolute top-2 bottom-2 left-[5px] w-px bg-line" />
       <span
         aria-hidden
-        className="absolute top-2 left-[5px] w-px bg-[linear-gradient(180deg,var(--color-bone-3),var(--color-bone))] transition-[height] duration-700 ease-out"
+        className="absolute top-2 left-[5px] w-px bg-bone transition-[height] duration-700 ease-out"
         style={{ height: `calc((100% - 16px) * ${progress})` }}
       />
-      {moving && <span aria-hidden className="rail-light absolute left-[3px] h-14 w-[5px] rounded-full" />}
       {phases.map((p, i) => (
         <li
           key={p}

@@ -26,7 +26,7 @@ test.describe("reverse-engineer view", () => {
     await track.press("Home");
     await expect(page.getByTestId("bp-shot-0")).toHaveAttribute("data-active", "true");
 
-    await expect(page.getByTestId("hook")).toContainText("why it stops the scroll");
+    await expect(page.getByTestId("hook")).toContainText("why it stops the scroll", { ignoreCase: true });
     await expect(page.getByTestId("self-review")).toContainText("round 2");
     await page.getByRole("button", { name: "round 1" }).click();
     await expect(page.getByTestId("self-review")).toContainText("Regenerate");

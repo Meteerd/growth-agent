@@ -38,8 +38,8 @@ export function PhoneFrame({
   };
   return (
     <div className={cn("relative mx-auto aspect-[9/19.5] w-full max-w-[300px]", className)}>
-      <div className="absolute inset-0 rounded-[44px] bg-[linear-gradient(160deg,#2a2d35,#0b0c10_40%,#1a1c22)] p-[3px] shadow-[0_30px_80px_-20px_rgb(0_0_0/0.8),inset_0_0_0_1px_rgb(255_255_255/0.08)]">
-        <div className="relative h-full w-full overflow-hidden rounded-[41px] bg-ink">
+      <div className="absolute inset-0 rounded-[44px] bg-[linear-gradient(160deg,#2a2d35,#0b0c10_40%,#1a1c22)] p-[3px] shadow[inset_0_0_0_1px_rgb(255_255_255/0.08)]">
+        <div className="relative h-full w-full overflow-hidden rounded-[41px] bg-viewer">
           <div
             aria-hidden
             className="absolute top-2.5 left-1/2 z-20 h-[22px] w-[84px] -translate-x-1/2 rounded-full bg-black"
@@ -67,7 +67,7 @@ export function PhoneFrame({
               >
                 <span
                   className={cn(
-                    "grid size-14 place-items-center rounded-full bg-[rgb(6_7_10/0.5)] text-bone backdrop-blur-md transition-opacity duration-300",
+                    "grid size-14 place-items-center rounded-full bg-[rgb(17_17_17/0.5)] text-bone transition-opacity duration-300",
                     playing && "opacity-0",
                   )}
                 >
@@ -76,7 +76,7 @@ export function PhoneFrame({
                   </svg>
                 </span>
               </button>
-              <div className="absolute inset-x-5 bottom-4 z-10 h-0.5 overflow-hidden rounded-full bg-[rgb(236_231_221/0.2)]">
+              <div className="absolute inset-x-5 bottom-4 z-10 h-0.5 overflow-hidden rounded-full bg-[rgb(17_17_17/0.2)]">
                 <div className="h-full bg-bone" style={{ width: `${t * 100}%` }} />
               </div>
             </>
@@ -85,7 +85,7 @@ export function PhoneFrame({
               <div className="absolute inset-0 grid place-items-center p-8 text-center">
                 <div className="skeleton absolute inset-0 rounded-none opacity-40" />
                 <div className="relative">
-                  <p className="font-serif text-[22px] italic">{empty}</p>
+                  <p className="font-display text-[22px]">{empty}</p>
                   {broken && (
                     <p className="mt-2 font-mono text-[11px] text-bone-3">
                       The video file is not available on this machine.

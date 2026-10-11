@@ -34,7 +34,7 @@ export const AXIS_ABBR: Record<ScoreAxis, string> = {
 /** Mode hue: organic cyan, paid violet, both bone. Not-now bodies use bone-3. */
 export const MODE_HUE: Record<ChannelMode, string> = { organic: "#3CE0FF", paid: "#8C6BFF", both: "#ECE7DD" };
 export const MODE_TEXT: Record<ChannelMode, string> = { organic: "Organic", paid: "Paid", both: "Organic + paid" };
-export const NOT_NOW_HUE = "rgb(236 231 221 / 0.5)";
+export const NOT_NOW_HUE = "rgb(17 17 17 / 0.5)";
 
 export const pad2 = (n: number) => String(n).padStart(2, "0");
 
@@ -132,13 +132,13 @@ export function Radar({
           key={f}
           d={hex(f)}
           fill="none"
-          stroke={f === 1 ? "rgb(236 231 221 / 0.16)" : "rgb(236 231 221 / 0.07)"}
+          stroke={f === 1 ? "rgb(17 17 17 / 0.16)" : "rgb(17 17 17 / 0.07)"}
           strokeWidth="1"
         />
       ))}
       {SCORE_AXES.map((a, i) => {
         const p = polar(R, radarAngle(i), C);
-        return <line key={a} x1={RC} y1={RC} x2={p.x} y2={p.y} stroke="rgb(236 231 221 / 0.07)" strokeWidth="1" />;
+        return <line key={a} x1={RC} y1={RC} x2={p.x} y2={p.y} stroke="rgb(17 17 17 / 0.07)" strokeWidth="1" />;
       })}
       <motion.path
         key={drawKey}
@@ -165,7 +165,7 @@ export function Radar({
         const y = top ? p.y - 14 : bottom ? p.y + 6 : p.y - 4;
         return (
           <text key={a} x={p.x} y={y} textAnchor={anchor} className="font-mono">
-            <tspan x={p.x} fontSize="8.5" letterSpacing="0.08em" fill="rgb(236 231 221 / 0.5)">
+            <tspan x={p.x} fontSize="8.5" letterSpacing="0.08em" fill="rgb(17 17 17 / 0.5)">
               {AXIS_SHORT[a].toUpperCase()}
             </tspan>
             <tspan x={p.x} dy="13" fontSize="12" fill="#ECE7DD">

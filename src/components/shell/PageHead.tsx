@@ -21,7 +21,7 @@ export function PageHead({
       <div className="min-w-0">
         <p className="rise mono-label">{eyebrow}</p>
         <h1
-          className="rise mt-3 font-serif text-[clamp(2.4rem,6vw,4.5rem)] leading-[1] tracking-[-0.012em]"
+          className="rise mt-3 font-display text-[clamp(2.4rem,6vw,4.5rem)] leading-[1] tracking-[-0.012em]"
           style={{ animationDelay: "60ms" }}
         >
           {title}

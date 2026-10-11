@@ -131,7 +131,7 @@ export function RankedList({
                   <div className="flex min-w-0 flex-col gap-4">
                     <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
                       <span className="font-mono text-[13px] text-bone-3 tabular-nums">{pad2(c.priority)}</span>
-                      <h3 className="font-serif text-[30px] leading-none md:text-[34px]">{label}</h3>
+                      <h3 className="font-display text-[30px] leading-none md:text-[34px]">{label}</h3>
                       <ModeBadge mode={c.mode} className="self-center" />
                     </div>
                     <p className="max-w-[74ch] text-bone-2 text-ui leading-relaxed">{c.rationale}</p>
@@ -223,9 +223,9 @@ export function RankedList({
               aria-invalid={!!dropError || undefined}
               className={cn(
                 "h-11 w-full min-w-0 rounded-card bg-[rgb(255_255_255/0.03)] px-3.5 text-bone text-ui outline-none",
-                "shadow-[inset_0_0_0_1px_var(--color-line-strong)] transition-shadow duration-150 placeholder:text-bone-4",
-                "hover:shadow-[inset_0_0_0_1px_rgb(236_231_221/0.22)] focus-visible:outline-none",
-                "focus:shadow-[inset_0_0_0_1px_rgb(212_255_58/0.65),0_0_0_3px_rgb(212_255_58/0.12)]",
+                "shadow[inset_0_0_0_1px_var(--color-line-strong)] transition-shadow duration-150 placeholder:text-bone-4",
+                "hover:shadow[inset_0_0_0_1px_rgb(17_17_17/0.22)] focus-visible:outline-none",
+                "focus:shadow[inset_0_0_0_1px_rgb(229_50_45/0.65),0_0_0_3px_rgb(229_50_45/0.12)]",
               )}
             />
           </div>
@@ -265,7 +265,7 @@ function NotNowList({
       className="grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"
     >
       <header className="lg:sticky lg:top-48 lg:self-start">
-        <h2 id="notnow-h" className="font-serif text-[36px] leading-none">
+        <h2 id="notnow-h" className="font-display text-[36px] leading-none">
           Not now
         </h2>
         <p className="mt-3 max-w-[36ch] text-bone-2 text-ui">
@@ -289,7 +289,7 @@ function NotNowList({
               <div className="flex items-baseline gap-3">
                 <span
                   aria-hidden
-                  className="relative top-[3px] size-3.5 shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgb(236_231_221/0.3)]"
+                  className="relative top-[3px] size-3.5 shrink-0 rounded-full shadow[inset_0_0_0_1px_rgb(17_17_17/0.3)]"
                 >
                   <span className="absolute top-1/2 left-1/2 h-px w-2.5 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-bone-3" />
                 </span>
@@ -329,14 +329,14 @@ function Considered({ plan }: { plan: ChannelPlan }) {
   return (
     <section aria-labelledby="considered-h" className="grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
       <header>
-        <h2 id="considered-h" className="font-serif text-[28px] leading-none">
+        <h2 id="considered-h" className="font-display text-[28px] leading-none">
           Every channel scored
         </h2>
         <p className="mt-3 max-w-[36ch] text-bone-2 text-ui">
           The score is the weighted sum of the six axes. Weights sit under each column.
         </p>
       </header>
-      <div data-lenis-prevent className="min-w-0 overflow-x-auto rounded-panel hairline">
+      <div className="min-w-0 overflow-x-auto rounded-panel hairline">
         <table className="w-full min-w-[620px] border-collapse font-mono text-[12px] tabular-nums">
           <thead>
             <tr className="border-line border-b text-left">

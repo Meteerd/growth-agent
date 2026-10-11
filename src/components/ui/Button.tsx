@@ -8,12 +8,11 @@ type Variant = "primary" | "ghost" | "quiet" | "danger";
 type Size = "sm" | "md" | "lg";
 
 const VARIANTS: Record<Variant, string> = {
-  primary:
-    "bg-signal text-ink shadow-[0_0_0_1px_rgb(212_255_58/0.6),0_8px_32px_-8px_rgb(212_255_58/0.55)] hover:shadow-[0_0_0_1px_rgb(212_255_58/0.9),0_10px_40px_-6px_rgb(212_255_58/0.7)] hover:brightness-105",
+  primary: "bg-signal text-white hover:bg-[#cf2b26]",
   ghost:
-    "bg-glass text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)] hover:bg-glass-strong hover:shadow-[inset_0_0_0_1px_rgb(236_231_221/0.24)]",
-  quiet: "text-bone-2 hover:text-bone hover:bg-glass",
-  danger: "text-fail shadow-[inset_0_0_0_1px_rgb(255_92_122/0.35)] hover:bg-[rgb(255_92_122/0.08)]",
+    "bg-raised text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)] hover:bg-glass-strong hover:shadow-[inset_0_0_0_1px_var(--color-bone-4)]",
+  quiet: "text-bone-2 hover:bg-raised-2 hover:text-bone",
+  danger: "text-fail shadow-[inset_0_0_0_1px_rgb(192_53_43/0.35)] hover:bg-[rgb(192_53_43/0.06)]",
 };
 const SIZES: Record<Size, string> = {
   sm: "h-8 px-3 text-ui gap-1.5",
@@ -49,7 +48,7 @@ export function Button({
       aria-busy={loading || undefined}
       className={cn(
         "relative inline-flex select-none items-center justify-center whitespace-nowrap rounded-chip font-medium tracking-[-0.01em]",
-        "transition-[transform,background-color,box-shadow,color,filter,opacity] duration-150 ease-out active:scale-[0.97]",
+        "transition-[transform,background-color,box-shadow,color,filter,opacity] duration-150 ease-out ",
         "disabled:pointer-events-none disabled:opacity-40",
         VARIANTS[variant],
         SIZES[size],
