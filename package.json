@@ -24,7 +24,8 @@
     "eval-run": "tsx scripts/eval-run.ts",
     "landing": "tsx scripts/landing.ts",
     "flagship": "tsx scripts/flagship.ts",
-    "export-showcase": "tsx scripts/export-showcase.ts"
+    "export-showcase": "tsx scripts/export-showcase.ts",
+    "eval-all": "tsx scripts/eval-all.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

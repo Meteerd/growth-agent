@@ -1,0 +1,2660 @@
+{
+  "recordedAt": "2026-10-11T23:45:57.606Z",
+  "actor": "curious_coder/facebook-ads-library-scraper",
+  "input": {
+    "urls": [
+      {
+        "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video"
+      },
+      {
+        "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=ki%C5%9Fiye%20%C3%B6zel%20vitamin&search_type=keyword_unordered&media_type=video"
+      }
+    ],
+    "count": 25,
+    "limitPerSource": 13
+  },
+  "items": [
+    {
+      "ad_archive_id": "1341317294759914",
+      "collation_count": 1,
+      "collation_id": "965162093046442",
+      "is_active": false,
+      "page_id": "1319639591448984",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "1319639591448984",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/ankashayvancilik/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Ankas Hayvancılık",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/661596063_4346920125532821_3969904248996226656_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Ldqc41aSf3YQ7kNvwEFTa_0&_nc_oc=Adr6OwvEdJmsvN9174mimOLEa-7eGdAbsJwDBBSbVYVPv0ivO_VK5rWM3R9rPUEqGlE&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQNZtVi3_EXE2uP7rgCLMVnIklihAxP7fXgjBaEqC4O6tQ&oe=6AD1FC9B",
+        "event": null,
+        "caption": "instagram.com",
+        "cta_text": "Visit Instagram profile",
+        "cards": [
+          {
+            "body": " ",
+            "cta_type": "VIEW_INSTAGRAM_PROFILE",
+            "caption": "instagram.com",
+            "link_description": " ",
+            "link_url": "http://instagram.com/ankashayvancilik",
+            "title": " ",
+            "cta_text": "Visit Instagram Profile",
+            "video_hd_url": null,
+            "video_preview_image_url": null,
+            "video_sd_url": null,
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null,
+            "image_crops": [],
+            "original_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/656762922_1489886199505048_2492089281001018388_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=vaxZlMQ1zngQ7kNvwHi8oGF&_nc_oc=Adr-dDhjn0qLEqYLqBAllupj02NFFyU_sN8KSLZTnShnhUOQQrki4Ke7qDiC3NqSUMU&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMLuFIASkCAfAnq849FDyuwTI8xBfgYz5i0_-xyWxmn7g&oe=6AD201DF",
+            "resized_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/658175711_1591717018787009_7250327181177843728_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=SV9gJCaVkyYQ7kNvwE0UM66&_nc_oc=Ado2Id6k8k-pgdjvbXonJsg4Z27J0T3j7bbcYHUB_9DuVqLDOdPV4JJYm2wviWfrC8k&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMuT-_BHAtwBuI78sDt-Yr99kmRxgoa5Qbc0Iu6wR1zYQ&oe=6AD1D7AB",
+            "watermarked_resized_image_url": ""
+          },
+          {
+            "body": "",
+            "cta_type": "VIEW_INSTAGRAM_PROFILE",
+            "caption": "instagram.com",
+            "link_description": "",
+            "link_url": "http://instagram.com/ankashayvancilik",
+            "title": "",
+            "cta_text": "Visit Instagram Profile",
+            "video_hd_url": null,
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/659098544_1738880077487123_3981592537229868033_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=7G0snBZnGVkQ7kNvwHYCmP6&_nc_oc=AdpOLLsrT1qsf5Pnklr9ZhBOJdqEVOjqRwIQ0PVOpZ1uJQhdtlQdsy6FGyzjeCvKY6Q&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQNeJBKApfj8Rzoszvnpq8dPgD_pe5F5SIhgm0E4bUqSmA&oe=6AD1F73A",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQNvq9-WTrDCx5oJupzD_dQjLW0g7JLxVWKW51xF4_lEvja42iHZSlz6TwpU0WXK-ASnf_ngm6iYVfwuBjH7hAkzu6-6MtHEKanE1htL8Q.mp4?_nc_cat=101&_nc_oc=AdppwyewuRHl3U3WgDRyq7E47srXL5MzxCdNRSiVqtm16Lrmv552rUZECmRt6qt-uMY&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=z2xzChmvDpcQ7kNvwFJ_W73&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjY1NDUzNDM3MDg0MTU4NTYsImFzc2V0X2FnZV9kYXlzIjoyMDEsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyMywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQNUR8gS85zlsADK-aaf7WSs7-MJzeBxGTXKBffOdglH3A&oe=6AD209A9",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null,
+            "image_crops": [],
+            "original_image_url": null,
+            "resized_image_url": null,
+            "watermarked_resized_image_url": null
+          },
+          {
+            "body": " ",
+            "cta_type": "VIEW_INSTAGRAM_PROFILE",
+            "caption": "instagram.com",
+            "link_description": " ",
+            "link_url": "http://instagram.com/ankashayvancilik",
+            "title": " ",
+            "cta_text": "Visit Instagram Profile",
+            "video_hd_url": null,
+            "video_preview_image_url": null,
+            "video_sd_url": null,
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null,
+            "image_crops": [],
+            "original_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/656315414_957839523811849_9036782615985362872_n.jpg?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=pI0slx6L0NcQ7kNvwGqdQoG&_nc_oc=Ado6MYQgbLIXJoDBuIGiOeTp-LXRB_9B_gVaqCMSikVaUfltS685-1myQFDCiivgndc&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQO4ip5sDBfrzQl_kr_ZcYayYaLd9dAVvK1GzSdPG8xm3Q&oe=6AD1E77C",
+            "resized_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/656541917_1863898324314824_6145234980644872095_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=y6vNxJ-CC3UQ7kNvwGnr_-a&_nc_oc=AdocNABIGIOAOkB5JkWj482RyWbYjFsBiD9XF-13ckNcIPKVGUyMjjr6LQjmQhHcuFY&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMUJUPT-L29XPPJeowRz6BLzgmOEDjPceezee97DT8Rdw&oe=6AD20CCC",
+            "watermarked_resized_image_url": ""
+          }
+        ],
+        "body": {
+          "text": "Elit bir sürü kurmak isteyenler için fırsat! 🐄\n\nAnkas Hayvancılık olarak, Çatalca’daki AB onaylı ve hastalıktan ari işletmemizde yetiştirdiğimiz, genomik test sertifikalı yüksek verimli Holstein gebe düvelerimizi sizlere sunuyoruz.\n\n✔️ Yüksek genetik kapasite\n✔️ Maksimum süt verimi\n✔️ Sağlıklı ve kontrollü yetiştiricilik\n\nSınırlı sayıdaki hayvanlarımız için ön siparişle yerinizi alın, geleceğin yüksek verimli sürüsünü bugünden kurun!\n\n📍 Çatalca / İstanbul\n📩 Detaylı bilgi ve çiftlik ziyareti için hemen mesaj gönderin"
+        },
+        "cta_type": "VIEW_INSTAGRAM_PROFILE",
+        "display_format": "CAROUSEL",
+        "link_description": null,
+        "link_url": "http://instagram.com/ankashayvancilik",
+        "images": [],
+        "page_categories": [
+          "Çiftlik"
+        ],
+        "page_like_count": 25614,
+        "title": "Ankas Hayvancılık",
+        "videos": [],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Ankas Hayvancılık",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1788505200,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM"
+      ],
+      "start_date": 1782025200,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 1,
+      "ads_count": 1,
+      "start_date_formatted": "2026-06-21 07:00:00",
+      "end_date_formatted": "2026-09-04 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1341317294759914"
+    },
+    {
+      "ad_archive_id": "1063246196224311",
+      "collation_count": 1,
+      "collation_id": "3470660419750139",
+      "is_active": true,
+      "page_id": "112748121865659",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "112748121865659",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.instagram.com/_u/sterilisa.tr",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "sterilisa.tr",
+        "page_profile_picture_url": "https://scontent.cdninstagram.com/v/t51.2885-19/356797734_284575424073774_1011122120134526814_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=109&ccb=7-5&_nc_sid=525117&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=_NBcgjhBeq0Q7kNvwFF8gsT&_nc_oc=Adra2VlbWQydXK4ihmbdCGERUm9abq5fzkT3dD0lF-VT44LmGqVwdd5RTJp_Gb1Zs3M&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_ss=78289&oh=00_AQO5_VJGhmLfQustaAJfQYa_OiAviHsLxNBvQNcZ6Fy4sA&oe=6AD1D891",
+        "event": null,
+        "caption": "sterilisa.com.tr",
+        "cta_text": "Shop now",
+        "cards": [],
+        "body": {
+          "text": "T.C. Sağlık Bakanlığı Onaylı ve Alman Akreditasyon Kurumu Onaylı Tek Hava Temizleme Cihazıdır. ⚠️ Sıradan hava temizleyiciler havayı sadece filtreler.   Örneğin Covid virüsü 0.08 mikrondur. Ancak piyasadaki en iyi filtrenin dahi gözenek boyutu 0.1 mikrondur. Yani bakteri, virüs ve mikroorganizmalar, filtrelerden bir sineğin bahçe telinden geçmesi gibi rahatlıkla geçebilmektedir.   Sterilisa, Sağlık Bakanlığının yetkilendirdiği test kuruluşlarında ve akredite laboratuvarda test edilmiştir.  ✅Sterilisa Air havayı HEPA13 ile filtreler, karbon filtre ile havadaki kötü kokuları giderir ve filtrelerden geçebilen mikroorganizmaları Pulsed Light ile anında öldürür.   ⚠️ Hava temizleme cihazı satın alırken sadece akredite raporu olan cihazlara güveniniz.   ✅ Sterilisa 30’dan fazla akredite rapora sahip bir yüksek teknolojidir.  ✅ Sterilisa Air 37.5 m2 alanı dezenfekte eder ve temizler.   Dakikada 1.500 Litre Havayı Temizler ve Dezenfekte Eder. Bir yetişkin dinlenme halinde iken 1 dakika içerisinde 6 litre hava alışverişinde bulunur."
+        },
+        "cta_type": "SHOP_NOW",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "https://sterilisa.com.tr/collections/hava/products/sterilisa-air",
+        "images": [],
+        "page_categories": [
+          "Profile"
+        ],
+        "page_like_count": 0,
+        "title": null,
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQOnf_6tfhNemkEmb4q2HWJSW16k3CEU3WxLFpLncCzVxlj5BrSk7pyGKpkGwGze0oPp90MFIlhZlB1LOTgMY6gUE4asHBK15fxsAiPUgJEciw.mp4?_nc_cat=111&_nc_oc=Adq7kX1jBfZ0R26RLx69x43iUO8QuVWwfJDFdyPmQUDmoccAq42CarQIgbxvsceCisg&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=tNAtyzgnTH4Q7kNvwE6xr_y&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExODUyMTQ1NDAxMjgxMjUsImFzc2V0X2FnZV9kYXlzIjozNDksInZpX3VzZWNhc2VfaWQiOjEwMTM5LCJkdXJhdGlvbl9zIjo1OSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=583e31fd12d5c133&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8zMjRDMTU2RTgwNjBBRUY0NkQ3MDIzRkRFRUJDQjU4QV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzk3NEQzNzBEMEVCNjMxNTJBQ0JGN0M2QTM1NzIxMkE1X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACb6_ay6yPyaBBUCKAJDMywXQE27peNT988YGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQMo1F1QbvUz4eHJKnuGgfeinbXm3vzx2v0vdpZZV57BTQ&oe=6AD1D8A1",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/762847599_935285219622321_1006087493292152125_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=MIH5LFLQWAUQ7kNvwFk4YP_&_nc_oc=Adr488ncdtojrHJ3NhmJfZ9F5Z0gWmYXS-KKdqfxHa2BwjsK2o2e3y1Obp4REZZdX4Q&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQNPNomqKc79pdnCWw8Y8d7o7IUxuOkxt_4ObutiKbTZnA&oe=6AD209BB",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQM2LfWKcE763Qi1krw5HHI16TPEcF5NMdUwWPOH5xVt0n_LWHhkcztgVR5RYqt0DaDyishKfFD4vzG5ha9oWL1KAQFQkPIyiCEjfVlE8w.mp4?_nc_cat=104&_nc_oc=Adp-Q9asdUYXTvVSGwTGmugrqziuqaBUeThliVD6RdC2U4OsKUhdmltYYaA9zGZTCAc&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=9nhAEs4E_wgQ7kNvwH8b4pi&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTE4NTIxNDU0MDEyODEyNSwiYXNzZXRfYWdlX2RheXMiOjM0OSwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjU5LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQN22ouJnw9ZQ9Lspd2Dj2L_jtmOduvSsC868KNNrgrSig&oe=6AD20626",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "sterilisa.tr",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": false,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1791702000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1785740400,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 2,
+      "ads_count": 1,
+      "start_date_formatted": "2026-08-03 07:00:00",
+      "end_date_formatted": "2026-10-11 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1063246196224311"
+    },
+    {
+      "ad_archive_id": "1876765465849497",
+      "collation_count": 1,
+      "collation_id": "1067903667086080",
+      "is_active": false,
+      "page_id": "483282718428036",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "483282718428036",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/meralaksener/",
+        "root_reshared_post": null,
+        "byline": "İYİ Parti",
+        "disclaimer_label": "PAID_FOR_BY",
+        "page_name": "Meral Akşener",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/257838882_298910068772836_2264939379644152196_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=YDx29Yh8XC4Q7kNvwEemKgc&_nc_oc=AdoeeqB-u2jUzbrmS7grG68LTN9a1F9LZEoNPOjJ8MPO_F1WmJIRLpOesolsakkp2NI&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPTgpUxRxQ1IOdXWfJkAOliN5jiMLW2-LKbtte0wUxYQQ&oe=6AD20C8D",
+        "event": null,
+        "caption": null,
+        "cta_text": null,
+        "cards": [],
+        "body": {
+          "text": "TBMM Grubu toplantımızdayız."
+        },
+        "cta_type": null,
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": null,
+        "images": [],
+        "page_categories": [
+          "Politician"
+        ],
+        "page_like_count": 1281735,
+        "title": "TBMM Grubu toplantımızdayız.",
+        "videos": [
+          {
+            "video_hd_url": null,
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/256017394_885798745391542_2452417592706334308_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=tizQ2Zslb0YQ7kNvwHGvLWK&_nc_oc=AdqBSkymMRbyGfFMu9Dhxia7ugAJn2D3E3glvUw6cusAdiHiiRcycIxHdTswffV2Ojw&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQN9OwHt_gAvn-R3uqDkHvrAHDKqaz7tyB3E4V_Mv6OqSg&oe=6AD1D670",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQNgze4Qd4jCH0W4miPjFoPLLAzkFkTslpUgARQL4lkh7L68luGAbHrBXtGsQVOIKNs6OCPGV2Ec--XM4dL9Jyk.mp4?_nc_cat=101&_nc_oc=Adpaty2uKcuKCYALqPmcXKjUQoGPJr00uUHe9CwrqjTBhWSgp5AqlqKaWKXy-fN1Dlk&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=cVGkeluhu-0Q7kNvwH5vYfh&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNjQwLmFzaWNfaHExX3NkX3Byb2dyZXNzaXZlIiwieHB2X2Fzc2V0X2lkIjo3NDA1Nzg5MzI0MDY3MzMsImFzc2V0X2FnZV9kYXlzIjozMDksInZpX3VzZWNhc2VfaWQiOjEwNjgwLCJkdXJhdGlvbl9zIjo0MTA2LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQNg5rqUJSPaf2DgXaCXUuXGBannSNxWJytbmd6izke_2g&oe=6AD20CA1",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": ""
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": "TR",
+        "brazil_tax_id": "",
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Meral Akşener",
+      "impressions_with_index": {
+        "impressions_text": ">1M",
+        "impressions_index": 39
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "POLITICAL"
+      ],
+      "is_aaa_eligible": false,
+      "contains_digital_created_media": false,
+      "reach_estimate": ">1M",
+      "currency": "TRY",
+      "spend": "TRY10K - TRY15K",
+      "end_date": 1637568000,
+      "publisher_platform": [
+        "FACEBOOK"
+      ],
+      "start_date": 1637136000,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "CONTACT",
+      "fev_info": {
+        "authorized_entity_text": "This information was provided to Meta.",
+        "submitted_on": "Submitted Jun 9, 2021",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "address": null,
+        "page_admin_additional_info": null,
+        "free_form_additional_info": null,
+        "page_name_additional_info": null,
+        "fec_additional_info": null,
+        "learn_more_content": {
+          "help_center_text": "Visit the Help Center to learn about what we require from advertisers to run ads about social issues, elections or politics.",
+          "help_center_url": "https://www.facebook.com/help/180607332665293?ref=infosheet"
+        }
+      },
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 3,
+      "ads_count": 1,
+      "start_date_formatted": "2021-11-17 08:00:00",
+      "end_date_formatted": "2021-11-22 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1876765465849497"
+    },
+    {
+      "ad_archive_id": "2178433839368237",
+      "collation_count": 1,
+      "collation_id": "1587439636097794",
+      "is_active": false,
+      "page_id": "100829632661145",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "100829632661145",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/100081731846367/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Clap to find phone",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/750554260_2077972846262373_8632805597308813116_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=x_IX-_IYKlUQ7kNvwH69c3J&_nc_oc=Adrgdu87w6-vUghL9ikB1z-Tx6nCVffBTdtL1PwVNag8fklKvA2hKeNK215pin5rno8&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMX53V9or9iI-o5oP3whc2JkA_PIrjH-5zGoBRUNdxunQ&oe=6AD1DBC0",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "🔥 Dijamin kamu nggak bakal bisa berhenti nonton!"
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.klt.shortfilms.trendingshorts",
+        "images": [],
+        "page_categories": [
+          "Literary Arts"
+        ],
+        "page_like_count": 2804,
+        "title": null,
+        "videos": [
+          {
+            "video_hd_url": null,
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/749355447_1017276491080368_3923240260647520724_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=zLDF95UzmtwQ7kNvwGOv1Mx&_nc_oc=AdqwGwIN3GS-VUQC-mXpRx8vuCsu_Sdj-YJnYfDvhj8D1hirXkte_oxQvGpTvvaKqTk&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQP7msbPR-P3r3USAyo4EoRGVJCZOaWgmM8BvrntaPSXRQ&oe=6AD20D86",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQPpMoRMdVIwyWiiH_3iB5zUFSS1BiTy8sIID0BWqZBYt_5CtMUJ2XIDarUYdgJLXO28v4se9QZ1D_cJI20MOrOWK9woShx1sWbs6s9SmQ.mp4?_nc_cat=101&_nc_oc=AdqWtnWY6mEd-g0V0YeDCW7QUgthRVuiDMMSbKe-O2T32BUQYgLXFU0bseV1bWSGOCc&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=1kR2cP8JYxIQ7kNvwHlu991&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTczNDE5ODY1NDQ4OTg1MCwiYXNzZXRfYWdlX2RheXMiOjgzLCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6MTU1MywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQO59vJmRzJhXE5PtkAMusyIeBOuavr_hVc96xSzLUuXUg&oe=6AD1F645",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Clap to find phone",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "AD_ACCOUNT_DISABLED",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1785567600,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1784530800,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 4,
+      "ads_count": 1,
+      "start_date_formatted": "2026-07-20 07:00:00",
+      "end_date_formatted": "2026-08-01 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=2178433839368237"
+    },
+    {
+      "ad_archive_id": "786265947201661",
+      "collation_count": 1,
+      "collation_id": "686058380768524",
+      "is_active": true,
+      "page_id": "521872264346697",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "521872264346697",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61571610796611/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "Dr. Gizem Elif Dizdaroğulları",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/534992945_1176608200939571_3478261991670962923_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=lIQfSJAcHnYQ7kNvwGunaVO&_nc_oc=Ado8NftAsfwTfmZSDM1haShQGTUDT_eddaM9o6blKzsJ8Xi7K4TD5MY8CjifR7A9Q_Q&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQP1_WIY92VQoPRX4Tch0QENepvJCIdqACB78eWkepnlIQ&oe=6AD1E2CC",
+        "event": null,
+        "caption": "instagram.com",
+        "cta_text": "Visit Instagram profile",
+        "cards": [],
+        "body": {
+          "text": "🌟İkili testte, 11-14. gebelik haftaları arasında bebeğin ense kalınlığı ölçümü, anne yaşı ve bazı bilgileri, anneden kan alınarak ölçülen bazı kan değerleri sisteme girilerek, Down sendromu için gebenin risk miktarının yüksek mi düşük mü olduğuna dair bir öngörüde bulunulur.Doğruluk oranı genelde %85 civarı olmakla birlikte ultrason incelemesi daha ayrıntılı yapılırsa bu oran daha da artar.\n\n🌟Anne kanında fetal DNA testi sadece anneden kan alınarak yapılır. Ultrason testin bir parçası değildir.10. gebelik haftasından sonra herhangi bir zamanda yapılabilir. Bebeğin plasentasından dökülen hücrelerin içindeki DNA yani genetik bilgilerin, ana kaynağı, annenin kan dolaşımına karışır. Alınan kanda bu genetik bilgiler okunur ve bebekte Down sendromu olup olmadığı %99 doğrulukta söylenir. \n\n🌟Anne kanında DNA testi yaptıran bir gebenin 2 li test yaptırmasına gerek yoktur FAKAT, 11-14. gebelik haftaları arasında bilen biri tarafından bebeğin ense kalınlığının ölçülmesi erken anatomik tarama dediğimiz erken dönemde bebeğin organlarına bakılması çok değerlidir. \n\n🌟Çünkü, bir bebekte oluşabilecek tek hastalık Down sendromu değildir. Ultrasonda yakalanacak anomaliler, farklı hastalıkların da bulgusu olabilir.\n\n#riskligebelikuzmanı #riskligebelik #fetaldna #annekanındafetaldna #ikilitest #perinatolojiuzmanı"
+        },
+        "cta_type": "VIEW_INSTAGRAM_PROFILE",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://instagram.com/drgizemelifd",
+        "images": [],
+        "page_categories": [
+          "Medical Service"
+        ],
+        "page_like_count": 647,
+        "title": null,
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m367/AQO6A8SgfPhXJNfZOS4Njp6qe8lEIKPHSsxIP3eZaVFfChxplAApLUhPNwRQ6zdj7JDNvOKblqa-3zAnkQcfnvKWmdTvMardw78omvU.mp4?_nc_cat=100&_nc_oc=Ado3h-KFRnz_p6mxvcmX8Uxf0_Q3eMIoGNoLIvK1oNsKUv8LEj-nKNGY1d7-el-QZS4&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=o5JRvRjeB3wQ7kNvwFXdmiX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6OTc5MDcyMjA0NDA1OTE1LCJhc3NldF9hZ2VfZGF5cyI6NTQ5LCJ2aV91c2VjYXNlX2lkIjoxMDA5OSwiZHVyYXRpb25fcyI6OTIsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=8598e27b55e388ca&_nc_vs=HBksFQIYQGlnX2VwaGVtZXJhbC83MTQzM0FCQjYyN0Q5MzFDRUExMTE3M0FFOTA2MUQ5QV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYRmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8yMTMwMjM3NTI3NDE5NjI4XzM0ODk5NzM0NzYwNjIzMDUyNi5tcDQVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmtvKfr8CdvQMVAigCQzMsF0BXJmZmZmZmGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHUAZeadAQA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQP_7foSXCWCJC2etkUPcZ3M8z2yNNlk45WW1HUwOiBkDg&oe=6AD1E6A9",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/533085956_1839473123651510_6765522765801534020_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=TqZ5pVSi6zYQ7kNvwFAfyBs&_nc_oc=AdoR4-ciFD0F01KZeCB9N1qy9G2hwez433IMnKYqG8gwuUHcn51YeqaLjPw-pdYVbLk&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPZXwF_85PT4XdjyQGvxMJkFwXGADb8lqFAFn3yv09x6w&oe=6AD1DFF4",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m86/AQMZjhZqEoH9GFKkM7NmShLSb0_3WuCdDmykCCZ29G5szw1V2G9YoZATckf-Nhqtw0gMLFZShSmY9Z_pPBZT4m8D4oU-rzIAcJ9gXn4.mp4?_nc_cat=102&_nc_oc=Adp2mEIyIzlcc7zhQPYM5r40KIqvRtpFGGJPFHuEtu9OQubfAIba3Yl5gbo-iAY0Pog&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=08x2z3j7_kUQ7kNvwHh8SL3&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLmRhc2hfYmFzZWxpbmVfM192MSIsInhwdl9hc3NldF9pZCI6OTc5MDcyMjA0NDA1OTE1LCJhc3NldF9hZ2VfZGF5cyI6NTQ5LCJ2aV91c2VjYXNlX2lkIjoxMDA5OSwiZHVyYXRpb25fcyI6OTIsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=62ab685f7dcfc54b&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC85NDRGNjk2Mjg0NUVEM0Q0QTY1OEY0QTE2OUUyM0JCN192aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYRmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8yMTMwMjM3NTI3NDE5NjI4XzM0ODk5NzM0NzYwNjIzMDUyNi5tcDQVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmtvKfr8CdvQMVAigCQzMsF0BXJmZmZmZmGBJkYXNoX2Jhc2VsaW5lXzNfdjERAHUAZeadAQA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQNqmFe4B0-HZ7OsucHx8FdghLKGoyGhzoV5j7QCVvuXqQ&oe=6ACDED83",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Dr. Gizem Elif Dizdaroğulları",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": false,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1791702000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM"
+      ],
+      "start_date": 1755241200,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 5,
+      "ads_count": 1,
+      "start_date_formatted": "2025-08-15 07:00:00",
+      "end_date_formatted": "2026-10-11 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=786265947201661"
+    },
+    {
+      "ad_archive_id": "1062830626595623",
+      "collation_count": 1,
+      "collation_id": "1380897967484678",
+      "is_active": true,
+      "page_id": "437527186320838",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "437527186320838",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/SynevoTR/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "Synevo Laboratuvarları",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/782455908_28336192529351628_6824204990063506590_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=N4ZX1I7aGLcQ7kNvwFYiw4s&_nc_oc=AdpzF_U8TZuY7dmdUJF6WUyGMtRbyOrVHmBV5-_f55TWj9KMV69JxnPf8PDCTGq2A9w&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPkAk7YanMHbzn4OLRt3z3BINxe-boG47zGIS81jRTnLA&oe=6AD20BB5",
+        "event": null,
+        "caption": "synevo.com.tr",
+        "cta_text": "Learn more",
+        "cards": [],
+        "body": {
+          "text": "Kolesterol değeri tek başına kardiyovasküler riski değerlendirmek için yeterli olmayabilir. LDL kolesterol düzeyi normal olsa bile ateroskleroz ve kardiyovasküler risk devam edebilir. Bu nedenle Apo B, Lp(a), hs-CRP, homosistein ve insülin gibi belirteçler birlikte değerlendirilerek damar sağlığı, inflamasyon, genetik yatkınlık ve metabolik riskler hakkında daha kapsamlı bilgi elde edilebilir. Kardiyak Check-up, bu parametrelerin incelenmesiyle kardiyovasküler risk analizine katkı sağlar. Detaylı bilgiye profilde yer alan link üzerinden ulaşabilirsiniz.\n\n#synevo #synevolaboratuvari #medicover #kalpsagligi #laboratuvarı"
+        },
+        "cta_type": "LEARN_MORE",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "https://synevo.com.tr/tr/Kalp-Damar-Sagligi-Paneli",
+        "images": [],
+        "page_categories": [
+          "Medical Center"
+        ],
+        "page_like_count": 6710,
+        "title": null,
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m367/AQOM7_CH5ehP6f8qqggjcghIA54d3jXKX6XmBdUKgwAn_VWV4YxlPFBHobbrYkLFlNHgG-xfj93c_brD0g1Ead8jXybH_ZWRbntbrd9ceg.mp4?_nc_cat=103&_nc_oc=Adr8XUF5i4dpnNgcMryYY9CLrGET-xhv3frJvRsZgCznmE8lLLp5wGy4NObZR-xofC0&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=AoQxx_AA9usQ7kNvwErTp-9&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLnByb2dyZXNzaXZlX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjoxNjY2MjcyNjc0OTU0MDQxLCJhc3NldF9hZ2VfZGF5cyI6NDgsInZpX3VzZWNhc2VfaWQiOjEyMzc0LCJkdXJhdGlvbl9zIjo5MywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQP470gdmXJF1pnEHb-pwwSO9-EtvS6aX3givy3nbfG6VA&oe=6AD1E6A7",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/784351511_1627895838758804_9020031993559821278_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=6M7QCaXQfOwQ7kNvwFCafnl&_nc_oc=AdpydQOPrOrii_5_Lu_iX-6NWYbHXacL4MY5guh60Mr_JkSCDWZ8Qa6YOPB9CrWzeRI&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQP2P4GqGCOXscWtdQVu0Z7RcMfiOlKe2002TLiIc4y2-A&oe=6AD203F0",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m367/AQNrd46sJiYyAd4iaGOQouuShmPF-aTqBwU_L74EcLmAas2F87fl34CE4x7W5WNryWBsKnG-37hu4NneTcvVcwvtky275cqJqr-sneOJtQ.mp4?_nc_cat=102&_nc_oc=Adp-5cn15i966BPI7ySb5o9zgC-u1Ux_TuVM52n36b_WjwriTNqQk_0VlqhohMeca4g&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=tKGKJKmL1ccQ7kNvwHD-w15&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnByb2dyZXNzaXZlX2gyNjQtYmFzaWMtZ2VuMl8zNjBwIiwieHB2X2Fzc2V0X2lkIjoxNjY2MjcyNjc0OTU0MDQxLCJhc3NldF9hZ2VfZGF5cyI6NDgsInZpX3VzZWNhc2VfaWQiOjEyMzc0LCJkdXJhdGlvbl9zIjo5MywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQPTsGHslAJjsbsGSJTRjWWEMh8ZYWjZFv5dt-8hPj1o2g&oe=6AD1F6B8",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Synevo Laboratuvarları",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1791702000,
+      "publisher_platform": [
+        "INSTAGRAM"
+      ],
+      "start_date": 1787727600,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 6,
+      "ads_count": 1,
+      "start_date_formatted": "2026-08-26 07:00:00",
+      "end_date_formatted": "2026-10-11 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1062830626595623"
+    },
+    {
+      "ad_archive_id": "1746140009734356",
+      "collation_count": 1,
+      "collation_id": "1622686108823266",
+      "is_active": true,
+      "page_id": "547747865090579",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "547747865090579",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/applexiaofficial/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "applexia",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/740012578_1355775789988283_6752578106179005406_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=xLb7a5TQ50gQ7kNvwHc8IRA&_nc_oc=AdpEc88NY283iGWpNvbs3Oas-5NTK7wkwZVTZ9mHxeFSKVyLnfOvR69bIoq1md6Pib0&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMQb2MtrDRh0kNDZ3Y9DwlAJO7MPTwGL7h9OmGMDXFBkQ&oe=6AD1E41F",
+        "event": null,
+        "caption": "fb.me",
+        "cta_text": "Sign up",
+        "cards": [],
+        "body": {
+          "text": "Disleksinin farkında mıyız? Türkiye'de her sınıfta disleksili bir çocuk olabilir ama çoğu fark edilmeden büyüyor.\nErken fark etmek her şeyi değiştirir. Doğru ve bilimsel destekle çocuklar okuma-yazmada hızla yol alabiliyor.\nApplexia ile çocuğunuzun ihtiyacına göre uyarlanan bir programa adım atın. Formu doldurun, ekibimiz size en uygun başlangıcı anlatsın."
+        },
+        "cta_type": "SIGN_UP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://fb.me/",
+        "images": [],
+        "page_categories": [
+          "Education website"
+        ],
+        "page_like_count": 90,
+        "title": "Şimdi kaydolun, uzman ekibimiz sizi arasın, doğru başlangıcı birlikte yapalım.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQNCOjyQFioiK-G4uoH662DymV7hOb7Pt4PYGve9WBNAbhuJi0aj2QODiULLOsJVfJE8xUWJ7G3sd-ZCSEgeJU3VnmQlAN6TR0NPdsYICSHMKQ.mp4?_nc_cat=103&_nc_oc=Adqb8EHrlbzVlxG-0KIj_dSAr7z0LY86wZ1j_SeO9CU125xMjgfP9cylYZKWrqGhyk8&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=5FQm4t3o1u8Q7kNvwGukkfy&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjIxMzU0ODAxNzcwMDEzNDEsImFzc2V0X2FnZV9kYXlzIjoxMTUsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjo5OCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=56420a8d934cc713&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xQTQ3QUI1MjM2MUU4NTgyNEFCRDM3MzM2NUEzN0Q5Rl9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzVBNDU4ODhDNzczODlGN0Y3MThBNjY1RDQ2NzczODlCX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACb6jYCWp43LBxUCKAJDMywXQFiZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQM0FU-KdNJHCpajFqtOzeIaPsSvXf2vmUd98mp9C8Sc0w&oe=6AD20B79",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/739024935_1489089339639564_1169819502337671612_n.jpg?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ALuxze5KmE4Q7kNvwEv9KV7&_nc_oc=AdoPc6mjaGnSUi56TnSJTg3vB2ApjU_LnylEpfEIImYWcf300lgJeOxqtWIlw03PH3A&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQOL5SoXPu6BHZMSaytuhbHCKDduZLZGZzKVXAafagUPsA&oe=6AD1FCB3",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMTsqaOPCVVyeZnkzGkLpnLAScJQCxyNZClGUTLj9QgekzyDYrw1F10fZG0wnj5OjsQ9dmGi4fD7XoGv1fkNwtUMjnaUFQFlEQdwNbnIQ.mp4?_nc_cat=107&_nc_oc=AdpxY2JtNukan6ane4e3iRPQhuXV5IEPWFM5oUB8wMX1m7-ycvrxMxzfY2OWIme356g&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=-2iSXngEuv0Q7kNvwFjWs5x&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjEzNTQ4MDE3NzAwMTM0MSwiYXNzZXRfYWdlX2RheXMiOjExNSwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjk4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQP5OvgwTGOTrEw8WGe-6AbWcqsWvbSL2IXRs9HlVbgOgw&oe=6AD20527",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [
+          "https://applexia.net/",
+          "https://applexia.net/"
+        ],
+        "extra_texts": [
+          {
+            "text": "Paylaştığınız bilgiler, Applexia hakkında sizinle iletişime geçmek amacıyla Cognicise tarafından işlenir ve bu amaç dışında üçüncü taraflarla paylaşılmaz. Detaylar için gizlilik politikamıza göz atın."
+          },
+          {
+            "text": "Full name"
+          },
+          {
+            "text": "Phone number"
+          },
+          {
+            "text": "Terms and Conditions for applexia"
+          },
+          {
+            "text": "View applexia's Privacy Policy."
+          },
+          {
+            "text": "Teşekkürler! En kısa sürede sizi arayacağız."
+          },
+          {
+            "text": "Beklerken web sitemizi ziyaret edip Applexia hakkında daha fazla bilgi alabilirsiniz."
+          }
+        ],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "applexia",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": false,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1791702000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK"
+      ],
+      "start_date": 1784703600,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 7,
+      "ads_count": 1,
+      "start_date_formatted": "2026-07-22 07:00:00",
+      "end_date_formatted": "2026-10-11 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1746140009734356"
+    },
+    {
+      "ad_archive_id": "1575640800118177",
+      "collation_count": 1,
+      "collation_id": "2746873568979303",
+      "is_active": false,
+      "page_id": "477068722157920",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "477068722157920",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61569050434677/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Dramawave-Watch a drama",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/594076712_1203367061675925_3770566380805497306_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Ikk1Elq7Gc4Q7kNvwHBqzOb&_nc_oc=AdpFsLOH5_UMrHRb1docbYk8DP2MG2lDXx6zCn4K8exbTnVPu3rM1CHxXpAA-ryVwPg&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMGdQHSAh549pRtMc4oOC4tBO2NzJiihwarna9YPizUuw&oe=6AD20133",
+        "event": null,
+        "caption": "www.dramawavew2a.com",
+        "cta_text": "Watch more",
+        "cards": [],
+        "body": {
+          "text": "Altı yıl önceki geceyi unuttu, Alfa’nın çocuğunu tek başına büyüttü. Yeniden karşılaştıklarında aşk ve ihanet birbirine çarpıyor; oysa onun tek isteği oğlunu korumak. Tehlike yaklaşırken, güveni yeniden inşa edip birbirlerini seçebilecekler mi?"
+        },
+        "cta_type": "WATCH_MORE",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "https://www.dramawavew2a.com/ads/0/1723/view?c={{campaign.name}}&af_adset={{adset.name}}&af_ad={{ad.name}}&af_c_id={{campaign.id}}&af_adset_id={{adset.id}}&af_ad_id={{ad.id}}&af_channel={{placement}}&u1=facebook&u2=16208683&u3=&pid=FBH5ADS&af_dp=lgYoSW7qsB",
+        "images": [],
+        "page_categories": [
+          "Shopping"
+        ],
+        "page_like_count": 437306,
+        "title": "Alfa Baba, Annemi Eve Götür",
+        "videos": [
+          {
+            "video_hd_url": null,
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/593930357_1093555749399176_5536340860722017612_n.jpg?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=XWqoe0rByfYQ7kNvwESi7Zy&_nc_oc=Adq73t9mdczi4HdsP01PyzTtMjxfIpLoc0NYh77YNj3Oz2zUB83yyBQzkyLMvKtQet8&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQN6BYlda-sJte278SSFgu4QtyhIBZRT-ezBWHPHH4w5qQ&oe=6AD1E02E",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQP2hcFDIitrhb1y2AiXqmOMR9IqG1HbMfDtMErM7VlArO5w1yuPrBEtmFNSXFp1asPyvb7DkgQbFv9fJRn1kLRUOQmqya03jizN7VSjJw.mp4?_nc_cat=109&_nc_oc=AdpP2Sc3iDNjxcDs3spk9PkMNm8H5rb9mrMBik0-vy7GZn0PLfEprsT8A4JnAMorXbE&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=wnYookvRXLEQ7kNvwFCB7xl&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6NDIwMTMxMTAwNjc4MzUxNiwiYXNzZXRfYWdlX2RheXMiOjMxMCwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjkwMiwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQOr-xrm-uIokeUm93qbbqAUZiUcCyiWD9b260-oXYCtWA&oe=6AD1E66D",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Dramawave-Watch a drama",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1765353600,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1764921600,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 8,
+      "ads_count": 1,
+      "start_date_formatted": "2025-12-05 08:00:00",
+      "end_date_formatted": "2025-12-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1575640800118177"
+    },
+    {
+      "ad_archive_id": "2557254048066782",
+      "collation_count": 6,
+      "collation_id": "1987475101971233",
+      "is_active": false,
+      "page_id": "1193693673825248",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "1193693673825248",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61591619212820/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Ns-shengdan003",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/746026959_1743158883393086_8961095450619542333_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=2g9ASIgOyTIQ7kNvwE9cu0O&_nc_oc=AdoKnUVSoVZmt5LSVgzKyDvqII7nZ6ndKRtNPFQAx8Rirph5TR1DC-JRwmQc9FZz0I4&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPoOnbi7kxzgjxQ2k5YM6OZoXRjWWBIdrhuS8NoacPsxg&oe=6AD1DAF3",
+        "event": null,
+        "caption": "fb.h5short.com",
+        "cta_text": "Watch more",
+        "cards": [],
+        "body": {
+          "text": "Manusia Alami yang Diremehkan: Kebangkitan Orion dan Kejatuhan Ratu Sarang"
+        },
+        "cta_type": "WATCH_MORE",
+        "display_format": "VIDEO",
+        "link_description": "Orion Solari, seorang manusia alami, dianggap tak bisa mengemudikan Mecha, lalu dibuang oleh bangsanya, dibenci oleh kaum modifikasi, dan menjadi aib bagi keluarganya. Namun, saat umat manusia di ambang kepunahan, Orion yang terbuang itu justru bangkit dengan Mecha, menumbangkan Ratu Sarang, dan menjadi satu-satunya penyelamat mereka.",
+        "link_url": "https://fb.h5short.com/netshort-h5-landing-page/wiMDrSO1xRe.html?pid=metaweb_int&c={{campaign.name}}&af_c_id={{campaign.id}}&af_adset={{adset.name}}&af_adset_id={{adset.id}}&af_ad={{ad.name}}&af_ad_id={{ad.id}}&af_channel={{placement}}&af_siteid={{site_source_name}}&af_force_deeplink=true&type=1&link_id=2076678175051317249&af_sub2=0",
+        "images": [],
+        "page_categories": [
+          "Theater"
+        ],
+        "page_like_count": 1288,
+        "title": "Manusia Alami yang Diremehkan: Kebangkitan Orion dan Kejatuhan Ratu Sarang",
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQOjgUTwCAxajZELK15W3f6xI5hX8ItZmdB7VXTU3w0vNgdPHdfxXbc04w_L5UXww9MyThLo_5-lxrmyjLvjXz6iOh2xuRJlF2ZT6ZDlQwAg7g.mp4?_nc_cat=102&_nc_oc=AdrBhrcU5dcNvjsrWRgQ2J5Q_ef4pxYFXxffHaPRLdwiG6LMcokA03Oc-dQ70TUzLNw&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=xXx79OTfTxsQ7kNvwEhwrhE&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE1NTk4ODk2NDkxNzU5ODIsImFzc2V0X2FnZV9kYXlzIjo5MCwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjE0MTUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=7baf707618014db8&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9BOTQ5M0QzNTNFOEQwQjg4QzA4QzAxQTAzMjcxMjc4MV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZFNDQ0MTczMjFFMjNENzBEOTc3NTVEMjY4QTQyMjlEX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbctuzGw63FBRUCKAJDMywXQJYcqfvnbIsYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQMXwbSMbojrOqhOnKHlDflhEJqI4uRqiQ4XjYYf_IvQHg&oe=6AD1DECE",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/745748051_1034100576140063_5807076826929197545_n.jpg?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Hl4kt5oAXDUQ7kNvwFxiyzs&_nc_oc=AdrhwsQbc-IKEK6djvly0RG1uFPtOTBWuQMskYHSpmsXweVBdQcyrh_waK7_hLgLm2E&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQO6yOoYzctUIY2OsS7IbTnLm0fM1zdwzBDHECCcuqL09A&oe=6AD207AC",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMn6gIpOccnI-vmp1KLyxR69FMHPV7I2W5EsW8sFbOoatnxbt7-IyIhxgAdyfWiR-EvGu4TYiwf1hsSW5oB4MZBwiJLmoW3kDh9tbTvgQ.mp4?_nc_cat=106&_nc_oc=AdrO06RdFB-W7TIFdKi1ybNekvb7iRQwCR9N2Q6KfrKgPEt00M0wqPCNeMwNwjL6v78&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=n_xYHeD6JGIQ7kNvwEBUnRU&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTU1OTg4OTY0OTE3NTk4MiwiYXNzZXRfYWdlX2RheXMiOjkwLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTQxNSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQNuj_FGrCu-no3zFKqGhbDp4w7QJNmByHnHbsPJbKZZYQ&oe=6AD1F7F0",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Ns-shengdan003",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1784271600,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1783926000,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 9,
+      "ads_count": 1,
+      "start_date_formatted": "2026-07-13 07:00:00",
+      "end_date_formatted": "2026-07-17 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=2557254048066782"
+    },
+    {
+      "ad_archive_id": "839348982582368",
+      "collation_count": 1,
+      "collation_id": "1542654194243225",
+      "is_active": true,
+      "page_id": "146245838775144",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "146245838775144",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/npistanbul/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "NPİSTANBUL Beyin Hastanesi",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/699000037_1801247157520039_5997059484344078535_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=rTQIlZkgaQsQ7kNvwHNlq1O&_nc_oc=AdrEqjBJwzqL9XJRNYVsP70fYEb_i5V9KfKjtzO6DWtIuMzZDcS46gFnOVXFEX6Xvh0&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPZLcDWvEngsVWtIgcSupa0IkNSp99vGKE7OWdp7aPcpA&oe=6AD20786",
+        "event": null,
+        "caption": "npistanbul.com",
+        "cta_text": "Learn more",
+        "cards": [],
+        "body": {
+          "text": "Kalbiniz, yaşam boyu hiç durmadan çalışan en değerli mekanizmanızdır. Peki, onun ne kadar sağlıklı olduğunu gerçekten biliyor musunuz? ✨\n\nKardiyoloji Check-up’ı, sadece bir dizi test değil; kalbinizin mevcut durumunu ve gelecekteki risk haritasını çıkaran bilimsel bir pusuladır. Sessiz ilerleyen riskleri erkenden fark etmek, sağlıklı bir geleceğin ilk adımıdır. 🫀🔬\n\nUnutmayın; kusursuz bir yaşam için sadece sağlık yetmez; düzenli kontrol ve akademik takip şarttır! 🛡️\n\nKalbinizi şansa değil, bilimsel verilere emanet edin. Sağlıklı bir ritimle geleceğe yürümek için her zaman yanınızdayız. 🤝🏥\n\nHer cerrahi girişim kişiden kişiye değişiklik gösterir.\n#KardiyolojiCheckUp #KalpSağlığı #ErkenTeşhis #SağlıklıYaşam #Kardiyoloji #ÖnleyiciTıp #KalpRitmi #CheckUpTarama #SağlıklıGelecek"
+        },
+        "cta_type": "LEARN_MORE",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "https://npistanbul.com/check-up-paketleri",
+        "images": [],
+        "page_categories": [
+          "Hospital"
+        ],
+        "page_like_count": 159856,
+        "title": null,
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m86/AQO4q7Aa9AZbw9sHv4hsCo7T4vd3G8r08eFXMRasP4xWgXh6fRziRfSNNITu3A5NqTuNdJbqFyPP-Bi_QzfNPYu5eWLfzwauSalQ_xY.mp4?_nc_cat=106&_nc_oc=AdrjOo3RP-x_ZrdkRZFC8pCtxpuehdYtgw3o3A-7mqAwDsIF_4FNbMZUxhtTLP2OAac&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=c8HS18xl80EQ7kNvwFSyilk&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTc5NjA1ODY5MzkxMTA0NDEsImFzc2V0X2FnZV9kYXlzIjoxNzIsInZpX3VzZWNhc2VfaWQiOjEwMDk5LCJkdXJhdGlvbl9zIjo0OCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=6721e3eaa3e8e077&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC81NDQ4QzYwRkNEMkE4ODY3MzcyRDFDNDczNTA2MEJCOF92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzIzNDMyNkM1RDYwQzk0OTY0NzE3MEQxMDNCRDU5OEIzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbS0LTH4MPnPxUCKAJDMywXQEhqn752yLQYEmRhc2hfYmFzZWxpbmVfMV92MREAdQBl5p0BAA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQOZCEGX7WiNuceNuj19kdlGUlPeBXrHaum-_fS52yH81Q&oe=6ACE14BF",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/698658870_1668373227738843_8424822078513456058_n.jpg?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=_2K81Z86eFQQ7kNvwHXgZUl&_nc_oc=AdqJabK70WshPzHGpx6CIaqHr1qaVqFhT4hw9nQlFHy7X2BKVr8wdNtU-tVId6_uy1o&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMFWoJdHblsXjYiyTggwxx5oyH39imKyB51geRt1v-2_g&oe=6AD1E51C",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m86/AQOSY_3INldKsRAXtIpDem-vjKaLtmqifBej9v_EbtSjoyXXmKKUMBgvJSbViQUdabKXq807pWMC_twNntPk5jpDNmaf4aT_qz2zot4.mp4?_nc_cat=110&_nc_oc=AdoOrQboB5BlWwnnFMe4CyMpc235jCpwpZ1wfXDSD-asUp86XQh1ecLvAN1BciSjdYw&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=tVh1g0yt5lsQ7kNvwHnmW2L&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLmRhc2hfYmFzZWxpbmVfM192MSIsInhwdl9hc3NldF9pZCI6MTc5NjA1ODY5MzkxMTA0NDEsImFzc2V0X2FnZV9kYXlzIjoxNzIsInZpX3VzZWNhc2VfaWQiOjEwMDk5LCJkdXJhdGlvbl9zIjo0OCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=b55d0ffd814ba466&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9FMDRBRTA0ODA4ODJBRUU0Qjc0NkVBMzczMUI0QjBBRl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzIzNDMyNkM1RDYwQzk0OTY0NzE3MEQxMDNCRDU5OEIzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbS0LTH4MPnPxUCKAJDMywXQEhqn752yLQYEmRhc2hfYmFzZWxpbmVfM192MREAdQBl5p0BAA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQMQCd5j_qlNajUSYqFCZlngbSx3ASMPrlhFpLI1acuQ_A&oe=6ACE00EB",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "NPİSTANBUL Beyin Hastanesi",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1791702000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1778742000,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 10,
+      "ads_count": 1,
+      "start_date_formatted": "2026-05-14 07:00:00",
+      "end_date_formatted": "2026-10-11 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=839348982582368"
+    },
+    {
+      "ad_archive_id": "1745040263586119",
+      "collation_count": 2,
+      "collation_id": "28132269419712677",
+      "is_active": false,
+      "page_id": "1253823807804960",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "1253823807804960",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61591441290619/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Ns-shengdan004",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/743830647_975060312187134_4001431224144239348_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=CbpoEt_eUJ8Q7kNvwF6SzEY&_nc_oc=Adq1ysDjhvwJd4XCqJEF5Y8tEvRt0Rm37F6efP1MVz_XxleP3a0fTs9ILvwXykGHGaI&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMrQZz45P2T0802k3g_hHl-DEyHHhom3HNlJstIwxlENw&oe=6AD1DE38",
+        "event": null,
+        "caption": "fb.h5short.com",
+        "cta_text": "Watch more",
+        "cards": [],
+        "body": {
+          "text": "Antara Kaum Modifikasi dan Bangsanya, Orion Menjadi Harapan Terakhir dengan Mecha"
+        },
+        "cta_type": "WATCH_MORE",
+        "display_format": "VIDEO",
+        "link_description": "Orion Solari, seorang manusia alami, dianggap tak bisa mengemudikan Mecha, lalu dibuang oleh bangsanya, dibenci oleh kaum modifikasi, dan menjadi aib bagi keluarganya. Namun, saat umat manusia di ambang kepunahan, Orion yang terbuang itu justru bangkit dengan Mecha, menumbangkan Ratu Sarang, dan menjadi satu-satunya penyelamat mereka.",
+        "link_url": "https://fb.h5short.com/netshort-h5-landing-page/wiMJekcF8MJ.html?pid=metaweb_int&c={{campaign.name}}&af_c_id={{campaign.id}}&af_adset={{adset.name}}&af_adset_id={{adset.id}}&af_ad={{ad.name}}&af_ad_id={{ad.id}}&af_channel={{placement}}&af_siteid={{site_source_name}}&af_force_deeplink=true&type=1&link_id=2076500992588447745&af_sub2=0",
+        "images": [],
+        "page_categories": [
+          "Theater"
+        ],
+        "page_like_count": 1761,
+        "title": "Antara Kaum Modifikasi dan Bangsanya, Orion Menjadi Harapan Terakhir dengan Mecha",
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQOjgUTwCAxajZELK15W3f6xI5hX8ItZmdB7VXTU3w0vNgdPHdfxXbc04w_L5UXww9MyThLo_5-lxrmyjLvjXz6iOh2xuRJlF2ZT6ZDlQwAg7g.mp4?_nc_cat=102&_nc_oc=AdrBhrcU5dcNvjsrWRgQ2J5Q_ef4pxYFXxffHaPRLdwiG6LMcokA03Oc-dQ70TUzLNw&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=xXx79OTfTxsQ7kNvwEhwrhE&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE1NTk4ODk2NDkxNzU5ODIsImFzc2V0X2FnZV9kYXlzIjo5MCwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjE0MTUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=7baf707618014db8&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9BOTQ5M0QzNTNFOEQwQjg4QzA4QzAxQTAzMjcxMjc4MV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZFNDQ0MTczMjFFMjNENzBEOTc3NTVEMjY4QTQyMjlEX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbctuzGw63FBRUCKAJDMywXQJYcqfvnbIsYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQMXwbSMbojrOqhOnKHlDflhEJqI4uRqiQ4XjYYf_IvQHg&oe=6AD1DECE",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/746026925_2178789912969067_3197432029290125785_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=tshXdQtCAJUQ7kNvwExkgCh&_nc_oc=AdqlwpaanGizxpCqi8A36aQ4fQXjvZIeeafM4pyxw8c2qc2CY4LzuauPGZ3RGI4F2Is&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQNgPOlJKvEt8RCHn5uRCdiOgQkdxk4fQ9c78z9KOQbJnw&oe=6AD20126",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMn6gIpOccnI-vmp1KLyxR69FMHPV7I2W5EsW8sFbOoatnxbt7-IyIhxgAdyfWiR-EvGu4TYiwf1hsSW5oB4MZBwiJLmoW3kDh9tbTvgQ.mp4?_nc_cat=106&_nc_oc=AdrO06RdFB-W7TIFdKi1ybNekvb7iRQwCR9N2Q6KfrKgPEt00M0wqPCNeMwNwjL6v78&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=n_xYHeD6JGIQ7kNvwEBUnRU&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTU1OTg4OTY0OTE3NTk4MiwiYXNzZXRfYWdlX2RheXMiOjkwLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTQxNSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQNuj_FGrCu-no3zFKqGhbDp4w7QJNmByHnHbsPJbKZZYQ&oe=6AD1F7F0",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Ns-shengdan004",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1784098800,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1783839600,
+      "contains_sensitive_content": false,
+      "total_active_time": 83813,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 11,
+      "ads_count": 1,
+      "start_date_formatted": "2026-07-12 07:00:00",
+      "end_date_formatted": "2026-07-15 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1745040263586119"
+    },
+    {
+      "ad_archive_id": "1541170820860577",
+      "collation_count": 1,
+      "collation_id": "1679906513265536",
+      "is_active": true,
+      "page_id": "411664268691248",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "411664268691248",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/aidinsalihtr/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "AidinSalih TR",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/717317287_1715468842923065_8368949079921650384_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ruzZdbDus2oQ7kNvwG_G3kV&_nc_oc=AdpkaEMsu_94coh0694tC3RGJ136kCRUdGpnwJIlHIR1LfQWGKtCOyUonruu1Vk8rdQ&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQOgT4hiTc6vIYDauVW22IP0WjPDrnuI2o2Td0NvokaNwg&oe=6AD1EF51",
+        "event": null,
+        "caption": "api.whatsapp.com",
+        "cta_text": "Send WhatsApp message",
+        "cards": [],
+        "body": {
+          "text": "FİBROMİYALJİDEN KURTULANLAR...❤️\n\nMerhaba, ben Murat ZERSOY\n\nDr. Serdar Hakan Çiftçi'nin ücretsiz bilgilendirme toplantılarına katılmak için aşağıdaki WhatsApp grubuna katılabilirsiniz: 👇\nhttps://chat.whatsapp.com/HrhkFjaCeUx554UCGMHsBR\n\nKatılımda sorun yaşarsanız bana yazabilir veya arayabilirsiniz.\n\n📞 +90 532 517 05 32\n\nFİBROMİYALJİNİN EN AĞIR YÜKÜ AĞRI DEĞİLDİR...\n\nİnsanın kendisini yavaş yavaş hayattan kopuyor gibi hissetmesidir.\n\nFİBROMİYALJİ NEDİR?\n\nFibromiyalji; yaygın kas ve yumuşak doku ağrıları, yorgunluk, uyku problemleri, odaklanma güçlüğü ve yaşam kalitesinde düşüşle seyreden kronik bir rahatsızlıktır.\n\nFibromiyaljide sık görülen belirtiler:\n\n• Yaygın vücut ağrıları ve hassasiyet\n\n• Sürekli yorgunluk ve dinlenemeden uyanma\n\n• Uykuya dalmakta veya uykuyu sürdürmekte güçlük\n\n• Baş ağrıları ve migren atakları\n\n• Ellerde ve ayaklarda uyuşma, karıncalanma hissi\n\n• Dikkat dağınıklığı, unutkanlık ve odaklanma sorunları (Fibro-Sis)\n\n• Şişkinlik, gaz, kabızlık veya ishal gibi sindirim problemleri\n\n• Kaygı, stres hassasiyeti ve duygu durum değişiklikleri\n\nFibromiyalji yaşayan birçok kişi özellikle şu dört konuda zorlanır:\n\n1. Ağrılar\n\n2. Yorgunluk\n\n3. Moral ve motivasyon kaybı\n\n4. Hayattan eskisi kadar keyif alamama\n\nBu nedenle uyguladığımız yaklaşım yalnızca kalori hesabından ibaret değildir.\n\nProgramımızda;\n\n✓ Kişiye uygun beslenme planı\n\n✓ Düzenli hareket ve yaşam tarzı desteği\n\n✓ Birebir takip\n\n✓ Doğal antioksidan destekleri hakkında bilgilendirme\n\n✓ Online motivasyon ve destek çalışmaları\n\n✓ Grup dayanışması ve tecrübe paylaşımı\n\nbir bütün olarak ele alınmaktadır.\n\nAmacımız; kişilerin daha enerjik hissetmelerine, yaşam kalitelerini artırmalarına ve sağlıklı yaşam alışkanlıkları kazanmalarına destek olmaktır.\n\nProgramlarımız online olarak yürütüldüğü için dünyanın her yerinden katılım mümkündür.\n\nBir kişinin bile hayatına olumlu dokunabilmek bizim için değerlidir. Bu paylaşımı ihtiyacı olabilecek kişilerle paylaşarak siz de destek olabilirsiniz. AidinSalih TR \n\nİletişim: +90 532 517 05 32\n\n#fibromiyalji\n#romatizma\n#migren\n#kronikağrı\n#yorgunluk\n#sağlıklıyaşam\n#detoks\n#bağırsaksağlığı\n#wellness\n#AidinSalihTR"
+        },
+        "cta_type": "WHATSAPP_MESSAGE",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "https://api.whatsapp.com/send",
+        "images": [],
+        "page_categories": [
+          "Sağlık/Güzellik"
+        ],
+        "page_like_count": 11143,
+        "title": "FİBROMİYALJİDEN KURTULANLAR...❤️",
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQPmgQgzppj7fuZecWAs3OGYccuaXSMRdD9Rz1JJNuAH9I_QmfrTRUnA208Ri7WPtft-UfBcTR7V5KZxxRdY8ThTuz8xcJc2hQPv1_Er7Xqh6Q.mp4?_nc_cat=103&_nc_oc=AdqEmC9UAorC7sa6mE8LXVETn8ac7KNAEk0cC3-WkrfXb_AS4Hz1ijF0XO1AayP6R9s&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=O_8wZuGEXJ8Q7kNvwHGx_D2&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuOTYwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjQ0Njk3Mjc4ODAwMTYyMzEsImFzc2V0X2FnZV9kYXlzIjoxMjcsInZpX3VzZWNhc2VfaWQiOjEyMzczLCJkdXJhdGlvbl9zIjozMzgzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=f60e641a7b2fb4d3&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FQjRDMDgzRjRDRjdFNzRBQzQ3NTgyODE3Q0Q3QkRBOV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzJENEIwNTNEMTU2NTRFNjg0OEZBQzJBOEU0Rjc4NTk1X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbOxb_os8zwDxUCKAJDMywXQKpu7peNT98YGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZarBAQA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQP137uuQ8ZvJySIdxNBjbSnn6BRFaNrpDTqbtaZYB_AzQ&oe=6AD1E5D1",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/717339920_1917987392251428_1809065557525777026_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=M_4Br_0nDoQQ7kNvwEKHDPN&_nc_oc=AdqknDNB7VjIzA0m6eQE2PRBOjaFXWPnJi_m6r1A-xHQWaGB_k-iJsdhSCOQE86x1Ao&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQNH83tjvtcKUsPC_4WXxgC0RQAAhICy3I4uHonar73xCA&oe=6AD20008",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQNTq4D6AS6bYwNTwv0B1qFEyIJ5igdhjEt9v-VPKu1uwmpzS1YN1znI1u8xyF3Kdn1ms63NO4cNMj_YceyNxva4IJn_MrhDWkKV0EpJAw.mp4?_nc_cat=109&_nc_oc=AdqHAbVY_dloHR6pASxguTzcz3t4tG1fYNRB_w9KpmbzbBn06MDZ4H575GC3p6-suRI&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=geY1bFNJxpYQ7kNvwHVyjw-&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNDgwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6NDQ2OTcyNzg4MDAxNjIzMSwiYXNzZXRfYWdlX2RheXMiOjEyNywidmlfdXNlY2FzZV9pZCI6MTIzNzMsImR1cmF0aW9uX3MiOjMzODMsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQNODLYlhnqnkXjw3CKe1i0VAJan48lOz5q1X13DLVxxgA&oe=6AD2036D",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "AidinSalih TR",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1791702000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "WHATSAPP"
+      ],
+      "start_date": 1780729200,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 12,
+      "ads_count": 1,
+      "start_date_formatted": "2026-06-06 07:00:00",
+      "end_date_formatted": "2026-10-11 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1541170820860577"
+    },
+    {
+      "ad_archive_id": "1397803654922745",
+      "collation_count": 1,
+      "collation_id": "2310208926139907",
+      "is_active": false,
+      "page_id": "2351445661804098",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "2351445661804098",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/acibadembodrumtipmerkezi/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Acıbadem Bodrum Tıp Merkezi",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/634020383_1587389332466844_6705581528310048922_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=XFH1By_-5r8Q7kNvwE618p6&_nc_oc=Adq0sqXOdshB9cHWItCUR3OHETec0a-3Vn7tRfkU5vRDMaMisy2gm6z5n5ZXjD0aXfo&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQNAbepoKKm2n7kb6iqMzPHMScOnIgYuGNH9ru4cbi5O9Q&oe=6AD1FA96",
+        "event": null,
+        "caption": "www.acibadem.com.tr",
+        "cta_text": "Learn more",
+        "cards": [],
+        "body": {
+          "text": "Gebelik bir kadının hayatında bir ya da birkaç kez yaşadığı mucizevi bir süreçtir. Bu yolculuğun anne ve bebek için en sağlıklı şekilde ilerlemesi adına kadın doğum uzmanlarınca yapılan kontroller oldukça önemlidir.\n\nÖzellikle gebelik planlamasından önce muayeneden geçilmesi önem taşır. Ardından ise gebelik sürecinin takibi, gebenin durumuna göre planlanır.\n\nAcıbadem Bodrum Tıp Merkezi Kadın Hastalıkları ve Doğum Uzmanı Prof. Dr. Deniz Ulaş Uğur “gebelik süreci ve takibi” hakkında bilgilendiriyor.\n\nDetaylı bilgi için hikayemizdeki linke tıklayabilirsiniz:\nhttps://www.acibadem.com.tr/doktor/deniz-ulas-ugur/"
+        },
+        "cta_type": "LEARN_MORE",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "https://www.acibadem.com.tr/doktor/deniz-ulas-ugur/?utm_source=social_media&utm_medium=post&utm_campaign=hekim_bilgilendirme_video&utm_id=120241392824310084",
+        "images": [],
+        "page_categories": [
+          "Hospital"
+        ],
+        "page_like_count": 603,
+        "title": null,
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m69/AQNMqAbjfytbq4yCf1C-0GmTP2udC3ylZtzZM2qTqTfRe1bgSzWF62bcD7G66pgjWGyauvd5mM4OVyTQoR0UMAbO.mp4?strext=1&_nc_cat=105&_nc_oc=AdrwsvCY1SLLIyHytS07vB2Ai53QsuEPCMHRMdnJbdF7e0Crt0xPGahwyZ0UsJ8hZHM&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=bdjPO-XbFYQQ7kNvwESsfcj&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTc5NDA2NzIzOTMxMTk0MzAsImFzc2V0X2FnZV9kYXlzIjoyMzksInZpX3VzZWNhc2VfaWQiOjEwMDk5LCJkdXJhdGlvbl9zIjo5MCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=70c7b25a95671719&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQUlqeUNWakxBdlRLYklGQUFNYWVSemRXRHhqYnNwVEFRQUYVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzRCNEYyRjJGNzJEQzhENzMyQzQwQjEwODk4NjJFNkE4X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaMm7DQybzePxUCKAJDMywXQFauFHrhR64YEmRhc2hfYmFzZWxpbmVfMV92MREAdQBl5p0BAA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQO-D6zG6DzKO7xhzQZ5BpKH0oiAql7chDRS6kxrI4kegQ&oe=6AD1FEF1",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/636047807_1894205101189791_6916304612685921613_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=89ENxDHl3kkQ7kNvwEaQwNo&_nc_oc=AdqvHOUgqFIalA3_-WIIqUz4RDkI0PrKQCRY2uqBVOzCLunvxQH12eaupb3o8pHE1F0&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQN1Qe098bDTIbkw78uOPFKAqnO3aGHHW51afPz_vgMyeQ&oe=6AD1EFDE",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m86/AQOA4cgBxPuaZcA8FOhs0U1Mw7vEvHe5T4amKY7jwU6eEMDpSHNgp5TnWqigOaWgzIMk5ihRpIL8lD2KEdllOKk.mp4?_nc_cat=100&_nc_oc=Adp-cFqZ9o_Ysvj4CkmUp5yNkCVM9-WSdtfR5rpmRbOEjVbB_8friqSjhz2Rd9X5Gi8&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=5IvUgplIF_AQ7kNvwFtJYgh&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLmRhc2hfYmFzZWxpbmVfM192MSIsInhwdl9hc3NldF9pZCI6MTc5NDA2NzIzOTMxMTk0MzAsImFzc2V0X2FnZV9kYXlzIjoyMzksInZpX3VzZWNhc2VfaWQiOjEwMDk5LCJkdXJhdGlvbl9zIjo5MCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=492746e1e1b54526&_nc_vs=HBksFQIYRmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC85NDM5MzM5ODQ2NTE5NjVfNzU5MTM2MTI0MDkzMTQzOTYxMi5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzRCNEYyRjJGNzJEQzhENzMyQzQwQjEwODk4NjJFNkE4X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaMm7DQybzePxUCKAJDMywXQFauFHrhR64YEmRhc2hfYmFzZWxpbmVfM192MREAdQBl5p0BAA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQOglHM0gkZKJgFQ-dyRmLsq7gUph5iM2sfg0QUgOKWLQA&oe=6ACE046C",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Acıbadem Bodrum Tıp Merkezi",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1771660800,
+      "publisher_platform": [
+        "INSTAGRAM"
+      ],
+      "start_date": 1771315200,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 13,
+      "ads_count": 1,
+      "start_date_formatted": "2026-02-17 08:00:00",
+      "end_date_formatted": "2026-02-21 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1397803654922745"
+    },
+    {
+      "ad_archive_id": "1873791376914738",
+      "collation_count": 8,
+      "collation_id": "1321278509986645",
+      "is_active": false,
+      "page_id": "1193693673825248",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "1193693673825248",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61591619212820/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Ns-shengdan003",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/746742948_1631433678943195_4043806811715597348_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Zzs-BRJ8XIIQ7kNvwG0aU3y&_nc_oc=AdpHr54MthJXI0wRzOq-iocs312jegVlfhjnfJ2tV36TZmj3u9c6ncszf6eHEepjZCE&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQNwEljpgcX1AKHe_xftavI21yJwFfIxqByx9PjCYNh2Xg&oe=6AD1DDB9",
+        "event": null,
+        "caption": "fb.h5short.com",
+        "cta_text": "Watch more",
+        "cards": [],
+        "body": {
+          "text": "Manusia Alami yang Diremehkan: Kebangkitan Orion dan Kejatuhan Ratu Sarang"
+        },
+        "cta_type": "WATCH_MORE",
+        "display_format": "VIDEO",
+        "link_description": "Orion Solari, seorang manusia alami, dianggap tak bisa mengemudikan Mecha, lalu dibuang oleh bangsanya, dibenci oleh kaum modifikasi, dan menjadi aib bagi keluarganya. Namun, saat umat manusia di ambang kepunahan, Orion yang terbuang itu justru bangkit dengan Mecha, menumbangkan Ratu Sarang, dan menjadi satu-satunya penyelamat mereka.",
+        "link_url": "https://fb.h5short.com/netshort-h5-landing-page/widnvRfGXuN.html?pid=metaweb_int&c={{campaign.name}}&af_c_id={{campaign.id}}&af_adset={{adset.name}}&af_adset_id={{adset.id}}&af_ad={{ad.name}}&af_ad_id={{ad.id}}&af_channel={{placement}}&af_siteid={{site_source_name}}&af_force_deeplink=true&type=1&link_id=2076850728621404162&af_sub2=0",
+        "images": [],
+        "page_categories": [
+          "Theater"
+        ],
+        "page_like_count": 1288,
+        "title": "Manusia Alami yang Diremehkan: Kebangkitan Orion dan Kejatuhan Ratu Sarang",
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQPPOEH3Oft7DhMFeXKbt9ydeuhzIpI-dzA4sQGy5C9Oz13gYf0b7LDce_OkQnvvVkD3niX9fo4c4kuUxeefzdV_zno1TDDgXwa_NHieGqBxkA.mp4?_nc_cat=100&_nc_oc=Adr7c0XpdyVJC183ymrzVDMWXKNsFa1eNUDmH6kixDIavVs_krumOIJiImPMgrISxA4&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=JNopr88mhpAQ7kNvwHFN7x3&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjIzMTI5NTcxMDk1MzMxODcsImFzc2V0X2FnZV9kYXlzIjo5MCwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjE1NTMsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=aebb35351b076818&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8zNzRFOURDMTIyNjZDRjUzNTc4QTUwNTlERjI1QUNBQ19tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0YwNENBOTBFQTg5MEU0RUI3NzdBODNBMjY3MDk4QkI4X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaG6Keu6eebCBUCKAJDMywXQJhEqfvnbIsYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQMNHLNnogHifKKndyLLlDA9eFflwdEaZYiWV4azjs6nyQ&oe=6AD2068C",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/744916545_1534432941520774_4947376368439359917_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=JkjzN8bPmY4Q7kNvwHXTAJ_&_nc_oc=AdqUmjVPHpUju_mEQUd63htV96k_efiNpsO2h-tfaI4ggOhRYDRVmoQc7EIHoAxCHvQ&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQN9s4dRUQrh1jz4N_BIuXKuKlg2v6lNEWnkmhzUVzL3rQ&oe=6AD1ED80",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQOzJS5ab13qsXk87qndHVTZCXdrL-n2QN9w2gwrKzFnevoY4LnMf6xDEVjowclw_4Ws4BjW4BCzxZijeju5QM_IirFC88gxk5q1YdInlw.mp4?_nc_cat=109&_nc_oc=AdqYZHLC-3Gc3iX4yZBwzy--thIsO6WMyjdwj2jXgP6Zbvwza7lBTQfajhN5a39DTgw&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=yK_kEkY4tvUQ7kNvwFwVurH&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjMxMjk1NzEwOTUzMzE4NywiYXNzZXRfYWdlX2RheXMiOjkwLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTU1MywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQP2oRbtp1gXz3JSyt8G6KjFuOjpWuv94t1QyQ9SN0Lpxg&oe=6AD202E5",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Ns-shengdan003",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1784271600,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1783926000,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 14,
+      "ads_count": 2,
+      "start_date_formatted": "2026-07-13 07:00:00",
+      "end_date_formatted": "2026-07-17 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1873791376914738"
+    },
+    {
+      "ad_archive_id": "4488865831431545",
+      "collation_count": null,
+      "collation_id": "1321278509986645",
+      "is_active": false,
+      "page_id": "1193693673825248",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "1193693673825248",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61591619212820/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Ns-shengdan003",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/746074090_4457103431199023_6542696011290268133_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=uK-HkDJrGA8Q7kNvwHrOSlc&_nc_oc=AdrZ6XeWLdwvdOGhZx4jhM2YYjGZHuA9mWwQXZU_iG5dzqLqrotZP9X3eyarLJOFvWo&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPLtz2AcX2qGPCE49KFmtW90_GLMpeq4fBon4tvTmmvrg&oe=6AD20076",
+        "event": null,
+        "caption": "fb.h5short.com",
+        "cta_text": "Watch more",
+        "cards": [],
+        "body": {
+          "text": "Manusia Alami yang Diremehkan: Kebangkitan Orion dan Kejatuhan Ratu Sarang"
+        },
+        "cta_type": "WATCH_MORE",
+        "display_format": "VIDEO",
+        "link_description": "Orion Solari, seorang manusia alami, dianggap tak bisa mengemudikan Mecha, lalu dibuang oleh bangsanya, dibenci oleh kaum modifikasi, dan menjadi aib bagi keluarganya. Namun, saat umat manusia di ambang kepunahan, Orion yang terbuang itu justru bangkit dengan Mecha, menumbangkan Ratu Sarang, dan menjadi satu-satunya penyelamat mereka.",
+        "link_url": "https://fb.h5short.com/netshort-h5-landing-page/widnvApGXun.html?pid=metaweb_int&c={{campaign.name}}&af_c_id={{campaign.id}}&af_adset={{adset.name}}&af_adset_id={{adset.id}}&af_ad={{ad.name}}&af_ad_id={{ad.id}}&af_channel={{placement}}&af_siteid={{site_source_name}}&af_force_deeplink=true&type=1&link_id=2076850695134081026&af_sub2=0",
+        "images": [],
+        "page_categories": [
+          "Theater"
+        ],
+        "page_like_count": 1288,
+        "title": "Manusia Alami yang Diremehkan: Kebangkitan Orion dan Kejatuhan Ratu Sarang",
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQPPOEH3Oft7DhMFeXKbt9ydeuhzIpI-dzA4sQGy5C9Oz13gYf0b7LDce_OkQnvvVkD3niX9fo4c4kuUxeefzdV_zno1TDDgXwa_NHieGqBxkA.mp4?_nc_cat=100&_nc_oc=Adr7c0XpdyVJC183ymrzVDMWXKNsFa1eNUDmH6kixDIavVs_krumOIJiImPMgrISxA4&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=JNopr88mhpAQ7kNvwHFN7x3&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjIzMTI5NTcxMDk1MzMxODcsImFzc2V0X2FnZV9kYXlzIjo5MCwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjE1NTMsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=aebb35351b076818&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8zNzRFOURDMTIyNjZDRjUzNTc4QTUwNTlERjI1QUNBQ19tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0YwNENBOTBFQTg5MEU0RUI3NzdBODNBMjY3MDk4QkI4X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaG6Keu6eebCBUCKAJDMywXQJhEqfvnbIsYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQMNHLNnogHifKKndyLLlDA9eFflwdEaZYiWV4azjs6nyQ&oe=6AD2068C",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/747333874_2272306100185679_748829381762399066_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=nBtWWR99GwYQ7kNvwGBqxDS&_nc_oc=Adpuus3pzE0VAyA9hZUAC1WTy8d650DFZfEuUWtYlqQPs00ac5bNRkbJTOdqpm1R-7Q&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQM1i1IZ0t6wkhM-w7X4KkETUNqBumpUFUQnkZDIeobZtQ&oe=6AD1DF79",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQOzJS5ab13qsXk87qndHVTZCXdrL-n2QN9w2gwrKzFnevoY4LnMf6xDEVjowclw_4Ws4BjW4BCzxZijeju5QM_IirFC88gxk5q1YdInlw.mp4?_nc_cat=109&_nc_oc=AdqYZHLC-3Gc3iX4yZBwzy--thIsO6WMyjdwj2jXgP6Zbvwza7lBTQfajhN5a39DTgw&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=yK_kEkY4tvUQ7kNvwFwVurH&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjMxMjk1NzEwOTUzMzE4NywiYXNzZXRfYWdlX2RheXMiOjkwLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTU1MywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQP2oRbtp1gXz3JSyt8G6KjFuOjpWuv94t1QyQ9SN0Lpxg&oe=6AD202E5",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Ns-shengdan003",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1784185200,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1783926000,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 14,
+      "ads_count": 2,
+      "start_date_formatted": "2026-07-13 07:00:00",
+      "end_date_formatted": "2026-07-16 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=4488865831431545"
+    },
+    {
+      "ad_archive_id": "1319512456619379",
+      "collation_count": 1,
+      "collation_id": "802911995829294",
+      "is_active": false,
+      "page_id": "306711812515860",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "306711812515860",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61558684041879/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Dramawave-vip",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/571014108_1511797599967910_5760908118001415122_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=0-mVxOeKWzIQ7kNvwEjcPKx&_nc_oc=AdqeReAW8tgX3p2g3CVAZAM0K8P6ISUQevKTQDtd9DpUAoJBS8jC9XnZ9CB22n7hM30&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQO6LMUJP7oF8aWzlLJe2GDM4zVYezxhdBPIHF3fMRoO5w&oe=6AD1E615",
+        "event": null,
+        "caption": "www.dramawavew2a.com",
+        "cta_text": "Watch more",
+        "cards": [],
+        "body": {
+          "text": "Altı yıl önceki geceyi unuttu, Alfa’nın çocuğunu tek başına büyüttü. Yeniden karşılaştıklarında aşk ve ihanet birbirine çarpıyor; oysa onun tek isteği oğlunu korumak. Tehlike yaklaşırken, güveni yeniden inşa edip birbirlerini seçebilecekler mi?"
+        },
+        "cta_type": "WATCH_MORE",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "https://www.dramawavew2a.com/ads/0/1723/view?c={{campaign.name}}&af_adset={{adset.name}}&af_ad={{ad.name}}&af_c_id={{campaign.id}}&af_adset_id={{adset.id}}&af_ad_id={{ad.id}}&af_channel={{placement}}&u1=facebook&u2=15120327&u3=&pid=FBH5ADS&af_dp=lgYoSW7qsB",
+        "images": [],
+        "page_categories": [
+          "Science & Tech"
+        ],
+        "page_like_count": 552750,
+        "title": "Alfa Baba, Annemi Eve Götür",
+        "videos": [
+          {
+            "video_hd_url": null,
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/571203555_749530901442157_7821807939691325194_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=2WFB_hsaPg8Q7kNvwFkucQ2&_nc_oc=AdogGSzvN8XTkFObx-GcY_u_a9qHpy6oGd1S_VZico9I5vxI0byECEmYXxjJzsPYjOc&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPFuIldkSsm6aPV1Pfbbd-Wwwvv5vJsooV-X-ED0Lkehw&oe=6AD1F2AC",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQNy61y19-XJVg0tDEsBc4zw6oyiIBCjQTIisedqgPk4yPisPFNP681P2mXNL0PjkIzq-uwMLEzw0m5g9TgA_BPqMNYV11mAqFlZS6Y_MQ.mp4?_nc_cat=102&_nc_oc=Adp8wNpPG2G6svDpXeKx5hDhDPerg9TnPRId2oQa3wPTgXWrlaHjudrfxWaNr-swta0&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=W-epkuEDnNUQ7kNvwHOnzhR&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6NzM0OTU1ODI5NTYxNDMzLCJhc3NldF9hZ2VfZGF5cyI6MzU0LCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6OTAyLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQMhtg81adn4UoVBzjQ6TcIPnekzJPVYte0nOqeZUxFMAA&oe=6AD1DD18",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Dramawave-vip",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1761548400,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1761202800,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 15,
+      "ads_count": 1,
+      "start_date_formatted": "2025-10-23 07:00:00",
+      "end_date_formatted": "2025-10-27 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1319512456619379"
+    },
+    {
+      "ad_archive_id": "1351504757168466",
+      "collation_count": 1,
+      "collation_id": "1684555149280788",
+      "is_active": false,
+      "page_id": "1183290518207656",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "1183290518207656",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61591815606970/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Astrid Gentry - Short Drama",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/741757133_2240841323380305_7384062223461006888_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=MeDoFbza4fkQ7kNvwGMX3ur&_nc_oc=AdrlJ9Hznemc7ZVxOAM7K0b-d2CFrLpTh3zYU82oRzR-HZIOrjEdKy_xWN7JZNrRrPw&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQNSniQEIcfyyqQffMnQoGCtSMrU4wkiQGzkpNyUcsH93g&oe=6AD2057A",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Nikmati drama pendek seru setiap hari! Kisah romantis, misteri & balas dendam terbaru di Dot Drama"
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.hli.shortdrama.reelshorts.dramatv",
+        "images": [],
+        "page_categories": [
+          "TV show"
+        ],
+        "page_like_count": 1317,
+        "title": null,
+        "videos": [
+          {
+            "video_hd_url": null,
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/742461997_876406702086331_3930322665921717386_n.jpg?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=2C8BGp_QHloQ7kNvwEkJuXd&_nc_oc=AdpleIZYC6V9tKiHAXpyWbiuGwQA2kSjl1olyuOwBp4SrqC_SqThKcuJah5I0zmGM1M&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQNZ5JkpDPWVtmzTBnn-0qOP9CZkPQwFVe-TV99Q-uXttw&oe=6AD1EBCB",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQNCKH9AuV4gkfDCH5hMKntVQFDGmw03VftVt0xoP3wb0iggcinI9KjMA9TdgQolZhfXDyUR_7lE2rrKI0rH5X20eLzJqp30IxB3ytHJzg.mp4?_nc_cat=105&_nc_oc=Adrs6JEzLBYvsNR2tIBuQOHuQ6BCp-OkBAoaNrjwgNIdpy2jI0Y4LbEaURJ1h18lH-U&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=ZjP0hi8F9iAQ7kNvwEnvJpi&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTUwNjAwOTk1NzQ0MTUyNywiYXNzZXRfYWdlX2RheXMiOjg0LCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTU1MywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQOnNljn1i000DK9WoRHqd8bAbaxPxn4zqgfoo_0P6TSjA&oe=6AD1EFF1",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Astrid Gentry - Short Drama",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "AD_ACCOUNT_DISABLED",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1785567600,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1784444400,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 16,
+      "ads_count": 1,
+      "start_date_formatted": "2026-07-19 07:00:00",
+      "end_date_formatted": "2026-08-01 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1351504757168466"
+    },
+    {
+      "ad_archive_id": "28373747025621788",
+      "collation_count": 4,
+      "collation_id": "1630769295394094",
+      "is_active": true,
+      "page_id": "801265839736224",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "801265839736224",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61580083473819/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "Foot medikal",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/815542207_1091413190022792_7933755179699618058_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=lLCr4ed7yowQ7kNvwFS6aZK&_nc_oc=AdqZHpBI2WX1p0muw1lbHEm5KKBIR0dGrzjfgkbF0kY0JDHRgsyhhjjfzBJ3jsQ81ew&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQOqFi_14QFRz3Dd8pbSqfZNzISFif2Zjii6PB9GB2xxGw&oe=6AD1E0CA",
+        "event": null,
+        "caption": "footmedikal.com",
+        "cta_text": "Shop now",
+        "cards": [],
+        "body": {
+          "text": "Ayak başparmağınızdaki eğrilik ve baskıyı doğal yolla hafifletin 🌿"
+        },
+        "cta_type": "SHOP_NOW",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "https://footmedikal.com/products/altay-medikal",
+        "images": [],
+        "page_categories": [
+          "Orthopedist"
+        ],
+        "page_like_count": 556,
+        "title": "🦶 Baş parmak çıkıntısı genetik miras değil 💡",
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQMHaebPTZzrVv5VWxNYxiNt_zekn35WzySibcfmY-sx4EOOHP0ibRvhTf3V49mzk9Pd9H2aomMOAha5ZSA57NLWLeUxjsrhNjWHn_oqnYQ97Q.mp4?_nc_cat=100&_nc_oc=Adp9LUctlVEHBaMHMmB5C7eMq_-_T2capkqvjFy649MpmtCXXhY-fkttw8qHmDgDiWw&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=JdYKcSNkbogQ7kNvwHXBv9r&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExMTY4MjMyNzQwMTI2OTUsImFzc2V0X2FnZV9kYXlzIjoyMywidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjEyMiwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=1b59d395673210c8&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9CMzQ2RUQ4QTU0MzVDRkM2OUIyQTY2OTBDQkQyRTc4N19tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0RBNEY0RTU0OEQ3QzFDNUI0MDQ0OEE1NjU0M0Y4RDkyX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaugLLo1e_7AxUCKAJDMywXQF6iHKwIMScYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQO92PyREobtdAYTtq9iBHGzNLCu1G1-YAgXXegeZyrqVg&oe=6AD1ED98",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/815738004_1621639296238615_8086629322869570261_n.jpg?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=197P5s8Ayj4Q7kNvwGZ5hfW&_nc_oc=Adr93nKoa4mwuK34FvNrl0LarjrD_LtSzui4ClcShvDYIld24B526rUD0btYIHZCyV4&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPnEiuyOF06PdNrNaOjsS3yAJIMzZbg3TFB_1ZbbfacSQ&oe=6AD1FA8D",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQPSEDiO5FJMeQd0AyoC9XKakCYtx6k_qigkIwOXXfVI_8WLNurwQGw1dt1TlWLwGQ47XQpjEqNVHrUYcfQvw2J_SsqTPGsIl56TE-Xc0g.mp4?_nc_cat=105&_nc_oc=AdpG6XCmCMOKG6zxwJQfDRdf8AVnpexxgRcCre354XM5WKXTifBzgcChibFY6V7tVBA&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=PsMBWSKjIF8Q7kNvwE_TNdX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTExNjgyMzI3NDAxMjY5NSwiYXNzZXRfYWdlX2RheXMiOjIzLCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6MTIyLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQNNoz-p1Z0_wTtgDyet4ulQTWz44jQxcDuMRzd0pGEnIQ&oe=6AD201D5",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Foot medikal",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": false,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1791702000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1790146800,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 17,
+      "ads_count": 1,
+      "start_date_formatted": "2026-09-23 07:00:00",
+      "end_date_formatted": "2026-10-11 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=28373747025621788"
+    },
+    {
+      "ad_archive_id": "1355708299288529",
+      "collation_count": 1,
+      "collation_id": "1570618957929937",
+      "is_active": false,
+      "page_id": "1272925902560990",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "1272925902560990",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61591625592119/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "MiniReels",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/751181165_2467526487073938_1838697931446974215_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=8rfdlbrf1TgQ7kNvwG-hbVc&_nc_oc=Adoa9M4dcTVbaQ6q8fJHpqCThaGoJbawfIBQIrzCEgk87ZE0uC1wgUu7lVwpdP_bUhs&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPEvMbW0VjZFx9FjSJI3cYnFA1V0KAxjXpVy9lXMwmMBw&oe=6AD20948",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Lihat lebih banyak video"
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.hnl.minireel.shortstory.dramatv",
+        "images": [],
+        "page_categories": [
+          "Entertainment website"
+        ],
+        "page_like_count": 930,
+        "title": null,
+        "videos": [
+          {
+            "video_hd_url": null,
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/751055804_2520348258482701_4738310680350534351_n.jpg?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=neNAyHb6eAcQ7kNvwGe5fkU&_nc_oc=AdoZAYWOqy3FNi5Suhqcs8OJqPxnPEQskqkLaDIWdlzl8bvDL4ajUCzMg2rrxyBr5yk&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQOqT1rSRRX6xLi1xOFSf0VLiOAEJxiH42FrZOKcD3PS7g&oe=6AD1EC8D",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMGcf9nvjFKtcGEt7L95cTAiBWN1FxfV-0msEgPr4H8rpZi8I1IIqG_TAC59IbCMqa8_Z-OCfjN0zKxx1FtLw6XVscXqGiNK_UFisWs4A.mp4?_nc_cat=101&_nc_oc=AdrM5igXCIV1wT4nNFS8r99RRrDY_ZRCJgt66AP6d8YEy2V3jUK9_gFDH22Q2gFH_bE&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=JFl1ht53bTQQ7kNvwGCdapX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTA1NzA5MDA4Njg3OTg5OSwiYXNzZXRfYWdlX2RheXMiOjg2LCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6MTQxNSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQPu7PjPsHcz68iin1zND5KO3ZJPYIyxvvT0J_tXlpooeg&oe=6AD1DB91",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "MiniReels",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "AD_ACCOUNT_DISABLED",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1784617200,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1784271600,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 18,
+      "ads_count": 1,
+      "start_date_formatted": "2026-07-17 07:00:00",
+      "end_date_formatted": "2026-07-21 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1355708299288529"
+    },
+    {
+      "ad_archive_id": "804720385755136",
+      "collation_count": 2,
+      "collation_id": "1833200417309323",
+      "is_active": false,
+      "page_id": "445922315279704",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "445922315279704",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61567219180743/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Dramawave: 121",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/565136649_1100677615205478_7319242714736330743_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=h4rcovyzXg4Q7kNvwFgDNl2&_nc_oc=AdrXganMxd1jKnrfkZcLirh3W5k81UNTBpjGzZDOtiFk7mmE4erfTfCOcrAeeHHXlwQ&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQO8U16ZdxcI157tNWWgxaEqRo3tym79HUc_6_Am8-BRpw&oe=6AD1F77D",
+        "event": null,
+        "caption": "www.dramawavew2a.com",
+        "cta_text": "Watch more",
+        "cards": [],
+        "body": {
+          "text": "Altı yıl önceki geceyi unuttu, Alfa’nın çocuğunu tek başına büyüttü. Yeniden karşılaştıklarında aşk ve ihanet birbirine çarpıyor; oysa onun tek isteği oğlunu korumak. Tehlike yaklaşırken, güveni yeniden inşa edip birbirlerini seçebilecekler mi?"
+        },
+        "cta_type": "WATCH_MORE",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "https://www.dramawavew2a.com/ads/0/1723/view?c={{campaign.name}}&af_adset={{adset.name}}&af_ad={{ad.name}}&af_c_id={{campaign.id}}&af_adset_id={{adset.id}}&af_ad_id={{ad.id}}&af_channel={{placement}}&u1=facebook&u2=15055977&u3=&pid=FBH5ADS&af_dp=lgYoSW7qsB",
+        "images": [],
+        "page_categories": [
+          "Episode"
+        ],
+        "page_like_count": 844424,
+        "title": "Alfa Baba, Annemi Eve Götür",
+        "videos": [
+          {
+            "video_hd_url": null,
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/561711945_833919872625006_3554772567097352222_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=4R3q9d8ptp8Q7kNvwG_VMWo&_nc_oc=AdrJ-sdClW4p8GPEpFvy_9VH0YQUN57TnrMAK3h0HpCzYkQGr3aB0YCBxMyJ6bfRk5s&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMsql_M5Pm9MEvNiF9fMCLfd59j2ITEQGa9TESgsVxMxw&oe=6AD1EBA2",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQP1C09AxtHUAc4rySly6z-Wq4vWn69rnJ3OyhLowMzqiEXs8FAcESenWHH1v0oqzY3393C1pnRS1XhpDKOVeu8bN_RJ8IHypFda0zanIg.mp4?_nc_cat=105&_nc_oc=AdrFlpNywGh4suqLi3x_2LK-Y-b_DkaZIeocsvc2N7805UiwjtxF8ZcVeJLBQyvVWH8&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=dNqmKauEHu8Q7kNvwFpKuMy&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTQ3NjE3NzMxMzY4OTY1OCwiYXNzZXRfYWdlX2RheXMiOjM1NywidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjkwMiwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQPrcY1hL_8TX84izkc6UmEuQv40WiZJ8n9oJnwT8E2U1w&oe=6AD1E2E5",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Dramawave: 121",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1761548400,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1760857200,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 19,
+      "ads_count": 1,
+      "start_date_formatted": "2025-10-19 07:00:00",
+      "end_date_formatted": "2025-10-27 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=804720385755136"
+    },
+    {
+      "ad_archive_id": "854869080816324",
+      "collation_count": 1,
+      "collation_id": "2374231429771030",
+      "is_active": false,
+      "page_id": "1175203312341784",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "1175203312341784",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61590495904624/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "Ns-zhezi01",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/749132947_2290528835027793_4234082955608224896_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=L7yFt0wMXTUQ7kNvwHhlGFq&_nc_oc=AdqoespJCja1hnXQf1PSwdx78TsT1Oh6Zi454PRsntOjBGabwpDBGhOqBXUJZQydhrQ&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPh1_2_rrXIonpapaIJP7rWauk3mhg_J35kf5h36GwwLg&oe=6AD1FBD9",
+        "event": null,
+        "caption": "fb.h5short.com",
+        "cta_text": "Watch more",
+        "cards": [],
+        "body": {
+          "text": "Dışlanan Doğal Orion, Meka’ya Binip Kovan Ana’yı Devirip İnsanlığın Kurtuluşu Olur"
+        },
+        "cta_type": "WATCH_MORE",
+        "display_format": "VIDEO",
+        "link_description": "Doğallar ve modifiyeler iki ayrı dünyada yaşar. Orion Solari, Meka kullanamaz denilen bir doğal; insanlık tarafından terk edilir, modifiyeler tarafından küçümsenir, kendi ailesi tarafından aşağılanır. Ama insanlık yok oluşa sürüklenince, dünyanın dışladığı o adam Meka’ya biner, Kovan Ana Kraliçesi’ni indirir ve tek kurtuluş olur.",
+        "link_url": "https://fb.h5short.com/netshort-h5-landing-page/wiFrDApLvSM.html?pid=metaweb_int&c={{campaign.name}}&af_c_id={{campaign.id}}&af_adset={{adset.name}}&af_adset_id={{adset.id}}&af_ad={{ad.name}}&af_ad_id={{ad.id}}&af_channel={{placement}}&af_siteid={{site_source_name}}&af_force_deeplink=true&type=1&link_id=2078115820709851137&af_sub2=0",
+        "images": [],
+        "page_categories": [
+          "Movie"
+        ],
+        "page_like_count": 6912,
+        "title": "Dışlanan Doğal Orion, Meka’ya Binip Kovan Ana’yı Devirip İnsanlığın Kurtuluşu Olur",
+        "videos": [
+          {
+            "video_hd_url": null,
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/749315270_1533937881560338_4417400419588694319_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=f4Nl3uUuGOYQ7kNvwFc76mJ&_nc_oc=Adr2Vj15x966349byXj55ZW26eRAqC2Tmx0YuxXxjx2oaPmKnkaln94KBRU3lkHgiLA&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMEm9uxF9m90ZyQPwqgr3u4XDYjANwYNUS6_55-mNTowg&oe=6AD1E0BA",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQPG-aoWOiHqq29VTakVRsJbAwxK3mfB8h2kwcIxOxmuMn4svbgEz7C9OQf77n2skjJ4NTq2zqn8cqhz2vzYruNaaCwbXSj6d_QKI81P2w.mp4?_nc_cat=106&_nc_oc=Ado1lJjV8U8Fhwk8LYLoGQpsf36ur2-Ion0RIlvTXNk0-WcHgRI-kYJXfgeNZdKkoCk&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=gI2bf6sAd7cQ7kNvwE5B30F&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTAzOTQ1MDI2OTAyMTkxMiwiYXNzZXRfYWdlX2RheXMiOjg2LCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTU0NCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQOfBnNbgv2i2BR2kADB9VFpJytkGWNU82IcJM6lFLr1zA&oe=6AD1E700",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Ns-zhezi01",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1784530800,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1784271600,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 20,
+      "ads_count": 1,
+      "start_date_formatted": "2026-07-17 07:00:00",
+      "end_date_formatted": "2026-07-20 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=854869080816324"
+    },
+    {
+      "ad_archive_id": "5354700394668236",
+      "collation_count": 2,
+      "collation_id": "1093514389799192",
+      "is_active": true,
+      "page_id": "801265839736224",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "801265839736224",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61580083473819/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "Foot medikal",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/815704304_2070190866916879_5371121505347919495_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=tXjgGJAw9ooQ7kNvwG6iok2&_nc_oc=Adqca_bTYf4PZ7LY0SrHuhPZKWIRP-m63pjOrQYthPFV2-BSgUNmF-dWDNgQ27yQY4c&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPbtd4WqX7Ypw8VKcooGTsadA33TlMkBAIY31k0pK2zCw&oe=6AD20501",
+        "event": null,
+        "caption": "footmedikal.com",
+        "cta_text": "Shop now",
+        "cards": [],
+        "body": {
+          "text": "Ayak başparmağınızdaki eğrilik ve baskıyı doğal yolla hafifletin 🌿"
+        },
+        "cta_type": "SHOP_NOW",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "https://footmedikal.com/products/altay-medikal",
+        "images": [],
+        "page_categories": [
+          "Orthopedist"
+        ],
+        "page_like_count": 556,
+        "title": "🦶 Baş parmak çıkıntısı genetik miras değil 💡",
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQObpC9JWgYQs6fzKyTfTy1Vnn-32A_cBzmV-KiA-MM3kFYm-n_rD64IIjCUN-dBbjepRE4nPg4rhDJfa2sWrUM2mgjmqJbLou19jFQ_D-9UHQ.mp4?_nc_cat=108&_nc_oc=AdpujQmuIP8PmzNwGujLhO29jdVm3SHgroKolg5D4jB-9UcUGjLA0zu8ZxORcbd_HxM&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=F3_JSSa5uHMQ7kNvwH9Ax1d&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE2MTIwNjY3MTY5ODQyMTEsImFzc2V0X2FnZV9kYXlzIjoyMywidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjEyMiwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=71e02ccd7e80c922&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9CQzQ5NjM0NkY4RkIyODVDOEM1QkI2M0U4M0E3MEI4MF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzUyNDQ2QTcwREVGQzYzN0I1MjY4RUNEMDJGMzYxMThCX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACamjqmA0YrdBRUCKAJDMywXQF6iHKwIMScYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQNuwOlcB61kkT-Balbhg4kYqTcFR0lXb5vFNpxYHcYqSw&oe=6AD20938",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/796349777_38549168201364205_1958752153839603249_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=fah3qrlUboIQ7kNvwGDnI5o&_nc_oc=AdofG42fLasbWsOmBp13-fFoo1we1Xv3zhdnYB92lIY85sc3eD3Ge2VjWjnN1OnLXU0&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMi53IJfp1FTqGZjG7tYWLo17ZhHy7LxZ1BF4SzzrvM-g&oe=6AD1EED1",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQPn3jgePvmvXv7190K1i_SWld7NDGOaPiHx6UQ7WY-WcaU3-BzFDsbJorlXDyiZVp1eK0-BNsmcViTGoQJFunbx-laVcpb85lS4ZSlHnw.mp4?_nc_cat=110&_nc_oc=Adrh2LLR69kVv-0abgQbn28yD_oVXNGjYimutQOc7Tz-zAlZJPk1XBdTCDROz4CiWew&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=HRrYzRsizgQQ7kNvwHCCd30&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTYxMjA2NjcxNjk4NDIxMSwiYXNzZXRfYWdlX2RheXMiOjIzLCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6MTIyLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQMWoC55vdFu6qrynKeHw93jifyMWMbeEZWV2znsJtgtbg&oe=6AD2073C",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Foot medikal",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": false,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1791702000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1789714800,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 21,
+      "ads_count": 1,
+      "start_date_formatted": "2026-09-18 07:00:00",
+      "end_date_formatted": "2026-10-11 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=5354700394668236"
+    },
+    {
+      "ad_archive_id": "1006228104965827",
+      "collation_count": 1,
+      "collation_id": "786254697545290",
+      "is_active": false,
+      "page_id": "306711812515860",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "306711812515860",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61558684041879/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Dramawave-vip",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/561895219_3271876172989583_2571241715636226987_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=bYp5qqP_5PEQ7kNvwF6_jS9&_nc_oc=Adred8mdGHWEIltfQuBrj4RWmVF3ipEev-kZINltgEPkALUlq3RmFVvNwT0l43y-GVs&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMS6wIrSf_IKquECCdjq2YzgoSIy6Er5IF02nRhQ1mdSw&oe=6AD1EC96",
+        "event": null,
+        "caption": "www.dramawavew2a.com",
+        "cta_text": "Watch more",
+        "cards": [],
+        "body": {
+          "text": "Altı yıl önceki geceyi unuttu, Alfa’nın çocuğunu tek başına büyüttü. Yeniden karşılaştıklarında aşk ve ihanet birbirine çarpıyor; oysa onun tek isteği oğlunu korumak. Tehlike yaklaşırken, güveni yeniden inşa edip birbirlerini seçebilecekler mi?"
+        },
+        "cta_type": "WATCH_MORE",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "https://www.dramawavew2a.com/ads/0/1723/view?c={{campaign.name}}&af_adset={{adset.name}}&af_ad={{ad.name}}&af_c_id={{campaign.id}}&af_adset_id={{adset.id}}&af_ad_id={{ad.id}}&af_channel={{placement}}&u1=facebook&u2=15017466&u3=&pid=FBH5ADS&af_dp=lgYoSW7qsB",
+        "images": [],
+        "page_categories": [
+          "Science & Tech"
+        ],
+        "page_like_count": 552750,
+        "title": "Alfa Baba, Annemi Eve Götür",
+        "videos": [
+          {
+            "video_hd_url": null,
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/565336847_810632288218893_4289387101757878906_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=40TZjPclmiUQ7kNvwFCUQvy&_nc_oc=Adqj2ZwS1pyzdCi5dDX70GOCECJK9EDdQvX_pm2sziPlVuMdJewNkS-7Odxom9HpPpU&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPvgPTsLA_S1TLCphzlcenayb83nsBocFuynXiQBq6Qsw&oe=6AD1F2FB",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQOtSVNh97tSUkxq-8xfDzseD6pMqqTzDvkDNdKbxrrZ6oBGA3PL5Of7eEcyuT4gU6i_NlwtjSZXhFJ5EG-biP9Nr0UR0x18GJ2e12dhwQ.mp4?_nc_cat=108&_nc_oc=Adq1m4wHNediPHROtmwpJaB2AfIs6T2eBMmbmTSN2R18VWf3kDDW4t4DcRIEb8Q7Q08&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=qzMGt-HWVU4Q7kNvwHSam5z&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjUzMzM1ODM4MzYyNTk1ODAsImFzc2V0X2FnZV9kYXlzIjozNTksInZpX3VzZWNhc2VfaWQiOjEwMTM5LCJkdXJhdGlvbl9zIjo5MDIsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQMunY5iz5Y7BRRFZQvWjsv0_8tmrvHojQ9LOooAn21RJg&oe=6AD1E826",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Dramawave-vip",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1761030000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1760684400,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 22,
+      "ads_count": 1,
+      "start_date_formatted": "2025-10-17 07:00:00",
+      "end_date_formatted": "2025-10-21 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1006228104965827"
+    },
+    {
+      "ad_archive_id": "2116333552445608",
+      "collation_count": 1,
+      "collation_id": "25536679259277527",
+      "is_active": false,
+      "page_id": "873206112545485",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "873206112545485",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61584139057336/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "İyi Dizi Önerileri",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/596659977_871257235375773_7463675792105419559_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=HDeaFQhiUtgQ7kNvwHHWIUg&_nc_oc=AdrR22ENpy4UHOB5XidqQ7xJ3-h-oFkgEvl0IKJ6BB05IJtYFpuCcFnfftFXkYThlK0&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMyG-0IUTbeD1Txe9j-_35kn8YelxqbD68VGziocJ808g&oe=6AD1D7FF",
+        "event": null,
+        "caption": "www.dramawavew2a.com",
+        "cta_text": "Download",
+        "cards": [],
+        "body": {
+          "text": "Altı yıl önceki geceyi unuttu, Alfa’nın çocuğunu tek başına büyüttü. Yeniden karşılaştıklarında aşk ve ihanet birbirine çarpıyor; oysa onun tek isteği oğlunu korumak. Tehlike yaklaşırken, güveni yeniden inşa edip birbirlerini seçebilecekler mi?"
+        },
+        "cta_type": "DOWNLOAD",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "https://www.dramawavew2a.com/ads/0/1723/view?c={{campaign.name}}&af_adset={{adset.name}}&af_ad={{ad.name}}&af_c_id={{campaign.id}}&af_adset_id={{adset.id}}&af_ad_id={{ad.id}}&af_channel={{placement}}&u1=facebook&u2=16294709&u3=&pid=FBH5ADS&af_dp=lgYoSW7qsB",
+        "images": [],
+        "page_categories": [
+          "TV show"
+        ],
+        "page_like_count": 59807,
+        "title": "Alfa Baba, Annemi Eve Götür",
+        "videos": [
+          {
+            "video_hd_url": null,
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/595138076_3200150143490596_1188393524211800185_n.jpg?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=5lUmKkwYgVEQ7kNvwHPmB14&_nc_oc=AdpquK-I8FeG-Aw2kfJDmyYchNDfiIfPnpewr-_XuPFzB7OKOM3BEz0YOuZp7w81Y44&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQPEmvXW-lSxQaPWmijVJCRScrfO-1VR7VxCuJ1hrMJB1g&oe=6AD1E4AE",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQP_ePI-cJpzBNceuJEJ8RVJfoEosQALSfCRHPGesduoRna-qRmatZj3hk9H5ytFe1VzaDn1mllbNfZlVkPnI3KJZOphdyvjx326e6ivvg.mp4?_nc_cat=104&_nc_oc=Adpa-zjyux6gZJ9345XO2QCFsbgzVRMo0Bb8l3rXJ8xZae5Uk8wQGmT_pQPyUkO8UCY&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=XsKa1w0AP1YQ7kNvwENpa6G&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6ODQ2MDI1MTg0OTQ3NTg4LCJhc3NldF9hZ2VfZGF5cyI6MzA4LCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6OTAxLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQMWoAXlBC4mLQrTteVBFXgSakpUvQVnp6hLtjJeIv_vLg&oe=6AD1F75E",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "İyi Dizi Önerileri",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1765526400,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1765094400,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 23,
+      "ads_count": 1,
+      "start_date_formatted": "2025-12-07 08:00:00",
+      "end_date_formatted": "2025-12-12 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=2116333552445608"
+    },
+    {
+      "ad_archive_id": "1603102898069479",
+      "collation_count": 2,
+      "collation_id": "1612561696869839",
+      "is_active": false,
+      "page_id": "1193693673825248",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "1193693673825248",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61591619212820/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Ns-shengdan003",
+        "page_profile_picture_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/744860403_1040906368421079_7616501995453321684_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ev-ta79HaPMQ7kNvwFrsDMm&_nc_oc=Adp0d3FYaG_zXmCXUq3iZ043KPcdaytN7rg_qlZi1Mm8LPlME0fOFFdk7qocMkxV_4A&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQMP2-eup_W1Us71G-N4-A9DxE7HAIZeR0NFEkJGiM7cfw&oe=6AD20016",
+        "event": null,
+        "caption": "fb.h5short.com",
+        "cta_text": "Watch more",
+        "cards": [],
+        "body": {
+          "text": "Antara Kaum Modifikasi dan Bangsanya, Orion Menjadi Harapan Terakhir dengan Mecha"
+        },
+        "cta_type": "WATCH_MORE",
+        "display_format": "VIDEO",
+        "link_description": "Orion Solari, seorang manusia alami, dianggap tak bisa mengemudikan Mecha, lalu dibuang oleh bangsanya, dibenci oleh kaum modifikasi, dan menjadi aib bagi keluarganya. Namun, saat umat manusia di ambang kepunahan, Orion yang terbuang itu justru bangkit dengan Mecha, menumbangkan Ratu Sarang, dan menjadi satu-satunya penyelamat mereka.",
+        "link_url": "https://fb.h5short.com/netshort-h5-landing-page/wiMJflmE8M4.html?pid=metaweb_int&c={{campaign.name}}&af_c_id={{campaign.id}}&af_adset={{adset.name}}&af_adset_id={{adset.id}}&af_ad={{ad.name}}&af_ad_id={{ad.id}}&af_channel={{placement}}&af_siteid={{site_source_name}}&af_force_deeplink=true&type=1&link_id=2076501070929657858&af_sub2=0",
+        "images": [],
+        "page_categories": [
+          "Theater"
+        ],
+        "page_like_count": 1288,
+        "title": "Antara Kaum Modifikasi dan Bangsanya, Orion Menjadi Harapan Terakhir dengan Mecha",
+        "videos": [
+          {
+            "video_hd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQOjgUTwCAxajZELK15W3f6xI5hX8ItZmdB7VXTU3w0vNgdPHdfxXbc04w_L5UXww9MyThLo_5-lxrmyjLvjXz6iOh2xuRJlF2ZT6ZDlQwAg7g.mp4?_nc_cat=102&_nc_oc=AdrBhrcU5dcNvjsrWRgQ2J5Q_ef4pxYFXxffHaPRLdwiG6LMcokA03Oc-dQ70TUzLNw&_nc_sid=b66105&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=xXx79OTfTxsQ7kNvwEhwrhE&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE1NTk4ODk2NDkxNzU5ODIsImFzc2V0X2FnZV9kYXlzIjo5MCwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjE0MTUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=7baf707618014db8&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9BOTQ5M0QzNTNFOEQwQjg4QzA4QzAxQTAzMjcxMjc4MV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZFNDQ0MTczMjFFMjNENzBEOTc3NTVEMjY4QTQyMjlEX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbctuzGw63FBRUCKAJDMywXQJYcqfvnbIsYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQMXwbSMbojrOqhOnKHlDflhEJqI4uRqiQ4XjYYf_IvQHg&oe=6AD1DECE",
+            "video_preview_image_url": "https://scontent.fzag5-1.fna.fbcdn.net/v/t39.35426-6/745305355_1597832501891688_5159822373606828971_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=UksTv9mKUhcQ7kNvwGOQBzI&_nc_oc=Adrw8cFeKr_Q9zNpJQP_trqGg1JeyFRETypt0H6J4pmyaWOcXdkr0mZzdhZDYPw5Q-k&_nc_zt=14&_nc_ht=scontent.fzag5-1.fna&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&oh=00_AQNWyQhfZH7D_icqB3RJwob4eVTKSG54jdYprMeWt2ecow&oe=6AD20B3F",
+            "video_sd_url": "https://video.fzag5-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMn6gIpOccnI-vmp1KLyxR69FMHPV7I2W5EsW8sFbOoatnxbt7-IyIhxgAdyfWiR-EvGu4TYiwf1hsSW5oB4MZBwiJLmoW3kDh9tbTvgQ.mp4?_nc_cat=106&_nc_oc=AdrO06RdFB-W7TIFdKi1ybNekvb7iRQwCR9N2Q6KfrKgPEt00M0wqPCNeMwNwjL6v78&_nc_sid=ef5aa3&_nc_ht=video.fzag5-1.fna.fbcdn.net&_nc_ohc=n_xYHeD6JGIQ7kNvwEBUnRU&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTU1OTg4OTY0OTE3NTk4MiwiYXNzZXRfYWdlX2RheXMiOjkwLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTQxNSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=lXGYUmJE56crf0XYDQ40yQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQNuj_FGrCu-no3zFKqGhbDp4w7QJNmByHnHbsPJbKZZYQ&oe=6AD1F7F0",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Ns-shengdan003",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1784098800,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1783839600,
+      "contains_sensitive_content": false,
+      "total_active_time": 77954,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=TR&q=genetik%20test&search_type=keyword_unordered&media_type=video",
+      "total": 4504,
+      "position": 24,
+      "ads_count": 1,
+      "start_date_formatted": "2026-07-12 07:00:00",
+      "end_date_formatted": "2026-07-15 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1603102898069479"
+    }
+  ]
+}

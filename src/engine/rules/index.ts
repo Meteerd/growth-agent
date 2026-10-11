@@ -154,7 +154,7 @@ export const RULE_PACKS: Record<string, RulePack> = {
         severity: "block",
         text: "No diagnosis, treatment, cure or disease-prevention claims for genetic reports, supplements or skin analysis. Reports are informational.",
         patterns: [
-          /\b(te[sş]hi[sş]|tedavi eder|iyile[sş]tirir|diagnos(e|is)|cures?|prevents? (cancer|disease|diabetes))\b/i,
+          /\b(te[sş]hi[sş] (koyar|eder|konur)|tedavi eder|iyile[sş]tirir|diagnoses (your|a|the)|diagnose (your|any)|cures? (your|the|any)|prevents? (cancer|disease|diabetes))\b/i,
         ],
       },
       {
@@ -193,7 +193,9 @@ export const RULE_PACKS: Record<string, RulePack> = {
         id: "E1",
         severity: "block",
         text: "Never claim diagnostic capability or clinical accuracy numbers that are not published.",
-        patterns: [/\b(diagnoses|diagnostic accuracy|\d{2}(\.\d)?\s?% accura(te|cy))\b/i],
+        patterns: [
+          /\b(diagnostic accuracy|\d{2}(\.\d)?\s?% accura(te|cy)|(detects|diagnoses|identifies|spots) (cancer|disease|tumou?rs?|conditions?)|AI (doctor|diagnosis))\b/i,
+        ],
       },
       { id: "E2", severity: "block", text: "No customer logos, names or quotes unless provided by the operator." },
       { id: "E3", severity: "warn", text: "GDPR / EU data residency claims must match the site wording." },
@@ -226,15 +228,36 @@ export interface PatternHit {
   message: string;
 }
 
+/**
+ * A match inside a disclaimer or negation ("does not diagnose", "0 diagnoses made", "teşhisin yerini tutmaz",
+ * "not a cure") is the brand saying the opposite, so it is not a hit. Looks 40 characters around the match.
+ */
+const NEG_BEFORE =
+  /(\bnot?\b|\bnever\b|\bwithout\b|\b0\b|\bzero\b|\bno\b|\bdoes ?n[o']t\b|\bwon'?t\b|\bdeğil\b|\basla\b|\byok\b|\bnie\b|\bne\b|\bnikdy\b)[^.!?\n]{0,40}$/i;
+const NEG_AFTER =
+  /^[^.!?\n]{0,40}(yerini tutmaz|değildir|koymaz|etmez|made\. by design|is not|are not|nie je|nenahrádza)/i;
+export function negated(text: string, index: number, length: number): boolean {
+  const before = text.slice(Math.max(0, index - 40), index);
+  const after = text.slice(index + length, index + length + 40);
+  return NEG_BEFORE.test(before) || NEG_AFTER.test(after);
+}
+
 /** Deterministic first pass over text. */
 export function patternHits(packId: string, text: string, opts: { paid?: boolean } = {}): PatternHit[] {
   const hits: PatternHit[] = [];
   for (const r of getRulePack(packId).rules) {
     if (r.paidOnly && !opts.paid) continue;
     for (const re of r.patterns ?? []) {
-      const m = text.match(re);
-      if (m) {
-        hits.push({ ruleId: r.id, severity: r.severity, excerpt: m[0], message: r.text });
+      const g = new RegExp(re.source, re.flags.includes("g") ? re.flags : `${re.flags}g`);
+      let found: string | null = null;
+      for (const m of text.matchAll(g)) {
+        if (!negated(text, m.index ?? 0, m[0].length)) {
+          found = m[0];
+          break;
+        }
+      }
+      if (found) {
+        hits.push({ ruleId: r.id, severity: r.severity, excerpt: found, message: r.text });
         break;
       }
     }

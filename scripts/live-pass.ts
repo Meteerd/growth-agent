@@ -11,7 +11,7 @@ if (!slug) {
   console.error("usage: pnpm live-pass <slug>");
   process.exit(1);
 }
-process.env.NEXUS_FORCE_LIVE = "apify,spiral,manus";
+process.env.NEXUS_FORCE_LIVE = process.argv.includes("--no-manus") ? "apify,spiral" : "apify,spiral,manus";
 process.env.RESEARCH_ITEMS_PER_SOURCE ??= "25";
 process.env.BLUEPRINTS_PER_RUN ??= "3";
 process.env.MANUS_WAIT_SEC ??= "720";

@@ -108,4 +108,22 @@ describe("brands API (temp SQLite)", () => {
     const evil = await getAsset(req("/api/assets/../.env"), ctx({ path: ["..", ".env"] }));
     expect(evil.status).toBe(404);
   });
+
+  it("builds a missing video poster on demand", async () => {
+    const os = await import("node:os");
+    const path = await import("node:path");
+    const fs = await import("node:fs");
+    const { makeSyntheticVideo } = await import("@/engine/media/synthetic");
+    const dir = path.join(os.tmpdir(), `nexus-poster-${Date.now()}`);
+    process.env.ASSETS_DIR = dir;
+    const v = await makeSyntheticVideo(path.join(dir, "vids"));
+    const rel = path.relative(dir, v.file).split(path.sep);
+    const res = await getAsset(
+      req(`/api/assets/${rel.join("/")}.poster.jpg`),
+      ctx({ path: [...rel.slice(0, -1), `${rel.at(-1)}.poster.jpg`] }),
+    );
+    expect(res.status).toBe(200);
+    expect(res.headers.get("content-type")).toBe("image/jpeg");
+    expect(fs.existsSync(`${v.file}.poster.jpg`)).toBe(true);
+  });
 });

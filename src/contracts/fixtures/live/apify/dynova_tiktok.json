@@ -1,0 +1,2966 @@
+{
+  "recordedAt": "2026-10-11T23:45:57.802Z",
+  "actor": "clockworks/tiktok-scraper",
+  "input": {
+    "hashtags": [
+      "genetiktest",
+      "takviye",
+      "ciltbakımı"
+    ],
+    "searchQueries": [
+      "hangi vitamini almalıyım",
+      "genetik test sonuçlarım"
+    ],
+    "resultsPerPage": 9,
+    "shouldDownloadVideos": false,
+    "shouldDownloadCovers": false
+  },
+  "items": [
+    {
+      "id": "7584033817585863952",
+      "text": "NIVEA Derma Control Clear Defend ile kollarını özgürce kaldır! Haydi sen de NIVEA'nı kap ve özgürce roll'la💙#ciltbakımı #nivea #işbirliği ",
+      "textLanguage": "tr",
+      "createTime": 1765795602,
+      "createTimeISO": "2025-12-15T10:46:42.000Z",
+      "isAd": true,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7250899012815242246",
+        "name": "agull2104",
+        "profileUrl": "https://www.tiktok.com/@agull2104",
+        "nickName": "🌙’şegül",
+        "verified": false,
+        "signature": "",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/0a8906a1369136a62a418500e2cfc89f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=c9c1460c&x-expires=1791932400&x-signature=qcD0oS2bfQAGduBJoRFk%2FU1nSnE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 2354,
+        "friends": 0,
+        "fans": 18000,
+        "heart": 307600,
+        "video": 270,
+        "digg": 20400,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/0a8906a1369136a62a418500e2cfc89f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=c9c1460c&x-expires=1791932400&x-signature=qcD0oS2bfQAGduBJoRFk%2FU1nSnE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8"
+      },
+      "musicMeta": {
+        "musicName": "Roll Baby",
+        "musicAuthor": "Melis Fis",
+        "musicOriginal": false,
+        "musicAlbum": "Roll Baby",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/o0eWVtAtLEA7LAeSFhAlEsEmfKaAZCDgJD9zTF~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=cc9a2661&x-expires=1791781200&x-signature=zrfb5q8h78dmYDcIl5WJ6QN3weA%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast8",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/o0eWVtAtLEA7LAeSFhAlEsEmfKaAZCDgJD9zTF~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=cc9a2661&x-expires=1791781200&x-signature=zrfb5q8h78dmYDcIl5WJ6QN3weA%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast8",
+        "musicId": "7576938235986528272"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@agull2104/video/7584033817585863952",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 15,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oQzRCQoMAoeF9waX8PkGGGAuhAfZifAg8PKDfQ~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=7o0%2FsTyhjvjU9upW2L08FDpYJeM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oQzRCQoMAoeF9waX8PkGGGAuhAfZifAg8PKDfQ~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=7o0%2FsTyhjvjU9upW2L08FDpYJeM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8"
+      },
+      "diggCount": 66,
+      "shareCount": 2,
+      "playCount": 2400,
+      "collectCount": 4,
+      "commentCount": 5,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "ciltbakımı",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "nivea",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "işbirliği",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "3466043948",
+          "name": "RollBaby",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1137904456",
+          "name": "#CiltBakımı",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "3045453643",
+          "name": "Distorted Film 🎞️",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "ciltbakımı",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "ciltbakımı",
+        "views": 13000000000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7583359973938318613",
+      "text": "#ciltbakımı \ncan you feel the saint (aroma)😍\nand what about the roll baby song 🎵,  how do you feel it,🎶🎤, I just want to recommend NIVEA PRODUCTS for you, because when you use NIVEA PRODUCTS, you feel proud of yourself 💪\nthe ROLL BABY ROLL BABY sound is spreading all over turkey 🇹🇷 now🔥, let's go!!!\n#rollbabyroll #isbirliği #nivea \n#sevgilikoltukAltim @NIVEA ",
+      "textLanguage": "en",
+      "createTime": 1765638593,
+      "createTimeISO": "2025-12-13T15:09:53.000Z",
+      "isAd": true,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7006554988471190533",
+        "name": "justicekwao997",
+        "profileUrl": "https://www.tiktok.com/@justicekwao997",
+        "nickName": "ℂ𝕒𝕡𝕥𝕒𝕚𝕟 ℝ𝕖𝕧𝕖𝕝𝕖.🖊💪",
+        "verified": false,
+        "signature": "Man of God.\njohn 14:1\nORIGINAL BOX 📦 BATTLE COMING SOON",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/8695311ce086367c8fa4c1d1eb88e6d8~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=747a2740&x-expires=1791932400&x-signature=jt8F95G460V39B6uLaraRVMcYGI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 3301,
+        "friends": 0,
+        "fans": 5516,
+        "heart": 62700,
+        "video": 773,
+        "digg": 111600,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/8695311ce086367c8fa4c1d1eb88e6d8~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=747a2740&x-expires=1791932400&x-signature=jt8F95G460V39B6uLaraRVMcYGI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8"
+      },
+      "musicMeta": {
+        "musicName": "Roll Baby",
+        "musicAuthor": "Melis Fis",
+        "musicOriginal": false,
+        "musicAlbum": "Roll Baby",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/o0eWVtAtLEA7LAeSFhAlEsEmfKaAZCDgJD9zTF~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=cc9a2661&x-expires=1791781200&x-signature=zrfb5q8h78dmYDcIl5WJ6QN3weA%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast8",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/o0eWVtAtLEA7LAeSFhAlEsEmfKaAZCDgJD9zTF~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=cc9a2661&x-expires=1791781200&x-signature=zrfb5q8h78dmYDcIl5WJ6QN3weA%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast8",
+        "musicId": "7576938235986528272"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@justicekwao997/video/7583359973938318613",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 20,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oIgRmPEZXssnd7U4ET5xAfgQDfAQFBCLaBmpXQ~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=ffRsAbyqSvIJZW%2F7ZJSWC0fjU2Y%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oIgRmPEZXssnd7U4ET5xAfgQDfAQFBCLaBmpXQ~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=ffRsAbyqSvIJZW%2F7ZJSWC0fjU2Y%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8"
+      },
+      "diggCount": 61,
+      "shareCount": 5,
+      "playCount": 1231,
+      "collectCount": 4,
+      "commentCount": 12,
+      "repostCount": 0,
+      "mentions": [
+        "@NIVEA"
+      ],
+      "detailedMentions": [
+        {
+          "id": "7018070951305446405",
+          "name": "nivea",
+          "nickName": "NIVEA",
+          "profileUrl": "https://www.tiktok.com/@7018070951305446405"
+        }
+      ],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "ciltbakımı",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "rollbabyroll",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "isbirliği",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "nivea",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "sevgilikoltukaltim",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "3466043948",
+          "name": "RollBaby",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1137904456",
+          "name": "#CiltBakımı",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "3045453643",
+          "name": "Distorted Film 🎞️",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "ciltbakımı",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "ciltbakımı",
+        "views": 13000000000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7583026511859502356",
+      "text": "#ciltbakımı \nguys! I catch some song and it's heating everywhere now🔥🤴\nbut ✋️,  let let me introduce, NIVEA products will be good for you💯😍, i only use NIVEA. and this song 🎵  will be on everyone's lip soon called ROLL BABY ROLL🎵, let's start with energy! roll baby roll👇\n🫴#rollbabyroll #isbirliği #nivea ",
+      "textLanguage": "en",
+      "createTime": 1765560954,
+      "createTimeISO": "2025-12-12T17:35:54.000Z",
+      "isAd": true,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7006554988471190533",
+        "name": "justicekwao997",
+        "profileUrl": "https://www.tiktok.com/@justicekwao997",
+        "nickName": "ℂ𝕒𝕡𝕥𝕒𝕚𝕟 ℝ𝕖𝕧𝕖𝕝𝕖.🖊💪",
+        "verified": false,
+        "signature": "Man of God.\njohn 14:1\nORIGINAL BOX 📦 BATTLE COMING SOON",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/8695311ce086367c8fa4c1d1eb88e6d8~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=747a2740&x-expires=1791932400&x-signature=jt8F95G460V39B6uLaraRVMcYGI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 3301,
+        "friends": 0,
+        "fans": 5516,
+        "heart": 62700,
+        "video": 773,
+        "digg": 111600,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/8695311ce086367c8fa4c1d1eb88e6d8~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=747a2740&x-expires=1791932400&x-signature=jt8F95G460V39B6uLaraRVMcYGI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8"
+      },
+      "musicMeta": {
+        "musicName": "Roll Baby",
+        "musicAuthor": "Melis Fis",
+        "musicOriginal": false,
+        "musicAlbum": "Roll Baby",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/o0eWVtAtLEA7LAeSFhAlEsEmfKaAZCDgJD9zTF~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=cc9a2661&x-expires=1791781200&x-signature=zrfb5q8h78dmYDcIl5WJ6QN3weA%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast8",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/o0eWVtAtLEA7LAeSFhAlEsEmfKaAZCDgJD9zTF~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=cc9a2661&x-expires=1791781200&x-signature=zrfb5q8h78dmYDcIl5WJ6QN3weA%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast8",
+        "musicId": "7576938235986528272"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@justicekwao997/video/7583026511859502356",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 15,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/o0UDkNy6EhfBQPFgpC4AYpFf2H4RBOEP4IB3wb~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=rukPGLS5roPE%2BJ76E%2B22m8EnbJY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/o0UDkNy6EhfBQPFgpC4AYpFf2H4RBOEP4IB3wb~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=rukPGLS5roPE%2BJ76E%2B22m8EnbJY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8"
+      },
+      "diggCount": 57,
+      "shareCount": 2,
+      "playCount": 1272,
+      "collectCount": 4,
+      "commentCount": 16,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "ciltbakımı",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "rollbabyroll",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "isbirliği",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "nivea",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "3466043948",
+          "name": "RollBaby",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1137904456",
+          "name": "#CiltBakımı",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "3045453643",
+          "name": "Distorted Film 🎞️",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "ciltbakımı",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "ciltbakımı",
+        "views": 13000000000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7583431436632329492",
+      "text": "#ciltbakımı \nthe song 🎵 is still rolling in the air and NIVEA DERMA is the boss of this song,ROLL BABY😄 \nthe good message about roll baby is that, the fragrance spread everywhere while you can dance everywhere you wish 🤞 if there is NIVEA beside you, my bro,😊 you are comfortable.\nit's your time to grab some NIVEA for this year, expecially ROLL BABY ROLL 😊\nroll baby roll, I smell very good 👍 #niveadermacontrol #rollbabyroll #ciltbakimi #niveaturkey @NIVEA @Nivea Türkiye ",
+      "textLanguage": "en",
+      "createTime": 1765655241,
+      "createTimeISO": "2025-12-13T19:47:21.000Z",
+      "isAd": true,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7006554988471190533",
+        "name": "justicekwao997",
+        "profileUrl": "https://www.tiktok.com/@justicekwao997",
+        "nickName": "ℂ𝕒𝕡𝕥𝕒𝕚𝕟 ℝ𝕖𝕧𝕖𝕝𝕖.🖊💪",
+        "verified": false,
+        "signature": "Man of God.\njohn 14:1\nORIGINAL BOX 📦 BATTLE COMING SOON",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/8695311ce086367c8fa4c1d1eb88e6d8~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=747a2740&x-expires=1791932400&x-signature=jt8F95G460V39B6uLaraRVMcYGI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 3301,
+        "friends": 0,
+        "fans": 5516,
+        "heart": 62700,
+        "video": 773,
+        "digg": 111600,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/8695311ce086367c8fa4c1d1eb88e6d8~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=747a2740&x-expires=1791932400&x-signature=jt8F95G460V39B6uLaraRVMcYGI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8"
+      },
+      "musicMeta": {
+        "musicName": "Roll Baby",
+        "musicAuthor": "Melis Fis",
+        "musicOriginal": false,
+        "musicAlbum": "Roll Baby",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/o0eWVtAtLEA7LAeSFhAlEsEmfKaAZCDgJD9zTF~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=cc9a2661&x-expires=1791781200&x-signature=zrfb5q8h78dmYDcIl5WJ6QN3weA%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast8",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/o0eWVtAtLEA7LAeSFhAlEsEmfKaAZCDgJD9zTF~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=cc9a2661&x-expires=1791781200&x-signature=zrfb5q8h78dmYDcIl5WJ6QN3weA%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast8",
+        "musicId": "7576938235986528272"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@justicekwao997/video/7583431436632329492",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 20,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oMEs9AyMuqAg2iI0InifAAwAdwphFVECIoB3CX~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=2IlcjEu0ZS8tmNti3GL4ypZdAkE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oMEs9AyMuqAg2iI0InifAAwAdwphFVECIoB3CX~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=2IlcjEu0ZS8tmNti3GL4ypZdAkE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8"
+      },
+      "diggCount": 56,
+      "shareCount": 0,
+      "playCount": 859,
+      "collectCount": 4,
+      "commentCount": 16,
+      "repostCount": 0,
+      "mentions": [
+        "@NIVEA",
+        "@Nivea Türkiye"
+      ],
+      "detailedMentions": [
+        {
+          "id": "7018070951305446405",
+          "name": "nivea",
+          "nickName": "NIVEA",
+          "profileUrl": "https://www.tiktok.com/@7018070951305446405"
+        },
+        {
+          "id": "6897944572837282817",
+          "name": "niveaturkiye",
+          "nickName": "Nivea Türkiye",
+          "profileUrl": "https://www.tiktok.com/@6897944572837282817"
+        }
+      ],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "ciltbakımı",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "niveadermacontrol",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "rollbabyroll",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "ciltbakimi",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "niveaturkey",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "3466043948",
+          "name": "RollBaby",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1137904456",
+          "name": "#CiltBakımı",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "3045453643",
+          "name": "Distorted Film 🎞️",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "ciltbakımı",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "ciltbakımı",
+        "views": 13000000000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7601594190576897300",
+      "text": "#ciltbakımı ",
+      "textLanguage": "un",
+      "createTime": 1769884079,
+      "createTimeISO": "2026-01-31T18:27:59.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7247434739693978630",
+        "name": "user7537259027916",
+        "profileUrl": "https://www.tiktok.com/@user7537259027916",
+        "nickName": "user7537259027916",
+        "verified": false,
+        "signature": "",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/b7583605b5bcda25d469b0df4a6e5d36~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=6a5d5ea7&x-expires=1791932400&x-signature=DvkEzVw6wv4hQHtmI0plC1XggQ8%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 2168,
+        "friends": 0,
+        "fans": 2188,
+        "heart": 99500,
+        "video": 2609,
+        "digg": 483400,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/b7583605b5bcda25d469b0df4a6e5d36~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=6a5d5ea7&x-expires=1791932400&x-signature=DvkEzVw6wv4hQHtmI0plC1XggQ8%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8"
+      },
+      "musicMeta": {
+        "musicName": "Roll Baby",
+        "musicAuthor": "Melis Fis",
+        "musicOriginal": false,
+        "musicAlbum": "Roll Baby",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/o0eWVtAtLEA7LAeSFhAlEsEmfKaAZCDgJD9zTF~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=cc9a2661&x-expires=1791781200&x-signature=zrfb5q8h78dmYDcIl5WJ6QN3weA%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast8",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/o0eWVtAtLEA7LAeSFhAlEsEmfKaAZCDgJD9zTF~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=cc9a2661&x-expires=1791781200&x-signature=zrfb5q8h78dmYDcIl5WJ6QN3weA%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast8",
+        "musicId": "7576938235986528272"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@user7537259027916/video/7601594190576897300",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 20,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/osTfoQvQD3SbkCScAEfbADDzXF1WSSDI0scjce~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=f6H7xtdnLRh7DDkFhVHiEmmH6Yw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/osTfoQvQD3SbkCScAEfbADDzXF1WSSDI0scjce~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=f6H7xtdnLRh7DDkFhVHiEmmH6Yw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8"
+      },
+      "diggCount": 53,
+      "shareCount": 1,
+      "playCount": 371,
+      "collectCount": 4,
+      "commentCount": 4,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "ciltbakımı",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "3466043948",
+          "name": "RollBaby",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "1137904456",
+          "name": "#CiltBakımı",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "3045453643",
+          "name": "Distorted Film 🎞️",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "ciltbakımı",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "ciltbakımı",
+        "views": 13000000000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7665764502129904914",
+      "text": "(DNA sonuçlarının nasıl yorumlanacağını biliyorsanız ilk iki sayfayı es geçebilirsiniz)\n\n•\n•\n•\n•\n#alevi #kızılbaş #genetik #dna #türk ",
+      "textLanguage": "tr",
+      "createTime": 1784824890,
+      "createTimeISO": "2026-07-23T16:41:30.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7322153745373381637",
+        "name": "kizilbashturcoman",
+        "profileUrl": "https://www.tiktok.com/@kizilbashturcoman",
+        "nickName": "Kizilbashރ",
+        "verified": false,
+        "signature": "Qizilbash Turkmen🇹🇷\nGoal->5.000",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/c9f703d871ea7e26518caec1ca6b7949~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=6f494fe1&x-expires=1791932400&x-signature=8kwX8WDjg5ykXKe3%2BwIbcnuqo4k%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 205,
+        "friends": 0,
+        "fans": 2570,
+        "heart": 66300,
+        "video": 93,
+        "digg": 20100,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/c9f703d871ea7e26518caec1ca6b7949~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=6f494fe1&x-expires=1791932400&x-signature=8kwX8WDjg5ykXKe3%2BwIbcnuqo4k%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "orijinal ses",
+        "musicAuthor": "☆~JJ~☆",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/alisg/tos-alisg-v-27dcd7/os8mQQzP0JTWDAZeLoFkQJ7fAAWmGoJvffMAAQ/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThasAOGXq8Zmo&mime_type=audio_mpeg&rc=amx3eGs5cnRxOzMzODU8NEBpamx3eGs5cnRxOzMzODU8NEByc20xMmRjcHNhLS1kMS1zYSNyc20xMmRjcHNhLS1kMS1zcw%3D%3D&expire=1791783965&l=202610112345512D3397E5184B0BBBC934&ply_type=3&policy=3&signature=08ff141565ba194835584b1c993d144e&tk=0&btag=e00070000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/fdd17358b719248cb90fdd8dd0351f11~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=27a27608&x-expires=1791932400&x-signature=0q5W1n%2BhB4XipDA%2FP%2FBZgSPi33I%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/fdd17358b719248cb90fdd8dd0351f11~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=27a27608&x-expires=1791932400&x-signature=0q5W1n%2BhB4XipDA%2FP%2FBZgSPi33I%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7655976880391408402"
+      },
+      "locationMeta": {
+        "address": "Sultançiftliği, Turgut Özal Cd. No:90 D:C, 34788 Çekmeköy/İstanbul, Türkiye",
+        "city": "Istanbul",
+        "cityCode": "745042",
+        "countryCode": "298795",
+        "locationName": "Keşfet Fast Food Store",
+        "locationId": "22535796494627879"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@kizilbashturcoman/video/7665764502129904914",
+      "videoMeta": {
+        "height": 0,
+        "width": 0,
+        "duration": 0,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/01cdc26831714c4bb45e7852dc95c157~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=4wERYDTJJ%2FNKX06q4LDUm7DjVhE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/01cdc26831714c4bb45e7852dc95c157~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=4wERYDTJJ%2FNKX06q4LDUm7DjVhE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+      },
+      "diggCount": 330,
+      "shareCount": 52,
+      "playCount": 13800,
+      "collectCount": 119,
+      "commentCount": 133,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "550849",
+          "name": "alevi",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1602629528929285",
+          "name": "kızılbaş",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "2174697",
+          "name": "genetik",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "5578",
+          "name": "dna",
+          "title": "Der Apfel fällt nicht weit vom Stamm – oder doch? Teile deine #DNA",
+          "cover": null
+        },
+        {
+          "id": "82834479",
+          "name": "türk",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": true,
+      "slideshowImageLinks": [
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/01cdc26831714c4bb45e7852dc95c157~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=4wERYDTJJ%2FNKX06q4LDUm7DjVhE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/01cdc26831714c4bb45e7852dc95c157~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=4wERYDTJJ%2FNKX06q4LDUm7DjVhE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/504944ddef324d1bb8f407ee20f041a4~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=cKNw3RRq9cyzZquTYe176r5NEcc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/504944ddef324d1bb8f407ee20f041a4~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=cKNw3RRq9cyzZquTYe176r5NEcc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/9e42cbfd8b0b414baf5bc54e9085e3d8~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=2E54DjdChGkEM3eTnAjbJwh7Iyk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/9e42cbfd8b0b414baf5bc54e9085e3d8~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=2E54DjdChGkEM3eTnAjbJwh7Iyk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/0f3e7984305b4b2b828f870aea3969f4~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=bYr7xmZQSPVLvEhhJWs9s6CCtic%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/0f3e7984305b4b2b828f870aea3969f4~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=bYr7xmZQSPVLvEhhJWs9s6CCtic%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/2006884e1b5d4f8c8c0d880d61000cd6~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=%2B5UKduK33lz86ONZI4WCpPvnZYc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/2006884e1b5d4f8c8c0d880d61000cd6~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=%2B5UKduK33lz86ONZI4WCpPvnZYc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/9e82317916364d3fb4f86a21592f9529~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=m%2FnWK1gg8%2BNZyMTrgw2%2FcIoqqYk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/9e82317916364d3fb4f86a21592f9529~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=m%2FnWK1gg8%2BNZyMTrgw2%2FcIoqqYk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/28b5ad3660b74f04b3d2e1ff1f939686~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=WMEuHMAQL1nJuDMcnqzxkeTGDJ4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/28b5ad3660b74f04b3d2e1ff1f939686~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=WMEuHMAQL1nJuDMcnqzxkeTGDJ4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/30f3f76e03b14533bd881bfbaaff0c80~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=vp7SMajfVlJXivp0aY6u88kZDAE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/30f3f76e03b14533bd881bfbaaff0c80~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=vp7SMajfVlJXivp0aY6u88kZDAE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/eff1b9f7cbd54e69a58db3885e677a32~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=7r8ifXS1DA7c9XR4D4XODYaPFww%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/eff1b9f7cbd54e69a58db3885e677a32~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=7r8ifXS1DA7c9XR4D4XODYaPFww%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/169baee1989643219013719139ed5198~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=X86uTIu9Qr9DtVO92428cTN0cwo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/169baee1989643219013719139ed5198~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=X86uTIu9Qr9DtVO92428cTN0cwo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/4e7ac923998845f59f6003c5ce87436b~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=44q%2FuuGeCMlOxylQDeTk5MXlrYA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/4e7ac923998845f59f6003c5ce87436b~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=44q%2FuuGeCMlOxylQDeTk5MXlrYA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        }
+      ],
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "genetik test sonuçlarım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7251191997871033627",
+      "text": "Hiç kimse %100 tek bir ırktan gelmiyor. Siz kökeninizi merak ediyor musunuz? #dnatesti #kökenim #keşfetteyizzz #kürttürk ",
+      "textLanguage": "tr",
+      "createTime": 1688299710,
+      "createTimeISO": "2023-07-02T12:08:30.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "6983950416661152774",
+        "name": "rukiyeguell",
+        "profileUrl": "https://www.tiktok.com/@rukiyeguell",
+        "nickName": "𝕽ukiye ✩",
+        "verified": false,
+        "signature": "focused capricorn & charming libra ʕ•ᴥ•ʔ\ngermany, hessen",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-avt-0068-euttp/a9c42fe0edc629258756a1c2fcd6b9e1~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=f6d89cf6&x-expires=1791932400&x-signature=TljxN7bj4Cmq29oI75ZwAeqqSkE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 74,
+        "friends": 0,
+        "fans": 1303,
+        "heart": 24100,
+        "video": 27,
+        "digg": 39200,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-avt-0068-euttp/a9c42fe0edc629258756a1c2fcd6b9e1~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=f6d89cf6&x-expires=1791932400&x-signature=TljxN7bj4Cmq29oI75ZwAeqqSkE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "оригинальный звук",
+        "musicAuthor": "ayazkyz 🫴🏻💕",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast5/tos-useast5-v-27dcd7c799-tx/33d2a256a78743b3950b7a8b203e7504/?a=1988&bti=ODszNWYuMDE6&&bt=126&ft=GcAInInz7ThasAOGXq8Zmo&mime_type=audio_mpeg&rc=MzV2NzY6ZjszazMzODU8NEBpMzV2NzY6ZjszazMzODU8NEBsNC9qcjQwX3FgLS1kMS1zYSNsNC9qcjQwX3FgLS1kMS1zcw%3D%3D&expire=1791783960&l=202610112345512D3397E5184B0BBBC934&ply_type=3&policy=3&signature=86fad0cec7ecd81b3732d164da4e5643&tk=0&btag=e00070000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/4a1415dfc5a3be9de011740505f4218c~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e8bebef2&x-expires=1791932400&x-signature=oRBqUZqr%2B7FRw265mADgAsKgp%2FE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/4a1415dfc5a3be9de011740505f4218c~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e8bebef2&x-expires=1791932400&x-signature=oRBqUZqr%2B7FRw265mADgAsKgp%2FE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7240105527362603777"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@rukiyeguell/video/7251191997871033627",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 45,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-p-0037-euttp/ochM5MOCIIcALn2NN6ECpazynnbfhhZLAoJRaU~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=9VM1wBlh%2B1lUQSyp%2FFlUs4afvqw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-p-0037-euttp/ochM5MOCIIcALn2NN6ECpazynnbfhhZLAoJRaU~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=9VM1wBlh%2B1lUQSyp%2FFlUs4afvqw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 2057,
+      "shareCount": 92,
+      "playCount": 308000,
+      "collectCount": 650,
+      "commentCount": 227,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "1626115503050757",
+          "name": "dnatesti",
+          "title": "100% DNA testi zamanı! DNA testi yapan herkes bundan sonra kardeş!💪",
+          "cover": "https://p19-common-sign.tiktokcdn-us.com/musically-maliva-obj/1630787099678726.JPEG~tplv-tiktokx-origin.image?dr=9627&x-expires=1791781200&x-signature=O80klmmX1bu1FPARH4nhoCtcS8I%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+        },
+        {
+          "id": "1665996545508357",
+          "name": "kökenim",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1629408715361285",
+          "name": "keşfetteyizzz",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1605066535084038",
+          "name": "kürttürk",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "name": "amelia lite",
+          "ID": "300818308109",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Green Screen",
+          "ID": "308663",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Green Screen Video",
+          "ID": "462253",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Crystal",
+          "ID": "192592510",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Green Screen",
+          "ID": "907166",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "genetik test sonuçlarım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7580740815522139422",
+      "text": "MyHeritage ile yaptığım test sonucum sonunda geldi!!! 🙌🏻🥳🙈 #myheritage #dnatest #keşfet #yurtdışı #fypシ ",
+      "textLanguage": "tr",
+      "createTime": 1765028805,
+      "createTimeISO": "2025-12-06T13:46:45.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7269069690856997934",
+        "name": "itstugcedrms",
+        "profileUrl": "https://www.tiktok.com/@itstugcedrms",
+        "nickName": "tugcedurmus",
+        "verified": false,
+        "signature": "Asel Tugce Durmus\n\nYurtdışında Yaşam | Eğitim | Seyahat 🇺🇸\nBased in New York 🗽 \nIG: @itstugcedrms",
+        "bioLink": null,
+        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/6ed82c01a208f8b26b16b7235abeb8ed~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=f3f698c3&x-expires=1791932400&x-signature=qkPbmR1mIxZxrCrhN%2F7rNoVyXDQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 62,
+        "friends": 0,
+        "fans": 1502,
+        "heart": 43800,
+        "video": 24,
+        "digg": 423,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/6ed82c01a208f8b26b16b7235abeb8ed~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=f3f698c3&x-expires=1791932400&x-signature=qkPbmR1mIxZxrCrhN%2F7rNoVyXDQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "original sound",
+        "musicAuthor": "tugcedurmus",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast8/tos-useast8-v-27dcd7-tx2/oYANVEIEDtNPDBMVAEf8CjAAzFeTApEUIgZJC0/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThasAOGXq8Zmo&mime_type=audio_mpeg&rc=am9xN2o5cmw2NzMzaTU8NEBpam9xN2o5cmw2NzMzaTU8NEBgM3FjMmQ0NG5hLS1kMTJzYSNgM3FjMmQ0NG5hLS1kMTJzcw%3D%3D&expire=1791784031&l=202610112345512D3397E5184B0BBBC934&ply_type=3&policy=3&signature=efbcacc88650fb6a620085df98a3e761&tk=0&btag=e00050000",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/6ed82c01a208f8b26b16b7235abeb8ed~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=f3f698c3&x-expires=1791932400&x-signature=qkPbmR1mIxZxrCrhN%2F7rNoVyXDQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/6ed82c01a208f8b26b16b7235abeb8ed~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=f3f698c3&x-expires=1791932400&x-signature=qkPbmR1mIxZxrCrhN%2F7rNoVyXDQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7580740801383189279"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@itstugcedrms/video/7580740815522139422",
+      "videoMeta": {
+        "height": 1280,
+        "width": 720,
+        "duration": 79,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oUdojGIYSQqiI0I4ZCaLb5HIQ5GICCAa7Aef5f~tplv-tiktokx-dmt-logom:tos-useast8-i-0068-tx2/oAB6AMHmIiAAUChAE0iB28fWIAN0AnPIiK0hdI.image?dr=9634&x-expires=1791932400&x-signature=p%2FBFlXrCM0aBnQyxT5rCrQIK9os%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "720p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/f3854a824df416b2a6d4b34b0596a426/6acec2ff/video/tos/useast8/tos-useast8-v-0068-tx2/dfd12d159b1b4dc18b5a6b836fa3dad9/?a=1988&bti=ODszNWYuMDE6&&bt=6821&ft=aEKq_qT0mIoPD12qGkJI3wU4b4AbMeF~O5&mime_type=video_mp4&rc=M2hsZXg5cnk2NzMzaTczNEBpM2hsZXg5cnk2NzMzaTczNEBmbnMtMmRjLm5hLS1kMTJzYSNmbnMtMmRjLm5hLS1kMTJzcw%3D%3D&l=202610112345512D3397E5184B0BBBC934&btag=e00050000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/f3854a824df416b2a6d4b34b0596a426/6acec2ff/video/tos/useast8/tos-useast8-v-0068-tx2/dfd12d159b1b4dc18b5a6b836fa3dad9/?a=1988&bti=ODszNWYuMDE6&&bt=6821&ft=aEKq_qT0mIoPD12qGkJI3wU4b4AbMeF~O5&mime_type=video_mp4&rc=M2hsZXg5cnk2NzMzaTczNEBpM2hsZXg5cnk2NzMzaTczNEBmbnMtMmRjLm5hLS1kMTJzYSNmbnMtMmRjLm5hLS1kMTJzcw%3D%3D&l=202610112345512D3397E5184B0BBBC934&btag=e00050000"
+          },
+          {
+            "language": "tur-TR",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/4d855b21227dff3dfa4d7919140f6526/6acec2ff/video/tos/useast8/tos-useast8-v-0068-tx2/03b6add371ea4a788cdad30d5fa30cd4/?a=1988&bti=ODszNWYuMDE6&&bt=6821&ft=aEKq_qT0mIoPD12qGkJI3wU4b4AbMeF~O5&mime_type=video_mp4&rc=M2hsZXg5cnk2NzMzaTczNEBpM2hsZXg5cnk2NzMzaTczNEBmbnMtMmRjLm5hLS1kMTJzYSNmbnMtMmRjLm5hLS1kMTJzcw%3D%3D&l=202610112345512D3397E5184B0BBBC934&btag=e00050000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/4d855b21227dff3dfa4d7919140f6526/6acec2ff/video/tos/useast8/tos-useast8-v-0068-tx2/03b6add371ea4a788cdad30d5fa30cd4/?a=1988&bti=ODszNWYuMDE6&&bt=6821&ft=aEKq_qT0mIoPD12qGkJI3wU4b4AbMeF~O5&mime_type=video_mp4&rc=M2hsZXg5cnk2NzMzaTczNEBpM2hsZXg5cnk2NzMzaTczNEBmbnMtMmRjLm5hLS1kMTJzYSNmbnMtMmRjLm5hLS1kMTJzcw%3D%3D&l=202610112345512D3397E5184B0BBBC934&btag=e00050000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oUdojGIYSQqiI0I4ZCaLb5HIQ5GICCAa7Aef5f~tplv-tiktokx-dmt-logom:tos-useast8-i-0068-tx2/oAB6AMHmIiAAUChAE0iB28fWIAN0AnPIiK0hdI.image?dr=9634&x-expires=1791932400&x-signature=p%2FBFlXrCM0aBnQyxT5rCrQIK9os%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 227,
+      "shareCount": 32,
+      "playCount": 15100,
+      "collectCount": 44,
+      "commentCount": 19,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "441071",
+          "name": "myheritage",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "3109051",
+          "name": "dnatest",
+          "title": "Just took a DNA test, and it turns out we're 100% excited to see where you come from. Show us the results of your #DNATest.",
+          "cover": "https://p19-common-sign.tiktokcdn-us.com/musically-maliva-obj/1629908689778694.PNG~tplv-tiktokx-origin.image?dr=9627&x-expires=1791781200&x-signature=dNBpsJ0DAFzKR3LLOkDd9nvRUyw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+        },
+        {
+          "id": "86182714",
+          "name": "keşfet",
+          "title": "https://m.tiktok.com/magic/eco/runtime/release/60c316c395fb69030c86725a?appType=muse?magic_source=CM",
+          "cover": "https://p19-common-sign.tiktokcdn-us.com/musically-maliva-obj/b1d383a7839da95e0981ad6bdb50f2d3~tplv-tiktokx-origin.image?dr=9627&x-expires=1791781200&x-signature=%2FOCFBgAQGhTgPRoj91WpbIq%2F%2BkA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+        },
+        {
+          "id": "84971781",
+          "name": "yurtdışı",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1637342470396934",
+          "name": "fypシ",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "name": "amelia lite",
+          "ID": "300818308109",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Green Screen",
+          "ID": "308663",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Green Screen Video",
+          "ID": "462253",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Crystal",
+          "ID": "192592510",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Green Screen",
+          "ID": "907166",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "genetik test sonuçlarım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7480153175081618696",
+      "text": "yıllarca merak ediyordum nereliyim atalarım nerden diye öğrenmiş oldum #dna #myharitage ",
+      "textLanguage": "tr",
+      "createTime": 1741608883,
+      "createTimeISO": "2025-03-10T12:14:43.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "6786366828521899013",
+        "name": "mutlusungunes",
+        "profileUrl": "https://www.tiktok.com/@mutlusungunes",
+        "nickName": "Güneş",
+        "verified": false,
+        "signature": "öyle yani",
+        "bioLink": null,
+        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/744c580184f4f683175a1f15650d0822~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=1fde811e&x-expires=1791932400&x-signature=aGBXnCKMflkCJw3LmQ8BTS5%2FeuY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 115,
+        "friends": 0,
+        "fans": 471,
+        "heart": 22400,
+        "video": 287,
+        "digg": 90400,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/744c580184f4f683175a1f15650d0822~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=1fde811e&x-expires=1791932400&x-signature=aGBXnCKMflkCJw3LmQ8BTS5%2FeuY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "orijinal ses",
+        "musicAuthor": "Güneş",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast5/tos-useast5-v-27dcd7c799-tx/oQgDFCthaolAuGfdIAAeEfkogrnhPIEXXDUTAq/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThasAOGXq8Zmo&mime_type=audio_mpeg&rc=M3F0ZGw5cnRneTMzODU8NEBpM3F0ZGw5cnRneTMzODU8NEA2aHJsMmQ0YzRgLS1kMS1zYSM2aHJsMmQ0YzRgLS1kMS1zcw%3D%3D&expire=1791784107&l=202610112345512D3397E5184B0BBBC934&ply_type=3&policy=3&signature=758fd6f01b727a65924d380eb7ec2eae&tk=0&btag=e00048000",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/744c580184f4f683175a1f15650d0822~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=1fde811e&x-expires=1791932400&x-signature=aGBXnCKMflkCJw3LmQ8BTS5%2FeuY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/744c580184f4f683175a1f15650d0822~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=1fde811e&x-expires=1791932400&x-signature=aGBXnCKMflkCJw3LmQ8BTS5%2FeuY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7480153419635788545"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@mutlusungunes/video/7480153175081618696",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 155,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/ogDjDEAJEiPAfXI7IEOAzoFA0nav1Dfa2PAHex~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=8hzT%2BR1xnIZ8ZQgyEE6QuH8pxmg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/c3b13d30ce61283fa1756b25f94ad5a0/6acec34b/video/tos/alisg/tos-alisg-pv-0037/383d693389e247b3b36cd750283908bd/?a=1988&bti=ODszNWYuMDE6&&bt=3493&ft=aEKq_qT0mIoPD12qGkJI3wU4b4AbMeF~O5&mime_type=video_mp4&rc=M2d0OXQ5cjtneTMzODczNEBpM2d0OXQ5cjtneTMzODczNEBxbW1oMmRzXzRgLS1kMTFzYSNxbW1oMmRzXzRgLS1kMTFzcw%3D%3D&l=202610112345512D3397E5184B0BBBC934&btag=e00048000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/c3b13d30ce61283fa1756b25f94ad5a0/6acec34b/video/tos/alisg/tos-alisg-pv-0037/383d693389e247b3b36cd750283908bd/?a=1988&bti=ODszNWYuMDE6&&bt=3493&ft=aEKq_qT0mIoPD12qGkJI3wU4b4AbMeF~O5&mime_type=video_mp4&rc=M2d0OXQ5cjtneTMzODczNEBpM2d0OXQ5cjtneTMzODczNEBxbW1oMmRzXzRgLS1kMTFzYSNxbW1oMmRzXzRgLS1kMTFzcw%3D%3D&l=202610112345512D3397E5184B0BBBC934&btag=e00048000"
+          },
+          {
+            "language": "tur-TR",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/4030d4e5c456d0c8ab573067a5429f04/6acec34b/video/tos/alisg/tos-alisg-pv-0037/6f6b2fb68e794da1be951638dc46971a/?a=1988&bti=ODszNWYuMDE6&&bt=3493&ft=aEKq_qT0mIoPD12qGkJI3wU4b4AbMeF~O5&mime_type=video_mp4&rc=M2d0OXQ5cjtneTMzODczNEBpM2d0OXQ5cjtneTMzODczNEBxbW1oMmRzXzRgLS1kMTFzYSNxbW1oMmRzXzRgLS1kMTFzcw%3D%3D&l=202610112345512D3397E5184B0BBBC934&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/4030d4e5c456d0c8ab573067a5429f04/6acec34b/video/tos/alisg/tos-alisg-pv-0037/6f6b2fb68e794da1be951638dc46971a/?a=1988&bti=ODszNWYuMDE6&&bt=3493&ft=aEKq_qT0mIoPD12qGkJI3wU4b4AbMeF~O5&mime_type=video_mp4&rc=M2d0OXQ5cjtneTMzODczNEBpM2d0OXQ5cjtneTMzODczNEBxbW1oMmRzXzRgLS1kMTFzYSNxbW1oMmRzXzRgLS1kMTFzcw%3D%3D&l=202610112345512D3397E5184B0BBBC934&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/ogDjDEAJEiPAfXI7IEOAzoFA0nav1Dfa2PAHex~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=8hzT%2BR1xnIZ8ZQgyEE6QuH8pxmg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 5280,
+      "shareCount": 401,
+      "playCount": 248400,
+      "collectCount": 1364,
+      "commentCount": 541,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "5578",
+          "name": "dna",
+          "title": "Der Apfel fällt nicht weit vom Stamm – oder doch? Teile deine #DNA",
+          "cover": null
+        },
+        {
+          "id": "1638739635623942",
+          "name": "myharitage",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "name": "Green Screen",
+          "ID": "907166",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "amelia lite",
+          "ID": "300818308109",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Green Screen",
+          "ID": "308663",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Green Screen Video",
+          "ID": "462253",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Crystal",
+          "ID": "192592510",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "genetik test sonuçlarım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7535886738342874375",
+      "text": "🧬 Ben kimim? DNA testim anlatsın!\nGeçmişime bir yolculuk yaptım ve sonuçlar beni büyüledi…\nKöklerimde şu kültürler var:\n🇬🇪 Gürcü (%30,1)\n🇰🇿 Orta Asyalı (%24,0)\n🇬🇷 Yunan & Arnavut (%26,3)\n🇹🇷 Türk (%6,1)\n🇮🇷 Farsî & Kürdî (%3,2)\n🇮🇹 Güney İtalyalı (%6,9)\n🇷🇸 Balkan (%2,4)\n🇵🇱 Doğu Avrupalı (%1,0)\n🌍 Her biri beni ben yapan parçalar.\n👇 Siz de kendi kökenlerinizi merak ediyor musunuz?\n\n #D#DNAjourneyA#AncestryRevealM#MyRootsK#KökenlerimD#DNAhikayem",
+      "textLanguage": "tr",
+      "createTime": 1754585363,
+      "createTimeISO": "2025-08-07T16:49:23.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "6817853462223979525",
+        "name": "cagla_4535",
+        "profileUrl": "https://www.tiktok.com/@cagla_4535",
+        "nickName": "cagla_4535",
+        "verified": false,
+        "signature": "Instagram da daha aktifim gelin 🌸\n💌 caglanurataay@icloud.com",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/cc6386355627571b0205489cd9c849cc~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=04a1e19d&x-expires=1791932400&x-signature=AHY3Q3hAzzxNmta8DW%2B%2Bn%2FHIdZo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 227,
+        "friends": 0,
+        "fans": 100900,
+        "heart": 3800000,
+        "video": 1700,
+        "digg": 8342,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/cc6386355627571b0205489cd9c849cc~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=04a1e19d&x-expires=1791932400&x-signature=AHY3Q3hAzzxNmta8DW%2B%2Bn%2FHIdZo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Deslocado",
+        "musicAuthor": "NAPA",
+        "musicOriginal": false,
+        "musicAlbum": "Deslocado",
+        "playUrl": "https://sf19.tiktokcdn-us.com/obj/tos-alisg-ve-2774/o4Ws25iHs1Wc4OoGWMI1RtwIBfBhiAOluAkzyM",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/ocCARFCRl0WVDq1AZfXBaHtfgQEFBDAEanjHEp~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/ocCARFCRl0WVDq1AZfXBaHtfgQEFBDAEanjHEp~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "7478793515725768705"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@cagla_4535/video/7535886738342874375",
+      "videoMeta": {
+        "height": 0,
+        "width": 0,
+        "duration": 0,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/918a7e7a45f9490fb82691e59bea3e0e~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=%2BdsTfPilhPglJno%2BKddTrPzz4Gc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/918a7e7a45f9490fb82691e59bea3e0e~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=%2BdsTfPilhPglJno%2BKddTrPzz4Gc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+      },
+      "diggCount": 164,
+      "shareCount": 1,
+      "playCount": 27600,
+      "collectCount": 14,
+      "commentCount": 3,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "1650134199705605",
+          "name": "dnajourney",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1677654782061570",
+          "name": "ancestryreveal",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "202654",
+          "name": "myroots",
+          "title": "This Black History Month, we want you to celebrate your roots and your unique identities with TikTok. What does #myroots mean to you? Share a family favourite recipe, show off your hair care routine, teach us about your culture...",
+          "cover": "https://p16-common-sign.tiktokcdn-us.com/musically-maliva-obj/a9a040b9227b6055b71de9b7bb8ab06e~tplv-tiktokx-origin.image?dr=9627&x-expires=1791781200&x-signature=lnEsdPKXQTUEloXvYbh6XWZVYzQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+        },
+        {
+          "id": "7344135306133962758",
+          "name": "kökenlerim",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "7535886641865424904",
+          "name": "dnahikayem",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": true,
+      "slideshowImageLinks": [
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/918a7e7a45f9490fb82691e59bea3e0e~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=%2BdsTfPilhPglJno%2BKddTrPzz4Gc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/918a7e7a45f9490fb82691e59bea3e0e~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=%2BdsTfPilhPglJno%2BKddTrPzz4Gc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/8be892a957f547d3a96ff4549185211b~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=nkJAmIZceEEP3P4CUDyea%2BzP%2BdE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/8be892a957f547d3a96ff4549185211b~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=nkJAmIZceEEP3P4CUDyea%2BzP%2BdE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/acfe42356aa5401393b3888284e3691b~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=fHA44Leiq9nFR7WwB3mgy2dWXqM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/acfe42356aa5401393b3888284e3691b~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=fHA44Leiq9nFR7WwB3mgy2dWXqM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/2799a55d5c5e40a1af70cf5e642e7914~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=dQ%2FF5ulCpHpD600lwAucRv553L4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/2799a55d5c5e40a1af70cf5e642e7914~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=dQ%2FF5ulCpHpD600lwAucRv553L4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/67de4dfa33a44b79a29cced258c037ea~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=jG0O10Y%2BvqiAO2HQt812QeXSxn4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/67de4dfa33a44b79a29cced258c037ea~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=jG0O10Y%2BvqiAO2HQt812QeXSxn4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/302f7f3f7a2f42e7b229a65077ff7285~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=2rWYdQp1TpEq8Tiqmb%2F%2BQO8Y6tA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/302f7f3f7a2f42e7b229a65077ff7285~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=2rWYdQp1TpEq8Tiqmb%2F%2BQO8Y6tA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/4c22ac5f4eab4c22ba8266e021b0046a~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=bl0NLXacL8JTOZST8KmUQkYsk7U%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/4c22ac5f4eab4c22ba8266e021b0046a~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=bl0NLXacL8JTOZST8KmUQkYsk7U%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/30b5dd5392d64ff69997186967698507~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=6MsudkB5%2F58aWQHPKQtL%2BP1T1vQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/30b5dd5392d64ff69997186967698507~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=6MsudkB5%2F58aWQHPKQtL%2BP1T1vQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/3ed94993d86d45be8d5b6980c518eb21~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=YJB9Y1synKdRrHSG%2Ff77n6WAwFg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/3ed94993d86d45be8d5b6980c518eb21~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=YJB9Y1synKdRrHSG%2Ff77n6WAwFg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        }
+      ],
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "genetik test sonuçlarım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7596394419444632840",
+      "text": "#myheritage #dna #dnatest ",
+      "textLanguage": "un",
+      "createTime": 1768673409,
+      "createTimeISO": "2026-01-17T18:10:09.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "6964904623229682694",
+        "name": "mertyyilmaz",
+        "profileUrl": "https://www.tiktok.com/@mertyyilmaz",
+        "nickName": "merdo59",
+        "verified": false,
+        "signature": "München - Istanbul\nig 59mertyilmaz",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/5f6d9f1050afbd056028d1b3cc3e5f6d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=9e181c6d&x-expires=1791932400&x-signature=ScJpwO%2B9T9Pj4DCEaWnyoe1N5EY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 67,
+        "friends": 0,
+        "fans": 72,
+        "heart": 2942,
+        "video": 17,
+        "digg": 10100,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/5f6d9f1050afbd056028d1b3cc3e5f6d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=9e181c6d&x-expires=1791932400&x-signature=ScJpwO%2B9T9Pj4DCEaWnyoe1N5EY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "original sound",
+        "musicAuthor": "merdo59",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast5/tos-useast5-v-27dcd7c799-tx/oclvWyQaAQA0hzrhBZEiAAIBhEqUiNdAYrCvi/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThasAOGXq8Zmo&mime_type=audio_mpeg&rc=amQ1bWw5cjR3ODMzODU8NEBpamQ1bWw5cjR3ODMzODU8NEBpMF5kMmRrLmlhLS1kMS1zYSNpMF5kMmRrLmlhLS1kMS1zcw%3D%3D&expire=1791784005&l=202610112345512D3397E5184B0BBBC934&ply_type=3&policy=3&signature=5fb5a35bdb8ccb8ee0b71cce7957b213&tk=0&btag=e00048000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/5f6d9f1050afbd056028d1b3cc3e5f6d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=9e181c6d&x-expires=1791932400&x-signature=ScJpwO%2B9T9Pj4DCEaWnyoe1N5EY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/5f6d9f1050afbd056028d1b3cc3e5f6d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=9e181c6d&x-expires=1791932400&x-signature=ScJpwO%2B9T9Pj4DCEaWnyoe1N5EY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7596394464672795393"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@mertyyilmaz/video/7596394419444632840",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 53,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oQUBaekAz8ADaGipK01RQmf8EgBFXoEpgQ4QNs~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=28aa1B8dtQspBT6cheATTYh%2BZhA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oQUBaekAz8ADaGipK01RQmf8EgBFXoEpgQ4QNs~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=28aa1B8dtQspBT6cheATTYh%2BZhA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 2446,
+      "shareCount": 284,
+      "playCount": 113000,
+      "collectCount": 386,
+      "commentCount": 337,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "441071",
+          "name": "myheritage",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "5578",
+          "name": "dna",
+          "title": "Der Apfel fällt nicht weit vom Stamm – oder doch? Teile deine #DNA",
+          "cover": null
+        },
+        {
+          "id": "3109051",
+          "name": "dnatest",
+          "title": "Just took a DNA test, and it turns out we're 100% excited to see where you come from. Show us the results of your #DNATest.",
+          "cover": "https://p16-common-sign.tiktokcdn-us.com/musically-maliva-obj/1629908689778694.PNG~tplv-tiktokx-origin.image?dr=9627&x-expires=1791781200&x-signature=Kf5gGEY7dAnEKOeVSN%2FQj4yaJ14%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+        }
+      ],
+      "effectStickers": [
+        {
+          "name": "amelia lite",
+          "ID": "300818308109",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Green Screen",
+          "ID": "308663",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Green Screen Video",
+          "ID": "462253",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Crystal",
+          "ID": "192592510",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "name": "Green Screen",
+          "ID": "907166",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "genetik test sonuçlarım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7587065464459660565",
+      "text": "3 ay beklediğim myheritage dna sonucum sonunda geldi. Sonuç şaşırtmadı tabi🇦🇱\n\nDedesinin dedesinin dedesine kadar gidenlerden değiliz👐🏻\n\n*reklam\n\nCanım Gostivar\n ",
+      "textLanguage": "tr",
+      "createTime": 1766501341,
+      "createTimeISO": "2025-12-23T14:49:01.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7497983829796488209",
+        "name": "faydingv",
+        "profileUrl": "https://www.tiktok.com/@faydingv",
+        "nickName": "Fatih",
+        "verified": false,
+        "signature": "",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/0b72a639feb74c8e45b374822edca08a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=8b3c3838&x-expires=1791932400&x-signature=aajXJF4NvsrETTE%2F52UNqzV3Zls%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 96,
+        "friends": 0,
+        "fans": 310,
+        "heart": 28700,
+        "video": 19,
+        "digg": 4097,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/0b72a639feb74c8e45b374822edca08a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=8b3c3838&x-expires=1791932400&x-signature=aajXJF4NvsrETTE%2F52UNqzV3Zls%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Güldaniyem",
+        "musicAuthor": "Rumeli Ekrem",
+        "musicOriginal": false,
+        "musicAlbum": "Kara Üzüm Salkımı",
+        "playUrl": "https://sf19.tiktokcdn-us.com/obj/tos-alisg-ve-2774/owuLBEfDQQskZyntw6sAj0luSB2CMEtfFdqoYg",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/o0BUZADkAAUfhAszCYejQ1WEAg4FItoaBIgCK7~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/o0BUZADkAAUfhAszCYejQ1WEAg4FItoaBIgCK7~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "6758457598363568129"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@faydingv/video/7587065464459660565",
+      "videoMeta": {
+        "height": 0,
+        "width": 0,
+        "duration": 0,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/1538a33f8a5f47d2b3290c5db63f2a6b~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=YBcdGSB0kd4xZ1Pc4GN%2BvogW%2Bgo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/1538a33f8a5f47d2b3290c5db63f2a6b~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=YBcdGSB0kd4xZ1Pc4GN%2BvogW%2Bgo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+      },
+      "diggCount": 12400,
+      "shareCount": 1364,
+      "playCount": 1000000,
+      "collectCount": 2460,
+      "commentCount": 518,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [],
+      "effectStickers": [],
+      "isSlideshow": true,
+      "slideshowImageLinks": [
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/1538a33f8a5f47d2b3290c5db63f2a6b~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=YBcdGSB0kd4xZ1Pc4GN%2BvogW%2Bgo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/1538a33f8a5f47d2b3290c5db63f2a6b~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=YBcdGSB0kd4xZ1Pc4GN%2BvogW%2Bgo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/feac0a1a039743669b16652b8994d1e9~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=B1fi58fAEcwX56Im90s%2FQ97Nxy0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/feac0a1a039743669b16652b8994d1e9~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=B1fi58fAEcwX56Im90s%2FQ97Nxy0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/c7496293578343a59a2b9a869c2956de~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=sYqNhpxs10%2FLt8T6vLlqLTZe07Y%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/c7496293578343a59a2b9a869c2956de~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=sYqNhpxs10%2FLt8T6vLlqLTZe07Y%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/541e38477f95449b94efed69ce875ddc~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=bDj%2Bm8TdewCx8i%2Bj2xSXJpX0hAw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/541e38477f95449b94efed69ce875ddc~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=bDj%2Bm8TdewCx8i%2Bj2xSXJpX0hAw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        }
+      ],
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "genetik test sonuçlarım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7591937281338969365",
+      "text": "#turk #real ",
+      "textLanguage": "un",
+      "createTime": 1767635656,
+      "createTimeISO": "2026-01-05T17:54:16.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7591859032999904276",
+        "name": "iamturk1881",
+        "profileUrl": "https://www.tiktok.com/@iamturk1881",
+        "nickName": "I am turk",
+        "verified": false,
+        "signature": "🇰🇿🇺🇿🇹🇲🇦🇿🇰🇬 🫸 🇹🇷",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/808e5b4819140af20b0c640e1000300e~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=f5ee2f88&x-expires=1791932400&x-signature=NJOzMsTfAXmDI79fLgYUSAj76rY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 0,
+        "friends": 0,
+        "fans": 319,
+        "heart": 24200,
+        "video": 6,
+        "digg": 1,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/808e5b4819140af20b0c640e1000300e~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=f5ee2f88&x-expires=1791932400&x-signature=NJOzMsTfAXmDI79fLgYUSAj76rY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Häschenparty (feat. Michael Wendler) (Single Version)",
+        "musicAuthor": "Schnuffel",
+        "musicOriginal": false,
+        "musicAlbum": "Ich hab' Dich lieb",
+        "playUrl": "https://sf19.tiktokcdn-us.com/obj/tos-alisg-ve-2774/ffa61e995f81458fa58a635e53095eba",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/29c8762f0fa34cc49f477e0ddf38520d~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/29c8762f0fa34cc49f477e0ddf38520d~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "277937964935270400"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@iamturk1881/video/7591937281338969365",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 17,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/ooQDStApTuLfICacycnDiNrAEK4s3Y4I0AfFje~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=G%2FvlJsJeo%2Brq%2FOHCtrSFCPFSfV4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/ooQDStApTuLfICacycnDiNrAEK4s3Y4I0AfFje~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=G%2FvlJsJeo%2Brq%2FOHCtrSFCPFSfV4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 13700,
+      "shareCount": 3571,
+      "playCount": 423500,
+      "collectCount": 1659,
+      "commentCount": 633,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "2439",
+          "name": "turk",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "8514",
+          "name": "real",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "genetik test sonuçlarım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7662781350881070358",
+      "text": "DNA testi sonucum geldi!🧬Υilardir duyduğum aile hikâyeleriyle sonuçlar ne kadar örtüştü, hangileri beni şaşırttı? Hepsini bu videoda paylaşıyorum.\n\nSiz de DNA testi yaptırdınız mı?\n•\nΉρθαν τα αποτελέσματα του DΝΑ τεστ μου!🧬 Πόσο επιβεβαίωσαν τις οικογενειακές ιστορίες που άκουγα τόσα χρόνια και τι με εξέπληξε; Όλα σε αυτό το βίντεο! Εσείς έχετε κάνει ποτέ DNA τεστ;\n\n#myheritage #dnatest #dna #dnaresults #halkidiki ",
+      "textLanguage": "el",
+      "createTime": 1784130322,
+      "createTimeISO": "2026-07-15T15:45:22.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7591932580736484374",
+        "name": "komsudayasam",
+        "profileUrl": "https://www.tiktok.com/@komsudayasam",
+        "nickName": "komsudayasam",
+        "verified": false,
+        "signature": "📚 Kültür • 🍲 Lezzet • 📍 Selanik & Gezi\n📚Πολιτισμός  • 🍲Γεύση •📍Skg & Ταξίδι\nIG: @komsudayasam 👈\n📩komsudayasam@gmail.com",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/b70c63f5270bc30cfa25d8de41541046~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=44a55a29&x-expires=1791932400&x-signature=wykbzdor2zRCoVA62z%2FERuoy9Bw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 6,
+        "friends": 0,
+        "fans": 2832,
+        "heart": 40400,
+        "video": 76,
+        "digg": 44,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/b70c63f5270bc30cfa25d8de41541046~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=44a55a29&x-expires=1791932400&x-signature=wykbzdor2zRCoVA62z%2FERuoy9Bw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Teli Teli Teli",
+        "musicAuthor": "Bouzouki Kings & Manos Loizos",
+        "musicOriginal": false,
+        "musicAlbum": "The Land of Bouzouki",
+        "playUrl": "https://sf19.tiktokcdn-us.com/obj/tos-alisg-ve-2774/o4f1sodReWeGKFAGxYPrmxArFQQZ8GEMYReLhJ",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/ogEZvsAzzra0liPA69BBuwAWojAfB1oAQEA7iW~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/ogEZvsAzzra0liPA69BBuwAWojAfB1oAQEA7iW~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "6724581408162990082"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@komsudayasam/video/7662781350881070358",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 73,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/ocwCsf9XRwnIBKAIApxiAEBSqCKiED1n1nWYAB~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=O7NjSB7oiTrXO%2BcoaWTGDlNVnyk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/944fd835270351aed1ed9b2a50539cdf/6acec2f9/video/tos/useast5/tos-useast5-v-0068c799-tx/28af1c0193f94afab78b9edf262e80b6/?a=1988&bti=ODszNWYuMDE6&&bt=2712&ft=aEKq_qT0mIoPD12qGkJI3wUUWcAbMeF~O5&mime_type=video_mp4&rc=M2V1aW85cjl0PDMzbzczNUBpM2V1aW85cjl0PDMzbzczNUBjMGprMmRjaF9hLS1kMTFzYSNjMGprMmRjaF9hLS1kMTFzcw%3D%3D&l=202610112345512D3397E5184B0BBBC934&btag=e00050000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/944fd835270351aed1ed9b2a50539cdf/6acec2f9/video/tos/useast5/tos-useast5-v-0068c799-tx/28af1c0193f94afab78b9edf262e80b6/?a=1988&bti=ODszNWYuMDE6&&bt=2712&ft=aEKq_qT0mIoPD12qGkJI3wUUWcAbMeF~O5&mime_type=video_mp4&rc=M2V1aW85cjl0PDMzbzczNUBpM2V1aW85cjl0PDMzbzczNUBjMGprMmRjaF9hLS1kMTFzYSNjMGprMmRjaF9hLS1kMTFzcw%3D%3D&l=202610112345512D3397E5184B0BBBC934&btag=e00050000"
+          },
+          {
+            "language": "tur-TR",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/f56d18b7d614589c2b89c588f1bae019/6acec2f9/video/tos/useast5/tos-useast5-v-0068c799-tx/3ef91b2141d24f799290fb9547250c7f/?a=1988&bti=ODszNWYuMDE6&&bt=2712&ft=aEKq_qT0mIoPD12qGkJI3wUUWcAbMeF~O5&mime_type=video_mp4&rc=M2V1aW85cjl0PDMzbzczNUBpM2V1aW85cjl0PDMzbzczNUBjMGprMmRjaF9hLS1kMTFzYSNjMGprMmRjaF9hLS1kMTFzcw%3D%3D&l=202610112345512D3397E5184B0BBBC934&btag=e00050000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/f56d18b7d614589c2b89c588f1bae019/6acec2f9/video/tos/useast5/tos-useast5-v-0068c799-tx/3ef91b2141d24f799290fb9547250c7f/?a=1988&bti=ODszNWYuMDE6&&bt=2712&ft=aEKq_qT0mIoPD12qGkJI3wUUWcAbMeF~O5&mime_type=video_mp4&rc=M2V1aW85cjl0PDMzbzczNUBpM2V1aW85cjl0PDMzbzczNUBjMGprMmRjaF9hLS1kMTFzYSNjMGprMmRjaF9hLS1kMTFzcw%3D%3D&l=202610112345512D3397E5184B0BBBC934&btag=e00050000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/ocwCsf9XRwnIBKAIApxiAEBSqCKiED1n1nWYAB~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=O7NjSB7oiTrXO%2BcoaWTGDlNVnyk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 482,
+      "shareCount": 61,
+      "playCount": 22100,
+      "collectCount": 41,
+      "commentCount": 102,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "441071",
+          "name": "myheritage",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "3109051",
+          "name": "dnatest",
+          "title": "Just took a DNA test, and it turns out we're 100% excited to see where you come from. Show us the results of your #DNATest.",
+          "cover": "https://p19-common-sign.tiktokcdn-us.com/musically-maliva-obj/1629908689778694.PNG~tplv-tiktokx-origin.image?dr=9627&x-expires=1791781200&x-signature=dNBpsJ0DAFzKR3LLOkDd9nvRUyw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+        },
+        {
+          "id": "5578",
+          "name": "dna",
+          "title": "Der Apfel fällt nicht weit vom Stamm – oder doch? Teile deine #DNA",
+          "cover": null
+        },
+        {
+          "id": "1612422818987013",
+          "name": "dnaresults",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "8915290",
+          "name": "halkidiki",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "genetik test sonuçlarım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7663044982076427540",
+      "text": "Vitaminleri doğru zamanda almak, emilimi ve kullanım konforunu etkileyebilir. 💊\n\n☀️ D vitamini ve Omega-3: Yağ içeren bir öğünle alınabilir.\n🍊 C vitamini: Günün farklı saatlerinde, mide hassasiyetine göre tok alınabilir.\n🩸 Demir: Genellikle aç karnına ve C vitaminiyle daha iyi emilir; çay, kahve, süt ve kalsiyumdan ayrı alınmalıdır.\n🔵 Çinko: Mideyi rahatsız ederse yemekle alınabilir; demir ve kalsiyumla aynı anda kullanmamak daha uygundur.\n🌤️ B kompleks: Sabah veya günün erken saatlerinde tercih edilebilir.\n🌙 Magnezyum: Akşam kullanımı bazı kişiler için daha rahat olabilir.\n💜 Biyotin: Saatten çok düzenli kullanım önemlidir.\n\nTakviyelerin zamanı; kullanılan ilaçlara, doza, eksikliğin nedenine ve kişisel sağlık durumuna göre değişebilir. Doktor önerisi olmadan yüksek doz kullanmayın.\n\n📌 Kaydetmeyi, takviye kullanan bir yakınınızla paylaşmayı ve sizin hangi vitamini hangi saatte aldığınızı yorumlara yazmayı unutmayın.\n\n#vitaminler #takviyeler #sağlıklıyaşam #beslenmeönerileri #keşfet ",
+      "textLanguage": "tr",
+      "createTime": 1784191701,
+      "createTimeISO": "2026-07-16T08:48:21.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7307343473437590533",
+        "name": "drnecmettintufekci",
+        "profileUrl": "https://www.tiktok.com/@drnecmettintufekci",
+        "nickName": "Uzm. Dr. Necmettin Tüfekci",
+        "verified": false,
+        "signature": "🏥Sağlıklı Yaşam Merkezi🏥 \n\n🩺SAĞLIKLI VE KALİTELİ BİR YAŞAM İÇİN NET,UYGULANABİLİR İPUÇLARI.                       \n☎ 0545 1 125 125📲 HAVZAN/KONYA",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/836742d322701dddd07ad9ef2b0fff78~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=330e7433&x-expires=1791932400&x-signature=cIpvB9SMcLy2vZL0KSgjmRYUWIM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 1,
+        "friends": 0,
+        "fans": 37400,
+        "heart": 379000,
+        "video": 431,
+        "digg": 76,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/836742d322701dddd07ad9ef2b0fff78~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=330e7433&x-expires=1791932400&x-signature=cIpvB9SMcLy2vZL0KSgjmRYUWIM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Gentle Keys Mist",
+        "musicAuthor": "Breezy Brains",
+        "musicOriginal": false,
+        "musicAlbum": "Twilight Tides' Melody",
+        "playUrl": "https://sf16.tiktokcdn-us.com/obj/tos-alisg-ve-2774/o8aDAvQAgzFFKEar4Lzy1Nf0sfDTDCqY2dfUr1",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oMIQvDtEgOLiAUnzW1J7hAaXiArUZaA4BEWAr~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oMIQvDtEgOLiAUnzW1J7hAaXiArUZaA4BEWAr~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "7645660479322834945"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@drnecmettintufekci/video/7663044982076427540",
+      "videoMeta": {
+        "height": 0,
+        "width": 0,
+        "duration": 0,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/55a7b69fe6b1465e86e759d785750fe6~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=O7uAByFbjRIWtllQFw7pr0bmG8E%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/55a7b69fe6b1465e86e759d785750fe6~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=O7uAByFbjRIWtllQFw7pr0bmG8E%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+      },
+      "diggCount": 34,
+      "shareCount": 0,
+      "playCount": 3186,
+      "collectCount": 26,
+      "commentCount": 2,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "1625434867582981",
+          "name": "vitaminler",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1638657286335494",
+          "name": "takviyeler",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1603105199830021",
+          "name": "sağlıklıyaşam",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1672019775335429",
+          "name": "beslenmeönerileri",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "86182714",
+          "name": "keşfet",
+          "title": "https://m.tiktok.com/magic/eco/runtime/release/60c316c395fb69030c86725a?appType=muse?magic_source=CM",
+          "cover": "https://p19-common-sign.tiktokcdn-us.com/musically-maliva-obj/b1d383a7839da95e0981ad6bdb50f2d3~tplv-tiktokx-origin.image?dr=9627&x-expires=1791781200&x-signature=%2FOCFBgAQGhTgPRoj91WpbIq%2F%2BkA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": true,
+      "slideshowImageLinks": [
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/55a7b69fe6b1465e86e759d785750fe6~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=O7uAByFbjRIWtllQFw7pr0bmG8E%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/55a7b69fe6b1465e86e759d785750fe6~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=O7uAByFbjRIWtllQFw7pr0bmG8E%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/fc4a2379be524236bcea1d3fd399e163~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=GDyGv9KjU9XfkATCfM1Qnh5c8sA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/fc4a2379be524236bcea1d3fd399e163~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=GDyGv9KjU9XfkATCfM1Qnh5c8sA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/912bed11df3f4ba4b33eb21190d3086b~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=LV9H%2FsztDU2jXF8WQzhDtLhaEdc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/912bed11df3f4ba4b33eb21190d3086b~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=LV9H%2FsztDU2jXF8WQzhDtLhaEdc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        }
+      ],
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "hangi vitamini almalıyım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7618304412263484679",
+      "text": "“Hangi takviyeleri alırsam daha sağlıklı yaş alırım?”\nBu soru bana muayenede en sık sorulan sorulardan biri.\n\nBen de en sık önerdiğim 7 takviyeyi sizin için sıraladım.\nBugün ilk 3 tanesini söyleyeyim:\n\n1️⃣ D vitamini – bağışıklık, kemik sağlığı ve hormon dengesi için\n2️⃣ Omega-3 yağ asitleri – kalp, beyin ve enflamasyon kontrolü için\n3️⃣ Magnezyum – kaslar, sinir sistemi ve kaliteli uyku için\n\nAma liste burada bitmiyor…\n\nDiğer 4 önemli takviyeyi yarın anlatacağım 💪🏻💪🏻💪🏻 ",
+      "textLanguage": "tr",
+      "createTime": 1773774731,
+      "createTimeISO": "2026-03-17T19:12:11.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7137664428917703686",
+        "name": "drcigdemkaras",
+        "profileUrl": "https://www.tiktok.com/@drcigdemkaras",
+        "nickName": "cigdemkaras",
+        "verified": false,
+        "signature": "Kadın Hastalıkları ve Doğum Uzmanı\nTelefon:05539500590",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/4993b93aee1779cfca94d579f5f8a5bd~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=3355f265&x-expires=1791932400&x-signature=Crn76ruyFwh%2Bv9VqBBL4YkAuirY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 5,
+        "friends": 0,
+        "fans": 4861,
+        "heart": 14500,
+        "video": 98,
+        "digg": 74,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/4993b93aee1779cfca94d579f5f8a5bd~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=3355f265&x-expires=1791932400&x-signature=Crn76ruyFwh%2Bv9VqBBL4YkAuirY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "orijinal ses",
+        "musicAuthor": "cigdemkaras",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/alisg/tos-alisg-v-27dcd7/ocFcgIPIDgLe0CTyAEfxEfAAPFvNATDoJuaTxz/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThasAOGXq8Zmo&mime_type=audio_mpeg&rc=anMzc3E5cjZ0OTMzODU8NEBpanMzc3E5cjZ0OTMzODU8NEAzY2pfMmRzY3BhLS1kMS1zYSMzY2pfMmRzY3BhLS1kMS1zcw%3D%3D&expire=1791784030&l=20261011234551BCDAEF20A83CC0D05499&ply_type=3&policy=3&signature=36f337b70c16bbfa4c695bb4996c6ebc&tk=0&btag=e00048000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/4993b93aee1779cfca94d579f5f8a5bd~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=3355f265&x-expires=1791932400&x-signature=Crn76ruyFwh%2Bv9VqBBL4YkAuirY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/4993b93aee1779cfca94d579f5f8a5bd~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=3355f265&x-expires=1791932400&x-signature=Crn76ruyFwh%2Bv9VqBBL4YkAuirY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7618304465898867464"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@drcigdemkaras/video/7618304412263484679",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 78,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oYIzQADAjTpcAODTYFFefpxXmeoIJEAA4h0xEQ~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=n7jwxypyOBFpwVsuZb1GLP3KWcY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/c5bf5e29ae653cb88ff8af84f74b3f2d/6acec2fe/video/tos/alisg/tos-alisg-pv-0037/6d7d58d6d66245379f23655970b85131/?a=1988&bti=ODszNWYuMDE6&&bt=972&ft=aEKq_qT0mIoPD12qGkJI3wUF~4AbMeF~O5&mime_type=video_mp4&rc=anA4Z3Q5cm50OTMzODczNEBpanA4Z3Q5cm50OTMzODczNEAtaV5nMmRrYnBhLS1kMWBzYSMtaV5nMmRrYnBhLS1kMWBzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00050000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/c5bf5e29ae653cb88ff8af84f74b3f2d/6acec2fe/video/tos/alisg/tos-alisg-pv-0037/6d7d58d6d66245379f23655970b85131/?a=1988&bti=ODszNWYuMDE6&&bt=972&ft=aEKq_qT0mIoPD12qGkJI3wUF~4AbMeF~O5&mime_type=video_mp4&rc=anA4Z3Q5cm50OTMzODczNEBpanA4Z3Q5cm50OTMzODczNEAtaV5nMmRrYnBhLS1kMWBzYSMtaV5nMmRrYnBhLS1kMWBzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00050000"
+          },
+          {
+            "language": "tur-TR",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/19f009d2c55ab5b298cede90027f15db/6acec2fe/video/tos/alisg/tos-alisg-pv-0037/b7736c0f29834b8db45d576554c72172/?a=1988&bti=ODszNWYuMDE6&&bt=972&ft=aEKq_qT0mIoPD12qGkJI3wUF~4AbMeF~O5&mime_type=video_mp4&rc=anA4Z3Q5cm50OTMzODczNEBpanA4Z3Q5cm50OTMzODczNEAtaV5nMmRrYnBhLS1kMWBzYSMtaV5nMmRrYnBhLS1kMWBzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00050000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/19f009d2c55ab5b298cede90027f15db/6acec2fe/video/tos/alisg/tos-alisg-pv-0037/b7736c0f29834b8db45d576554c72172/?a=1988&bti=ODszNWYuMDE6&&bt=972&ft=aEKq_qT0mIoPD12qGkJI3wUF~4AbMeF~O5&mime_type=video_mp4&rc=anA4Z3Q5cm50OTMzODczNEBpanA4Z3Q5cm50OTMzODczNEAtaV5nMmRrYnBhLS1kMWBzYSMtaV5nMmRrYnBhLS1kMWBzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00050000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oYIzQADAjTpcAODTYFFefpxXmeoIJEAA4h0xEQ~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=n7jwxypyOBFpwVsuZb1GLP3KWcY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 406,
+      "shareCount": 106,
+      "playCount": 33200,
+      "collectCount": 370,
+      "commentCount": 11,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "hangi vitamini almalıyım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7650957856274959636",
+      "text": "hangi c vitamini daha iyi şeklinde sürekli gelen sorulara net bir cevap vermeye çalıştım. reklam değildir kişisel görüşlerimdir\n\n#ciltserumu #cvitamini #ciltsağlığı #ciltbakımı #bakımrutini ",
+      "textLanguage": "tr",
+      "createTime": 1781377450,
+      "createTimeISO": "2026-06-13T19:04:10.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7490730346087252993",
+        "name": "eczacinizpaylasiyor",
+        "profileUrl": "https://www.tiktok.com/@eczacinizpaylasiyor",
+        "nickName": "eczacinizpaylasiyor",
+        "verified": false,
+        "signature": "minimalist skincare lover🫶🏻\ndoğa aşığı🍀\nkedi insanı🐾\nkendi deneyimlerimi paylaşıyorum uzman değilim💜",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/979940a9a7309c56237f894324dd6680~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e4f26b22&x-expires=1791932400&x-signature=yQG7M7DZ25okK2m12pefsiJICyA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 0,
+        "friends": 0,
+        "fans": 2885,
+        "heart": 217700,
+        "video": 10,
+        "digg": 0,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/979940a9a7309c56237f894324dd6680~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e4f26b22&x-expires=1791932400&x-signature=yQG7M7DZ25okK2m12pefsiJICyA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "original sound",
+        "musicAuthor": "manifestgirls",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/alisg/tos-alisg-v-27dcd7/o8mFaLGDWO7ef6fL2n1HJcAelagQwEnnGHOPIA/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThasAOGXq8Zmo&mime_type=audio_mpeg&rc=Nmc3Mzg5Mzo2NmhnNjw7aUBpam06Zng5cnE2OjMzODU8NEBiNjNhNWFjNTYxXzUzNjViYSNvZ3FlMmRjanNhLS1kMS1zcw%3D%3D&expire=1791783974&l=20261011234551BCDAEF20A83CC0D05499&ply_type=3&policy=3&signature=f6b86a1d3cda4848c2a82aafebd05011&tk=0&btag=e000f8000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/a21305b517ad4bef093c096824a4eb24~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=449a8b91&x-expires=1791932400&x-signature=3vPeX8GMYNnEKXqujMTZoAt8c58%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/a21305b517ad4bef093c096824a4eb24~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=449a8b91&x-expires=1791932400&x-signature=3vPeX8GMYNnEKXqujMTZoAt8c58%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7637607300089400071"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@eczacinizpaylasiyor/video/7650957856274959636",
+      "videoMeta": {
+        "height": 0,
+        "width": 0,
+        "duration": 0,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/eb0abef8112e441b95056f98c05bb4af~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=Mqi3H7dI%2BmqHLNWR3zHFZeXnLDI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/eb0abef8112e441b95056f98c05bb4af~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=Mqi3H7dI%2BmqHLNWR3zHFZeXnLDI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+      },
+      "diggCount": 15400,
+      "shareCount": 304,
+      "playCount": 449700,
+      "collectCount": 4873,
+      "commentCount": 51,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "1677382790900737",
+          "name": "ciltserumu",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1594306782142469",
+          "name": "cvitamini",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1640496469711878",
+          "name": "ciltsağlığı",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "78065451",
+          "name": "ciltbakımı",
+          "title": "Şarkının akışına uy ve kısa dansı yap;NIVEA Derma Control Clear Defend ile kollarını özgürce kaldır! Haydi sen de NIVEA'nı kap ve özgürce roll'la!",
+          "cover": "https://p19-common-sign.tiktokcdn-us.com/musically-maliva-obj/6d6b681aa7ffbdf05c3c1cccd4f931bc.png~tplv-tiktokx-origin.image?dr=9627&x-expires=1791781200&x-signature=z1WHdCtE4vCH7YR%2FIm8sLE3sNEQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+        },
+        {
+          "id": "1623893398715398",
+          "name": "bakımrutini",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": true,
+      "slideshowImageLinks": [
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/eb0abef8112e441b95056f98c05bb4af~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=Mqi3H7dI%2BmqHLNWR3zHFZeXnLDI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/eb0abef8112e441b95056f98c05bb4af~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=Mqi3H7dI%2BmqHLNWR3zHFZeXnLDI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/7c2831d64f1e45619c8cb0c2cdb36e37~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=RT4sZi%2Bx3%2Bie2L9LgajDHUoEOAM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/7c2831d64f1e45619c8cb0c2cdb36e37~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=RT4sZi%2Bx3%2Bie2L9LgajDHUoEOAM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/33e6d0771169413696167026eb028e0f~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=01LfyGgknmjQj5cUJgowp4dxBmc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/33e6d0771169413696167026eb028e0f~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=01LfyGgknmjQj5cUJgowp4dxBmc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/13272370074343569889a590ba8758b4~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=cLkDh8GJ%2Fe1duylhEavaKinrDDc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/13272370074343569889a590ba8758b4~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=cLkDh8GJ%2Fe1duylhEavaKinrDDc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/4ce5a48a4848454e9f40f5851bb4af1a~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=o5t2LbA0fQA0hMuy3T7nTf7FcvQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/4ce5a48a4848454e9f40f5851bb4af1a~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=o5t2LbA0fQA0hMuy3T7nTf7FcvQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        },
+        {
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/a90c114408e04458bac095398b9fbab2~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=hwwh23puNisb%2BuntnqenZITWDJk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/a90c114408e04458bac095398b9fbab2~tplv-photomode-image.jpeg?dr=9616&x-expires=1791932400&x-signature=hwwh23puNisb%2BuntnqenZITWDJk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        }
+      ],
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "hangi vitamini almalıyım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7684346128967421205",
+      "text": "Vitaminleri ne zaman almak daha iyi?\nMagnezyum, demir, D vitamini, B vitaminleri ve biotin için kullanım zamanı aynı olmayabilir.\nGünlük takviyelerini daha bilinçli kullanmak için bu videoyu kaydet!\nÜrün kullanım önerileri için etiket bilgilerini dikkate almayı unutma.\n\n #Vitamin #Magnezyum #Demir #DVitamini #Biotin #BVitaminleri #TakviyeEdiciGıda #VitaminRehberi",
+      "textLanguage": "tr",
+      "createTime": 1789221600,
+      "createTimeISO": "2026-09-12T14:00:00.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7220405945007293446",
+        "name": "erbatab",
+        "profileUrl": "https://www.tiktok.com/@erbatab",
+        "nickName": "Erbatab",
+        "verified": false,
+        "signature": "Doğal Gıda Takviyeleri\n#ŞimdiTamamsın\nDetaylar için DM\nhttps://erbatabstore.com/",
+        "bioLink": null,
+        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/e01f8e0f94ba0faeb159ccf49696bbb0~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=3a1cf7c6&x-expires=1791932400&x-signature=FQonVjH4hoTTnCUZ%2F3soRdXq5sc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 0,
+        "friends": 0,
+        "fans": 4750,
+        "heart": 25400,
+        "video": 293,
+        "digg": 3,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/e01f8e0f94ba0faeb159ccf49696bbb0~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=3a1cf7c6&x-expires=1791932400&x-signature=FQonVjH4hoTTnCUZ%2F3soRdXq5sc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Erbatab - orijinal ses",
+        "musicAuthor": "Erbatab",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/alisg/tos-alisg-v-27dcd7/oUNNQCF85iQg5BLRBIDCYgp1JTqg1B1UwEETff/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThasAOGXq8Zmo&mime_type=audio_mpeg&rc=ZmQ0OzY5ZGg7PDo1Ojs3O0BpajM5dnQ5cjs3ZDMzODU8NEAyYGEyM19eNi4xYy82MF9gYSNkYTZoMmQ0ZGZhLS1kMS1zcw%3D%3D&expire=1791783969&l=20261011234551BCDAEF20A83CC0D05499&ply_type=3&policy=3&signature=e44367b3303f77df066e5a4cf85a3c31&tk=0&btag=e000f8000",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/e01f8e0f94ba0faeb159ccf49696bbb0~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=3a1cf7c6&x-expires=1791932400&x-signature=FQonVjH4hoTTnCUZ%2F3soRdXq5sc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/e01f8e0f94ba0faeb159ccf49696bbb0~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=3a1cf7c6&x-expires=1791932400&x-signature=FQonVjH4hoTTnCUZ%2F3soRdXq5sc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7684346178357431061"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@erbatab/video/7684346128967421205",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 17,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oMFZkADqpAZ4BWIAEn0ECVRCcgkfIpzACftgED~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=LILUKAw3CycgkCnJst7VgG1OLJ4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oMFZkADqpAZ4BWIAEn0ECVRCcgkfIpzACftgED~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=LILUKAw3CycgkCnJst7VgG1OLJ4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 20300,
+      "shareCount": 4622,
+      "playCount": 1200000,
+      "collectCount": 14019,
+      "commentCount": 223,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "314926",
+          "name": "vitamin",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1638495277070342",
+          "name": "magnezyum",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "9736328",
+          "name": "demir",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1623530821718022",
+          "name": "dvitamini",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1598759327476741",
+          "name": "biotin",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "7145172405886025730",
+          "name": "bvitaminleri",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1669637652516869",
+          "name": "takviyeedicigıda",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "7194784048169975813",
+          "name": "vitaminrehberi",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "hangi vitamini almalıyım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7655372937830124821",
+      "text": "Saç ve cilt sağlığı için almamız gereken en önemli vitaminler? \n\nUzun süren analizler ve ihtiyaç değerlendirmeleri sonucunda geliştirdiğimiz Seeway Multimix, özel içeriğiyle günlük destek rutininize eşlik eder.\n\nİçeriğinde bulunan;\nMulti Vitamin & Multi Mineral, Kolajen Tip 1 & 3, Hyaluronik Asit, L-Sistein & L-Metiyonin ve Saw Palmetto ile bakım sürecini bütüncül olarak desteklemeye yardımcı olur.\n\nDüzenli kullanım için pratik 30 tablet formuyla şimdi websitemizde satışta!\n\nDetaylı bilgi ve sipariş için web sitemizi ziyaret edebilirsiniz.\n\nTakviye edici gıdadır. İlaç değildir.\n\n#saçdökülmesi #saçbakımı #saçtedavisi #saçekimi #keşfet",
+      "textLanguage": "tr",
+      "createTime": 1782405413,
+      "createTimeISO": "2026-06-25T16:36:53.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "6704178754519041029",
+        "name": "sayadsertkaya",
+        "profileUrl": "https://www.tiktok.com/@sayadsertkaya",
+        "nickName": "Sayadsertkaya",
+        "verified": false,
+        "signature": "Analiz odaklı saç & saç derisi yaklaşımı\nEzbere işlem yok\nDetaylar Instagram’da ⬇️",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/d3e4e60d1013dffe386137747626203a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=5f9f75cc&x-expires=1791932400&x-signature=6E9gdf%2FKkWUUtWdy4j64GpDVdHw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 0,
+        "friends": 0,
+        "fans": 28300,
+        "heart": 333800,
+        "video": 191,
+        "digg": 384,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/d3e4e60d1013dffe386137747626203a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=5f9f75cc&x-expires=1791932400&x-signature=6E9gdf%2FKkWUUtWdy4j64GpDVdHw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "orijinal ses",
+        "musicAuthor": "Sayadsertkaya",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/alisg/tos-alisg-v-27dcd7/oIvpbYballWU3NSBAKCZE9KAUr1ATjAiAEAAi/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThasAOGXq8Zmo&mime_type=audio_mpeg&rc=M2Vnc3E5cmRvOzMzODU8NEBpM2Vnc3E5cmRvOzMzODU8NEAta18zMmRrZnJhLS1kMS1zYSMta18zMmRrZnJhLS1kMS1zcw%3D%3D&expire=1791783989&l=20261011234551BCDAEF20A83CC0D05499&ply_type=3&policy=3&signature=90c91390a8d1881704f9f0e498bbac98&tk=0&btag=e00048000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/d3e4e60d1013dffe386137747626203a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=5f9f75cc&x-expires=1791932400&x-signature=6E9gdf%2FKkWUUtWdy4j64GpDVdHw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/d3e4e60d1013dffe386137747626203a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=5f9f75cc&x-expires=1791932400&x-signature=6E9gdf%2FKkWUUtWdy4j64GpDVdHw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7655372975844625172"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@sayadsertkaya/video/7655372937830124821",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 37,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oUf90hgPfAImhjYxEDRqwSBDWEBUFE6d2VHIsh~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=tX5SOH9aFLdTP2uyJzUC5X%2BaP%2Bs%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "tur-TR",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/b4d7d584a1c7c9dbe5b9af4d37585248/6acec2d5/video/tos/alisg/tos-alisg-pv-0037/fc379f3168144361a7691c613e743919/?a=1988&bti=ODszNWYuMDE6&&bt=1597&ft=aEKq_qT0mIoPD12qGkJI3wUMO_AbMeF~O5&mime_type=video_mp4&rc=ajR3cGo5cndvOzMzODczNEBpajR3cGo5cndvOzMzODczNEAubzBxMmQ0ZXJhLS1kMTFzYSMubzBxMmQ0ZXJhLS1kMTFzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/b4d7d584a1c7c9dbe5b9af4d37585248/6acec2d5/video/tos/alisg/tos-alisg-pv-0037/fc379f3168144361a7691c613e743919/?a=1988&bti=ODszNWYuMDE6&&bt=1597&ft=aEKq_qT0mIoPD12qGkJI3wUMO_AbMeF~O5&mime_type=video_mp4&rc=ajR3cGo5cndvOzMzODczNEBpajR3cGo5cndvOzMzODczNEAubzBxMmQ0ZXJhLS1kMTFzYSMubzBxMmQ0ZXJhLS1kMTFzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00048000"
+          },
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/d96c1cf169013993f00dedb305ef947f/6acec2d5/video/tos/alisg/tos-alisg-pv-0037/6e69d51c495c46ee8da97818caba2926/?a=1988&bti=ODszNWYuMDE6&&bt=1597&ft=aEKq_qT0mIoPD12qGkJI3wUMO_AbMeF~O5&mime_type=video_mp4&rc=ajR3cGo5cndvOzMzODczNEBpajR3cGo5cndvOzMzODczNEAubzBxMmQ0ZXJhLS1kMTFzYSMubzBxMmQ0ZXJhLS1kMTFzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00048000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/d96c1cf169013993f00dedb305ef947f/6acec2d5/video/tos/alisg/tos-alisg-pv-0037/6e69d51c495c46ee8da97818caba2926/?a=1988&bti=ODszNWYuMDE6&&bt=1597&ft=aEKq_qT0mIoPD12qGkJI3wUMO_AbMeF~O5&mime_type=video_mp4&rc=ajR3cGo5cndvOzMzODczNEBpajR3cGo5cndvOzMzODczNEAubzBxMmQ0ZXJhLS1kMTFzYSMubzBxMmQ0ZXJhLS1kMTFzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oUf90hgPfAImhjYxEDRqwSBDWEBUFE6d2VHIsh~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=tX5SOH9aFLdTP2uyJzUC5X%2BaP%2Bs%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 6198,
+      "shareCount": 1582,
+      "playCount": 244800,
+      "collectCount": 5288,
+      "commentCount": 108,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "1608989464056837",
+          "name": "saçdökülmesi",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "saçbakımı",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1670594254075910",
+          "name": "saçtedavisi",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1614061508546582",
+          "name": "saçekimi",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "86182714",
+          "name": "keşfet",
+          "title": "https://m.tiktok.com/magic/eco/runtime/release/60c316c395fb69030c86725a?appType=muse?magic_source=CM",
+          "cover": "https://p19-common-sign.tiktokcdn-us.com/musically-maliva-obj/b1d383a7839da95e0981ad6bdb50f2d3~tplv-tiktokx-origin.image?dr=9627&x-expires=1791781200&x-signature=%2FOCFBgAQGhTgPRoj91WpbIq%2F%2BkA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "hangi vitamini almalıyım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7644138902944533780",
+      "text": "#vitaminas #vitaminac #complexob #vitaminad3 #colageno ",
+      "textLanguage": "un",
+      "createTime": 1779789789,
+      "createTimeISO": "2026-05-26T10:03:09.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7636103175791543317",
+        "name": "farmarciapratica",
+        "profileUrl": "https://www.tiktok.com/@farmarciapratica",
+        "nickName": "FarmáciaPratica",
+        "verified": false,
+        "signature": "🧑🏻‍🔬Cecília Calembela \n🎓 Criadora do Farmácia Prática\n🛒 Valorizando a classe e conectando o mercado.Parcerias |Farmácias |Fornecedores|942629538/940040966",
+        "bioLink": null,
+        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/4ebfe1c9435931b39103211e6f509cce~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=4b2ddd97&x-expires=1791932400&x-signature=6%2BYfHvq2HeghnDbdhE5iUOwah5s%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 25,
+        "friends": 0,
+        "fans": 730,
+        "heart": 4714,
+        "video": 16,
+        "digg": 474,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/4ebfe1c9435931b39103211e6f509cce~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=4b2ddd97&x-expires=1791932400&x-signature=6%2BYfHvq2HeghnDbdhE5iUOwah5s%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "QKThr",
+        "musicAuthor": "Aphex Twin",
+        "musicOriginal": false,
+        "musicAlbum": "Drukqs",
+        "playUrl": "https://sf16.tiktokcdn-us.com/obj/tos-alisg-ve-2774/okFO7qyn6CJFBZ0dEpUifZIBQhqfYso9tqwgQD",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oIPaVErso2AAAquBBYAEqiU7sDr4UaxWqpmAi~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oIPaVErso2AAAquBBYAEqiU7sDr4UaxWqpmAi~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "6771810675950880769"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@farmarciapratica/video/7644138902944533780",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 33,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/o4FJxIEGA64FcfwLeKoWGBAfI6n3ezQYiFORmA~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=TOK%2FsjVZbh9m18MjAE5kW6e%2FYx0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/o4FJxIEGA64FcfwLeKoWGBAfI6n3ezQYiFORmA~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=TOK%2FsjVZbh9m18MjAE5kW6e%2FYx0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 844,
+      "shareCount": 60,
+      "playCount": 56500,
+      "collectCount": 303,
+      "commentCount": 63,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "2078117",
+          "name": "vitaminas",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "36131071",
+          "name": "vitaminac",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1674191596551174",
+          "name": "complexob",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1661411155700742",
+          "name": "vitaminad3",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "67095772",
+          "name": "colageno",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "hangi vitamini almalıyım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7348365783698853125",
+      "text": "[SAVE TIPS BUGAR] Kamu udh minum vitamin apa aja setiap harinya? #vitamin #tipssehat ",
+      "textLanguage": "id",
+      "createTime": 1710924740,
+      "createTimeISO": "2024-03-20T08:52:20.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7346879167906120710",
+        "name": "toko_chindo",
+        "profileUrl": "https://www.tiktok.com/@toko_chindo",
+        "nickName": "Toko Chindo | Promo termurah",
+        "verified": false,
+        "signature": "share promo-promo menarik dan diskon pastinya kita kasih termurah ✨",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/537cf23aa10c3696e2702e4b2d24cd21~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=9085a8ae&x-expires=1791932400&x-signature=W%2FJZARMf%2BEaAA%2F1pLGX02A9d%2Fqk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 3,
+        "friends": 0,
+        "fans": 30800,
+        "heart": 635000,
+        "video": 273,
+        "digg": 80,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/537cf23aa10c3696e2702e4b2d24cd21~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=9085a8ae&x-expires=1791932400&x-signature=W%2FJZARMf%2BEaAA%2F1pLGX02A9d%2Fqk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Pieces",
+        "musicAuthor": "Danilo Stankovic",
+        "musicOriginal": false,
+        "playUrl": "https://sf16.tiktokcdn-us.com/obj/tos-alisg-ve-2774/517e8a6d9c8b424c84195641658887d7",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/47ccb712fc744e03b97c5b232ff279cc~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/47ccb712fc744e03b97c5b232ff279cc~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "6777274113103759362"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@toko_chindo/video/7348365783698853125",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 36,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/853d8b4e34b442869005ea9811bf706e_1710924743~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=XdGSxuBxGjO8a7tYh6yNXuIk%2FRE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/d39afc0747faf716e5357f082275ee99/6acec2d4/video/tos/useast2a/tos-useast2a-v-0068/73c276ef76c34aa7b97f346750327482/?a=1988&bti=ODszNWYuMDE6&&bt=545&ft=aEKq_qT0mIoPD12qGkJI3wUF~4AbMeF~O5&mime_type=video_mp4&rc=M2h5OXM5cjlkcTMzNzczM0BpM2h5OXM5cjlkcTMzNzczM0BwcnBrMmQ0NHFgLS1kMTZzYSNwcnBrMmQ0NHFgLS1kMTZzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00048000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/d39afc0747faf716e5357f082275ee99/6acec2d4/video/tos/useast2a/tos-useast2a-v-0068/73c276ef76c34aa7b97f346750327482/?a=1988&bti=ODszNWYuMDE6&&bt=545&ft=aEKq_qT0mIoPD12qGkJI3wUF~4AbMeF~O5&mime_type=video_mp4&rc=M2h5OXM5cjlkcTMzNzczM0BpM2h5OXM5cjlkcTMzNzczM0BwcnBrMmQ0NHFgLS1kMTZzYSNwcnBrMmQ0NHFgLS1kMTZzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00048000"
+          },
+          {
+            "language": "ind-ID",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/729217b7e981edea256f131b58a0c281/6acec2d4/video/tos/useast2a/tos-useast2a-v-0068/8b2ebc2b6e9444d898a1b86aa2e24287/?a=1988&bti=ODszNWYuMDE6&&bt=545&ft=aEKq_qT0mIoPD12qGkJI3wUF~4AbMeF~O5&mime_type=video_mp4&rc=M2h5OXM5cjlkcTMzNzczM0BpM2h5OXM5cjlkcTMzNzczM0BwcnBrMmQ0NHFgLS1kMTZzYSNwcnBrMmQ0NHFgLS1kMTZzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00048000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:llm",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/729217b7e981edea256f131b58a0c281/6acec2d4/video/tos/useast2a/tos-useast2a-v-0068/8b2ebc2b6e9444d898a1b86aa2e24287/?a=1988&bti=ODszNWYuMDE6&&bt=545&ft=aEKq_qT0mIoPD12qGkJI3wUF~4AbMeF~O5&mime_type=video_mp4&rc=M2h5OXM5cjlkcTMzNzczM0BpM2h5OXM5cjlkcTMzNzczM0BwcnBrMmQ0NHFgLS1kMTZzYSNwcnBrMmQ0NHFgLS1kMTZzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/853d8b4e34b442869005ea9811bf706e_1710924743~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=XdGSxuBxGjO8a7tYh6yNXuIk%2FRE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 122000,
+      "shareCount": 25000,
+      "playCount": 3400000,
+      "collectCount": 61459,
+      "commentCount": 1400,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "314926",
+          "name": "vitamin",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1618353719176193",
+          "name": "tipssehat",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "hangi vitamini almalıyım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7597350364592999701",
+      "text": "Hamilelik süresince mutlaka kullanılması gereken 3 vitamin\n\nDaha fazla içerik için takip etmeyi unutma ✨\n\n#hamile #hamilelik #vitamin ",
+      "textLanguage": "tr",
+      "createTime": 1768895992,
+      "createTimeISO": "2026-01-20T07:59:52.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7333703117123126278",
+        "name": "drseyfettinozvural",
+        "profileUrl": "https://www.tiktok.com/@drseyfettinozvural",
+        "nickName": "Dr. Seyfettin Özvural",
+        "verified": false,
+        "signature": "👨🏻‍⚕️Kadın Hastalıkları ve Doğum Uzmanı",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/3ccea5f6afd1bba6e12fc805433dfa4d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=38afe3a5&x-expires=1791932400&x-signature=rDRJwYjSiM4Ci0IFCdUXweFElo4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 0,
+        "friends": 0,
+        "fans": 9531,
+        "heart": 187200,
+        "video": 128,
+        "digg": 9,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/3ccea5f6afd1bba6e12fc805433dfa4d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=38afe3a5&x-expires=1791932400&x-signature=rDRJwYjSiM4Ci0IFCdUXweFElo4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "Behind Clouds (STEM Bass)",
+        "musicAuthor": "Empire Scores",
+        "musicOriginal": false,
+        "musicAlbum": "'hill Vlog",
+        "playUrl": "https://sf16.tiktokcdn-us.com/obj/tos-alisg-ve-2774/oQhfQFD7ZtBxoML5KCEI9MBCEOYgz91QAof4kM",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/ogEBqAvtZIXCkQYftAIAvCDoAf0FEBjhBgyMJA~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/ogEBqAvtZIXCkQYftAIAvCDoAf0FEBjhBgyMJA~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "7494569190406440977"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@drseyfettinozvural/video/7597350364592999701",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 7,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oInWbsfeABAmAa3yAQvEeaAYb4fU0fagYElGeg~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=%2FrZTLtJhKENZQSsgDxVeQqMnN9Q%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/5868604f752cd485857e1393b6c1c31f/6acec2b7/video/tos/alisg/tos-alisg-pv-0037/a1421e6c97574ddbadb072986b82b47c/?a=1988&bti=ODszNWYuMDE6&&bt=1947&ft=aEKq_qT0mIoPD12qGkJI3wUF~4AbMeF~O5&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmajs1NXI5cnFtODMzODczNEBpajs1NXI5cnFtODMzODczNEBjRl5Nc3FePmJKYSNvYF90aHFmOiNgaC1tMmRzX2thLS1kMTFzYSNgaC1tMmRzX2thLS1kMTFzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00070000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/5868604f752cd485857e1393b6c1c31f/6acec2b7/video/tos/alisg/tos-alisg-pv-0037/a1421e6c97574ddbadb072986b82b47c/?a=1988&bti=ODszNWYuMDE6&&bt=1947&ft=aEKq_qT0mIoPD12qGkJI3wUF~4AbMeF~O5&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmajs1NXI5cnFtODMzODczNEBpajs1NXI5cnFtODMzODczNEBjRl5Nc3FePmJKYSNvYF90aHFmOiNgaC1tMmRzX2thLS1kMTFzYSNgaC1tMmRzX2thLS1kMTFzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00070000"
+          },
+          {
+            "language": "tur-TR",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/a691dd2c12b39be5d5b2c6825692aac2/6acec2b7/video/tos/alisg/tos-alisg-pv-0037/50103e22ce5b473eb7aaa165a2a9b6c4/?a=1988&bti=ODszNWYuMDE6&&bt=1947&ft=aEKq_qT0mIoPD12qGkJI3wUF~4AbMeF~O5&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmajs1NXI5cnFtODMzODczNEBpajs1NXI5cnFtODMzODczNEBjRl5Nc3FePmJKYSNvYF90aHFmOiNgaC1tMmRzX2thLS1kMTFzYSNgaC1tMmRzX2thLS1kMTFzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00070000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/a691dd2c12b39be5d5b2c6825692aac2/6acec2b7/video/tos/alisg/tos-alisg-pv-0037/50103e22ce5b473eb7aaa165a2a9b6c4/?a=1988&bti=ODszNWYuMDE6&&bt=1947&ft=aEKq_qT0mIoPD12qGkJI3wUF~4AbMeF~O5&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmajs1NXI5cnFtODMzODczNEBpajs1NXI5cnFtODMzODczNEBjRl5Nc3FePmJKYSNvYF90aHFmOiNgaC1tMmRzX2thLS1kMTFzYSNgaC1tMmRzX2thLS1kMTFzcw%3D%3D&l=20261011234551BCDAEF20A83CC0D05499&btag=e00070000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oInWbsfeABAmAa3yAQvEeaAYb4fU0fagYElGeg~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=%2FrZTLtJhKENZQSsgDxVeQqMnN9Q%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 4012,
+      "shareCount": 757,
+      "playCount": 411300,
+      "collectCount": 1212,
+      "commentCount": 65,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": "53573832",
+          "name": "hamile",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1602634115478694",
+          "name": "hamilelik",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "314926",
+          "name": "vitamin",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "hangi vitamini almalıyım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7684665460138200338",
+      "text": "12 Essential Vitamins & What They Do for Your Body 💊 | Vitamin Guide",
+      "textLanguage": "en",
+      "createTime": 1789249500,
+      "createTimeISO": "2026-09-12T21:45:00.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7529806352090612792",
+        "name": "penguinshilajit",
+        "profileUrl": "https://www.tiktok.com/@penguinshilajit",
+        "nickName": "Penguin Wellness",
+        "verified": false,
+        "signature": "💪 Boost energy, focus & vitality\n🧠 Natural brain & body fuel\n👇 From Himalayas",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/3edfe1a5375172db2aa0af6fcc404895~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=46fa8a43&x-expires=1791932400&x-signature=9P2bdXIiJb%2BvZRvS7XWZgjzrnuw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 1,
+        "friends": 0,
+        "fans": 243600,
+        "heart": 2300000,
+        "video": 1125,
+        "digg": 275,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/3edfe1a5375172db2aa0af6fcc404895~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=46fa8a43&x-expires=1791932400&x-signature=9P2bdXIiJb%2BvZRvS7XWZgjzrnuw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "original sound - Penguin Wellness",
+        "musicAuthor": "Penguin Wellness",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/alisg/tos-alisg-v-27dcd7/oQoUUj0EVETcKauAi1rw9VB0iOfABApACE5lAG/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThasAOGXq8Zmo&mime_type=audio_mpeg&rc=am9rdW45cjpwZDMzODU8NEBpam9rdW45cjpwZDMzODU8NEBlNWc2MmRjaWZhLS1kMS1zYSNlNWc2MmRjaWZhLS1kMS1zcw%3D%3D&expire=1791783962&l=20261011234551BCDAEF20A83CC0D05499&ply_type=3&policy=3&signature=f9e8f980dfeb2f5e4309297ded5d216e&tk=0&btag=e000f0000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/3edfe1a5375172db2aa0af6fcc404895~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=46fa8a43&x-expires=1791932400&x-signature=9P2bdXIiJb%2BvZRvS7XWZgjzrnuw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/3edfe1a5375172db2aa0af6fcc404895~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=46fa8a43&x-expires=1791932400&x-signature=9P2bdXIiJb%2BvZRvS7XWZgjzrnuw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7684665558725315346"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@penguinshilajit/video/7684665460138200338",
+      "videoMeta": {
+        "height": 1920,
+        "width": 1080,
+        "duration": 11,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oMr1Bl6AifnimCaA6wMEU2hAKUdzBAAyBPxICK~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=27QNskqPmMiGtr7DbDd8y2Vr1vQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "1080p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oMr1Bl6AifnimCaA6wMEU2hAKUdzBAAyBPxICK~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=27QNskqPmMiGtr7DbDd8y2Vr1vQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 3932,
+      "shareCount": 2562,
+      "playCount": 261200,
+      "collectCount": 2435,
+      "commentCount": 37,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "hangi vitamini almalıyım",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7694767871544544532",
+      "text": "sağlıklı bi cilde yardımcı olan 3 takviye (doktorunuza veya eczacınıza danışın) reklam yoktur🤍 #cvitamini #omega3 #sağlıklıcilt #takviye #keşfetteyizzz ",
+      "textLanguage": "tr",
+      "createTime": 1791577764,
+      "createTimeISO": "2026-10-09T20:29:24.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "6864556780032427013",
+        "name": "sevvalll_alis",
+        "profileUrl": "https://www.tiktok.com/@sevvalll_alis",
+        "nickName": "Şevval Alisinanoğlu",
+        "verified": false,
+        "signature": "Pharmacist✨🦢\nwellness | beauty | lifestyle\n💌aysenur@headsupsocial.com",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/27eb3ee538615d1f362071830dbe1534~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e7683245&x-expires=1791932400&x-signature=QYbLAmjAMB%2BnyA6e7yEsbxTT1e4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 486,
+        "friends": 0,
+        "fans": 42700,
+        "heart": 1700000,
+        "video": 668,
+        "digg": 30800,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/27eb3ee538615d1f362071830dbe1534~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e7683245&x-expires=1791932400&x-signature=QYbLAmjAMB%2BnyA6e7yEsbxTT1e4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8"
+      },
+      "musicMeta": {
+        "musicName": "orijinal ses",
+        "musicAuthor": "Şevval Alisinanoğlu",
+        "musicOriginal": true,
+        "playUrl": "https://v16m.tiktokcdn-us.com/f817993c5aa3131646e93cfa80955ea3/6acc744d/video/tos/alisg/tos-alisg-v-27dcd7/o8ISIADATnnkEvGVfLGeeErvU15o5IAAgxpXCO/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThasAOGXq8Zmo&mime_type=audio_mpeg&rc=MzVpd3g5cmluZTMzODU8NEBpMzVpd3g5cmluZTMzODU8NEAyZXJjMmQ0cTFhLS1kMS1zYSMyZXJjMmQ0cTFhLS1kMS1zcw%3D%3D&vvpl=1&l=202610112345513522220541A94D847ACB&btag=e00048000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/27eb3ee538615d1f362071830dbe1534~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e7683245&x-expires=1791932400&x-signature=QYbLAmjAMB%2BnyA6e7yEsbxTT1e4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/27eb3ee538615d1f362071830dbe1534~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e7683245&x-expires=1791932400&x-signature=QYbLAmjAMB%2BnyA6e7yEsbxTT1e4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "musicId": "7694768005130291988"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@sevvalll_alis/video/7694767871544544532",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 61,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oktVgWXEAyR5AQAILCFqAKGDgyUAABWefpyEcs~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=KF5o2wq%2FEHQun%2F3d8NhfxA%2Fx94s%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "tur-TR",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/ee133a2b1ebbbdddd946c3da4cdfe0ad/6acec2ed/video/tos/alisg/tos-alisg-pv-0037/f3466d5eef1a49e3896edadfa314ac30/?a=1988&bti=ODszNWYuMDE6&&bt=2221&ft=aEKq_qT0mIoPD12qGkJI3wUoBCAbMeF~O5&mime_type=video_mp4&rc=ajx0OHM5cnRuZTMzODczNEBpajx0OHM5cnRuZTMzODczNEA0X2VuMmRjbzFhLS1kMTFzYSM0X2VuMmRjbzFhLS1kMTFzcw%3D%3D&l=202610112345513522220541A94D847ACB&btag=e00050000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/ee133a2b1ebbbdddd946c3da4cdfe0ad/6acec2ed/video/tos/alisg/tos-alisg-pv-0037/f3466d5eef1a49e3896edadfa314ac30/?a=1988&bti=ODszNWYuMDE6&&bt=2221&ft=aEKq_qT0mIoPD12qGkJI3wUoBCAbMeF~O5&mime_type=video_mp4&rc=ajx0OHM5cnRuZTMzODczNEBpajx0OHM5cnRuZTMzODczNEA0X2VuMmRjbzFhLS1kMTFzYSM0X2VuMmRjbzFhLS1kMTFzcw%3D%3D&l=202610112345513522220541A94D847ACB&btag=e00050000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oktVgWXEAyR5AQAILCFqAKGDgyUAABWefpyEcs~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=KF5o2wq%2FEHQun%2F3d8NhfxA%2Fx94s%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8"
+      },
+      "diggCount": 358,
+      "shareCount": 34,
+      "playCount": 10800,
+      "collectCount": 381,
+      "commentCount": 8,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "cvitamini",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "omega3",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "sağlıklıcilt",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "takviye",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "keşfetteyizzz",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "4158546226",
+          "name": "natural",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "takviye",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "takviye",
+        "views": 170000000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7618206753481608469",
+      "text": "Takviyeden önce beslenme ve yaşam tarzı değişiklikleri önemli‼️‼️ lütfen sadece sosyal medyada övüldüğü için tonlarca takviyeye yatırım yapmayın ve takviyelerinizi eczanelerden temin edin 😘\n#pcos #takviye #polikistikoversendromu #polikistikover #pcostakviye ",
+      "textLanguage": "tr",
+      "createTime": 1773751992,
+      "createTimeISO": "2026-03-17T12:53:12.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "7300574137670566917",
+        "name": "pmosdiyetisyeni",
+        "profileUrl": "https://www.tiktok.com/@pmosdiyetisyeni",
+        "nickName": "pmosdiyetisyeni",
+        "verified": false,
+        "signature": "Pkos'lu kadınlara semptomlarını yönetmeyi öğretip yaşamlarından keyif almalarını sağlıyorum ✨\nİg: @pkos.diyetisyeni\nBilgi ve ücretsiz eğitimler için tıkla ⬇️⬇️",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/9066ce56745a1418af2d33d4e139e8de~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=d0f04842&x-expires=1791932400&x-signature=AQODu8XVs%2BBg1dBpSNgBjLiEtpo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 24,
+        "friends": 0,
+        "fans": 1413,
+        "heart": 20000,
+        "video": 36,
+        "digg": 96,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/9066ce56745a1418af2d33d4e139e8de~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=d0f04842&x-expires=1791932400&x-signature=AQODu8XVs%2BBg1dBpSNgBjLiEtpo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8"
+      },
+      "musicMeta": {
+        "musicName": "orijinal ses",
+        "musicAuthor": "pmosdiyetisyeni",
+        "musicOriginal": true,
+        "playUrl": "https://v16m.tiktokcdn-us.com/695345fdc8d142732932eee565082a2b/6acc7428/video/tos/alisg/tos-alisg-v-27dcd7/osYUPgDEArpiCOl7CTjvbAawiAHQ5hAyBEzAl/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThasAOGXq8Zmo&mime_type=audio_mpeg&rc=MzNncnU5cmluOTMzODU8NEBpMzNncnU5cmluOTMzODU8NEBsLmIuMmQ0cXBhLS1kMS1zYSNsLmIuMmQ0cXBhLS1kMS1zcw%3D%3D&vvpl=1&l=202610112345513522220541A94D847ACB&btag=e00078000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/9066ce56745a1418af2d33d4e139e8de~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=d0f04842&x-expires=1791932400&x-signature=AQODu8XVs%2BBg1dBpSNgBjLiEtpo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/9066ce56745a1418af2d33d4e139e8de~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=d0f04842&x-expires=1791932400&x-signature=AQODu8XVs%2BBg1dBpSNgBjLiEtpo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "musicId": "7618206813888023304"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@pmosdiyetisyeni/video/7618206753481608469",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 24,
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/ogfBn6pxFTRAElAEFUAGpQQD5gscuVcB0zfOry~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=nn%2Ber6oS2Yvj1HhtqQmQ%2Bz2hcng%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/b36d92ac1946d70947be037c23a58293/6acec2c8/video/tos/alisg/tos-alisg-pv-0037/169f774e6c8b4b08ae77dbabfb7742b0/?a=1988&bti=ODszNWYuMDE6&&bt=7106&ft=aEKq_qT0mIoPD12qGkJI3wUoBCAbMeF~O5&mime_type=video_mp4&rc=MzNoOXM5cjxuOTMzODczNEBpMzNoOXM5cjxuOTMzODczNEBhcDMtMmRjcXBhLS1kMWBzYSNhcDMtMmRjcXBhLS1kMWBzcw%3D%3D&l=202610112345513522220541A94D847ACB&btag=e00078000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "4",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/b36d92ac1946d70947be037c23a58293/6acec2c8/video/tos/alisg/tos-alisg-pv-0037/169f774e6c8b4b08ae77dbabfb7742b0/?a=1988&bti=ODszNWYuMDE6&&bt=7106&ft=aEKq_qT0mIoPD12qGkJI3wUoBCAbMeF~O5&mime_type=video_mp4&rc=MzNoOXM5cjxuOTMzODczNEBpMzNoOXM5cjxuOTMzODczNEBhcDMtMmRjcXBhLS1kMWBzYSNhcDMtMmRjcXBhLS1kMWBzcw%3D%3D&l=202610112345513522220541A94D847ACB&btag=e00078000"
+          },
+          {
+            "language": "spa-ES",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/48c9f777256b4de8f5f4c254099d9ac4/6acec2c8/video/tos/alisg/tos-alisg-pv-0037/0e364958501741508686cd0f37725ced/?a=1988&bti=ODszNWYuMDE6&&bt=7106&ft=aEKq_qT0mIoPD12qGkJI3wUoBCAbMeF~O5&mime_type=video_mp4&rc=MzNoOXM5cjxuOTMzODczNEBpMzNoOXM5cjxuOTMzODczNEBhcDMtMmRjcXBhLS1kMWBzYSNhcDMtMmRjcXBhLS1kMWBzcw%3D%3D&l=202610112345513522220541A94D847ACB&btag=e00078000",
+            "source": "ASR",
+            "sourceUnabbreviated": "automatic speech recognition",
+            "version": "1:whisper_lid",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/48c9f777256b4de8f5f4c254099d9ac4/6acec2c8/video/tos/alisg/tos-alisg-pv-0037/0e364958501741508686cd0f37725ced/?a=1988&bti=ODszNWYuMDE6&&bt=7106&ft=aEKq_qT0mIoPD12qGkJI3wUoBCAbMeF~O5&mime_type=video_mp4&rc=MzNoOXM5cjxuOTMzODczNEBpMzNoOXM5cjxuOTMzODczNEBhcDMtMmRjcXBhLS1kMWBzYSNhcDMtMmRjcXBhLS1kMWBzcw%3D%3D&l=202610112345513522220541A94D847ACB&btag=e00078000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/ogfBn6pxFTRAElAEFUAGpQQD5gscuVcB0zfOry~tplv-tiktokx-origin.image?dr=9636&x-expires=1791932400&x-signature=nn%2Ber6oS2Yvj1HhtqQmQ%2Bz2hcng%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8"
+      },
+      "diggCount": 269,
+      "shareCount": 33,
+      "playCount": 21400,
+      "collectCount": 395,
+      "commentCount": 4,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "pcos",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "takviye",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "polikistikoversendromu",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "polikistikover",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "pcostakviye",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "4158546226",
+          "name": "natural",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "takviye",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "takviye",
+        "views": 170000000
+      },
+      "commentsDatasetUrl": null
+    }
+  ]
+}

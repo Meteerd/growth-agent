@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { Readable } from "node:stream";
 import { errorResponse, handle } from "@/engine/http";
+import { extractFrame } from "@/engine/media/ffmpeg";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -37,6 +38,14 @@ function resolveFile(parts: string[]): string | null {
 export const GET = handle(async (req: Request, ctx: RouteContext<"/api/assets/[...path]">) => {
   const { path: parts } = await ctx.params;
   const file = resolveFile(parts);
+  // posters are built on demand from their video (they are not committed)
+  if (
+    file?.endsWith(".mp4.poster.jpg") &&
+    !fs.existsSync(file) &&
+    fs.existsSync(file.slice(0, -".poster.jpg".length))
+  ) {
+    await extractFrame(file.slice(0, -".poster.jpg".length), 1.2, file, 720).catch(() => undefined);
+  }
   if (!file || !fs.existsSync(file) || !fs.statSync(file).isFile())
     return errorResponse(404, "not_found", "Asset not found");
   const size = fs.statSync(file).size;
