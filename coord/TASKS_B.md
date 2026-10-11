@@ -36,7 +36,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Dossier view with inline editing (PATCH), sources list, runs list, start run. Connect page: provider tiles with Live/Demo/Missing, per-brand config fields (non-secret ids only), honest copy about what each connection adds.
   - Accept: e2e: edit a dossier field and see it persist (mock); connect page shows all providers.
 
-- [ ] **B09 Run cockpit `/runs/[id]`**
+- [x] **B09 Run cockpit `/runs/[id]`** (commit 6fb47b9)
   - Phase rail with moving light, live event stream (typed-in tool calls, costs, warnings), evidence wall (cards by source, thumbnails, metrics, outlier/longevity badges, deconstruction on hover/expand), shader activity tied to run state.
   - Accept: e2e: mock run streams to completion with all phases lit; screenshot mid-run and finished.
 

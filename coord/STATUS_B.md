@@ -2,10 +2,10 @@
 
 ## Now
 - Time: 2026-10-11 23:23 +03
-- Current task: B09 run cockpit (B13, B14, B15 with worktree subagents)
+- Current task: B10 consultation (B13, B14, B15 with worktree subagents)
 - Last sync: 23:19 exit 0, main UPDATED, checks PASS
 - Blockers: none. @/contracts v1.1.0 on main; building against it. Lane A API routes (A03 brands, A05 runs + SSE) are on main.
-- Next 3: B09 run cockpit -> B10 consultation -> B11 direction
+- Next 3: B10 consultation -> B11 direction -> B12 studio + B12b reverse-engineer
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - ack run until 07:00, never finish early (INBOX_B 23:52): coord/IMPROVE_LOOP.md read; will run it after STRETCH. ack blueprints have real frames now (INBOX_B 23:57): placeholders kept for 404 frames.
 - ack A09 landed: consultation is live (INBOX_B 00:00): consult UI posts one answer at a time and handles 409 run_finished.
@@ -37,3 +37,4 @@
 - 23:58 B06 done (e2e2310): landing + app header. Lighthouse (prod build, perf only): 89 (FCP 0.8 s, LCP 3.8 s, TBT 10 ms, CLS 0). Screenshots e2e/screens/landing-*.png.
 - 00:02 B07 done (0316da3): /brands living cards + /brands/new. e2e portfolio.spec: 4 seeded cards, create from landing then see it in portfolio, invalid URL blocked (3 passed).
 - 00:09 B08 done (ceb08ab): brand frame, dossier inline edit, runs, sources, connect. e2e brand.spec: dossier edit persists across navigation, connect lists all 15 providers, unknown brand state (3 passed).
+- 00:15 B09 done (6fb47b9; the web work landed in the commit titled 'coord: B09 checked' after a git add pathspec error): cockpit. e2e cockpit.spec: run from brand home streams to the consult pause, answers resume it, run-done with 9 phases lit; replay of the finished demo run (2 passed).
