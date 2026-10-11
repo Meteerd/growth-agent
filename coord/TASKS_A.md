@@ -31,7 +31,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Anthropic wrapper (model from env, per-route effort, streaming, structured outputs, refusal handling, usage -> ledger cost), tool-runner helper emitting RunEvents, prompt loader, recorded-response mode for tests (no live calls in `pnpm check`).
   - Accept: unit tests with recorded responses; `pnpm smoke anthropic` makes one live call within cap and saves it to fixtures/live.
 
-- [ ] **A07 Intake phase**
+- [x] **A07 Intake phase** (commit 5d937a2)
   - Crawl the site with Firecrawl when live (fallback: direct fetch + readability), extract dossier fields + visual identity with structured output, record sources, never overwrite operator-edited fields.
   - Accept: demo intake for all four brands produces valid dossiers; one live intake of houndapp.xyz recorded.
 
