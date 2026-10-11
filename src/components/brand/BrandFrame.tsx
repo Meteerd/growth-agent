@@ -52,7 +52,7 @@ export function BrandFrame({ slug, children }: { slug: string; children: React.R
             {isLoading || !b ? (
               <Skeleton className="mt-2 h-8 w-48" />
             ) : (
-              <h1 className="mt-1 truncate font-serif text-[clamp(2rem,4vw,3rem)] leading-none">{b.name}</h1>
+              <h1 className="mt-1 truncate font-display text-[clamp(2rem,4vw,3rem)] leading-none">{b.name}</h1>
             )}
           </div>
         </div>

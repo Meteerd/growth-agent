@@ -13,7 +13,6 @@ import { ErrorState } from "@/components/ui/States";
 import { UrlInput } from "@/components/ui/UrlInput";
 import type { Brand, Run } from "@/contracts";
 import { getClient } from "@/lib/client/api";
-import { useFieldActivity } from "@/lib/client/field";
 import { qk, useRunStream } from "@/lib/client/queries";
 import { hostname } from "./Portfolio";
 
@@ -24,7 +23,6 @@ export function EnterBrand() {
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<unknown>();
   const once = useRef(false);
-  useFieldActivity(pending || created ? 0.6 : 0.25);
 
   const create = async (url: string) => {
     if (pending || created) return; // double-submit guard
@@ -96,7 +94,7 @@ function IntakeStream({ brand, run }: { brand: Brand; run: Run }) {
         <span className="mono-label">intake / {run.id}</span>
         {run.demo && <DemoBadge />}
       </header>
-      <ol aria-live="polite" className="max-h-[52vh] min-h-[260px] overflow-y-auto py-3" data-lenis-prevent>
+      <ol aria-live="polite" className="max-h-[52vh] min-h-[260px] overflow-y-auto py-3">
         {stream.events.map((e, i) => (
           <EventRow
             key={e.id}
@@ -107,7 +105,7 @@ function IntakeStream({ brand, run }: { brand: Brand; run: Run }) {
         ))}
         {!intakeDone && (
           <li className="flex items-center gap-2 px-3 py-2 font-mono text-[11px] text-bone-3">
-            <span className="size-1.5 animate-pulse rounded-full bg-signal" /> reading {hostname(brand.url)}
+            <span className="size-1.5 rounded-full bg-signal" /> reading {hostname(brand.url)}
           </li>
         )}
       </ol>
@@ -135,9 +133,7 @@ function IdleStream({ pending }: { pending: boolean }) {
   return (
     <Panel tone="hairline" className="grid min-h-[260px] place-items-center p-8 text-center">
       <div>
-        <p className="font-serif text-[24px] italic text-bone-2">
-          {pending ? "Creating the brand" : "Waiting for a URL"}
-        </p>
+        <p className="font-display text-[24px] text-bone-2">{pending ? "Creating the brand" : "Waiting for a URL"}</p>
         <p className="mt-2 font-mono text-[11px] text-bone-3">Events from the intake run appear here as they happen.</p>
       </div>
     </Panel>

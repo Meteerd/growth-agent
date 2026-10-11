@@ -17,7 +17,6 @@ import {
   type SpendResponse,
 } from "@/contracts";
 import { cn } from "@/lib/client/cn";
-import { useFieldActivity } from "@/lib/client/field";
 import { formatCount, formatUsd } from "@/lib/client/format";
 import { DATA_MODE } from "@/lib/client/mode";
 import { useProviders, useSpend } from "@/lib/client/queries";
@@ -45,7 +44,6 @@ function mergeProviders(statuses?: ProviderStatus[]): Row[] {
 }
 
 export function Settings() {
-  useFieldActivity(0.15);
   const providers = useProviders();
   const spend = useSpend();
   const rows = mergeProviders(providers.data);
@@ -63,7 +61,7 @@ export function Settings() {
           </>
         }
         actions={
-          <dl className="flex w-full overflow-hidden rounded-card md:w-auto bg-[rgb(12_14_19/0.7)] shadow-[var(--shadow-panel)]">
+          <dl className="flex w-full overflow-hidden rounded-card md:w-auto bg-raised shadow[var(--shadow-panel)]">
             <Readout label="live">
               {ready ? (
                 <span className="flex items-center gap-2">
@@ -190,7 +188,7 @@ function Section({
           <p className="mono-label">
             <span className="text-bone-3">{index}</span> / {eyebrow}
           </p>
-          <h2 id={`${id}-title`} className="mt-2 font-serif text-[32px] leading-[1.05] md:text-[40px]">
+          <h2 id={`${id}-title`} className="mt-2 font-display text-[32px] leading-[1.05] md:text-[40px]">
             {title}
           </h2>
         </div>
@@ -213,7 +211,7 @@ function ModePanel({ live, loading, failed }: { live: Row[]; loading: boolean; f
     >
       <Cell label="This cockpit">
         <div className="flex items-center gap-3">
-          <p className="font-serif text-[30px] leading-none">{mock ? "Mock" : "Live engine"}</p>
+          <p className="font-display text-[30px] leading-none">{mock ? "Mock" : "Live engine"}</p>
           {mock ? <DemoBadge label="Mock data" /> : <Badge tone="pass">/api</Badge>}
         </div>
         <p className="mt-3 text-bone-2 text-ui">
@@ -278,7 +276,7 @@ function Cell({ label, children }: { label: string; children: React.ReactNode })
 
 function Token({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex h-6 items-center rounded-cell bg-raised-2 px-2 text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)]">
+    <span className="inline-flex h-6 items-center rounded-cell bg-raised-2 px-2 text-bone shadow[inset_0_0_0_1px_var(--color-line-strong)]">
       {children}
     </span>
   );

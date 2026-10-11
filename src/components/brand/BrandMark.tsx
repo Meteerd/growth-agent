@@ -20,7 +20,7 @@ export function BrandMark({
   return (
     <span
       className={cn(
-        "relative grid shrink-0 place-items-center overflow-hidden rounded-[10px] bg-bone/5 shadow-[inset_0_0_0_1px_var(--color-line)]",
+        "relative grid shrink-0 place-items-center overflow-hidden rounded-[10px] bg-bone/5 shadow[inset_0_0_0_1px_var(--color-line)]",
         className,
       )}
       style={{ width: size, height: size }}
@@ -29,7 +29,7 @@ export function BrandMark({
         // biome-ignore lint/performance/noImgElement: brand marks come from the engine asset route
         <img src={src} alt="" className="h-full w-full object-contain p-[14%]" onError={() => setBroken(true)} />
       ) : (
-        <span className="font-serif text-bone" style={{ fontSize: size * 0.5 }}>
+        <span className="font-display text-bone" style={{ fontSize: size * 0.5 }}>
           {brand.name.slice(0, 1)}
         </span>
       )}

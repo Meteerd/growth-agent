@@ -8,7 +8,6 @@ import { ErrorState } from "@/components/ui/States";
 import { toast } from "@/components/ui/Toast";
 import { type Connection, PROVIDER_IDS, PROVIDER_INFO, type ProviderId, type ProviderStatus } from "@/contracts";
 import { getClient } from "@/lib/client/api";
-import { useFieldActivity } from "@/lib/client/field";
 import { qk, useAction, useBrand, useConnections, useProviders } from "@/lib/client/queries";
 
 // What each connection adds, in plain words, and the non-secret id the engine needs per brand.
@@ -62,7 +61,6 @@ export function Connect({ slug }: { slug: string }) {
   const { data: conns, isLoading, error, refetch } = useConnections(brand?.id);
   const { data: providers } = useProviders();
   const global = new Map((providers ?? []).map((p) => [p.provider, p]));
-  useFieldActivity(0.2);
   if (error) return <ErrorState title="Could not load connections" error={error} onRetry={() => refetch()} />;
   const byProvider = new Map((conns ?? []).map((c) => [c.provider, c]));
   return (
@@ -74,7 +72,7 @@ export function Connect({ slug }: { slug: string }) {
       </p>
       {(["engine", "tool", "connector"] as const).map((role) => (
         <section key={role} aria-labelledby={`role-${role}`}>
-          <h2 id={`role-${role}`} className="mb-4 font-serif text-[28px]">
+          <h2 id={`role-${role}`} className="mb-4 font-display text-[28px]">
             {ROLE_TITLE[role]}
           </h2>
           <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3" data-testid={`providers-${role}`}>
@@ -150,7 +148,7 @@ function Tile({ provider, brandId, conn }: { provider: ProviderId; brandId: stri
               placeholder={field.placeholder}
               spellCheck={false}
               autoComplete="off"
-              className="h-9 min-w-0 rounded-chip bg-glass px-3 font-mono text-[12px] text-bone outline-none shadow-[inset_0_0_0_1px_var(--color-line-strong)] placeholder:text-bone-4 focus:shadow-[inset_0_0_0_1px_rgb(212_255_58/0.5)]"
+              className="h-9 min-w-0 rounded-chip bg-glass px-3 font-mono text-[12px] text-bone outline-none shadow[inset_0_0_0_1px_var(--color-line-strong)] placeholder:text-bone-4 focus:shadow[inset_0_0_0_1px_rgb(229_50_45/0.5)]"
             />
           </label>
           <Button size="sm" type="submit" loading={save.isPending} disabled={!value.trim()}>

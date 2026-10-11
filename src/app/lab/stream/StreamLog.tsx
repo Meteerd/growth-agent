@@ -80,7 +80,7 @@ export function StreamLog() {
         </p>
         <DemoBadge />
       </aside>
-      <ol data-lenis-prevent className="glass-flat h-[70vh] overflow-y-auto p-2 font-mono text-[12px]">
+      <ol className="glass-flat h-[70vh] overflow-y-auto p-2 font-mono text-[12px]">
         {events.length === 0 && (
           <li className="p-4 text-bone-3">Press play. Events appear here as the script emits them.</li>
         )}

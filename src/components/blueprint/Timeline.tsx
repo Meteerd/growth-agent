@@ -51,7 +51,7 @@ export function ShotFrame({
             background: `repeating-linear-gradient(115deg, ${hue}18 0 1px, transparent 1px 8px), radial-gradient(120% 80% at 0% 0%, ${hue}22, transparent 60%), #0c0e13`,
           }}
         >
-          <p className="line-clamp-4 font-serif text-[13px] text-bone-2 italic leading-snug">{fallback}</p>
+          <p className="line-clamp-4 font-display text-[13px] text-bone-2 leading-snug">{fallback}</p>
         </div>
       )}
     </div>
@@ -94,7 +94,7 @@ export function Timeline({
   };
 
   return (
-    <div className="overflow-x-auto" data-lenis-prevent>
+    <div className="overflow-x-auto">
       <div className="min-w-[780px]">
         <div className="grid grid-cols-[112px_1fr] gap-x-4">
           {/* ruler */}
@@ -175,7 +175,7 @@ export function Timeline({
                       style={{
                         boxShadow: on
                           ? `0 0 0 1px ${PURPOSE_COLOR[s.purpose]}, 0 12px 40px -12px ${PURPOSE_COLOR[s.purpose]}66`
-                          : "inset 0 0 0 1px rgb(236 231 221 / 0.08)",
+                          : "inset 0 0 0 1px rgb(17 17 17 / 0.08)",
                       }}
                     >
                       <ShotFrame
@@ -217,7 +217,7 @@ export function Timeline({
                       y1={0}
                       x2={x}
                       y2={40}
-                      stroke={on ? PURPOSE_COLOR[s.purpose] : "rgb(236 231 221 / 0.14)"}
+                      stroke={on ? PURPOSE_COLOR[s.purpose] : "rgb(17 17 17 / 0.14)"}
                       strokeWidth={on ? 2 : 1}
                       vectorEffect="non-scaling-stroke"
                       strokeDasharray={aligned[i] ? undefined : "3 4"}
@@ -226,7 +226,7 @@ export function Timeline({
                       cx={x}
                       cy={20}
                       r={on ? 3.5 : 2}
-                      fill={on ? PURPOSE_COLOR[s.purpose] : "rgb(236 231 221 / 0.3)"}
+                      fill={on ? PURPOSE_COLOR[s.purpose] : "rgb(17 17 17 / 0.3)"}
                       vectorEffect="non-scaling-stroke"
                     />
                   </g>
@@ -238,10 +238,10 @@ export function Timeline({
             <div className="relative h-[138px]">
               {aligned.every((x) => !x) && (
                 <div
-                  className="absolute inset-0 flex items-center justify-center rounded-[10px] border border-line-strong border-dashed bg-[repeating-linear-gradient(115deg,rgb(236_231_221/0.03)_0_1px,transparent_1px_9px)] text-center"
+                  className="absolute inset-0 flex items-center justify-center rounded-[10px] border border-line-strong border-dashed bg-[repeating-linear-gradient(115deg,rgb(17_17_17/0.03)_0_1px,transparent_1px_9px)] text-center"
                   data-testid="remake-pending"
                 >
-                  <p className="max-w-md font-serif text-[18px] text-bone-2 italic">
+                  <p className="max-w-md font-display text-[18px] text-bone-2">
                     The remake lands here, shot for shot, once production runs on this research.
                   </p>
                 </div>
@@ -267,8 +267,8 @@ export function Timeline({
                         className="relative h-full overflow-hidden rounded-[8px] transition-shadow duration-300"
                         style={{
                           boxShadow: on
-                            ? "0 0 0 1px var(--color-signal), 0 12px 40px -12px rgb(212 255 58 / 0.45)"
-                            : "inset 0 0 0 1px rgb(236 231 221 / 0.1)",
+                            ? "0 0 0 1px var(--color-signal), 0 12px 40px -12px rgb(229 50 45 / 0.45)"
+                            : "inset 0 0 0 1px rgb(17 17 17 / 0.1)",
                         }}
                       >
                         <ShotFrame
@@ -312,13 +312,13 @@ export function Timeline({
 
             {/* scan line */}
             <div className="pointer-events-none absolute -top-1 -bottom-1 z-10" style={{ left: pct(t) }} aria-hidden>
-              <span className="absolute inset-y-0 -left-px w-[2px] bg-signal shadow-[0_0_18px_3px_rgb(212_255_58/0.55)]" />
+              <span className="absolute inset-y-0 -left-px w-[2px] bg-signal " />
               <span className="absolute -top-6 -translate-x-1/2 whitespace-nowrap rounded-[4px] bg-signal px-1.5 py-0.5 font-mono text-[10px] text-ink tabular-nums">
                 {scanning ? "watching " : ""}
                 {t.toFixed(1)}s
               </span>
               {scanning && (
-                <span className="absolute inset-y-0 right-0 w-24 bg-[linear-gradient(90deg,transparent,rgb(212_255_58/0.10))]" />
+                <span className="absolute inset-y-0 right-0 w-24 bg-[linear-gradient(90deg,transparent,rgb(229_50_45/0.10))]" />
               )}
             </div>
           </div>
@@ -347,7 +347,7 @@ export function Timeline({
 function RowLabel({ title, sub }: { title: string; sub: string }) {
   return (
     <div className="flex h-[138px] flex-col justify-center">
-      <p className="font-serif text-[20px] leading-tight">{title}</p>
+      <p className="font-display text-[20px] leading-tight">{title}</p>
       <p className="mt-1 font-mono text-[10px] text-bone-3">{sub}</p>
     </div>
   );

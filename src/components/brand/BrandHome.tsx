@@ -13,13 +13,11 @@ import type { Brand, BrandDossier, Run } from "@/contracts";
 import { ApiRequestError, getClient } from "@/lib/client/api";
 import { referenceImages } from "@/lib/client/brandAssets";
 import { cn } from "@/lib/client/cn";
-import { useFieldActivity } from "@/lib/client/field";
 import { formatUsd, PHASE_LABELS, timeAgo } from "@/lib/client/format";
 import { qk, useAction, useBrand, useBrandRuns } from "@/lib/client/queries";
 
 export function BrandHome({ slug }: { slug: string }) {
   const { data: brand, isLoading, error, refetch } = useBrand(slug);
-  useFieldActivity(0.2);
   if (error) return <ErrorState title="Could not load the brand" error={error} onRetry={() => refetch()} />;
   if (isLoading || !brand)
     return (
@@ -193,7 +191,7 @@ function Dossier({ brand }: { brand: Brand }) {
             {d.operatorNotes.map((n) => (
               <li key={n.questionId} className="border-line border-l pl-3">
                 <p className="text-bone-3 text-[12px]">{n.prompt}</p>
-                <p className="mt-0.5 font-serif text-[18px] italic">{n.answer}</p>
+                <p className="mt-0.5 font-display text-[18px]">{n.answer}</p>
               </li>
             ))}
           </ul>
@@ -402,8 +400,8 @@ function EditableText({
               if (e.key === "Escape") setEditing(false);
             }}
             className={cn(
-              "w-full resize-y rounded-card bg-glass px-4 py-3 text-bone outline-none shadow-[inset_0_0_0_1px_var(--color-line-strong)] focus:shadow-[inset_0_0_0_1px_rgb(212_255_58/0.5)]",
-              serif ? "font-serif text-[26px] leading-tight" : "text-body",
+              "w-full resize-y rounded-card bg-glass px-4 py-3 text-bone outline-none shadow[inset_0_0_0_1px_var(--color-line-strong)] focus:shadow[inset_0_0_0_1px_rgb(229_50_45/0.5)]",
+              serif ? "font-display text-[26px] leading-tight" : "text-body",
             )}
           />
           <div className="mt-2 flex items-center gap-2">
@@ -420,7 +418,7 @@ function EditableText({
         <p
           className={cn(
             "mt-2",
-            serif ? "font-serif text-[clamp(1.6rem,3vw,2.25rem)] leading-tight" : "text-bone-2 text-body",
+            serif ? "font-display text-[clamp(1.6rem,3vw,2.25rem)] leading-tight" : "text-bone-2 text-body",
           )}
         >
           {value}
@@ -496,7 +494,7 @@ function EditableList({
               if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) save();
               if (e.key === "Escape") setEditing(false);
             }}
-            className="w-full resize-y rounded-card bg-glass px-3 py-2.5 text-bone text-ui outline-none shadow-[inset_0_0_0_1px_var(--color-line-strong)] focus:shadow-[inset_0_0_0_1px_rgb(212_255_58/0.5)]"
+            className="w-full resize-y rounded-card bg-glass px-3 py-2.5 text-bone text-ui outline-none shadow[inset_0_0_0_1px_var(--color-line-strong)] focus:shadow[inset_0_0_0_1px_rgb(229_50_45/0.5)]"
           />
           <p className="mt-1 font-mono text-[10.5px] text-bone-3">One per line.</p>
           <div className="mt-2 flex gap-2">

@@ -15,7 +15,6 @@ import { toast } from "@/components/ui/Toast";
 import type { Evidence, Question } from "@/contracts";
 import { ApiRequestError, getClient } from "@/lib/client/api";
 import { cn } from "@/lib/client/cn";
-import { useFieldActivity } from "@/lib/client/field";
 import { formatCount, SOURCE_LABELS } from "@/lib/client/format";
 import { qk, useEvidence, useQuestions } from "@/lib/client/queries";
 import { useRunCtx } from "./RunContext";
@@ -48,7 +47,6 @@ export function Consult() {
   const index = picked ?? (firstOpen === -1 ? questions.length : firstOpen);
   const current = questions[index];
   const allDone = questions.length > 0 && questions.every(isDone);
-  useFieldActivity(allDone ? 0.5 : 0.3, "violet");
 
   useEffect(() => {
     if (!allDone || picked !== null) return;
@@ -143,7 +141,7 @@ function Constellation({
               y1={a.y}
               x2={p.x}
               y2={p.y}
-              stroke={lit ? "rgb(236 231 221 / 0.5)" : "rgb(236 231 221 / 0.1)"}
+              stroke={lit ? "rgb(17 17 17 / 0.5)" : "rgb(17 17 17 / 0.1)"}
               strokeWidth="1"
               style={{ transition: "stroke 600ms" }}
             />
@@ -154,17 +152,15 @@ function Constellation({
           const cur = i === index;
           return (
             <g key={questions[i].id}>
-              {cur && (
-                <circle cx={p.x} cy={p.y} r="11" fill="none" stroke="rgb(212 255 58 / 0.5)" className="animate-pulse" />
-              )}
+              {cur && <circle cx={p.x} cy={p.y} r="11" fill="none" stroke="rgb(229 50 45 / 0.5)" className="" />}
               <circle
                 cx={p.x}
                 cy={p.y}
                 r={done ? 4.5 : 3.5}
-                fill={done ? "#ECE7DD" : cur ? "#D4FF3A" : "#06070A"}
-                stroke={done || cur ? "none" : "rgb(236 231 221 / 0.35)"}
+                fill={done ? "#ECE7DD" : cur ? "#E5322D" : "#06070A"}
+                stroke={done || cur ? "none" : "rgb(17 17 17 / 0.35)"}
                 style={{
-                  filter: done ? "drop-shadow(0 0 6px rgb(236 231 221 / 0.6))" : undefined,
+                  filter: done ? "drop-shadow(0 0 6px rgb(17 17 17 / 0.6))" : undefined,
                   transition: "all 500ms",
                 }}
               />
@@ -235,7 +231,7 @@ function Stage({
       </p>
       <h2
         id={`q-${q.id}`}
-        className="mt-5 max-w-[860px] font-serif text-[clamp(2rem,4.6vw,3.6rem)] leading-[1.04] tracking-[-0.01em] text-gradient-bone"
+        className="mt-5 max-w-[860px] font-display text-[clamp(2rem,4.6vw,3.6rem)] leading-[1.04] tracking-[-0.01em]"
       >
         {q.prompt}
       </h2>
@@ -252,7 +248,7 @@ function Stage({
               initial={{ opacity: 0, scale: 0.9, y: 6 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: 0.25 + i * 0.06, type: "spring", stiffness: 300, damping: 24 }}
-              className="flex max-w-[260px] items-center gap-2 rounded-chip bg-glass px-3 py-1.5 text-left shadow-[inset_0_0_0_1px_var(--color-line)] transition-colors hover:bg-glass-strong"
+              className="flex max-w-[260px] items-center gap-2 rounded-chip bg-glass px-3 py-1.5 text-left shadow[inset_0_0_0_1px_var(--color-line)] transition-colors hover:bg-glass-strong"
             >
               <span className="size-1.5 shrink-0 rounded-full" style={{ background: sourceHue(e.source) }} />
               <span className="truncate text-[12px] text-bone-2">{e.title}</span>
@@ -423,7 +419,7 @@ function AnswerInput({ q, prior, onSubmit }: { q: Question; prior?: unknown; onS
           if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && text.trim()) onSubmit(text.trim());
         }}
         placeholder={typeof q.defaultAnswer === "string" ? q.defaultAnswer : "In your own words"}
-        className="glass w-full resize-none rounded-panel px-5 py-4 text-left text-bone text-body outline-none focus:shadow-[var(--shadow-panel-strong),0_0_0_1px_rgb(212_255_58/0.45)]"
+        className="glass w-full resize-none rounded-panel px-5 py-4 text-left text-bone text-body outline-none focus:shadow[var(--shadow-panel-strong),0_0_0_1px_rgb(229_50_45/0.45)]"
       />
       <Button type="submit" variant="primary" className="self-center" disabled={!text.trim()} data-testid="answer">
         Answer
@@ -460,9 +456,7 @@ function Finished({
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     >
       <p className="mono-label">consultation complete</p>
-      <h2 className="mt-5 font-serif text-[clamp(2.2rem,5vw,4rem)] leading-none text-gradient-bone">
-        Answers in. The run continues.
-      </h2>
+      <h2 className="mt-5 font-display text-[clamp(2.2rem,5vw,4rem)] leading-none">Answers in. The run continues.</h2>
       <p className="mt-4 text-bone-2 text-body">
         Every answer is now in the dossier and will be cited as &ldquo;because you said&rdquo;.
       </p>
@@ -474,11 +468,9 @@ function Finished({
           return (
             <li key={q.id} className="glass-flat p-4">
               <p className="text-[12px] text-bone-3">{q.prompt}</p>
-              <p className="mt-1 font-serif text-[19px] italic">
+              <p className="mt-1 font-display text-[19px]">
                 {skipped && (
-                  <span className="mr-2 font-mono text-[10.5px] text-warn not-italic uppercase tracking-[0.06em]">
-                    skipped
-                  </span>
+                  <span className="mr-2 font-mono text-[10.5px] text-warn uppercase tracking-[0.06em]">skipped</span>
                 )}
                 {skipped
                   ? (q.assumption ?? `Assumed: ${describeAnswer(q, q.defaultAnswer) || "the common case"}`)
@@ -533,7 +525,7 @@ function ChatDrawer({ runId }: { runId: string }) {
         label="free text / the agent reads the dossier and evidence"
         title="Tell it anything"
         trigger={
-          <Button size="lg" className="shadow-[var(--shadow-panel-strong)]" data-testid="chat-open">
+          <Button size="lg" className="shadow[var(--shadow-panel-strong)]" data-testid="chat-open">
             <span className="size-1.5 rounded-full bg-signal" />
             Talk to the agent
           </Button>
@@ -554,7 +546,7 @@ function ChatDrawer({ runId }: { runId: string }) {
                   "max-w-[90%] rounded-card px-4 py-3 text-ui",
                   m.role === "user"
                     ? "self-end bg-bone text-ink"
-                    : "self-start bg-glass text-bone shadow-[inset_0_0_0_1px_var(--color-line)]",
+                    : "self-start bg-glass text-bone shadow[inset_0_0_0_1px_var(--color-line)]",
                 )}
               >
                 {m.text ? (
@@ -565,7 +557,7 @@ function ChatDrawer({ runId }: { runId: string }) {
               </li>
             ))}
           </ol>
-          <form onSubmit={send} className="sticky bottom-0 mt-4 flex gap-2 bg-[rgb(12_14_19/0.9)] pt-3">
+          <form onSubmit={send} className="sticky bottom-0 mt-4 flex gap-2 bg-raised pt-3">
             <label htmlFor="chat-input" className="sr-only">
               Message
             </label>
@@ -574,7 +566,7 @@ function ChatDrawer({ runId }: { runId: string }) {
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
               placeholder="We tried Reels in spring, nothing stuck"
-              className="h-10 min-w-0 flex-1 rounded-chip bg-glass px-4 text-bone text-ui outline-none shadow-[inset_0_0_0_1px_var(--color-line-strong)] placeholder:text-bone-4 focus:shadow-[inset_0_0_0_1px_rgb(212_255_58/0.5)]"
+              className="h-10 min-w-0 flex-1 rounded-chip bg-glass px-4 text-bone text-ui outline-none shadow[inset_0_0_0_1px_var(--color-line-strong)] placeholder:text-bone-4 focus:shadow[inset_0_0_0_1px_rgb(229_50_45/0.5)]"
             />
             <Button type="submit" variant="primary" size="md" loading={busy} disabled={!draft.trim()}>
               Send
@@ -593,10 +585,7 @@ function Linkified({ text }: { text: string }) {
     <>
       {parts.map((p, i) =>
         /^ev_[a-z0-9_]+$/.test(p) ? (
-          <span
-            key={i}
-            className="mx-0.5 rounded-[4px] bg-[rgb(212_255_58/0.1)] px-1 font-mono text-[11px] text-signal"
-          >
+          <span key={i} className="mx-0.5 rounded-[4px] bg-[rgb(229_50_45/0.1)] px-1 font-mono text-[11px] text-signal">
             {p}
           </span>
         ) : (

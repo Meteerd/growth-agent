@@ -20,7 +20,6 @@ import { CHANNEL_LABELS, type Concept, type RenderTier, type RunEvent, type Shot
 import { getClient } from "@/lib/client/api";
 import { referenceImages } from "@/lib/client/brandAssets";
 import { cn } from "@/lib/client/cn";
-import { useFieldActivity } from "@/lib/client/field";
 import { formatUsd } from "@/lib/client/format";
 import { qk, useBrand, useConceptAssets } from "@/lib/client/queries";
 
@@ -52,7 +51,6 @@ export function Studio() {
   const [selId, setSelId] = useState<string>();
   const sel = concepts.find((c) => c.id === selId) ?? concepts[0];
   const rendering = concepts.some((c) => c.status === "rendering");
-  useFieldActivity(rendering ? 0.65 : 0.25);
 
   if (error) return <ErrorState title="Could not load the concepts" error={error} onRetry={() => refetch()} />;
   if (isLoading)
@@ -103,7 +101,7 @@ function ConceptCard({ c, active, onSelect }: { c: Concept; active: boolean; onS
       data-testid={`concept-${c.id}`}
       className={cn(
         "glass-flat group flex flex-col gap-2.5 p-4 text-left transition-[box-shadow,transform] duration-200 hover:-translate-y-px",
-        active && "shadow-[var(--shadow-panel-strong),inset_0_0_0_1px_rgb(212_255_58/0.45)]",
+        active && "shadow[var(--shadow-panel-strong),inset_0_0_0_1px_rgb(229_50_45/0.45)]",
       )}
     >
       <div className="flex items-center justify-between gap-2">
@@ -113,7 +111,7 @@ function ConceptCard({ c, active, onSelect }: { c: Concept; active: boolean; onS
         <ComplianceBadge status={c.compliance} />
       </div>
       <p className="font-medium text-bone text-ui leading-snug">{c.title}</p>
-      <p className="line-clamp-2 font-serif text-[15px] text-bone-2 italic leading-snug">&ldquo;{c.hook}&rdquo;</p>
+      <p className="line-clamp-2 font-display text-[15px] text-bone-2 leading-snug">&ldquo;{c.hook}&rdquo;</p>
       <div className="flex flex-wrap items-center gap-1.5">
         {c.blueprintId && !c.variantOf && <Badge tone="signal">Remake</Badge>}
         {c.variantOf && <Badge tone="cyan">Variant {c.aspect}</Badge>}
@@ -214,8 +212,8 @@ function Workbench({ c, events, demo }: { c: Concept; events: RunEvent[]; demo: 
               </Link>
             )}
           </div>
-          <h2 className="font-serif text-[clamp(1.9rem,3.4vw,2.8rem)] leading-[1.04]">{c.title}</h2>
-          <p className="font-serif text-[20px] text-bone-2 italic">&ldquo;{c.hook}&rdquo;</p>
+          <h2 className="font-display text-[clamp(1.9rem,3.4vw,2.8rem)] leading-[1.04]">{c.title}</h2>
+          <p className="font-display text-[20px] text-bone-2">&ldquo;{c.hook}&rdquo;</p>
           <p className="max-w-3xl text-bone-2 text-ui">
             <span className="mono-label mr-2">angle</span>
             {c.angle}
@@ -238,7 +236,7 @@ function Workbench({ c, events, demo }: { c: Concept; events: RunEvent[]; demo: 
                 {allApproved ? "All shots approved" : "Approve every shot"}
               </Button>
             </div>
-            <ol className="flex gap-3 overflow-x-auto pb-2" data-lenis-prevent data-testid="storyboard">
+            <ol className="flex gap-3 overflow-x-auto pb-2" data-testid="storyboard">
               {c.shots.map((s, i) => (
                 <ShotCard
                   key={s.idx}
@@ -371,9 +369,7 @@ function ShotCard({
       <div
         className={cn(
           "relative aspect-[9/16] overflow-hidden rounded-[10px] transition-shadow duration-300",
-          s.approved
-            ? "shadow-[0_0_0_1.5px_var(--color-signal),0_10px_30px_-12px_rgb(212_255_58/0.6)]"
-            : "shadow-[inset_0_0_0_1px_var(--color-line-strong)]",
+          s.approved ? "shadow[0_0_0_1.5px_var(--color-signal)]" : "shadow[inset_0_0_0_1px_var(--color-line-strong)]",
         )}
       >
         <ShotFrame
@@ -393,12 +389,12 @@ function ShotCard({
           </span>
         )}
         {s.approved && (
-          <span className="absolute inset-0 grid place-items-center bg-[rgb(6_7_10/0.25)]">
-            <svg viewBox="0 0 24 24" className="size-10 drop-shadow-[0_0_10px_rgb(212_255_58/0.8)]" aria-hidden>
+          <span className="absolute inset-0 grid place-items-center bg-[rgb(17_17_17/0.25)]">
+            <svg viewBox="0 0 24 24" className="size-10" aria-hidden>
               <motion.path
                 d="M5 12.5l4.5 4.5L19 7.5"
                 fill="none"
-                stroke="#D4FF3A"
+                stroke="#E5322D"
                 strokeWidth="2.4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -419,7 +415,7 @@ function ShotCard({
           onClick={onApprove}
           disabled={s.approved || pending}
           aria-pressed={s.approved}
-          className="flex-1 rounded-chip py-1 font-mono text-[10.5px] text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)] transition-colors hover:bg-glass disabled:opacity-50 aria-pressed:text-signal"
+          className="flex-1 rounded-chip py-1 font-mono text-[10.5px] text-bone shadow[inset_0_0_0_1px_var(--color-line-strong)] transition-colors hover:bg-glass disabled:opacity-50 aria-pressed:text-signal"
         >
           {s.approved ? "approved" : "approve"}
         </button>
@@ -427,7 +423,7 @@ function ShotCard({
           onClick={onRegenerate}
           disabled={pending}
           aria-label={`Regenerate shot ${i + 1}`}
-          className="rounded-chip px-2 py-1 font-mono text-[10.5px] text-bone-3 shadow-[inset_0_0_0_1px_var(--color-line)] transition-colors hover:bg-glass hover:text-bone disabled:opacity-50"
+          className="rounded-chip px-2 py-1 font-mono text-[10.5px] text-bone-3 shadow[inset_0_0_0_1px_var(--color-line)] transition-colors hover:bg-glass hover:text-bone disabled:opacity-50"
         >
           redo
         </button>
@@ -445,7 +441,7 @@ function PostPreview({ c, image, imageIsRef }: { c: Concept; image?: string; ima
         {c.format === "text_post" ? `${CHANNEL_LABELS[c.channel]} post, as it will read` : `${c.aspect} static`}
       </p>
       {c.format === "text_post" ? (
-        <article className="max-w-2xl rounded-card bg-raised p-5 shadow-[inset_0_0_0_1px_var(--color-line)]">
+        <article className="max-w-2xl rounded-card bg-raised p-5 shadow[inset_0_0_0_1px_var(--color-line)]">
           <p className="whitespace-pre-line text-bone text-body leading-relaxed">{text}</p>
           {limit && (
             <p
@@ -459,7 +455,7 @@ function PostPreview({ c, image, imageIsRef }: { c: Concept; image?: string; ima
         <div className="flex flex-wrap gap-5">
           <div
             className={cn(
-              "relative w-[260px] overflow-hidden rounded-[12px] shadow-[inset_0_0_0_1px_var(--color-line-strong)]",
+              "relative w-[260px] overflow-hidden rounded-[12px] shadow[inset_0_0_0_1px_var(--color-line-strong)]",
               ASPECT_CLASS[c.aspect],
             )}
           >
@@ -471,7 +467,7 @@ function PostPreview({ c, image, imageIsRef }: { c: Concept; image?: string; ima
               className="h-full w-full"
             />
             {c.shots[0]?.onScreenText && (
-              <span className="absolute inset-x-3 bottom-3 rounded-[6px] bg-ink/75 px-2 py-1.5 font-serif text-[18px] leading-tight">
+              <span className="absolute inset-x-3 bottom-3 rounded-[6px] bg-ink/75 px-2 py-1.5 font-display text-[18px] leading-tight">
                 {c.shots[0].onScreenText}
               </span>
             )}
@@ -537,7 +533,7 @@ function Compliance({
 function RenderProgress() {
   return (
     <div className="absolute inset-0 z-10 overflow-hidden" aria-hidden>
-      <div className="absolute inset-x-0 bottom-0 h-full origin-bottom animate-[fill-up_2.6s_var(--ease-std)_infinite] bg-[linear-gradient(0deg,rgb(212_255_58/0.18),transparent)]" />
+      <div className="absolute inset-x-0 bottom-0 h-1 origin-left animate-[fill-up_2.6s_linear_infinite] bg-signal" />
     </div>
   );
 }

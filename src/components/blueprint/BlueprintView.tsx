@@ -14,7 +14,6 @@ import { EmptyState, ErrorState } from "@/components/ui/States";
 import { type Blueprint, CHANNEL_LABELS, type Concept, type Review, type Shot } from "@/contracts";
 import { referenceImages } from "@/lib/client/brandAssets";
 import { cn } from "@/lib/client/cn";
-import { useFieldActivity } from "@/lib/client/field";
 import { formatCount, SOURCE_LABELS } from "@/lib/client/format";
 import { PURPOSE_COLOR, PURPOSE_LABEL } from "@/lib/client/purpose";
 import { useBlueprint, useBrand, useConceptAssets, useConceptReviews, useConcepts } from "@/lib/client/queries";
@@ -34,7 +33,6 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
   const { data: reviews } = useConceptReviews(remake?.id);
   const [scanning, setScanning] = useState(false);
   const [t, setT] = useState(0);
-  useFieldActivity(scanning ? 0.7 : 0.3, "signal");
 
   // the agent "watches": one sweep of the scan line on arrival (skipped for reduced motion)
   const raf = useRef(0);
@@ -95,11 +93,10 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
               {ev?.author ? ` / ${ev.author}` : ""}
             </p>
             <h1
-              className="rise mt-2 font-serif text-[clamp(2rem,3.6vw,3rem)] leading-[1.02] tracking-[-0.012em]"
+              className="rise mt-2 font-display text-[clamp(2rem,3.6vw,3rem)] leading-[1.02] tracking-[-0.012em]"
               style={{ animationDelay: "60ms" }}
             >
-              We watched it.{" "}
-              <span className="text-bone-3 italic">Then rebuilt it for {brand?.name ?? "the brand"}.</span>
+              We watched it. <span className="text-bone-3">Then rebuilt it for {brand?.name ?? "the brand"}.</span>
             </h1>
             {ev && (
               <p className="rise mt-4 max-w-2xl text-bone-2 text-body" style={{ animationDelay: "120ms" }}>
@@ -124,7 +121,7 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
               <p className="mono-label">why it wins</p>
               {bp.demo && <DemoBadge />}
             </div>
-            <p className="mt-2 font-serif text-[18px] leading-snug">{bp.whyItWins}</p>
+            <p className="mt-2 font-display text-[18px] leading-snug">{bp.whyItWins}</p>
             <p className="mt-3 border-line border-t pt-2.5 font-mono text-[10px] text-bone-3 leading-relaxed">
               Structure only. Their footage, voice, faces and words are never reused; analysis frames stay on the
               machine that watched the video.
@@ -271,14 +268,14 @@ function OurShotCard({
   if (!shot)
     return (
       <Panel tone="hairline" className="grid place-items-center p-6 text-center">
-        <p className="font-serif text-[18px] text-bone-3 italic">No remade shot here yet.</p>
+        <p className="font-display text-[18px] text-bone-3">No remade shot here yet.</p>
       </Panel>
     );
   const sc = shotScore(review, shot.idx);
   return (
     <Panel
       tone="flat"
-      className="flex min-w-0 gap-4 p-4 shadow-[var(--shadow-panel),inset_0_0_0_1px_rgb(212_255_58/0.18)]"
+      className="flex min-w-0 gap-4 p-4 shadow[var(--shadow-panel),inset_0_0_0_1px_rgb(229_50_45/0.18)]"
       data-testid="our-shot"
     >
       <ShotFrame
@@ -358,7 +355,7 @@ function Hook({ bp, onJump }: { bp: Blueprint; onJump: () => void }) {
           ))}
         </div>
       )}
-      {h.spoken && <p className="font-serif text-[24px] leading-snug">&ldquo;{h.spoken}&rdquo;</p>}
+      {h.spoken && <p className="font-display text-[24px] leading-snug">&ldquo;{h.spoken}&rdquo;</p>}
       <dl className="flex flex-col gap-1.5 text-[12.5px]">
         <div className="grid grid-cols-[84px_1fr] gap-2">
           <dt className="font-mono text-[10.5px] text-bone-3">seen</dt>
@@ -388,7 +385,7 @@ function Transcript({ text, highlight }: { text: string; highlight?: string }) {
   return (
     <Panel tone="flat" className="p-5">
       <p className="mono-label">transcript of the winner</p>
-      <p className="mt-3 font-serif text-[19px] text-bone-2 leading-relaxed">
+      <p className="mt-3 font-display text-[19px] text-bone-2 leading-relaxed">
         {i === -1 ? (
           text
         ) : (
@@ -413,7 +410,7 @@ function Variants({ variants, runId }: { variants: Concept[]; runId?: string }) 
           <Link
             key={v.id}
             href={`/runs/${runId}/studio`}
-            className="glass-flat group flex flex-col gap-3 p-4 transition-shadow hover:shadow-[var(--shadow-panel-strong)]"
+            className="glass-flat group flex flex-col gap-3 p-4 transition-shadow hover:shadow[var(--shadow-panel-strong)]"
             data-testid="variant"
           >
             <div className="flex items-center justify-between gap-2">
@@ -448,7 +445,7 @@ function SelfReview({
     return (
       <Panel tone="hairline" className="grid place-items-center p-6 text-center">
         <div>
-          <p className="font-serif text-[20px] text-bone-2 italic">The agent reviews its own render here.</p>
+          <p className="font-display text-[20px] text-bone-2">The agent reviews its own render here.</p>
           <p className="mt-2 font-mono text-[11px] text-bone-3">
             It scores every shot against this blueprint, then fixes the weakest.
           </p>

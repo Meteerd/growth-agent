@@ -64,7 +64,7 @@ export function PackCard({
       className={cn(
         "glass-flat relative grid overflow-hidden transition-shadow duration-500",
         "md:grid-cols-[232px_minmax(0,1fr)] xl:grid-cols-[232px_minmax(0,1fr)_316px]",
-        posted && "shadow-[var(--shadow-panel),inset_0_1px_0_0_rgb(124_255_178/0.22)]",
+        posted && "shadow[var(--shadow-panel),inset_0_1px_0_0_rgb(31_122_77/0.22)]",
       )}
     >
       <Cover pack={pack} concept={concept} demo={demo} />
@@ -78,13 +78,13 @@ export function PackCard({
             </p>
             <StatusPill posted={posted} />
           </div>
-          <h3 id={titleId} className="mt-3 font-serif text-[26px] text-bone leading-[1.08] md:text-[30px]">
+          <h3 id={titleId} className="mt-3 font-display text-[26px] text-bone leading-[1.08] md:text-[30px]">
             {concept?.title ?? `${platform} post`}
           </h3>
           {concept?.hook && (
             <p className="mt-2.5 flex gap-2.5 text-bone-2 text-ui">
               <span className="mono-label mt-px shrink-0 text-bone-3">hook</span>
-              <span className="italic">{concept.hook}</span>
+              <span className="">{concept.hook}</span>
             </p>
           )}
         </header>
@@ -113,7 +113,7 @@ export function PackCard({
               {tags.map((t) => (
                 <li
                   key={t}
-                  className="rounded-chip bg-glass px-2.5 py-1 font-mono text-[11px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line)]"
+                  className="rounded-chip bg-glass px-2.5 py-1 font-mono text-[11px] text-bone-2 shadow[inset_0_0_0_1px_var(--color-line)]"
                 >
                   {t}
                 </li>
@@ -204,7 +204,7 @@ function Cover({ pack, concept, demo }: { pack: PublishPack; concept?: Concept; 
         className="pointer-events-none absolute inset-0 opacity-70"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgb(236 231 221 / 0.035) 1px, transparent 1px), linear-gradient(to bottom, rgb(236 231 221 / 0.035) 1px, transparent 1px)",
+            "linear-gradient(to right, rgb(17 17 17 / 0.035) 1px, transparent 1px), linear-gradient(to bottom, rgb(17 17 17 / 0.035) 1px, transparent 1px)",
           backgroundSize: "16px 16px",
           maskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, #000 20%, transparent 100%)",
         }}
@@ -239,7 +239,7 @@ function CoverTile({
   const text = format === "text_post";
   return (
     <div
-      className="relative w-full overflow-hidden rounded-card bg-raised-2 shadow-[inset_0_0_0_1px_var(--color-line-strong),0_24px_60px_-24px_rgb(0_0_0/0.9)]"
+      className="relative w-full overflow-hidden rounded-card bg-raised-2 shadow[inset_0_0_0_1px_var(--color-line-strong)]"
       style={{ aspectRatio: ASPECT_RATIO[aspect] }}
     >
       <div
@@ -253,7 +253,7 @@ function CoverTile({
       />
       <div
         aria-hidden
-        className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(180deg,transparent,rgb(6_7_10/0.7))]"
+        className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(180deg,transparent,rgb(17_17_17/0.7))]"
       />
       <div className="relative flex h-full flex-col justify-between p-3.5">
         <div className="flex items-center justify-between font-mono text-[9.5px] text-bone-3 uppercase tracking-[0.08em]">
@@ -263,7 +263,7 @@ function CoverTile({
         <p
           className={cn(
             "text-bone",
-            text ? "font-medium text-[15px] leading-snug" : "font-serif text-[21px] leading-[1.08]",
+            text ? "font-medium text-[15px] leading-snug" : "font-display text-[21px] leading-[1.08]",
           )}
         >
           {title}
@@ -289,12 +289,12 @@ function StatusPill({ posted }: { posted: boolean }) {
         "inline-grid h-6 shrink-0 items-center overflow-hidden rounded-chip px-2.5 font-mono text-[10.5px] uppercase tracking-[0.06em]",
         "transition-[background-color,box-shadow,color] duration-[380ms] ease-out",
         posted
-          ? "bg-[rgb(124_255_178/0.1)] text-pass shadow-[inset_0_0_0_1px_rgb(124_255_178/0.35)]"
-          : "text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)]",
+          ? "bg-[rgb(31_122_77/0.1)] text-pass shadow[inset_0_0_0_1px_rgb(31_122_77/0.35)]"
+          : "text-bone shadow[inset_0_0_0_1px_var(--color-line-strong)]",
       )}
     >
       <span aria-hidden={posted} className={cn(label, posted && "-translate-y-full opacity-0")}>
-        <span className="size-1.5 rounded-full bg-signal shadow-[0_0_8px_rgb(212_255_58/0.7)]" />
+        <span className="size-1.5 rounded-full bg-signal " />
         Ready
       </span>
       <span aria-hidden={!posted} className={cn(label, !posted && "translate-y-full opacity-0")}>
@@ -373,7 +373,7 @@ function Checklist({ items }: { items: string[] }) {
       </div>
       <div aria-hidden className="mt-2 h-px bg-line">
         <div
-          className="h-px bg-signal shadow-[0_0_8px_rgb(212_255_58/0.6)] transition-[width] duration-500 ease-out"
+          className="h-px bg-signal  transition-[width] duration-500 ease-out"
           style={{ width: `${items.length ? (count / items.length) * 100 : 0}%` }}
         />
       </div>
@@ -395,8 +395,8 @@ function Checklist({ items }: { items: string[] }) {
                     "mt-px grid size-4 shrink-0 place-items-center rounded-[4px] transition-[background-color,box-shadow] duration-200 ease-out",
                     "peer-focus-visible:outline-[1.5px] peer-focus-visible:outline-signal peer-focus-visible:outline-offset-2 peer-focus-visible:outline-solid",
                     on
-                      ? "bg-signal shadow-[0_0_0_1px_rgb(212_255_58/0.7),0_0_12px_-2px_rgb(212_255_58/0.7)]"
-                      : "shadow-[inset_0_0_0_1px_rgb(236_231_221/0.24)]",
+                      ? "bg-signal shadow[0_0_0_1px_rgb(229_50_45/0.7)]"
+                      : "shadow[inset_0_0_0_1px_rgb(17_17_17/0.24)]",
                   )}
                 >
                   <svg viewBox="0 0 12 12" className="size-3 text-ink" fill="none">
@@ -479,7 +479,7 @@ function PostedBlock({ pack, latest }: { pack: PublishPack; latest?: MetricSnaps
           </dl>
         </div>
       ) : (
-        <p className="rounded-card px-3 py-2.5 font-mono text-[11px] text-bone-3 leading-relaxed shadow-[inset_0_0_0_1px_var(--color-line)]">
+        <p className="rounded-card px-3 py-2.5 font-mono text-[11px] text-bone-3 leading-relaxed shadow[inset_0_0_0_1px_var(--color-line)]">
           Waiting for first metrics. Enter them from {CHANNEL_LABELS[pack.platform]} insights once the post has numbers.
         </p>
       )}

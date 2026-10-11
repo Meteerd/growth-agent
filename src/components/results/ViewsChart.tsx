@@ -130,9 +130,7 @@ export function ViewsChart({
             {pts.length > 1 && (
               <Line key={pts.length} d={linePath(pts)} area={areaPath(pts, BASE)} fill={`url(#${gradId})`} />
             )}
-            {a && (
-              <line x1={a.x} x2={a.x} y1={PAD_TOP - 8} y2={BASE} stroke="rgb(236 231 221 / 0.28)" strokeWidth={1} />
-            )}
+            {a && <line x1={a.x} x2={a.x} y1={PAD_TOP - 8} y2={BASE} stroke="rgb(17 17 17 / 0.28)" strokeWidth={1} />}
             {pts.map((p) => (
               <Dot key={p.id} cx={p.x} cy={p.y} big={a?.id === p.id} delay={(p.x / width) * DRAW_MS} />
             ))}
@@ -142,7 +140,7 @@ export function ViewsChart({
       {a && (
         <div
           aria-hidden
-          className="pointer-events-none absolute z-10 whitespace-nowrap rounded-[8px] bg-[rgb(22_25_33/0.96)] px-2.5 py-1.5 shadow-[var(--shadow-panel-strong)]"
+          className="pointer-events-none absolute z-10 whitespace-nowrap rounded-[8px] bg-raised px-2.5 py-1.5 shadow[var(--shadow-panel-strong)]"
           style={{
             left: Math.min(Math.max(a.x, 64), Math.max(64, width - 64)),
             top: a.y < 64 ? a.y + 14 : a.y - 12,

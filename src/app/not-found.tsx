@@ -7,9 +7,7 @@ export default function NotFound() {
       <Wordmark />
       <div className="my-auto py-20">
         <p className="mono-label">404 / off the chart</p>
-        <h1 className="mt-4 font-serif text-[clamp(2.6rem,7vw,5.5rem)] leading-[1] text-gradient-bone">
-          Nothing is plotted here.
-        </h1>
+        <h1 className="mt-4 font-display text-[clamp(2.6rem,7vw,5.5rem)] leading-[1]">Nothing is plotted here.</h1>
         <p className="mt-5 max-w-lg text-bone-2 text-body">
           The link may be old, or the page moved. Brands, runs and results all start from the portfolio.
         </p>
@@ -22,7 +20,7 @@ export default function NotFound() {
           </Link>
           <Link
             href="/"
-            className="inline-flex h-10 items-center rounded-chip px-4 text-bone text-ui shadow-[inset_0_0_0_1px_var(--color-line-strong)] hover:bg-glass"
+            className="inline-flex h-10 items-center rounded-chip px-4 text-bone text-ui shadow[inset_0_0_0_1px_var(--color-line-strong)] hover:bg-glass"
           >
             Home
           </Link>

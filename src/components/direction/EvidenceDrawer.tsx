@@ -86,7 +86,7 @@ export function EvidenceDrawer({
           </>
         ) : nn ? (
           <Block label="Why not now">
-            <p className="font-serif text-[22px] text-bone leading-snug">{notNowReason(nn.channel, nn.reason)}</p>
+            <p className="font-display text-[22px] text-bone leading-snug">{notNowReason(nn.channel, nn.reason)}</p>
           </Block>
         ) : null}
 
@@ -149,8 +149,8 @@ function Chips({ items, mono }: { items: string[]; mono?: boolean }) {
           key={t}
           className={
             mono
-              ? "rounded-chip px-2.5 py-1 font-mono text-[11px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)]"
-              : "rounded-chip bg-glass px-3 py-1 text-[12px] text-bone shadow-[inset_0_0_0_1px_var(--color-line)]"
+              ? "rounded-chip px-2.5 py-1 font-mono text-[11px] text-bone-2 shadow[inset_0_0_0_1px_var(--color-line-strong)]"
+              : "rounded-chip bg-glass px-3 py-1 text-[12px] text-bone shadow[inset_0_0_0_1px_var(--color-line)]"
           }
         >
           {t}

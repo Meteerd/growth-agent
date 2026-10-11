@@ -13,7 +13,6 @@ import { EmptyState, ErrorState } from "@/components/ui/States";
 import { CHANNEL_LABELS, type Learning, type ResultsResponse } from "@/contracts";
 import { getClient } from "@/lib/client/api";
 import { cn } from "@/lib/client/cn";
-import { useFieldActivity } from "@/lib/client/field";
 import { timeAgo } from "@/lib/client/format";
 import { qk, useBrand } from "@/lib/client/queries";
 import {
@@ -52,7 +51,6 @@ export function Results({ slug }: { slug: string }) {
     refetchInterval: REFRESH_MS,
   });
   const now = useNow();
-  useFieldActivity(0.15, "cyan");
   const name = brand?.name ?? slug;
 
   return (
@@ -69,7 +67,7 @@ export function Results({ slug }: { slug: string }) {
               data-testid="results-refresh"
               onClick={() => refetch()}
               aria-busy={isFetching || undefined}
-              className="shadow-[inset_0_0_0_1px_var(--color-line)]"
+              className="shadow[inset_0_0_0_1px_var(--color-line)]"
             >
               <RefreshGlyph spinning={isFetching} />
               Refresh
@@ -275,7 +273,7 @@ function Waiting({ entered }: { entered: boolean }) {
     >
       <span aria-hidden className="absolute inset-x-0 bottom-[22px] h-px bg-line-strong" />
       <div className="relative max-w-xs px-4 text-center">
-        <p className="font-serif text-[22px] text-bone leading-tight">Waiting for first metrics</p>
+        <p className="font-display text-[22px] text-bone leading-tight">Waiting for first metrics</p>
         <p className="mt-1.5 text-bone-3 text-ui">
           {entered
             ? "Snapshots so far have no view count. Add views to draw the line."

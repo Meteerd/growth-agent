@@ -1,15 +1,15 @@
 import type { ShotPurpose } from "@/contracts";
 
-/** One colour per narrative purpose, shared by the landing strip and the reverse-engineer timeline. */
+/** Beat tape colours: flat, print-like, like coloured tape on an edit (docs/DESIGN.md v2). */
 export const PURPOSE_COLOR: Record<ShotPurpose, string> = {
-  hook: "#D4FF3A",
-  problem: "#FF5C7A",
-  agitate: "#FFC85C",
-  solution: "#3CE0FF",
-  demo: "#9FD8FF",
-  proof: "#7CFFB2",
-  offer: "#8C6BFF",
-  cta: "#ECE7DD",
+  hook: "#C9962E", // ochre
+  problem: "#A6402B", // brick
+  agitate: "#C46A2A", // rust
+  solution: "#2E7D7A", // teal
+  demo: "#5B6B7A", // slate
+  proof: "#6F7A35", // olive
+  offer: "#7A4E6E", // plum
+  cta: "#222222", // ink
 };
 
 export const PURPOSE_LABEL: Record<ShotPurpose, string> = {

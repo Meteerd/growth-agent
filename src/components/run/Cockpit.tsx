@@ -15,7 +15,6 @@ import { toast } from "@/components/ui/Toast";
 import { type Evidence, type EvidenceSource, PHASES, type Phase, type RunEvent } from "@/contracts";
 import { getClient } from "@/lib/client/api";
 import { cn } from "@/lib/client/cn";
-import { useFieldActivity } from "@/lib/client/field";
 import { clock, PHASE_LABELS, SOURCE_LABELS } from "@/lib/client/format";
 import { PURPOSE_COLOR } from "@/lib/client/purpose";
 import { useBlueprints, useEvidence } from "@/lib/client/queries";
@@ -27,7 +26,6 @@ const RAIL = PHASES.filter((p) => p !== "measure");
 export function Cockpit() {
   const ctx = useRunCtx();
   const { liveStatus, livePhase, events, completed } = ctx;
-  useFieldActivity(liveStatus === "running" ? 0.6 : liveStatus === "waiting_input" ? 0.35 : 0.2);
   const notes = usePhaseNotes(events);
   return (
     <MotionConfig reducedMotion="user">
@@ -203,13 +201,13 @@ function Banner({
       data-testid={testId}
       className={cn(
         "glass flex flex-col gap-4 p-5 md:flex-row md:items-center md:justify-between",
-        tone === "warn" && "shadow-[var(--shadow-panel),inset_0_0_0_1px_rgb(255_200_92/0.35)]",
-        tone === "pass" && "shadow-[var(--shadow-panel),inset_0_0_0_1px_rgb(124_255_178/0.25)]",
-        tone === "signal" && "shadow-[var(--shadow-panel),inset_0_0_0_1px_rgb(212_255_58/0.3)]",
+        tone === "warn" && "shadow[var(--shadow-panel),inset_0_0_0_1px_rgb(183_121_31/0.35)]",
+        tone === "pass" && "shadow[var(--shadow-panel),inset_0_0_0_1px_rgb(31_122_77/0.25)]",
+        tone === "signal" && "shadow[var(--shadow-panel),inset_0_0_0_1px_rgb(229_50_45/0.3)]",
       )}
     >
       <div>
-        <p className="font-serif text-[24px] leading-tight">{title}</p>
+        <p className="font-display text-[24px] leading-tight">{title}</p>
         {children && <div className="mt-1 text-bone-2 text-ui">{children}</div>}
       </div>
       {onAction ? (
@@ -254,7 +252,7 @@ function ManusCard() {
       className="glass-flat flex flex-wrap items-center gap-4 p-4"
       data-testid="manus-card"
     >
-      <span className="grid size-9 place-items-center rounded-[10px] bg-[rgb(212_255_58/0.08)] font-serif text-[18px] text-signal shadow-[inset_0_0_0_1px_rgb(212_255_58/0.25)]">
+      <span className="grid size-9 place-items-center rounded-[10px] bg-[rgb(229_50_45/0.08)] font-display text-[18px] text-signal shadow[inset_0_0_0_1px_rgb(229_50_45/0.25)]">
         M
       </span>
       <div className="min-w-0 flex-1">
@@ -305,7 +303,7 @@ function Blueprints() {
             <Link
               href={`/runs/${runId}/blueprints/${b.id}`}
               data-testid={`blueprint-${b.id}`}
-              className="glass-flat group flex flex-col gap-3 p-4 transition-shadow duration-300 hover:shadow-[var(--shadow-panel-strong)]"
+              className="glass-flat group flex flex-col gap-3 p-4 transition-shadow duration-300 hover:shadow[var(--shadow-panel-strong)]"
             >
               <div className="flex items-center justify-between gap-3">
                 <Badge tone="signal">Blueprint</Badge>
@@ -313,9 +311,7 @@ function Blueprints() {
                   {b.shots.length} shots / {b.durationSec}s / {b.structure.replaceAll("_", " ")}
                 </span>
               </div>
-              <p className="line-clamp-2 font-serif text-[19px] italic leading-snug">
-                &ldquo;{hookLine(b.hook)}&rdquo;
-              </p>
+              <p className="line-clamp-2 font-display text-[19px] leading-snug">&ldquo;{hookLine(b.hook)}&rdquo;</p>
               <div className="flex h-1.5 gap-[2px] overflow-hidden rounded-full">
                 {b.shots.map((s) => (
                   <span key={s.idx} style={{ flex: `${s.t1 - s.t0} 1 0`, background: PURPOSE_COLOR[s.purpose] }} />
@@ -382,7 +378,7 @@ function EvidenceWall() {
           data-testid="wall-empty"
         >
           <div>
-            <p className="font-serif text-[22px] italic text-bone-2">The wall fills as evidence is found.</p>
+            <p className="font-display text-[22px] text-bone-2">The wall fills as evidence is found.</p>
             <p className="mt-2 font-mono text-[11px] text-bone-3">
               Sites, winning ads and posts, communities, reviews, your own numbers.
             </p>
@@ -441,7 +437,6 @@ function EventStream() {
         </header>
         <ol
           ref={ref}
-          data-lenis-prevent
           aria-live="polite"
           aria-relevant="additions"
           data-testid="event-stream"
@@ -453,7 +448,7 @@ function EventStream() {
         >
           {events.length === 0 && (
             <li className="flex items-center gap-2 px-4 py-3 font-mono text-[11px] text-bone-3">
-              <span className="size-1.5 animate-pulse rounded-full bg-signal" /> connecting to the run
+              <span className="size-1.5 rounded-full bg-signal" /> connecting to the run
             </li>
           )}
           {events.slice(-300).map((e, i, arr) => (

@@ -3,13 +3,13 @@ import { cn } from "@/lib/client/cn";
 
 type Tone = "neutral" | "signal" | "pass" | "warn" | "fail" | "violet" | "cyan";
 const TONE: Record<Tone, string> = {
-  neutral: "text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)]",
-  signal: "text-signal bg-signal-dim shadow-[inset_0_0_0_1px_rgb(212_255_58/0.3)]",
-  pass: "text-pass bg-[rgb(124_255_178/0.08)] shadow-[inset_0_0_0_1px_rgb(124_255_178/0.28)]",
-  warn: "text-warn bg-[rgb(255_200_92/0.08)] shadow-[inset_0_0_0_1px_rgb(255_200_92/0.3)]",
-  fail: "text-fail bg-[rgb(255_92_122/0.08)] shadow-[inset_0_0_0_1px_rgb(255_92_122/0.32)]",
-  violet: "text-[#a99bff] bg-[rgb(91_60_255/0.12)] shadow-[inset_0_0_0_1px_rgb(91_60_255/0.4)]",
-  cyan: "text-cyan bg-[rgb(60_224_255/0.08)] shadow-[inset_0_0_0_1px_rgb(60_224_255/0.3)]",
+  neutral: "text-bone-2 shadow[inset_0_0_0_1px_var(--color-line-strong)]",
+  signal: "text-signal bg-signal-dim shadow[inset_0_0_0_1px_rgb(229_50_45/0.3)]",
+  pass: "text-pass bg-[rgb(31_122_77/0.08)] shadow[inset_0_0_0_1px_rgb(31_122_77/0.28)]",
+  warn: "text-warn bg-[rgb(183_121_31/0.08)] shadow[inset_0_0_0_1px_rgb(183_121_31/0.3)]",
+  fail: "text-fail bg-[rgb(192_53_43/0.08)] shadow[inset_0_0_0_1px_rgb(192_53_43/0.32)]",
+  violet: "text-[#6B4E71] bg-[rgb(107_78_113/0.12)] shadow[inset_0_0_0_1px_rgb(107_78_113/0.4)]",
+  cyan: "text-cyan bg-[rgb(46_111_115/0.08)] shadow[inset_0_0_0_1px_rgb(46_111_115/0.3)]",
 };
 
 export function Badge({
@@ -92,11 +92,11 @@ export const CONNECTION_TONE: Record<ConnectionStatus, Tone> = {
 
 type Dot = "live" | "warn" | "fail" | "idle" | "off";
 const DOT: Record<Dot, string> = {
-  live: "bg-signal animate-pulse-signal",
+  live: "bg-signal",
   warn: "bg-warn",
   fail: "bg-fail",
   idle: "bg-bone-3",
-  off: "bg-transparent shadow-[inset_0_0_0_1px_var(--color-bone-3)]",
+  off: "bg-transparent shadow[inset_0_0_0_1px_var(--color-bone-3)]",
 };
 export function StatusDot({ status, className }: { status: Dot; className?: string }) {
   return <span aria-hidden className={cn("inline-block size-1.5 shrink-0 rounded-full", DOT[status], className)} />;

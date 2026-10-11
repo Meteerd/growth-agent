@@ -21,7 +21,7 @@ export function Toaster() {
         <T.Root
           key={t.id}
           onOpenChange={(o) => !o && drop(t.id)}
-          className="toast glass flex items-start gap-3 bg-[linear-gradient(180deg,rgb(22_25_33/0.94),rgb(12_14_19/0.94))] p-4 pr-5"
+          className="toast glass flex items-start gap-3 bg-raised p-4 pr-5"
         >
           <span
             className={cn(

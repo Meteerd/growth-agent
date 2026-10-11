@@ -9,7 +9,6 @@ import { Skeleton } from "@/components/ui/Skeleton";
 import { EmptyState, ErrorState } from "@/components/ui/States";
 import { TabPanel, Tabs } from "@/components/ui/Tabs";
 import { type Channel, type ChannelPlan, SCORE_AXES, SCORE_AXIS_LABELS } from "@/contracts";
-import { useFieldActivity } from "@/lib/client/field";
 import { useBrand, useEvidence, usePlan } from "@/lib/client/queries";
 import { EvidenceDrawer } from "./EvidenceDrawer";
 import { firstSentence } from "./geometry";
@@ -27,7 +26,6 @@ export function Direction() {
   const { data: brand } = useBrand(plan.data?.brandId);
   const [view, setView] = useState<View>("orbit");
   const [drawer, setDrawer] = useState<{ channel: Channel | null; open: boolean }>({ channel: null, open: false });
-  useFieldActivity(0.2, "cyan");
 
   const notFound = (plan.error as { status?: number } | null)?.status === 404;
   // The stream decides what the run has shown so far (replays included); before its first event, trust the API.
@@ -121,7 +119,7 @@ function PlanHead({ plan }: { plan: ChannelPlan }) {
           initial={{ opacity: 0.4, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, ease: EASE }}
-          className="inline-flex h-6 items-center rounded-chip px-2.5 font-mono text-[11px] text-bone tabular-nums normal-case shadow-[inset_0_0_0_1px_var(--color-line-strong)]"
+          className="inline-flex h-6 items-center rounded-chip px-2.5 font-mono text-[11px] text-bone tabular-nums normal-case shadow[inset_0_0_0_1px_var(--color-line-strong)]"
         >
           v{plan.version}
         </motion.span>
@@ -129,7 +127,7 @@ function PlanHead({ plan }: { plan: ChannelPlan }) {
           {pad2(plan.channels.length)} channels / {pad2(plan.notNow.length)} not now
         </span>
       </motion.p>
-      <h1 className="mask-line max-w-[40ch] font-serif text-[clamp(1.6rem,3.4vw,2.4rem)] leading-[1.1] tracking-[-0.01em] xl:text-[27px] xl:leading-[1.14]">
+      <h1 className="mask-line max-w-[40ch] font-display text-[clamp(1.6rem,3.4vw,2.4rem)] leading-[1.1] tracking-[-0.01em] xl:text-[27px] xl:leading-[1.14]">
         <span>{lead}</span>
       </h1>
       {rest && (

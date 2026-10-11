@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import { FieldControls } from "./FieldControls";
 import { Kit } from "./Kit";
 
 export const metadata: Metadata = { title: "Lab" };
 
 const COLORS: [string, string, string][] = [
-  ["ink", "#06070A", "bg-ink"],
-  ["raised", "#0C0E13", "bg-raised"],
-  ["raised-2", "#12151C", "bg-raised-2"],
-  ["bone", "#ECE7DD", "bg-bone"],
-  ["bone-2", "64%", "bg-bone-2"],
-  ["bone-3", "50%", "bg-bone-3"],
-  ["bone-4", "30%", "bg-bone-4"],
-  ["signal", "#D4FF3A", "bg-signal"],
-  ["violet", "#5B3CFF", "bg-violet"],
-  ["cyan", "#3CE0FF", "bg-cyan"],
-  ["pass", "#7CFFB2", "bg-pass"],
-  ["warn", "#FFC85C", "bg-warn"],
-  ["fail", "#FF5C7A", "bg-fail"],
+  ["paper", "#F3F1EC", "bg-ink"],
+  ["white", "#FFFFFF", "bg-raised"],
+  ["muted", "#E9E6DF", "bg-raised-2"],
+  ["ink", "#111111", "bg-bone"],
+  ["graphite", "#5C5C5C", "bg-bone-2"],
+  ["graphite-2", "#6B6964", "bg-bone-3"],
+  ["rule-dark", "#A9A59C", "bg-bone-4"],
+  ["signal", "#E5322D", "bg-signal"],
+  ["plum", "#6B4E71", "bg-violet"],
+  ["teal", "#2E6F73", "bg-cyan"],
+  ["pass", "#1F7A4D", "bg-pass"],
+  ["warn", "#B7791F", "bg-warn"],
+  ["fail", "#C0352B", "bg-fail"],
 ];
 
 const TYPE: [string, string, string][] = [
-  ["display-xl", "96 / 1.0 / -0.012em", "font-serif text-display-xl"],
-  ["display", "72 / 1.0 / -0.01em", "font-serif text-display"],
-  ["title", "40 / 1.05", "font-serif text-title"],
-  ["heading", "22 / 1.25", "font-sans text-heading font-medium"],
+  ["display-xl", "88 / 0.98 / -0.035em", "font-display text-display-xl"],
+  ["display", "64 / 1.0 / -0.032em", "font-display text-display"],
+  ["title", "36 / 1.05", "font-display text-title"],
+  ["heading", "20 / 1.25", "font-sans text-heading font-semibold"],
   ["body", "15 / 1.55", "font-sans text-body"],
   ["ui", "13 / 1.4", "font-sans text-ui"],
 ];
@@ -37,20 +36,12 @@ export default function LabPage() {
       <header className="flex flex-col gap-4 border-line border-b pb-10 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="mono-label">Instrument check / 01</p>
-          <h1 className="mt-3 font-serif text-title text-gradient-bone md:text-display">The lab</h1>
+          <h1 className="mt-3 font-display text-title md:text-display">The lab</h1>
         </div>
         <p className="max-w-sm text-bone-2 text-ui">
           Every token, layer and component of the cockpit in one place. If it is not here, it is not in the product.
         </p>
       </header>
-
-      <Section index="00" title="Field">
-        <FieldControls />
-        <p className="mt-3 mono-label">
-          Raw WebGL2, domain-warped fbm, iso-lines, cursor bend. DPR capped at 1.5 and rendered at 0.75 of it. Pauses
-          when hidden.
-        </p>
-      </Section>
 
       <Section index="01" title="Colour">
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-7">
@@ -64,10 +55,7 @@ export default function LabPage() {
             </div>
           ))}
         </div>
-        <div className="mt-3 h-2 rounded-full bg-[linear-gradient(90deg,var(--color-violet),var(--color-cyan),var(--color-signal))]" />
-        <p className="mt-2 mono-label">
-          Spectral ramp: thinking state and charts only. Signal: live activity, primary action, focus.
-        </p>
+        <p className="mt-2 mono-label">Record red: playhead, recording, primary action. Nothing else.</p>
       </Section>
 
       <Section index="02" title="Type">
@@ -88,10 +76,6 @@ export default function LabPage() {
           <div className="grid gap-2 py-5 md:grid-cols-[160px_1fr] md:items-baseline">
             <p className="mono-label">micro label</p>
             <p className="mono-label">Why I am asking / evidence 3</p>
-          </div>
-          <div className="grid gap-2 py-5 md:grid-cols-[160px_1fr] md:items-baseline">
-            <p className="mono-label">serif italic</p>
-            <p className="font-serif text-title italic">not now, and here is why</p>
           </div>
         </div>
       </Section>
@@ -128,22 +112,18 @@ export default function LabPage() {
         <div className="relative grid gap-4 md:grid-cols-3">
           <div className="glass p-6">
             <p className="mono-label">glass</p>
-            <p className="mt-3 text-body">
-              Blur 24, saturate 140, inner light edge, inner falloff, outer lift. Two or three per screen.
-            </p>
+            <p className="mt-3 text-body">White card, 1px rule, 6px corners. No blur, no shadow.</p>
           </div>
           <div className="glass-flat p-6">
             <p className="mono-label">glass-flat</p>
-            <p className="mt-3 text-body">
-              No blur. For dense lists and stacked cards, so the GPU stays free for the field.
-            </p>
+            <p className="mt-3 text-body">Same surface for dense lists.</p>
           </div>
           <div className="rounded-panel p-6 hairline">
             <p className="mono-label">hairline</p>
-            <p className="mt-3 text-body text-bone-2">Structure without surface. 8% bone.</p>
+            <p className="mt-3 text-body text-bone-2">Structure without surface: one rule.</p>
           </div>
           <div className="glass p-6 md:col-span-3">
-            <p className="mono-label">skeleton (loading on glass)</p>
+            <p className="mono-label">skeleton (loading)</p>
             <div className="mt-4 flex flex-col gap-2">
               <div className="skeleton h-4 w-2/3" />
               <div className="skeleton h-4 w-1/2" />
@@ -160,17 +140,17 @@ export default function LabPage() {
       <Section index="06" title="Motion">
         <div className="grid gap-3 md:grid-cols-4">
           {[
-            ["micro", "140 ms", "hover, press, focus"],
-            ["state", "380 ms", "expo-out, state changes"],
-            ["sequence", "760 ms", "orchestrated, GSAP"],
-            ["drawer", "420 ms", "sheets and drawers"],
+            ["micro", "120 ms", "hover, press, focus"],
+            ["state", "180 ms", "state changes"],
+            ["playhead", "live", "the only continuous motion"],
+            ["drawer", "200 ms", "sheets and drawers"],
           ].map(([n, d, use]) => (
             <div key={n} className="glass-flat group p-5">
               <p className="mono-label">{n}</p>
               <p className="mt-2 font-mono text-heading">{d}</p>
               <p className="mt-1 text-bone-2 text-ui">{use}</p>
               <div className="mt-4 h-1 overflow-hidden rounded-full bg-line">
-                <div className="h-full w-1/4 rounded-full bg-signal transition-transform duration-[760ms] ease-out group-hover:translate-x-[300%]" />
+                <div className="h-full w-1/4 rounded-full bg-signal transition-transform duration-200 ease-out group-hover:translate-x-[300%]" />
               </div>
             </div>
           ))}
@@ -185,7 +165,7 @@ function Section({ index, title, children }: { index: string; title: string; chi
     <section className="grid gap-6 border-line border-b py-14 md:grid-cols-[200px_1fr]">
       <div className="flex items-baseline gap-3 md:flex-col md:gap-1">
         <span className="font-mono text-[10px] text-bone-3">{index}</span>
-        <h2 className="font-serif text-[28px] leading-none">{title}</h2>
+        <h2 className="font-display text-[28px] leading-none">{title}</h2>
       </div>
       <div className="min-w-0">{children}</div>
     </section>
