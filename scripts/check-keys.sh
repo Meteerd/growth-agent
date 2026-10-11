@@ -16,7 +16,11 @@ if [ -n "${ANTHROPIC_API_KEY:-}" ]; then row anthropic set "$(verdict "$(code ht
 if [ -n "${OPENAI_API_KEY:-}" ]; then row openai set "$(verdict "$(code https://api.openai.com/v1/models -H "Authorization: Bearer $OPENAI_API_KEY")")"; else row openai MISSING demo; fi
 if [ -n "${APIFY_TOKEN:-}" ]; then row apify set "$(verdict "$(code https://api.apify.com/v2/users/me -H "Authorization: Bearer $APIFY_TOKEN")")"; else row apify MISSING demo; fi
 if [ -n "${MANUS_API_KEY:-}" ]; then row manus set "$(verdict "$(code https://api.manus.ai/v2/user.me -H "x-manus-api-key: $MANUS_API_KEY")")"; else row manus MISSING demo; fi
-for v in FIRECRAWL_API_KEY FAL_KEY HIGGSFIELD_API_KEY YOUTUBE_API_KEY SPIRAL_API_KEY REVENUECAT_API_KEY POSTHOG_API_KEY STRIPE_SECRET_KEY PADDLE_API_KEY META_ACCESS_TOKEN; do
+if [ -n "${FIRECRAWL_API_KEY:-}" ]; then row firecrawl set "$(verdict "$(code https://api.firecrawl.dev/v1/team/credit-usage -H "Authorization: Bearer $FIRECRAWL_API_KEY")")"; else row firecrawl MISSING "fetch fallback"; fi
+if [ -n "${FAL_KEY:-}" ]; then row fal set "$(verdict "$(code 'https://api.fal.ai/v1/models?limit=1' -H "Authorization: Key $FAL_KEY")")"; else row fal MISSING demo; fi
+if [ -n "${YOUTUBE_API_KEY:-}" ]; then row youtube set "$(verdict "$(code "https://www.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=US&key=$YOUTUBE_API_KEY")")"; else row youtube MISSING demo; fi
+if [ -n "${SPIRAL_API_KEY:-}" ]; then row spiral set "$(verdict "$(code https://public-api.spiral.ad/v1/usage -H "Authorization: Bearer $SPIRAL_API_KEY")")"; else row spiral MISSING "apify fallback"; fi
+for v in HIGGSFIELD_API_KEY REVENUECAT_API_KEY POSTHOG_API_KEY STRIPE_SECRET_KEY PADDLE_API_KEY META_ACCESS_TOKEN; do
   if [ -n "${!v:-}" ]; then row "${v%%_*}" set "present (validated by the app's smoke test)"; else row "${v%%_*}" MISSING demo; fi
 done
 echo "LIVE_PROVIDERS=${LIVE_PROVIDERS:-}"

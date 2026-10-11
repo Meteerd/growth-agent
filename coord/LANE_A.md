@@ -17,7 +17,7 @@ You are the backend and agent engineer. It is one Next.js app on localhost with 
 ## Providers (keep the set small)
 In `src/engine/providers/`, one interface (`isLive`, `estimateCost`, `call`) + a demo implementation each:
 - **anthropic** (engine), **firecrawl** (site crawl for intake and competitor pages), **openai** (keyframe images with the current image model, TTS voiceover, transcription of competitor videos), **apify** (actors in `docs/APIS.md`; verify the unverified ones on the store with WebFetch), **manus** (API v2 deep-research task with `structured_output_schema`, `agent_profile: "lite"` tonight, poll; keep `task_url`), **fal** (queue API; image-to-video draft and final tiers; read fal docs for the exact model endpoints).
-- Optional, only if keys exist: higgsfield (find official API docs), youtube (search), revenuecat / posthog / stripe / paddle / meta (read-only summaries). Otherwise demo.
+- Also available tonight (keys verified): youtube (Shorts search, free, live), spiral (ad intelligence: winners, transcripts, creative analysis; credits metered, so smoke + real-data pass only), higgsfield (alternative video; see docs/APIS.md for the single-key auth question). Optional only if keys exist: revenuecat / posthog / stripe / paddle / meta (read-only summaries). Otherwise demo.
 - Every live call goes through the spend ledger and stops at its cap. Smoke scripts record real responses into `src/contracts/fixtures/live/<provider>/`. When you confirm an API detail, update `docs/APIS.md`.
 
 ## Video

@@ -2,6 +2,8 @@
 
 "Verified" = checked against the provider's docs or store page on 11 Oct 2026. Anything else is marked (unverified); the build agent must confirm it from the official docs before relying on it, and update this file.
 
+## Key check 11 Oct 23:50: anthropic, openai, apify, manus, firecrawl, fal, youtube, spiral all returned OK; higgsfield present (single key, verify in smoke test); brand connectors empty (demo).
+
 ## Key matrix (kept deliberately small)
 | Provider | Env | Used for | Tonight | Tomorrow (event) | If empty / exhausted |
 |---|---|---|---|---|---|

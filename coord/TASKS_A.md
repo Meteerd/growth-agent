@@ -36,7 +36,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Accept: demo intake for all four brands produces valid dossiers; one live intake of houndapp.xyz recorded.
 
 - [ ] **A08 Research phase**
-  - Apify ads library (EU countries for a.clinic), TikTok, Instagram, Reddit, reviews; Manus deep-research task (structured output, poll, keep `task_url`); optional connectors. Normalize to Evidence; outlier score; longevity tiers; OpenAI transcription of top outlier videos when live; batched deconstruction with Claude.
+  - Apify ads library (EU countries for a.clinic), TikTok, Instagram, Reddit, reviews; YouTube Shorts search; Spiral (brand winners, ad transcripts, creative analysis) when its key is live; Manus deep-research task (structured output, poll, keep `task_url`); optional connectors. Normalize to Evidence; outlier score; longevity tiers; OpenAI transcription of top outlier videos when live; batched deconstruction with Claude.
   - Accept: demo run yields >= 30 evidence from >= 5 sources for Hound and a.clinic; unit tests for outlier score and longevity; Manus provider tested against a recorded fixture.
 
 - [ ] **A09 Consult phase + chat**
@@ -60,7 +60,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Accept: download a zip and list its contents; results return snapshots ordered by time.
 
 - [ ] **A14 Live smoke tests + real dataset**
-  - `pnpm smoke <provider> --live` for anthropic, openai, firecrawl, apify, manus, fal (and higgsfield if a key exists), each within cap, recorded. Then one live research pass for Hound and a.clinic with small limits, recorded as their default dataset (`demo: false`, `capturedAt`). Update `docs/APIS.md` with every verified detail.
+  - `pnpm smoke <provider> --live` for anthropic, openai, firecrawl, youtube, apify, manus, fal, spiral, higgsfield, each within cap, recorded. Then one live research pass for Hound and a.clinic with small limits, recorded as their default dataset (`demo: false`, `capturedAt`). Update `docs/APIS.md` with every verified detail.
   - Accept: `/api/spend` totals under caps; recorded fixtures exist; STATUS_A lists spend per provider.
 
 - [ ] **A15 Engine e2e**
