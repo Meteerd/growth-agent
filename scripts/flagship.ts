@@ -12,11 +12,16 @@ const sheetIdx = args.indexOf("--sheet");
 const sheetPath = sheetIdx >= 0 ? args[sheetIdx + 1] : undefined;
 process.env.NEXUS_FORCE_LIVE = "fal";
 const { getDb } = await import("@/engine/db/client");
-const { buildFlagship } = await import("@/engine/flagship");
+const { buildFlagship, contactSheet, repairFlagship } = await import("@/engine/flagship");
+const { urlToFile } = await import("@/engine/video/files");
 const repo = await import("@/engine/repo");
 const db = await getDb();
 const t0 = Date.now();
-const r = await buildFlagship(db, conceptId, { sheetPath });
+const r = process.argv.includes("--repair")
+  ? await repairFlagship(db, conceptId)
+  : await buildFlagship(db, conceptId, { sheetPath });
+if (process.argv.includes("--repair") && sheetPath)
+  r.sheet = await contactSheet(urlToFile(r.asset.url)!, r.concept, sheetPath);
 const spend = await repo.listSpend(db, r.concept.runId);
 console.log(
   JSON.stringify(

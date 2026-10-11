@@ -12,7 +12,7 @@ import { urlToFile } from "./files";
  */
 const W = 1080;
 const H = 1920;
-const SAFE_BOTTOM = 420;
+const SAFE_BOTTOM = 470; // reviews flagged captions sitting right on the 420 px limit
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 function wrap(text: string, max: number): string[] {

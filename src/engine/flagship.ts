@@ -18,6 +18,7 @@ import {
   getBrand,
   getConcept,
   getRun,
+  listReviews,
   upsertAsset,
   upsertConcept,
   upsertReview,
@@ -377,4 +378,78 @@ export async function buildFlagship(
   let sheet: string | undefined;
   if (asset && o.sheetPath) sheet = await contactSheet(urlToFile(asset.url)!, c, o.sheetPath);
   return { concept: (await getConcept(db, c.id))!, asset: asset!, reviews, sheet };
+}
+
+/**
+ * Repair pass on a finished flagship: re-animate only the shots the last review scored under 80 (with the
+ * reviewer's fix in the motion prompt; screen shots become stills), render, review, and keep the best version of
+ * every shot: a shot that got worse goes back to its previous clip (re-composed at no extra cost) and the final cut
+ * is reviewed once more.
+ */
+export async function repairFlagship(db: Db, conceptId: string): Promise<FlagshipResult> {
+  let c = (await getConcept(db, conceptId))!;
+  const bp = c.blueprintId ? await getBlueprint(db, c.blueprintId) : null;
+  const run = (await getRun(db, c.runId))!;
+  const ctx = (await makeCtx(db, run.id, new AbortController().signal)).forPhase("review");
+  const prev = (await listReviews(db, c.id)).at(-1);
+  if (!prev) throw new HttpError(409, "no_review", "Build the flagship first");
+  const weak = prev.perShot
+    .filter((p) => p.score < 80)
+    .sort((a, b) => a.score - b.score)
+    .slice(0, 3);
+  const before = c.shots.map((s) => ({ ...s }));
+  c = {
+    ...c,
+    shots: c.shots.map((s) => {
+      const w = weak.find((x) => x.idx === s.idx);
+      if (!w) return s;
+      if (s.style === "screen" || (s.source === "generated" && s.imageRef)) return { ...s, clipAssetId: undefined };
+      return {
+        ...s,
+        clipAssetId: undefined,
+        motion: `${s.motion ?? "subtle natural motion"}. Fix: ${w.issues[0] ?? "keep every shape stable"}. Keep anatomy and objects identical across the shot; minimal motion.`,
+      };
+    }),
+  };
+  await upsertConcept(db, c);
+  const reviews: Review[] = [];
+  const render = async (label: string) => {
+    let a = (await renderConcept(db, c.id, "final", { label })).asset;
+    a = { ...a, model: `${a.model}-flagship` };
+    await upsertAsset(db, a);
+    return a;
+  };
+  let asset = await render(`flagship_r${prev.round + 1}`);
+  c = (await getConcept(db, c.id))!;
+  let rv = await reviewRender(ctx, c, bp, asset.id, prev.round + 1, []);
+  // keep the best version of every changed shot
+  const reverted: number[] = [];
+  for (const w of weak) {
+    const now = rv.perShot.find((p) => p.idx === w.idx)?.score ?? 0;
+    if (now < w.score) reverted.push(w.idx);
+  }
+  if (reverted.length) {
+    c = { ...c, shots: c.shots.map((s) => (reverted.includes(s.idx) ? { ...before[s.idx] } : s)) };
+    await upsertConcept(db, c);
+    asset = await render(`flagship_r${prev.round + 1}_best`);
+    c = (await getConcept(db, c.id))!;
+    rv = await reviewRender(ctx, c, bp, asset.id, prev.round + 1, []);
+  }
+  rv.decision = "accept";
+  rv.regeneratedShots = weak.map((w) => w.idx).filter((i) => !reverted.includes(i));
+  rv.notes = `${rv.notes}${reverted.length ? ` (kept the earlier version of shot(s) ${reverted.map((i) => i + 1).join(", ")}, which scored better)` : ""}`;
+  await upsertReview(db, rv);
+  reviews.push(rv);
+  await appendEvent(db, {
+    runId: c.runId,
+    phase: "review",
+    type: "review",
+    title: `Flagship repair: ${rv.overall}/100`,
+    refId: rv.id,
+    detail: rv.notes,
+    data: { conceptId: c.id, round: rv.round, perShot: rv.perShot },
+  });
+  const vf = urlToFile(asset.url)!;
+  await extractFrame(vf, 1.2, `${vf}.poster.jpg`, 720).catch(() => undefined);
+  return { concept: c, asset, reviews };
 }
