@@ -47,8 +47,10 @@ Not used (on purpose, to keep the build small): ElevenLabs, Deepgram, Tavus, syn
 - Useful endpoints: Ads Search, Transcribe Ads, Ad Creative Analysis, Similar Ads, Brand Winners, Brand Top EU Reach, Meta Page Ads, TikTok Page Ads, Find Concepts.
 - API/MCP access needs a paid plan (Explore $175/mo and up; 7-day free trial). If `SPIRAL_API_KEY` is empty, research uses Apify instead.
 
-### Higgsfield (unverified)
-- Has an API (docs location to confirm by the agent). Community note: Higgsfield UI is practical but its API is more expensive than fal for the same models.
+### Higgsfield (auth verified from docs.higgsfield.ai/docs/authentication, 11 Oct 2026; optional)
+- Credentials are created in Higgsfield Cloud (cloud.higgsfield.ai; a help page also names console.higgsfield.ai) and consist of a key ID (`HIGGSFIELD_API_KEY`) and a secret (`HIGGSFIELD_API_SECRET`). API use needs a funded API balance.
+- Auth header: `Authorization: Key <key_id>:<secret>` (legacy `hf-api-key` / `hf-secret` headers still accepted). Server-side only.
+- Endpoints and models: read docs.higgsfield.ai before implementing. Community note: Higgsfield's API costs more than fal for the same models; use it as the alternative, not the default.
 
 ### Publishing constraints (verified unless marked)
 - TikTok Content Posting API: unaudited clients can only post private (`SELF_ONLY`); audit takes weeks. "Upload" (to the creator's inbox as a draft) exists; whether drafts escape the private limit is unconfirmed.
