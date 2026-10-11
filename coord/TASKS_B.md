@@ -80,7 +80,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Playwright full journey in mock mode; second project against the real API routes when they respond (`E2E_DATA=live`); screenshots of every route at 1440x900 and 390x844 into `e2e/screens/`.
   - Accept: `pnpm e2e` exits 0 (output shown); screenshots committed.
 
-- [ ] **B17 Polish + morning report**
+- [x] **B17 Polish + morning report** (commit fb19677)
   - Pass every screen against the quality bar in `docs/DESIGN.md`; fix spacing, motion timing, empty/loading states, mobile. Write `coord/MORNING_B.md`: how to run, what works (link screenshots), mock vs live status, known issues, and the 2-minute demo click path.
 
 ## STRETCH (after CORE, in this order)

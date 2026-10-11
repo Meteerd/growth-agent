@@ -2,10 +2,10 @@
 
 ## Now
 - Time: 2026-10-12 00:25 +0300
-- Current task: B17 polish + MORNING_B (after B18)
+- Current task: STRETCH BS1 presentation mode, then the improvement loop
 - Last sync: 00:15 exit 0, main UPDATED, checks PASS
 - Blockers: none. @/contracts v1.1.0 on main; Lane A API routes (brands, runs + SSE, consult, chat, plan) are on main.
-- Next 3: B17 polish + MORNING_B -> BS1 presentation mode -> BS2 command palette
+- Next 3: BS1 presentation mode -> BS2 command palette -> improvement loop (live parity, edge cases)
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - Done so far: B01 to B15 incl. B12b, BS5, I01 to I04 (B11, B13, B14, B15 built by Lane B subagents in worktrees, merged after review).
 - ack A17 flagship remakes are rendering now (INBOX_B 01:33): heroVideo on brand home and portfolio, studio labels shot source.
@@ -57,3 +57,4 @@ Automated: e2e/bans.spec.ts checks computed styles of every element for the DESI
 - 01:06 B16 done (b57e1fb): pnpm e2e exit 0 (55 passed, 10 live-only skipped, 4.0 min); journey.spec full loop 1 passed (56 s); screenshots of 14 routes x 2 sizes + cockpit mid/finished in e2e/screens. Live project: E2E_DATA=live e2e/live.spec.ts 10 passed (00:50).
 - Loop log 01:17: reviewed every mobile screenshot / Connect marked global engines Missing, no 404 or error page, packs nested Page / fixed I05 to I07 in 0d4e1d4; brand.spec 4 passed, packs.spec 3 passed.
 - 02:02 B18 done (fa1277c): v2 the cutting room on every screen (foundation 2c06889, edit timeline, editorial direction table 5ad92e7, portfolio/consult/packs/results/settings from a worktree agent). Fixed two of my own sweep bugs on the way (trimmed string spaces, lost shadow- prefix) with targeted repairs.
+- 02:06 B17 done (fb19677): coord/MORNING_B.md written; Lighthouse v2 landing 97 (FCP 0.9 s, LCP 2.6 s, TBT 30 ms, CLS 0.001); all CORE tasks checked.
