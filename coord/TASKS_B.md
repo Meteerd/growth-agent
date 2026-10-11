@@ -69,7 +69,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Provider status (live/demo/key present/verified), budgets vs spent bars, spend ledger table, `PROVIDER_MODE` shown read-only.
   - Accept: screenshot.
 
-- [ ] **B16 E2E + screenshots**
+- [x] **B16 E2E + screenshots** (commit b57e1fb)
   - Playwright full journey in mock mode; second project against the real API routes when they respond (`E2E_DATA=live`); screenshots of every route at 1440x900 and 390x844 into `e2e/screens/`.
   - Accept: `pnpm e2e` exits 0 (output shown); screenshots committed.
 
