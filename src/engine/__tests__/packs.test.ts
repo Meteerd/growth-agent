@@ -9,9 +9,9 @@ import { POST as posted } from "@/app/api/packs/[id]/posted/route";
 import { ResultsResponse } from "@/contracts";
 import { type BetaMessage, setClaudeTransport } from "@/engine/agent/claude";
 import type { Db } from "@/engine/db/client";
-import { listPacksByRun } from "@/engine/repo";
+import { insertLearning, listLearnings, listPacksByRun } from "@/engine/repo";
 import { seed } from "@/engine/seed";
-import { refreshLearnings } from "@/engine/services/packs";
+import { refreshCrossBrand, refreshLearnings } from "@/engine/services/packs";
 import { loadFixture } from "@/engine/smoke/record";
 import { ctx, freshDb, req, runToEnd } from "@/engine/test-utils";
 
@@ -126,5 +126,30 @@ describe("A13 packs, metrics, results", () => {
       await (await results(req("/api/brands/hound/results"), ctx({ id: "hound" }))).json(),
     );
     expect(r.learnings[0].insight).toContain("2.7x");
+  });
+
+  it("AS5: cross-brand learnings need 2+ brands and are stored as global (brandId null)", async () => {
+    const rec = loadFixture<{ response: BetaMessage }>("anthropic", "smoke")!.response;
+    setClaudeTransport(async () => {
+      const text = JSON.stringify({
+        learnings: [
+          { insight: "Reveal hooks beat listicles in both brands.", evidence: "learn_a, learn_b", confidence: "low" },
+        ],
+      });
+      return { ...rec, content: [{ type: "text", text, citations: null }] } as BetaMessage;
+    });
+    await insertLearning(db, {
+      id: "learn_b",
+      brandId: "brand_aclinic",
+      insight: "Reveal beat median",
+      evidence: "x",
+      confidence: "low",
+      createdAt: new Date().toISOString(),
+    });
+    const made = await refreshCrossBrand(db, { mode: "live" });
+    expect(made).toHaveLength(1);
+    expect(made[0].brandId).toBeNull();
+    const forHound = await listLearnings(db, "brand_hound");
+    expect(forHound.some((l) => l.brandId === null)).toBe(true);
   });
 });

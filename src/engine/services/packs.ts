@@ -101,7 +101,9 @@ export async function addMetrics(db: Db, packId: string, body: MetricsRequest): 
     throw new HttpError(400, "empty_metrics", "Send at least one metric");
   const s: MetricSnapshot = { id: newId("snap"), packId, capturedAt: capturedAt ?? nowIso(), ...m, source: "manual" };
   await insertSnapshot(db, s);
-  void refreshLearnings(db, p.brandId).catch(() => undefined);
+  void refreshLearnings(db, p.brandId)
+    .then((made) => (made.length ? refreshCrossBrand(db) : []))
+    .catch(() => undefined);
   return s;
 }
 
@@ -164,6 +166,48 @@ export async function refreshLearnings(
     const row: Learning = {
       id: newId("learn"),
       brandId,
+      insight: l.insight,
+      evidence: l.evidence,
+      confidence: l.confidence,
+      createdAt: nowIso(),
+    };
+    await insertLearning(db, row);
+    made.push(row);
+  }
+  return made;
+}
+
+/** AS5: promote a pattern to a global learning (brandId null) only when it holds in 2+ brands. */
+export async function refreshCrossBrand(db: Db, opts: { mode?: "live" | "demo" } = {}): Promise<Learning[]> {
+  const all = (await listLearnings(db)).filter((l) => l.brandId);
+  const brands = new Set(all.map((l) => l.brandId));
+  if (brands.size < 2) return [];
+  const out = await structured(
+    { db, mode: opts.mode },
+    {
+      route: "extraction",
+      system: loadPrompt("learnings"),
+      user: JSON.stringify({
+        mode: "cross_brand",
+        learnings: all.map((l) => ({
+          id: l.id,
+          brandId: l.brandId,
+          insight: l.insight,
+          evidence: l.evidence,
+          confidence: l.confidence,
+        })),
+      }),
+      schema: LearningDrafts,
+      note: "learnings: cross-brand",
+      maxTokens: 4000,
+      demo: () => ({ learnings: [] }),
+    },
+  );
+  const made: Learning[] = [];
+  for (const l of out.value.learnings.slice(0, 5)) {
+    const row: Learning = {
+      id: newId("learn"),
+      brandId: null,
       insight: l.insight,
       evidence: l.evidence,
       confidence: l.confidence,

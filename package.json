@@ -19,7 +19,8 @@
     "e2e:live": "E2E_DATA=live playwright test",
     "test:engine-e2e": "vitest run --config vitest.e2e.config.ts",
     "live-pass": "tsx scripts/live-pass.ts",
-    "redo-reverse": "tsx scripts/redo-reverse.ts"
+    "redo-reverse": "tsx scripts/redo-reverse.ts",
+    "full-run": "tsx scripts/full-run.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
