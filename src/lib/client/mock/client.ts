@@ -66,6 +66,12 @@ function withMockMedia(b: DemoRunBundle) {
   return b;
 }
 
+/** Moves a recorded timeline so it starts at `startMs`, keeping the scripted gaps between events. */
+function shiftTimes(events: RunEvent[], startMs: number) {
+  const t0 = Date.parse(events[0]?.ts ?? new Date(startMs).toISOString());
+  return events.map((e) => ({ ...e, ts: new Date(startMs + Date.parse(e.ts) - t0).toISOString() }));
+}
+
 function intakeEvents(runId: string, url: string, name: string): RunEvent[] {
   const ev = (id: number, type: RunEvent["type"], title: string, extra: Partial<RunEvent> = {}): RunEvent => ({
     id,
@@ -159,7 +165,7 @@ export function createMockClient(): DataClient {
     rec.player = createPlayer(rec.events, {
       totalMs: rec.events.length < 20 ? 4_000 : RUN_MS,
       startIndex: rec.emitted,
-      onEvent: (e) => emit(rec, { ...e, ts: now() }),
+      onEvent: (e) => emit(rec, e),
     });
     rec.player.start();
   };
@@ -184,7 +190,12 @@ export function createMockClient(): DataClient {
       run,
       slug: brand.slug,
       bundle,
-      events: makeEvents ? makeEvents(id) : bundle.events.map((e) => ({ ...e, runId: id })),
+      events: makeEvents
+        ? makeEvents(id)
+        : shiftTimes(
+            bundle.events.map((e) => ({ ...e, runId: id })),
+            Date.now(),
+          ),
       emitted: 0,
       listeners: new Set(),
     };
@@ -341,15 +352,36 @@ export function createMockClient(): DataClient {
       }
       const from = opts?.lastEventId ?? 0;
       handlers.onState?.("open");
-      // replay what already happened (async, like a network stream), then stay subscribed for live events
-      const t = setTimeout(() => {
-        for (const e of r.events.slice(0, r.emitted)) if (e.id > from) handlers.onEvent(e);
-        if (["done", "failed", "cancelled"].includes(r.run.status)) handlers.onEnd?.({ status: r.run.status });
-        else r.listeners.add(handlers);
-      }, 30);
+      // Replay what already happened (async like a network stream; `pace` spaces it like the live ?pace=).
+      // Live events that arrive during the replay are queued and flushed after it, so order is preserved.
+      const past = r.events.slice(0, r.emitted).filter((e) => e.id > from);
+      const pace = opts?.pace ?? 0;
+      const queued: RunEvent[] = [];
+      let replaying = true;
+      const sub: RunStreamHandlers = {
+        ...handlers,
+        onEvent: (e) => (replaying ? queued.push(e) : handlers.onEvent(e)),
+        onEnd: (d) => (replaying ? undefined : handlers.onEnd?.(d)),
+      };
+      const finished = ["done", "failed", "cancelled"].includes(r.run.status);
+      if (!finished) r.listeners.add(sub);
+      const timers = past.map((e, i) => setTimeout(() => handlers.onEvent(e), 30 + i * pace));
+      timers.push(
+        setTimeout(
+          () => {
+            replaying = false;
+            for (const e of queued) handlers.onEvent(e);
+            if (["done", "failed", "cancelled"].includes(r.run.status)) {
+              r.listeners.delete(sub);
+              handlers.onEnd?.({ status: r.run.status });
+            }
+          },
+          31 + past.length * pace,
+        ),
+      );
       return () => {
-        clearTimeout(t);
-        r.listeners.delete(handlers);
+        for (const t of timers) clearTimeout(t);
+        r.listeners.delete(sub);
       };
     },
     async evidence(id) {

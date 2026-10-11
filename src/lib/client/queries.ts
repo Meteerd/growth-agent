@@ -104,14 +104,16 @@ export type RunStream = {
 };
 
 /** Subscribes to a run's event stream (mock or SSE) and derives live run state from it. */
-export function useRunStream(runId: string, opts?: { pace?: number }): RunStream {
+export function useRunStream(runId: string, opts?: { pace?: number; epoch?: number }): RunStream {
   const qc = useQueryClient();
   const [events, setEvents] = useState<RunEvent[]>([]);
   const [ended, setEnded] = useState(false);
   const [connection, setConnection] = useState<StreamState>("connecting");
   const inval = useRef(debouncedInvalidate(qc));
   const pace = opts?.pace;
+  const epoch = opts?.epoch ?? 0;
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: bumping epoch resubscribes from the start (replay)
   useEffect(() => {
     setEvents([]);
     setEnded(false);
@@ -144,7 +146,7 @@ export function useRunStream(runId: string, opts?: { pace?: number }): RunStream
       cancelAnimationFrame(raf);
       stop();
     };
-  }, [runId, pace, qc]);
+  }, [runId, pace, qc, epoch]);
 
   return useMemo(() => {
     let status: RunStatus | undefined;
