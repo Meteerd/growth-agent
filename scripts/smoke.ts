@@ -21,7 +21,9 @@ try {
   const out = await runSmoke(db, provider);
   console.log(JSON.stringify({ provider, ms: Date.now() - t0, ...out }, null, 2));
   if (out.mode !== "live") {
-    console.error(`${provider}: ran in DEMO mode (key missing, not in LIVE_PROVIDERS, or cap reached). Use --live to force one call.`);
+    console.error(
+      `${provider}: ran in DEMO mode (key missing, not in LIVE_PROVIDERS, or cap reached). Use --live to force one call.`,
+    );
     process.exit(2);
   }
 } catch (e) {
