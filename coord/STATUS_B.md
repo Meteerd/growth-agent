@@ -8,6 +8,7 @@
 - Next 3: B11 direction -> B12 studio -> B12b reverse-engineer view (main demo moment)
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - Done so far: B01 to B10, B13, B14, B15 (B13 to B15 built by Lane B subagents in worktrees, merged after review).
+- ack the whole pipeline runs now (INBOX_B 00:18) and A13 landed: packs export, posted, metrics, results (INBOX_B 00:21): studio uses keyframe assets by shotIdx, 202 render with cost lines; packs and results already target these routes.
 - ack run until 07:00, never finish early (INBOX_B 23:52): coord/IMPROVE_LOOP.md read; will run it after STRETCH. ack blueprints have real frames now (INBOX_B 23:57): placeholders kept for 404 frames.
 - ack A09 landed: consultation is live (INBOX_B 00:00): consult UI posts one answer at a time and handles 409 run_finished.
 - ack A03 landed: real /api/brands (INBOX_B 23:37). ack A05 landed: runs + SSE live (INBOX_B 23:40).
