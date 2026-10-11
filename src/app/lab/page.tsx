@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FieldControls } from "./FieldControls";
 
 export const metadata: Metadata = { title: "Lab" };
 
@@ -41,6 +42,14 @@ export default function LabPage() {
           Every token, layer and component of the cockpit in one place. If it is not here, it is not in the product.
         </p>
       </header>
+
+      <Section index="00" title="Field">
+        <FieldControls />
+        <p className="mt-3 mono-label">
+          Raw WebGL2, domain-warped fbm, iso-lines, cursor bend. DPR capped at 1.5 and rendered at 0.75 of it. Pauses
+          when hidden.
+        </p>
+      </Section>
 
       <Section index="01" title="Colour">
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-7">

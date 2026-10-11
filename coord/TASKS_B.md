@@ -12,7 +12,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Tokens from `docs/DESIGN.md` as CSS variables + Tailwind theme; grain overlay; hairline grid; glass panel; custom scrollbars, selection, focus rings; Lenis smooth scroll; reduced-motion handling.
   - Accept: `/lab` page renders tokens (colors, type scale, spacing) and the base layers; screenshot committed.
 
-- [ ] **B03 Field shader**
+- [x] **B03 Field shader** (commit 3b1666f)
   - R3F + custom GLSL domain-warped flow field; props: `activity` (0..1, animates intensity/speed), `accent`; cursor-reactive; DPR cap 1.5; pause on hidden; static gradient fallback.
   - Accept: `/lab` shows the shader with an activity slider; Playwright perf check: no long tasks > 200 ms after load on the landing page (or document measured numbers).
 
