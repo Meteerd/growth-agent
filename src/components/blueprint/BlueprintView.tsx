@@ -20,6 +20,9 @@ import { ShotFrame, Timeline, tc } from "./Timeline";
 const TONE_TEXT = { pass: "text-pass", warn: "text-warn", fail: "text-fail" } as const;
 
 /** Our render's time for a moment of the original: same shot, same fraction of it (shots map 1:1 via shotMap). */
+/** The engine writes "not visible in analysis" when a frame did not show it; that is missing data, not text. */
+export const seen = (v?: string) => (v && !/^not visible/i.test(v.trim()) ? v : undefined);
+
 export function remakeTime(bp: Pick<Blueprint, "shots">, aligned: (Shot | undefined)[], all: Shot[], t: number) {
   const i = shotAt(bp.shots, t);
   const s = bp.shots[i];
@@ -114,12 +117,17 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
           <div className="grid flex-1 grid-cols-2 gap-px bg-[#222]">
             <Viewer label="Original" time={t} recording={playing}>
               <ShotFrame
-                url={frame?.url}
-                fallback={`${shot.subject}: ${shot.action}`}
+                url={
+                  frame?.url ?? ev?.thumbnailUrl /* frames live on the analysing machine; elsewhere the real cover */
+                }
+                fallback={
+                  [seen(shot.subject), seen(shot.action)].filter(Boolean).join(": ") ||
+                  "No frame from the analysis on this machine"
+                }
                 purpose={shot.purpose}
                 className="h-full w-full"
               />
-              {shot.onScreenText && <Caption text={shot.onScreenText} />}
+              {seen(shot.onScreenText) && <Caption text={shot.onScreenText!} />}
             </Viewer>
             <Viewer label="Our remake" time={ourT}>
               {video ? (
@@ -250,12 +258,12 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
           testId="their-shot"
           rows={[
             ["Shot", `${shot.shotType.replaceAll("_", " ")}, ${shot.camera}`],
-            ["Subject", shot.subject],
-            ["Action", shot.action],
-            ["On screen", shot.onScreenText],
-            ["Voiceover", shot.voiceover],
-            ["Audio", shot.audioCue],
-            ["Transition", shot.transition],
+            ["Subject", seen(shot.subject)],
+            ["Action", seen(shot.action)],
+            ["On screen", seen(shot.onScreenText)],
+            ["Voiceover", seen(shot.voiceover)],
+            ["Audio", seen(shot.audioCue)],
+            ["Transition", seen(shot.transition)],
           ]}
         />
         <OurShot shot={ours} purpose={shot.purpose} review={review} />
@@ -458,8 +466,8 @@ function OurShot({
       <Rows
         rows={[
           ["Visual", shot.visualPrompt],
-          ["On screen", shot.onScreenText],
-          ["Voiceover", shot.voiceover],
+          ["On screen", seen(shot.onScreenText)],
+          ["Voiceover", seen(shot.voiceover)],
         ]}
       />
       {sc && sc.issues.length > 0 && (
@@ -493,8 +501,8 @@ function Hook({ bp, onJump }: { bp: Blueprint; onJump: () => void }) {
       )}
       <Rows
         rows={[
-          ["Seen", h.visual],
-          ["Written", h.onScreenText],
+          ["Seen", seen(h.visual)],
+          ["Written", seen(h.onScreenText)],
           ["Mechanism", h.mechanism],
         ]}
       />
@@ -556,9 +564,13 @@ function Variants({ variants, runId }: { variants: Concept[]; runId?: string }) 
 }
 
 function SelfReview({ reviews, remake }: { reviews: Review[]; remake?: Concept }) {
-  const rounds = [...reviews].sort((a, b) => a.round - b.round);
-  const [sel, setSel] = useState<number>();
-  const r = rounds.find((x) => x.round === sel) ?? rounds.at(-1);
+  // keep the engine's order: several reviews can share a round number (regenerate passes inside one round)
+  const rounds = reviews.map((x, i) => ({
+    ...x,
+    label: `round ${x.round}${reviews.slice(0, i).some((y) => y.round === x.round) ? ` (${reviews.slice(0, i + 1).filter((y) => y.round === x.round).length})` : ""}`,
+  }));
+  const [sel, setSel] = useState<string>();
+  const r = rounds.find((x) => x.id === sel) ?? rounds.at(-1);
   if (!remake || !r)
     return (
       <Panel tone="hairline" className="grid place-items-center p-6 text-center">
@@ -572,15 +584,15 @@ function SelfReview({ reviews, remake }: { reviews: Review[]; remake?: Concept }
     <Panel tone="flat" className="flex flex-col gap-3 p-4" data-testid="self-review">
       <div className="flex items-center justify-between border-line border-b pb-2">
         <h3 className="font-semibold text-[14px]">Self-review: it watched its own video</h3>
-        <div className="flex gap-1">
+        <div className="flex flex-wrap justify-end gap-1">
           {rounds.map((x) => (
             <button
-              key={x.round}
-              onClick={() => setSel(x.round)}
-              aria-pressed={x.round === r.round}
+              key={x.id}
+              onClick={() => setSel(x.id)}
+              aria-pressed={x.id === r.id}
               className="rounded-[4px] px-2 py-1 text-[12px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)] aria-pressed:bg-bone aria-pressed:text-ink"
             >
-              round {x.round}
+              {x.label}
             </button>
           ))}
         </div>

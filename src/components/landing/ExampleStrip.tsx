@@ -23,7 +23,15 @@ type Frames = { bp: Blueprint; frames: { t: number; url: string }[] };
  * Proof over decoration: real winning posts the agent found for Hound (top), and what it made (bottom).
  * In live mode it upgrades to one analysed ad's actual frames and the engine's generated keyframes.
  */
-export function ExampleStrip({ winners, brandArt }: { winners: Winner[]; brandArt: string[] }) {
+export function ExampleStrip({
+  winners,
+  brandArt,
+  compact,
+}: {
+  winners: Winner[];
+  brandArt: string[];
+  compact?: boolean;
+}) {
   const [frames, setFrames] = useState<Frames>();
   const [keyframes, setKeyframes] = useState<string[]>([]);
 
@@ -56,6 +64,25 @@ export function ExampleStrip({ winners, brandArt }: { winners: Winner[]; brandAr
   }, []);
 
   const ours = keyframes.length ? keyframes : brandArt.slice(0, 6);
+  if (compact)
+    return (
+      <Row label="Other winners the agent found for Hound" note="Real posts, linked to the source; never re-uploaded.">
+        {winners.map((w) => (
+          <Frame
+            key={w.id}
+            src={w.thumbnailUrl}
+            href={w.url}
+            caption={[
+              w.outlier ? `${w.outlier.toFixed(1)}x median` : "",
+              w.views ? `${formatCount(w.views)} views` : "",
+            ]
+              .filter(Boolean)
+              .join(" / ")}
+            sub={SOURCE_LABELS[w.source]}
+          />
+        ))}
+      </Row>
+    );
   return (
     <div className="flex flex-col gap-6">
       <Row

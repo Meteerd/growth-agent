@@ -21,8 +21,14 @@ const ROUTES = [
 for (const path of ROUTES) {
   test(`clean console and tablet fit on ${path}`, async ({ page }) => {
     const problems: string[] = [];
+    // media under /api/assets/ may exist only on the machine that rendered or analysed it (placeholders cover it)
+    let missingMedia = 0;
+    page.on("response", (r) => {
+      if (r.status() === 404 && r.url().includes("/api/assets/")) missingMedia++;
+    });
     page.on("console", (m) => {
       const t = m.text();
+      if (missingMedia && /Failed to load resource: .*404/.test(t)) return;
       if (
         (m.type() === "error" || m.type() === "warning") &&
         !/Download the React DevTools|\[HMR\]|\[Fast Refresh\]/.test(t)

@@ -1,10 +1,12 @@
 import { SEED_BRANDS } from "@/contracts";
 import houndRecorded from "@/contracts/fixtures/live/runs/hound.json";
+import houndShowcase from "@/contracts/fixtures/live/showcase/hound.json";
 import { logoOnDark } from "@/lib/client/brandAssets";
 import { countryName, VERTICAL_LABELS } from "@/lib/client/format";
 import { PRODUCT_NAME } from "@/lib/client/product";
 import { displayHost } from "@/lib/client/url";
 import { ExampleStrip, type Winner } from "./ExampleStrip";
+import { Featured, type FeaturedData } from "./Featured";
 
 const LOOP: [string, string][] = [
   ["Enter", "Paste a URL. The brand exists in seconds."],
@@ -45,8 +47,64 @@ function winners(): Winner[] {
     }));
 }
 
+// Server-side only: the showcase run (the flagship remake), read from the engine's fixture, never invented.
+function featured(): FeaturedData | undefined {
+  type R = { conceptId: string; round: number; overall: number; perShot: { score: number }[] };
+  const d = houndShowcase as unknown as {
+    run: { id: string };
+    evidence: {
+      id: string;
+      title: string;
+      author?: string;
+      url?: string;
+      thumbnailUrl?: string;
+      metrics: { views?: number; outlierScore?: number };
+    }[];
+    blueprints: {
+      id: string;
+      evidenceId: string;
+      durationSec: number;
+      structure: string;
+      shots: unknown[];
+      hook: { mechanism: string };
+    }[];
+    concepts: { id: string; title: string; blueprintId?: string; variantOf?: string; status: string }[];
+    reviews: R[];
+  };
+  const c = d.concepts.find((x) => x.blueprintId && !x.variantOf && x.status === "rendered");
+  const bp = c && d.blueprints.find((b) => b.id === c.blueprintId);
+  const ev = bp && d.evidence.find((e) => e.id === bp.evidenceId);
+  if (!c || !bp || !ev) return undefined;
+  const last = d.reviews.filter((r) => r.conceptId === c.id).at(-1);
+  return {
+    runId: d.run.id,
+    winner: {
+      title: ev.title,
+      author: ev.author,
+      url: ev.url,
+      thumbnailUrl: ev.thumbnailUrl,
+      views: ev.metrics.views,
+      outlier: ev.metrics.outlierScore,
+    },
+    blueprint: {
+      id: bp.id,
+      durationSec: bp.durationSec,
+      shots: bp.shots.length,
+      structure: bp.structure,
+      mechanism: bp.hook.mechanism,
+    },
+    remake: {
+      title: c.title,
+      videoUrl: "/api/assets/showcase/hound-flagship.mp4",
+      posterUrl: "/api/assets/showcase/hound-flagship.mp4.poster.jpg",
+      review: last && { overall: last.overall, minShot: Math.min(...last.perShot.map((p) => p.score)) },
+    },
+  };
+}
+
 export function Example() {
   const hound = SEED_BRANDS.find((b) => b.slug === "hound")!;
+  const feat = featured();
   return (
     <section className="mx-auto max-w-[1440px] px-4 pb-[var(--spacing-section-sm)] md:px-8">
       <div className="rounded-panel bg-raised p-4 shadow-[inset_0_0_0_1px_var(--color-line)] md:p-8">
@@ -56,7 +114,14 @@ export function Example() {
           </h2>
           <p className="text-[13px] text-bone-2">Recorded live research, 11 Oct 2026</p>
         </div>
-        <ExampleStrip winners={winners()} brandArt={hound.dossier.visual.referenceImages ?? []} />
+        {feat && <Featured data={feat} />}
+        <div className={feat ? "mt-10 border-line border-t pt-8" : ""}>
+          <ExampleStrip
+            compact={!!feat}
+            winners={winners().filter((w) => w.title !== feat?.winner.title)}
+            brandArt={hound.dossier.visual.referenceImages ?? []}
+          />
+        </div>
       </div>
     </section>
   );
