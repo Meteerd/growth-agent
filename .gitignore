@@ -28,3 +28,8 @@ apps/web/playwright-report/
 # python (just in case)
 __pycache__/
 .venv/
+
+# next / tooling
+next-env.d.ts
+*.pem
+.vercel

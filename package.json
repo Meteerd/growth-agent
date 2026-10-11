@@ -1,0 +1,36 @@
+{
+  "name": "growth-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "next typegen && tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "test": "vitest run",
+    "check": "next typegen >/dev/null && tsc --noEmit && biome check . && vitest run",
+    "db:migrate": "echo 'db:migrate lands in A03'",
+    "seed": "echo 'seed lands in A03'",
+    "e2e": "echo 'e2e placeholder until Lane B adds Playwright'",
+    "smoke": "echo 'smoke lands in A06/A14'"
+  },
+  "dependencies": {
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.15",
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^5.0.3"
+  },
+  "packageManager": "pnpm@11.12.0"
+}
