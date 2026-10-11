@@ -1,12 +1,24 @@
-import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/client/product";
+import { Hero } from "@/components/landing/Hero";
+import { Brands, Footer, Loop, Remake, Rules } from "@/components/landing/Sections";
+import { DataModeChip, Wordmark } from "@/components/shell/Header";
 
-export default function Home() {
+export default function Landing() {
   return (
-    <main className="grid min-h-dvh place-items-center px-4">
-      <div className="max-w-3xl text-center">
-        <p className="font-mono text-[11px] uppercase tracking-[0.08em] opacity-60">{PRODUCT_NAME}</p>
-        <h1 className="mt-4 font-serif text-5xl leading-none md:text-8xl">{PRODUCT_TAGLINE}</h1>
-      </div>
-    </main>
+    <>
+      <header className="absolute inset-x-0 top-0 z-30">
+        <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 md:px-8">
+          <Wordmark />
+          <DataModeChip />
+        </div>
+      </header>
+      <main>
+        <Hero />
+        <Loop />
+        <Remake />
+        <Brands />
+        <Rules />
+      </main>
+      <Footer />
+    </>
   );
 }

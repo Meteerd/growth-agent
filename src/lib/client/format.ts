@@ -70,3 +70,15 @@ export function longevity(daysRunning?: number) {
   if (daysRunning == null) return undefined;
   return daysRunning >= 30 ? "proven" : daysRunning >= 7 ? "testing" : "new";
 }
+
+export const VERTICAL_LABELS: Record<string, string> = {
+  telehealth_rx: "Telehealth (Rx)",
+  consumer_app: "Consumer app",
+  health_wellness_dtc: "Health and wellness DTC",
+  b2b_saas: "B2B SaaS",
+  other: "Other",
+};
+
+const regionNames =
+  typeof Intl.DisplayNames === "function" ? new Intl.DisplayNames(["en"], { type: "region" }) : undefined;
+export const countryName = (code: string) => regionNames?.of(code) ?? code;
