@@ -1,5 +1,6 @@
 import type { Phase, RunKind } from "@/contracts";
 import type { Db } from "../db/client";
+import { startHeartbeat } from "../jobs/heartbeat";
 import { listEvents, updateRun } from "../repo";
 import { setStatus } from "../runs";
 import { makeCtx, type PhaseCtx } from "./context";
@@ -39,6 +40,15 @@ export const PLAN_BY_KIND: Record<RunKind, Phase[]> = {
 };
 
 export async function runPipeline(db: Db, runId: string, signal: AbortSignal): Promise<void> {
+  const stop = startHeartbeat(runId);
+  try {
+    await runPhases(db, runId, signal);
+  } finally {
+    stop();
+  }
+}
+
+async function runPhases(db: Db, runId: string, signal: AbortSignal): Promise<void> {
   const base = await makeCtx(db, runId, signal);
   const run = base.run;
   if (["done", "failed", "cancelled"].includes(run.status)) return;

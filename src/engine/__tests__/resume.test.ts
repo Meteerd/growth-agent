@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { runPipeline } from "@/engine/agent/pipeline";
 import type { Db } from "@/engine/db/client";
+import { startHeartbeat } from "@/engine/jobs/heartbeat";
 import { resumeInterruptedRuns, waitForRun } from "@/engine/jobs/runner";
 import { appendEvent, getRun, listEvents, updateRun } from "@/engine/repo";
 import { createRun, setStatus } from "@/engine/runs";
@@ -60,5 +61,25 @@ describe("AS3 resume after restart", () => {
     // createdAt is now, but the last event is 7 h old
     expect(await resumeInterruptedRuns(60_000)).toEqual([]);
     expect((await getRun(db, old.id))?.status).toBe("failed");
+  });
+
+  it("never resumes a run another process is still driving (fresh heartbeat)", async () => {
+    const r = await createRun(db, "brand_evreon", "research_only");
+    await setStatus(db, r.id, "running");
+    await appendEvent(db, {
+      runId: r.id,
+      phase: "intake",
+      type: "log",
+      title: "long Claude call",
+      ts: new Date(Date.now() - 10 * 60_000).toISOString(),
+    });
+    const stop = startHeartbeat(r.id);
+    try {
+      (globalThis as { __nexusResumed?: boolean }).__nexusResumed = false;
+      expect(await resumeInterruptedRuns(60_000)).toEqual([]);
+      expect((await getRun(db, r.id))?.status).toBe("running");
+    } finally {
+      stop();
+    }
   });
 });
