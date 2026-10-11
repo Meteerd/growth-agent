@@ -194,6 +194,10 @@ export async function startLandscape(ctx: SourceCtx): Promise<{ task: ManusTask 
     demo: () => null,
     live: async () => {
       const b = ctx.brand;
+      // reuse an already running task (e.g. after a crashed pass) instead of spending credits on a new one
+      const reuse = process.env.MANUS_TASK_ID;
+      if (reuse)
+        return { result: { task_id: reuse, task_url: `https://manus.im/app/${reuse}` }, usd: 0, units: "reused task" };
       const task = await createTask(
         landscapePrompt(b.name, b.url, b.dossier.oneLiner, b.countries, b.languages),
         ManusLandscape,
@@ -238,4 +242,53 @@ export async function finishLandscape(
         : "Still running; open the task link for live progress.";
   e.tags = ["research", "manus"];
   return { source: "manus_research", items: [e], mode: "live", usd: 0, link: task.task_url, note: s.state };
+}
+
+// ---------------------------------------------------------------- campaign landing page (AS1)
+
+export interface WebsiteStatus {
+  website_id?: string;
+  title?: string;
+  publish_status?: "unpublished" | "publishing" | "published" | "failed";
+  site_urls?: string[];
+  visibility?: string;
+}
+
+export async function websiteStatus(taskId: string, signal?: AbortSignal): Promise<WebsiteStatus | null> {
+  const res = await fetchRetry(`${API}/website.status?task_id=${encodeURIComponent(taskId)}`, {
+    headers: headers(),
+    signal,
+    timeoutMs: 30_000,
+    retries: 1,
+  });
+  if (res.status === 404) return null;
+  return okJson<WebsiteStatus>(res, "manus website.status");
+}
+
+export function landingPrompt(o: {
+  brandName: string;
+  url: string;
+  oneLiner: string;
+  offer: string;
+  hook: string;
+  angle: string;
+  cta: string;
+  language: string;
+  colors: string[];
+  claimsAllowed: string[];
+  claimsForbidden: string[];
+}): string {
+  return [
+    `Build a single-page campaign landing page for ${o.brandName} (${o.url}) that matches this ad, so people who click the ad land on the same promise.`,
+    `Ad hook: "${o.hook}". Angle: ${o.angle}. Call to action: ${o.cta} (link the button to ${o.url}).`,
+    `What the brand is: ${o.oneLiner} Offer: ${o.offer || "see the site"}.`,
+    `Language: ${o.language}. Brand colors: ${o.colors.join(", ")}. Mobile first, fast, clean, one clear CTA above the fold, a short how-it-works section, no fake testimonials, no invented numbers.`,
+    `Claims you may use: ${o.claimsAllowed.join("; ") || "only what the site says"}. Never say: ${o.claimsForbidden.join("; ") || "anything not on the site"}.`,
+    "Do NOT publish or deploy the site. Build it and leave it unpublished for the team to review.",
+  ].join("\n");
+}
+
+/** Start a Manus task that builds the page. Returns the task link at once; the site appears inside that task. */
+export async function startLandingPage(prompt: string, signal?: AbortSignal): Promise<ManusTask> {
+  return createTask(prompt, undefined, signal);
 }

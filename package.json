@@ -17,7 +17,8 @@
     "e2e": "playwright test",
     "smoke": "tsx scripts/smoke.ts",
     "e2e:live": "E2E_DATA=live playwright test",
-    "test:engine-e2e": "vitest run --config vitest.e2e.config.ts"
+    "test:engine-e2e": "vitest run --config vitest.e2e.config.ts",
+    "live-pass": "tsx scripts/live-pass.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

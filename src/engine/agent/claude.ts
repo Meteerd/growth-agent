@@ -102,34 +102,41 @@ function checkStop(msg: BetaMessage) {
 /** JSON Schema for structured outputs: strict objects, no unsupported numeric/string constraints. */
 export function outputSchema(schema: z.ZodType): Record<string, unknown> {
   const js = z.toJSONSchema(schema, { target: "draft-7", unrepresentable: "any" }) as Record<string, unknown>;
-  const strip = (n: unknown): unknown => {
-    if (Array.isArray(n)) return n.map(strip);
+  const DROP = new Set([
+    "$schema",
+    "minimum",
+    "maximum",
+    "exclusiveMinimum",
+    "exclusiveMaximum",
+    "minLength",
+    "maxLength",
+    "pattern",
+    "format",
+    "minItems",
+    "maxItems",
+    "default",
+  ]);
+  // inProps: the keys of this object are property names; never drop those, whatever they are called
+  const strip = (n: unknown, inProps = false): unknown => {
+    if (Array.isArray(n)) return n.map((x) => strip(x));
     if (!n || typeof n !== "object") return n;
     const o: Record<string, unknown> = {};
     for (const [k, v] of Object.entries(n)) {
-      if (
-        [
-          "$schema",
-          "minimum",
-          "maximum",
-          "exclusiveMinimum",
-          "exclusiveMaximum",
-          "minLength",
-          "maxLength",
-          "pattern",
-          "format",
-          "minItems",
-          "maxItems",
-          "default",
-        ].includes(k)
-      )
-        continue;
-      o[k] = strip(v);
+      if (!inProps && DROP.has(k)) continue;
+      o[k] = inProps ? strip(v) : strip(v, k === "properties" || k === "$defs" || k === "definitions");
     }
-    if (o.type === "object") o.additionalProperties = false;
+    if (!inProps && o.type === "object") o.additionalProperties = false;
     return o;
   };
   return strip(js) as Record<string, unknown>;
+}
+
+function safeJson(text: string): unknown {
+  try {
+    return parseJson(text);
+  } catch {
+    return null;
+  }
 }
 
 function parseJson(text: string): unknown {
@@ -230,18 +237,46 @@ export async function structured<S extends z.ZodType>(
         usage = msg.usage;
         const usd = claudeCost(msg.model || model, msg.usage);
         checkStop(msg);
-        const parsed = o.schema.safeParse(parseJson(textOf(msg)));
-        if (!parsed.success)
-          throw new Error(
-            `Claude output failed validation: ${parsed.error.issues
-              .slice(0, 3)
-              .map((i) => `${i.path.join(".")} ${i.message}`)
-              .join("; ")}`,
-          );
-        await logCost(ctx, usd, `Claude: ${o.note}`, msg);
+        let parsed = o.schema.safeParse(safeJson(textOf(msg)));
+        let totalUsd = usd;
+        if (!parsed.success) {
+          // one retry with the validation errors spelled out
+          const issues = parsed.error.issues
+            .slice(0, 8)
+            .map((i) => `${i.path.join(".")}: ${i.message}`)
+            .join("; ");
+          const retry = await transport({
+            model,
+            max_tokens: maxTokens,
+            betas: [FALLBACK_BETA],
+            fallbacks: "default",
+            thinking: { type: "adaptive" },
+            output_config: { effort: EFFORT[o.route], format: { type: "json_schema", schema: outputSchema(o.schema) } },
+            system: [{ type: "text", text: o.system, cache_control: { type: "ephemeral" } }],
+            messages: [
+              { role: "user", content: o.user },
+              { role: "assistant", content: textOf(msg) || "{}" },
+              {
+                role: "user",
+                content: `That JSON did not match the schema (${issues}). Return the complete corrected JSON only.`,
+              },
+            ],
+          } as StreamParams);
+          totalUsd += claudeCost(retry.model || model, retry.usage);
+          checkStop(retry);
+          parsed = o.schema.safeParse(safeJson(textOf(retry)));
+          if (!parsed.success)
+            throw new Error(
+              `Claude output failed validation twice: ${parsed.error.issues
+                .slice(0, 3)
+                .map((i) => `${i.path.join(".")} ${i.message}`)
+                .join("; ")}`,
+            );
+        }
+        await logCost(ctx, totalUsd, `Claude: ${o.note}`, msg);
         return {
           result: parsed.data as z.infer<S>,
-          usd,
+          usd: totalUsd,
           units: `${msg.usage.input_tokens} in / ${msg.usage.output_tokens} out`,
         };
       },

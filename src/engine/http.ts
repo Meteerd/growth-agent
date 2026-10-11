@@ -40,6 +40,8 @@ export async function parseBody<S extends z.ZodType>(req: Request, schema: S): P
 export async function db() {
   const d = await getDb();
   await ensureSeeded(d);
+  if (process.env.NEXUS_TEST !== "1")
+    void import("./jobs/runner").then((m) => m.resumeInterruptedRuns()).catch(() => undefined);
   return d;
 }
 

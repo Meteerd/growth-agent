@@ -1,6 +1,6 @@
 import type { Run } from "@/contracts";
 import { getDb } from "../db/client";
-import { appendEvent, getRun, listRunsByStatus, updateRun } from "../repo";
+import { appendEvent, getRun, listEvents, listRunsByStatus, updateRun } from "../repo";
 
 /**
  * In-process job runner. One async task per run inside the Node process (fine on localhost).
@@ -71,14 +71,32 @@ export async function waitForRun(runId: string): Promise<void> {
   await jobs.get(runId)?.promise;
 }
 
-/** On first use after a server restart, resume runs that were mid-flight (stretch AS3). */
-export async function resumeInterruptedRuns(): Promise<number> {
-  if (g.__nexusResumed) return 0;
+/**
+ * On first use after a server restart, resume runs that were mid-flight (AS3). Only runs whose last event is
+ * older than `staleMs` are resumed, so a run being driven by another process (e.g. a live-pass script) is left alone.
+ * Each completed phase is skipped on resume; the interrupted phase restarts.
+ */
+export async function resumeInterruptedRuns(staleMs = 120_000): Promise<string[]> {
+  if (g.__nexusResumed) return [];
   g.__nexusResumed = true;
   const db = await getDb();
   const runs = await listRunsByStatus(db, ["queued", "running"]);
-  for (const r of runs) startRun(r.id);
-  return runs.length;
+  const resumed: string[] = [];
+  for (const r of runs) {
+    if (jobs.has(r.id)) continue;
+    const last = (await listEvents(db, r.id)).at(-1);
+    const age = Date.now() - Date.parse(last?.ts ?? r.createdAt);
+    if (age < staleMs) continue;
+    await appendEvent(db, {
+      runId: r.id,
+      phase: r.phase,
+      type: "warning",
+      title: "Server restarted: resuming this run from its last completed phase",
+    });
+    startRun(r.id);
+    resumed.push(r.id);
+  }
+  return resumed;
 }
 
 export function throwIfCancelled(signal: AbortSignal) {

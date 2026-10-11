@@ -173,19 +173,28 @@ export const instagramSearch = (ctx: SourceCtx, hashtags: string[]) =>
     `instagram: ${hashtags.join(", ")}`,
   );
 
-export const redditSearch = (ctx: SourceCtx, queries: string[]) =>
+export const redditSearch = (ctx: SourceCtx, queries: string[], community?: string) =>
   apifySource(
     ctx,
     "reddit",
     ACTORS.reddit,
     {
       searches: queries.slice(0, 3),
-      type: "post",
-      sort: "top",
+      ...(community ? { searchCommunityName: community.replace(/^r\//, "") } : {}),
+      searchPosts: true,
+      searchComments: false,
+      searchCommunities: false,
+      searchUsers: false,
+      ignoreStartUrls: true,
+      startUrls: [],
+      sort: "relevance",
       time: "year",
       maxItems: ctx.limit,
       maxPostCount: ctx.limit,
       skipComments: true,
+      skipUserPosts: true,
+      skipCommunity: true,
+      includeNSFW: false,
     },
     normReddit,
     `reddit: ${queries.join(", ")}`,
@@ -201,6 +210,7 @@ export const metaAdsSearch = (ctx: SourceCtx, queries: string[], country: string
         url: `https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=${country}&q=${encodeURIComponent(q)}&search_type=keyword_unordered&media_type=video`,
       })),
       count: ctx.limit,
+      limitPerSource: Math.ceil(ctx.limit / Math.max(1, Math.min(2, queries.length))),
     },
     normMetaAd,
     `meta ads (${country}): ${queries.join(", ")}`,
