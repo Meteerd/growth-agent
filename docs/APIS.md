@@ -41,6 +41,12 @@ Not used (on purpose, to keep the build small): ElevenLabs, Deepgram, Tavus, syn
 - So a 30 s single take ~$5; budget drafts on cheaper tiers and keyframes first.
 - fal Startup Program: $1k credits growing to $5k, Europe and Asia teams with traction or VC backing; apply after the event (Evreon is the likely applicant).
 
+### Spiral (verified from docs.spiral.ad, 11 Oct 2026; optional)
+- Base `https://public-api.spiral.ad`, header `Authorization: Bearer sk_live_...` (key minted in the Spiral dashboard; same key works for HTTP and MCP). OpenAPI: `https://public-api.spiral.ad/openapi.json`. Docs index: `https://docs.spiral.ad/llms.txt`.
+- Metered in credits; responses carry `X-Credits-Charged` / `X-Credits-Remaining`.
+- Useful endpoints: Ads Search, Transcribe Ads, Ad Creative Analysis, Similar Ads, Brand Winners, Brand Top EU Reach, Meta Page Ads, TikTok Page Ads, Find Concepts.
+- API/MCP access needs a paid plan (Explore $175/mo and up; 7-day free trial). If `SPIRAL_API_KEY` is empty, research uses Apify instead.
+
 ### Higgsfield (unverified)
 - Has an API (docs location to confirm by the agent). Community note: Higgsfield UI is practical but its API is more expensive than fal for the same models.
 
