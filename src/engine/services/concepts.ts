@@ -189,7 +189,9 @@ export async function renderConcept(
         fs.mkdirSync(path.dirname(outClip), { recursive: true });
         const r = await imageToVideo(db, {
           imageFile: kfFile,
-          prompt: `${s.visualPrompt}. Subtle natural motion, gentle camera push-in, no text.`,
+          prompt: s.motion
+            ? `${s.motion}. Natural, physically plausible motion, real camera feel, no text, no morphing.`
+            : `${s.visualPrompt}. Subtle natural motion, gentle camera push-in, no text.`,
           durationSec: s.durationSec > 5 ? 10 : 5,
           out: outClip,
           runId: cur.runId,

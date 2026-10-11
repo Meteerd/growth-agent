@@ -58,25 +58,35 @@ export async function transcribe(
 export async function generateImage(
   db: Db,
   prompt: string,
-  o: { runId?: string; size?: "1024x1536" | "1024x1024" | "1536x1024"; demo: () => Promise<Buffer>; refs?: string[] },
+  o: {
+    runId?: string;
+    size?: "1024x1536" | "1024x1024" | "1536x1024";
+    demo: () => Promise<Buffer>;
+    refs?: string[];
+    quality?: "low" | "medium" | "high";
+  },
 ): Promise<{ png: Buffer; mode: "live" | "demo"; usd: number; model: string }> {
   const out = await callProvider(db, {
     provider: "openai",
     note: `image: ${prompt.slice(0, 60)}`,
     runId: o.runId,
-    estimateUsd: PRICES.openai.imagePerImage,
+    estimateUsd: PRICES.openai.imagePerImage * (o.quality === "high" ? 3 : 1),
     demo: o.demo,
     live: async () => {
       const r = await oa().images.generate({
         model: IMAGE_MODEL(),
         prompt,
         size: o.size ?? "1024x1536",
-        quality: "medium",
+        quality: o.quality ?? "medium",
         n: 1,
       });
       const b64 = r.data?.[0]?.b64_json;
       if (!b64) throw new Error("OpenAI image: empty response");
-      return { result: Buffer.from(b64, "base64"), usd: PRICES.openai.imagePerImage, units: "1 image" };
+      return {
+        result: Buffer.from(b64, "base64"),
+        usd: PRICES.openai.imagePerImage * (o.quality === "high" ? 3 : 1),
+        units: `1 image (${o.quality ?? "medium"})`,
+      };
     },
   });
   return { png: out.value, mode: out.mode, usd: out.usd, model: out.mode === "live" ? IMAGE_MODEL() : "local-svg" };
@@ -111,4 +121,60 @@ export async function speak(
     },
   });
   return { mp3: out.value, mode: out.mode, usd: out.usd };
+}
+
+// ---------------------------------------------------------------- video (Sora)
+
+export const VIDEO_MODEL = () => process.env.OPENAI_VIDEO_MODEL || "sora-2";
+/** sora-2 at 720x1280: ~$0.10 per second (estimate; see docs/APIS.md). */
+export const soraCost = (sec: number) => sec * 0.1;
+
+/**
+ * Image-to-video with OpenAI's video model: the keyframe (resized to 720x1280) is the first frame reference.
+ * Polls until done and saves the MP4.
+ */
+export async function soraClip(
+  db: Db,
+  o: {
+    imageFile?: string;
+    prompt: string;
+    seconds: 4 | 8 | 12;
+    out: string;
+    runId?: string;
+    signal?: AbortSignal;
+    demo: () => Promise<string | null>;
+  },
+): Promise<{ file: string | null; mode: "live" | "demo"; usd: number; model: string }> {
+  const out = await callProvider(db, {
+    provider: "openai",
+    note: `video ${o.seconds}s: ${o.prompt.slice(0, 50)}`,
+    runId: o.runId,
+    estimateUsd: soraCost(o.seconds),
+    demo: o.demo,
+    live: async () => {
+      const sharp = (await import("sharp")).default;
+      const ref = o.imageFile
+        ? `data:image/jpeg;base64,${(await sharp(o.imageFile).resize(720, 1280, { fit: "cover", position: "attention" }).jpeg({ quality: 90 }).toBuffer()).toString("base64")}`
+        : undefined;
+      let v = await oa().videos.create({
+        model: VIDEO_MODEL(),
+        prompt: o.prompt,
+        seconds: String(o.seconds) as "4" | "8" | "12",
+        size: "720x1280",
+        ...(ref ? { input_reference: { image_url: ref } } : {}),
+      });
+      const until = Date.now() + 10 * 60_000;
+      while (v.status !== "completed") {
+        if (v.status === "failed")
+          throw new Error(`OpenAI video failed: ${JSON.stringify(v.error ?? {}).slice(0, 200)}`);
+        if (Date.now() > until) throw new Error("OpenAI video: timed out");
+        await new Promise((r) => setTimeout(r, 5000));
+        v = await oa().videos.retrieve(v.id);
+      }
+      const res = await oa().videos.downloadContent(v.id);
+      fs.writeFileSync(o.out, Buffer.from(await res.arrayBuffer()));
+      return { result: o.out, usd: soraCost(o.seconds), units: `${o.seconds}s ${VIDEO_MODEL()}` };
+    },
+  });
+  return { file: out.value, mode: out.mode, usd: out.usd, model: out.mode === "live" ? VIDEO_MODEL() : "none" };
 }

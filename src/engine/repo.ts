@@ -103,7 +103,24 @@ export async function listBrandSummaries(db: Db): Promise<BrandSummary[]> {
   const snaps = await db.select().from(t.metricSnapshots).orderBy(asc(t.metricSnapshots.capturedAt));
   const latestViews = new Map<string, number>();
   for (const s of snaps) if (s.views != null) latestViews.set(s.packId, s.views);
+  // flagship videos (A17): the latest final render marked flagship, per brand
+  const videos = (
+    await db.select().from(t.assets).where(eq(t.assets.kind, "video")).orderBy(desc(t.assets.createdAt))
+  ).filter((a) => (a.body.model ?? "").includes("flagship"));
+  const conceptRows = videos.length
+    ? await db
+        .select()
+        .from(t.concepts)
+        .where(
+          inArray(
+            t.concepts.id,
+            videos.map((v) => v.conceptId ?? ""),
+          ),
+        )
+    : [];
   return brands.map((b) => {
+    const hero = videos.find((v) => v.brandId === b.id);
+    const heroConcept = hero ? conceptRows.find((c) => c.id === hero.conceptId) : undefined;
     const brandRuns = runRows.filter((r) => r.brandId === b.id);
     const brandPacks = packRows.filter((p) => p.brandId === b.id);
     const last = brandRuns[0];
@@ -115,6 +132,17 @@ export async function listBrandSummaries(db: Db): Promise<BrandSummary[]> {
         packsPosted: brandPacks.filter((p) => p.status === "posted").length,
         totalViews: brandPacks.reduce((a, p) => a + (latestViews.get(p.id) ?? 0), 0),
       },
+      ...(hero && heroConcept
+        ? {
+            heroVideo: {
+              url: hero.body.url,
+              posterUrl: `${hero.body.url}.poster.jpg`,
+              conceptId: heroConcept.id,
+              runId: heroConcept.runId,
+              title: heroConcept.body.title,
+            },
+          }
+        : {}),
       ...(last
         ? {
             lastRun: clean({

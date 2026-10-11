@@ -111,6 +111,16 @@ export type BrandCounts = z.infer<typeof BrandCounts>;
 /** GET /api/brands item: Brand + counts + last run summary. */
 export const BrandSummary = Brand.extend({
   counts: BrandCounts,
+  /** additive (A17): the brand's flagship final video (real motion), shown as hero media */
+  heroVideo: z
+    .object({
+      url: z.string(),
+      posterUrl: z.string().optional(),
+      conceptId: z.string(),
+      runId: z.string(),
+      title: z.string().optional(),
+    })
+    .optional(),
   lastRun: z
     .object({ id: Id, status: RunStatus, phase: Phase, startedAt: Iso.optional(), finishedAt: Iso.optional() })
     .optional(),
@@ -379,6 +389,14 @@ export const Shot = z.object({
   keyframeAssetId: z.string().optional(),
   clipAssetId: z.string().optional(),
   approved: z.boolean(),
+  /** additive (A17): where the frame comes from: a real brand image, or a newly generated frame */
+  source: z.enum(["brand_image", "generated"]).optional(),
+  /** additive (A17): the brand image used (path under assets/brands, served at /api/assets/brands/...) */
+  imageRef: z.string().optional(),
+  /** additive (A17): look matched to the winner: photoreal phone footage, illustration, or a screen */
+  style: z.enum(["photoreal", "illustration", "screen"]).optional(),
+  /** additive (A17): the camera move and action for image-to-video, following the blueprint shot */
+  motion: z.string().optional(),
 });
 export type Shot = z.infer<typeof Shot>;
 
