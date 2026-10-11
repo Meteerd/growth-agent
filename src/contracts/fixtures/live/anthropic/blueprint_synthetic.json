@@ -1,0 +1,183 @@
+{
+  "recordedAt": "2026-10-11T20:57:01.002Z",
+  "blueprint": {
+    "id": "bp_mv4b0dvr6ce68e3143",
+    "evidenceId": "ev_synth_b2d94d",
+    "brandId": "brand_hound",
+    "runId": "run_mv4azztb0ba3b2d94d",
+    "durationSec": 14,
+    "aspect": "9:16",
+    "structure": "story",
+    "hook": {
+      "endSec": 2.53,
+      "visual": "Static full-screen text card: white bold centered text on a solid terracotta/orange background, held unchanged for the full hook.",
+      "spoken": "I filmed my dog when I left",
+      "onScreenText": "I filmed my dog when I left",
+      "mechanism": "Curiosity gap (implied hidden-camera reveal)",
+      "whyItStops": "It promises a secret look at what a pet does when the owner is gone, a question every dog owner wonders about."
+    },
+    "shots": [
+      {
+        "idx": 0,
+        "t0": 0,
+        "t1": 2.53,
+        "shotType": "text_card",
+        "camera": "static",
+        "subject": "Centered white bold text on solid terracotta background",
+        "action": "Text holds on screen with no motion",
+        "onScreenText": "I filmed my dog when I left",
+        "voiceover": "I filmed my dog when I left",
+        "audioCue": "none detectable from frames",
+        "transition": "hard cut",
+        "purpose": "hook"
+      },
+      {
+        "idx": 1,
+        "t0": 2.53,
+        "t1": 5.53,
+        "shotType": "text_card",
+        "camera": "static",
+        "subject": "Centered white bold text on solid navy background",
+        "action": "Text holds; color shift to dark navy signals the low point",
+        "onScreenText": "Day 1: crying at the door",
+        "voiceover": "Day 1: crying at the door",
+        "audioCue": "none detectable from frames",
+        "transition": "hard cut",
+        "purpose": "problem"
+      },
+      {
+        "idx": 2,
+        "t0": 5.53,
+        "t1": 9.07,
+        "shotType": "text_card",
+        "camera": "static",
+        "subject": "Centered white bold text on solid lime-green background",
+        "action": "Text holds; brighter color introduces the method",
+        "onScreenText": "10 minutes a day",
+        "voiceover": "10 minutes a day",
+        "audioCue": "none detectable from frames",
+        "transition": "hard cut",
+        "purpose": "solution"
+      },
+      {
+        "idx": 3,
+        "t0": 9.07,
+        "t1": 12.07,
+        "shotType": "text_card",
+        "camera": "static",
+        "subject": "Centered white bold text on solid dark red background",
+        "action": "Text holds showing the outcome",
+        "onScreenText": "Day 14: calm",
+        "voiceover": "Day 14: calm",
+        "audioCue": "none detectable from frames",
+        "transition": "hard cut",
+        "purpose": "proof"
+      },
+      {
+        "idx": 4,
+        "t0": 12.07,
+        "t1": 14,
+        "shotType": "text_card",
+        "camera": "static",
+        "subject": "Centered dark bold text on cream background",
+        "action": "Text holds as end card",
+        "onScreenText": "Take the quiz",
+        "voiceover": "Take the quiz",
+        "audioCue": "none detectable from frames",
+        "transition": "end",
+        "purpose": "cta"
+      }
+    ],
+    "pacing": {
+      "cutsPer10s": 2.86,
+      "avgShotSec": 2.8
+    },
+    "emotionalArc": "Curiosity → empathy/worry → hope → relief → action",
+    "cta": {
+      "atSec": 12.07,
+      "mechanic": "End-card text plus voiceover directing to a low-commitment quiz",
+      "text": "Take the quiz"
+    },
+    "whyItWins": "No performance metrics were provided (synthetic test video), so any win is hypothetical: the before/after timeline (Day 1 vs Day 14) with a small, specific effort ('10 minutes a day') makes the transformation feel achievable. The hidden-camera curiosity hook plus a low-friction quiz CTA would likely drive watch-through and clicks if footage replaced the plain text cards.",
+    "transcript": "I filmed my dog when I left. Day 1: crying at the door. 10 minutes a day. Day 14: calm. Take the quiz.",
+    "frames": [
+      {
+        "t": 0,
+        "url": "/api/assets/frames/synthetic_b2d94d/0.00.jpg"
+      },
+      {
+        "t": 0.25,
+        "url": "/api/assets/frames/synthetic_b2d94d/0.25.jpg"
+      },
+      {
+        "t": 0.5,
+        "url": "/api/assets/frames/synthetic_b2d94d/0.50.jpg"
+      },
+      {
+        "t": 0.75,
+        "url": "/api/assets/frames/synthetic_b2d94d/0.75.jpg"
+      },
+      {
+        "t": 1,
+        "url": "/api/assets/frames/synthetic_b2d94d/1.00.jpg"
+      },
+      {
+        "t": 1.25,
+        "url": "/api/assets/frames/synthetic_b2d94d/1.25.jpg"
+      },
+      {
+        "t": 1.5,
+        "url": "/api/assets/frames/synthetic_b2d94d/1.50.jpg"
+      },
+      {
+        "t": 1.75,
+        "url": "/api/assets/frames/synthetic_b2d94d/1.75.jpg"
+      },
+      {
+        "t": 2,
+        "url": "/api/assets/frames/synthetic_b2d94d/2.00.jpg"
+      },
+      {
+        "t": 2.25,
+        "url": "/api/assets/frames/synthetic_b2d94d/2.25.jpg"
+      },
+      {
+        "t": 2.5,
+        "url": "/api/assets/frames/synthetic_b2d94d/2.50.jpg"
+      },
+      {
+        "t": 2.75,
+        "url": "/api/assets/frames/synthetic_b2d94d/2.75.jpg"
+      },
+      {
+        "t": 4.03,
+        "url": "/api/assets/frames/synthetic_b2d94d/4.03.jpg"
+      },
+      {
+        "t": 7.3,
+        "url": "/api/assets/frames/synthetic_b2d94d/7.30.jpg"
+      },
+      {
+        "t": 10.57,
+        "url": "/api/assets/frames/synthetic_b2d94d/10.57.jpg"
+      },
+      {
+        "t": 13.04,
+        "url": "/api/assets/frames/synthetic_b2d94d/13.04.jpg"
+      }
+    ],
+    "demo": false,
+    "createdAt": "2026-10-11T20:57:00.999Z"
+  },
+  "spend": [
+    {
+      "id": "spend_mv4b0dvp55a65b2d63",
+      "provider": "anthropic",
+      "runId": "run_mv4azztb0ba3b2d94d",
+      "usd": 0.055525,
+      "units": "5170 in / 1184 out",
+      "note": "reverse-engineer: blueprint for ev_synth_b2d94d",
+      "ts": "2026-10-11T20:57:00.997Z"
+    }
+  ]
+}

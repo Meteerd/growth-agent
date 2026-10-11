@@ -1,14 +1,14 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-11 23:48 +03
-- Current task: A08 research
+- Time: 2026-10-11 23:57 +03
+- Current task: A09 consult + chat
 - Last sync: 23:37 exit 0, main UPDATED, checks PASS
 - Blockers:
   - REVENUECAT, POSTHOG, STRIPE, PADDLE, META keys MISSING: brand "business truth" connectors run demo (labelled fixtures). No CORE task blocked.
   - HIGGSFIELD key present but unvalidated: auth format confirmed in A14 smoke; fal is the default video path.
-- Next 3: A08 research -> A08b reverse-engineering -> A09 consult
-- Spend so far (USD per provider): anthropic ~0.07, firecrawl ~0.02 (1 manual probe + 1 recorded scrape)
+- Next 3: A09 consult -> A10 direction -> A11 production + video
+- Spend so far (USD per provider): anthropic ~0.13, firecrawl ~0.02, youtube 0 (free)
 
 ## Log (one line per finished task, newest last)
 - 23:17 A01 done: Next.js 16.4 scaffold, check/build/dev OK
@@ -20,3 +20,5 @@
 - 23:40 A05 done: run state machine, SSE (resume, heartbeat, pace replay), cancel, read routes; curl -N verified
 - 23:43 A06 done: Claude wrapper + recorded tests; live smoke anthropic $0.0031 recorded to fixtures/live/anthropic/smoke.json
 - 23:48 A07 done: pipeline + intake; live intake houndapp.xyz $0.069 recorded (fixtures/live/intake/hound.json, firecrawl/houndapp_xyz.json)
+- 23:53 A08 done: research phase + providers; demo yields 32 evidence/9 sources for Hound and a.clinic; YouTube live smoke recorded (free)
+- 23:57 A08b done: reverse-engineering engine; synthetic video cuts within 0.07 s; live vision blueprint $0.056 recorded

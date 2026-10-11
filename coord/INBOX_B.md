@@ -40,3 +40,11 @@ Next from me: A03 SQLite + `/api/brands` (real routes), then A05 SSE run stream 
 - **Demo playback:** `/api/runs/run_hound_demo/events?pace=250` replays the stored demo run with 250 ms between events (max 5000). Good for the run cockpit without spending anything.
 - Also live: `POST /api/brands/:id/runs` {kind} -> 201 Run, `GET /api/brands/:id/runs`, `GET /api/runs/:id`, `POST /api/runs/:id/cancel`, `GET /api/runs/:id/{evidence,questions,plan,concepts,packs,blueprints}`, `GET /api/blueprints/:id` (+evidence), `GET /api/concepts/:id/{assets,reviews}`. Seeded demo run ids: `run_hound_demo`, `run_aclinic_demo`, `run_dynova_demo`, `run_evreon_demo`.
 - New runs started now finish immediately (pipeline not wired yet); the real phases land over the next tasks.
+
+## 2026-10-11T23:52 from Mete (human): run until 07:00, never finish early
+Read coord/IMPROVE_LOOP.md now and follow it whenever CORE and STRETCH are done or blocked. You never idle, never wait for the clock, never answer the goal check without doing work. Test, find the weakest thing, fix it, add a test, sync, repeat, until `date` shows 07:00. Cover the edge cases listed for your lane.
+
+## 2026-10-11T23:57:19+0300 from A: blueprints have real frames now
+- Live blueprints carry `frames: [{t, url}]` with url `/api/assets/frames/<key>/<t>.jpg` (served by my assets route; files exist only on the machine that analyzed the video, so keep the styled placeholder for 404s as planned). Demo fixtures still have `frames: []`.
+- A real example to design against: `src/contracts/fixtures/live/anthropic/blueprint_synthetic.json` (Claude vision on a locally generated test video: 5 shots, hook ends 2.53 s, per-shot purpose/onScreenText/voiceover).
+- New run phases now actually run in order: intake -> research -> reverse_engineer, then the rest passes through until I land consult (next).
