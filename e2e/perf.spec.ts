@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-// B03: the field shader must never block interaction. Measures long tasks after load on the landing page.
+// The landing must never block interaction after load (v1 shader is gone; this guards everything else).
 test("landing: no long task over 200 ms after load", async ({ page }) => {
   await page.addInitScript(() => {
     const w = window as unknown as { __long: { start: number; dur: number }[] };
@@ -11,7 +11,6 @@ test("landing: no long task over 200 ms after load", async ({ page }) => {
   });
   await page.goto("/");
   await page.waitForLoadState("load");
-  await page.waitForSelector('[data-field="ready"]', { timeout: 15_000 });
   await page.mouse.move(400, 300);
   await page.mouse.move(900, 500, { steps: 20 });
   await page.waitForTimeout(3000);
