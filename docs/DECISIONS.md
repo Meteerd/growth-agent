@@ -25,6 +25,8 @@
 | 11 Oct 23:30 | Providers trimmed to six core (Anthropic, OpenAI, Firecrawl, Apify, Manus, fal) + optional Higgsfield/YouTube/Spiral/brand connectors. OpenAI covers TTS and transcription. Dropped: ElevenLabs, Deepgram, Tavus, sync., Langfuse, AWS, Browser Use | Mete |
 | 11 Oct 23:30 | Deploy to Vercel/Netlify later, after the local demo works | Mete |
 
+| 11 Oct 23:30 | Core of the product: agents WATCH winning videos (frames + transcript, Claude vision), produce shot-by-shot blueprints, remake the same ad for our brand in every winning format, then watch their own render and fix weak shots (max 2 rounds) | Mete |
+
 ## Still open
 1. Product name (constant `PRODUCT_NAME`)
 2. Which TikTok / Instagram accounts exist for Hound and a.clinic (for the morning posts)

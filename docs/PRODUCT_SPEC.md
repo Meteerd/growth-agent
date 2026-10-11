@@ -36,6 +36,19 @@ The engine agent (Claude with tools) builds an evidence base. Every item is stor
 - Each extracted winning item gets a **deconstruction**: hook (first 2 seconds, verbatim if text), format, angle, structure (beats with timings), emotion, CTA, length, language.
 - Apify actor IDs above were checked on the Apify store on 11 Oct 2026 only for the Facebook ones; verify the others in the store before relying on them and record the verified IDs in `docs/APIS.md`.
 
+### 2.3b Reverse-engineer winning videos (THE HEART OF THE PRODUCT)
+The agent literally watches the winning ads in the brand's niche, takes them apart shot by shot, and rebuilds the same ad for our brand. Then it watches its own render and fixes it.
+
+1. **Pick winners:** the top 3 to 5 videos for the run: Spiral brand winners / longest-running Meta ads, Apify Ad Library video ads, TikTok / Reels / Shorts outliers. Ranked by longevity and outlier score.
+2. **Watch:** download the media to `data/media/` (git-ignored, never republished). With ffmpeg (`ffmpeg-static` npm package, no system install needed): detect scene cuts, sample frames (every 0.25 s in the first 3 s for the hook, then 1 to 2 frames per scene), extract audio. Transcribe audio with OpenAI (word timestamps). Send frames to Claude as images (vision), in order with timestamps, plus the transcript.
+3. **Blueprint:** Claude outputs a structured shot-by-shot blueprint: the hook (0 to 3 s: what is seen, said, written, and why it stops the scroll), every shot with start/end time, shot type (talking head, UGC selfie, b-roll, product close-up, screen recording, text card), camera (static, handheld, push-in), subject, action, on-screen text, voiceover, audio cue, transition, and its purpose (hook, problem, agitate, solution, demo, proof, offer, CTA); pacing (cuts per 10 s); the narrative structure (problem-agitate-solve, story, listicle, myth vs fact, demo, founder story); emotional arc; CTA mechanics; and a hypothesis of **why it wins**, tied to its longevity/outlier numbers.
+4. **Remake:** map the blueprint onto our brand: keep the structure, timing, shot types and hook mechanism; replace product, claims, people, language and visuals using the brand dossier and `assets/brands/`; pass compliance. Each new shot links to the blueprint shot it remakes (`shotMap`).
+5. **Every winning format:** from one blueprint, produce the variants the direction phase picked (9:16 video for TikTok/Reels/Shorts, 4:5 static, carousel, X/LinkedIn/Reddit text version): the same winning idea in each channel's winning format.
+6. **Self-review (the agent watches our own video):** after rendering, sample frames + transcript of our MP4 and have Claude score it against the blueprint and a rubric: hook lands in the first 2 s, on-screen text legible and inside safe zones, brand consistency, no AI artifacts (warped hands, garbled text, melting faces), pacing matches the blueprint, compliance. Score per shot 0 to 100; regenerate the weakest shots and re-render, at most 2 rounds and within the caps. Keep every review.
+7. **Show it:** the cockpit shows the original's blueprint and our remake side by side on one timeline, shot for shot, with "why it wins" and the review scores. This is the demo moment.
+
+Legal line: we analyze competitors' ads to learn structure. We never reuse their footage, music, voice, faces or exact copy; analysis media stays local.
+
 ### 2.4 Consult (the anamnesis)
 - A chat that feels like a consultation, not a form. One question at a time, large and calm.
 - Questions are **generated from gaps** in the dossier and evidence, never from a fixed list. Each question shows **why it is asked** and the evidence that triggered it (e.g. "Your top competitor's longest-running ad is a doctor talking to camera. Can one of your doctors appear on camera?").
@@ -55,7 +68,7 @@ The agent produces a **Channel Plan**: where to go, in what order, why, and wher
 ### 2.6 Produce (content that wins)
 For each top channel, the agent proposes **Concepts** (3 to 6 per run): format, hook, angle, script, caption, hashtags, CTA, language, and the evidence it remakes.
 
-Video pipeline (cost-controlled; this order is mandatory):
+Video pipeline (cost-controlled; this order is mandatory; when a blueprint exists, the shot list comes from it, see 2.3b):
 1. **Script + shot list:** 5 to 8 shots of 2 to 6 s for a 15 to 30 s vertical video. Never a single 30 s prompt.
 2. **Keyframes first:** one still per shot with an image model (OpenAI image or fal Flux / Nano Banana), brand-consistent via reference images and a fixed style block. Cost: cents.
 3. **Approval gate:** operator approves or regenerates keyframes per shot in the Studio.

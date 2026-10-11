@@ -33,6 +33,7 @@ Layers, back to front (this is the "abstraction over abstraction"):
 - Scale: display 72/96 px on desktop, 40/48 on mobile; micro labels 11 px uppercase mono with +0.08em tracking.
 
 ## Signature moments (build these well; they are the demo)
+0. **Reverse-engineer view (the most important screen):** the winning ad dissected on a timeline above, our remake aligned shot-for-shot below, a scan line sweeping across while the agent "watches", purposes color-coded, the hook magnified, review scores ticking in. It must make a judge understand the whole product in 10 seconds.
 1. **Landing hero:** the field shader with the headline in Instrument Serif; a single URL input that, on submit, "pulls" the field into a vortex and transitions to the run.
 2. **Run cockpit:** a vertical phase rail (intake, research, consult, direction, production, compliance, pack) with a moving light; an event stream where each tool call types itself in; evidence cards land on a wall with spring physics, grouped by source, each showing thumbnail, metric and outlier score.
 3. **Consultation:** one question at a time, centered, large serif; the "why I'm asking" in small mono under it; evidence chips orbit the question; answers are chips that magnetize to the cursor; a progress constellation (one dot per question) fills in.
