@@ -19,7 +19,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Routes: `GET/POST /api/brands`, `GET /api/brands/[id]`, `PATCH /api/brands/[id]/dossier`, connections, `GET /api/providers`, `GET /api/assets/[...path]`.
   - Accept: `curl localhost:3000/api/brands` returns 4 brands; Vitest route/service tests on a temp SQLite file pass.
 
-- [ ] **A04 Providers + spend ledger**
+- [x] **A04 Providers + spend ledger** (commit d887d0d)
   - Provider interface, registry, live/demo resolution (key present AND id in `LIVE_PROVIDERS`; smoke `--live` override), `SpendEntry` writes, `BudgetExceededError`, `GET /api/spend`.
   - Accept: unit tests: demo returns fixture; live call blocked past cap; ledger sums per provider.
 
