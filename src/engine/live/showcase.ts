@@ -27,8 +27,9 @@ import { urlToFile } from "../video/files";
  * the run's data as JSON in src/contracts/fixtures/live/showcase/<slug>.json and the flagship video (720p) in
  * docs/renders/<slug>-flagship.mp4. Seed imports them and copies the video back under data/assets.
  */
-export const SHOWCASE_DIR = path.join(process.cwd(), "src/contracts/fixtures/live/showcase");
-const RENDER_DIR = path.join(process.cwd(), "docs/renders");
+export const showcaseDir = () =>
+  process.env.SHOWCASE_DIR || path.join(process.cwd(), "src/contracts/fixtures/live/showcase");
+const renderDir = () => process.env.RENDER_DIR || path.join(process.cwd(), "docs/renders");
 
 export async function exportShowcase(db: Db, runId: string): Promise<string> {
   const run = await getRun(db, runId);
@@ -42,8 +43,8 @@ export async function exportShowcase(db: Db, runId: string): Promise<string> {
     const vid = c.videoAssetId ? (await listAssets(db, c.id)).find((a) => a.id === c.videoAssetId) : undefined;
     if (vid && vid.model?.includes("flagship")) {
       const src = urlToFile(vid.url)!;
-      fs.mkdirSync(RENDER_DIR, { recursive: true });
-      const out = path.join(RENDER_DIR, `${brand.slug}-flagship.mp4`);
+      fs.mkdirSync(renderDir(), { recursive: true });
+      const out = path.join(renderDir(), `${brand.slug}-flagship.mp4`);
       await ffmpeg([
         "-y",
         "-i",
@@ -94,14 +95,14 @@ export async function exportShowcase(db: Db, runId: string): Promise<string> {
     reviews,
     events: await listEvents(db, runId),
   };
-  fs.mkdirSync(SHOWCASE_DIR, { recursive: true });
-  const f = path.join(SHOWCASE_DIR, `${brand.slug}.json`);
+  fs.mkdirSync(showcaseDir(), { recursive: true });
+  const f = path.join(showcaseDir(), `${brand.slug}.json`);
   fs.writeFileSync(f, `${JSON.stringify(bundle)}\n`);
   return f;
 }
 
 export function loadShowcase(slug: string): DemoRunBundle | null {
-  const f = path.join(SHOWCASE_DIR, `${slug}.json`);
+  const f = path.join(showcaseDir(), `${slug}.json`);
   return fs.existsSync(f) ? (JSON.parse(fs.readFileSync(f, "utf8")) as DemoRunBundle) : null;
 }
 
@@ -110,7 +111,7 @@ export async function importShowcase(db: Db, b: DemoRunBundle): Promise<boolean>
   if (await getRun(db, b.run.id)) return false;
   await importBundle(db, b);
   for (const a of b.assets) {
-    const src = path.join(RENDER_DIR, path.basename(a.url));
+    const src = path.join(renderDir(), path.basename(a.url));
     const dst = urlToFile(a.url);
     if (dst && fs.existsSync(src) && !fs.existsSync(dst)) {
       fs.mkdirSync(path.dirname(dst), { recursive: true });
