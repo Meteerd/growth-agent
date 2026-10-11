@@ -17,6 +17,7 @@ import { cn } from "@/lib/client/cn";
 import { PHASE_LABELS, timeAgo, VERTICAL_LABELS } from "@/lib/client/format";
 import { MOCK_VIDEO } from "@/lib/client/mock/client";
 import { useBrands, useConnections } from "@/lib/client/queries";
+import { displayHost } from "@/lib/client/url";
 import { BrandMark } from "./BrandMark";
 
 export function Portfolio() {
@@ -38,7 +39,7 @@ export function Portfolio() {
       {error ? (
         <ErrorState title="Could not reach the engine" error={error} onRetry={() => refetch()} />
       ) : isLoading ? (
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid-cols-1 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {[0, 1, 2, 3].map((i) => (
             <SkeletonCard key={i} lines={5} className="h-[520px]" />
           ))}
@@ -55,7 +56,7 @@ export function Portfolio() {
           Paste a website and the agent builds the dossier from it.
         </EmptyState>
       ) : (
-        <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4" data-testid="brand-grid">
+        <ul className="grid-cols-1 grid gap-4 sm:grid-cols-2 xl:grid-cols-4" data-testid="brand-grid">
           {data.map((b) => (
             <li key={b.id} className="rise">
               <BrandCard brand={b} />
@@ -248,10 +249,4 @@ function Stat({ label, children }: { label: string; children: React.ReactNode })
   );
 }
 
-export const hostname = (u: string) => {
-  try {
-    return new URL(u).hostname.replace(/^www\./, "");
-  } catch {
-    return u;
-  }
-};
+export const hostname = (u: string) => displayHost(u);

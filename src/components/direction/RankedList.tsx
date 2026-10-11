@@ -302,7 +302,7 @@ function NotNowList({ plan, onOpen }: { plan: ChannelPlan; onOpen: (c: Channel) 
                 data-testid={`notnow-row-${n.channel}`}
                 onClick={rowClick(() => onOpen(n.channel))}
                 // xl: the reason column lines up with the table's Why column
-                className="grid cursor-pointer gap-x-8 gap-y-2 border-line border-b px-4 py-4 transition-colors duration-150 hover:bg-raised md:grid-cols-[176px_minmax(0,1fr)_auto] md:items-baseline md:px-6 xl:grid-cols-[340px_minmax(0,1fr)_auto] xl:gap-x-5"
+                className="grid-cols-1 grid cursor-pointer gap-x-8 gap-y-2 border-line border-b px-4 py-4 transition-colors duration-150 hover:bg-raised md:grid-cols-[176px_minmax(0,1fr)_auto] md:items-baseline md:px-6 xl:grid-cols-[340px_minmax(0,1fr)_auto] xl:gap-x-5"
               >
                 <p className="flex items-baseline gap-2.5">
                   <s className="font-medium text-body text-bone-2 line-through decoration-bone-3">{label}</s>

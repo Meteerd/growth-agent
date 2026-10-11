@@ -119,7 +119,7 @@ function Board({ data, now }: { data: ResultsResponse; now: number }) {
   return (
     <div className="flex flex-col gap-3">
       <Totals totals={totals} packs={rows.length} measured={measured} />
-      <div className="grid items-start gap-3 xl:grid-cols-12">
+      <div className="grid-cols-1 grid items-start gap-3 xl:grid-cols-12">
         <section aria-labelledby="posts-h" className="flex min-w-0 flex-col gap-3 xl:col-span-8">
           <h2 id="posts-h" className="sr-only">
             Posted packs
@@ -190,7 +190,7 @@ function PackRow({
   return (
     <article
       data-testid={`result-pack-${pack.id}`}
-      className="grid overflow-hidden rounded-panel border border-line bg-raised md:grid-cols-[minmax(0,18rem)_minmax(0,1fr)]"
+      className="grid-cols-1 grid overflow-hidden rounded-panel border border-line bg-raised md:grid-cols-[minmax(0,18rem)_minmax(0,1fr)]"
     >
       <div className="flex min-w-0 flex-col gap-4 border-line border-b p-5 md:border-r md:border-b-0">
         <header className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
@@ -364,10 +364,10 @@ function LoadingResults() {
           </div>
         ))}
       </div>
-      <div className="grid items-start gap-3 xl:grid-cols-12">
+      <div className="grid-cols-1 grid items-start gap-3 xl:grid-cols-12">
         <div className="flex flex-col gap-3 xl:col-span-8">
           {[0, 1].map((i) => (
-            <div key={i} className="glass-flat grid gap-6 p-5 md:grid-cols-[16rem_1fr]">
+            <div key={i} className="grid-cols-1 glass-flat grid gap-6 p-5 md:grid-cols-[16rem_1fr]">
               <div className="flex flex-col gap-3">
                 <Skeleton className="h-5 w-20 rounded-chip" />
                 <Skeleton className="h-10 w-28" />

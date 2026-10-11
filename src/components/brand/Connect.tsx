@@ -75,7 +75,7 @@ export function Connect({ slug }: { slug: string }) {
           <h2 id={`role-${role}`} className="mb-4 font-display text-[28px]">
             {ROLE_TITLE[role]}
           </h2>
-          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3" data-testid={`providers-${role}`}>
+          <div className="grid-cols-1 grid gap-3 sm:grid-cols-2 xl:grid-cols-3" data-testid={`providers-${role}`}>
             {PROVIDER_IDS.filter((p) => PROVIDER_INFO[p].role === role).map((p) =>
               isLoading || !brand ? (
                 <SkeletonCard key={p} lines={2} />

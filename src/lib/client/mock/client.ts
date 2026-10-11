@@ -18,6 +18,7 @@ import {
 } from "@/contracts";
 import { ApiRequestError, type DataClient } from "../api";
 import type { RunStreamHandlers } from "../sse";
+import { displayHost, slugify } from "../url";
 import { createPlayer } from "./player";
 
 // shortcut: mock state lives in memory for one page load (client navigation keeps it, a reload resets it);
@@ -244,13 +245,9 @@ export function createMockClient(): DataClient {
     },
     async createBrand(req) {
       await wait(300);
-      const host = new URL(req.url).hostname.replace(/^www\./, "");
-      const name = req.name ?? host.split(".")[0].replace(/^\w/, (c) => c.toUpperCase());
-      let slug =
-        name
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/^-|-$/g, "") || "brand";
+      const first = displayHost(req.url).split(".")[0];
+      const name = req.name ?? first.charAt(0).toLocaleUpperCase() + first.slice(1);
+      let slug = slugify(name);
       while ([...brands.values()].some((b) => b.slug === slug)) slug += "-2";
       const brand: Brand = {
         id: `brand_${slug}`,

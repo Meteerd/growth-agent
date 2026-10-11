@@ -21,6 +21,8 @@
     line-height: var(--text-body--line-height);
     letter-spacing: -0.008em;
     overflow-x: clip;
+    /* user content (brand names, ids, URLs) can be one long word; let it break instead of widening the page */
+    overflow-wrap: anywhere;
   }
   ::selection {
     background: rgb(229 50 45 / 0.18);

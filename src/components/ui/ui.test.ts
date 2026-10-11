@@ -6,7 +6,7 @@ import { formatCount, formatUsd, longevity, timeAgo } from "@/lib/client/format"
 import { costSegments } from "./CostMeter";
 import { formatValue } from "./NumberTicker";
 import { PhaseRail, phaseStates } from "./PhaseRail";
-import { normalizeUrl } from "./UrlInput";
+import { displayHost, normalizeUrl, slugify } from "./UrlInput";
 
 describe("phaseStates", () => {
   it("marks earlier phases done, current active, later pending", () => {
@@ -50,6 +50,13 @@ describe("normalizeUrl", () => {
   it("accepts bare domains and full urls", () => {
     expect(normalizeUrl("hound.app")).toBe("https://hound.app");
     expect(normalizeUrl("https://a.clinic/sk/")).toBe("https://a.clinic/sk");
+  });
+  it("keeps Unicode hosts as typed and folds them into ASCII slugs", () => {
+    expect(normalizeUrl("Güzellik.com.tr/ürünler/")).toBe("https://güzellik.com.tr/%C3%BCr%C3%BCnler");
+    expect(displayHost("https://www.güzellik.com.tr/x")).toBe("güzellik.com.tr");
+    expect(slugify("Işık Güzellik")).toBe("isik-guzellik");
+    expect(slugify("Ľubovňa Zdravie")).toBe("lubovna-zdravie");
+    expect(slugify("!!!")).toBe("brand");
   });
   it("rejects things that are not sites", () => {
     expect(normalizeUrl("")).toBeUndefined();

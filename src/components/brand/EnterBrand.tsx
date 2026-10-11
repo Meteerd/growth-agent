@@ -57,7 +57,7 @@ export function EnterBrand() {
         It creates the brand, reads the site, and lists what it still does not know. Then you consult, it decides and it
         produces.
       </PageHead>
-      <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
+      <div className="grid-cols-1 grid gap-6 lg:grid-cols-[1fr_340px]">
         <div className="flex min-w-0 flex-col gap-4">
           {!created && (
             <UrlInput

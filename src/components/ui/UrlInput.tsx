@@ -2,20 +2,10 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/client/cn";
+import { normalizeUrl } from "@/lib/client/url";
 import { Button } from "./Button";
 
-/** Normalises "hound.app" / "https://hound.app/x" to a URL; returns undefined if it cannot be a site. */
-export function normalizeUrl(raw: string): string | undefined {
-  const v = raw.trim();
-  if (!v || /\s/.test(v)) return undefined;
-  try {
-    const u = new URL(/^https?:\/\//i.test(v) ? v : `https://${v}`);
-    if (!/\.[a-z]{2,}$/i.test(u.hostname)) return undefined;
-    return u.toString().replace(/\/$/, "");
-  } catch {
-    return undefined;
-  }
-}
+export { displayHost, normalizeUrl, slugify } from "@/lib/client/url";
 
 export function UrlInput({
   onSubmit,
