@@ -202,6 +202,10 @@ let mockClient: DataClient | undefined;
 /** The active client. The mock store is created on first use so live mode never starts its timers. */
 export function getClient(): DataClient {
   if (DATA_MODE === "live") return liveClient;
-  mockClient ??= createMockClient();
+  if (!mockClient) {
+    mockClient = createMockClient();
+    // e2e specs set up state (post a pack, add metrics) through the same client the screens use
+    if (typeof window !== "undefined") (window as unknown as { __nexusClient: DataClient }).__nexusClient = mockClient;
+  }
   return mockClient;
 }
