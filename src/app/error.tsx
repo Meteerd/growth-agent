@@ -20,7 +20,7 @@ export default function ErrorPage({ error, reset }: { error: Error & { digest?: 
         </button>
         <Link
           href="/brands"
-          className="inline-flex h-10 items-center rounded-chip px-4 text-bone text-ui shadow[inset_0_0_0_1px_var(--color-line-strong)] hover:bg-glass"
+          className="inline-flex h-10 items-center rounded-chip px-4 text-bone text-ui shadow-[inset_0_0_0_1px_var(--color-line-strong)] hover:bg-glass"
         >
           Back to the portfolio
         </Link>

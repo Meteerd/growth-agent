@@ -3,7 +3,7 @@
 Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (commit <hash>)`. Work top to bottom unless blocked; note reorders in STATUS_B.
 
 ## PRIORITY NOW (from Mete, 12 Oct 01:25): redesign, before anything else
-- [ ] **B18 Redesign to v2 "the cutting room"** (docs/DESIGN.md top section; the v1 dark/glow/lime/serif/shader look is rejected as "too AI-ish")
+- [x] **B18 Redesign to v2 "the cutting room"** (commit fa1277c) (docs/DESIGN.md top section; the v1 dark/glow/lime/serif/shader look is rejected as "too AI-ish")
   - New tokens (paper, ink, record red, flat beat colors), Inter Tight only + mono for numbers; delete the shader, glow, glass, grain, lime, Instrument Serif and orbit visuals from every screen and from `/lab`.
   - Rebuild the reverse-engineer view as an edit timeline (two synced viewers, V1/V2/T1/beat lanes, red playhead) and Direction as a ranked editorial table; landing with the real example strip.
   - Use real media wherever it exists (recorded live Hound/a.clinic runs, `assets/brands/`, renders); demo media must be visibly labelled.
@@ -80,7 +80,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Playwright full journey in mock mode; second project against the real API routes when they respond (`E2E_DATA=live`); screenshots of every route at 1440x900 and 390x844 into `e2e/screens/`.
   - Accept: `pnpm e2e` exits 0 (output shown); screenshots committed.
 
-- [ ] **B17 Polish + morning report**
+- [x] **B17 Polish + morning report** (commit fb19677)
   - Pass every screen against the quality bar in `docs/DESIGN.md`; fix spacing, motion timing, empty/loading states, mobile. Write `coord/MORNING_B.md`: how to run, what works (link screenshots), mock vs live status, known issues, and the 2-minute demo click path.
 
 ## STRETCH (after CORE, in this order)

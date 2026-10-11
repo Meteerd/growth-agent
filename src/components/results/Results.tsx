@@ -3,8 +3,6 @@
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Page, PageHead } from "@/components/shell/PageHead";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { NumberTicker } from "@/components/ui/NumberTicker";
 import { Panel, PanelHeader } from "@/components/ui/Panel";
@@ -53,30 +51,26 @@ export function Results({ slug }: { slug: string }) {
   const now = useNow();
   const name = brand?.name ?? slug;
 
+  // BrandFrame already gives the page its frame and h1 (the brand); this screen opens with its own h2.
   return (
-    <Page>
-      <PageHead
-        eyebrow={`Results / ${name}`}
-        title="What the posts did."
-        actions={
-          <div className="flex items-center gap-3">
-            <span className="hidden font-mono text-[10.5px] text-bone-3 sm:inline">checks every 15 s</span>
-            <Button
-              variant="quiet"
-              size="sm"
-              data-testid="results-refresh"
-              onClick={() => refetch()}
-              aria-busy={isFetching || undefined}
-              className="shadow[inset_0_0_0_1px_var(--color-line)]"
-            >
-              <RefreshGlyph spinning={isFetching} />
-              Refresh
-            </Button>
-          </div>
-        }
-      >
-        Numbers come from the posts you mark posted, entered by hand or read by API. Nothing is estimated.
-      </PageHead>
+    <div>
+      <header className="flex flex-col gap-4 pb-6 md:flex-row md:items-end md:justify-between">
+        <div className="min-w-0">
+          <h2 className="font-display text-[clamp(1.75rem,3vw,2.5rem)] text-bone leading-[1.05]">
+            What the posts did.
+          </h2>
+          <p className="mt-2 max-w-2xl text-bone-2 text-body">
+            Numbers come from the posts you mark posted, entered by hand or read by API. Nothing is estimated.
+          </p>
+        </div>
+        <div className="flex shrink-0 items-center gap-3">
+          <span className="hidden text-[12px] text-bone-3 sm:inline">Checks every 15 s</span>
+          <Button size="sm" data-testid="results-refresh" onClick={() => refetch()} aria-busy={isFetching || undefined}>
+            <RefreshGlyph spinning={isFetching} />
+            Refresh
+          </Button>
+        </div>
+      </header>
 
       {error ? (
         <ErrorState title="Could not load results" error={error} onRetry={() => refetch()} />
@@ -103,7 +97,7 @@ export function Results({ slug }: { slug: string }) {
       ) : (
         <Board data={data} now={now} />
       )}
-    </Page>
+    </div>
   );
 }
 
@@ -131,14 +125,14 @@ function Board({ data, now }: { data: ResultsResponse; now: number }) {
             Posted packs
           </h2>
           <ul className="flex flex-col gap-3" data-testid="results-packs">
-            {rows.map((r, i) => (
-              <li key={r.pack.id} className="rise" style={{ animationDelay: `${180 + i * 60}ms` }}>
+            {rows.map((r) => (
+              <li key={r.pack.id} className="rise">
                 <PackRow {...r} xMax={xMax} yMax={yMax} now={now} />
               </li>
             ))}
           </ul>
         </section>
-        <div className="rise xl:sticky xl:top-20 xl:col-span-4" style={{ animationDelay: "240ms" }}>
+        <div className="rise xl:sticky xl:top-20 xl:col-span-4">
           <Learnings learnings={data.learnings} now={now} />
         </div>
       </div>
@@ -148,29 +142,30 @@ function Board({ data, now }: { data: ResultsResponse; now: number }) {
 
 function Totals({ totals, packs, measured }: { totals: Counters; packs: number; measured: number }) {
   return (
-    <Panel as="section" aria-labelledby="totals-h" className="rise overflow-hidden" style={{ animationDelay: "120ms" }}>
+    <section aria-labelledby="totals-h" className="rise overflow-hidden rounded-panel border border-line bg-raised">
       <header className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-5 pt-4 pb-3">
         <h2 id="totals-h" className="mono-label">
           Across {packs} posted {packs === 1 ? "pack" : "packs"}
         </h2>
-        <p className="font-mono text-[10.5px] text-bone-3">
-          latest snapshot per pack, {measured} of {packs} measured
+        <p className="text-[12px] text-bone-3">
+          Latest snapshot per pack, <span className="font-mono tabular-nums">{measured}</span> of{" "}
+          <span className="font-mono tabular-nums">{packs}</span> measured
         </p>
       </header>
       <dl data-testid="results-totals" className="grid grid-cols-3 gap-px border-line border-t bg-line md:grid-cols-6">
         {(["views", ...SECONDARY] as Metric[]).map((m) => (
-          <div key={m} className="bg-[rgb(10_12_16/0.72)] px-5 py-4">
-            <dt className="mono-label flex items-center gap-1.5">
-              {m === "views" && <span aria-hidden className="h-0.5 w-2.5 rounded-full bg-cyan" />}
+          <div key={m} className="flex flex-col-reverse bg-raised px-5 py-4">
+            <dt className="mt-2 flex items-center gap-1.5 text-[12px] text-bone-2">
+              {m === "views" && <span aria-hidden className="h-0.5 w-2.5 bg-cyan" />}
               {m}
             </dt>
-            <dd className="mt-2 text-[clamp(1.375rem,2.4vw,2rem)] text-bone leading-none" data-testid={`total-${m}`}>
+            <dd className="text-[clamp(1.375rem,2.4vw,2rem)] text-bone leading-none" data-testid={`total-${m}`}>
               <Count value={totals[m]} from={0} />
             </dd>
           </div>
         ))}
       </dl>
-    </Panel>
+    </section>
   );
 }
 
@@ -195,25 +190,24 @@ function PackRow({
   return (
     <article
       data-testid={`result-pack-${pack.id}`}
-      className="glass-flat grid overflow-hidden md:grid-cols-[minmax(0,18rem)_minmax(0,1fr)]"
+      className="grid overflow-hidden rounded-panel border border-line bg-raised md:grid-cols-[minmax(0,18rem)_minmax(0,1fr)]"
     >
       <div className="flex min-w-0 flex-col gap-4 border-line border-b p-5 md:border-r md:border-b-0">
-        <header className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-          <Badge>{platform}</Badge>
+        <header className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+          <span className="font-semibold text-[14px] text-bone">{platform}</span>
           {pack.postedAt && (
-            <span className="truncate font-mono text-[11px] text-bone-3">posted {timeAgo(pack.postedAt, now)}</span>
+            <span className="truncate text-[12px] text-bone-3">posted {timeAgo(pack.postedAt, now)}</span>
           )}
         </header>
         <div>
           <p className="text-[2.5rem] text-bone leading-none tracking-[-0.02em]" data-testid="pack-views">
             <Count value={counters.views} />
           </p>
-          <p className="mt-2 font-mono text-[10.5px] text-bone-3">
-            <span className="mono-label">views</span>
+          <p className="mt-2 text-[12px] text-bone-3">
+            <span className="font-medium text-bone-2">views</span>
             {last && (
               <>
-                {" "}
-                {last.source === "api" ? "read by API" : "entered by hand"} {timeAgo(last.capturedAt, now)}
+                , {last.source === "api" ? "read by API" : "entered by hand"} {timeAgo(last.capturedAt, now)}
               </>
             )}
           </p>
@@ -225,7 +219,7 @@ function PackRow({
       <div className="flex min-w-0 flex-col">
         <div className="flex items-baseline justify-between gap-3 px-5 pt-4">
           <span className="mono-label">Views since posting</span>
-          <span className="font-mono text-[10.5px] text-bone-3 tabular-nums" data-testid="snapshot-count">
+          <span className="font-mono text-[11px] text-bone-3 tabular-nums" data-testid="snapshot-count">
             {n} {n === 1 ? "snapshot" : "snapshots"}
           </span>
         </div>
@@ -238,11 +232,9 @@ function PackRow({
         </div>
         <dl className="mt-auto grid grid-cols-5 gap-px border-line border-t bg-line">
           {SECONDARY.map((m) => (
-            <div key={m} className="min-w-0 bg-[rgb(10_12_16/0.6)] px-2.5 py-3 sm:px-4">
-              <dt className="mono-label truncate text-[9px] tracking-[0.04em] sm:text-[10px] sm:tracking-[0.08em]">
-                {m}
-              </dt>
-              <dd className="mt-1.5 text-bone text-ui" data-testid={`pack-${m}`}>
+            <div key={m} className="flex min-w-0 flex-col-reverse bg-raised px-2.5 py-3 sm:px-4">
+              <dt className="mt-1 truncate text-[11px] text-bone-3 sm:text-[12px]">{m}</dt>
+              <dd className="text-bone text-ui" data-testid={`pack-${m}`}>
                 <Count value={counters[m]} />
               </dd>
             </div>
@@ -267,13 +259,13 @@ function Count({ value, from }: { value?: number; from?: number }) {
 
 function Waiting({ entered }: { entered: boolean }) {
   return (
-    <div
-      data-testid="chart-waiting"
-      className="relative grid h-[156px] place-items-center overflow-hidden rounded-cell bg-[repeating-linear-gradient(to_bottom,transparent_0,transparent_44px,var(--color-line-faint)_44px,var(--color-line-faint)_45px)]"
-    >
+    <div data-testid="chart-waiting" className="relative grid h-[156px] place-items-center overflow-hidden">
+      {/* empty axes, the same rules the chart draws */}
+      <span aria-hidden className="absolute inset-x-0 top-[20px] h-px bg-line-faint" />
+      <span aria-hidden className="absolute inset-x-0 top-[77px] h-px bg-line-faint" />
       <span aria-hidden className="absolute inset-x-0 bottom-[22px] h-px bg-line-strong" />
-      <div className="relative max-w-xs px-4 text-center">
-        <p className="font-display text-[22px] text-bone leading-tight">Waiting for first metrics</p>
+      <div className="relative max-w-xs bg-raised px-4 text-center">
+        <p className="font-semibold text-[17px] text-bone leading-tight">Waiting for first metrics</p>
         <p className="mt-1.5 text-bone-3 text-ui">
           {entered
             ? "Snapshots so far have no view count. Add views to draw the line."
@@ -288,7 +280,7 @@ function PostedLink({ url }: { url?: string }) {
   if (!url) return null;
   const u = safeHttpUrl(url);
   const text = u ? `${u.hostname.replace(/^www\./, "")}${u.pathname === "/" ? "" : u.pathname}` : url;
-  const cls = "flex min-w-0 items-center gap-1.5 font-mono text-[11px]";
+  const cls = "flex min-w-0 items-center gap-1.5 font-mono text-[12px]";
   if (!u) return <span className={cn(cls, "text-bone-3")}>{text}</span>;
   return (
     <a
@@ -312,11 +304,7 @@ function PostedLink({ url }: { url?: string }) {
   );
 }
 
-const CONFIDENCE: Record<Learning["confidence"], { tone: "neutral" | "violet" | "cyan"; level: number }> = {
-  low: { tone: "neutral", level: 1 },
-  medium: { tone: "violet", level: 2 },
-  high: { tone: "cyan", level: 3 },
-};
+const LEVEL: Record<Learning["confidence"], number> = { low: 1, medium: 2, high: 3 };
 
 function Learnings({ learnings, now }: { learnings: Learning[]; now: number }) {
   return (
@@ -324,37 +312,36 @@ function Learnings({ learnings, now }: { learnings: Learning[]; now: number }) {
       <PanelHeader
         label="Learnings"
         title="What beat the median"
-        aside={<span className="font-mono text-[10.5px] text-bone-3 tabular-nums">{learnings.length}</span>}
+        aside={<span className="font-mono text-[11px] text-bone-3 tabular-nums">{learnings.length}</span>}
       />
       {learnings.length ? (
         <ol className="divide-y divide-line">
-          {learnings.map((l) => {
-            const c = CONFIDENCE[l.confidence];
-            return (
-              <li key={l.id} className="flex flex-col gap-2 px-5 py-4">
-                <p className="text-bone text-body">{l.insight}</p>
-                <p className="text-bone-2 text-ui">{l.evidence}</p>
-                <div className="mt-1 flex items-center gap-2">
-                  <Badge tone={c.tone} title={`Confidence: ${l.confidence}`}>
-                    <span aria-hidden className="flex items-end gap-[2px]">
-                      {[1, 2, 3].map((k) => (
-                        <span
-                          key={k}
-                          className={cn("w-[3px] rounded-[1px] bg-current", k > c.level && "opacity-25")}
-                          style={{ height: 3 + k * 2 }}
-                        />
-                      ))}
-                    </span>
-                    {l.confidence}
-                  </Badge>
-                  <span className="font-mono text-[10.5px] text-bone-3">
-                    {l.brandId ? "" : "all brands, "}
-                    {timeAgo(l.createdAt, now)}
+          {learnings.map((l) => (
+            <li key={l.id} className="flex flex-col gap-2 px-5 py-4">
+              <p className="text-bone text-body">{l.insight}</p>
+              <p className="text-bone-2 text-ui">{l.evidence}</p>
+              <p className="mt-1 flex items-center gap-2 text-[12px] text-bone-3">
+                <span
+                  className={cn("flex items-center gap-1.5", l.confidence === "high" ? "text-cyan" : "text-bone-2")}
+                >
+                  <span aria-hidden className="flex items-end gap-[2px]">
+                    {[1, 2, 3].map((k) => (
+                      <span
+                        key={k}
+                        className={cn("w-[3px] rounded-[1px] bg-current", k > LEVEL[l.confidence] && "opacity-25")}
+                        style={{ height: 3 + k * 2 }}
+                      />
+                    ))}
                   </span>
-                </div>
-              </li>
-            );
-          })}
+                  {l.confidence} confidence
+                </span>
+                <span>
+                  {l.brandId ? "" : "all brands, "}
+                  {timeAgo(l.createdAt, now)}
+                </span>
+              </p>
+            </li>
+          ))}
         </ol>
       ) : (
         <p className="px-5 py-6 text-bone-2 text-ui" data-testid="learnings-empty">

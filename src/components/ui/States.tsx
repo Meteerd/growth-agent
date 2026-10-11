@@ -20,8 +20,8 @@ export function EmptyState({
       )}
     >
       <span aria-hidden className="relative grid size-12 place-items-center">
-        <span className="absolute inset-0 rounded-full shadow[inset_0_0_0_1px_var(--color-line-strong)]" />
-        <span className="absolute inset-3 rounded-full shadow[inset_0_0_0_1px_var(--color-line)]" />
+        <span className="absolute inset-0 rounded-full shadow-[inset_0_0_0_1px_var(--color-line-strong)]" />
+        <span className="absolute inset-3 rounded-full shadow-[inset_0_0_0_1px_var(--color-line)]" />
         <span className="size-1.5 rounded-full bg-bone-3" />
       </span>
       <p className="font-display text-[26px] leading-tight">{title}</p>
@@ -47,7 +47,7 @@ export function ErrorState({
     <div
       role="alert"
       className={cn(
-        "flex flex-col items-start gap-3 rounded-panel bg-[rgb(192_53_43/0.06)] p-6 shadow[inset_0_0_0_1px_rgb(192_53_43/0.25)]",
+        "flex flex-col items-start gap-3 rounded-panel bg-[rgb(192_53_43/0.06)] p-6 shadow-[inset_0_0_0_1px_rgb(192_53_43/0.25)]",
         className,
       )}
     >
@@ -56,7 +56,7 @@ export function ErrorState({
       {onRetry && (
         <button
           onClick={onRetry}
-          className="rounded-chip px-3 py-1.5 font-mono text-[11px] text-bone shadow[inset_0_0_0_1px_var(--color-line-strong)] hover:bg-glass"
+          className="rounded-chip px-3 py-1.5 font-mono text-[11px] text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)] hover:bg-glass"
         >
           Try again
         </button>

@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { formatCount } from "@/lib/client/format";
-import { areaPath, formatElapsed, linePath, nearestIndex, type Point, scale } from "./chart";
+import { formatElapsed, linePath, nearestIndex, type Point, scale } from "./chart";
 
 // Geometry (px). The axis band is inside the fixed height, so labels never overflow the cell.
 const H = 156;
@@ -10,11 +10,8 @@ const AXIS = 22;
 const PAD_X = 8;
 const PAD_TOP = 20;
 const BASE = H - AXIS;
-const LINE = "var(--color-cyan)";
-const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
-const DRAW_MS = 700;
+const LINE = "var(--color-cyan)"; // teal: a flat print tone, no fill under the line
 
-const reduced = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const when = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
 
 /**
@@ -35,7 +32,6 @@ export function ViewsChart({
   const box = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
   const [active, setActive] = useState<number | null>(null);
-  const gradId = useId();
 
   useEffect(() => {
     const el = box.current;
@@ -94,12 +90,6 @@ export function ViewsChart({
       >
         {width > 0 && (
           <svg width={width} height={H} role="img" aria-label={summary} className="block overflow-visible">
-            <defs>
-              <linearGradient id={gradId} x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stopColor={LINE} stopOpacity="0.16" />
-                <stop offset="1" stopColor={LINE} stopOpacity="0" />
-              </linearGradient>
-            </defs>
             {[yMax, yMax / 2, 0].map((v) => (
               <g key={v}>
                 <line
@@ -128,11 +118,29 @@ export function ViewsChart({
               </text>
             ))}
             {pts.length > 1 && (
-              <Line key={pts.length} d={linePath(pts)} area={areaPath(pts, BASE)} fill={`url(#${gradId})`} />
+              <path
+                d={linePath(pts)}
+                fill="none"
+                stroke={LINE}
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             )}
-            {a && <line x1={a.x} x2={a.x} y1={PAD_TOP - 8} y2={BASE} stroke="rgb(17 17 17 / 0.28)" strokeWidth={1} />}
+            {/* the current marker is a playhead: the one place record red appears on this chart */}
+            {a && <line x1={a.x} x2={a.x} y1={PAD_TOP - 8} y2={BASE} stroke="var(--color-signal)" strokeWidth={1} />}
             {pts.map((p) => (
-              <Dot key={p.id} cx={p.x} cy={p.y} big={a?.id === p.id} delay={(p.x / width) * DRAW_MS} />
+              <circle
+                key={p.id}
+                data-testid="chart-point"
+                cx={p.x}
+                cy={p.y}
+                r={a?.id === p.id ? 5 : 3.5}
+                fill={LINE}
+                stroke="var(--color-raised)"
+                strokeWidth={2}
+                style={{ transition: "r 140ms var(--ease-out)" }}
+              />
             ))}
           </svg>
         )}
@@ -140,7 +148,7 @@ export function ViewsChart({
       {a && (
         <div
           aria-hidden
-          className="pointer-events-none absolute z-10 whitespace-nowrap rounded-[8px] bg-raised px-2.5 py-1.5 shadow[var(--shadow-panel-strong)]"
+          className="pointer-events-none absolute z-10 whitespace-nowrap rounded-[4px] border border-line bg-raised px-2.5 py-1.5 shadow-[0_6px_24px_rgb(17_17_17/0.12)]"
           style={{
             left: Math.min(Math.max(a.x, 64), Math.max(64, width - 64)),
             top: a.y < 64 ? a.y + 14 : a.y - 12,
@@ -173,75 +181,5 @@ export function ViewsChart({
         </tbody>
       </table>
     </div>
-  );
-}
-
-/** Draws left to right on mount; keyed by point count, so it sweeps again when a new snapshot lands. */
-function Line({ d, area, fill }: { d: string; area: string; fill: string }) {
-  const line = useRef<SVGPathElement>(null);
-  const wash = useRef<SVGPathElement>(null);
-  useEffect(() => {
-    if (reduced()) return;
-    line.current?.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], {
-      duration: DRAW_MS,
-      easing: EASE,
-      fill: "backwards",
-    });
-    wash.current?.animate([{ opacity: 0 }, { opacity: 1 }], {
-      duration: DRAW_MS,
-      delay: 200,
-      easing: EASE,
-      fill: "backwards",
-    });
-  }, []);
-  return (
-    <>
-      <path ref={wash} d={area} fill={fill} />
-      <path
-        ref={line}
-        d={d}
-        pathLength={1}
-        strokeDasharray="1"
-        fill="none"
-        stroke={LINE}
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </>
-  );
-}
-
-/** A real reading: 4 px radius, 2 px surface ring, lands as the line reaches it. */
-function Dot({ cx, cy, big, delay }: { cx: number; cy: number; big: boolean; delay: number }) {
-  const ref = useRef<SVGCircleElement>(null);
-  const born = useRef(delay);
-  useEffect(() => {
-    if (reduced()) return;
-    ref.current?.animate(
-      [
-        { opacity: 0, transform: "scale(0.3)" },
-        { opacity: 1, transform: "scale(1)" },
-      ],
-      {
-        duration: 320,
-        delay: born.current,
-        easing: EASE,
-        fill: "backwards",
-      },
-    );
-  }, []);
-  return (
-    <circle
-      ref={ref}
-      data-testid="chart-point"
-      cx={cx}
-      cy={cy}
-      r={big ? 5.5 : 4}
-      fill={LINE}
-      stroke="var(--color-raised)"
-      strokeWidth={2}
-      style={{ transformBox: "fill-box", transformOrigin: "center", transition: "r 140ms var(--ease-out)" }}
-    />
   );
 }

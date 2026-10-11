@@ -48,8 +48,8 @@ export function UrlInput({
       <div
         className={cn(
           "glass group flex items-center gap-2 rounded-chip p-1.5 pl-5 transition-shadow duration-300",
-          "focus-within:shadow[var(--shadow-panel-strong),0_0_0_1px_rgb(229_50_45/0.45)]",
-          error && "shadow[var(--shadow-panel),0_0_0_1px_rgb(192_53_43/0.5)]",
+          "focus-within:shadow-[var(--shadow-panel-strong),0_0_0_1px_rgb(229_50_45/0.45)]",
+          error && "shadow-[var(--shadow-panel),0_0_0_1px_rgb(192_53_43/0.5)]",
         )}
       >
         <span aria-hidden className="font-mono text-bone-3 text-ui">

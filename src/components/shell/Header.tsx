@@ -27,7 +27,7 @@ export function DataModeChip() {
   return DATA_MODE === "mock" ? (
     <DemoBadge label="Mock data" />
   ) : (
-    <span className="inline-flex h-6 items-center gap-1.5 rounded-chip px-2.5 font-medium text-[11.5px] text-bone-2 shadow[inset_0_0_0_1px_var(--color-line-strong)]">
+    <span className="inline-flex h-6 items-center gap-1.5 rounded-chip px-2.5 font-medium text-[11.5px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)]">
       <StatusDot status="live" />
       Engine
     </span>
@@ -52,7 +52,7 @@ export function Header() {
                 className={cn(
                   "rounded-chip px-3 py-1.5 text-ui transition-colors duration-150",
                   active
-                    ? "bg-glass text-bone shadow[inset_0_0_0_1px_var(--color-line)]"
+                    ? "bg-glass text-bone shadow-[inset_0_0_0_1px_var(--color-line)]"
                     : "text-bone-2 hover:text-bone",
                 )}
               >

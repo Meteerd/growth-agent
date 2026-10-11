@@ -31,6 +31,15 @@ export function describeAnswer(q: Question, v: unknown): string {
   return q.kind === "single" ? label(v) : String(v);
 }
 
+type Local = Record<string, { value?: unknown; skipped?: boolean }>;
+
+/** What the operator said, or that they skipped, for the step list and the summary. */
+function outcome(q: Question, local: Local) {
+  const l = local[q.id];
+  const skipped = !!(l?.skipped ?? q.skipped);
+  return { skipped, text: skipped ? "" : describeAnswer(q, l ? l.value : q.answer) };
+}
+
 export function Consult() {
   const { runId, revealed, liveStatus } = useRunCtx();
   const { data, isLoading } = useQuestions(runId);
@@ -40,7 +49,7 @@ export function Consult() {
     () => (data ?? []).filter((q) => revealed.has(q.id)).sort((a, b) => a.order - b.order),
     [data, revealed],
   );
-  const [local, setLocal] = useState<Record<string, { value?: unknown; skipped?: boolean }>>({});
+  const [local, setLocal] = useState<Local>({});
   const isDone = (q: Question) => answered(q) || !!local[q.id];
   const firstOpen = questions.findIndex((q) => !isDone(q));
   const [picked, setPicked] = useState<number | null>(null);
@@ -89,109 +98,112 @@ export function Consult() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="relative mx-auto flex min-h-[70vh] max-w-[980px] flex-col items-center pb-24">
-        <Constellation questions={questions} index={index} isDone={isDone} onPick={(i) => setPicked(i)} />
-        <AnimatePresence mode="wait">
-          {allDone && picked === null ? (
-            <Finished key="done" questions={questions} local={local} runId={runId} />
-          ) : current ? (
-            <Stage
-              key={current.id}
-              q={current}
-              index={index}
-              total={questions.length}
-              prior={local[current.id]}
-              onSubmit={(a) => submit(current, a)}
-            />
-          ) : null}
-        </AnimatePresence>
+      <div className="grid gap-8 pt-4 pb-28 lg:grid-cols-[232px_minmax(0,1fr)] lg:gap-14 lg:pt-8">
+        <Steps questions={questions} index={index} isDone={isDone} local={local} onPick={(i) => setPicked(i)} />
+        <div className="min-w-0">
+          <AnimatePresence mode="wait">
+            {allDone && picked === null ? (
+              <Finished key="done" questions={questions} local={local} runId={runId} />
+            ) : current ? (
+              <Stage
+                key={current.id}
+                q={current}
+                index={index}
+                total={questions.length}
+                prior={local[current.id]}
+                onSubmit={(a) => submit(current, a)}
+              />
+            ) : null}
+          </AnimatePresence>
+        </div>
         <ChatDrawer runId={runId} />
       </div>
     </MotionConfig>
   );
 }
 
-function Constellation({
+/** Numbered step list on desktop, a flat segmented bar on small screens. Any step can be reopened. */
+function Steps({
   questions,
   index,
   isDone,
+  local,
   onPick,
 }: {
   questions: Question[];
   index: number;
   isDone: (q: Question) => boolean;
+  local: Local;
   onPick: (i: number) => void;
 }) {
-  const n = questions.length;
-  const W = 520;
-  const pts = questions.map((_, i) => ({
-    x: 20 + (i * (W - 40)) / Math.max(1, n - 1),
-    y: 26 + Math.sin(i * 1.3) * 12,
-  }));
+  const done = questions.filter(isDone).length;
   return (
-    <nav aria-label="Consultation progress" className="w-full max-w-[520px]">
-      <svg viewBox={`0 0 ${W} 56`} className="w-full overflow-visible" aria-hidden>
-        {pts.slice(1).map((p, i) => {
-          const a = pts[i];
-          const lit = isDone(questions[i]) && isDone(questions[i + 1]);
-          return (
-            <line
-              key={`l${i}`}
-              x1={a.x}
-              y1={a.y}
-              x2={p.x}
-              y2={p.y}
-              stroke={lit ? "rgb(17 17 17 / 0.5)" : "rgb(17 17 17 / 0.1)"}
-              strokeWidth="1"
-              style={{ transition: "stroke 600ms" }}
-            />
-          );
-        })}
-        {pts.map((p, i) => {
-          const done = isDone(questions[i]);
-          const cur = i === index;
-          return (
-            <g key={questions[i].id}>
-              {cur && <circle cx={p.x} cy={p.y} r="11" fill="none" stroke="rgb(229 50 45 / 0.5)" className="" />}
-              <circle
-                cx={p.x}
-                cy={p.y}
-                r={done ? 4.5 : 3.5}
-                fill={done ? "#ECE7DD" : cur ? "#E5322D" : "#06070A"}
-                stroke={done || cur ? "none" : "rgb(17 17 17 / 0.35)"}
-                style={{
-                  filter: done ? "drop-shadow(0 0 6px rgb(17 17 17 / 0.6))" : undefined,
-                  transition: "all 500ms",
-                }}
-              />
-            </g>
-          );
-        })}
-      </svg>
-      <ol className="sr-only">
-        {questions.map((q, i) => (
-          <li key={q.id}>
-            <button onClick={() => onPick(i)}>
-              Question {i + 1}: {q.prompt} ({isDone(q) ? "answered" : "open"})
-            </button>
-          </li>
-        ))}
-      </ol>
-      <div className="mt-1 flex justify-between">
+    <nav aria-label="Consultation progress" className="min-w-0 lg:sticky lg:top-24 lg:self-start">
+      <div className="flex items-baseline justify-between gap-3">
+        <p className="font-semibold text-[13px] text-bone">Consultation</p>
+        <p className="text-[12px] text-bone-2">
+          <span className="font-mono tabular-nums">
+            {done}/{questions.length}
+          </span>{" "}
+          answered
+        </p>
+      </div>
+      <div className="mt-2 flex gap-[3px] lg:hidden">
         {questions.map((q, i) => (
           <button
             key={q.id}
             onClick={() => onPick(i)}
             aria-label={`Question ${i + 1}`}
-            className={cn(
-              "font-mono text-[10px] transition-colors",
-              i === index ? "text-signal" : isDone(q) ? "text-bone-2" : "text-bone-4 hover:text-bone-2",
-            )}
+            aria-current={i === index ? "step" : undefined}
+            className="flex-1 py-2"
           >
-            {String(i + 1).padStart(2, "0")}
+            <span
+              className={cn(
+                "block h-[5px] rounded-[1px] transition-colors duration-150",
+                i === index ? "bg-signal" : isDone(q) ? "bg-bone" : "bg-line-strong",
+              )}
+            />
           </button>
         ))}
       </div>
+      <ol className="mt-4 hidden border-line border-t lg:block">
+        {questions.map((q, i) => {
+          const cur = i === index;
+          const o = isDone(q) ? outcome(q, local) : undefined;
+          return (
+            <li key={q.id}>
+              <button
+                onClick={() => onPick(i)}
+                aria-current={cur ? "step" : undefined}
+                className={cn(
+                  "relative flex w-full gap-3 border-line border-b py-3 pr-2 pl-3 text-left transition-colors duration-150",
+                  cur ? "bg-raised" : "hover:bg-raised-2/60",
+                )}
+              >
+                {cur && <span aria-hidden className="absolute inset-y-0 left-0 w-[2px] bg-signal" />}
+                <span className="pt-px font-mono text-[11px] text-bone-3 tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span
+                    className={cn(
+                      "line-clamp-2 text-[13px] leading-snug",
+                      cur ? "font-medium text-bone" : o ? "text-bone-2" : "text-bone-3",
+                    )}
+                  >
+                    {q.prompt}
+                  </span>
+                  {o && (
+                    <span className={cn("mt-1 block truncate text-[12px]", o.skipped ? "text-warn" : "text-bone")}>
+                      {o.skipped ? "Skipped, assumption stated" : o.text}
+                    </span>
+                  )}
+                </span>
+              </button>
+            </li>
+          );
+        })}
+      </ol>
     </nav>
   );
 }
@@ -214,71 +226,85 @@ function Stage({
   const evidence = (allEvidence ?? []).filter((e) => q.evidenceIds.includes(e.id));
   const [sheet, setSheet] = useState(false);
   const hasDefault = q.defaultAnswer !== undefined && q.defaultAnswer !== null;
+  const keys = q.kind === "confirm" ? 2 : q.kind === "single" ? (q.options?.length ?? 0) : 0;
   return (
     <motion.section
       aria-labelledby={`q-${q.id}`}
       data-testid="question"
       data-kind={q.kind}
-      className="mt-14 flex w-full flex-col items-center text-center"
-      initial={{ opacity: 0, y: 28 }}
+      className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_272px] lg:gap-x-12 lg:gap-y-10"
+      initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -28, filter: "blur(2px)" }}
-      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.18, ease: [0.2, 0, 0, 1] }}
     >
-      <p className="mono-label">
-        question {index + 1} of {total}
-        {q.required ? "" : " / optional"}
-      </p>
-      <h2
-        id={`q-${q.id}`}
-        className="mt-5 max-w-[860px] font-display text-[clamp(2rem,4.6vw,3.6rem)] leading-[1.04] tracking-[-0.01em]"
-      >
-        {q.prompt}
-      </h2>
-      <p className="mt-5 max-w-[640px] font-mono text-[12px] text-bone-2 leading-relaxed">
-        <span className="text-bone-3">why I am asking / </span>
-        {q.why}
-      </p>
-      {evidence.length > 0 && (
-        <div className="mt-5 flex max-w-[760px] flex-wrap justify-center gap-1.5" data-testid="evidence-chips">
-          {evidence.map((e, i) => (
-            <motion.button
-              key={e.id}
-              onClick={() => setSheet(true)}
-              initial={{ opacity: 0, scale: 0.9, y: 6 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ delay: 0.25 + i * 0.06, type: "spring", stiffness: 300, damping: 24 }}
-              className="flex max-w-[260px] items-center gap-2 rounded-chip bg-glass px-3 py-1.5 text-left shadow[inset_0_0_0_1px_var(--color-line)] transition-colors hover:bg-glass-strong"
-            >
-              <span className="size-1.5 shrink-0 rounded-full" style={{ background: sourceHue(e.source) }} />
-              <span className="truncate text-[12px] text-bone-2">{e.title}</span>
-              {e.metrics.outlierScore != null && (
-                <span className="shrink-0 font-mono text-[10.5px] text-signal">
-                  {e.metrics.outlierScore.toFixed(1)}x
-                </span>
-              )}
-            </motion.button>
-          ))}
-        </div>
-      )}
-      <div className="mt-10 w-full max-w-[760px]">
-        <AnswerInput q={q} prior={prior?.value} onSubmit={(value) => onSubmit({ value })} />
-      </div>
-      <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-        <Button
-          variant="quiet"
-          size="sm"
-          data-testid="skip"
-          onClick={() => onSubmit({ skip: true, value: undefined })}
-          title={
-            hasDefault
-              ? `The agent will assume: ${describeAnswer(q, q.defaultAnswer)}`
-              : "The agent will state its assumption"
-          }
+      <header className="min-w-0 lg:col-start-1">
+        <p className="mono-label">
+          question {index + 1} of {total}
+          {q.required ? "" : " / optional"}
+        </p>
+        <h2
+          id={`q-${q.id}`}
+          className="mt-4 max-w-[24ch] font-display text-[clamp(1.875rem,3.6vw,3rem)] text-bone leading-[1.06]"
         >
-          Skip{hasDefault ? `, assume "${describeAnswer(q, q.defaultAnswer)}"` : ""}
-        </Button>
+          {q.prompt}
+        </h2>
+        <p className="mt-5 max-w-[62ch] text-bone-2 text-body">
+          <span className="font-medium text-bone">Why I am asking. </span>
+          {q.why}
+        </p>
+      </header>
+
+      {/* answers come before the evidence in the DOM (keyboard and test order); the grid moves evidence beside the question */}
+      <div className="order-last min-w-0 lg:order-none lg:col-start-1">
+        <AnswerInput q={q} prior={prior?.value} onSubmit={(value) => onSubmit({ value })} />
+        <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-line border-t pt-4">
+          <Button
+            variant="quiet"
+            size="sm"
+            data-testid="skip"
+            className="-ml-3"
+            onClick={() => onSubmit({ skip: true, value: undefined })}
+            title={
+              hasDefault
+                ? `The agent will assume: ${describeAnswer(q, q.defaultAnswer)}`
+                : "The agent will state its assumption"
+            }
+          >
+            Skip{hasDefault ? `, assume "${describeAnswer(q, q.defaultAnswer)}"` : ""}
+          </Button>
+          {keys > 0 && (
+            <p className="hidden text-[12px] text-bone-3 md:block">
+              Press <Kbd>A</Kbd> to <Kbd>{String.fromCharCode(64 + keys)}</Kbd> to answer
+            </p>
+          )}
+        </div>
       </div>
+
+      {evidence.length > 0 && (
+        <aside
+          aria-label="What triggered this question"
+          className="min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:border-line lg:border-l lg:pl-6"
+        >
+          <div className="flex items-baseline justify-between gap-3">
+            <p className="font-semibold text-[13px] text-bone">What triggered it</p>
+            <button
+              onClick={() => setSheet(true)}
+              className="text-[12px] text-bone-2 underline decoration-line-strong underline-offset-4 hover:text-bone"
+            >
+              Open all
+            </button>
+          </div>
+          <ul className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-2" data-testid="evidence-chips">
+            {evidence.map((e) => (
+              <li key={e.id} className="min-w-0">
+                <EvidenceThumb evidence={e} onOpen={() => setSheet(true)} />
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
+
       <Sheet open={sheet} onOpenChange={setSheet} label="the evidence behind this question" title={q.prompt}>
         <div className="flex flex-col gap-3">
           {evidence.map((e: Evidence) => (
@@ -293,6 +319,66 @@ function Stage({
   );
 }
 
+/** The actual ad or post: its thumbnail when the source gave one, else a muted tile with source and title. */
+function EvidenceThumb({ evidence: e, onOpen }: { evidence: Evidence; onOpen: () => void }) {
+  const [broken, setBroken] = useState(false);
+  const thumb = e.thumbnailUrl && !broken ? e.thumbnailUrl : undefined;
+  const m = e.metrics;
+  const metric =
+    m.outlierScore != null
+      ? `${m.outlierScore.toFixed(1)}x`
+      : m.views != null
+        ? formatCount(m.views)
+        : m.rating != null
+          ? `${m.rating.toFixed(1)}/5`
+          : undefined;
+  return (
+    <button onClick={onOpen} className="group block w-full text-left" title={e.title}>
+      <span className="block aspect-[4/5] overflow-hidden rounded-[4px] border border-line bg-raised-2 transition-colors duration-150 group-hover:border-bone-4">
+        {thumb ? (
+          // biome-ignore lint/performance/noImgElement: third-party thumbnail, linked, never re-hosted
+          <img
+            src={thumb}
+            alt=""
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            onError={() => setBroken(true)}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <span className="flex h-full flex-col justify-between gap-2 p-2.5">
+            <span className="flex items-center gap-1.5 text-[11px] text-bone-2">
+              <span
+                aria-hidden
+                className="size-1.5 shrink-0 rounded-full"
+                style={{ background: sourceHue(e.source) }}
+              />
+              <span className="truncate">{SOURCE_LABELS[e.source]}</span>
+            </span>
+            <span className="line-clamp-5 font-medium text-[12px] text-bone leading-snug">{e.title}</span>
+          </span>
+        )}
+      </span>
+      <span className="mt-1.5 flex items-baseline justify-between gap-2 text-[11.5px]">
+        <span className="truncate text-bone-3">{thumb ? SOURCE_LABELS[e.source] : e.kind.replaceAll("_", " ")}</span>
+        {metric && <span className="shrink-0 font-mono text-bone tabular-nums">{metric}</span>}
+      </span>
+    </button>
+  );
+}
+
+function Kbd({ children }: { children: React.ReactNode }) {
+  return (
+    <kbd className="mx-0.5 inline-grid h-5 min-w-5 place-items-center rounded-[3px] border border-line-strong bg-raised px-1 font-sans text-[11px] text-bone">
+      {children}
+    </kbd>
+  );
+}
+
+// Flat answer rows with a 1px rule; selected = ink (set in ChipGroup via data-state).
+const CHIPS =
+  "max-w-[620px] flex-col items-stretch [&>button]:shadow-[inset_0_0_0_1px_var(--color-line-strong)] [&>button:hover]:shadow-[inset_0_0_0_1px_var(--color-bone-4)] [&>button[data-state=on]]:shadow-none";
+
 function AnswerInput({ q, prior, onSubmit }: { q: Question; prior?: unknown; onSubmit: (v: unknown) => void }) {
   const [single, setSingle] = useState<string>(typeof prior === "string" ? prior : "");
   const [multi, setMulti] = useState<string[]>(Array.isArray(prior) ? (prior as string[]) : []);
@@ -306,7 +392,7 @@ function AnswerInput({ q, prior, onSubmit }: { q: Question; prior?: unknown; onS
   const pick = (v: unknown, show: () => void) => {
     show();
     clearTimeout(flash.current);
-    flash.current = setTimeout(() => onSubmit(v), 380); // let the chip flash signal before the question leaves
+    flash.current = setTimeout(() => onSubmit(v), 220); // let the selected row register before the question leaves
   };
 
   // keyboard: letters pick options for single/confirm, Enter submits multi/scale
@@ -331,7 +417,7 @@ function AnswerInput({ q, prior, onSubmit }: { q: Question; prior?: unknown; onS
   if (q.kind === "single")
     return (
       <ChipGroup
-        className="justify-center"
+        className={CHIPS}
         type="single"
         options={withSuggested(q)}
         value={single}
@@ -341,7 +427,7 @@ function AnswerInput({ q, prior, onSubmit }: { q: Question; prior?: unknown; onS
   if (q.kind === "confirm")
     return (
       <ChipGroup
-        className="justify-center"
+        className={CHIPS}
         type="single"
         options={[
           { id: "yes", label: "Yes", hint: q.defaultAnswer === true ? "suggested" : undefined },
@@ -353,9 +439,9 @@ function AnswerInput({ q, prior, onSubmit }: { q: Question; prior?: unknown; onS
     );
   if (q.kind === "multi")
     return (
-      <div className="flex flex-col items-center gap-5">
+      <div className="flex flex-col items-start gap-5">
         <ChipGroup
-          className="justify-center"
+          className={cn(CHIPS, "w-full")}
           type="multi"
           options={withSuggested(q)}
           value={multi}
@@ -370,9 +456,9 @@ function AnswerInput({ q, prior, onSubmit }: { q: Question; prior?: unknown; onS
     const s = q.scale ?? { min: 0, max: 10, minLabel: "", maxLabel: "" };
     const step = s.max - s.min >= 500 ? 50 : 1;
     return (
-      <div className="mx-auto flex max-w-[560px] flex-col items-center gap-5">
+      <div className="flex max-w-[560px] flex-col items-start gap-5">
         <output
-          className="font-mono text-[48px] leading-none tabular-nums"
+          className="font-mono text-[44px] text-bone leading-none tabular-nums"
           aria-live="polite"
           data-testid="scale-value"
         >
@@ -389,7 +475,7 @@ function AnswerInput({ q, prior, onSubmit }: { q: Question; prior?: unknown; onS
           aria-label={q.prompt}
           style={{ "--v": `${((scale - s.min) / (s.max - s.min || 1)) * 100}%` } as React.CSSProperties}
         />
-        <div className="flex w-full justify-between font-mono text-[11px] text-bone-3">
+        <div className="flex w-full justify-between text-[12px] text-bone-3">
           <span>{s.minLabel}</span>
           <span>{s.maxLabel}</span>
         </div>
@@ -401,7 +487,7 @@ function AnswerInput({ q, prior, onSubmit }: { q: Question; prior?: unknown; onS
   }
   return (
     <form
-      className="mx-auto flex max-w-[640px] flex-col items-stretch gap-3"
+      className="flex max-w-[640px] flex-col items-start gap-3"
       onSubmit={(e) => {
         e.preventDefault();
         if (text.trim()) onSubmit(text.trim());
@@ -413,17 +499,23 @@ function AnswerInput({ q, prior, onSubmit }: { q: Question; prior?: unknown; onS
       <textarea
         id={`text-${q.id}`}
         value={text}
-        rows={3}
+        rows={4}
         onChange={(e) => setText(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && text.trim()) onSubmit(text.trim());
         }}
         placeholder={typeof q.defaultAnswer === "string" ? q.defaultAnswer : "In your own words"}
-        className="glass w-full resize-none rounded-panel px-5 py-4 text-left text-bone text-body outline-none focus:shadow[var(--shadow-panel-strong),0_0_0_1px_rgb(229_50_45/0.45)]"
+        className="w-full resize-none rounded-card border border-line-strong bg-raised px-4 py-3 text-bone text-body outline-none transition-colors duration-150 hover:border-bone-4 focus:border-bone"
       />
-      <Button type="submit" variant="primary" className="self-center" disabled={!text.trim()} data-testid="answer">
-        Answer
-      </Button>
+      <div className="flex items-center gap-4">
+        <Button type="submit" variant="primary" disabled={!text.trim()} data-testid="answer">
+          Answer
+        </Button>
+        <span className="hidden text-[12px] text-bone-3 md:inline">
+          or <Kbd>Cmd</Kbd>
+          <Kbd>Enter</Kbd>
+        </span>
+      </div>
     </form>
   );
 }
@@ -438,48 +530,48 @@ const withSuggested = (q: Question) =>
         : undefined),
   }));
 
-function Finished({
-  questions,
-  local,
-  runId,
-}: {
-  questions: Question[];
-  local: Record<string, { value?: unknown; skipped?: boolean }>;
-  runId: string;
-}) {
+function Finished({ questions, local, runId }: { questions: Question[]; local: Local; runId: string }) {
   return (
     <motion.section
       data-testid="consult-done"
-      className="mt-14 flex w-full flex-col items-center text-center"
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="max-w-[860px]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.18 }}
     >
       <p className="mono-label">consultation complete</p>
-      <h2 className="mt-5 font-display text-[clamp(2.2rem,5vw,4rem)] leading-none">Answers in. The run continues.</h2>
-      <p className="mt-4 text-bone-2 text-body">
-        Every answer is now in the dossier and will be cited as &ldquo;because you said&rdquo;.
+      <h2 className="mt-4 font-display text-[clamp(1.875rem,3.6vw,3rem)] text-bone leading-[1.06]">
+        Answers in. The run continues.
+      </h2>
+      <p className="mt-4 max-w-[62ch] text-bone-2 text-body">
+        Every answer is now in the dossier and will be cited as &ldquo;because you said&rdquo;. Taking you back to the
+        cockpit.
       </p>
-      <ul className="mt-10 grid w-full max-w-[860px] gap-2 text-left md:grid-cols-2">
-        {questions.map((q) => {
-          const l = local[q.id];
-          const skipped = l?.skipped ?? q.skipped;
-          const value = l ? l.value : q.answer;
+      <ol className="mt-8 border-line border-t">
+        {questions.map((q, i) => {
+          const o = outcome(q, local);
           return (
-            <li key={q.id} className="glass-flat p-4">
-              <p className="text-[12px] text-bone-3">{q.prompt}</p>
-              <p className="mt-1 font-display text-[19px]">
-                {skipped && (
-                  <span className="mr-2 font-mono text-[10.5px] text-warn uppercase tracking-[0.06em]">skipped</span>
-                )}
-                {skipped
-                  ? (q.assumption ?? `Assumed: ${describeAnswer(q, q.defaultAnswer) || "the common case"}`)
-                  : describeAnswer(q, value)}
-              </p>
+            <li key={q.id} className="grid grid-cols-[32px_minmax(0,1fr)] gap-x-3 border-line border-b py-4">
+              <span className="pt-0.5 font-mono text-[11px] text-bone-3 tabular-nums">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div className="min-w-0">
+                <p className="text-[13px] text-bone-2">{q.prompt}</p>
+                <p className="mt-1 font-medium text-[17px] text-bone leading-snug">
+                  {o.skipped && (
+                    <span className="mr-2 font-semibold text-[11px] text-warn uppercase tracking-[0.06em]">
+                      skipped
+                    </span>
+                  )}
+                  {o.skipped
+                    ? (q.assumption ?? `Assumed: ${describeAnswer(q, q.defaultAnswer) || "the common case"}`)
+                    : o.text}
+                </p>
+              </div>
             </li>
           );
         })}
-      </ul>
+      </ol>
       <Button variant="primary" className="mt-8" asChild>
         <Link href={`/runs/${runId}`}>Back to the cockpit</Link>
       </Button>
@@ -525,8 +617,8 @@ function ChatDrawer({ runId }: { runId: string }) {
         label="free text / the agent reads the dossier and evidence"
         title="Tell it anything"
         trigger={
-          <Button size="lg" className="shadow[var(--shadow-panel-strong)]" data-testid="chat-open">
-            <span className="size-1.5 rounded-full bg-signal" />
+          <Button size="lg" data-testid="chat-open" className="max-md:h-10 max-md:px-4 max-md:text-ui">
+            <ChatGlyph />
             Talk to the agent
           </Button>
         }
@@ -544,16 +636,10 @@ function ChatDrawer({ runId }: { runId: string }) {
                 key={i}
                 className={cn(
                   "max-w-[90%] rounded-card px-4 py-3 text-ui",
-                  m.role === "user"
-                    ? "self-end bg-bone text-ink"
-                    : "self-start bg-glass text-bone shadow[inset_0_0_0_1px_var(--color-line)]",
+                  m.role === "user" ? "self-end bg-bone text-ink" : "self-start border border-line bg-raised text-bone",
                 )}
               >
-                {m.text ? (
-                  <Linkified text={m.text} />
-                ) : (
-                  <span className="font-mono text-[11px] text-bone-3">thinking</span>
-                )}
+                {m.text ? <Linkified text={m.text} /> : <span className="text-bone-3">Writing</span>}
               </li>
             ))}
           </ol>
@@ -566,7 +652,7 @@ function ChatDrawer({ runId }: { runId: string }) {
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
               placeholder="We tried Reels in spring, nothing stuck"
-              className="h-10 min-w-0 flex-1 rounded-chip bg-glass px-4 text-bone text-ui outline-none shadow[inset_0_0_0_1px_var(--color-line-strong)] placeholder:text-bone-4 focus:shadow[inset_0_0_0_1px_rgb(229_50_45/0.5)]"
+              className="h-10 min-w-0 flex-1 rounded-chip border border-line-strong bg-raised px-4 text-bone text-ui outline-none transition-colors duration-150 placeholder:text-bone-4 focus:border-bone"
             />
             <Button type="submit" variant="primary" size="md" loading={busy} disabled={!draft.trim()}>
               Send
@@ -578,6 +664,19 @@ function ChatDrawer({ runId }: { runId: string }) {
   );
 }
 
+function ChatGlyph() {
+  return (
+    <svg viewBox="0 0 16 16" className="size-4" fill="none" aria-hidden>
+      <path
+        d="M2.5 4A1.5 1.5 0 0 1 4 2.5h8A1.5 1.5 0 0 1 13.5 4v5.5A1.5 1.5 0 0 1 12 11H7l-3 2.5V11a1.5 1.5 0 0 1-1.5-1.5Z"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 /** Evidence ids the agent cites (ev_hound_05) render as mono tags. */
 function Linkified({ text }: { text: string }) {
   const parts = text.split(/\b(ev_[a-z0-9_]+)\b/g);
@@ -585,7 +684,7 @@ function Linkified({ text }: { text: string }) {
     <>
       {parts.map((p, i) =>
         /^ev_[a-z0-9_]+$/.test(p) ? (
-          <span key={i} className="mx-0.5 rounded-[4px] bg-[rgb(229_50_45/0.1)] px-1 font-mono text-[11px] text-signal">
+          <span key={i} className="mx-0.5 rounded-[3px] bg-raised-2 px-1 font-mono text-[11px] text-bone">
             {p}
           </span>
         ) : (
