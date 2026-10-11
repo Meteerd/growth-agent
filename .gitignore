@@ -1,0 +1,30 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# deps / builds
+node_modules/
+.pnpm-store/
+dist/
+.next/
+out/
+coverage/
+.turbo/
+*.tsbuildinfo
+
+# runtime data
+data/
+logs/
+demo/recordings/
+apps/web/test-results/
+apps/web/playwright-report/
+
+# os / editors
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+
+# python (just in case)
+__pycache__/
+.venv/
