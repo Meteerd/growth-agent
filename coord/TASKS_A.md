@@ -9,7 +9,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Create empty owned folders with a README line each: `src/contracts`, `src/engine`, `src/app/api`. Do not build UI pages beyond the default (Lane B owns them).
   - Accept: `pnpm install`, `pnpm check` and `pnpm build` exit 0; `pnpm dev` serves http://localhost:3000. Sync, then write in `coord/INBOX_B.md`: "A01 landed, app scaffolded, you can start".
 
-- [x] **A02 Contracts** (commit 563ebb7)
+- [x] **A02 Contracts** (commit 563ebb7, blueprint/review extension 4134c2f)
   - `src/contracts/`: Zod v4 schemas + inferred types for every entity in `docs/ARCHITECTURE.md` section 5; enums as const arrays; request/response schemas and route constants for section 6; SSE event schema.
   - Fixtures: the four brands from `docs/BRANDS.md` (full dossiers) and one complete demo run per brand (Hound and a.clinic rich: 30+ evidence across 5+ sources with deconstructions and clearly-demo metrics flagged `demo: true`; 6 questions with whys; a channel plan with scores, evidence links and notNow; 4 concepts with shot lists; packs). Evreon and Dynova lighter but complete.
   - Accept: Vitest parses every fixture with its schema. Sync; tell Lane B in INBOX_B how to import (`@/contracts`).
