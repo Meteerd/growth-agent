@@ -8,7 +8,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Sync every 3 to 5 min until Lane A's A01 (Next.js app at the repo root) is on main; meanwhile update `docs/DESIGN.md` with your motion plan per screen. Then: fonts via `next/font` (Instrument Serif, Inter Tight or Geist, JetBrains Mono or Geist Mono), root layout, Playwright installed and configured (`e2e/`, `playwright.config.ts`, script `e2e` in package.json, additive).
   - Accept: `pnpm build` succeeds; `pnpm e2e` runs one smoke test that loads `/` (output shown).
 
-- [ ] **B02 Design tokens + base layer**
+- [x] **B02 Design tokens + base layer** (commit 0e1fd56)
   - Tokens from `docs/DESIGN.md` as CSS variables + Tailwind theme; grain overlay; hairline grid; glass panel; custom scrollbars, selection, focus rings; Lenis smooth scroll; reduced-motion handling.
   - Accept: `/lab` page renders tokens (colors, type scale, spacing) and the base layers; screenshot committed.
 

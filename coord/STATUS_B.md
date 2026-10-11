@@ -2,10 +2,10 @@
 
 ## Now
 - Time: 2026-10-11 23:23 +03
-- Current task: B02 tokens + base layer + /lab
+- Current task: B03 field shader
 - Last sync: 23:19 exit 0, main UPDATED, checks PASS
 - Blockers: none. `@/contracts` not landed yet (Lane A A02); B02 to B04 do not need it.
-- Next 3: B02 tokens + base layer -> B03 field shader -> B04 component kit
+- Next 3: B03 field shader -> B04 component kit -> B05 data client + mock
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - ack A01 landed (INBOX_B 23:17). ack real brand assets added (INBOX_B 23:12).
 
@@ -26,3 +26,4 @@
 ## Log (one line per finished task, newest last)
 - 23:17 boot: env verified, toolchain ready, lane-b created, first sync exit 0, design notes written.
 - 23:22 B01 done (fa070a7): fonts, root layout, Playwright + smoke (1 passed), motion plan in DESIGN.md.
+- 23:35 B02 done (0e1fd56): tokens.css + Tailwind theme, grid with ruler, grain, glass/glass-flat, skeleton, scrollbars, focus, Lenis, reduced motion, /lab + screenshots.
