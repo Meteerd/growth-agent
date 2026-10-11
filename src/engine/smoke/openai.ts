@@ -1,5 +1,5 @@
-import fs from "node:fs";
 import path from "node:path";
+import sharp from "sharp";
 import { SEED_BRANDS } from "@/contracts";
 import type { Db } from "../db/client";
 import { extractAudio } from "../media/ffmpeg";
@@ -43,7 +43,10 @@ export async function smokeOpenai(db: Db) {
     transcript,
     spend,
   });
-  fs.copyFileSync(imgFile, path.join(path.dirname(file), "smoke_keyframe.png"));
+  await sharp(imgFile)
+    .resize(512)
+    .jpeg({ quality: 80 })
+    .toFile(path.join(path.dirname(file), "smoke_keyframe.jpg"));
   return {
     mode: img.mode === "live" && vo.mode === "live" ? ("live" as const) : ("demo" as const),
     usd,

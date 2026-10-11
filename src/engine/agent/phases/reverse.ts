@@ -42,10 +42,15 @@ export async function watchVideo(
   providedTranscript?: Transcript,
 ): Promise<Watched> {
   const info = await probe(file);
-  const cuts = (await detectScenes(file)).filter(
-    (c, i, a) => c > 0.2 && c < info.durationSec - 0.2 && (i === 0 || c - a[i - 1] >= 0.4),
-  );
-  const times = sampleTimes(info.durationSec, cuts, 20);
+  const clean = (xs: number[]) =>
+    xs.filter((c, i, arr) => c > 0.2 && c < info.durationSec - 0.2 && (i === 0 || c - arr[i - 1] >= 0.4));
+  let cuts = clean(await detectScenes(file));
+  // single-take or soft-cut videos: try a lower threshold before giving up
+  if (cuts.length < 2 && info.durationSec > 6) {
+    const soft = clean(await detectScenes(file, 0.15));
+    if (soft.length > cuts.length) cuts = soft;
+  }
+  const times = sampleTimes(info.durationSec, cuts, 20, cuts.length < 2 ? 1.5 : undefined);
   const dir = path.join(ASSETS(), "frames", key);
   const frames = [];
   for (const t of times) {

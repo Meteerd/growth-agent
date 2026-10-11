@@ -53,22 +53,23 @@ export function normSpiralAd(ctx: SourceCtx, ad: J): Evidence {
   e.mediaUrl = str(ad.original_media_url) ?? str(creative?.original_media_url);
   e.thumbnailUrl = str(creative?.thumbnail_media_url) ?? str(creative?.preview_media_url);
   e.text = body.slice(0, 800) || undefined;
-  const active = num(ad.total_active_time);
+  // days from the ad's own dates (total_active_time has no documented unit, so it is only kept in tags)
   const start = str(ad.start_date);
-  const end = str(ad.end_date);
-  const days =
-    active !== undefined
-      ? active > 1000
-        ? Math.round(active / 86400)
-        : active
-      : start
-        ? Math.round(((end ? Date.parse(end) : Date.now()) - Date.parse(start)) / 86400000)
-        : undefined;
+  const end = ad.is_active ? undefined : str(ad.end_date);
+  const days = start
+    ? Math.max(0, Math.round(((end ? Date.parse(end) : Date.now()) - Date.parse(start)) / 86400000))
+    : undefined;
+  const reach = num(ad.eu_total_reach);
   e.metrics = { daysRunning: days };
   e.deconstruction = spiralDeconstruction(ad);
   const transcript = str(((ad.audio_transcript ?? {}) as J).full_text);
   if (transcript) e.text = `${e.text ? `${e.text}\n\n` : ""}Transcript: ${transcript}`.slice(0, 1500);
-  e.tags = ["paid", "spiral", ...(ad.is_active ? ["active"] : [])];
+  e.tags = [
+    "paid",
+    "spiral",
+    ...(ad.is_active ? ["active"] : []),
+    ...(reach !== undefined ? [`eu-reach-${reach}`] : []),
+  ];
   return e;
 }
 
@@ -92,10 +93,7 @@ export async function spiralWinners(ctx: SourceCtx, query: string, languages: st
       const search = await spiralGet<{ data: J[] }>(`/ads/meta/search?${qs}`, ctx.signal);
       const uuids = search.data.map((d) => str(d.uuid)).filter((x): x is string => !!x);
       if (!uuids.length) return { result: [], usd: 0 };
-      const details = await spiralGet<{ data: J[] }>(
-        `/ads/meta?${uuids.map((u) => `uuids=${u}`).join("&")}`,
-        ctx.signal,
-      );
+      const details = await spiralGet<{ data: J[] }>(`/ads/meta?uuids=${uuids.slice(0, 20).join(",")}`, ctx.signal);
       saveFixture("spiral", `${ctx.brand.slug}_winners`, { query, search, details });
       return { result: details.data.map((d) => normSpiralAd(ctx, d)), usd: 0, units: `${uuids.length} ads (credits)` };
     },
