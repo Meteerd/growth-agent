@@ -41,6 +41,12 @@ This product watches ads and re-cuts them. So the UI is a **professional editing
 - Squint test: it should look like a tool a creative director pays for, not an AI demo.
 - Screenshot every route (desktop + mobile) and compare against the bans list; any banned element is a bug.
 
+## v2 as built (Lane B, 12 Oct 02:10)
+- Tokens live in `src/styles/tokens.css`. The Tailwind names kept their v1 spelling so every screen re-skinned from one file: `bg-ink` = paper `#F3F1EC`, `bg-raised` = white, `bg-raised-2` = muted `#E9E6DF`, `bg-viewer` = the black program monitor, `text-bone` = ink `#111111`, `text-bone-2/3` = graphite, `border-line` = rule `#D9D6CF`, `signal` = record red `#E5322D`, `pass/warn/fail` = muted status. Utilities: `glass`/`glass-flat` = flat white card with a 1px rule, `mono-label` = small sans caps kicker, `font-display` = Inter Tight 650, -0.03em.
+- Beat tape colours (`src/lib/client/purpose.ts`): hook ochre, problem brick, agitate rust, solution teal, demo slate, proof olive, offer plum, CTA ink.
+- The only continuous motion is the playhead (reverse-engineer view, one pass on arrival, skipped under reduced motion) and real videos.
+- `e2e/bans.spec.ts` checks the hard bans on computed styles of every element on every route; it runs in `pnpm e2e`.
+
 ---
 
 # Design direction
