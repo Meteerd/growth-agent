@@ -1,0 +1,239 @@
+{
+  "recordedAt": "2026-10-11T21:33:07.056Z",
+  "query": "dog training app video ads showing a dog alone at home or pulling on the lead, with an owner doing a short daily exercise and a quiz call to action",
+  "search": {
+    "query": "dog training app video ads showing a dog alone at home or pulling on the lead, with an owner doing a short daily exercise and a quiz call to action",
+    "app_type": "app",
+    "multimodal": true,
+    "filters": {
+      "campaign_types": null,
+      "min_run_days": 14,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "aspect_ratios": null,
+      "is_active": null,
+      "min_eu_reach": null,
+      "creative_type": "VIDEO",
+      "brand_uuid": null,
+      "meta_page_uuids": null
+    },
+    "total": 10,
+    "data": [
+      {
+        "ad_platform": "meta",
+        "uuid": "4e5d6177-76c7-4cd2-bc11-3e7a2b23e000",
+        "meta_page_uuid": "ee37444a-e57b-490a-a081-118b9d5d0227",
+        "brand_uuid": "3ce87dfd-4d72-4ab8-a759-2ad40d5b33c3",
+        "similarity_score": 0.440555381609387,
+        "original_media_url": "https://assets.spiral.ad/c/3L-n7QHtwHyoP4_2sSpFNfUfYzehdpYJLxCdEadX048XoYhv9s_Gj7UPtLS-SldmVfckouKjQiR-IJih_kzF7bxq5KceVsNa3F_eLLCPy5eIEb9TK0x0OZm7WkzvCov05hdzk8ZLeDsYMWMr3QBmj552PM1l0w",
+        "resized_media_url": "https://assets.spiral.ad/c/qg-ArFTYvwTfaap2KVy4KdS8_H0fIWNBfB4yNrxve6OI4YXxJIqZ0Z92wmP3saKZ2WkDOvUvgwo-7v6bXlaoKTDtD_GwPuwBfr0RXAKM9GpGpyge3_UaBjugk3xnxMIvN0cuOH1WaFc7tUU6CjPzTBSQ",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": null,
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/BSVIGZamKEuJwF0fGf1YpZxfsFDLmSoEHjOc3G7FuwbWqalKViffCYA_7nLYAhsQf6SHEdDXDLPSco-DU8-w7TXz7clldZ46FnwBmKjm0bMxvD92l9c2CoBr71Q5USyjk4P5hTQM8mhhhTx6y9Cmupmqco8A_Q"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "3e74092f-1707-453c-8620-198c1786dd1a",
+        "meta_page_uuid": "ee37444a-e57b-490a-a081-118b9d5d0227",
+        "brand_uuid": "3ce87dfd-4d72-4ab8-a759-2ad40d5b33c3",
+        "similarity_score": 0.431679951849037,
+        "original_media_url": "https://assets.spiral.ad/c/oGmfjSlQR-zWWx4eeYpyL07w0WI_cT5LGbAL_NbMmXRaHRyrhasbq4BfwPV_F3gILwQHt0V35d5Vhwv0GxNYwH54sZcu__mbvxKQyb9HV6khNZlBhIMUYPQTPOdd0h1qqJP_GUvNlrn_yCVNZFOKeZgZL0tQ7So",
+        "resized_media_url": "https://assets.spiral.ad/c/iYayEeRW0Vpx931xSqor-twnxzKDxGhpQXZp01jfgqV-ht-bl0mscvlmYoNB3Ut9YxcZcqDg8uiTKPfneotfdlVDWGgXVeIwNFO1XiRBurby-RDPKYblkYA76hLEDxy04Hna8DYfsviVUcek04qr80HEFg",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LFI|w4?b?aE3~Uozx]%1tRM|Rkt7",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/HCgUTwW3kzpe3L9qP_BRW3cnXJbI0GcnUBK--xGp7gKJmWU6lWkvAOuMhokiiBfDiGGYNnCZlb5NfZWfwBIrFr4ChLRMlAuVXB5A97R695XlRKcziSBXBanhose0a9hVsNmmBPkncDzuD9kcXNiIjU_5L3HEaw"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "106a6708-12dd-45e5-996d-8ffea24d94b7",
+        "meta_page_uuid": "369c59bd-9bcf-4000-bbda-f5c82f864ecf",
+        "brand_uuid": "3ce87dfd-4d72-4ab8-a759-2ad40d5b33c3",
+        "similarity_score": 0.43167188097633,
+        "original_media_url": "https://assets.spiral.ad/c/QVk1ayg7SJzkqxdCiZAGJ49GeCtEznpEPta-ei6S2L4ctj42KmXx4tzNjVMHmupV4ir54pjzvRuUfODc_pXs9I4f9k3qpF24dqkHdglKuGopLSppYxcBtwNGNXj7Sa1JB-hRoMFJReJFZTXXyzxrFmsm-k7x2w",
+        "resized_media_url": "https://assets.spiral.ad/c/ocm6bZc--5o7QZvwP8nwrW8z-3Mtc0akMzwPh1ioVd9NxXStIObi88cNhz_LWWFvdXHTAr8u-qJuBDOSxR9R82a2BslCiA68T21D1mQCIb9pwpr9yxdjRJEdKAN4wzlqAkvGbK0XZ87HGfA-TDTpvT_J",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LkIh8DWGv|j@%%S~rqn$tlS$nhni",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/4d897qpi_pJX0SNQB01UCQprHmSeAYe5MgknSkhuI89klp2AWIoE46RuAuPQFGXqto10dpvmiHjkQ6iQgfs5dPwfeY6F4nCuzG3iVT2CAMvE7ukL2PuU7ZV5zcs9m3HB7eL3X_T6HPXwPkAzI7l59SkeSPK5"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "e8327ab8-4b33-4dbf-a76b-b92255805baa",
+        "meta_page_uuid": "d68e35b1-fe68-4574-9626-c0d37479e6cc",
+        "brand_uuid": "a3fccdee-044d-4c8a-b388-84b1ab0b370c",
+        "similarity_score": 0.431242248045729,
+        "original_media_url": "https://assets.spiral.ad/c/k-9cTbX5-PtbRxsMpQiqTPaBZzc3lu3AAobPUVHXghvPgS93esuMpBo9szWW1F6jF__FyRQLspTvlPWhfzMKvWaPLIUxd3XXRtHdGGioia3FO9g4MPTqgodyfKgwoctmdKjlDoeDMxWeVxG1ildWzgm7Hq1Htn8",
+        "resized_media_url": "https://assets.spiral.ad/c/lWqdlkL2nHJxmyynMvpB47cWQ19-gQecuqTAqUzGO_GAXrU626GHVzAVtqie3GifB8A0e71EkTjSuyAE09lGxLel3DnDr3ANPzCaonmHk4_cccypjxv2gEazMuW__GAAysE-hHLb-EKqEgEycL5qqm8Iiw",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LYF#?rWZtRt7~qkDt8t7x[tRs:oL",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/GiHwrFEcu4ZPW5s3Zpm4jVqPm972fwCDcYhOsD4S1Y5w7WYMx4GkxAp1AnGoToRjMJSZVzB8rCz9jBgGADplYRrBAtyiePxQcMjgZAIglMECCSjEScBV34NIUFV_q7_zCGzVxgE6Q2SM4a_fy_fB0k-MI_ivcA"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "12709a9b-cd9e-4e87-9f9e-46d19d393c7e",
+        "meta_page_uuid": "ee37444a-e57b-490a-a081-118b9d5d0227",
+        "brand_uuid": "3ce87dfd-4d72-4ab8-a759-2ad40d5b33c3",
+        "similarity_score": 0.429840109064585,
+        "original_media_url": "https://assets.spiral.ad/c/NGLd9Lb0XZ7J8-4WWKowd5IMUpzJy1Enmv4Q_8I-rcuwfthVBeWv4-8OwQTVNK8r3nf5GF72qdalHUrW95SRnnZmrovqdmrI-SNcIPZeTKERiJdZyAYFF-56iMk7jEJplYb64EvNVnSyeDyJrx5L4LLr5QCS-6X_",
+        "resized_media_url": "https://assets.spiral.ad/c/UT3KeCvPjT8qR5ugF1eI_lLPPhOaOa2rcnuyfHv3lBWCZma9sRFvSAedb-YKAy7Ug0Ujp7noozBBfObltbEbrYY2gt9sNClyiU0jaJi93WxoghtUwEKFoD3fcn9YVDBx8PAXuc8_df7WdXu1YIJwxwJxXtw",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LJDlG@RkodayX.RkWCof~BWVWCju",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/LfQbgOOgaSW6MUsa4jLkxHTpnxKTCHWJDUOo2Ws7r_viRW004aUTQBzIFP0MtfnyIIoee9k2VSvmy7cc0b-8eW-o0DVsYlmuk8rGLpcLL3uZ8ch_nfwnc7dSX0MTm8aGjdbNA2p_0SwHrwEPXLJCRjXF_4ZckUg"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "d28c1959-5bc4-483a-aa64-4455507c5b19",
+        "meta_page_uuid": "db605ebc-0f23-48c0-a1f1-0165c6874fea",
+        "brand_uuid": "c5edcdf3-53e1-4493-8977-647be26b610d",
+        "similarity_score": 0.426045725678717,
+        "original_media_url": "https://assets.spiral.ad/c/umkMEEJK1GeQuzXSlPpH2ZzKtO0SjPHfVBszHmX2_v_ZkA2A9OUpcd37-eZrlTIVZCzLlGLurdvaifoiyaLS9-_8crjviU7W1Y-MKl5_gJxYAbHtM2S-QAmOD_159nxhkL-E-3qPxlX1gblUZcgdkfLgzL1ixKofmL3VO8VNizVWTP9Z",
+        "resized_media_url": "https://assets.spiral.ad/c/hZH-lscud66RR_DSS-sUe3sPdUGcEyn7KzW4zqVgY9WHz_OxDRqiM7CwGHcJkiN2Udiyuy8Fan_N-jZzsA7aqVbzrUkfJPK6budbULUWY-9z11Q-whBWlRacXynu1Gd73h5PV_CelHNerwu5JuiesAVf-ArSHRaMt2tpxfENb8U",
+        "width": 720,
+        "height": 720,
+        "aspect_ratio": "1:1",
+        "blurhash": "LWHV0Z_N_3D%R3sl%1NdngRPRij[",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/fFjV5pXt2BD8Qm9tD89VjuNXYtZ_whPXesEbTLjCH8cdc9KsnCfoH4gQks_m3BQQHMxp-ckKapA2OXj0_bDk6GTzTa3lR_75UI-dUSpGK-1JyGr55JU8ErjkLP5ycS72RBp7DYmWqSU1CT_Lm6hg2d4OxLh_wi9NayG3fYZrLvlypLA"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "6d460690-04bf-44f6-ab61-a09a0b345323",
+        "meta_page_uuid": "91401441-5934-4fa6-bb92-611f2912c62b",
+        "brand_uuid": "3ce87dfd-4d72-4ab8-a759-2ad40d5b33c3",
+        "similarity_score": 0.418552442373522,
+        "original_media_url": "https://assets.spiral.ad/c/LLjbwaq2egmzeZs4OS3lqUn7iSgV7mF_PCpAU49bYH6ZbPl48SQ9LKbg_aRUEpIiYn2y-ZMEu1bTSjdurwTO2ISvgiQAbdiGRQI6fM7A_iE6VMweFlZl9CbK-2WQ4cVeG0GmYOz_9S1WzPzt7ey8d6Qea003ig",
+        "resized_media_url": "https://assets.spiral.ad/c/kwdEs61QSrBIOia2sQiij12hgRg_c9vlUS2A5POBRjEFyVEDNsutpwkF4FXzPzbk7FXJ-pkwx-dn---ZrwEtGqyW0e_LVcOY2dwi96JF5ds5vv0jmz12PzkgcMRTsR10jl_2XWpt8bbsbMW1KbDGrSNQ",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "L7Dm1?D#-x$x_N9D%NtS%2Map3T2",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/KHhtPEnEXeabhcfjdrSiPLKUIMrGRKt0BaRmq7aa8vLflX7DCzxYaS73Y1sumWnoRVpmkD_uHEJCuFLxGi4jOrAYjdKVBorgwN1-VTMXsZkopL_2MeKio91-EP7dOKOU0xakgjinztRVsI2As5Mxmcz4-S4v"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "376ab6df-a727-4b5b-8cb5-efd4464cecfc",
+        "meta_page_uuid": "ee37444a-e57b-490a-a081-118b9d5d0227",
+        "brand_uuid": "3ce87dfd-4d72-4ab8-a759-2ad40d5b33c3",
+        "similarity_score": 0.418503550704592,
+        "original_media_url": "https://assets.spiral.ad/c/g8tvK6lTFLXErZ492puyIu1Unqc3oXHK7zt1RSY4fjScv1XiOUu2ZZ5p6AMMRpQ0dC9Z60zv1EzOcfBdXnAnskDe967WRetpD0APTqPY86goejhtuKZRO7XCHxS8n3bKo4WeBprvf7QHIjxS114Svg9rLLakmzQ",
+        "resized_media_url": "https://assets.spiral.ad/c/-xWMyDMUcjw-Ub9XFfRAKm5kzZCs2XSSGBUpGRBt_s03jn3kZmcxg2w1-EICiYIrp0wZ4l_0KjJwkM_NWmAR77nUJiB6JVcT8jvu8DRYkzW4sKHFF2AE2gtcNQ-CgZzTnaiidOeroX6Ywg0WuKj8_HQPTQ",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": null,
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/-kTK6La7uBsVMpDD25mxyhm8hYA8OgCD8VEFjX8rqWNZfszTiBs2PKf1Gg1sqRbmciyS1nW_whKVauIF_U89zOjlJuD7f7bA2arEDDy8KiWc7TWUr7wFtYkDiXv_fZMw0OK5eZfsFilhgmLjD1Bs95CZENObZQ"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "f12086fb-23d8-4e03-8620-26ef8afdccf8",
+        "meta_page_uuid": "87756040-9d25-40a4-8e6f-d0904e160dc9",
+        "brand_uuid": "3ce87dfd-4d72-4ab8-a759-2ad40d5b33c3",
+        "similarity_score": 0.417352636491627,
+        "original_media_url": "https://assets.spiral.ad/c/ww2vTPaV3-9DkqPQerD6d9MYKKkwEsfEv67z_b7ltit5EF0Yu-YolQ488Lp39d-7kJ7DwaoHaJmtzUkJFCuplYaJ9C7Jl-CU6t_dxUC_Vgqb7gZ7l6jv4_N-EVPRPY-WVgFweYTKtxIMUZNKuRRo87ZZJ4SHjVo",
+        "resized_media_url": "https://assets.spiral.ad/c/SWHIC5i3fqqLRHxVdravIu4lpEh0O4pU-x7GP7CuXlrXK04mqBf0fBOg45_Qb6r1i-VylZ91AJyl21I4z3FzVuJFNpypFga9kZJ7d9aK1K1pDKL6JjuJfLu03aw_jyLutW4k3tj91uhTHoqw7ddd-RzsIg",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "L7Fqm$59E19avfE2OY?F~9-oNIs-",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/mZr4Ox30STfKBrZeHBN2NdgKj-s3CBwUnkBt60Z198c_ODPI5tRch8IGQteqzNG_QkYDzCZ0GM7ynh8vfECEFufirE6fm3Vo1ZckWzVV1eA-3wdTnGz2GQfei3tMPSFxhppQtVmaFiNASgseaMhj6SZf7sAOIQ"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "3b25bba7-f39f-44fe-b6ff-7b577b301d82",
+        "meta_page_uuid": "7768286c-df4a-4f81-8918-5ef463f658b7",
+        "brand_uuid": "a3fccdee-044d-4c8a-b388-84b1ab0b370c",
+        "similarity_score": 0.414516536218453,
+        "original_media_url": "https://assets.spiral.ad/c/PBjAchWZ-GQH2qJT-FZTisaXxJi4BsFJMKgwxnLJcxfViWb42h9zqTiCH60j5uwRcFkWpqhLMxiokhqRKbcK2upKUkE2C_VXjmxOIs8VJiem7Wm-rf1DrUPUb0mmy6ihcQnh2YDzIXCHinHD6dw_A3Y8AzW93Zs",
+        "resized_media_url": "https://assets.spiral.ad/c/QDwxIM8uUCMqBdEmmP4Kg0e6bJyUE4BmHwKMSR9sjqjRAeMREEthtcGa2w11colIeK3WrkuV3FW_AAeGsVM9N_Y35bg8p3juseCnOWTOm_9bQlGvaanCCIeMiPjPJIpIHFpyA2d8WHBNuVcR0oT6HvFA7w",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LDF}}}_4.T~WGF4n$KRO+^W;IpIB",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/2D51fq4wymGZyOwjl3zaEe_fHo3iN1iZ0EPBSW5Sw9VhrcSowPBC-Tw3TkTCC03Yy4BA7TsxIhMeHArzaYWc3_pNWyp3aLWTXxYbXjnOSMUNDDeqT4f_biUpg3ISRVi5yUkcP9n6k5d3NrgdGuutAADPrQiuRQ"
+      }
+    ]
+  },
+  "details": {
+    "total": 1,
+    "data": [
+      {
+        "ad_platform": "meta",
+        "uuid": "3b25bba7-f39f-44fe-b6ff-7b577b301d82",
+        "meta_page_uuid": "7768286c-df4a-4f81-8918-5ef463f658b7",
+        "brand_uuid": "a3fccdee-044d-4c8a-b388-84b1ab0b370c",
+        "created_at": "2026-08-30T23:18:48.862233Z",
+        "body": "Struggle with puppy peeing and biting? Our simple, positive program turns stress into joy, helping you raise a calm and obedient pup!\n⭐️ Potty train - in 3 days\n⭐️ Stop biting - in 3 hours\n⭐️ Stay in crate - in 5 hours\n⭐️ Stop barking - in 1 day",
+        "cta_text": "See details",
+        "original_media_url": "https://assets.spiral.ad/c/2i_HMqd-ggcJifbLvoZw8G_mNv9cXBUNxI2HuDgPQOBlzlCy4KZIiw1pwGeFGwzRI8n8hN8glbGwveTIFCbe43XRoyx-jGg0Bg9uEF0GxVaZDHpm5GzFEyc2utL1XaUDVQxyy7Byevh2diDJcGLq7tmGgn8rrxI.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/NFRHdYDc8BfE6HbWkioeSYqWY59p1HIXZxzzqJPa3RS3coUMYHrtNZ-DFIXrlcWqzqHylyvI7L8kw1ViQOtQeuU-immF2FkgLXrYzQYeojcjo8fQ6akGyAd6lNwwOMsTuEeET1ZpGKLDT5rHbAVqnmZ2XQ.jpeg",
+        "start_date": "2026-08-30T07:00:00",
+        "end_date": "2026-09-14T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": 47565,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://webapp.everydoggy.com/onboarding/?config=customV2&everydoggyV5=true&tariff=v41&utm_source=facebook_web&fbpxls[]=doggy3rd_intro&utm_source=facebook_web&utm_medium=cpc&utm_campaign={{campaign.name}}&utm_term={{adset.name}}&utm_content={{ad.name}}&adset_id={{adset.id}}&c_id={{campaign.id}}&ad_id={{ad.id}}",
+        "meta_page": {
+          "uuid": "7768286c-df4a-4f81-8918-5ef463f658b7",
+          "brand": {
+            "uuid": "a3fccdee-044d-4c8a-b388-84b1ab0b370c",
+            "name": "EveryDoggy - Dog Training App",
+            "slug": "everydoggy-dog-training-app",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/6e1578ee-8e89-4df4-a9e0-1b97c1f28b78/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "cd35ab10-62a1-4e7c-af74-32ac9a967ec9",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/CYo44EU1EKqsX4Ikq80CuL8Kk88ug7C7XDIyI8DMP8jqLrvGEPOdJQRcT6xGBsHH6OHWsV8w0IEZyjD7CnV4SPJfLe7ICcPl_DksW30n2nIUSzDaddmyjldDaY_T2GJSccGY7_WcXLmhlWfDHk0psn3c8DzgtbY.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/yrZt17BhJIklxfTP94S8TLyd0z1PaHSIX4U_MTI6IOIQmBfUbFbdEY_7RaNiw56I7VbCcD2qAgHL3Gtrj4N23pqTx-9V7bHRZeIUrDxm1cv5KBRf07EoZ_bVprCFhSW4FZvnfw9WNElXB4aFE1uWaCScDhDcnA.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/UJY6OG5uwQvruPupb_exwKwvqRhyfLTct30poZYpgowitvntNrqiqZDQXLBChvEaqiQxKVDPYEPjsKkhFQ1OOqT4sWSLCP3pIypHNYs3BelEpjSOEqrTDwoZI3u5xR26CZeAMfriIsO3_UbtCXwTWLiDKg.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LDF}}}_4.T~WGF4n$KRO+^W;IpIB",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": false
+      }
+    ],
+    "missing": []
+  }
+}

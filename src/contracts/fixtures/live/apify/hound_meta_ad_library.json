@@ -1,0 +1,2727 @@
+{
+  "recordedAt": "2026-10-11T21:33:08.760Z",
+  "actor": "curious_coder/facebook-ads-library-scraper",
+  "input": {
+    "urls": [
+      {
+        "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video"
+      },
+      {
+        "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=separation%20anxiety%20dog&search_type=keyword_unordered&media_type=video"
+      }
+    ],
+    "count": 25,
+    "limitPerSource": 13
+  },
+  "items": [
+    {
+      "ad_archive_id": "4484086611832916",
+      "collation_count": null,
+      "collation_id": null,
+      "is_active": false,
+      "page_id": "108824017345866",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "108824017345866",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/Meta/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "Meta",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/820459067_1881284186176971_4324893137876118236_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ROdiVPlmqgEQ7kNvwEsTskd&_nc_oc=Adp2k4AESfAs5a5lzxd7HC1Aulkid8O1yWKV5D3Q9FrOv9d73YHyM1gsStPfng6jbfureRv3OFiKN9Yqe26AEY2R&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQMbhb6t9B10rxaTQCBM-4YGtcFUqEDuxcs6dlEhnfHeCg&oe=6AD1E70B",
+        "event": null,
+        "caption": null,
+        "cta_text": null,
+        "cards": [],
+        "body": {
+          "text": "We believe the future is for everyone, so we're putting superintelligence in everyone's hands. \nCheck out our latest breakthrough technologies in AI, AI glasses, and VR in this year’s Meta Connect keynote."
+        },
+        "cta_type": null,
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": null,
+        "images": [],
+        "page_categories": [
+          "Company"
+        ],
+        "page_like_count": 106842145,
+        "title": null,
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQMGei7geRIFk8dL3JLSDhVJ9UBeJoKJCaCFplG-DbImdrV1u5qz58zW1dlUJAyY85mKAFfesFVlWpEy3M3NR-GrY4qCkpX-o_JsuZeEIlmscw.mp4?_nc_cat=106&_nc_oc=AdquraV3JVTQSwalmTQQtdQ7YNrat1TaZTJj-5aB_P6BMfZTf-txSmPpnsMF-OiC0C1j9sNwatYfJO1woM3YsMZQ&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=FhFbuDGO-soQ7kNvwFRpu6s&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjoyMTI3NDM4ODc4MjAyNDYwLCJhc3NldF9hZ2VfZGF5cyI6MTcsInZpX3VzZWNhc2VfaWQiOjEyMzczLCJkdXJhdGlvbl9zIjozMzE0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=bbe8ea6005900bea&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9ERjRENUMzRDMzRDZBRjFCNTE2MzIzM0Y5RTM2MDE5OF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZFNDA2RTlBRkRDNkMwQjhGODBEMUQxMzlDMDQ2NDlCX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACa46e7pnrnHBxUCKAJDMywXQKnlu2RaHKwYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZarBAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNjXAlRlZ63glKHT0WT3dZb1ynhIzH-GT7YP8Cfa1rXmA&oe=6AD1E92E",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/819902620_4910268845868935_4541274984947620352_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=M_56ebqpaOwQ7kNvwHyH9hP&_nc_oc=AdqqZZrx-z2xF1ZdDH76IVN08_7FVdreSTZeHbak7av0YjZKN_nMVL2mwhJtjuQPqkgxSPOYtyTXQmgmBWF2T3xX&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQN3sCMAk7ZZbcxqBnjfV7ZNcXCMFIck4Y9OHkpOjkxsSA&oe=6AD1DBD3",
+            "video_sd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMHsdmjXKg2ZlLsD3iwyNDQtdNmdYfpPlNs2nzwxu921f4U5YYCW_S12XcB_2xcI_9dhBGDVw9xg3U_7LzuqxAk_VLI2nr87U_vdR4Btw.mp4?_nc_cat=103&_nc_oc=AdriLEbV0QBls0Itetr2L63ASMz1gP-Zip6javIcTTWWTcrC_Up30MIKT_-yXHnKcypw7aKMAc2tmVWeRp8UExbC&_nc_sid=ef5aa3&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=SSrEAKcQ0qEQ7kNvwEglNoL&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNjQwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjEyNzQzODg3ODIwMjQ2MCwiYXNzZXRfYWdlX2RheXMiOjE3LCJ2aV91c2VjYXNlX2lkIjoxMjM3MywiZHVyYXRpb25fcyI6MzMxNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPJR-SXPHCRrCO5Pc6KwkgqoqO794xTiaNz0Ec6FXa0nw&oe=6AD1BDB3",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Meta",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1790406000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM"
+      ],
+      "start_date": 1790233200,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 1,
+      "ads_count": 1,
+      "start_date_formatted": "2026-09-24 07:00:00",
+      "end_date_formatted": "2026-09-26 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=4484086611832916"
+    },
+    {
+      "ad_archive_id": "1471630648111301",
+      "collation_count": null,
+      "collation_id": null,
+      "is_active": false,
+      "page_id": "108824017345866",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "108824017345866",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/Meta/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "Meta",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/820459067_1881284186176971_4324893137876118236_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ROdiVPlmqgEQ7kNvwEsTskd&_nc_oc=Adp2k4AESfAs5a5lzxd7HC1Aulkid8O1yWKV5D3Q9FrOv9d73YHyM1gsStPfng6jbfureRv3OFiKN9Yqe26AEY2R&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQMbhb6t9B10rxaTQCBM-4YGtcFUqEDuxcs6dlEhnfHeCg&oe=6AD1E70B",
+        "event": null,
+        "caption": null,
+        "cta_text": null,
+        "cards": [],
+        "body": {
+          "text": "We believe the future is for everyone, so we're putting superintelligence in everyone's hands. \nCheck out our latest breakthrough technologies in AI, AI glasses, and VR in this year’s Meta Connect keynote."
+        },
+        "cta_type": null,
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": null,
+        "images": [],
+        "page_categories": [
+          "Company"
+        ],
+        "page_like_count": 106842145,
+        "title": null,
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQMGei7geRIFk8dL3JLSDhVJ9UBeJoKJCaCFplG-DbImdrV1u5qz58zW1dlUJAyY85mKAFfesFVlWpEy3M3NR-GrY4qCkpX-o_JsuZeEIlmscw.mp4?_nc_cat=106&_nc_oc=AdquraV3JVTQSwalmTQQtdQ7YNrat1TaZTJj-5aB_P6BMfZTf-txSmPpnsMF-OiC0C1j9sNwatYfJO1woM3YsMZQ&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=FhFbuDGO-soQ7kNvwFRpu6s&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjoyMTI3NDM4ODc4MjAyNDYwLCJhc3NldF9hZ2VfZGF5cyI6MTcsInZpX3VzZWNhc2VfaWQiOjEyMzczLCJkdXJhdGlvbl9zIjozMzE0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=bbe8ea6005900bea&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9ERjRENUMzRDMzRDZBRjFCNTE2MzIzM0Y5RTM2MDE5OF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZFNDA2RTlBRkRDNkMwQjhGODBEMUQxMzlDMDQ2NDlCX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACa46e7pnrnHBxUCKAJDMywXQKnlu2RaHKwYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZarBAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNjXAlRlZ63glKHT0WT3dZb1ynhIzH-GT7YP8Cfa1rXmA&oe=6AD1E92E",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/819902620_4910268845868935_4541274984947620352_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=M_56ebqpaOwQ7kNvwHyH9hP&_nc_oc=AdqqZZrx-z2xF1ZdDH76IVN08_7FVdreSTZeHbak7av0YjZKN_nMVL2mwhJtjuQPqkgxSPOYtyTXQmgmBWF2T3xX&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQN3sCMAk7ZZbcxqBnjfV7ZNcXCMFIck4Y9OHkpOjkxsSA&oe=6AD1DBD3",
+            "video_sd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMHsdmjXKg2ZlLsD3iwyNDQtdNmdYfpPlNs2nzwxu921f4U5YYCW_S12XcB_2xcI_9dhBGDVw9xg3U_7LzuqxAk_VLI2nr87U_vdR4Btw.mp4?_nc_cat=103&_nc_oc=AdriLEbV0QBls0Itetr2L63ASMz1gP-Zip6javIcTTWWTcrC_Up30MIKT_-yXHnKcypw7aKMAc2tmVWeRp8UExbC&_nc_sid=ef5aa3&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=SSrEAKcQ0qEQ7kNvwEglNoL&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNjQwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjEyNzQzODg3ODIwMjQ2MCwiYXNzZXRfYWdlX2RheXMiOjE3LCJ2aV91c2VjYXNlX2lkIjoxMjM3MywiZHVyYXRpb25fcyI6MzMxNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPJR-SXPHCRrCO5Pc6KwkgqoqO794xTiaNz0Ec6FXa0nw&oe=6AD1BDB3",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Meta",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1790578800,
+      "publisher_platform": [
+        "FACEBOOK"
+      ],
+      "start_date": 1790319600,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 2,
+      "ads_count": 1,
+      "start_date_formatted": "2026-09-25 07:00:00",
+      "end_date_formatted": "2026-09-28 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1471630648111301"
+    },
+    {
+      "ad_archive_id": "2537658826709711",
+      "collation_count": null,
+      "collation_id": null,
+      "is_active": false,
+      "page_id": "108824017345866",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "108824017345866",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/Meta/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "Meta",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/818384799_2549824048848021_2453218259528415285_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=UwzS0LTFX6oQ7kNvwFcIE_f&_nc_oc=Adp80857fTmqgAkqwuA4jIlQjHPnPSeGL46RRR99BUXodEwU4Frcau2cjUtKeP5Yg6qfQbtut2fFMnDE-IzCp37C&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQPBqoYo0uTiI1A0anm8oF0wzNLEcI_nXiymoIcUA52zfg&oe=6AD1D88A",
+        "event": null,
+        "caption": null,
+        "cta_text": null,
+        "cards": [],
+        "body": {
+          "text": "We believe the future is for everyone, so we're putting superintelligence in everyone's hands. Tune in now for our latest breakthrough technologies in AI, AI glasses, and VR.  During the livestream, you can experience the virtual content in a number of languages on Meta.com/Connect"
+        },
+        "cta_type": null,
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": null,
+        "images": [],
+        "page_categories": [
+          "Company"
+        ],
+        "page_like_count": 106842145,
+        "title": "Meta Connect 2026: Opening Keynote",
+        "videos": [
+          {
+            "video_hd_url": "",
+            "video_preview_image_url": null,
+            "video_sd_url": "",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Meta",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1790319600,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM"
+      ],
+      "start_date": 1790146800,
+      "contains_sensitive_content": false,
+      "total_active_time": 3346,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 3,
+      "ads_count": 1,
+      "start_date_formatted": "2026-09-23 07:00:00",
+      "end_date_formatted": "2026-09-25 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=2537658826709711"
+    },
+    {
+      "ad_archive_id": "796032009703252",
+      "collation_count": 1,
+      "collation_id": "2043350236468393",
+      "is_active": false,
+      "page_id": "100277271937762",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "100277271937762",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/WoofzDogTrainingApp/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "Woofz",
+        "page_profile_picture_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/560316863_1145926863635255_283347673118109701_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=zY8W4_JNGSwQ7kNvwHbYpBM&_nc_oc=Adru9Ca2bhU7G_95d45ZZdPvTRndm_ci00gEfI78EnvH4z4ta2vSyai7Yg_rVXazkY8z9qj2IioMJtX2TcEqssm-&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQP9gDk288ZP73YkS3PAlmYmT2WHcyAsWvZMfbdrRNt7dA&oe=6AD1E4EB",
+        "event": null,
+        "caption": "itunes.apple.com",
+        "cta_text": "Install now",
+        "cards": [
+          {
+            "body": "Woofz: The ultimate dog training app! Courses, videos & more - all in one place 🐾📱\nInstall now! 🐶",
+            "cta_type": "INSTALL_MOBILE_APP",
+            "caption": "itunes.apple.com",
+            "link_description": null,
+            "link_url": "http://itunes.apple.com/app/id1532020050",
+            "title": "Try the Best App for Dog Owners 🐕",
+            "cta_text": "Install Now",
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQO12npgWbZtA1wAcoPyh4hvm3pqbmHKAgc6xilesQcAqgJH8ndttYMumXzRYo8rdlRFrQyjdZw9GnSCpJSJRcDI4nGRHjZjWMeig7xFwKbxng.mp4?_nc_cat=105&_nc_oc=Adr86BCQ6rIYgCFu_WhyqQ7RIRGgCGZjebRxtj07uUe9KrrLTl7rt0IS-TBAJGfwsI7-ksP93NUa68-cqhTgC21D&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=QpjUXc2YRDMQ7kNvwGUmKkB&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExNzA4Mjk3NzE3NDI5NzksImFzc2V0X2FnZV9kYXlzIjozOTIsInZpX3VzZWNhc2VfaWQiOjEwMTM5LCJkdXJhdGlvbl9zIjozMywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=f93ffb9180b8733e&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC83QjQ5M0VCQzAwMjA2OUQ1QTZCNENBRkE0QUM2NTVCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0E5NDA2ODhCOEYwQTY3MDM2NDY4ODVEMzc3Q0EyNTlDX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaG_JjKobeUBBUCKAJDMywXQED3bItDlYEYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNGQqg_Fjv4gE2sISyLofbvs94HSPSrbepHPI8gKYlCTQ&oe=6AD1CED7",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/565745911_4284518241827987_158813240914662563_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=UKcmHIXFXD8Q7kNvwFvoCHW&_nc_oc=AdqhLV5Riv8chAgKA3AkvgxzQdEwVy1r5YkEBwKXYqpUhX9nz1ZkaGwy6KFVBHzNuWf_MHhmE4-1gQDk4sE5Gv3X&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQN3zTFfXMJ6MhFLrk_lXt-j1RQej9a8eiWNYN8pmNEoRw&oe=6AD1E3AE",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQMXFzaqrOTym2lGIK3ZMPtrybi7x8SC_fhCJhZN2bGJmdiz7MgkSnAD79ujzdMmatzbZQd78DhVyiPVR-gxyVG6B1dVKnP4TDuzor_QKw.mp4?_nc_cat=106&_nc_oc=Ado8ibUgb4wtJcE069c9ucQLhapdGMKVktM7N0bYli1Oi5P-OxH_k3aSrJ0aKKDrwyiII-aIgSFb5RkXe9sla0LV&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=vRbc-vZpk14Q7kNvwG_Fzu-&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTE3MDgyOTc3MTc0Mjk3OSwiYXNzZXRfYWdlX2RheXMiOjM5MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQMAr1EjgjJ_rrgihLt248vCvPpz4jm7Vu6fIVDm1ySKZQ&oe=6AD1D310",
+            "watermarked_video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m266/AQMnYIMB9nWoRhiELhdjnh5hd1FiwlURL1Ur46QOmpJV5qe8WwysaUx7kG3hjDK5FSvCM9QlxzGJHh9KpGafwC07yynmHkfaVi0.mp4?strext=1&_nc_cat=105&_nc_oc=AdqQv7RU7mf4ALbdyRW4qarUGXvpJWalrEhzd1Jewthf3LCmNzINkWDPWiKRYRLRPv0bhfFzhzp9IGjya4XmAdPe&_nc_sid=8bf8fe&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=oYPA9J2NG0oQ7kNvwE0pJVB&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMTA4MC5jb21wcmVzc2VkX3NvdXJjZSIsInhwdl9hc3NldF9pZCI6MzI3NjkyODg0NTgxNzM2MywiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNSCKQ_ZaiM3zeYPO58jS7dvXDmuDlgxfZD1ri78QbDAw&oe=6ACDF53D&bitrate=4777515&tag=compressed_source",
+            "watermarked_video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQOGpM-cv_x-uoG7vaVnA0Y3NGrlxi64VIKsGcC4kkIzTiiZzfDM5HUaw_ME_-ADZgwxsYHHqJxLIfKaa99wqwpMaEItzgk61ZFKQyamUQ.mp4?_nc_cat=105&_nc_oc=AdpKhO1ncRlk1RshgdqQzsAlnyU1DD8ECjAzgTVir1PmnDlKA5RWHDBQNjouZOqzEQtSo0_s2lWBMD1Je8OzK99W&_nc_sid=8bf8fe&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=UCY7R6S6Vw8Q7kNvwEDgPuv&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MzI3NjkyODg0NTgxNzM2MywiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPquAK3YCE2NHP-vBrC6qY0hyalnKVGmXxMefYMclH_GQ&oe=6AD1DA7D&bitrate=473544&tag=sve_sd",
+            "image_crops": [],
+            "original_image_url": null,
+            "resized_image_url": null,
+            "watermarked_resized_image_url": null
+          },
+          {
+            "body": "🐕 ¡Descubre la mejor app para dueños de perros!�Woofz: ¡Entrena, aprende y disfruta con tu perro! 🐾",
+            "cta_type": "INSTALL_MOBILE_APP",
+            "caption": "itunes.apple.com",
+            "link_description": null,
+            "link_url": "http://itunes.apple.com/app/id1532020050",
+            "title": "👉 Descárgala ahora 📱",
+            "cta_text": "Install Now",
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQO12npgWbZtA1wAcoPyh4hvm3pqbmHKAgc6xilesQcAqgJH8ndttYMumXzRYo8rdlRFrQyjdZw9GnSCpJSJRcDI4nGRHjZjWMeig7xFwKbxng.mp4?_nc_cat=105&_nc_oc=Adr86BCQ6rIYgCFu_WhyqQ7RIRGgCGZjebRxtj07uUe9KrrLTl7rt0IS-TBAJGfwsI7-ksP93NUa68-cqhTgC21D&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=QpjUXc2YRDMQ7kNvwGUmKkB&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExNzA4Mjk3NzE3NDI5NzksImFzc2V0X2FnZV9kYXlzIjozOTIsInZpX3VzZWNhc2VfaWQiOjEwMTM5LCJkdXJhdGlvbl9zIjozMywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=f93ffb9180b8733e&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC83QjQ5M0VCQzAwMjA2OUQ1QTZCNENBRkE0QUM2NTVCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0E5NDA2ODhCOEYwQTY3MDM2NDY4ODVEMzc3Q0EyNTlDX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaG_JjKobeUBBUCKAJDMywXQED3bItDlYEYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNGQqg_Fjv4gE2sISyLofbvs94HSPSrbepHPI8gKYlCTQ&oe=6AD1CED7",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/565745911_4284518241827987_158813240914662563_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=UKcmHIXFXD8Q7kNvwFvoCHW&_nc_oc=AdqhLV5Riv8chAgKA3AkvgxzQdEwVy1r5YkEBwKXYqpUhX9nz1ZkaGwy6KFVBHzNuWf_MHhmE4-1gQDk4sE5Gv3X&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQN3zTFfXMJ6MhFLrk_lXt-j1RQej9a8eiWNYN8pmNEoRw&oe=6AD1E3AE",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQMXFzaqrOTym2lGIK3ZMPtrybi7x8SC_fhCJhZN2bGJmdiz7MgkSnAD79ujzdMmatzbZQd78DhVyiPVR-gxyVG6B1dVKnP4TDuzor_QKw.mp4?_nc_cat=106&_nc_oc=Ado8ibUgb4wtJcE069c9ucQLhapdGMKVktM7N0bYli1Oi5P-OxH_k3aSrJ0aKKDrwyiII-aIgSFb5RkXe9sla0LV&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=vRbc-vZpk14Q7kNvwG_Fzu-&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTE3MDgyOTc3MTc0Mjk3OSwiYXNzZXRfYWdlX2RheXMiOjM5MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQMAr1EjgjJ_rrgihLt248vCvPpz4jm7Vu6fIVDm1ySKZQ&oe=6AD1D310",
+            "watermarked_video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m266/AQMnYIMB9nWoRhiELhdjnh5hd1FiwlURL1Ur46QOmpJV5qe8WwysaUx7kG3hjDK5FSvCM9QlxzGJHh9KpGafwC07yynmHkfaVi0.mp4?strext=1&_nc_cat=105&_nc_oc=AdqQv7RU7mf4ALbdyRW4qarUGXvpJWalrEhzd1Jewthf3LCmNzINkWDPWiKRYRLRPv0bhfFzhzp9IGjya4XmAdPe&_nc_sid=8bf8fe&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=oYPA9J2NG0oQ7kNvwE0pJVB&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMTA4MC5jb21wcmVzc2VkX3NvdXJjZSIsInhwdl9hc3NldF9pZCI6MzI3NjkyODg0NTgxNzM2MywiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNSCKQ_ZaiM3zeYPO58jS7dvXDmuDlgxfZD1ri78QbDAw&oe=6ACDF53D&bitrate=4777515&tag=compressed_source",
+            "watermarked_video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQOGpM-cv_x-uoG7vaVnA0Y3NGrlxi64VIKsGcC4kkIzTiiZzfDM5HUaw_ME_-ADZgwxsYHHqJxLIfKaa99wqwpMaEItzgk61ZFKQyamUQ.mp4?_nc_cat=105&_nc_oc=AdpKhO1ncRlk1RshgdqQzsAlnyU1DD8ECjAzgTVir1PmnDlKA5RWHDBQNjouZOqzEQtSo0_s2lWBMD1Je8OzK99W&_nc_sid=8bf8fe&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=UCY7R6S6Vw8Q7kNvwEDgPuv&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MzI3NjkyODg0NTgxNzM2MywiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPquAK3YCE2NHP-vBrC6qY0hyalnKVGmXxMefYMclH_GQ&oe=6AD1DA7D&bitrate=473544&tag=sve_sd",
+            "image_crops": [],
+            "original_image_url": null,
+            "resized_image_url": null,
+            "watermarked_resized_image_url": null
+          },
+          {
+            "body": "🐕 Köpek sahipleri için en iyi uygulama burada!�Woofz: Eğitim, videolar ve ipuçları – hepsi bir arada 🐾",
+            "cta_type": "INSTALL_MOBILE_APP",
+            "caption": "itunes.apple.com",
+            "link_description": null,
+            "link_url": "http://itunes.apple.com/app/id1532020050",
+            "title": "👉 Hemen indir 📱",
+            "cta_text": "Install Now",
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQO12npgWbZtA1wAcoPyh4hvm3pqbmHKAgc6xilesQcAqgJH8ndttYMumXzRYo8rdlRFrQyjdZw9GnSCpJSJRcDI4nGRHjZjWMeig7xFwKbxng.mp4?_nc_cat=105&_nc_oc=Adr86BCQ6rIYgCFu_WhyqQ7RIRGgCGZjebRxtj07uUe9KrrLTl7rt0IS-TBAJGfwsI7-ksP93NUa68-cqhTgC21D&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=QpjUXc2YRDMQ7kNvwGUmKkB&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExNzA4Mjk3NzE3NDI5NzksImFzc2V0X2FnZV9kYXlzIjozOTIsInZpX3VzZWNhc2VfaWQiOjEwMTM5LCJkdXJhdGlvbl9zIjozMywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=f93ffb9180b8733e&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC83QjQ5M0VCQzAwMjA2OUQ1QTZCNENBRkE0QUM2NTVCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0E5NDA2ODhCOEYwQTY3MDM2NDY4ODVEMzc3Q0EyNTlDX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaG_JjKobeUBBUCKAJDMywXQED3bItDlYEYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNGQqg_Fjv4gE2sISyLofbvs94HSPSrbepHPI8gKYlCTQ&oe=6AD1CED7",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/565745911_4284518241827987_158813240914662563_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=UKcmHIXFXD8Q7kNvwFvoCHW&_nc_oc=AdqhLV5Riv8chAgKA3AkvgxzQdEwVy1r5YkEBwKXYqpUhX9nz1ZkaGwy6KFVBHzNuWf_MHhmE4-1gQDk4sE5Gv3X&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQN3zTFfXMJ6MhFLrk_lXt-j1RQej9a8eiWNYN8pmNEoRw&oe=6AD1E3AE",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQMXFzaqrOTym2lGIK3ZMPtrybi7x8SC_fhCJhZN2bGJmdiz7MgkSnAD79ujzdMmatzbZQd78DhVyiPVR-gxyVG6B1dVKnP4TDuzor_QKw.mp4?_nc_cat=106&_nc_oc=Ado8ibUgb4wtJcE069c9ucQLhapdGMKVktM7N0bYli1Oi5P-OxH_k3aSrJ0aKKDrwyiII-aIgSFb5RkXe9sla0LV&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=vRbc-vZpk14Q7kNvwG_Fzu-&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTE3MDgyOTc3MTc0Mjk3OSwiYXNzZXRfYWdlX2RheXMiOjM5MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQMAr1EjgjJ_rrgihLt248vCvPpz4jm7Vu6fIVDm1ySKZQ&oe=6AD1D310",
+            "watermarked_video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m266/AQMnYIMB9nWoRhiELhdjnh5hd1FiwlURL1Ur46QOmpJV5qe8WwysaUx7kG3hjDK5FSvCM9QlxzGJHh9KpGafwC07yynmHkfaVi0.mp4?strext=1&_nc_cat=105&_nc_oc=AdqQv7RU7mf4ALbdyRW4qarUGXvpJWalrEhzd1Jewthf3LCmNzINkWDPWiKRYRLRPv0bhfFzhzp9IGjya4XmAdPe&_nc_sid=8bf8fe&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=oYPA9J2NG0oQ7kNvwE0pJVB&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMTA4MC5jb21wcmVzc2VkX3NvdXJjZSIsInhwdl9hc3NldF9pZCI6MzI3NjkyODg0NTgxNzM2MywiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNSCKQ_ZaiM3zeYPO58jS7dvXDmuDlgxfZD1ri78QbDAw&oe=6ACDF53D&bitrate=4777515&tag=compressed_source",
+            "watermarked_video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQOGpM-cv_x-uoG7vaVnA0Y3NGrlxi64VIKsGcC4kkIzTiiZzfDM5HUaw_ME_-ADZgwxsYHHqJxLIfKaa99wqwpMaEItzgk61ZFKQyamUQ.mp4?_nc_cat=105&_nc_oc=AdpKhO1ncRlk1RshgdqQzsAlnyU1DD8ECjAzgTVir1PmnDlKA5RWHDBQNjouZOqzEQtSo0_s2lWBMD1Je8OzK99W&_nc_sid=8bf8fe&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=UCY7R6S6Vw8Q7kNvwEDgPuv&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MzI3NjkyODg0NTgxNzM2MywiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPquAK3YCE2NHP-vBrC6qY0hyalnKVGmXxMefYMclH_GQ&oe=6AD1DA7D&bitrate=473544&tag=sve_sd",
+            "image_crops": [],
+            "original_image_url": null,
+            "resized_image_url": null,
+            "watermarked_resized_image_url": null
+          },
+          {
+            "body": "🐕 Die beste App für Hundebesitzer!�Woofz: Training, Tipps & Spaß – alles in einer App 🐾",
+            "cta_type": "INSTALL_MOBILE_APP",
+            "caption": "itunes.apple.com",
+            "link_description": null,
+            "link_url": "http://itunes.apple.com/app/id1532020050",
+            "title": "👉 Jetzt herunterladen 📱",
+            "cta_text": "Install Now",
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQO12npgWbZtA1wAcoPyh4hvm3pqbmHKAgc6xilesQcAqgJH8ndttYMumXzRYo8rdlRFrQyjdZw9GnSCpJSJRcDI4nGRHjZjWMeig7xFwKbxng.mp4?_nc_cat=105&_nc_oc=Adr86BCQ6rIYgCFu_WhyqQ7RIRGgCGZjebRxtj07uUe9KrrLTl7rt0IS-TBAJGfwsI7-ksP93NUa68-cqhTgC21D&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=QpjUXc2YRDMQ7kNvwGUmKkB&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExNzA4Mjk3NzE3NDI5NzksImFzc2V0X2FnZV9kYXlzIjozOTIsInZpX3VzZWNhc2VfaWQiOjEwMTM5LCJkdXJhdGlvbl9zIjozMywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=f93ffb9180b8733e&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC83QjQ5M0VCQzAwMjA2OUQ1QTZCNENBRkE0QUM2NTVCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0E5NDA2ODhCOEYwQTY3MDM2NDY4ODVEMzc3Q0EyNTlDX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaG_JjKobeUBBUCKAJDMywXQED3bItDlYEYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNGQqg_Fjv4gE2sISyLofbvs94HSPSrbepHPI8gKYlCTQ&oe=6AD1CED7",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/565745911_4284518241827987_158813240914662563_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=UKcmHIXFXD8Q7kNvwFvoCHW&_nc_oc=AdqhLV5Riv8chAgKA3AkvgxzQdEwVy1r5YkEBwKXYqpUhX9nz1ZkaGwy6KFVBHzNuWf_MHhmE4-1gQDk4sE5Gv3X&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQN3zTFfXMJ6MhFLrk_lXt-j1RQej9a8eiWNYN8pmNEoRw&oe=6AD1E3AE",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQMXFzaqrOTym2lGIK3ZMPtrybi7x8SC_fhCJhZN2bGJmdiz7MgkSnAD79ujzdMmatzbZQd78DhVyiPVR-gxyVG6B1dVKnP4TDuzor_QKw.mp4?_nc_cat=106&_nc_oc=Ado8ibUgb4wtJcE069c9ucQLhapdGMKVktM7N0bYli1Oi5P-OxH_k3aSrJ0aKKDrwyiII-aIgSFb5RkXe9sla0LV&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=vRbc-vZpk14Q7kNvwG_Fzu-&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTE3MDgyOTc3MTc0Mjk3OSwiYXNzZXRfYWdlX2RheXMiOjM5MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQMAr1EjgjJ_rrgihLt248vCvPpz4jm7Vu6fIVDm1ySKZQ&oe=6AD1D310",
+            "watermarked_video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m266/AQMnYIMB9nWoRhiELhdjnh5hd1FiwlURL1Ur46QOmpJV5qe8WwysaUx7kG3hjDK5FSvCM9QlxzGJHh9KpGafwC07yynmHkfaVi0.mp4?strext=1&_nc_cat=105&_nc_oc=AdqQv7RU7mf4ALbdyRW4qarUGXvpJWalrEhzd1Jewthf3LCmNzINkWDPWiKRYRLRPv0bhfFzhzp9IGjya4XmAdPe&_nc_sid=8bf8fe&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=oYPA9J2NG0oQ7kNvwE0pJVB&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMTA4MC5jb21wcmVzc2VkX3NvdXJjZSIsInhwdl9hc3NldF9pZCI6MzI3NjkyODg0NTgxNzM2MywiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNSCKQ_ZaiM3zeYPO58jS7dvXDmuDlgxfZD1ri78QbDAw&oe=6ACDF53D&bitrate=4777515&tag=compressed_source",
+            "watermarked_video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQOGpM-cv_x-uoG7vaVnA0Y3NGrlxi64VIKsGcC4kkIzTiiZzfDM5HUaw_ME_-ADZgwxsYHHqJxLIfKaa99wqwpMaEItzgk61ZFKQyamUQ.mp4?_nc_cat=105&_nc_oc=AdpKhO1ncRlk1RshgdqQzsAlnyU1DD8ECjAzgTVir1PmnDlKA5RWHDBQNjouZOqzEQtSo0_s2lWBMD1Je8OzK99W&_nc_sid=8bf8fe&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=UCY7R6S6Vw8Q7kNvwEDgPuv&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MzI3NjkyODg0NTgxNzM2MywiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPquAK3YCE2NHP-vBrC6qY0hyalnKVGmXxMefYMclH_GQ&oe=6AD1DA7D&bitrate=473544&tag=sve_sd",
+            "image_crops": [],
+            "original_image_url": null,
+            "resized_image_url": null,
+            "watermarked_resized_image_url": null
+          },
+          {
+            "body": "🐕 O melhor app para quem ama cachorros!",
+            "cta_type": "INSTALL_MOBILE_APP",
+            "caption": "itunes.apple.com",
+            "link_description": null,
+            "link_url": "http://itunes.apple.com/app/id1532020050",
+            "title": "👉 Baixe agora 📱",
+            "cta_text": "Install Now",
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQO12npgWbZtA1wAcoPyh4hvm3pqbmHKAgc6xilesQcAqgJH8ndttYMumXzRYo8rdlRFrQyjdZw9GnSCpJSJRcDI4nGRHjZjWMeig7xFwKbxng.mp4?_nc_cat=105&_nc_oc=Adr86BCQ6rIYgCFu_WhyqQ7RIRGgCGZjebRxtj07uUe9KrrLTl7rt0IS-TBAJGfwsI7-ksP93NUa68-cqhTgC21D&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=QpjUXc2YRDMQ7kNvwGUmKkB&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExNzA4Mjk3NzE3NDI5NzksImFzc2V0X2FnZV9kYXlzIjozOTIsInZpX3VzZWNhc2VfaWQiOjEwMTM5LCJkdXJhdGlvbl9zIjozMywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=f93ffb9180b8733e&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC83QjQ5M0VCQzAwMjA2OUQ1QTZCNENBRkE0QUM2NTVCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0E5NDA2ODhCOEYwQTY3MDM2NDY4ODVEMzc3Q0EyNTlDX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaG_JjKobeUBBUCKAJDMywXQED3bItDlYEYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNGQqg_Fjv4gE2sISyLofbvs94HSPSrbepHPI8gKYlCTQ&oe=6AD1CED7",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/565745911_4284518241827987_158813240914662563_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=UKcmHIXFXD8Q7kNvwFvoCHW&_nc_oc=AdqhLV5Riv8chAgKA3AkvgxzQdEwVy1r5YkEBwKXYqpUhX9nz1ZkaGwy6KFVBHzNuWf_MHhmE4-1gQDk4sE5Gv3X&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQN3zTFfXMJ6MhFLrk_lXt-j1RQej9a8eiWNYN8pmNEoRw&oe=6AD1E3AE",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQMXFzaqrOTym2lGIK3ZMPtrybi7x8SC_fhCJhZN2bGJmdiz7MgkSnAD79ujzdMmatzbZQd78DhVyiPVR-gxyVG6B1dVKnP4TDuzor_QKw.mp4?_nc_cat=106&_nc_oc=Ado8ibUgb4wtJcE069c9ucQLhapdGMKVktM7N0bYli1Oi5P-OxH_k3aSrJ0aKKDrwyiII-aIgSFb5RkXe9sla0LV&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=vRbc-vZpk14Q7kNvwG_Fzu-&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTE3MDgyOTc3MTc0Mjk3OSwiYXNzZXRfYWdlX2RheXMiOjM5MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQMAr1EjgjJ_rrgihLt248vCvPpz4jm7Vu6fIVDm1ySKZQ&oe=6AD1D310",
+            "watermarked_video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m266/AQMnYIMB9nWoRhiELhdjnh5hd1FiwlURL1Ur46QOmpJV5qe8WwysaUx7kG3hjDK5FSvCM9QlxzGJHh9KpGafwC07yynmHkfaVi0.mp4?strext=1&_nc_cat=105&_nc_oc=AdqQv7RU7mf4ALbdyRW4qarUGXvpJWalrEhzd1Jewthf3LCmNzINkWDPWiKRYRLRPv0bhfFzhzp9IGjya4XmAdPe&_nc_sid=8bf8fe&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=oYPA9J2NG0oQ7kNvwE0pJVB&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMTA4MC5jb21wcmVzc2VkX3NvdXJjZSIsInhwdl9hc3NldF9pZCI6MzI3NjkyODg0NTgxNzM2MywiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNSCKQ_ZaiM3zeYPO58jS7dvXDmuDlgxfZD1ri78QbDAw&oe=6ACDF53D&bitrate=4777515&tag=compressed_source",
+            "watermarked_video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQOGpM-cv_x-uoG7vaVnA0Y3NGrlxi64VIKsGcC4kkIzTiiZzfDM5HUaw_ME_-ADZgwxsYHHqJxLIfKaa99wqwpMaEItzgk61ZFKQyamUQ.mp4?_nc_cat=105&_nc_oc=AdpKhO1ncRlk1RshgdqQzsAlnyU1DD8ECjAzgTVir1PmnDlKA5RWHDBQNjouZOqzEQtSo0_s2lWBMD1Je8OzK99W&_nc_sid=8bf8fe&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=UCY7R6S6Vw8Q7kNvwEDgPuv&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MzI3NjkyODg0NTgxNzM2MywiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMzLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPquAK3YCE2NHP-vBrC6qY0hyalnKVGmXxMefYMclH_GQ&oe=6AD1DA7D&bitrate=473544&tag=sve_sd",
+            "image_crops": [],
+            "original_image_url": null,
+            "resized_image_url": null,
+            "watermarked_resized_image_url": null
+          }
+        ],
+        "body": {
+          "text": "{{product.brand}}"
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "DCO",
+        "link_description": "{{product.description}}",
+        "link_url": "http://itunes.apple.com/app/id1532020050",
+        "images": [],
+        "page_categories": [
+          "App page"
+        ],
+        "page_like_count": 79770,
+        "title": "{{product.name}}",
+        "videos": [],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Woofz",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1782370800,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER"
+      ],
+      "start_date": 1760425200,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 4,
+      "ads_count": 1,
+      "start_date_formatted": "2025-10-14 07:00:00",
+      "end_date_formatted": "2026-06-25 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=796032009703252"
+    },
+    {
+      "ad_archive_id": "1534039417611868",
+      "collation_count": 1,
+      "collation_id": "864411319250660",
+      "is_active": false,
+      "page_id": "100277271937762",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "100277271937762",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/WoofzDogTrainingApp/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "Woofz",
+        "page_profile_picture_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/561082875_1383133276761783_2741436042290518391_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=z1PkDI55t70Q7kNvwEx0Qws&_nc_oc=AdpjuTtzTTrPADFpbUHNuFHaIRg5BSRVfYnRLYl0m8nc8khhSy_jDZg3pfW_uZKJ8MRpE-Kse7i-oUoxz77PC7K4&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQNXdbjcWXs1p6r98H2v5ZumGJUgAv78vf-dZhM2Mn47tQ&oe=6AD1DBE8",
+        "event": null,
+        "caption": "itunes.apple.com",
+        "cta_text": "Install now",
+        "cards": [
+          {
+            "body": "Woofz: The ultimate dog training app! Courses, videos & more - all in one place 🐾📱\nInstall now! 🐶",
+            "cta_type": "INSTALL_MOBILE_APP",
+            "caption": "itunes.apple.com",
+            "link_description": null,
+            "link_url": "http://itunes.apple.com/app/id1532020050",
+            "title": "Try the Best App for Dog Owners 🐕",
+            "cta_text": "Install Now",
+            "video_hd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQMHOUMkLt8z2FFL92Z1OtaYzZmRqpB4FC1bYPfaxMLSlBofsQ8cyavKCfildqbDHFqOtmsH-blz4njONhKJUKw2iruczmp4hFOCJ4AIOJRjiA.mp4?_nc_cat=100&_nc_oc=Ado9syz8VAhFgCnWcdJn4OFM-Ss0zmBO-1u_RRv3rLskcqzfXXSpTY-IU3xx60uoToHC-259LDo6Wg-noF9tUFbg&_nc_sid=b66105&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=nwvKhqebSAcQ7kNvwGYEwEU&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExMDg4MjAzMDc3OTYyODMsImFzc2V0X2FnZV9kYXlzIjo0NDMsInZpX3VzZWNhc2VfaWQiOjEwMTM5LCJkdXJhdGlvbl9zIjoyMCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=b29bbbcacb65158d&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9ENzQxNjhCRDhFMDg2RjJBQkI1QTdDQzUwMjZCODc5OF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzkyNDI4MDkyNEI4Q0VCRTJFOThCREE3NDFEQkVENUI3X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACb2hIeJ6534AxUCKAJDMywXQDQZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPwnDRtgpc-ZV4DFrT4Ym7Lb3qaDsbMypSRJjDfBJQ1pA&oe=6AD1D2F4",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/559299726_1626115565031064_7435460810076967966_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=zCWOOBVV5YIQ7kNvwF-KcKl&_nc_oc=AdoD5BOceakpjkgKdwl6J691O14XHjo0frZlUE0YHpYAZ4wD7HdKrfnMMm-aThcWjJscDQbwZe4y0FxF1ahATfyr&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQMvt22GjC0Dc1vgb71wYpM0HeHa9_70oebiOr7BpSqCUw&oe=6AD1D627",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQMJ6dOdD9oVYSRBGYkWeU4DpXgLiQmrdaRFBVHLAfvwOmg9TzxLzsTkFk3Z1QIpK8266GWDLd1T-JsDGf40GQEpXfw6bfd-V9ZGbvyLfQ.mp4?_nc_cat=106&_nc_oc=AdoLYSKF35e54O8Za9TqhYKtbUTCk8aQY8R7Rdqy1NppkrcZqPSy4Wch7gbBr0N72FJvO2aL8nJpvFls6Mq0yGy3&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=Yl87_bW3vXcQ7kNvwF5X_6V&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTEwODgyMDMwNzc5NjI4MywiYXNzZXRfYWdlX2RheXMiOjQ0MywidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjIwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPMGddN76588WNeZ7nWPEOzPJDcFkAVqfOobffQsRxSZQ&oe=6AD1C79C",
+            "watermarked_video_hd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m266/AQM8cqRD3PyaYbQoSfZJ_hOnp_rT3tkTBpQ4v0TjavvRRgqegXwVaz_0bJwL-0GDmB7xcuXs68iwbNhazTfm4KvHaSluav-vfvA.mp4?strext=1&_nc_cat=100&_nc_oc=Adpb4PxUbDp4oInZBd4bceRAlVKEx_11PIUQiQZqLaIpwbVfC09oLmXN-a3TEbmVQ7V7jZw_Ne0Kne8ep99iGfck&_nc_sid=8bf8fe&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=-Qy8EVYWN8IQ7kNvwG5GUYg&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMTA4MC5jb21wcmVzc2VkX3NvdXJjZSIsInhwdl9hc3NldF9pZCI6MTA5MTA1NTk1OTg4Njk5NSwiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjIwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNH2FsBBtvynh6CPP0BCpfp1ZpdAKmUhGykydDnw54rbQ&oe=6ACDCC72&bitrate=3533848&tag=compressed_source",
+            "watermarked_video_sd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMLmYhQd38-Z5NwC6PlsLogoCxk6rA1obkWkysVStZCEsjcFmnbkoNgAY_mAbzj8xMuy2Ge6r_og8k4lfk-lOImqwUbDW7nCTd2zA4ovw.mp4?_nc_cat=108&_nc_oc=AdqIzAMuLzEFGzaAXXi4NbG337tQe3Z19yH5h39lPvGxicovBOaEnwYoWnfP_n06tzn9OWu1LU9_tQ7H_YDgD8d8&_nc_sid=8bf8fe&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=lDCpsq9TS3MQ7kNvwGSthg7&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTA5MTA1NTk1OTg4Njk5NSwiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjIwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQOTN3s02JjHFvyXQyZxD5paWFjDZn1gdpweUC6Y5HNK4Q&oe=6AD1C04E&bitrate=385962&tag=sve_sd",
+            "image_crops": [],
+            "original_image_url": null,
+            "resized_image_url": null,
+            "watermarked_resized_image_url": null
+          },
+          {
+            "body": "🐕 ¡Descubre la mejor app para dueños de perros!�Woofz: ¡Entrena, aprende y disfruta con tu perro! 🐾",
+            "cta_type": "INSTALL_MOBILE_APP",
+            "caption": "itunes.apple.com",
+            "link_description": null,
+            "link_url": "http://itunes.apple.com/app/id1532020050",
+            "title": "👉 Descárgala ahora 📱",
+            "cta_text": "Install Now",
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQOx3lxBV_N_h_hUTblK27VVjsmuxDqH9NGgn_3XHUzb12gFETZeW959pbyl_2yTlVNycQVW9DVnpwcTGCaE4oED0k3Eji82wicZD2rxOhxsxQ.mp4?_nc_cat=105&_nc_oc=AdrHAOYSnzKIXY-FDevaFOErTq9AnXKsnXalieEEobBn1EXhH9aoSgTbW_atz7usgERyTbUWjbGn6cAOAOPHkbEZ&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=pBnBGNJ7xOUQ7kNvwEiiTTL&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjI0MDA3NzA0NjA4ODkxNDc1LCJhc3NldF9hZ2VfZGF5cyI6NDM5LCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6MjAsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=322d213e6ed7e851&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC85MDREQzZCMjRCRUZBODNGQTNGMzc0QUZDNzFEODlCRF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzU3NEQxREU2Qzc2OEIxNTMzNzg4OUM4QjNDNzc5QjlGX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACamia-RqrilVRUCKAJDMywXQDTMzMzMzM0YGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQMnjiBAd2qpG3tQd1eZ1glDwe1wNNP1u9XeXg68lhG5qg&oe=6AD1BFAB",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/560375725_1526716878337319_1915055384081260900_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Y8fwGt1rYYEQ7kNvwF0-kq1&_nc_oc=Adp5-9gjO-cMtJEr6qQlI2dFuV21fmWY_GPOALIxHGwddo2v9cu62tE0b6UkvHt10suApRAM3osoJAkIkQPHFXT_&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQP3HtmKKlMEgOwhN-ySOJE7dzjZ3aEgWwj6Dyazs7PX5Q&oe=6AD1CBD0",
+            "video_sd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMEB-Q0E1CY2tld21mQeT-oKrDvfmPGBCHDQJkl1kB_m73egpeBpJJzqaaUAIZjmVJ89H0P5EK1V_H0ZBZGQZMezVInvN8C8SmsdOzuzA.mp4?_nc_cat=110&_nc_oc=AdrBELTu0e_CkUg-TAV1VZEP2f7nTY-ltfgsjs9GgUCMtWPvkcSuxAsmt29YVRvAk_xTE2tv-D8C2uZXFVC9xR5p&_nc_sid=ef5aa3&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=yRwkM5Clx64Q7kNvwHswZ_l&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjQwMDc3MDQ2MDg4OTE0NzUsImFzc2V0X2FnZV9kYXlzIjo0MzksInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyMCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQOHZnZ9SryFiUE7mFbJnwAKc_GHM2cpOeRf3hSP2V812A&oe=6AD1D294",
+            "watermarked_video_hd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m266/AQPOVkB_XQNWs1JzOzybgWAkWQy0n5bGBTdIjMLfFpLQGXGDENOSy1n8wUR2ETxoKX6-Z0awObQSpoovkxf-th-pycfsk96kSbw.mp4?strext=1&_nc_cat=100&_nc_oc=Adqmy-l6Qu1YAcbLhgfgjRpK1wkBdDdQuUdVfNi9GRsax0fEA6-Fu1Y6FfGcMs1xXypTdNb7I205PmPGnT26-I3_&_nc_sid=8bf8fe&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=vpA0c5HbXeEQ7kNvwHhVW25&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMTA4MC5jb21wcmVzc2VkX3NvdXJjZSIsInhwdl9hc3NldF9pZCI6MjA5MTI2NjQxMTY5OTk5NCwiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjIwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPGouFAZ9DCjYVeHpqrilzXmDybIp3FaF-pw_ot2bG4_g&oe=6ACDEC96&bitrate=3612018&tag=compressed_source",
+            "watermarked_video_sd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMnC19CSfB1_PN2cIm0UlPPC8c2z389Z9E8l9L7jH6ZsFsMEYXAfa7qz3kdYSHarDDPcyb-RO-eIE8Qh2i4DbzZIlQiW7PUlZN1NFEhTw.mp4?_nc_cat=109&_nc_oc=AdoItHp5MKVJZ4ZidBqiYa4s7aCR07ZMqald70Bq_coFiPJ8_GKLecR3_-VJzjRky1sKe6K6Ij6vCmPegFIp5yGX&_nc_sid=8bf8fe&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=Kf_qxsAmd4oQ7kNvwF2CHYr&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjA5MTI2NjQxMTY5OTk5NCwiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjIwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPG_gzUmSpdd4rDs2nTYfkKTynsS3UNqgKv6OQhMCCJJw&oe=6AD1EED1&bitrate=387573&tag=sve_sd",
+            "image_crops": [],
+            "original_image_url": null,
+            "resized_image_url": null,
+            "watermarked_resized_image_url": null
+          },
+          {
+            "body": "🐕 Köpek sahipleri için en iyi uygulama burada!�Woofz: Eğitim, videolar ve ipuçları – hepsi bir arada 🐾",
+            "cta_type": "INSTALL_MOBILE_APP",
+            "caption": "itunes.apple.com",
+            "link_description": null,
+            "link_url": "http://itunes.apple.com/app/id1532020050",
+            "title": "👉 Hemen indir 📱",
+            "cta_text": "Install Now",
+            "video_hd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQMHOUMkLt8z2FFL92Z1OtaYzZmRqpB4FC1bYPfaxMLSlBofsQ8cyavKCfildqbDHFqOtmsH-blz4njONhKJUKw2iruczmp4hFOCJ4AIOJRjiA.mp4?_nc_cat=100&_nc_oc=Ado9syz8VAhFgCnWcdJn4OFM-Ss0zmBO-1u_RRv3rLskcqzfXXSpTY-IU3xx60uoToHC-259LDo6Wg-noF9tUFbg&_nc_sid=b66105&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=nwvKhqebSAcQ7kNvwGYEwEU&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExMDg4MjAzMDc3OTYyODMsImFzc2V0X2FnZV9kYXlzIjo0NDMsInZpX3VzZWNhc2VfaWQiOjEwMTM5LCJkdXJhdGlvbl9zIjoyMCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=b29bbbcacb65158d&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9ENzQxNjhCRDhFMDg2RjJBQkI1QTdDQzUwMjZCODc5OF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzkyNDI4MDkyNEI4Q0VCRTJFOThCREE3NDFEQkVENUI3X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACb2hIeJ6534AxUCKAJDMywXQDQZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPwnDRtgpc-ZV4DFrT4Ym7Lb3qaDsbMypSRJjDfBJQ1pA&oe=6AD1D2F4",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/559299726_1626115565031064_7435460810076967966_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=zCWOOBVV5YIQ7kNvwF-KcKl&_nc_oc=AdoD5BOceakpjkgKdwl6J691O14XHjo0frZlUE0YHpYAZ4wD7HdKrfnMMm-aThcWjJscDQbwZe4y0FxF1ahATfyr&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQMvt22GjC0Dc1vgb71wYpM0HeHa9_70oebiOr7BpSqCUw&oe=6AD1D627",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQMJ6dOdD9oVYSRBGYkWeU4DpXgLiQmrdaRFBVHLAfvwOmg9TzxLzsTkFk3Z1QIpK8266GWDLd1T-JsDGf40GQEpXfw6bfd-V9ZGbvyLfQ.mp4?_nc_cat=106&_nc_oc=AdoLYSKF35e54O8Za9TqhYKtbUTCk8aQY8R7Rdqy1NppkrcZqPSy4Wch7gbBr0N72FJvO2aL8nJpvFls6Mq0yGy3&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=Yl87_bW3vXcQ7kNvwF5X_6V&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTEwODgyMDMwNzc5NjI4MywiYXNzZXRfYWdlX2RheXMiOjQ0MywidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjIwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPMGddN76588WNeZ7nWPEOzPJDcFkAVqfOobffQsRxSZQ&oe=6AD1C79C",
+            "watermarked_video_hd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m266/AQM8cqRD3PyaYbQoSfZJ_hOnp_rT3tkTBpQ4v0TjavvRRgqegXwVaz_0bJwL-0GDmB7xcuXs68iwbNhazTfm4KvHaSluav-vfvA.mp4?strext=1&_nc_cat=100&_nc_oc=Adpb4PxUbDp4oInZBd4bceRAlVKEx_11PIUQiQZqLaIpwbVfC09oLmXN-a3TEbmVQ7V7jZw_Ne0Kne8ep99iGfck&_nc_sid=8bf8fe&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=-Qy8EVYWN8IQ7kNvwG5GUYg&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMTA4MC5jb21wcmVzc2VkX3NvdXJjZSIsInhwdl9hc3NldF9pZCI6MTA5MTA1NTk1OTg4Njk5NSwiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjIwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNH2FsBBtvynh6CPP0BCpfp1ZpdAKmUhGykydDnw54rbQ&oe=6ACDCC72&bitrate=3533848&tag=compressed_source",
+            "watermarked_video_sd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMLmYhQd38-Z5NwC6PlsLogoCxk6rA1obkWkysVStZCEsjcFmnbkoNgAY_mAbzj8xMuy2Ge6r_og8k4lfk-lOImqwUbDW7nCTd2zA4ovw.mp4?_nc_cat=108&_nc_oc=AdqIzAMuLzEFGzaAXXi4NbG337tQe3Z19yH5h39lPvGxicovBOaEnwYoWnfP_n06tzn9OWu1LU9_tQ7H_YDgD8d8&_nc_sid=8bf8fe&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=lDCpsq9TS3MQ7kNvwGSthg7&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTA5MTA1NTk1OTg4Njk5NSwiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjIwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQOTN3s02JjHFvyXQyZxD5paWFjDZn1gdpweUC6Y5HNK4Q&oe=6AD1C04E&bitrate=385962&tag=sve_sd",
+            "image_crops": [],
+            "original_image_url": null,
+            "resized_image_url": null,
+            "watermarked_resized_image_url": null
+          },
+          {
+            "body": "🐕 O melhor app para quem ama cachorros!",
+            "cta_type": "INSTALL_MOBILE_APP",
+            "caption": "itunes.apple.com",
+            "link_description": null,
+            "link_url": "http://itunes.apple.com/app/id1532020050",
+            "title": "👉 Baixe agora 📱",
+            "cta_text": "Install Now",
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQOx3lxBV_N_h_hUTblK27VVjsmuxDqH9NGgn_3XHUzb12gFETZeW959pbyl_2yTlVNycQVW9DVnpwcTGCaE4oED0k3Eji82wicZD2rxOhxsxQ.mp4?_nc_cat=105&_nc_oc=AdrHAOYSnzKIXY-FDevaFOErTq9AnXKsnXalieEEobBn1EXhH9aoSgTbW_atz7usgERyTbUWjbGn6cAOAOPHkbEZ&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=pBnBGNJ7xOUQ7kNvwEiiTTL&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjI0MDA3NzA0NjA4ODkxNDc1LCJhc3NldF9hZ2VfZGF5cyI6NDM5LCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6MjAsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=322d213e6ed7e851&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC85MDREQzZCMjRCRUZBODNGQTNGMzc0QUZDNzFEODlCRF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzU3NEQxREU2Qzc2OEIxNTMzNzg4OUM4QjNDNzc5QjlGX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACamia-RqrilVRUCKAJDMywXQDTMzMzMzM0YGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQMnjiBAd2qpG3tQd1eZ1glDwe1wNNP1u9XeXg68lhG5qg&oe=6AD1BFAB",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/560375725_1526716878337319_1915055384081260900_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Y8fwGt1rYYEQ7kNvwF0-kq1&_nc_oc=Adp5-9gjO-cMtJEr6qQlI2dFuV21fmWY_GPOALIxHGwddo2v9cu62tE0b6UkvHt10suApRAM3osoJAkIkQPHFXT_&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQP3HtmKKlMEgOwhN-ySOJE7dzjZ3aEgWwj6Dyazs7PX5Q&oe=6AD1CBD0",
+            "video_sd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMEB-Q0E1CY2tld21mQeT-oKrDvfmPGBCHDQJkl1kB_m73egpeBpJJzqaaUAIZjmVJ89H0P5EK1V_H0ZBZGQZMezVInvN8C8SmsdOzuzA.mp4?_nc_cat=110&_nc_oc=AdrBELTu0e_CkUg-TAV1VZEP2f7nTY-ltfgsjs9GgUCMtWPvkcSuxAsmt29YVRvAk_xTE2tv-D8C2uZXFVC9xR5p&_nc_sid=ef5aa3&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=yRwkM5Clx64Q7kNvwHswZ_l&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjQwMDc3MDQ2MDg4OTE0NzUsImFzc2V0X2FnZV9kYXlzIjo0MzksInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyMCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQOHZnZ9SryFiUE7mFbJnwAKc_GHM2cpOeRf3hSP2V812A&oe=6AD1D294",
+            "watermarked_video_hd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m266/AQPOVkB_XQNWs1JzOzybgWAkWQy0n5bGBTdIjMLfFpLQGXGDENOSy1n8wUR2ETxoKX6-Z0awObQSpoovkxf-th-pycfsk96kSbw.mp4?strext=1&_nc_cat=100&_nc_oc=Adqmy-l6Qu1YAcbLhgfgjRpK1wkBdDdQuUdVfNi9GRsax0fEA6-Fu1Y6FfGcMs1xXypTdNb7I205PmPGnT26-I3_&_nc_sid=8bf8fe&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=vpA0c5HbXeEQ7kNvwHhVW25&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMTA4MC5jb21wcmVzc2VkX3NvdXJjZSIsInhwdl9hc3NldF9pZCI6MjA5MTI2NjQxMTY5OTk5NCwiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjIwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPGouFAZ9DCjYVeHpqrilzXmDybIp3FaF-pw_ot2bG4_g&oe=6ACDEC96&bitrate=3612018&tag=compressed_source",
+            "watermarked_video_sd_url": "https://video.ffab1-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMnC19CSfB1_PN2cIm0UlPPC8c2z389Z9E8l9L7jH6ZsFsMEYXAfa7qz3kdYSHarDDPcyb-RO-eIE8Qh2i4DbzZIlQiW7PUlZN1NFEhTw.mp4?_nc_cat=109&_nc_oc=AdoItHp5MKVJZ4ZidBqiYa4s7aCR07ZMqald70Bq_coFiPJ8_GKLecR3_-VJzjRky1sKe6K6Ij6vCmPegFIp5yGX&_nc_sid=8bf8fe&_nc_ht=video.ffab1-1.fna.fbcdn.net&_nc_ohc=Kf_qxsAmd4oQ7kNvwF2CHYr&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjA5MTI2NjQxMTY5OTk5NCwiYXNzZXRfYWdlX2RheXMiOjM2MiwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjIwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPG_gzUmSpdd4rDs2nTYfkKTynsS3UNqgKv6OQhMCCJJw&oe=6AD1EED1&bitrate=387573&tag=sve_sd",
+            "image_crops": [],
+            "original_image_url": null,
+            "resized_image_url": null,
+            "watermarked_resized_image_url": null
+          }
+        ],
+        "body": {
+          "text": "{{product.brand}}"
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "DCO",
+        "link_description": "{{product.description}}",
+        "link_url": "http://itunes.apple.com/app/id1532020050",
+        "images": [],
+        "page_categories": [
+          "App page"
+        ],
+        "page_like_count": 79770,
+        "title": "{{product.name}}",
+        "videos": [],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Woofz",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1775977200,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER"
+      ],
+      "start_date": 1760425200,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 5,
+      "ads_count": 1,
+      "start_date_formatted": "2025-10-14 07:00:00",
+      "end_date_formatted": "2026-04-12 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1534039417611868"
+    },
+    {
+      "ad_archive_id": "1470505191377391",
+      "collation_count": 135,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/611630083_33266576692991077_7537605410963839199_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=OzB0PBcsh9cQ7kNvwHY20Qy&_nc_oc=Adp9A785dT7JxSsyX_UQ11S9YJN0qQ89oKcTvyDbgjm8eCgICxrOtXRlRmodnKBAGW2dmL75rr0UyCOgKZenFxke&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQNP877oJCUk1_48BO0D3ReE-gwjDz4X_a_jsr6qXI8dbQ&oe=6AD1CF16",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/611799671_1755567295112728_799935275638391261_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Dq5Gl2BCo58Q7kNvwEHU4ea&_nc_oc=Adrwl6iKel-vFpb6bei3a5KqD5gmdPBq6HkAuzrVXJN5PfEAczDfohB53JYnhHSUoeYWNLj087N7e3ylo5s03FOk&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQP9syAGQjOH_whSw8L5hw1Z9etwS-2vkdr30Djsg4nKpg&oe=6AD1D2CB",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49899,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1470505191377391"
+    },
+    {
+      "ad_archive_id": "1310196807580619",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/612110655_25771723875813211_8348632496029212409_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=oggWc6hdv4UQ7kNvwFFT5fj&_nc_oc=Adpbn666rZ7Imsd5m7yVVwieKyvAjPNBPw6xh0MPOiEu0WL83pfPHjEU2G1Qc4YKGfWWBN6xLQdP6Q5ynhOnnboS&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQMxdaYMHlpvz2jaJvZypZH0ZvM3hJs_i0SJ337bkw5Mow&oe=6AD1BF05",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/612510763_862720576370000_2474001510099178926_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=jLk92dwZ3HIQ7kNvwGAUy0y&_nc_oc=AdpSGVvdixV2QHLHTu1d1ZK9arHm_CsWG2VOah1FCFNEnOPad0Qp9xpDJbJtX2XD2G1KPbZMxX_HuNI1ULpIusTS&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQMQbI-Tqff8JqQUSQN3j10uXKBlEx9tnTnC6GgtG_8R3w&oe=6AD1D754",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49681,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1310196807580619"
+    },
+    {
+      "ad_archive_id": "842930745391112",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/611630083_33266576692991077_7537605410963839199_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=OzB0PBcsh9cQ7kNvwHY20Qy&_nc_oc=Adp9A785dT7JxSsyX_UQ11S9YJN0qQ89oKcTvyDbgjm8eCgICxrOtXRlRmodnKBAGW2dmL75rr0UyCOgKZenFxke&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQNP877oJCUk1_48BO0D3ReE-gwjDz4X_a_jsr6qXI8dbQ&oe=6AD1CF16",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/611799671_1755567295112728_799935275638391261_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Dq5Gl2BCo58Q7kNvwEHU4ea&_nc_oc=Adrwl6iKel-vFpb6bei3a5KqD5gmdPBq6HkAuzrVXJN5PfEAczDfohB53JYnhHSUoeYWNLj087N7e3ylo5s03FOk&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQP9syAGQjOH_whSw8L5hw1Z9etwS-2vkdr30Djsg4nKpg&oe=6AD1D2CB",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49869,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=842930745391112"
+    },
+    {
+      "ad_archive_id": "4116143685266651",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/610826176_1384032919303277_8804796689572954019_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=cYQOPPgvg_UQ7kNvwEgKc4a&_nc_oc=Ado5PLz3cHd32FXBZO7Nn9tjQqFINcqku7RLCIgH_Po7obrU1-b6LXqCBtxg5eEzbPcR_-mJITBJ4YTzksoKrCwl&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQOHx29ZDiv4kErIow6iVNMogBWO1LRKgafkyBIyQguAEQ&oe=6AD1CBE0",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/610908894_898986739240410_199653178787142348_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=tu0mQxDPagoQ7kNvwF7sELO&_nc_oc=AdoAfDU4M8IS1vbfPx1oRn3JNTKgs61da_KRyrrdk6qfwBoWniHbkxrypsR3DWvVlsQJ0d3IBQu3DKKwJlDMKy6L&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQOD7pm8t_yGT2Y740-ET4nQ_DUBjOufIF8gMaOTws5Zjw&oe=6AD1E519",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49746,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=4116143685266651"
+    },
+    {
+      "ad_archive_id": "861029540144402",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/612031113_1239730044672795_8895128153244073533_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=RRAPzMqXWckQ7kNvwGmII-a&_nc_oc=AdpS_Y7x4pIJuKHLFJMj-IPE7gPuRDXRUFNmwHheeBGxNl5P6pYnvrFtnfoJsluIqxho_xZ_fbf6quDdz0UTPz8E&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQPsLcJRouEwjt6bLmgUYJfW0P-GHCrHSeOrJP-IB_wR6A&oe=6AD1E9F1",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/612013196_902084092503745_7104105428111394311_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=LNm2eZHlrFEQ7kNvwFLTCa4&_nc_oc=AdrN26GOvMahRpNzGTGksQvGbo0QD-yUX-UFSaBsyoAUbthFFXPrOurYweGixropZTeCK5-_zyPQe17diagJID3a&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQOaJXMpK6qBMrpwnJm8a7q9_u1u6jxtnyBUfS4TKQVcXw&oe=6AD1D45F",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 43907,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=861029540144402"
+    },
+    {
+      "ad_archive_id": "3334062283435511",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/611630083_33266576692991077_7537605410963839199_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=OzB0PBcsh9cQ7kNvwHY20Qy&_nc_oc=Adp9A785dT7JxSsyX_UQ11S9YJN0qQ89oKcTvyDbgjm8eCgICxrOtXRlRmodnKBAGW2dmL75rr0UyCOgKZenFxke&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQNP877oJCUk1_48BO0D3ReE-gwjDz4X_a_jsr6qXI8dbQ&oe=6AD1CF16",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/611799671_1755567295112728_799935275638391261_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Dq5Gl2BCo58Q7kNvwEHU4ea&_nc_oc=Adrwl6iKel-vFpb6bei3a5KqD5gmdPBq6HkAuzrVXJN5PfEAczDfohB53JYnhHSUoeYWNLj087N7e3ylo5s03FOk&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQP9syAGQjOH_whSw8L5hw1Z9etwS-2vkdr30Djsg4nKpg&oe=6AD1D2CB",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49861,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=3334062283435511"
+    },
+    {
+      "ad_archive_id": "886194290834124",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/612031113_1239730044672795_8895128153244073533_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=RRAPzMqXWckQ7kNvwGmII-a&_nc_oc=AdpS_Y7x4pIJuKHLFJMj-IPE7gPuRDXRUFNmwHheeBGxNl5P6pYnvrFtnfoJsluIqxho_xZ_fbf6quDdz0UTPz8E&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQPsLcJRouEwjt6bLmgUYJfW0P-GHCrHSeOrJP-IB_wR6A&oe=6AD1E9F1",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/612013196_902084092503745_7104105428111394311_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=LNm2eZHlrFEQ7kNvwFLTCa4&_nc_oc=AdrN26GOvMahRpNzGTGksQvGbo0QD-yUX-UFSaBsyoAUbthFFXPrOurYweGixropZTeCK5-_zyPQe17diagJID3a&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQOaJXMpK6qBMrpwnJm8a7q9_u1u6jxtnyBUfS4TKQVcXw&oe=6AD1D45F",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 43912,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=886194290834124"
+    },
+    {
+      "ad_archive_id": "875389762123400",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/611284895_1902639680646815_8154122878570969343_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=a788Zghj6SsQ7kNvwHdT_vD&_nc_oc=AdppLIOz7Cfbr-sUbegG5cPixHhA5XGRpa5Qo_hfP3Ig07RrsrOcO3tkhIpBn6ezcvDW-Y9T3V6mUxN7-hBC6YLV&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQMRj2R7x-zuIs-9cnfePvtwSORhg3HgohGvSZDBHiWj1Q&oe=6AD1C6FD",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/612060822_1705303357504004_1135794284887883829_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=S6GhhFygJeEQ7kNvwEMkBUc&_nc_oc=Adp45_tqWJnZg1MG016J0H8HyU95Fw9k4qhyF5iXYztyEKxM6mZNr3AdbwQcd1FZbbozRzGAeDZdLJztx0wa28zy&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQMwSVUaMtYEKcoUX1jUmmz70BDTNwCo-GsR4P5HPU8bbg&oe=6AD1E762",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49747,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=875389762123400"
+    },
+    {
+      "ad_archive_id": "2147273362676860",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/612038016_1386560046310255_1847513920456736704_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ansKzisgp1kQ7kNvwHREeah&_nc_oc=AdroLSevsU-JOAPlrT7k2hMZ5j9Q3eV2tU_bUhepMSOCcie2wxKnaI4WS_wN1R0zy9xWv2Bl6qagH09NPbwW7FxR&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQOll5Jx-m01uCX3idl36aRAwyO-ELW0cSsH5K7_0emUew&oe=6AD1DC45",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/612167592_955701987623361_5796754564093929909_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=dBimbfi6v-YQ7kNvwE50lt7&_nc_oc=AdoYvRH0yOZVe_EeIyOgbiX3_W-zpUhphsusf39Y1sD7KXBwTkQ0tBjV6HjZ_NTfqjbaXeJC7nHf-uUmd5Fl7m5M&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQPBfV6h1tVO5185mHYzjpoYqagco18tzPH_swIkZqqgxw&oe=6AD1E5B6",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49677,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=2147273362676860"
+    },
+    {
+      "ad_archive_id": "25743134758614350",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/611846279_2189365751596964_7969774507139315690_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=afdxVUCfv0wQ7kNvwHoYgp0&_nc_oc=Adpfr-VHBeBuL1dIdbQ5kBZdOIctSJVkThcYajMij7tYzoK38DkXWlRJ43wXb5eUF52TVQqyDrrQ0oRuoSRmZLVQ&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQPmknp5sr6sCqCCaXXcWbCrU1L8HTTa_MAwFQHrdFezUA&oe=6AD1EDB6",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/612101997_900027599376705_1814357122968385137_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=xlfUPnMjIn4Q7kNvwEBazjQ&_nc_oc=AdrH4l_xvqq-qsdQULcvm2K-XUY5hgQD39MLR7VyrdruGqSE5Tfg6yF63L4ZOSZi9cQR6cGJ64vTbRNnJFZlNM4-&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQNMIJuDk-pCTnAemUAvkma-jYHuttlGAzPECnDxlQgxmQ&oe=6AD1DE62",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49726,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=25743134758614350"
+    },
+    {
+      "ad_archive_id": "1283792640190250",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/613522185_890766586738501_3856863402719792081_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Or_ChzM05NIQ7kNvwH_X87f&_nc_oc=AdquD1F_mYqG2mwSvCA0WRpQoFH6EMWNZDHiah8arrFRf0fmVOZezs_yoO64Bl5CG0rr5q8Jd8kFDowahffWavLH&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQOWeClhHdtqNVs1279YvugH-yW7njxjfGQ3lYlOJclSqQ&oe=6AD1BA80",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/612097755_1196802515928291_3364837563182131117_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=NNXEQVuNCwIQ7kNvwHBWwMQ&_nc_oc=AdrNNFFoHLZBXs3iM-dIL8Za-ZebjAFMhKmVmeUs5tkWRxOylkms1tI-PwpV2CsS7h-_TLgsuDI8uE0I-Qk5rZp4&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQOCi878PAp2CUJpsY_ICEpKmrQfnLTaI4GeCToH_7bpsw&oe=6AD1D8B6",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49719,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1283792640190250"
+    },
+    {
+      "ad_archive_id": "1385898219738074",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/612031113_1239730044672795_8895128153244073533_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=RRAPzMqXWckQ7kNvwGmII-a&_nc_oc=AdpS_Y7x4pIJuKHLFJMj-IPE7gPuRDXRUFNmwHheeBGxNl5P6pYnvrFtnfoJsluIqxho_xZ_fbf6quDdz0UTPz8E&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQPsLcJRouEwjt6bLmgUYJfW0P-GHCrHSeOrJP-IB_wR6A&oe=6AD1E9F1",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/612013196_902084092503745_7104105428111394311_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=LNm2eZHlrFEQ7kNvwFLTCa4&_nc_oc=AdrN26GOvMahRpNzGTGksQvGbo0QD-yUX-UFSaBsyoAUbthFFXPrOurYweGixropZTeCK5-_zyPQe17diagJID3a&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQOaJXMpK6qBMrpwnJm8a7q9_u1u6jxtnyBUfS4TKQVcXw&oe=6AD1D45F",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 43932,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1385898219738074"
+    },
+    {
+      "ad_archive_id": "857260970419936",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/612031113_1239730044672795_8895128153244073533_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=RRAPzMqXWckQ7kNvwGmII-a&_nc_oc=AdpS_Y7x4pIJuKHLFJMj-IPE7gPuRDXRUFNmwHheeBGxNl5P6pYnvrFtnfoJsluIqxho_xZ_fbf6quDdz0UTPz8E&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQPsLcJRouEwjt6bLmgUYJfW0P-GHCrHSeOrJP-IB_wR6A&oe=6AD1E9F1",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/612013196_902084092503745_7104105428111394311_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=LNm2eZHlrFEQ7kNvwFLTCa4&_nc_oc=AdrN26GOvMahRpNzGTGksQvGbo0QD-yUX-UFSaBsyoAUbthFFXPrOurYweGixropZTeCK5-_zyPQe17diagJID3a&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQOaJXMpK6qBMrpwnJm8a7q9_u1u6jxtnyBUfS4TKQVcXw&oe=6AD1D45F",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 43954,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=857260970419936"
+    },
+    {
+      "ad_archive_id": "935470066316073",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/612094803_4377640935886665_9002887410260333081_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=z16YtZeaJpYQ7kNvwEBYVoL&_nc_oc=AdoT-id5ClPSLk27ehX9fpeW6Qh6frseY_8Xl6m_gVUBBkI_KEfjb3itxHRffBX7bBsW1RubMINRBFTLbZvEDET4&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQN6SKK9IeFed5WI366diR-Z3tWUCI6XOmMK-IL7rO1jMQ&oe=6AD1DE99",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/613551525_858709533707183_328303155067259556_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=wK9jLolmL38Q7kNvwEbzE07&_nc_oc=AdpRYVdRFg8l6k1gp6hqNHsyIPF_zvn2rSFoPF8YknTOZBygdpxXwYdes1PJTRA7SxrsKjv43zQC5ahVSwZAsCjn&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQPETTuItv9W0NgTYAoRp9w6HCrp1GDOcrs759mZnQXAmg&oe=6AD1E52F",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49725,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=935470066316073"
+    },
+    {
+      "ad_archive_id": "876756971726485",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/613438362_884623637397334_6705285787243110465_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=dXTVJopng4wQ7kNvwHaFQbu&_nc_oc=AdqiVK7hO23_CXe_etMHgUrv5bS6tRoctZNUQvdUebSIWXs1DWTCOynoIw1-6AxNzGza_D1ig-j5eByrRyboQCQX&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQOwe4o79a0w7Mjo4wk7ONEVOg88014Kv0rzVJtcsp_mWg&oe=6AD1C9FB",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/612724709_1901105687163832_7807692634800771167_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=DNAaWcnSrqQQ7kNvwFaWAI5&_nc_oc=Adpv1RBMiJuba93uAisS8eazjd8rS9RE8y4VNPbQqGgnvIrudQbLUN4cncsaKOMZQ2iFKo5PQLb9aSEbxjyAZ924&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQP7YoGK7BC1NBK4XncCGI8Gy8Z_pmqPSP0166m8-X4Y9w&oe=6AD1E92F",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49698,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=876756971726485"
+    },
+    {
+      "ad_archive_id": "2676280769405520",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/612031113_1239730044672795_8895128153244073533_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=RRAPzMqXWckQ7kNvwGmII-a&_nc_oc=AdpS_Y7x4pIJuKHLFJMj-IPE7gPuRDXRUFNmwHheeBGxNl5P6pYnvrFtnfoJsluIqxho_xZ_fbf6quDdz0UTPz8E&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQPsLcJRouEwjt6bLmgUYJfW0P-GHCrHSeOrJP-IB_wR6A&oe=6AD1E9F1",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/612013196_902084092503745_7104105428111394311_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=LNm2eZHlrFEQ7kNvwFLTCa4&_nc_oc=AdrN26GOvMahRpNzGTGksQvGbo0QD-yUX-UFSaBsyoAUbthFFXPrOurYweGixropZTeCK5-_zyPQe17diagJID3a&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQOaJXMpK6qBMrpwnJm8a7q9_u1u6jxtnyBUfS4TKQVcXw&oe=6AD1D45F",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 43906,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=2676280769405520"
+    },
+    {
+      "ad_archive_id": "2123611685101831",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/611630083_33266576692991077_7537605410963839199_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=OzB0PBcsh9cQ7kNvwHY20Qy&_nc_oc=Adp9A785dT7JxSsyX_UQ11S9YJN0qQ89oKcTvyDbgjm8eCgICxrOtXRlRmodnKBAGW2dmL75rr0UyCOgKZenFxke&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQNP877oJCUk1_48BO0D3ReE-gwjDz4X_a_jsr6qXI8dbQ&oe=6AD1CF16",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.35426-6/611799671_1755567295112728_799935275638391261_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Dq5Gl2BCo58Q7kNvwEHU4ea&_nc_oc=Adrwl6iKel-vFpb6bei3a5KqD5gmdPBq6HkAuzrVXJN5PfEAczDfohB53JYnhHSUoeYWNLj087N7e3ylo5s03FOk&_nc_zt=14&_nc_ht=scontent.ffab1-1.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQP9syAGQjOH_whSw8L5hw1Z9etwS-2vkdr30Djsg4nKpg&oe=6AD1D2CB",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49884,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=2123611685101831"
+    },
+    {
+      "ad_archive_id": "1506557911248171",
+      "collation_count": 5,
+      "collation_id": "1981367579930874",
+      "is_active": false,
+      "page_id": "132221119975472",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "132221119975472",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61552023623736/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "DeadlyBeats",
+        "page_profile_picture_url": "https://scontent.fmex11-3.fna.fbcdn.net/v/t39.35426-6/657390053_1264724979178419_6027581211637224334_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=9tnZsmyUnFwQ7kNvwHEPyz-&_nc_oc=Adrja2uqosZ8VXxIxLKwHdhZUew8sWAaKaoqDuKCJhQSrPZiompxawPB3ekqrVJt4YQ&_nc_zt=14&_nc_ht=scontent.fmex11-3.fna&_nc_gid=2xkT1nsUxFh4ZCeHGM9zPQ&_nc_ss=78289&oh=00_AQNKL4E2VyU3tO4LQPMSxO44toZntAm87Hha3z9isxhuHA&oe=6AD1C6E7",
+        "event": null,
+        "caption": "https://www.submithub.com/link/dog-music",
+        "cta_text": "Listen now",
+        "cards": [],
+        "body": {
+          "text": "Try playing this calming piano playlist while you're away—it can help them relax, settle down, and feel less alone."
+        },
+        "cta_type": "LISTEN_NOW",
+        "display_format": "VIDEO",
+        "link_description": "Calming piano playlist for dogs 🐶 Perfect for reducing separation anxiety, stress relief, and relaxation while home alone. Soft, slow-tempo music designed to help your dog stay calm, sleep better, and feel at ease.",
+        "link_url": "https://www.submithub.com/link/dog-music",
+        "images": [],
+        "page_categories": [
+          "Media/news company"
+        ],
+        "page_like_count": 3164,
+        "title": "Relaxing Piano Playlist for Dogs!",
+        "videos": [
+          {
+            "video_hd_url": "https://video.fmex11-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQNpoi3sK_mNrkFAbyOPVkRUl5XtjcUjFFGBl__KfyfNbgJT2yypgbTfZD6qdJxeZUvR5ERFfcv7KAFnRQXfrXzvLeyFx6n74qQK8BzY3-eG4Q.mp4?_nc_cat=106&_nc_oc=Adp-eRQqy1oLF8H9-ujhvf-4bfmPrUtkA0iZhX4KfzRLoi8S_G82Qxax55DjyBxaFFs&_nc_sid=b66105&_nc_ht=video.fmex11-1.fna.fbcdn.net&_nc_ohc=qxtUO6Chd8MQ7kNvwGMoVlV&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE2NDQ2MDA0NjcxODc2NDMsImFzc2V0X2FnZV9kYXlzIjoyMDEsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjo4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=ce978d0c14e98cfc&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC81QjRBNERERjI3QjJDQzgzRkYzRjQyQzFDQzM5MzY4NF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzQzNEI2MDdEOTMxQjFFRTE4Mjc1Nzc3QzRDRENBMDg1X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACb2nqeqrPDrBRUCKAJDMywXQCAAAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=2xkT1nsUxFh4ZCeHGM9zPQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQNhZK2NE0bMgnrdDps6N28UwmqQFcpufi9BgsejKE3kFw&oe=6AD1BE3E",
+            "video_preview_image_url": "https://scontent.fmex11-3.fna.fbcdn.net/v/t39.35426-6/656241177_4240893916239291_8277532152879502056_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=D6NYeLXOumEQ7kNvwFqtrZn&_nc_oc=Ado5uXIRyg43v7SmMqzr8T2rzUlULvHqsB5Bk1YKIII-RvRHQcRtF7CGig_euyFxZ28&_nc_zt=14&_nc_ht=scontent.fmex11-3.fna&_nc_gid=2xkT1nsUxFh4ZCeHGM9zPQ&_nc_ss=78289&oh=00_AQNfMgTcFbtCY22sgg677vw4guHLD-1S1KFRsBACHW4hCg&oe=6AD1C60C",
+            "video_sd_url": "https://video.fmex11-3.fna.fbcdn.net/o1/v/t2/f2/m412/AQPz5XfAPhxYoiuObEeaQH_uRbmoLN4TAXuxxmEs-LqhPuzeGx33PucSzExY3p2MzNaf_OqjHDXhS32_tHfpY698ox5LoZ0ErGeuYNWeTg.mp4?_nc_cat=104&_nc_oc=AdrpJGCMN3nEAMZpne7ZyI3xPWwvV8DqYEnTzl6YAeS9CcUWI18qSEzlF7ueeBbilrk&_nc_sid=ef5aa3&_nc_ht=video.fmex11-3.fna.fbcdn.net&_nc_ohc=l_UBJvhzQ_MQ7kNvwE0qv8o&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTY0NDYwMDQ2NzE4NzY0MywiYXNzZXRfYWdlX2RheXMiOjIwMSwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjgsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=2xkT1nsUxFh4ZCeHGM9zPQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQPRlZIeUIS7nNe6shViCythT8bm5GoPU5i3ldcmngnEpQ&oe=6AD1E1D2",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "DeadlyBeats",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1789714800,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1780210800,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=separation%20anxiety%20dog&search_type=keyword_unordered&media_type=video",
+      "total": 6362,
+      "position": 1,
+      "ads_count": 2,
+      "start_date_formatted": "2026-05-31 07:00:00",
+      "end_date_formatted": "2026-09-18 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1506557911248171"
+    },
+    {
+      "ad_archive_id": "1558205045392341",
+      "collation_count": null,
+      "collation_id": "3865362053757619",
+      "is_active": false,
+      "page_id": "927073233823452",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "927073233823452",
+        "page_is_deleted": true,
+        "page_profile_uri": "https://www.facebook.com/61586047475824/",
+        "root_reshared_post": null,
+        "byline": "",
+        "disclaimer_label": null,
+        "page_name": "Nubank W+K",
+        "page_profile_picture_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/612030575_1065509655715814_455943055232692393_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=GdeOelywvmsQ7kNvwF9p3do&_nc_oc=Ado6xnoprO27xrwdjRH-NY4oBMamphzqJPw-lCsTWy5Gmqn0K5ZjK4I1RXEur6Ibik_D9pGe2EULZsk5YUP82l3K&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQP-BfegWS6pzhEehl1gT-jvxhN0V53Bs-S4Un_2zvcayQ&oe=6AD1E5D9",
+        "event": null,
+        "caption": "play.google.com",
+        "cta_text": "Install now",
+        "cards": [],
+        "body": {
+          "text": "Dog to human and cat to human."
+        },
+        "cta_type": "INSTALL_MOBILE_APP",
+        "display_format": "VIDEO",
+        "link_description": null,
+        "link_url": "http://play.google.com/store/apps/details?id=com.wa.dog.cat.sound.prank",
+        "images": [],
+        "page_categories": [
+          "Author"
+        ],
+        "page_like_count": 246,
+        "title": "Dog Training App and Prank.",
+        "videos": [
+          {
+            "video_hd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m366/AQNPRvGYf9WnDbTg0WZFvruZXrit_ej4haVJ8_MU1UABdV02ZssHFXe_Jhvc9iIYmgLlbJ3fZ5ZJzpcOLLJb_QKeDdGd-poFRJGRggVR5Kifaw.mp4?_nc_cat=107&_nc_oc=Adr0y-n0lsAvziER3ou5fwWlTBPuN68Q0mnEA7x1PJaSnZE-WkkMEc6U82Zk0f9832_UDlG4_Ux3f3q7VLwyQGX2&_nc_sid=b66105&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=-9sgpx9cq1YQ7kNvwGYKWZA&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEyMjg2NDc5MDI1NDQzNDIsImFzc2V0X2FnZV9kYXlzIjoyNzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjoyNCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=12be9ce0635344f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FMTQ1QjNGNjlEMDc5OTRFNzJENDAzMzVCMThENTJCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0ZDNDY3MURDMzY4Mjc4RUFBMjM4NzhCQzVENTNBRjk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACash8ic3NyuBBUCKAJDMywXQDgfvnbItDkYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQNvZZY997DE2_sT7bi9JQyu0oeIoe4yaZ0sYCyhdcMF9A&oe=6AD1B7A5",
+            "video_preview_image_url": "https://scontent.ffab1-2.fna.fbcdn.net/v/t39.35426-6/612499030_867533952869062_6569626077021589307_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=C_wjhkOWolIQ7kNvwFXGsio&_nc_oc=AdqUOxQMH43mR49ZpcZ5sFsHGZnLPSwpp9ZrmX1HkDDZLljDeXT7Y8dHFGQau3iBGvbSyaD43BLep5tclxIWcc2G&_nc_zt=14&_nc_ht=scontent.ffab1-2.fna&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&oh=00_AQOw-eFcLss9xhuQuSyoy5XOuHcITDp0tN9XdyGtpt6AEA&oe=6AD1CEFF",
+            "video_sd_url": "https://video.ffab1-2.fna.fbcdn.net/o1/v/t2/f2/m412/AQPhdv0jxH8BB-kxa96vA4EUCyyr3sFjd0Vwu1PP_5POkK64RIyF7_W0KcyfajpT5EkdNjsxZcKaWy-7E9Kk73bNDG4GAGy2vZYwAVXBUg.mp4?_nc_cat=101&_nc_oc=AdoFueqCKAIIKf-VPJNg8P1MLnjtRIPvr_hNmgQXUaDdM5Oc90tZh4mhE9bw5WIZMio9dFHOdSqrC9mJDbZ3L4uH&_nc_sid=ef5aa3&_nc_ht=video.ffab1-2.fna.fbcdn.net&_nc_ohc=cIrpwceMDMkQ7kNvwHpi4lX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIyODY0NzkwMjU0NDM0MiwiYXNzZXRfYWdlX2RheXMiOjI3NiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=d7rC2GYbNkZ4WRr4-e0mdA&_nc_ss=78289&_nc_zt=28&oh=00_AQPfXub6dM9FzKDTFxBa0hGARd7-y-sFxDSzgVX-u8kzPQ&oe=6AD1CB95",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "Nubank W+K",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1768032000,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "AUDIENCE_NETWORK",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1767859200,
+      "contains_sensitive_content": false,
+      "total_active_time": 49693,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=dog%20training%20app&search_type=keyword_unordered&media_type=video",
+      "total": 39106,
+      "position": 6,
+      "ads_count": 25,
+      "start_date_formatted": "2026-01-08 08:00:00",
+      "end_date_formatted": "2026-01-10 08:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1558205045392341"
+    },
+    {
+      "ad_archive_id": "2433770547066917",
+      "collation_count": null,
+      "collation_id": "1981367579930874",
+      "is_active": false,
+      "page_id": "132221119975472",
+      "page_is_deleted": false,
+      "snapshot": {
+        "branded_content": null,
+        "page_id": "132221119975472",
+        "page_is_deleted": false,
+        "page_profile_uri": "https://www.facebook.com/61552023623736/",
+        "root_reshared_post": null,
+        "byline": null,
+        "disclaimer_label": null,
+        "page_name": "DeadlyBeats",
+        "page_profile_picture_url": "https://scontent.fmex11-3.fna.fbcdn.net/v/t39.35426-6/657390053_1264724979178419_6027581211637224334_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=9tnZsmyUnFwQ7kNvwHEPyz-&_nc_oc=Adrja2uqosZ8VXxIxLKwHdhZUew8sWAaKaoqDuKCJhQSrPZiompxawPB3ekqrVJt4YQ&_nc_zt=14&_nc_ht=scontent.fmex11-3.fna&_nc_gid=2xkT1nsUxFh4ZCeHGM9zPQ&_nc_ss=78289&oh=00_AQNKL4E2VyU3tO4LQPMSxO44toZntAm87Hha3z9isxhuHA&oe=6AD1C6E7",
+        "event": null,
+        "caption": "https://www.submithub.com/link/dog-music",
+        "cta_text": "Listen now",
+        "cards": [],
+        "body": {
+          "text": "Try playing this calming piano playlist while you're away—it can help them relax, settle down, and feel less alone."
+        },
+        "cta_type": "LISTEN_NOW",
+        "display_format": "VIDEO",
+        "link_description": "Calming piano playlist for dogs 🐶 Perfect for reducing separation anxiety, stress relief, and relaxation while home alone. Soft, slow-tempo music designed to help your dog stay calm, sleep better, and feel at ease.",
+        "link_url": "https://www.submithub.com/link/dog-music",
+        "images": [],
+        "page_categories": [
+          "Media/news company"
+        ],
+        "page_like_count": 3164,
+        "title": "Relaxing Piano Playlist for Dogs!",
+        "videos": [
+          {
+            "video_hd_url": "https://video.fmex11-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQNpoi3sK_mNrkFAbyOPVkRUl5XtjcUjFFGBl__KfyfNbgJT2yypgbTfZD6qdJxeZUvR5ERFfcv7KAFnRQXfrXzvLeyFx6n74qQK8BzY3-eG4Q.mp4?_nc_cat=106&_nc_oc=Adp-eRQqy1oLF8H9-ujhvf-4bfmPrUtkA0iZhX4KfzRLoi8S_G82Qxax55DjyBxaFFs&_nc_sid=b66105&_nc_ht=video.fmex11-1.fna.fbcdn.net&_nc_ohc=qxtUO6Chd8MQ7kNvwGMoVlV&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE2NDQ2MDA0NjcxODc2NDMsImFzc2V0X2FnZV9kYXlzIjoyMDEsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjo4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=ce978d0c14e98cfc&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC81QjRBNERERjI3QjJDQzgzRkYzRjQyQzFDQzM5MzY4NF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzQzNEI2MDdEOTMxQjFFRTE4Mjc1Nzc3QzRDRENBMDg1X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACb2nqeqrPDrBRUCKAJDMywXQCAAAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=2xkT1nsUxFh4ZCeHGM9zPQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQNhZK2NE0bMgnrdDps6N28UwmqQFcpufi9BgsejKE3kFw&oe=6AD1BE3E",
+            "video_preview_image_url": "https://scontent.fmex11-3.fna.fbcdn.net/v/t39.35426-6/656241177_4240893916239291_8277532152879502056_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=D6NYeLXOumEQ7kNvwFqtrZn&_nc_oc=Ado5uXIRyg43v7SmMqzr8T2rzUlULvHqsB5Bk1YKIII-RvRHQcRtF7CGig_euyFxZ28&_nc_zt=14&_nc_ht=scontent.fmex11-3.fna&_nc_gid=2xkT1nsUxFh4ZCeHGM9zPQ&_nc_ss=78289&oh=00_AQNfMgTcFbtCY22sgg677vw4guHLD-1S1KFRsBACHW4hCg&oe=6AD1C60C",
+            "video_sd_url": "https://video.fmex11-3.fna.fbcdn.net/o1/v/t2/f2/m412/AQPz5XfAPhxYoiuObEeaQH_uRbmoLN4TAXuxxmEs-LqhPuzeGx33PucSzExY3p2MzNaf_OqjHDXhS32_tHfpY698ox5LoZ0ErGeuYNWeTg.mp4?_nc_cat=104&_nc_oc=AdrpJGCMN3nEAMZpne7ZyI3xPWwvV8DqYEnTzl6YAeS9CcUWI18qSEzlF7ueeBbilrk&_nc_sid=ef5aa3&_nc_ht=video.fmex11-3.fna.fbcdn.net&_nc_ohc=l_UBJvhzQ_MQ7kNvwE0qv8o&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTY0NDYwMDQ2NzE4NzY0MywiYXNzZXRfYWdlX2RheXMiOjIwMSwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjgsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=2xkT1nsUxFh4ZCeHGM9zPQ&_nc_ss=78289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQPRlZIeUIS7nNe6shViCythT8bm5GoPU5i3ldcmngnEpQ&oe=6AD1E1D2",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+          }
+        ],
+        "is_reshared": false,
+        "extra_links": [],
+        "extra_texts": [],
+        "extra_images": [],
+        "extra_videos": [],
+        "country_iso_code": null,
+        "brazil_tax_id": null,
+        "additional_info": null,
+        "ec_certificates": []
+      },
+      "has_user_reported": false,
+      "report_count": null,
+      "menu_items": [],
+      "state_media_run_label": null,
+      "page_name": "DeadlyBeats",
+      "impressions_with_index": {
+        "impressions_text": null,
+        "impressions_index": -1
+      },
+      "gated_type": "ELIGIBLE",
+      "categories": [
+        "UNKNOWN"
+      ],
+      "is_aaa_eligible": true,
+      "contains_digital_created_media": false,
+      "reach_estimate": null,
+      "currency": "",
+      "spend": null,
+      "end_date": 1778482800,
+      "publisher_platform": [
+        "FACEBOOK",
+        "INSTAGRAM",
+        "MESSENGER",
+        "THREADS"
+      ],
+      "start_date": 1774335600,
+      "contains_sensitive_content": false,
+      "total_active_time": null,
+      "regional_regulation_data": {
+        "finserv": {
+          "is_deemed_finserv": false,
+          "is_limited_delivery": false
+        },
+        "tw_anti_scam": {
+          "is_limited_delivery": false
+        }
+      },
+      "hide_data_status": "NONE",
+      "fev_info": null,
+      "ad_id": null,
+      "targeted_or_reached_countries": [],
+      "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ES&q=separation%20anxiety%20dog&search_type=keyword_unordered&media_type=video",
+      "total": 6362,
+      "position": 1,
+      "ads_count": 2,
+      "start_date_formatted": "2026-03-24 07:00:00",
+      "end_date_formatted": "2026-05-11 07:00:00",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=2433770547066917"
+    }
+  ]
+}
