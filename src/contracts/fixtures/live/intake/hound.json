@@ -1,0 +1,260 @@
+{
+  "recordedAt": "2026-10-11T20:47:47.165Z",
+  "runId": "run_mv4anvk970e7d6b627",
+  "dossier": {
+    "oneLiner": "A daily behavior plan built for your dog.",
+    "positioning": "A personalized 12 to 52 week plan with one short exercise a day (about 10 minutes), progress and streaks. Built on desensitization and counter-conditioning for separation anxiety, barking, destruction, pulling on the lead, reactivity and extra weight. Every CTA routes to an age-based quiz (puppy, adolescent, adult, senior).",
+    "offers": [
+      {
+        "name": "Weekly plan",
+        "price": "$10 / week",
+        "notes": "From App Studio notes; verify on site"
+      },
+      {
+        "name": "Yearly plan",
+        "price": "$59.99 / year",
+        "notes": "From App Studio notes; verify on site"
+      },
+      {
+        "name": "Exit-intent offer",
+        "price": "$29.99",
+        "notes": "Web funnel with Paddle; verify"
+      }
+    ],
+    "personas": [
+      {
+        "name": "First-time dog owner, 25 to 40, city flat",
+        "pains": [
+          "Dog cries or barks when left alone",
+          "Neighbours complain",
+          "Feels like a bad owner",
+          "Walks are a fight because of pulling"
+        ],
+        "desires": [
+          "A calm dog",
+          "Leaving home without guilt",
+          "A clear daily routine"
+        ],
+        "objections": [
+          "Does an app really work for dogs?",
+          "I have no time",
+          "Trainers are expensive"
+        ],
+        "whereTheyAre": [
+          "TikTok dog training content",
+          "Instagram Reels",
+          "r/Dogtraining",
+          "r/puppy101",
+          "YouTube"
+        ]
+      },
+      {
+        "name": "Rescue dog adopter",
+        "pains": [
+          "Reactivity on walks",
+          "Fear and anxiety from the dog's past"
+        ],
+        "desires": [
+          "Help the dog feel safe",
+          "Progress they can see"
+        ],
+        "objections": [
+          "My dog is a special case",
+          "Positive training is too slow"
+        ],
+        "whereTheyAre": [
+          "r/reactivedogs",
+          "Facebook rescue groups",
+          "Instagram"
+        ]
+      }
+    ],
+    "voice": {
+      "tone": "Warm, friendly, encouraging, never preachy.",
+      "do": [
+        "Talk about progress and practice",
+        "Make 10 minutes a day feel doable",
+        "Celebrate small wins"
+      ],
+      "dont": [
+        "Promise cures or guarantees",
+        "Show a dog in distress",
+        "Blame the owner"
+      ]
+    },
+    "proof": [
+      "Personalized plan by age and problem",
+      "Methods: desensitization and counter-conditioning",
+      "One 10-minute exercise a day",
+      "Plans described as built on established desensitization and counter-conditioning protocols",
+      "Published terms of service, privacy policy, subscription terms and money-back policy",
+      "Operating company named on site: DUNA YAZILIM DANIŞMANLIK LİMİTED ŞİRKETİ, Istanbul, Türkiye"
+    ],
+    "claimsAllowed": [
+      "Helps you practice calmer alone time",
+      "10 minutes a day",
+      "Plan built for your dog's age and problem"
+    ],
+    "claimsForbidden": [
+      "Cures separation anxiety",
+      "Guaranteed results or timeframes",
+      "Veterinary or medical advice",
+      "Punishment-based training"
+    ],
+    "visual": {
+      "colors": [
+        "#C07848",
+        "#A8C048",
+        "#D89048",
+        "#FFF0E0"
+      ],
+      "logoUrl": "/api/assets/brands/hound/logo-icon.png",
+      "referenceImages": [
+        "/api/assets/brands/hound/hero-reveal.webp",
+        "/api/assets/brands/hound/hero-not-alone.webp",
+        "/api/assets/brands/hound/problem-separation.webp",
+        "/api/assets/brands/hound/problem-pulling.webp",
+        "/api/assets/brands/hound/age-puppy.webp"
+      ],
+      "styleNotes": "Flat, warm, friendly vector illustration: a beagle, oranges and greens, soft clouds, rounded shapes, cream background.",
+      "fonts": [
+        "Roboto",
+        "Quicksand",
+        "SF Pro Rounded"
+      ]
+    },
+    "competitors": [],
+    "gaps": [
+      "No pricing on the landing page",
+      "No reviews or app store badges",
+      "No social links",
+      "Which problem converts best in the quiz",
+      "Spain-first: Spanish creative or English?",
+      "Actual pricing, plan lengths, trial and money-back terms (pricing page not crawled)",
+      "No social proof: no reviews, user numbers, app store ratings or testimonials shown",
+      "Who designed the protocols: no trainer or behaviorist credentials named",
+      "Whether the app is on iOS and Android app stores or web only",
+      "Who can appear on camera (founders, trainers, real users and their dogs) and access to real dog footage"
+    ],
+    "sources": [
+      {
+        "url": "https://houndapp.xyz",
+        "fetchedAt": "2026-10-11T19:00:00.000Z"
+      }
+    ],
+    "provenance": [
+      {
+        "field": "proof",
+        "source": "crawl",
+        "ref": "https://houndapp.xyz",
+        "at": "2026-10-11T20:47:47.161Z"
+      },
+      {
+        "field": "competitors",
+        "source": "crawl",
+        "ref": "https://houndapp.xyz",
+        "at": "2026-10-11T20:47:47.161Z"
+      },
+      {
+        "field": "gaps",
+        "source": "crawl",
+        "ref": "https://houndapp.xyz",
+        "at": "2026-10-11T20:47:47.161Z"
+      },
+      {
+        "field": "visual",
+        "source": "crawl",
+        "ref": "https://houndapp.xyz",
+        "at": "2026-10-11T20:47:47.161Z"
+      },
+      {
+        "field": "sources",
+        "source": "crawl",
+        "ref": "https://houndapp.xyz",
+        "at": "2026-10-11T20:47:47.161Z"
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": 1,
+      "runId": "run_mv4anvk970e7d6b627",
+      "ts": "2026-10-11T20:47:17.389Z",
+      "phase": "intake",
+      "type": "tool_call",
+      "title": "crawl_site https://houndapp.xyz",
+      "data": {
+        "tool": "crawl_site",
+        "provider": "firecrawl",
+        "url": "https://houndapp.xyz"
+      }
+    },
+    {
+      "id": 2,
+      "runId": "run_mv4anvk970e7d6b627",
+      "ts": "2026-10-11T20:47:24.694Z",
+      "phase": "intake",
+      "type": "tool_result",
+      "title": "Site read (firecrawl): Hound App: daily behavior plans for one specific dog",
+      "detail": "Answer a few questions about your dog and get a structured daily plan for separation anxiety, barking, destruction, pulling or reactivity.",
+      "data": {
+        "chars": 3200,
+        "branding": {
+          "primary": "#FF9B71",
+          "secondary": "#F0E4DA",
+          "accent": "#FF9B71",
+          "background": "#FFF9F4",
+          "textPrimary": "#3A3238",
+          "link": "#F0E4DA"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "runId": "run_mv4anvk970e7d6b627",
+      "ts": "2026-10-11T20:47:47.156Z",
+      "phase": "intake",
+      "type": "cost",
+      "title": "Claude: intake: dossier for hound",
+      "costUsd": 0.059151,
+      "data": {
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "inputTokens": 1744,
+        "outputTokens": 1980,
+        "cacheReadTokens": 0
+      }
+    },
+    {
+      "id": 4,
+      "runId": "run_mv4anvk970e7d6b627",
+      "ts": "2026-10-11T20:47:47.162Z",
+      "phase": "intake",
+      "type": "thinking",
+      "title": "Gaps to close: No pricing on the landing page; No reviews or app store badges; No social links; Which problem converts best in the quiz",
+      "data": {
+        "mode": "live"
+      }
+    }
+  ],
+  "spend": [
+    {
+      "id": "spend_mv4ao1768280c1baf3",
+      "provider": "firecrawl",
+      "runId": "run_mv4anvk970e7d6b627",
+      "usd": 0.01,
+      "units": "1 page + branding",
+      "note": "scrape https://houndapp.xyz",
+      "ts": "2026-10-11T20:47:24.690Z"
+    },
+    {
+      "id": "spend_mv4aoija16ffc36d68",
+      "provider": "anthropic",
+      "runId": "run_mv4anvk970e7d6b627",
+      "usd": 0.059151,
+      "units": "1744 in / 1980 out",
+      "note": "intake: dossier for hound",
+      "ts": "2026-10-11T20:47:47.158Z"
+    }
+  ]
+}
