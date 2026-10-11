@@ -56,9 +56,10 @@ test.describe("packs", () => {
     await expect(card.getByTestId("pack-copy-caption")).not.toContainText("Copied");
   });
 
-  test("an unknown run shows an error with a retry", async ({ page }) => {
+  test("an unknown run shows the run-level not-found state", async ({ page }) => {
+    // the run layout catches a missing run before the packs screen renders
     await page.goto("/runs/run_does_not_exist/packs");
-    await expect(page.getByRole("alert").filter({ hasText: "Could not load the packs" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Try again" })).toBeVisible();
+    await expect(page.getByText("This run does not exist")).toBeVisible();
+    await expect(page.getByRole("link", { name: "Back to the portfolio" })).toBeVisible();
   });
 });
