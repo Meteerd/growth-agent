@@ -1,0 +1,748 @@
+{
+  "recordedAt": "2026-10-11T23:45:52.939Z",
+  "query": "at-home DNA test and personalized vitamin subscription video ads showing someone unboxing a kit or reading their results on a phone, Turkish language",
+  "search": {
+    "query": "at-home DNA test and personalized vitamin subscription video ads showing someone unboxing a kit or reading their results on a phone, Turkish language",
+    "app_type": "app",
+    "multimodal": true,
+    "filters": {
+      "campaign_types": null,
+      "min_run_days": 14,
+      "languages": [
+        "tr",
+        "en"
+      ],
+      "aspect_ratios": null,
+      "is_active": null,
+      "min_eu_reach": null,
+      "creative_type": "VIDEO",
+      "brand_uuid": null,
+      "meta_page_uuids": null
+    },
+    "total": 10,
+    "data": [
+      {
+        "ad_platform": "meta",
+        "uuid": "7492be3e-5909-4745-b8c8-f9a270eef934",
+        "meta_page_uuid": "9d29e5a4-90be-4403-b8cf-a56bf4f2d1fe",
+        "brand_uuid": "9a4eb4b4-d935-4e10-af1d-588f6ec27ab3",
+        "similarity_score": 0.391702188050531,
+        "original_media_url": "https://assets.spiral.ad/c/czhFTTtURW-GGJJSKPBelRVOKfRmQiYIknJe-0X7fov3y5MKUTkbX0z0B4zQW1O-63zIPNnIl-qWawEc70dt7uLlytDeJPot4lesZq21G6fOPy8Ef3ut8vSoOLJZPS8R_jFq2GZsAttz1etcapbLjByxwb0aeg",
+        "resized_media_url": "https://assets.spiral.ad/c/53g_PuB5a7McHZhOxdCNVqVnKaBUY_ckU2rkLPZlV2eeJvTsLN6eZ8DN0e5irehCcLrtNQc2KKyk_Hw6f9lg7tqKxVIzLCajwZcU_YlcGXZ_9Nqc2VL4qAx91yJtkDZw00JqTErBYow8tojWyLVNNc8s",
+        "width": 720,
+        "height": 900,
+        "aspect_ratio": "4:5",
+        "blurhash": "LQEooKM{O?Nc~VM{ogWrIUR*M{t7",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/vxnrjiM4WuJDtIA9xFA8xPdly-Toz2zme0PZ4_Bin0kc2vux811Lmrfc1_6ZyuN2vXOOgEX1zIUiBjYF5g02iUOkrQzT3bSx4_dPxCtXHrIA4BsQa6ljK-dIAuVVUlP_jipyS9-W7uzxgGkndJ0AXb8cha4u"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "64e8fde6-310c-4036-95fb-5cf4c3d51226",
+        "meta_page_uuid": "cd222b4d-1bdc-46bb-9500-eff428429431",
+        "brand_uuid": "ebae4d8d-40a0-4e36-a5df-b4f68b0cc236",
+        "similarity_score": 0.387463890759002,
+        "original_media_url": "https://assets.spiral.ad/c/y0gxdzHqJ-zu1dB5LLaioMcjNWBjCydjlfg6O6T7Ag3W6TTbg55cRDUqRW6cKF8DpZQNORiU1pezIdx31N_Mz6ooJTKrVPafIr7b-fdab6eE_cILT3IOFzQ1Zs7IR2Zc36RaT1SpdSTXzAKVNqifnmVTODoC9t0",
+        "resized_media_url": "https://assets.spiral.ad/c/GTsCrApVVJDEbr-qObDUB3wfPKFw6ra4iiJP9rQugApQ51lpiaZPrXjZs9WEjP4BDwb9wE2bPU5aj4GwPA446lDkx0pvrQgXTGZHBFO1XCOqEvg9qlK872NBdZWKnR4DiL--vHL1eFEOyFw_gxSZKQ9yxg",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LFLC;UvyyD%L?]IUI]s9NGDi$jv}",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/Z7-AmGNKm-5AMRI6LLDo7Qde-er3Wadwf0at-OE5-Ueno8-N_IAZHoT8JRzagqLaLbzrYWgIOe7cFD86LsFgagxXgjkVlQwVvChNFsnD8xc6Idp-QLDFU8hLltx1euTopGq0uFOsZGJXjRZfvXBaqvPdm9kyOA"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "beedd33f-ce6e-41d9-9644-f0a0773ac813",
+        "meta_page_uuid": "aa86046b-e37d-4624-99b6-48ecfead53d8",
+        "brand_uuid": "65e42f69-0d54-4452-af6e-07d1fb218a53",
+        "similarity_score": 0.381858648504891,
+        "original_media_url": "https://assets.spiral.ad/c/3QRYAE_ZTSodvVktYR7XObAZQVFi0eTeb7EWSLOvN1CNkQcXdmQqIBj6uqqa7KhcgIBd80ldpMARVSYGbznknjxtRJR1s-JuwtZOIYPqq3B6zuqAUDRvfhmH5MAcDLL1tWxoLbHZnMD9HMAMtmBDnhzRILU6qVvQ3_QnJ3Z9e6o_xuq6Hw",
+        "resized_media_url": "https://assets.spiral.ad/c/xTQUCYG5GaNxEwXWmrwQF7MOwDrabAaHJk7SooxyLVJ34DERR0e5OtE_UAC3zPk5PW41eVlPJc3PTwWRooDDtgziteTVrhMm5Zsafp1sAsPRN6h6OP_X9z2215t5EEjJMBUBU4MoUaHw-GrxTjxvn4tBeh8_g3hgxen_gqB9xZ2R",
+        "width": 720,
+        "height": 720,
+        "aspect_ratio": "1:1",
+        "blurhash": "LFHK,_?^GG#,yEs;kXEMxrITRP%1",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/Hcv2GFP2Ksxv2sHNur_i0ixd1LujUkq2Sl749DszQ1IcOKRKusA5qE911NUND1EnOifBrr9Jhw028OBohRyelPR4UxxJBdPFTzRez8Qz-3C94EJ7lnxS8srksWM6_p5b9n8nolkg3YVG-8nAIep7Qyh7gHBR3Oot1bobeKT8IOehHm3v"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "94c29b16-5545-4be8-986a-c0975ed59b3c",
+        "meta_page_uuid": "4e423312-4533-4442-87c4-2f14f44d0039",
+        "brand_uuid": "b52152fa-0a22-4f3e-a6a9-6708d0c268e6",
+        "similarity_score": 0.379841981928597,
+        "original_media_url": "https://assets.spiral.ad/c/KzZ4VwUjumyAE69yRVOCHI5inw3byVmxtHHb-JVhGS5WSBmxanC0ylYOW2Ey1TiXCLV9Si2BO0_xmfq0jzq2LEXvE3A26eW3ENaM-DTWr7733PUzLkSymdm5FrY8nnJcCSZyiXfM4pR3W8ijQ68VH4gv8oTg5do",
+        "resized_media_url": "https://assets.spiral.ad/c/AB5zobRDHh5YdXPAFgLYdJOjCs9eXtcm5AAxgrR-NwbuyNLOG0CuDkc8fJ73p10Jg-cugF2fuhhipG9R38UX7bQc4KmqEDpMi5pc2UfljRPsQZRM9s75HlBDGyhB4Nvu-XCRjd5e-Q_hjdY9r-oNtQUYmg",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "L7Mi.Z%1VD-o_1jZ9aWC4Ua#%Moe",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/xt_fW-lf2OtkkynVpLg2994lr824h-dPI5uJ4-5HdmPz9CzC7ndqkTb2nO4zbxRSADvW9D5e7I8Q0prZXVQXBXxtma1-417uJ1cCD5Wkf6k9Ha0ZHd7ixGiXTne8uRcWSgTd5-udNkBaiwbNep9ghc86eD9zdQ"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "f95efb1f-41fc-4371-8afb-4348b526b42b",
+        "meta_page_uuid": "6d8485de-0010-4889-9bad-900f9ba0255e",
+        "brand_uuid": "f72e4107-7055-4107-b998-f95c27e3d0d1",
+        "similarity_score": 0.37481614942936,
+        "original_media_url": "https://assets.spiral.ad/c/6SAAG5tGMFmEJVA9nQDB_rjY-zEV61yK7VlTENkb0LN8mKVTJ4dFyRzyVDGf2xXOdGmVMNxkyec5OcJoM1JYwgrHXSax5WPxVllLZXH3A2y5YBDzPfe0L7_aZw6DgccCoVF65kULd_fNTb4sUklMOiWUxHe33Q",
+        "resized_media_url": "https://assets.spiral.ad/c/vw_Lwl5m5lM6F5mtMqrToxqZRXDdLslfgw7dieUNaYghaoX9bMEjkf0e6z5LOU063sqfxgKHFZLGGw50KAcYd4uAkAhhZGojtoiDYY0-TCs9-3Q1Jyq81R0w_W4Im-pcke7uxlZ8D07NTMTIgZo8dH0s",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LxM~6MXmOYXS@EjZjajFTdrrrrrr",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/W4H5UbTpxZnBzqGPSAzI7mNOt-kx31NO6b2I1B2-bTGllTV6G_VAyUbiF4onS0-4jYENuDmQizgKVJnPCs5kFRx0hVY0ySoM5marRnESRona1BFaJAbf5JumbAUZClt2JRZ5nhVCOLJyjPNl0OnLwwxy2XPP"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "64034111-5ff1-4c34-9537-60f4c130c4f8",
+        "meta_page_uuid": "85102e8f-0d39-4d39-bd44-4441fd45f941",
+        "brand_uuid": "bca30d96-25d3-43f4-958e-702875777d10",
+        "similarity_score": 0.370643493397374,
+        "original_media_url": "https://assets.spiral.ad/c/Wi9yxEkYhCNqhhm4qsjJgbCOeMi-BQxDSE-3QG809JCwi36LQB5M0BWCjiVYLvAUKrEQe1Hk0cjXhtptDrgg6Soso2Ils1qIw1cji21BWlmhrdF0GwH1XuAcFvA-VVGEFqd3gMy1AyJaJvMp6bq4us7tax-yEzzSHDcjQeqzIXbWxnaTAg",
+        "resized_media_url": "https://assets.spiral.ad/c/uv122d_LNGK4MsotLP6aUWW3XBi08Pc942WwRIImDVunrdrA6WjnWrtxzf33YCjWOecrK_xGfDtCu0xulTbyY-Stj3SgP8qPMhG7yHcxnZ1DVLIfEURfQTStagwLHhvao4-duxDnBLVtqiOV75Rao6bVQJVE8qo0XYjr7XWEe_R3",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "L8CsKzt60KJ90LpJXmR-}?o}xa%1",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/xm1RbOq1ZRRsNqKKQm59ZGnDqk_8dwhyhvujda4rLx9I1hkYZ0GAhSeS8YYag8WoJarom59nHKREJerRyGPzeafbQ8jOz_p1UHn_njqnqnFKSzihg689qJYhOySNXZ_Z5cjjHtOXDf0HYYl5kqX073hFOmSl"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "03273a5c-63b1-4537-9066-3a702a754a21",
+        "meta_page_uuid": "292bb26e-8737-478a-8fd1-0e1166c57f97",
+        "brand_uuid": "93bba48a-e2d7-44e7-bc30-a8268d0f1fce",
+        "similarity_score": 0.370624572038674,
+        "original_media_url": "https://assets.spiral.ad/c/6JK1cNwVXa6wCRx7u9lui7Hgzwy3FtpwR0udWW5QXOhB2P2fvoCthjyJIqdudRlJY7ozFf8zMG_pK_MqsqpoMFxNZeod_hpIoVS_1ZqejMtzw6J-6Z_UXHKhfRZWd0w_uaCfg0lN_B0IENp6PW9egdjn8ydoGw",
+        "resized_media_url": "https://assets.spiral.ad/c/3ezuNrxbUnY3yIe-7qhbokmKqyZB1i4UBgR769XMASSgv9k5tywme0bNh6nXf2-cek0hbTaB_bp17m28mOK-UmLTVDIdByAO35fKXWyqj9TPVM4GyX2MLOe9j6Kd7TN7vGJMHLaJ-E6mmMi87jomB6fS",
+        "width": 720,
+        "height": 900,
+        "aspect_ratio": "4:5",
+        "blurhash": "LLDSnBp09vF44mrr-6VrW?s;T0t6",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/9Fz18fYCdbmtGCk-jVIFi0JsTd7Zuc5_GFUSKHSXGQK2hvvZaLGE-84mQHTk4yhw6vfT3K-4j03x4s_4Y7TRgX0X_OSIAp03mwRNM7kzQBuIlklxYFvxJQ0oarGLT1NMX3uD68jO3jx1f10IH2KT4pedo0of"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "2682e783-b6c0-4e51-8926-b93cad25f544",
+        "meta_page_uuid": "7eeaef8b-e1f9-4188-901b-2e36f08b371d",
+        "brand_uuid": "527f29f8-c4dd-47e2-acb4-5c6a19e3bbe3",
+        "similarity_score": 0.369224973822376,
+        "original_media_url": "https://assets.spiral.ad/c/c43nQC-TFbWwDPPzS1sQtSuvS_Rcf4pdV5M75so_5a8bMM1A0lxf-wXGy4RBBa4q8qDOOM-jUA74MmxV1cVTWotBJTNSP2XraOqtlVnEmYLiabL-5FwD26OWtVFN9qp_J0yF8uT185j9GFWjkWJo48XMV2NfARP2g04mBnOy_Vh3Y6yuqA",
+        "resized_media_url": "https://assets.spiral.ad/c/_w1c2j8w8nEa5D3z6U6RhvWFf05oQL2nbd9Ld-vA-XV6ceGu8E_HNzt0egOaJHBORiNDo0H0zr-jlBZIdDghRNkjqdv3ojhZyOKJq45LMFX7ofrsvF--kJnGYEzNBapG0UmP93wnwfJALKLgVCU_XJ-tRhgMQnO_QGJFo5W9dSEe",
+        "width": 720,
+        "height": 900,
+        "aspect_ratio": "4:5",
+        "blurhash": "LdG+K?t7o}kD-:a~Ria}4TWBV@ae",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/BaUHX_JVT7ph0_KRTkSuwWcI6Jp20XG0ZGyKRLl-u-EHbXYXvsJHF6WQ_kcNlhTFFog3XyFRFb3K3OsZcJlJMl3vzI8_CMHW9ID6T5gL6kBRMwX0eHnREVuWpQvtsyCtYwWI9-20cCX_iw1Bujyt7Ygx-3YdjXSbNXMKqxpCmkXauzmj"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "feccf0c9-1bcf-473b-a4dd-90bdcb368513",
+        "meta_page_uuid": "6d8485de-0010-4889-9bad-900f9ba0255e",
+        "brand_uuid": "f72e4107-7055-4107-b998-f95c27e3d0d1",
+        "similarity_score": 0.369036888078345,
+        "original_media_url": "https://assets.spiral.ad/c/MD1_Og3MDzVA8mAdxDq8-bOjyVOuSkxMijyYmzWsMSSUejLh2-UZIkiO0ZSj64VzxxOSuDUgqzUvcK_vGCwrSt9qYn4vjZNdny7urUFjgrYocezqP7O1jbJ9LFyei8uzKsVLpMnnbCIvcVwJd5OgckSiWjGOjQ",
+        "resized_media_url": "https://assets.spiral.ad/c/VKs9_4v2JGrqgy3R43DOseoREtaK6hrtm8Y4e8VWAwujy-i7NPix_fzRMNd-Y87cnEZKjQJzDJ2aPAuJDP9VsbPa7rAaWdME28l_d87Nn4S2OgE0x2vKiX2Xz6nbdEolNdHIj7h5QACAZLkudEadJckg",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LXEfHaoMI;nj4UayoIX7HCW;wwkC",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/S9AQT1lAZT1ltuod5D9_BoUQKo1K9KED32NKMP8R6X3xzHaOaOJQd5tOboUUIURZsIhdCt-E45R2v63gclgFZR6W9y7DInO9EOPno-5G3GP4n6wLRwW4IDJfLdykTNG5ESnruTcQeXw0kn3MmZ90tz0aytys"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "889e5889-b6d9-49f9-bb66-8f33102f9514",
+        "meta_page_uuid": "d51bbf98-1121-4ae9-885b-bdf024e14f3e",
+        "brand_uuid": "8d535017-bcce-48e8-a7b0-13c49c817a1e",
+        "similarity_score": 0.364443448649278,
+        "original_media_url": "https://assets.spiral.ad/c/ALNGvOFduW4F_TgtmB_C3u4fc40O9B60ldrY5Xln6JM0VI1JRtAihNp6_yxr5C5553iXPp_hnBGTVLz5dMQO6gKcJmf8KyeP5EKde3IDM8_2NKt_pLY4wkcEUDqsxeiilmva-oGczIp8SLp38klNeJHXQvxhV-E",
+        "resized_media_url": "https://assets.spiral.ad/c/U8jSO0w7RXWHJcQFMs2lifT6gPUMvsJdkf9fUrldMlQfebLcPOTpvf795DoXBYIOLoDdN_9lAL_QK_wPKKOJ9gBTidXnkMNkAM9WFHtRQJZg3WdZud7r8T9NTKoUiK30J-YI2GsQqEBx8CiV84xwfySlww",
+        "width": 856,
+        "height": 718,
+        "aspect_ratio": "6:5",
+        "blurhash": "LLEn|W~TEQIW~T?ZoJs.~U-.t7Rk",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/k6mRGog1BSUqb59xST73mtNfFZalPSdWm6uApfz6xTLNnoAh7E7JWDGiJ5s6Etneu7fbtLyyvP84KgEHWVM5xioVm9IYSxMyY4ORnM49FjL0SX7bLf0x89h8XU41z4FkxaTnsDjTANTTLvrMd9KIVgYsVdmCSA"
+      }
+    ]
+  },
+  "details": {
+    "total": 10,
+    "data": [
+      {
+        "ad_platform": "meta",
+        "uuid": "7492be3e-5909-4745-b8c8-f9a270eef934",
+        "meta_page_uuid": "9d29e5a4-90be-4403-b8cf-a56bf4f2d1fe",
+        "brand_uuid": "9a4eb4b4-d935-4e10-af1d-588f6ec27ab3",
+        "created_at": "2026-06-23T05:01:45.490614Z",
+        "body": "🌎 Discover Your DNA Story! \nUnlock the secrets of your ancestry & learn where you come from. Get a personalized genetic report today and uncover hidden family history!",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/YpcZhDaTjzbxxOkVtgWbtxzhH3dfyxjvP-6Fj5jVYOO3VTiK-tqfJOAFEDkM28bJa0K6CY3bhXJ5UFoa09pDU-pmhYEgJJe56b5SU4fhoUV648LeY8BmYNRgmPnMRIFcgJmguLhgoEaQm3ufdRGO9FMvPnH2KQ.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/G8Ycj23mYgngOY6ClDsDNS9N7kX4LElDy9yzkvtcSHgTSM2ZtMu-m6Ik0Rn4N6DzRIBmELf4CuW7M_LuNkHehjzIC_QHX2O2vH4fOO6ob8suGmNkGpaCdG3JMpKfkObiIbkJaVAP4UyHDZ5SrYXyeE3H.jpeg",
+        "start_date": "2026-06-22T07:00:00",
+        "end_date": "2026-08-21T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": 21989,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://start.maxxing.me/quiz-ancestry-light?utm_source=Facebook&utm_medium={{adset.id}}&utm_campaign={{campaign.id}}&utm_content={{ad.id}}",
+        "meta_page": {
+          "uuid": "9d29e5a4-90be-4403-b8cf-a56bf4f2d1fe",
+          "brand": {
+            "uuid": "9a4eb4b4-d935-4e10-af1d-588f6ec27ab3",
+            "name": "Maxxing: LooksMaxxing Glow Up",
+            "slug": "maxxing-ai-powered-looksmaxxing",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/mobileapp/6502996574/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "6cf7a8a7-e152-4f3c-96bb-7506e07102d1",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/cYxrbj8fsEjh5fD0MvQuVCcHUCQ_awA5PX1UKggPlfLQ-CuAQIBLzNpei26j3aKpSY1zfAQU_0tcCsEMFJlsCedyHZ3gVJSXZ-Er_0wSMhhLx_riRgwBRyVantxUCBUTMom_gKg7P3wUCfcKil9CdZQGBgCSDg.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/6qVwsobxGUDcmVtFyc2NC4-BHgUJot24Ym5CXh_2Tx69Oy_aDqbhLsJD8ZQC78puxep91W1NVRIQ_zJBLFmg0XX2ZO3ZCNgIvwSP5nFXYzXFI2hB6VVfugGMzXOhfMVvbEjLnGrzNHXnSWLSNZVYMgogjn7Q.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/3_5Goy13aSw96tIlGw-S6x_1crc03wj3WSD398JofxefB4vS6lthPO8_Sh-gueKfzYW9DToRpM_HEyeCkYvSoPGj13DpkYCdJWRy0kCT2M2AAx7Jy66blZqy44E59lJV3Z6laSzcxwHfnp-sqTzkBQKD.jpeg",
+            "width": 720,
+            "height": 900,
+            "aspect_ratio": "4:5",
+            "blurhash": "LQEooKM{O?Nc~VM{ogWrIUR*M{t7",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "64e8fde6-310c-4036-95fb-5cf4c3d51226",
+        "meta_page_uuid": "cd222b4d-1bdc-46bb-9500-eff428429431",
+        "brand_uuid": "ebae4d8d-40a0-4e36-a5df-b4f68b0cc236",
+        "created_at": "2026-05-14T07:09:44.448712Z",
+        "body": "Tired of feeling older than you are?\n⚡️ Learn how to reverse the clock with a plan built just for you.\nIn just 2 minutes, discover how to boost your vitality, sharpen your mind, and glow from the inside out!",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/O-qU_waoSORnya95c-y4hX-2L9dOL3G1blH-OjFtxJErRBjHfPdfvQRZ-tzbkukVbLbt1PfmxGf4l0Jrm0TMxSjvY4g82vKDpcFz5k4vRiNQCjDaWBHZYNHDnsF4RydUd7qyEvQ-V-g9MBKOoRPBtfJbe4PGmmw.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/aXRfdO64Xw6ltotdjftvUMjfSiCRc4Zz-4vILI3adh6rgmS5MjaiBzw0GJPwGoMhOSD_PuAp9tdev9LJXdUNQgSloL9Rnv8XKBMFos3Gl180axzNRY9Xd3DaM3kVOYQ6jJ8bZhdA3sqAJ8t66ennly53lg.jpeg",
+        "start_date": "2026-04-24T07:00:00",
+        "end_date": "2026-05-18T00:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": 12024,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://skyfluence-app.com/?lang=en&funnelId=757d24e9-f6ac-4f3a-b5ad-1e6d6f6ed5cb&utm_source={{site_source_name}}&utm_campaign={{campaign.id}}&utm_medium={{adset.id}}&utm_content={{ad.id}}&utm_term={{ad.name}}",
+        "meta_page": {
+          "uuid": "cd222b4d-1bdc-46bb-9500-eff428429431",
+          "brand": {
+            "uuid": "ebae4d8d-40a0-4e36-a5df-b4f68b0cc236",
+            "name": "Skyfluence Longevity",
+            "slug": "skyfluence-longevity",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/skyfluence_longevity/profile.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "2ab830f2-a4a1-45c9-a2a4-2c9241749429",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/qnUKLRI3O38sec9HfkC1JdAHIKQlc8ENAXojVgnmQ53xPflNgbU1AQqTQ1hE-xEgggLw0PTYRwVyAmlR8ZfreW2S1otMqzpRui04UG4DG1zElTRp43vv0FtpIOJdO0XK-x0gOcKghSuZI4plsIAMbE_9hAF04iU.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/UISNOV_0C6KX2SXpdBI-D5ezK40Lbm-_E5wAI8uOGZyaVe9o8cs-JWFOY82avJxXyTRLx3MtTjV7kD0g1p56D5FiBE9QRxaG_YT4PvAWny9P7kRkfIO9xkAeWUoTt02sX-4Ed2fslmNr1pWbSPslxTEvPp9y4Q.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/uavdJUse4VGXg_j0zffSe8a16NzzhsVWN6KiWieBcUpU386UIYSTH0MqSH4EhNoYIlrzyDHb0uUhygp5SqzEukwaYH8wFLosfS8wB3jbTxs_a7N7R6GsIPlLD06sZZuUx4ASqvAXF_cDctO43JXPy3eHkw.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LFLC;UvyyD%L?]IUI]s9NGDi$jv}",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": false
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "beedd33f-ce6e-41d9-9644-f0a0773ac813",
+        "meta_page_uuid": "aa86046b-e37d-4624-99b6-48ecfead53d8",
+        "brand_uuid": "65e42f69-0d54-4452-af6e-07d1fb218a53",
+        "created_at": "2026-09-04T11:16:02.689660Z",
+        "body": "Getting started is easy. Start your family tree for free and see just how much you can discover in 14 days.",
+        "cta_text": "Sign up",
+        "original_media_url": "https://assets.spiral.ad/c/FeeaVy_yt4qdEpX0joKjli87AOCVLEDByX5ieieRzCvYPRQhoiW3sDoQJompq_iBk7GoFkVzujuhyhYFKAPQde25cLnQYGfNzhSsFklpXPD-4V3wH05X60KHmiNM6NCL5Cbccf3NrxhykWxXOXc5zGW9zvvzN2qEdGg7DgCJkJWobeNAmQ.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/iK1NN8UCqyWrKRM0FXt96b_272p3XRnsinBB1VcvD1bKYZGOhYVoElZEBAioJ7vIqq2p9wM-D3qzPOAnvHcS81AZ7zG1yrO-RA2olDBrgiBLVdDk616jc3LBma-fVFcXbu05v7T4vMT-qBqd0TSh3fuABBwNQ8bnbTA0SlwLOrGI.jpeg",
+        "start_date": "2026-07-12T07:00:00",
+        "end_date": "2026-09-22T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://www.ancestry.co.uk/c/free-trial/t102986/rd.ashx?ancid=vlukxuc15f&utm_medium=social&utm_source=Facebook+Instagram&utm_campaign=NEW_FB_UK_X_Ancestry_FH_2024_BAU_ACOM-2023-ASC-Prospecting-Creative-Feed-Workspace - Standard - July 2025&utm_content=Sylvan-Script4-UGC&utm_id=120250557866710536",
+        "meta_page": {
+          "uuid": "aa86046b-e37d-4624-99b6-48ecfead53d8",
+          "brand": {
+            "uuid": "65e42f69-0d54-4452-af6e-07d1fb218a53",
+            "name": "Ancestry",
+            "slug": "ancestry",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/ancestry/profile.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "fe3de3d8-bcfb-4e25-9ec5-e9b93ea90ec0",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/BNdbqmZDURNj1O7mDSs4W7pg2YCTAmbI3ZWRL4BSHbfya5zfrNcyCV3veFNQQ6wVMiUJMA839i3fjGtzQtPof-EkdIcUN1j0o0hhHckkh7MpwFGHZibKNUcP7XecYBhHZVAQspFhBc2FgmnkVpl1Qx45D4QKqFfGpwStJuIFW0hFv3QxOA.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/A-Nccs22hQmgE1w1GuKTlQ6Cq45vEASwhF4bs9H-NwInl-_nznEJp-gF2qDZqF2O0ZMbBasomQwlBN4MiNu6Y5vFyv6NDHk8aa3E5Mb2sQzq9oOuTCpzkweqtC8j2tnqOF87sVWQz_L9hoKJt74c0zznB3yn1SMyN0VjnNWNgtGQdLWe.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/LT6GeWbpX9jCqFhKg6FrIEEebGSLE6Y3FCRSbhv-xd8QeoVmu77Fk8Ir7SFUDMMP5PGPmfvAWgTtbyp0c2WZZnmR4q3tH-S8Dl1A-cB0HDo-Wys76cTA5iWYRGMIFlMo6k1PM90kjKII3SYqR7sxvfzuDjevjB04gGeqzl0gzKCT.jpeg",
+            "width": 720,
+            "height": 720,
+            "aspect_ratio": "1:1",
+            "blurhash": "LFHK,_?^GG#,yEs;kXEMxrITRP%1",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": false
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "94c29b16-5545-4be8-986a-c0975ed59b3c",
+        "meta_page_uuid": "4e423312-4533-4442-87c4-2f14f44d0039",
+        "brand_uuid": "b52152fa-0a22-4f3e-a6a9-6708d0c268e6",
+        "created_at": "2026-07-06T18:55:08.221570Z",
+        "body": "🌍 Discover where you come from! Explore the secrets of your ancestry and learn the story of your family. Start uncovering your hidden family history today!",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/LFfcQSF_mGH1WeLypUyVgDjv77X-N4QDyrVnKZzbcr_5mG4oiNQvRcOVecE64ONlW0Xfhy4_hHGneEhqeOxT33x3Elub8kaOjgRSeOvAa5sy3QGOtQ2cAyOMLYVPoel2KHM0OJFXeFJ_w_CWRLYkiJQqi3C3f5Y.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/93eHSs93t0bX1bihScKXB_5qhlv5Ws4ZpGw0dH6G4FnFthvVOnT8cpRlgknlrjrusIkdsAbifvZ6udMcz07pTf4lYhx_BdixfWoFUveDSxJpN1-HxfYCeli_rxXKI-KRalPUpBRZC5e04lpgA__WiF54Jg.jpeg",
+        "start_date": "2026-07-06T07:00:00",
+        "end_date": "2026-08-07T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": 68256,
+        "total_active_time": 7001,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://nibble-app.com/funnels/genealogy?utm_source=facebook&utm_campaign={{campaign.name}}&utm_adname={{ad.name}}&utm_adset={{adset.name}}&utm_ad_id={{ad.id}}&utm_adset_id={{adset.id}}&utm_campaign_id={{campaign.id}}&utm_placement={{placement}}",
+        "meta_page": {
+          "uuid": "4e423312-4533-4442-87c4-2f14f44d0039",
+          "brand": {
+            "uuid": "b52152fa-0a22-4f3e-a6a9-6708d0c268e6",
+            "name": "Nibble: Your Bite of Knowledge",
+            "slug": "nibble-your-bite-of-knowledge",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/1a6e37c4-1ba3-43f9-8243-d86ef59aaa47/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "0bb1711d-fb62-49d0-a993-239327c56dc5",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/9rG2ROCA0HI9GvMyaAvphJRR27Hz2NA5QmsTasrATolreM_oQ6IBldvjHqa_k9F8v-e2YXURWMhQWOCwzsPX8WFYA4KOBxQHLBlX4-at9GKUt1crlKx3Ma2batONFWDoCtbDomn5_8upHY0HXLGttZP-HFMjwgI.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/zhQz8Zw6Vhc_BKDHq2riLSNxVPVyH8hNcxIItIKcNwQXGVB0YzEBxrcfNW6L5_4qfkPlIRmQxbgzBBgoNB7UKN_KHTP0GV0E-wU7aSLDYrM-pGvN9vgVX7sIgI4KqBOyqTAGJo1UvlNSfU1CL4w7guWoaO-UWw.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/mesBM6O-zD9YGJCEN43L_0N8duGebEzGpHDgyLdjmx0bBRS6cgH60bHYKuinxz85ASso4ebiiSTBq3EUPKct1STTXwYPTQUyizZJpjihT-myXIaRGj33D4kQTS070th9ttPhRjfUukx7bf1pxUPB9h_UiQ.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "L7Mi.Z%1VD-o_1jZ9aWC4Ua#%Moe",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "f95efb1f-41fc-4371-8afb-4348b526b42b",
+        "meta_page_uuid": "6d8485de-0010-4889-9bad-900f9ba0255e",
+        "brand_uuid": "f72e4107-7055-4107-b998-f95c27e3d0d1",
+        "created_at": "2026-05-01T20:07:46.115767Z",
+        "body": "At-Home Testing Made Simple. Not sure which test you need? We'll help you find the right at-home test based on your symptoms.\n\n𝘋𝘪𝘴𝘤𝘭𝘰𝘴𝘶𝘳𝘦: 𝘐𝘯𝘴𝘶𝘧𝘧𝘪𝘤𝘪𝘦𝘯𝘵 𝘴𝘢𝘮𝘱𝘭𝘦 𝘤𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 𝘮𝘢𝘺 𝘳𝘦𝘴𝘶𝘭𝘵 𝘪𝘯 𝘢 𝘧𝘢𝘭𝘴𝘦 𝘯𝘦𝘨𝘢𝘵𝘪𝘷𝘦 𝘰𝘳 𝘪𝘯𝘤𝘰𝘯𝘤𝘭𝘶𝘴𝘪𝘷𝘦 𝘳𝘦𝘴𝘶𝘭𝘵𝘴. 𝘛𝘩𝘪𝘴 𝘵𝘦𝘴𝘵 𝘥𝘰𝘦𝘴 𝘯𝘰𝘵 𝘳𝘦𝘱𝘭𝘢𝘤𝘦 𝘪𝘯-𝘱𝘦𝘳𝘴𝘰𝘯 𝘤𝘢𝘳𝘦. 𝘖𝘶𝘳 𝘵𝘦𝘴𝘵𝘪𝘯𝘨 𝘬𝘪𝘵𝘴 𝘢𝘳𝘦 𝘵𝘰 𝘩𝘦𝘭𝘱 𝘺𝘰𝘶 𝘨𝘢𝘪𝘯 𝘢 𝘣𝘦𝘵𝘵𝘦𝘳 𝘱𝘦𝘳𝘴𝘱𝘦𝘤𝘵𝘪𝘷𝘦 𝘰𝘯 𝘺𝘰𝘶𝘳 𝘩𝘦𝘢𝘭𝘵𝘩 𝘢𝘯𝘥 𝘩𝘰𝘸 𝘺𝘰𝘶𝘳 𝘣𝘰𝘥𝘺 𝘧𝘶𝘯𝘤𝘵𝘪𝘰𝘯𝘴. 𝘠𝘰𝘶 𝘮𝘢𝘺 𝘶𝘴𝘦 𝘵𝘩𝘪𝘴 𝘪𝘯𝘧𝘰𝘳𝘮𝘢𝘵𝘪𝘰𝘯 𝘵𝘰 𝘮𝘢𝘬𝘦 𝘮𝘰𝘳𝘦 𝘪𝘯𝘧𝘰𝘳𝘮𝘦𝘥 𝘩𝘦𝘢𝘭𝘵𝘩 𝘤𝘢𝘳𝘦 𝘥𝘦𝘤𝘪𝘴𝘪𝘰𝘯𝘴 𝘢𝘯𝘥 𝘤𝘩𝘰𝘪𝘤𝘦𝘴. 𝘐𝘧 𝘺𝘰𝘶 𝘵𝘦𝘴𝘵 𝘱𝘰𝘴𝘪𝘵𝘪𝘷𝘦 𝘧𝘰𝘳 𝘤𝘩𝘭𝘢𝘮𝘺𝘥𝘪𝘢, 𝘨𝘰𝘯𝘰𝘳𝘳𝘩𝘦𝘢, 𝘴𝘺𝘱𝘩𝘪𝘭𝘪𝘴, 𝘰𝘳 𝘏𝘐𝘝,  𝘞𝘪𝘴𝘱 𝘢𝘯𝘥 𝘪𝘵𝘴 𝘭𝘢𝘣 𝘱𝘢𝘳𝘵𝘯𝘦𝘳 𝘢𝘯𝘥 𝘤𝘭𝘪𝘯𝘪𝘤𝘪𝘢𝘯 𝘢𝘧𝘧𝘪𝘭𝘪𝘢𝘵𝘦𝘴 𝘸𝘪𝘭𝘭 𝘯𝘰𝘵𝘪𝘧𝘺 𝘺𝘰𝘶 𝘢𝘯𝘥 𝘸𝘪𝘭𝘭 𝘢𝘭𝘴𝘰 𝘳𝘦𝘱𝘰𝘳𝘵 𝘵𝘩𝘦 𝘱𝘰𝘴𝘪𝘵𝘪𝘷𝘦 𝘵𝘦𝘴𝘵 𝘳𝘦𝘴𝘶𝘭𝘵 𝘵𝘰 𝘺𝘰𝘶𝘳 𝘴𝘵𝘢𝘵𝘦 𝘰𝘳 𝘤𝘰𝘶𝘯𝘵𝘺 𝘏𝘦𝘢𝘭𝘵𝘩 𝘋𝘦𝘱𝘢𝘳𝘵𝘮𝘦𝘯𝘵, 𝘢𝘴 𝘳𝘦𝘲𝘶𝘪𝘳𝘦𝘥 𝘣𝘺 𝘴𝘵𝘢𝘵𝘦 𝘭𝘢𝘸.",
+        "cta_text": "Order now",
+        "original_media_url": "https://assets.spiral.ad/c/715NOjAOc7gdFtOcTa6Qlx1ebEDRvZXblFFjXk_HznL15aRAEVvfatI_k56MfwbcnNaoqjBYKm8lPbgU8BSRwLFNY8dankr1vKjOpHwKyYO9PI6XDz9NeD1shw2GdxlyrIKudsYA2q1gDTagdgCIhONMqV4RpQ.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/vkh8Tq0W4osJkx1Q6e6ks2o8hMbGrLLaW5A1wV0zfspwBRbg-1mItiFYp8KqvyJMV8xB3sbsiy6Yqn2lILUEUIiWE80d_fjbJADg1X-x_ivBDAhjuRj3r_CA60P9tmYpKFNLFFjrhGAoeafQlflAbX5N.jpeg",
+        "start_date": "2026-05-01T07:00:00",
+        "end_date": "2026-06-07T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://hellowisp.com/products/at-home-testing-quiz?utm_source=facebook&utm_medium=paidsocial&utm_campaign=prospecting&utm_term=dahlia&utm_content={{ad.id}}&fb_adid={{ad.id}}&fb_campaignid={{campaign.id}}&fb_adsetid={{adset.id}}",
+        "meta_page": {
+          "uuid": "6d8485de-0010-4889-9bad-900f9ba0255e",
+          "brand": {
+            "uuid": "f72e4107-7055-4107-b998-f95c27e3d0d1",
+            "name": "wisp",
+            "slug": "wisp",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/brands/f72e4107-7055-4107-b998-f95c27e3d0d1/logo.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "ebcaf0a4-4c28-40d1-a193-156074726ddc",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/vcJg1LnScqSMkEhBLeAKPIPUVVOodrer8a9eONQjl6ze0WSp9zACa0B0nNHO33qSUUiKyyPJEKo_Uz2hz1XYReF84DQeZwjIqqCfO5mXzTp3N06crCZnP0nI-HTGsBezWSwFymd651G1jlt090eWtcGs7UFDgQ.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/MkXttwmJXl_ikTh3e-P5yxBNyaQqoGgG0zINHcAchaB7Ru7sgt0GEIZduMA-K12fUY1dtb03rYDonp6TRob8_5QoG13JkpOoam7oqn7AgazI3fjSS0qMBHO1Wk2D-qitBUEOowXf7zhhQn8Hb-xIacAntAQh.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/ci5wL7Mv5Ucwa9dBASIDaRSxWtAV_jooGoQ_mjcoeAScpJGTSmixkMKEzjGl86oaKPiGMUNdO6KrIzCFrpE5jI3tLaoRvUl4HTkuEQFQOZqbNtnYltytddm7mm7gdbUqJVyNrQifI3TWxY4N8vORI2zd.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LxM~6MXmOYXS@EjZjajFTdrrrrrr",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "64034111-5ff1-4c34-9537-60f4c130c4f8",
+        "meta_page_uuid": "85102e8f-0d39-4d39-bd44-4441fd45f941",
+        "brand_uuid": "bca30d96-25d3-43f4-958e-702875777d10",
+        "created_at": "2026-04-14T00:21:59.887849Z",
+        "body": "One scoop. 75+ high-quality ingredients, including pre- and probiotics, a multivitamin, superfoods, and greens.",
+        "cta_text": "Shop now",
+        "original_media_url": "https://assets.spiral.ad/c/sX3keog7nEJ0VHWT-dmzZ36D2BsUrO2X39OEi5Z_GVI-fmdiFOH76brpN35TgwX7WPeayONsR-wCz89tyK1tuGGuoverJehUY9kh7NwglWC1QxxLe64mIuGSnBf4remx-0j5ZrMpc1yscabvLLxCEoj7p7vbFn3YirC3xy9F8_5rS9aqqw.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/K79B_pz3_4NxaDlURPyNjw-1r5AXcVSRz2RH2NugnCLcyPBKyB8gs1JMuXVHT-6IiN-Fh04mlck4MAmxfQmCt9preZTL_Wg8lPclh_YX11oNF1AmXJ0aLpFOCbOLwOHbQoX2ZiuKFCLLO8zG4hXQZyMuVawkkl5anDxp5_JDTcPj.jpeg",
+        "start_date": "2026-04-13T07:00:00",
+        "end_date": "2026-09-03T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "http://drinkag1.com/hugh-jackman",
+        "meta_page": {
+          "uuid": "85102e8f-0d39-4d39-bd44-4441fd45f941",
+          "brand": {
+            "uuid": "bca30d96-25d3-43f4-958e-702875777d10",
+            "name": "AG1 by Athletic Greens",
+            "slug": "ag1-by-athletic-greens",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/brands/bca30d96-25d3-43f4-958e-702875777d10/logo.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "042423c2-992b-422f-a754-bd38e0ae1f8a",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/9wER2-GR5Lx1HZEYp1JkkI-2T_ca3twFw6LekZv5TptFmhRWOIVF5PBJVAQTwi_2AhqZNnO9sUsEoZ0hv15L7JZC-JKArXX8fjqMmQlrXG-NyI41VUbG22pELVQZ0NO0HctmXTFP9CgFo9CXZS6ebaw8zaTxz7-BXdAtaXVDFftwYNR96w.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/QJQelCCTOvjRBG-J13q6Nsj3rxejhZIOVKbWgDSHKg8xbFHRWbO33eCFwdMLsQfbN4ClMKl_bfgSR0z2TmZ7FnmE_KMp1BlIbX046uKa9_hIU96eVGXjWc9g8xZVStq_iCYiI-DRB4BvfsEhcZzJRb61w42z.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/rJ8CHzmB_EdW-CgC4bBphm7YrtLafy2oqj4pwPAC6OelkfhmiVDVili6ImbapQY9NRO-NIkVuxGD0DQAhb4b4ndKZaC737Bn7EwhO9SQ5NTMt3iRlklZoQETpS2I6aZaq5xrXerVg5mkAxOA3uiWxqBEBPbM5YBwy48jzwPsysts.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "L8CsKzt60KJ90LpJXmR-}?o}xa%1",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": false
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "03273a5c-63b1-4537-9066-3a702a754a21",
+        "meta_page_uuid": "292bb26e-8737-478a-8fd1-0e1166c57f97",
+        "brand_uuid": "93bba48a-e2d7-44e7-bc30-a8268d0f1fce",
+        "created_at": "2026-08-27T19:59:09.425120Z",
+        "body": "Midi’s Daily Omega-3+ is the new flex for women 35+. Stacked with Omega-3s, CoQ10, Vitamins D3 & K2, this convenient supplement was made for: \n✅Strong Bones\n✅Heart Protection\n✅Brain Health\n✅Inflammation Control\nOne daily supplement 👉 Whole body support. \n✨Save 20% when you subscribe today! ✨",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/jhu_T7Oz1gv8Sz3wBJuQg4JHHGCzwCNA3qCUFcdHPKP1V0D9KoYeq6ltE7UcrMNiMSUoPbhrfenyGwNcWbs0ESpxLBKrd71BdYo8OlzFuuvsfwEp7BAzTAsATjAi5VbDTDXWf5fWAmJ_xt--uoVcd2368QHVoQ.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/YAs5xmmyzTt9IsZDOuva1tfKTJhW47Sp3fbgGhJkNqorz9ZEalCOYEWixAyWRC6Q67EmiCH-W44B61Zj-D8t3pAX7BVVbXUllJVjOMhf8Dj2N-sGbuivcTxwWFPd63W8VtL3HtBrZQhdOfFuQA0CsV0m.jpeg",
+        "start_date": "2026-08-27T07:00:00",
+        "end_date": "2026-10-05T07:00:00",
+        "is_active": true,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://shop.joinmidi.com/products/daily-omega-3?selling_plan=4033708214",
+        "meta_page": {
+          "uuid": "292bb26e-8737-478a-8fd1-0e1166c57f97",
+          "brand": {
+            "uuid": "93bba48a-e2d7-44e7-bc30-a8268d0f1fce",
+            "name": "Midi Health",
+            "slug": "midi-health",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/brands/93bba48a-e2d7-44e7-bc30-a8268d0f1fce/logo.png"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "9f3f820e-1969-410e-9b30-32a3cafd0f9e",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/KgpDFJiyTIlsgtg8-o2hE8-g-uMGuD9JD2yrikAq2k5bLA-CcSClRkg-R3nOvW1XEXg30zvRfFUFOXMv9L-XAUar6RC6k6evZuuUA9mQ97t5khyVMsEtTCrpqkCVcS9fypHMlwM4MiwhzSvcWeaMO4d_275Elg.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/gOAfPyKdxMafCMgX7CyffgINCAq5mqCj6Y4fitkO6yOQ-rjGVGGmiehTFJUjGYs0kNPhyLaHfww1hTlzcWfWnILLqC5rSIQY6nzaqMLDxLVSHt3AFCmWQI73Qycv3kO7ykYXTr2rOZMwbooT-5tSwYRTuyaU.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/bB-iRcmbATwCJh2YyvntrhP5rLWT0PSC0ETExB5nwJI9BCA2JJBHi1Kw2t6Uxu_TXRYG-7XegVYKaRhAh6kXlq_bksI3hCZ-EL-7pgTLa18fwtPTwMazm2ppS29hh_9smyj9AHx-1ohucymjSFKB-nFx.jpeg",
+            "width": 720,
+            "height": 900,
+            "aspect_ratio": "4:5",
+            "blurhash": "LLDSnBp09vF44mrr-6VrW?s;T0t6",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "2682e783-b6c0-4e51-8926-b93cad25f544",
+        "meta_page_uuid": "7eeaef8b-e1f9-4188-901b-2e36f08b371d",
+        "brand_uuid": "527f29f8-c4dd-47e2-acb4-5c6a19e3bbe3",
+        "created_at": "2026-09-04T22:50:28.175162Z",
+        "body": "Preserve their voice with the only keepsake book that lets you listen to their stories.\n\nWith Remento, each page includes a QR code that links back to your storyteller’s original recording.\n\nTheir voice. Preserved forever.\n\nNo writing required.\n\nAs seen on Shark Tank.",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/j3VhGOqDqk13yll7qZu6_BV9d24d0ZsHehd-IcAJMWSGIJMp408pV_sw-gs3mR-ua7k2E0JIDRRC3Sa0mexZuGtWmwFZg-nCH1V5Gj5ZXVayY9jetsVXZRt6pFVvICbW6FgPNBBlSYKDtNmSvEmz_zbW2_3k_zDs-Es1Sbu4pNuM8m8muQ.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/fKz5Ra3DAfnBjt17-Fjci-kCjhxhcH2BdtSUOEgeFUIf3tRLmzIaw18eKsZoi4w_OlFiky8gu5fyjQlQ-funRevwxUpJLAEjFJX2Ym66FWqBFbiGHpaCrxm6TCsi7aVE848RouC40AQY_k_ymGxdzTQaY_E9To6sacikju3aHGHn.jpeg",
+        "start_date": "2026-09-03T07:00:00",
+        "end_date": "2026-10-05T07:00:00",
+        "is_active": true,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://www.remento.co/",
+        "meta_page": {
+          "uuid": "7eeaef8b-e1f9-4188-901b-2e36f08b371d",
+          "brand": {
+            "uuid": "527f29f8-c4dd-47e2-acb4-5c6a19e3bbe3",
+            "name": "Remento",
+            "slug": "remento",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/brands/527f29f8-c4dd-47e2-acb4-5c6a19e3bbe3/logo.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "8e1b5eac-796a-4ae7-a41f-ac1683a09e5d",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/ihnSUXwgoPqj7-GEivO6jG-IStw9uGUiyplWzWSAnA-LoyOgI2JajJyr89pisCOzuDg7aLWOsr_O_FDToUxrLQYjfpJthJ268omJ0vsnFW08tXVGtTm9uou2Unj_tSp6shYP02__6grJPCAd5eFf57N6drUPLTmBp88LG9HNbx7X_lebGA.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/2UZYzgrVyTI_mpEwnGde4HM_kCvFRVZxjpCMjZFi6P1eDAViHyoglUBMdTeEPHy5KUpTybA3F8e8OblK5lVOamxgCGffwWMG1aOUBqCWkYibHHVokJodjdsQHMtfqHloFiFw2H_70Wp4t4vw_FrD8fJroGQ0aNP_5Ay0ULakMGSzMSMi.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/1zbNJe9Art84vE8LMrlI5l5z-Aqic1vL0zrgPyhWKjQxzULdO26ZQHG_d8s2kv5NzPYACc9Mi9gh6V4JMUveNJFacp_KLXMU3K2sJT1zsZqwyCWIbqPd5ghFdNHxTtP5psIG2k_nprCr-rzT_f3V_KRlPtUVGY3vhyDyrfBHy7TB.jpeg",
+            "width": 720,
+            "height": 900,
+            "aspect_ratio": "4:5",
+            "blurhash": "LdG+K?t7o}kD-:a~Ria}4TWBV@ae",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "feccf0c9-1bcf-473b-a4dd-90bdcb368513",
+        "meta_page_uuid": "6d8485de-0010-4889-9bad-900f9ba0255e",
+        "brand_uuid": "f72e4107-7055-4107-b998-f95c27e3d0d1",
+        "created_at": "2026-04-17T19:34:07.973125Z",
+        "body": "Wisp makes it easy to test and treat STDs from home. Choose your kit, get fast results, and access an included consult for same-day treatment—no in-office visits, no hassle.",
+        "cta_text": "Shop now",
+        "original_media_url": "https://assets.spiral.ad/c/jIC5FG1sZjb8WeYNLhJRaTsRf6cKNXo_pwmLPFP51VbUVH-SgWIDBOWW6nYjJCcDBrrNIDurQDKCtODKII5aTpcIG2hl26afQAWMuDWxSGYPxO4Y1iV4VMd_9siZDk_fa4J65sYattK-jn1IdxhEcNZwqN3JlA.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/H_fAu-ITSOOH4gziA9r5IQ8KxWBZ1mM7A_GXkgfmvBlt6dHBI8F0w0oP_FJnavZEXPnaigC4yYRHFIWrDVfF7VQqPJ3l1yFt7I37xeaTovtTrTJ0R2HlIUf7iO_iUckkzHdx342g9UHdIyIoR4TAhPJW.jpeg",
+        "start_date": "2026-04-17T07:00:00",
+        "end_date": "2026-06-27T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": 80650,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://hellowisp.com/shop/std/std-at-home-testing?utm_source=facebook&utm_medium=paidsocial&utm_campaign=prospecting&utm_term=dahlia&utm_content={{ad.id}}&fb_adid={{ad.id}}&fb_campaignid={{campaign.id}}&fb_adsetid={{adset.id}}",
+        "meta_page": {
+          "uuid": "6d8485de-0010-4889-9bad-900f9ba0255e",
+          "brand": {
+            "uuid": "f72e4107-7055-4107-b998-f95c27e3d0d1",
+            "name": "wisp",
+            "slug": "wisp",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/brands/f72e4107-7055-4107-b998-f95c27e3d0d1/logo.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "b331c1c4-9195-4d0f-87b7-a0a6fafd18f0",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/S1WM-uhGdJM20590VwpJzMLUUC2ahi7-HsfrRZeHD6I1K6bFB1iCDWc82wfVr9LDP2I3xeDr7fvDpgDTU9N25j7YHR5u_RsnK5UGljMdfljEJokl5JfMeMfcpt6wsW3BEllKbMu1TAIf_rCkYsIBhBqq5DVZ3Q.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/zPI29bq8KWUkCmRiY6HMlwq0pn3qnegXlTPOU2_HEeHa0QfR8-0ujghPKOiGggPMk6AOwuVvlgdc-1dhojE7siR1OBaMYHtGOe3pFX4vplAoV9pIymYEuZmTVy85kisNcGtDrSsU82E93wHswsr67TacGbhM.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/hXsKFw42B_3W8ng3ea68_rPnCD4n34pV3qyhGyw68KFU_9r8GhO3OwQ0FrEbT5LQNsz5dhMSiVmUfy-Uc0uCaPhtfluLs1uKjiwenWs-jnAMJUZpeps0Umr1M5FodosUfM6WXH5XceyBKIDTMGmXS8Bl.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LXEfHaoMI;nj4UayoIX7HCW;wwkC",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": false
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "889e5889-b6d9-49f9-bb66-8f33102f9514",
+        "meta_page_uuid": "d51bbf98-1121-4ae9-885b-bdf024e14f3e",
+        "brand_uuid": "8d535017-bcce-48e8-a7b0-13c49c817a1e",
+        "created_at": "2026-08-05T20:40:59.292937Z",
+        "body": "Every body is different. Every wellness journey is different.\n\nWhether you're taking your first multivitamin, training for your next race, shopping for your family, or simply trying to make healthier choices, you deserve to know what's in your supplements.\n\nThat's why we created Suppie.\n\n📱 Scan supplements, explore research-backed insights, and make informed decisions with confidence.\n\nSuppie is for Every Body.",
+        "cta_text": "Download",
+        "original_media_url": "https://assets.spiral.ad/c/v-avRiGBAAwZPU5fzVIlY0P4l-u-mtxQ7ZGPmy5_RWaUMn5OG0X4fLzzwzd4k7CJ4RIuPmVb1fSyn8JZaUdyf7RZJKytAjk9ooJFqgpmagI3iNQrMAvTA4riV9dLet2Ln-D-E-9Cs8Zp9zdpV7XuI6q6D-qlILE.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/NmnolyJ1dgj4Sn2XubZui9_BfbXmbdsi91Tu21U_OtnM5Al7AFVG8l6cVLQeOnd-ddO8vUrLSzIXrfS4oIwJ6jhrJ0egMv9hU4V3OBav2Ml6UahABS3Rs3xVv0tryWZr_Ns9C6MISuTfVBvUD_SZC5w6xg.jpeg",
+        "start_date": "2026-08-05T07:00:00",
+        "end_date": "2026-09-12T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": 6094,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://suppie.app/",
+        "meta_page": {
+          "uuid": "d51bbf98-1121-4ae9-885b-bdf024e14f3e",
+          "brand": {
+            "uuid": "8d535017-bcce-48e8-a7b0-13c49c817a1e",
+            "name": "Suppie - Supplement Scanner",
+            "slug": "suppie-supplement-app",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/mobileapp/6657949830/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "bfcb7189-0505-416f-870d-7efce59d867c",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/XrLa7eLxFTniT59Vqwfrb4Emr6cNj1MWrRBAr-Bo-_v0I_5ISmm1kB7j9IiUAZKSNDbvR6w3n0kGMMBgnZE8d-TWwg9B0DhDxfSlpvxOEf0Q29UY4jb3igykXINyXvYXegnGtxOu8tg1WSu2mn3MIuouguWkZo8.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/I3Hx--HEBPPkuCVxOt7yVLCSqBu9FvAYWjT7ipdARdf-17bLYLZxZE3VFr0w479Zn56xWPwU_KbWG5GPR6dgiCslL5jHgPhSgO8PmwmrDD2SOYQ8vMo6glBMhyLzuYNrzYaxqWfcy1QLPP8v2aF5jqbWVapSDg.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/cHhySw6Z_KDq0xpS_zdydaBYDTLAekb0h2apQQnCGt1rrktwYCQ0FQqdADVgJNclBCHX6CbcLL72VWnBfAGCZo5P4XfNewz2iSdj4GPM8-O4p_MwZlfEu4W_68Pj5aWoQQLQlK7Cdq2j-aVTwCOFQfKHIw.jpeg",
+            "width": 856,
+            "height": 718,
+            "aspect_ratio": "6:5",
+            "blurhash": "LLEn|W~TEQIW~T?ZoJs.~U-.t7Rk",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      }
+    ],
+    "missing": []
+  }
+}
