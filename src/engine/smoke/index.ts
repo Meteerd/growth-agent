@@ -1,12 +1,14 @@
 import type { Db } from "../db/client";
 import { smokeAnthropic } from "./anthropic";
 import { smokeFirecrawl, smokeIntake } from "./intake";
+import { smokeYoutube } from "./sources";
 
 type Smoke = (db: Db) => Promise<{ mode: "live" | "demo"; usd: number; file?: string; [k: string]: unknown }>;
 
 export const SMOKES: Record<string, Smoke> = {
   anthropic: smokeAnthropic,
   firecrawl: smokeFirecrawl,
+  youtube: smokeYoutube,
   intake: (db) => smokeIntake(db, process.env.SMOKE_BRAND || "hound"),
 };
 

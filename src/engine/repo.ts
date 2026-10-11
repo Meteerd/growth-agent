@@ -268,7 +268,22 @@ export async function addRunCost(db: Db, id: string, usd: number): Promise<void>
 
 // ---------------------------------------------------------------- run events
 
-export async function appendEvent(db: Db, e: Omit<RunEvent, "id" | "ts"> & { ts?: string }): Promise<RunEvent> {
+const eventLocks = new Map<string, Promise<unknown>>();
+
+/** Append a RunEvent with the next monotonic id for its run. Serialized per run inside the process. */
+export function appendEvent(db: Db, e: Omit<RunEvent, "id" | "ts"> & { ts?: string }): Promise<RunEvent> {
+  const prev = eventLocks.get(e.runId) ?? Promise.resolve();
+  const next = prev.catch(() => undefined).then(() => appendEventUnlocked(db, e));
+  eventLocks.set(e.runId, next);
+  void next
+    .finally(() => {
+      if (eventLocks.get(e.runId) === next) eventLocks.delete(e.runId);
+    })
+    .catch(() => undefined);
+  return next;
+}
+
+async function appendEventUnlocked(db: Db, e: Omit<RunEvent, "id" | "ts"> & { ts?: string }): Promise<RunEvent> {
   for (let attempt = 0; attempt < 5; attempt++) {
     const max = await db
       .select({ m: sql<number>`coalesce(max(${t.runEvents.seq}), 0)` })

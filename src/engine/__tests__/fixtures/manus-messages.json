@@ -1,0 +1,57 @@
+{
+  "_note": "Event log in the shape documented at https://open.manus.ai/docs/v2/task.listMessages.md (11 Oct 2026). Replaced by a real recording in fixtures/live/manus/ after the A14 smoke test.",
+  "running": [
+    { "id": "e1", "type": "user_message", "timestamp": 1760220000000 },
+    {
+      "id": "e2",
+      "type": "status_update",
+      "timestamp": 1760220001000,
+      "status_update": { "agent_status": "running", "brief": "Searching competitor ads" }
+    }
+  ],
+  "done": [
+    { "id": "e1", "type": "user_message", "timestamp": 1760220000000 },
+    {
+      "id": "e2",
+      "type": "status_update",
+      "timestamp": 1760220001000,
+      "status_update": { "agent_status": "running", "brief": "Searching" }
+    },
+    {
+      "id": "e3",
+      "type": "assistant_message",
+      "timestamp": 1760220300000,
+      "assistant_message": { "content": "Done." }
+    },
+    { "id": "e4", "type": "status_update", "timestamp": 1760220301000, "status_update": { "agent_status": "stopped" } },
+    {
+      "id": "e5",
+      "type": "structured_output_result",
+      "timestamp": 1760220302000,
+      "structured_output_result": {
+        "success": true,
+        "error": null,
+        "value": {
+          "summary": "Short video dominates discovery.",
+          "channels": [
+            { "channel": "TikTok", "why": "Owners search dog problems there", "evidence": "https://example.org/a" }
+          ],
+          "competitors": [{ "name": "Competitor A", "url": "https://example.org/c", "whatWorksForThem": "Quiz ads" }],
+          "communities": [
+            {
+              "name": "r/Dogtraining",
+              "url": "https://www.reddit.com/r/Dogtraining",
+              "selfPromotionRules": "Weekly thread only"
+            }
+          ],
+          "sources": [{ "title": "Source", "url": "https://example.org/s" }]
+        }
+      }
+    }
+  ],
+  "waiting": [
+    { "id": "e2", "type": "status_update", "status_update": { "agent_status": "running" } },
+    { "id": "e3", "type": "assistant_message", "assistant_message": { "content": "Which country first?" } },
+    { "id": "e4", "type": "status_update", "status_update": { "agent_status": "waiting" } }
+  ]
+}

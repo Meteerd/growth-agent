@@ -1,0 +1,164 @@
+{
+  "recordedAt": "2026-10-11T20:53:16.303Z",
+  "query": "dog separation anxiety",
+  "items": [
+    {
+      "id": "ev_hound_outube_youtube_mv4avki41",
+      "brandId": "brand_hound",
+      "runId": "smoke_youtube",
+      "source": "youtube",
+      "kind": "video",
+      "title": "My cat has separation anxiety 🥺💔 #shorts",
+      "metrics": {
+        "views": 16191723,
+        "likes": 1033603,
+        "comments": 16890,
+        "followers": 5500000,
+        "outlierScore": 2.9
+      },
+      "tags": [
+        "shorts"
+      ],
+      "capturedAt": "2026-10-11T20:53:16.300Z",
+      "demo": false,
+      "url": "https://www.youtube.com/shorts/f0tFB_Ff1xU",
+      "author": "DontStopMeowing",
+      "thumbnailUrl": "https://i.ytimg.com/vi/f0tFB_Ff1xU/hqdefault.jpg",
+      "deconstruction": {
+        "lengthSec": 31
+      }
+    },
+    {
+      "id": "ev_hound_outube_youtube_mv4avki42",
+      "brandId": "brand_hound",
+      "runId": "smoke_youtube",
+      "source": "youtube",
+      "kind": "video",
+      "title": "this is what anxiety feels like #shorts #adhd #anxiety",
+      "metrics": {
+        "views": 11045989,
+        "likes": 531406,
+        "comments": 4430,
+        "followers": 611000,
+        "outlierScore": 18.1
+      },
+      "tags": [
+        "shorts"
+      ],
+      "capturedAt": "2026-10-11T20:53:16.300Z",
+      "demo": false,
+      "url": "https://www.youtube.com/shorts/tnFPhNNo4Fw",
+      "author": "Olivia Lutfallah",
+      "thumbnailUrl": "https://i.ytimg.com/vi/tnFPhNNo4Fw/hqdefault.jpg",
+      "deconstruction": {
+        "lengthSec": 7
+      }
+    },
+    {
+      "id": "ev_hound_outube_youtube_mv4avki43",
+      "brandId": "brand_hound",
+      "runId": "smoke_youtube",
+      "source": "youtube",
+      "kind": "video",
+      "title": "分離不安症の治し方がわかった！？ #犬 #short #shorts #分離不安 #分離不安症 #分離不安治し方",
+      "metrics": {
+        "views": 7040469,
+        "likes": 219857,
+        "comments": 730,
+        "followers": 26200,
+        "outlierScore": 268.7
+      },
+      "tags": [
+        "shorts"
+      ],
+      "capturedAt": "2026-10-11T20:53:16.300Z",
+      "demo": false,
+      "url": "https://www.youtube.com/shorts/sBBNa7Bq-1w",
+      "author": "そあまるฅ",
+      "thumbnailUrl": "https://i.ytimg.com/vi/sBBNa7Bq-1w/hqdefault.jpg",
+      "deconstruction": {
+        "lengthSec": 59
+      }
+    },
+    {
+      "id": "ev_hound_outube_youtube_mv4avki44",
+      "brandId": "brand_hound",
+      "runId": "smoke_youtube",
+      "source": "youtube",
+      "kind": "video",
+      "title": "The separation anxiety went crazy 😭 #Shorts",
+      "metrics": {
+        "views": 2710239,
+        "likes": 108871,
+        "comments": 246,
+        "followers": 5070000,
+        "outlierScore": 0.5
+      },
+      "tags": [
+        "shorts"
+      ],
+      "capturedAt": "2026-10-11T20:53:16.300Z",
+      "demo": false,
+      "url": "https://www.youtube.com/shorts/uZON7Kwvr1k",
+      "author": "Jordi ",
+      "thumbnailUrl": "https://i.ytimg.com/vi/uZON7Kwvr1k/hqdefault.jpg",
+      "deconstruction": {
+        "lengthSec": 16
+      }
+    },
+    {
+      "id": "ev_hound_outube_youtube_mv4avki45",
+      "brandId": "brand_hound",
+      "runId": "smoke_youtube",
+      "source": "youtube",
+      "kind": "video",
+      "title": "Easiest Dog Breeds To Own In The World",
+      "metrics": {
+        "views": 1297109,
+        "likes": 47738,
+        "comments": 1085,
+        "followers": 1240000,
+        "outlierScore": 1
+      },
+      "tags": [
+        "shorts"
+      ],
+      "capturedAt": "2026-10-11T20:53:16.300Z",
+      "demo": false,
+      "url": "https://www.youtube.com/shorts/7iU_ztdBWmg",
+      "author": "Will Atherton Canine Training",
+      "thumbnailUrl": "https://i.ytimg.com/vi/7iU_ztdBWmg/hqdefault.jpg",
+      "text": "Easiest Dog Breeds To Own In The World.",
+      "deconstruction": {
+        "lengthSec": 58
+      }
+    },
+    {
+      "id": "ev_hound_outube_youtube_mv4avki46",
+      "brandId": "brand_hound",
+      "runId": "smoke_youtube",
+      "source": "youtube",
+      "kind": "video",
+      "title": "separation anxiety",
+      "metrics": {
+        "views": 1043993,
+        "likes": 61143,
+        "comments": 183,
+        "followers": 581000,
+        "outlierScore": 1.8
+      },
+      "tags": [
+        "shorts"
+      ],
+      "capturedAt": "2026-10-11T20:53:16.300Z",
+      "demo": false,
+      "url": "https://www.youtube.com/shorts/kmY4CLs7mhA",
+      "author": "dinosaur couch",
+      "thumbnailUrl": "https://i.ytimg.com/vi/kmY4CLs7mhA/hqdefault.jpg",
+      "text": "dog #wholesome #animation #shorts.",
+      "deconstruction": {
+        "lengthSec": 16
+      }
+    }
+  ]
+}
