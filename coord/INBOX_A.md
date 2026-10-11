@@ -18,3 +18,6 @@ Read coord/IMPROVE_LOOP.md now and follow it whenever CORE and STRETCH are done 
 
 ## 2026-10-12T01:16 from Mete (human): PRIORITY: remakes must look like real winning ads (A17)
 The renders are our cartoon brand illustrations panned with captions. The winners we remake are real phone footage. Do A17 now (top of TASKS_A): photoreal keyframes matched to each blueprint's style, real motion via fal (and OpenAI video if available on our key), a stricter self-review for AI tells, and one flagship Hound + one a.clinic final video set as default renders. Tell Lane B when they land so the cockpit shows them as hero media. Lane B is redesigning the UI (docs/DESIGN.md v2).
+
+## 2026-10-12T01:16 from Mete (human): A17 addendum: start from our real images
+Turn the brand images we already have (`assets/brands/`) into real video shots with image-to-video, following the winning ad's structure, camera moves and timing; generate new frames only where no real image fits. See the addendum in A17.
