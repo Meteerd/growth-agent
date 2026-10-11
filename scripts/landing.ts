@@ -11,3 +11,6 @@ const db = await getDb();
 const p = await buildLanding(db, packId);
 console.log(JSON.stringify({ packId: p.id, landingUrl: p.landingUrl }, null, 2));
 saveFixture("manus", "landing_start", { packId: p.id, landingUrl: p.landingUrl });
+
+// some SDK sockets keep the event loop alive after the work is done
+process.exit(0);

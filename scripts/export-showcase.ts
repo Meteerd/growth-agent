@@ -5,3 +5,6 @@ loadEnv();
 const { getDb } = await import("@/engine/db/client");
 const { exportShowcase } = await import("@/engine/live/showcase");
 console.log(await exportShowcase(await getDb(), process.argv[2]));
+
+// some SDK sockets keep the event loop alive after the work is done
+process.exit(0);
