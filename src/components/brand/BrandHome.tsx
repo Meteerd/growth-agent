@@ -10,7 +10,7 @@ import { Skeleton, SkeletonCard } from "@/components/ui/Skeleton";
 import { ErrorState } from "@/components/ui/States";
 import { toast } from "@/components/ui/Toast";
 import type { Brand, BrandDossier, Run } from "@/contracts";
-import { getClient } from "@/lib/client/api";
+import { ApiRequestError, getClient } from "@/lib/client/api";
 import { referenceImages } from "@/lib/client/brandAssets";
 import { cn } from "@/lib/client/cn";
 import { useFieldActivity } from "@/lib/client/field";
@@ -207,12 +207,25 @@ function Runs({ brand }: { brand: Brand }) {
   const { data: runs, isLoading } = useBrandRuns(brand.id);
   const router = useRouter();
   const [starting, setStarting] = useState(false);
-  const start = async () => {
+  // Default: build on the brand's recorded live research (real evidence, instant), paced so the gathering is
+  // visible; fall back to a fresh run when the brand has none. "Fresh research" always gathers live (capped).
+  const start = async (fresh = false) => {
     if (starting) return;
     setStarting(true);
     try {
-      const run = await getClient().startRun(brand.id, { kind: "full" });
-      router.push(`/runs/${run.id}`);
+      const client = getClient();
+      let run: Run | undefined;
+      let reused = false;
+      if (!fresh && client.mode === "live") {
+        try {
+          run = await client.startRun(brand.id, { kind: "full", reuseResearchFrom: "recorded" });
+          reused = true;
+        } catch (e) {
+          if (!(e instanceof ApiRequestError && e.status === 404)) throw e;
+        }
+      }
+      run ??= await client.startRun(brand.id, { kind: "full" });
+      router.push(reused ? `/runs/${run.id}?pace=150` : `/runs/${run.id}`);
     } catch (e) {
       toast({ title: "The run did not start", body: e instanceof Error ? e.message : undefined, tone: "fail" });
       setStarting(false);
@@ -224,9 +237,21 @@ function Runs({ brand }: { brand: Brand }) {
         label="runs"
         title="Go-to-market runs"
         aside={
-          <Button variant="primary" size="sm" onClick={start} loading={starting} data-testid="start-run">
-            Start a run
-          </Button>
+          <div className="flex items-center gap-1.5">
+            <Button
+              variant="quiet"
+              size="sm"
+              onClick={() => start(true)}
+              disabled={starting}
+              title="Gathers everything live: provider calls, within the spend caps"
+              data-testid="start-fresh"
+            >
+              Fresh research
+            </Button>
+            <Button variant="primary" size="sm" onClick={() => start()} loading={starting} data-testid="start-run">
+              Start a run
+            </Button>
+          </div>
         }
       />
       {isLoading ? (

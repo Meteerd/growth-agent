@@ -90,6 +90,8 @@ export interface DataClient {
   packs(runId: string): Promise<PublishPack[]>;
   packDownloadUrl(packId: string): string;
   markPosted(packId: string, req: PostedRequest): Promise<PublishPack>;
+  /** Manus builds a landing page for the pack (link in pack.landingUrl, never published). 409 manus_demo when Manus is not live. */
+  buildLanding(packId: string): Promise<PublishPack>;
   addMetrics(packId: string, req: MetricsRequest): Promise<MetricSnapshot>;
   results(brandId: string): Promise<z.infer<typeof ResultsResponse>>;
   spend(runId?: string): Promise<z.infer<typeof SpendResponse>>;
@@ -191,6 +193,7 @@ export const liveClient: DataClient = {
   packs: (id) => request(PacksResponse, API.runPacks(id)),
   packDownloadUrl: (id) => API.packDownload(id),
   markPosted: (id, req) => request(PublishPackSchema, API.packPosted(id), { method: "POST", json: req }),
+  buildLanding: (id) => request(PublishPackSchema, API.packLanding(id), { method: "POST", json: {} }),
   addMetrics: (id, req) => request(MetricSnapshotSchema, API.packMetrics(id), { method: "POST", json: req }),
   results: (id) => request(ResultsResponse, API.brandResults(id)),
   spend: (runId) => request(SpendResponse, runId ? `${API.spend()}?runId=${runId}` : API.spend()),

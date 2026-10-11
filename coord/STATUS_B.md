@@ -45,3 +45,4 @@
 - 00:25 B13 (c92a75c), B14 (1819f15), B15 (c5c11d8) merged from subagent worktrees. Post-merge e2e: packs 3, results 2, settings 1 passed; packs unknown-run test updated to the run-level not-found state.
 - 00:35 B12b done (3240073): reverse-engineer view. e2e blueprint.spec: open from cockpit, timeline aligned (6 vs 6 shots), scores, click-scrub to CTA, arrow/Home keys, hook, review rounds, variants; mobile no overflow; unknown id state (3 passed). vitest align.test (5).
 - 00:40 B12 done (b515787): studio. e2e studio.spec: approve one shot then all, render draft, player gets the MP4; X text post preview with 280 counter (2 passed).
+- 00:45 Integration (0acf539): DatasetBadge for live_recorded runs, brand home starts on recorded research (?pace=150) with Fresh research option, Manus landing action on packs, BS5 Manus card (e2e asserts it on the Hound demo run).
