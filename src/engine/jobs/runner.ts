@@ -87,6 +87,22 @@ export async function resumeInterruptedRuns(staleMs = 120_000): Promise<string[]
     const last = (await listEvents(db, r.id)).at(-1);
     const age = Date.now() - Date.parse(last?.ts ?? r.createdAt);
     if (age < staleMs) continue;
+    if (age > 6 * 3600_000) {
+      // abandoned long ago: never resume (and spend) on a cold start
+      await updateRun(db, r.id, {
+        status: "failed",
+        error: "Interrupted more than 6 hours ago; not resumed",
+        finishedAt: new Date().toISOString(),
+      });
+      await appendEvent(db, {
+        runId: r.id,
+        phase: r.phase,
+        type: "error",
+        title: "Interrupted more than 6 hours ago; not resumed",
+        data: { status: "failed" },
+      });
+      continue;
+    }
     await appendEvent(db, {
       runId: r.id,
       phase: r.phase,

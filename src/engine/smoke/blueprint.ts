@@ -2,7 +2,7 @@ import { makeCtx } from "../agent/context";
 import { syntheticBlueprint } from "../agent/phases/reverse";
 import type { Db } from "../db/client";
 import { listSpend, upsertBlueprint, upsertEvidence } from "../repo";
-import { createRun } from "../runs";
+import { createRun, setStatus } from "../runs";
 import { ensureSeeded } from "../seed";
 import { saveFixture } from "./record";
 
@@ -26,6 +26,7 @@ export async function smokeBlueprint(db: Db) {
   await upsertEvidence(db, [ev]);
   const bp = await syntheticBlueprint(base.forPhase("reverse_engineer"), ev);
   await upsertBlueprint(db, bp);
+  await setStatus(db, run.id, "done", "Smoke test finished").catch(() => undefined);
   const spend = await listSpend(db, run.id);
   const usd = spend.reduce((a, s) => a + s.usd, 0);
   const file = saveFixture("anthropic", "blueprint_synthetic", { blueprint: bp, spend });
