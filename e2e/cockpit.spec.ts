@@ -36,6 +36,7 @@ test("a mock run streams to completion with every phase lit", async ({ page }) =
 test("a finished demo run can be replayed", async ({ page }) => {
   await page.goto("/runs/run_hound_demo");
   await expect(page.getByTestId("run-done")).toBeVisible();
+  await expect(page.getByTestId("manus-card")).toContainText("Mapped the market");
   await page.getByTestId("replay").click();
   await expect(page.getByTestId("event-stream")).toContainText("Run started");
 });

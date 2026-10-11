@@ -4,12 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { Page } from "@/components/shell/PageHead";
-import { DemoBadge, RunStatusBadge, StatusDot } from "@/components/ui/Badge";
+import { RunStatusBadge, StatusDot } from "@/components/ui/Badge";
 import { NumberTicker } from "@/components/ui/NumberTicker";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { EmptyState } from "@/components/ui/States";
 import { cn } from "@/lib/client/cn";
 import { useBrand, useRun } from "@/lib/client/queries";
+import { DatasetBadge } from "./DatasetBadge";
 import { RunProvider, useRunCtx } from "./RunContext";
 
 export function RunFrame({ runId, children }: { runId: string; children: React.ReactNode }) {
@@ -85,7 +86,9 @@ function RunHeader() {
           <StatusDot status={connection === "open" ? "live" : connection === "reconnecting" ? "warn" : "idle"} />
           {connection === "open" ? "stream open" : connection}
         </span>
-        <span className="ml-auto">{run?.demo && <DemoBadge />}</span>
+        <span className="ml-auto">
+          <DatasetBadge run={run} />
+        </span>
       </div>
       <nav aria-label="Run" className="flex gap-1 overflow-x-auto border-line border-b">
         {tabs.map((t) => {

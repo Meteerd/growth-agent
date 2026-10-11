@@ -16,7 +16,7 @@ import {
   type Run,
   type RunEvent,
 } from "@/contracts";
-import type { DataClient } from "../api";
+import { ApiRequestError, type DataClient } from "../api";
 import type { RunStreamHandlers } from "../sse";
 import { createPlayer } from "./player";
 
@@ -537,6 +537,10 @@ export function createMockClient(): DataClient {
       const { p } = packOf(id);
       Object.assign(p, { status: "posted", postedUrl: req.postedUrl, postedAt: req.postedAt ?? now() });
       return clone(p);
+    },
+    async buildLanding() {
+      await wait(150);
+      throw new ApiRequestError(409, "manus_demo", "Manus runs in demo mode here, so no landing page is built.");
     },
     async addMetrics(id, req) {
       await wait(200);

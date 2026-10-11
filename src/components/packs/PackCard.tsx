@@ -11,6 +11,7 @@ import { getClient } from "@/lib/client/api";
 import { cn } from "@/lib/client/cn";
 import { timeAgo } from "@/lib/client/format";
 import { useConceptAssets } from "@/lib/client/queries";
+import { LandingAction } from "./LandingAction";
 import { METRIC_KEYS } from "./metrics";
 import { CheckGlyph, MarkPostedDialog, MetricsDialog } from "./PackForms";
 
@@ -180,6 +181,7 @@ export function PackCard({
             </a>
           </Button>
         </div>
+        <LandingAction pack={pack} runId={runId} />
       </div>
     </article>
   );
