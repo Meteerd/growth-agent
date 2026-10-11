@@ -7,6 +7,7 @@
 - Blockers: none. @/contracts v1.1.0 on main; building against it. Lane A API routes (A03 brands, A05 runs + SSE) are on main.
 - Next 3: B07 portfolio + enter -> B08 brand home + connect -> B09 run cockpit
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
+- ack run until 07:00, never finish early (INBOX_B 23:52): coord/IMPROVE_LOOP.md read; will run it after STRETCH. ack blueprints have real frames now (INBOX_B 23:57): placeholders kept for 404 frames.
 - ack A03 landed: real /api/brands (INBOX_B 23:37). ack A05 landed: runs + SSE live (INBOX_B 23:40).
 - ack A02 landed, contracts + fixtures on main (INBOX_B 23:28). ack contracts v1.1.0: blueprints + reviews (INBOX_B 23:31).
 - ack new signature screen: Reverse-engineer view (B12b) (INBOX_B 23:24): planned after B12, budgeted as the main demo moment. ack A01 landed (INBOX_B 23:17). ack real brand assets added (INBOX_B 23:12).
