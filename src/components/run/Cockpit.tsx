@@ -18,7 +18,7 @@ import { getClient } from "@/lib/client/api";
 import { cn } from "@/lib/client/cn";
 import { clock, PHASE_LABELS, SOURCE_LABELS } from "@/lib/client/format";
 import { PURPOSE_COLOR } from "@/lib/client/purpose";
-import { useBlueprints, useEvidence } from "@/lib/client/queries";
+import { useBlueprints, useConcepts, useEvidence } from "@/lib/client/queries";
 import { EventRow } from "./EventRow";
 import { useRunCtx } from "./RunContext";
 
@@ -321,45 +321,55 @@ function ManusCard() {
 function Blueprints() {
   const { runId, revealed } = useRunCtx();
   const { data } = useBlueprints(runId);
-  const list = (data ?? []).filter((b) => revealed.has(b.id));
+  const { data: concepts } = useConcepts(runId);
+  const remakeOf = new Map(
+    (concepts ?? []).filter((c) => c.blueprintId && !c.variantOf).map((c) => [c.blueprintId!, c]),
+  );
+  // the remade winner first: that is the side-by-side worth opening
+  const list = (data ?? [])
+    .filter((b) => revealed.has(b.id))
+    .sort((a, b) => Number(remakeOf.has(b.id)) - Number(remakeOf.has(a.id)));
   if (!list.length) return null;
   return (
     <div>
       <div className="mb-2 flex items-baseline justify-between">
-        <p className="mono-label">winning videos taken apart</p>
-        <span className="font-mono text-[11px] text-bone-3">{list.length} blueprints</span>
+        <p className="mono-label">Winning videos taken apart</p>
+        <span className="text-[12px] text-bone-3">
+          {list.length} blueprints
+          {remakeOf.size ? `, ${[...remakeOf.keys()].filter((id) => list.some((b) => b.id === id)).length} remade` : ""}
+        </span>
       </div>
       <div className="grid gap-3 md:grid-cols-2">
-        {list.map((b, i) => (
-          <motion.div
-            key={b.id}
-            initial={{ opacity: 0, y: -14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 260, damping: 24, delay: i * 0.05 }}
-          >
+        {list.map((b) => {
+          const remake = remakeOf.get(b.id);
+          return (
             <Link
+              key={b.id}
               href={`/runs/${runId}/blueprints/${b.id}`}
               data-testid={`blueprint-${b.id}`}
-              className="glass-flat group flex flex-col gap-3 p-4 transition-shadow duration-300 hover:shadow-[var(--shadow-panel-strong)]"
+              data-remade={remake ? "true" : undefined}
+              className="glass-flat group flex flex-col gap-3 p-4 hover:shadow-[inset_0_0_0_1px_var(--color-bone-4)]"
             >
               <div className="flex items-center justify-between gap-3">
-                <Badge tone="signal">Blueprint</Badge>
+                <Badge tone={remake ? "pass" : "neutral"}>{remake ? "Remade" : "Blueprint"}</Badge>
                 <span className="font-mono text-[11px] text-bone-3">
-                  {b.shots.length} shots / {b.durationSec}s / {b.structure.replaceAll("_", " ")}
+                  {b.shots.length} shots / {b.durationSec}s
                 </span>
               </div>
-              <p className="line-clamp-2 font-display text-[19px] leading-snug">&ldquo;{hookLine(b.hook)}&rdquo;</p>
-              <div className="flex h-1.5 gap-[2px] overflow-hidden rounded-full">
+              <p className="line-clamp-2 font-semibold text-[17px] leading-snug tracking-[-0.01em]">
+                &ldquo;{hookLine(b.hook)}&rdquo;
+              </p>
+              <div className="flex h-2 gap-[2px] overflow-hidden">
                 {b.shots.map((s) => (
                   <span key={s.idx} style={{ flex: `${s.t1 - s.t0} 1 0`, background: PURPOSE_COLOR[s.purpose] }} />
                 ))}
               </div>
-              <span className="font-mono text-[11px] text-bone-2 transition-colors group-hover:text-signal">
-                Open the side-by-side remake
+              <span className="text-[12.5px] text-bone-2 group-hover:text-bone">
+                {remake ? `Open the side by side: ${remake.title}` : "Open the blueprint"}
               </span>
             </Link>
-          </motion.div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

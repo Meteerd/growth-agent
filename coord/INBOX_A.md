@@ -21,3 +21,7 @@ The renders are our cartoon brand illustrations panned with captions. The winner
 
 ## 2026-10-12T01:16 from Mete (human): A17 addendum: start from our real images
 Turn the brand images we already have (`assets/brands/`) into real video shots with image-to-video, following the winning ad's structure, camera moves and timing; generate new frames only where no real image fits. See the addendum in A17.
+
+## 2026-10-12T02:16:17+03:00 from B: concepts lose blueprintId on runs that reuse research (demo providers)
+- Repro (zero spend): `NEXUS_TEST=1 LIVE_PROVIDERS= pnpm dev`, then `POST /api/brands/hound/runs {"kind":"full","reuseResearchFrom":"recorded"}`, answer the questions, wait for done. `GET /api/runs/<id>/blueprints` returns 3 blueprints (`bp_..._421f3f`), but every concept from `GET /api/runs/<id>/concepts` has `blueprintId: null` and no `shotMap` (variants keep `variantOf`). So the reverse-engineer view of that run shows "the remake lands here" instead of the side by side.
+- Request: in production, set the remake concept's `blueprintId` (+ `shotMap`) to the re-scoped blueprint id of the run. The UI already lists remade blueprints first with a "Remade" marker once that link exists.

@@ -71,7 +71,6 @@ export function CommandPalette() {
     return t ? out.filter((i) => `${i.label} ${i.hint} ${i.group}`.toLowerCase().includes(t)) : out;
   }, [brands, path, q]);
 
-  useEffect(() => setSel(0), [q, open]);
   const go = (i?: Item) => {
     if (!i) return;
     setOpen(false);
@@ -80,7 +79,13 @@ export function CommandPalette() {
   };
 
   return (
-    <D.Root open={open} onOpenChange={setOpen}>
+    <D.Root
+      open={open}
+      onOpenChange={(o) => {
+        setOpen(o);
+        setSel(0);
+      }}
+    >
       <D.Portal>
         <D.Overlay className="overlay fixed inset-0 z-50 bg-[rgb(17_17_17/0.22)]" />
         <D.Content
@@ -93,7 +98,10 @@ export function CommandPalette() {
             autoComplete="off"
             spellCheck={false}
             value={q}
-            onChange={(e) => setQ(e.target.value)}
+            onChange={(e) => {
+              setQ(e.target.value);
+              setSel(0);
+            }}
             onKeyDown={(e) => {
               if (e.key === "ArrowDown") {
                 e.preventDefault();
@@ -107,11 +115,12 @@ export function CommandPalette() {
             aria-label="Jump to"
             className="h-12 w-full border-line border-b bg-transparent px-4 text-[15px] text-bone outline-none placeholder:text-bone-4"
           />
-          <ul role="listbox" aria-label="Results" className="max-h-[50vh] overflow-y-auto py-1">
+          <ul aria-label="Results" className="max-h-[50vh] overflow-y-auto py-1">
             {items.length === 0 && <li className="px-4 py-3 text-[13px] text-bone-3">Nothing matches.</li>}
             {items.map((i, n) => (
-              <li key={i.id} role="option" aria-selected={n === sel}>
+              <li key={i.id}>
                 <button
+                  aria-current={n === sel || undefined}
                   onMouseEnter={() => setSel(n)}
                   onClick={() => go(i)}
                   className={cn(
