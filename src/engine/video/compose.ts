@@ -12,7 +12,7 @@ import { urlToFile } from "./files";
  */
 const W = 1080;
 const H = 1920;
-const SAFE_BOTTOM = 420;
+const SAFE_BOTTOM = 470; // reviews flagged captions sitting right on the 420 px limit
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 function wrap(text: string, max: number): string[] {
@@ -25,12 +25,32 @@ function wrap(text: string, max: number): string[] {
     } else cur = `${cur} ${w}`.trim();
   }
   if (cur) out.push(cur);
-  return out.slice(0, 4);
+  return out;
+}
+
+/** Largest font size (58 down to 36 px) at which the whole caption fits in 5 lines; never truncates. */
+// the caption font has no emoji glyphs: strip them (they render as boxes)
+const EMOJI_PATTERN = "(?:\\p{Extended_Pictographic}|\\u{FE0F}|\\u{200D})";
+const EMOJI = new RegExp(EMOJI_PATTERN, "gu");
+export const stripEmoji = (t: string) =>
+  t
+    .replace(EMOJI, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+
+export function fitCaption(raw: string): { lines: string[]; size: number; lh: number } {
+  const text = stripEmoji(raw);
+  for (const size of [58, 52, 46, 41, 36]) {
+    const perLine = Math.floor((W - 160 - 60) / (size * 0.56));
+    const lines = wrap(text, perLine);
+    if (lines.length <= (size >= 52 ? 4 : 5)) return { lines, size, lh: Math.round(size * 1.2) };
+  }
+  const size = 36;
+  return { lines: wrap(text, Math.floor((W - 220) / (size * 0.56))), size, lh: 43 };
 }
 
 function captionSvg(text: string, accent: string, badge?: string): string {
-  const lines = wrap(text, 24);
-  const lh = 70;
+  const { lines, size, lh } = fitCaption(text);
   const boxH = lines.length * lh + 50;
   const y0 = H - SAFE_BOTTOM - boxH;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
@@ -38,7 +58,7 @@ function captionSvg(text: string, accent: string, badge?: string): string {
     text
       ? `<rect x="80" y="${y0}" width="${W - 160}" height="${boxH}" rx="24" fill="rgba(0,0,0,0.62)"/>
   <rect x="80" y="${y0 + boxH - 8}" width="${W - 160}" height="8" fill="${accent}"/>
-  ${lines.map((l, i) => `<text x="${W / 2}" y="${y0 + 72 + i * lh}" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="58" font-weight="800" fill="#fff">${esc(l)}</text>`).join("")}`
+  ${lines.map((l, i) => `<text x="${W / 2}" y="${y0 + 25 + size + i * lh}" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="${size}" font-weight="800" fill="#fff">${esc(l)}</text>`).join("")}`
       : ""
   }
   ${badge ? `<rect x="${W - 300}" y="70" width="260" height="52" rx="12" fill="rgba(0,0,0,0.5)"/><text x="${W - 170}" y="105" text-anchor="middle" font-family="Helvetica, Arial" font-size="26" fill="#fff">${esc(badge)}</text>` : ""}

@@ -1,14 +1,14 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-12 01:46 +03
-- Current task: A17 flagship remakes (Hound rendering now, a.clinic next)
+- Time: 2026-10-12 02:33 +03
+- Current task: IMPROVE loop (all CORE + STRETCH + A17 checked); MORNING_A kept current
 - Last sync: 23:37 exit 0, main UPDATED, checks PASS
 - Blockers:
   - REVENUECAT, POSTHOG, STRIPE, PADDLE, META keys MISSING: brand "business truth" connectors run demo (labelled fixtures). No CORE task blocked.
   - HIGGSFIELD key present but unvalidated: auth format confirmed in A14 smoke; fal is the default video path.
-- Next 3: A17 Hound flagship -> A17 a.clinic flagship -> showcase export + MORNING_A final; then IMPROVE loop
-- Spend so far (ledger, USD): anthropic 1.94 / 150, openai 0.51 / 60, apify 1.38 / 4, fal 1.75 / 8, firecrawl 0.04 / 3, youtube 0 (free), spiral credits (~20 ads), manus 2 lite tasks (credits; cap 500 credits), higgsfield 0 (auth check only). Total 5.62
+- Next 3: MORNING_A final details -> eval and edge cases from IMPROVE_LOOP -> keep syncing
+- Spend so far (ledger, USD): anthropic ~7.0 / 150, openai ~6.7 / 60, fal 7.25 / 8 (incl. a $1.00 conservative estimate for clips of a stopped process), apify 1.38 / 4, firecrawl 0.05 / 3, youtube 0, spiral credits (~20 ads), manus 3 lite tasks (credits), higgsfield 0
 
 ## Log (one line per finished task, newest last)
 - 23:17 A01 done: Next.js 16.4 scaffold, check/build/dev OK
@@ -32,3 +32,4 @@
 - 01:08 A14 done (see TASKS). AS2 done: fal final render of the Hound remake (6 clips, $1.50). Live full Hound run on recorded research passes eval-run 49/49. AS3-AS6 done.
 - 01:16 ack demo render MP4 missing on a fresh clone (INBOX_A 00:49): demo keyframes + review MP4s built after seed. ack two engine tests time out under full pnpm check (INBOX_A 01:08): timeouts raised to 120 s / 180 s
 - 01:46 ack PRIORITY: remakes must look like real winning ads (A17) and A17 addendum (INBOX_A 01:16): flagship builder landed (shot sourcing from brand images, photoreal frames, fal motion, AI-tells review); Sora not available on our key (404); Hound flagship rendering with 6 photoreal frames
+- 02:33 A17 done. Flagships: Hound concept_1d68be0a_1 (run_mv4e0ud7671d68be0a) 83/100, shots 85/86/81/84/85/80: six photoreal phone-footage shots (beagle at the door, keys, chew toy, hand on head) remaking a real TikTok myth-vs-fact winner, CTA shot holds a phone showing Hound's real beagle art. a.clinic concept_1e6575ad_1 (run_mv4e8sfdbc1e6575ad) 82/100, shots 80/83/82/85/80/80: Slovak home footage, sticky-note 4 steps, laptop/phone with a.clinic's real doctor art, local pharmacy, checklist, phone with the a.clinic page. Contact sheets in docs/renders/. Sora unavailable (404), fal Kling 2.1 used.

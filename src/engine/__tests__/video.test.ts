@@ -37,7 +37,7 @@ describe("Ad916 compositor", () => {
     // sample inside the caption box during the clip: it must be the dark caption background, not the clip color
     const f = await extractFrame(out, 1.5, path.join(dir, "f.png"), 1080);
     const { data, info } = await sharp(f).raw().toBuffer({ resolveWithObject: true });
-    const y = 1920 - 420 - 40;
+    const y = 1920 - 470 - 40;
     const x = 200;
     const i = (y * info.width + x) * info.channels;
     const lum = (data[i] + data[i + 1] + data[i + 2]) / 3;
@@ -45,4 +45,17 @@ describe("Ad916 compositor", () => {
     expect((await probe(out)).hasAudio).toBe(true);
     expect(fs.existsSync(out)).toBe(true);
   }, 60_000);
+});
+
+describe("caption fitting", () => {
+  it("never truncates long captions (Slovak listicle line) and shrinks the font instead", async () => {
+    const { fitCaption } = await import("@/engine/video/compose");
+    const t =
+      "4 kroky: dotazník · konzultácia s lekárom · ePredpis, ak je vhodný · pravidelné kontroly so starostlivým tímom a odpovede na otázky";
+    const f = fitCaption(t);
+    expect(f.lines.join(" ")).toBe(t);
+    expect(f.size).toBeLessThan(58);
+    expect(fitCaption("Short hook").size).toBe(58);
+    expect(fitCaption("Starostlivosť o váhu bez čakárne 🩺").lines.join(" ")).toBe("Starostlivosť o váhu bez čakárne");
+  });
 });

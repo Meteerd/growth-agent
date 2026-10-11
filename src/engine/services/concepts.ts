@@ -228,7 +228,10 @@ export async function renderConcept(
         });
       };
       // 3 clips at a time (each takes ~70 s at fal)
-      const todo = cur.shots.filter((s) => !s.clipAssetId);
+      // screens and inserts stay stills: animating a phone screen makes its content morph
+      const todo = cur.shots.filter(
+        (s) => !s.clipAssetId && s.style !== "screen" && !(s.source === "generated" && s.imageRef),
+      );
       await Promise.all(
         Array.from({ length: Math.min(3, todo.length) }, async () => {
           for (let s = todo.shift(); s; s = todo.shift()) await animate(s);

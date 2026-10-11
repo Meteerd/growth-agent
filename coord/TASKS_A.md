@@ -3,7 +3,7 @@
 Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (commit <hash>)`. Work top to bottom unless blocked; note reorders in STATUS_A.
 
 ## PRIORITY NOW (from Mete, 12 Oct 01:25): remakes must look like real winning ads
-- [ ] **A17 Realistic remakes (not panned illustrations)**
+- [x] **A17 Realistic remakes (not panned illustrations)** (commit e7ce7d0; Hound concept_1d68be0a_1 83/100 shots 85,86,81,84,85,80; a.clinic concept_1e6575ad_1 82/100 shots 80,83,82,85,80,80; contact sheets docs/renders/*-flagship.jpg; Sora not available on our key, fal Kling 2.1 used; fal $7.25 of $8)
   - Problem: renders are brand illustrations with Ken Burns + captions ("Demo keyframe"/"Demo render"). Winning ads in these niches are mostly real-looking phone footage (UGC, POV, talking head). A cartoon remake of a phone-filmed TikTok misses the point.
   - Keyframes must match the blueprint's visual style: if the original is phone-filmed real footage, generate photoreal, phone-camera-looking frames (natural light, handheld framing, real homes, real dogs/people, no plastic AI look) with the OpenAI image model at high quality; use `assets/brands/` only as references for the product itself (app screens, logo, packaging) and the end card. Illustrated style only when the original winner is animated.
   - Motion: animate final keyframes with fal image-to-video (Kling/Seedance) within the fal cap; check whether OpenAI's video API (Sora) is available on our key and, if so, use it for clips within the OpenAI cap (OpenAI credits are plentiful). Record which worked in docs/APIS.md.
@@ -122,3 +122,4 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
 - [x] **I18** API sweep over the real local data (198 requests across every route for all brands and runs): 0 errors, all under 3 s.
 - [x] **I19** Flagship round 1 for Hound scored 64: transparent brand webp art rendered as black bars, and photo/cartoon shots alternated. Frames now flatten onto the brand color, wide art is contained not cropped, the sourcing prompt keeps one look per cut and puts brand art on screens/posters via an image-edit reference.
 - [x] **I20** OpenAI image edit rejected the brand reference ("unsupported mimetype application/octet-stream") and crashed the flagship: references are sent as PNG buffers with an explicit type, and a refused edit falls back to plain generation with a warning.
+- [x] **I21** Long Slovak captions were truncated after 4 lines (lost words in a.clinic shots): captions now shrink to fit (58 to 36 px) and never cut text; flagship builds tighten on-screen lines to <= 7 words first; the production prompt caps on-screen text at 8 words. Emoji are stripped from burned captions (the font has no emoji glyphs). Tests.
