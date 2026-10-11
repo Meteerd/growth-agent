@@ -14,7 +14,7 @@ import { ApiRequestError, getClient } from "@/lib/client/api";
 import { referenceImages } from "@/lib/client/brandAssets";
 import { cn } from "@/lib/client/cn";
 import { formatUsd, PHASE_LABELS, timeAgo } from "@/lib/client/format";
-import { qk, useAction, useBrand, useBrandRuns } from "@/lib/client/queries";
+import { qk, useAction, useBrand, useBrandRuns, useBrands } from "@/lib/client/queries";
 
 export function BrandHome({ slug }: { slug: string }) {
   const { data: brand, isLoading, error, refetch } = useBrand(slug);
@@ -30,6 +30,7 @@ export function BrandHome({ slug }: { slug: string }) {
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_380px]">
       <Dossier brand={brand} />
       <aside className="flex flex-col gap-4">
+        <HeroVideo slug={brand.slug} />
         <Runs brand={brand} />
         <Sources brand={brand} />
       </aside>
@@ -198,6 +199,33 @@ function Dossier({ brand }: { brand: Brand }) {
         </Panel>
       )}
     </div>
+  );
+}
+
+/** The brand's flagship remake, when the engine has rendered one: poster first, then a muted loop. */
+function HeroVideo({ slug }: { slug: string }) {
+  const { data: brands } = useBrands();
+  const hero = brands?.find((b) => b.slug === slug)?.heroVideo;
+  if (!hero) return null;
+  return (
+    <figure className="overflow-hidden rounded-panel bg-viewer" data-testid="hero-video">
+      <video
+        src={hero.url}
+        poster={hero.posterUrl}
+        muted
+        loop
+        playsInline
+        autoPlay
+        preload="metadata"
+        className="mx-auto aspect-[9/16] max-h-[460px] w-auto"
+      />
+      <figcaption className="flex items-baseline justify-between gap-3 border-[#222] border-t px-4 py-3 text-white">
+        <span className="truncate text-[13px]">{hero.title}</span>
+        <Link href={`/runs/${hero.runId}/studio`} className="shrink-0 text-[12px] text-white/70 underline underline-offset-4 hover:text-white">
+          Open in the studio
+        </Link>
+      </figcaption>
+    </figure>
   );
 }
 
@@ -400,7 +428,7 @@ function EditableText({
               if (e.key === "Escape") setEditing(false);
             }}
             className={cn(
-              "w-full resize-y rounded-card bg-glass px-4 py-3 text-bone outline-none shadow[inset_0_0_0_1px_var(--color-line-strong)] focus:shadow[inset_0_0_0_1px_rgb(229_50_45/0.5)]",
+              "w-full resize-y rounded-card bg-glass px-4 py-3 text-bone outline-none shadow-[inset_0_0_0_1px_var(--color-line-strong)] focus:shadow-[inset_0_0_0_1px_rgb(229_50_45/0.5)]",
               serif ? "font-display text-[26px] leading-tight" : "text-body",
             )}
           />
@@ -494,7 +522,7 @@ function EditableList({
               if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) save();
               if (e.key === "Escape") setEditing(false);
             }}
-            className="w-full resize-y rounded-card bg-glass px-3 py-2.5 text-bone text-ui outline-none shadow[inset_0_0_0_1px_var(--color-line-strong)] focus:shadow[inset_0_0_0_1px_rgb(229_50_45/0.5)]"
+            className="w-full resize-y rounded-card bg-glass px-3 py-2.5 text-bone text-ui outline-none shadow-[inset_0_0_0_1px_var(--color-line-strong)] focus:shadow-[inset_0_0_0_1px_rgb(229_50_45/0.5)]"
           />
           <p className="mt-1 font-mono text-[10.5px] text-bone-3">One per line.</p>
           <div className="mt-2 flex gap-2">

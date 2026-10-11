@@ -148,7 +148,7 @@ function Tile({ provider, brandId, conn }: { provider: ProviderId; brandId: stri
               placeholder={field.placeholder}
               spellCheck={false}
               autoComplete="off"
-              className="h-9 min-w-0 rounded-chip bg-glass px-3 font-mono text-[12px] text-bone outline-none shadow[inset_0_0_0_1px_var(--color-line-strong)] placeholder:text-bone-4 focus:shadow[inset_0_0_0_1px_rgb(229_50_45/0.5)]"
+              className="h-9 min-w-0 rounded-chip bg-glass px-3 font-mono text-[12px] text-bone outline-none shadow-[inset_0_0_0_1px_var(--color-line-strong)] placeholder:text-bone-4 focus:shadow-[inset_0_0_0_1px_rgb(229_50_45/0.5)]"
             />
           </label>
           <Button size="sm" type="submit" loading={save.isPending} disabled={!value.trim()}>

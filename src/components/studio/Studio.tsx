@@ -101,7 +101,7 @@ function ConceptCard({ c, active, onSelect }: { c: Concept; active: boolean; onS
       data-testid={`concept-${c.id}`}
       className={cn(
         "glass-flat group flex flex-col gap-2.5 p-4 text-left transition-[box-shadow,transform] duration-200 hover:-translate-y-px",
-        active && "shadow[var(--shadow-panel-strong),inset_0_0_0_1px_rgb(229_50_45/0.45)]",
+        active && "shadow-[var(--shadow-panel-strong),inset_0_0_0_1px_rgb(229_50_45/0.45)]",
       )}
     >
       <div className="flex items-center justify-between gap-2">
@@ -369,7 +369,7 @@ function ShotCard({
       <div
         className={cn(
           "relative aspect-[9/16] overflow-hidden rounded-[10px] transition-shadow duration-300",
-          s.approved ? "shadow[0_0_0_1.5px_var(--color-signal)]" : "shadow[inset_0_0_0_1px_var(--color-line-strong)]",
+          s.approved ? "shadow-[0_0_0_1.5px_var(--color-signal)]" : "shadow-[inset_0_0_0_1px_var(--color-line-strong)]",
         )}
       >
         <ShotFrame
@@ -406,7 +406,10 @@ function ShotCard({
           </span>
         )}
       </div>
-      <p className="font-mono text-[10.5px] text-bone-3">shot {i + 1}</p>
+      <p className="flex items-baseline justify-between gap-2 text-[11px] text-bone-3">
+        <span className="font-mono">shot {i + 1}</span>
+        {s.source && <span>{s.source === "brand_image" ? "your image, animated" : "new frame"}</span>}
+      </p>
       <p className="line-clamp-3 text-[11.5px] text-bone-2 leading-snug" title={s.visualPrompt}>
         {s.voiceover ?? s.visualPrompt}
       </p>
@@ -415,7 +418,7 @@ function ShotCard({
           onClick={onApprove}
           disabled={s.approved || pending}
           aria-pressed={s.approved}
-          className="flex-1 rounded-chip py-1 font-mono text-[10.5px] text-bone shadow[inset_0_0_0_1px_var(--color-line-strong)] transition-colors hover:bg-glass disabled:opacity-50 aria-pressed:text-signal"
+          className="flex-1 rounded-chip py-1 font-mono text-[10.5px] text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)] transition-colors hover:bg-glass disabled:opacity-50 aria-pressed:text-signal"
         >
           {s.approved ? "approved" : "approve"}
         </button>
@@ -423,7 +426,7 @@ function ShotCard({
           onClick={onRegenerate}
           disabled={pending}
           aria-label={`Regenerate shot ${i + 1}`}
-          className="rounded-chip px-2 py-1 font-mono text-[10.5px] text-bone-3 shadow[inset_0_0_0_1px_var(--color-line)] transition-colors hover:bg-glass hover:text-bone disabled:opacity-50"
+          className="rounded-chip px-2 py-1 font-mono text-[10.5px] text-bone-3 shadow-[inset_0_0_0_1px_var(--color-line)] transition-colors hover:bg-glass hover:text-bone disabled:opacity-50"
         >
           redo
         </button>
@@ -441,7 +444,7 @@ function PostPreview({ c, image, imageIsRef }: { c: Concept; image?: string; ima
         {c.format === "text_post" ? `${CHANNEL_LABELS[c.channel]} post, as it will read` : `${c.aspect} static`}
       </p>
       {c.format === "text_post" ? (
-        <article className="max-w-2xl rounded-card bg-raised p-5 shadow[inset_0_0_0_1px_var(--color-line)]">
+        <article className="max-w-2xl rounded-card bg-raised p-5 shadow-[inset_0_0_0_1px_var(--color-line)]">
           <p className="whitespace-pre-line text-bone text-body leading-relaxed">{text}</p>
           {limit && (
             <p
@@ -455,7 +458,7 @@ function PostPreview({ c, image, imageIsRef }: { c: Concept; image?: string; ima
         <div className="flex flex-wrap gap-5">
           <div
             className={cn(
-              "relative w-[260px] overflow-hidden rounded-[12px] shadow[inset_0_0_0_1px_var(--color-line-strong)]",
+              "relative w-[260px] overflow-hidden rounded-[12px] shadow-[inset_0_0_0_1px_var(--color-line-strong)]",
               ASPECT_CLASS[c.aspect],
             )}
           >

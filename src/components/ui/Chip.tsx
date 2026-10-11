@@ -8,9 +8,9 @@ export type ChipOption = { id: string; label: string; hint?: string };
 
 const chipClass = cn(
   "group relative inline-flex min-h-11 items-center gap-2 rounded-chip px-5 py-2.5 text-left text-body",
-  "bg-glass text-bone shadow[inset_0_0_0_1px_var(--color-line-strong)]",
+  "bg-glass text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)]",
   "transition-[background-color,box-shadow,color,transform] duration-150 ease-out",
-  "hover:bg-glass-strong hover:shadow[inset_0_0_0_1px_rgb(17_17_17/0.28)]",
+  "hover:bg-glass-strong hover:shadow-[inset_0_0_0_1px_rgb(17_17_17/0.28)]",
   "data-[state=on]:bg-bone data-[state=on]:text-ink data-[state=on]:shadow-none",
   "disabled:opacity-40",
 );

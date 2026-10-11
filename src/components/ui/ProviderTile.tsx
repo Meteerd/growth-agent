@@ -26,10 +26,10 @@ export function ProviderTile({
       data-status={status}
       className={cn(
         "relative flex flex-col gap-4 rounded-panel p-5 transition-shadow duration-300",
-        status === "live" && "glass-flat shadow[var(--shadow-panel),inset_0_0_0_1px_rgb(31_122_77/0.18)]",
+        status === "live" && "glass-flat shadow-[var(--shadow-panel),inset_0_0_0_1px_rgb(31_122_77/0.18)]",
         status === "demo" && "glass-flat",
         status === "missing" && "border border-line border-dashed bg-transparent",
-        status === "error" && "glass-flat shadow[var(--shadow-panel),inset_0_0_0_1px_rgb(192_53_43/0.3)]",
+        status === "error" && "glass-flat shadow-[var(--shadow-panel),inset_0_0_0_1px_rgb(192_53_43/0.3)]",
         className,
       )}
     >

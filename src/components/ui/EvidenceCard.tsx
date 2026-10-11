@@ -76,7 +76,7 @@ export function EvidenceCard({
     <article
       data-source={e.source}
       className={cn(
-        "glass-flat group relative flex flex-col overflow-hidden transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:shadow[var(--shadow-panel-strong)]",
+        "glass-flat group relative flex flex-col overflow-hidden transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[var(--shadow-panel-strong)]",
         className,
       )}
     >

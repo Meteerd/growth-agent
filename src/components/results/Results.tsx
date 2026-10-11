@@ -67,7 +67,7 @@ export function Results({ slug }: { slug: string }) {
               data-testid="results-refresh"
               onClick={() => refetch()}
               aria-busy={isFetching || undefined}
-              className="shadow[inset_0_0_0_1px_var(--color-line)]"
+              className="shadow-[inset_0_0_0_1px_var(--color-line)]"
             >
               <RefreshGlyph spinning={isFetching} />
               Refresh

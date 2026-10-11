@@ -47,7 +47,7 @@ export function PacksScreen({ runId }: { runId: string }) {
         <div className="flex gap-4 p-5 md:p-6">
           <span
             aria-hidden
-            className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full font-mono text-[11px] text-warn shadow[inset_0_0_0_1px_rgb(183_121_31/0.35)]"
+            className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full font-mono text-[11px] text-warn shadow-[inset_0_0_0_1px_rgb(183_121_31/0.35)]"
           >
             !
           </span>

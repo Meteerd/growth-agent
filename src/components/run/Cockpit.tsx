@@ -201,9 +201,9 @@ function Banner({
       data-testid={testId}
       className={cn(
         "glass flex flex-col gap-4 p-5 md:flex-row md:items-center md:justify-between",
-        tone === "warn" && "shadow[var(--shadow-panel),inset_0_0_0_1px_rgb(183_121_31/0.35)]",
-        tone === "pass" && "shadow[var(--shadow-panel),inset_0_0_0_1px_rgb(31_122_77/0.25)]",
-        tone === "signal" && "shadow[var(--shadow-panel),inset_0_0_0_1px_rgb(229_50_45/0.3)]",
+        tone === "warn" && "shadow-[var(--shadow-panel),inset_0_0_0_1px_rgb(183_121_31/0.35)]",
+        tone === "pass" && "shadow-[var(--shadow-panel),inset_0_0_0_1px_rgb(31_122_77/0.25)]",
+        tone === "signal" && "shadow-[var(--shadow-panel),inset_0_0_0_1px_rgb(229_50_45/0.3)]",
       )}
     >
       <div>
@@ -252,7 +252,7 @@ function ManusCard() {
       className="glass-flat flex flex-wrap items-center gap-4 p-4"
       data-testid="manus-card"
     >
-      <span className="grid size-9 place-items-center rounded-[10px] bg-[rgb(229_50_45/0.08)] font-display text-[18px] text-signal shadow[inset_0_0_0_1px_rgb(229_50_45/0.25)]">
+      <span className="grid size-9 place-items-center rounded-[10px] bg-[rgb(229_50_45/0.08)] font-display text-[18px] text-signal shadow-[inset_0_0_0_1px_rgb(229_50_45/0.25)]">
         M
       </span>
       <div className="min-w-0 flex-1">
@@ -303,7 +303,7 @@ function Blueprints() {
             <Link
               href={`/runs/${runId}/blueprints/${b.id}`}
               data-testid={`blueprint-${b.id}`}
-              className="glass-flat group flex flex-col gap-3 p-4 transition-shadow duration-300 hover:shadow[var(--shadow-panel-strong)]"
+              className="glass-flat group flex flex-col gap-3 p-4 transition-shadow duration-300 hover:shadow-[var(--shadow-panel-strong)]"
             >
               <div className="flex items-center justify-between gap-3">
                 <Badge tone="signal">Blueprint</Badge>

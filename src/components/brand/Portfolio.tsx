@@ -75,7 +75,7 @@ function BrandCard({ brand: b }: { brand: BrandSummary }) {
       data-testid={`brand-card-${b.slug}`}
       className={cn(
         "glass-flat group relative flex h-full min-h-[360px] flex-col overflow-hidden p-5 transition-[transform,box-shadow] duration-300 ease-out",
-        "hover:-translate-y-0.5 hover:shadow[var(--shadow-panel-strong)]",
+        "hover:-translate-y-0.5 hover:shadow-[var(--shadow-panel-strong)]",
       )}
     >
       <span

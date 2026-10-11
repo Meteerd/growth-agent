@@ -349,7 +349,7 @@ export function OrbitView({
           >
             <span
               aria-hidden
-              className="absolute size-[calc(var(--k)*104px)] rounded-full shadow[inset_0_0_0_1px_rgb(17_17_17/0.14)]"
+              className="absolute size-[calc(var(--k)*104px)] rounded-full shadow-[inset_0_0_0_1px_rgb(17_17_17/0.14)]"
             />
             <span style={{ transform: `scale(${Math.max(k, 0.42)})` }}>
               {brand ? (

@@ -64,7 +64,7 @@ export function PackCard({
       className={cn(
         "glass-flat relative grid overflow-hidden transition-shadow duration-500",
         "md:grid-cols-[232px_minmax(0,1fr)] xl:grid-cols-[232px_minmax(0,1fr)_316px]",
-        posted && "shadow[var(--shadow-panel),inset_0_1px_0_0_rgb(31_122_77/0.22)]",
+        posted && "shadow-[var(--shadow-panel),inset_0_1px_0_0_rgb(31_122_77/0.22)]",
       )}
     >
       <Cover pack={pack} concept={concept} demo={demo} />
@@ -113,7 +113,7 @@ export function PackCard({
               {tags.map((t) => (
                 <li
                   key={t}
-                  className="rounded-chip bg-glass px-2.5 py-1 font-mono text-[11px] text-bone-2 shadow[inset_0_0_0_1px_var(--color-line)]"
+                  className="rounded-chip bg-glass px-2.5 py-1 font-mono text-[11px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line)]"
                 >
                   {t}
                 </li>
@@ -239,7 +239,7 @@ function CoverTile({
   const text = format === "text_post";
   return (
     <div
-      className="relative w-full overflow-hidden rounded-card bg-raised-2 shadow[inset_0_0_0_1px_var(--color-line-strong)]"
+      className="relative w-full overflow-hidden rounded-card bg-raised-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)]"
       style={{ aspectRatio: ASPECT_RATIO[aspect] }}
     >
       <div
@@ -289,8 +289,8 @@ function StatusPill({ posted }: { posted: boolean }) {
         "inline-grid h-6 shrink-0 items-center overflow-hidden rounded-chip px-2.5 font-mono text-[10.5px] uppercase tracking-[0.06em]",
         "transition-[background-color,box-shadow,color] duration-[380ms] ease-out",
         posted
-          ? "bg-[rgb(31_122_77/0.1)] text-pass shadow[inset_0_0_0_1px_rgb(31_122_77/0.35)]"
-          : "text-bone shadow[inset_0_0_0_1px_var(--color-line-strong)]",
+          ? "bg-[rgb(31_122_77/0.1)] text-pass shadow-[inset_0_0_0_1px_rgb(31_122_77/0.35)]"
+          : "text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)]",
       )}
     >
       <span aria-hidden={posted} className={cn(label, posted && "-translate-y-full opacity-0")}>
@@ -395,8 +395,8 @@ function Checklist({ items }: { items: string[] }) {
                     "mt-px grid size-4 shrink-0 place-items-center rounded-[4px] transition-[background-color,box-shadow] duration-200 ease-out",
                     "peer-focus-visible:outline-[1.5px] peer-focus-visible:outline-signal peer-focus-visible:outline-offset-2 peer-focus-visible:outline-solid",
                     on
-                      ? "bg-signal shadow[0_0_0_1px_rgb(229_50_45/0.7)]"
-                      : "shadow[inset_0_0_0_1px_rgb(17_17_17/0.24)]",
+                      ? "bg-signal shadow-[0_0_0_1px_rgb(229_50_45/0.7)]"
+                      : "shadow-[inset_0_0_0_1px_rgb(17_17_17/0.24)]",
                   )}
                 >
                   <svg viewBox="0 0 12 12" className="size-3 text-ink" fill="none">
@@ -479,7 +479,7 @@ function PostedBlock({ pack, latest }: { pack: PublishPack; latest?: MetricSnaps
           </dl>
         </div>
       ) : (
-        <p className="rounded-card px-3 py-2.5 font-mono text-[11px] text-bone-3 leading-relaxed shadow[inset_0_0_0_1px_var(--color-line)]">
+        <p className="rounded-card px-3 py-2.5 font-mono text-[11px] text-bone-3 leading-relaxed shadow-[inset_0_0_0_1px_var(--color-line)]">
           Waiting for first metrics. Enter them from {CHANNEL_LABELS[pack.platform]} insights once the post has numbers.
         </p>
       )}

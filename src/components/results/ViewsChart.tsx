@@ -140,7 +140,7 @@ export function ViewsChart({
       {a && (
         <div
           aria-hidden
-          className="pointer-events-none absolute z-10 whitespace-nowrap rounded-[8px] bg-raised px-2.5 py-1.5 shadow[var(--shadow-panel-strong)]"
+          className="pointer-events-none absolute z-10 whitespace-nowrap rounded-[8px] bg-raised px-2.5 py-1.5 shadow-[var(--shadow-panel-strong)]"
           style={{
             left: Math.min(Math.max(a.x, 64), Math.max(64, width - 64)),
             top: a.y < 64 ? a.y + 14 : a.y - 12,

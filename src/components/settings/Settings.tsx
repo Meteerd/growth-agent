@@ -61,7 +61,7 @@ export function Settings() {
           </>
         }
         actions={
-          <dl className="flex w-full overflow-hidden rounded-card md:w-auto bg-raised shadow[var(--shadow-panel)]">
+          <dl className="flex w-full overflow-hidden rounded-card md:w-auto bg-raised shadow-[var(--shadow-panel)]">
             <Readout label="live">
               {ready ? (
                 <span className="flex items-center gap-2">
@@ -276,7 +276,7 @@ function Cell({ label, children }: { label: string; children: React.ReactNode })
 
 function Token({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex h-6 items-center rounded-cell bg-raised-2 px-2 text-bone shadow[inset_0_0_0_1px_var(--color-line-strong)]">
+    <span className="inline-flex h-6 items-center rounded-cell bg-raised-2 px-2 text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)]">
       {children}
     </span>
   );

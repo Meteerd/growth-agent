@@ -223,9 +223,9 @@ export function RankedList({
               aria-invalid={!!dropError || undefined}
               className={cn(
                 "h-11 w-full min-w-0 rounded-card bg-[rgb(255_255_255/0.03)] px-3.5 text-bone text-ui outline-none",
-                "shadow[inset_0_0_0_1px_var(--color-line-strong)] transition-shadow duration-150 placeholder:text-bone-4",
-                "hover:shadow[inset_0_0_0_1px_rgb(17_17_17/0.22)] focus-visible:outline-none",
-                "focus:shadow[inset_0_0_0_1px_rgb(229_50_45/0.65),0_0_0_3px_rgb(229_50_45/0.12)]",
+                "shadow-[inset_0_0_0_1px_var(--color-line-strong)] transition-shadow duration-150 placeholder:text-bone-4",
+                "hover:shadow-[inset_0_0_0_1px_rgb(17_17_17/0.22)] focus-visible:outline-none",
+                "focus:shadow-[inset_0_0_0_1px_rgb(229_50_45/0.65),0_0_0_3px_rgb(229_50_45/0.12)]",
               )}
             />
           </div>
@@ -289,7 +289,7 @@ function NotNowList({
               <div className="flex items-baseline gap-3">
                 <span
                   aria-hidden
-                  className="relative top-[3px] size-3.5 shrink-0 rounded-full shadow[inset_0_0_0_1px_rgb(17_17_17/0.3)]"
+                  className="relative top-[3px] size-3.5 shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgb(17_17_17/0.3)]"
                 >
                   <span className="absolute top-1/2 left-1/2 h-px w-2.5 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-bone-3" />
                 </span>

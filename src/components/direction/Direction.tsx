@@ -119,7 +119,7 @@ function PlanHead({ plan }: { plan: ChannelPlan }) {
           initial={{ opacity: 0.4, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, ease: EASE }}
-          className="inline-flex h-6 items-center rounded-chip px-2.5 font-mono text-[11px] text-bone tabular-nums normal-case shadow[inset_0_0_0_1px_var(--color-line-strong)]"
+          className="inline-flex h-6 items-center rounded-chip px-2.5 font-mono text-[11px] text-bone tabular-nums normal-case shadow-[inset_0_0_0_1px_var(--color-line-strong)]"
         >
           v{plan.version}
         </motion.span>

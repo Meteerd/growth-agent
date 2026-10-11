@@ -248,7 +248,7 @@ function Stage({
               initial={{ opacity: 0, scale: 0.9, y: 6 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: 0.25 + i * 0.06, type: "spring", stiffness: 300, damping: 24 }}
-              className="flex max-w-[260px] items-center gap-2 rounded-chip bg-glass px-3 py-1.5 text-left shadow[inset_0_0_0_1px_var(--color-line)] transition-colors hover:bg-glass-strong"
+              className="flex max-w-[260px] items-center gap-2 rounded-chip bg-glass px-3 py-1.5 text-left shadow-[inset_0_0_0_1px_var(--color-line)] transition-colors hover:bg-glass-strong"
             >
               <span className="size-1.5 shrink-0 rounded-full" style={{ background: sourceHue(e.source) }} />
               <span className="truncate text-[12px] text-bone-2">{e.title}</span>
@@ -419,7 +419,7 @@ function AnswerInput({ q, prior, onSubmit }: { q: Question; prior?: unknown; onS
           if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && text.trim()) onSubmit(text.trim());
         }}
         placeholder={typeof q.defaultAnswer === "string" ? q.defaultAnswer : "In your own words"}
-        className="glass w-full resize-none rounded-panel px-5 py-4 text-left text-bone text-body outline-none focus:shadow[var(--shadow-panel-strong),0_0_0_1px_rgb(229_50_45/0.45)]"
+        className="glass w-full resize-none rounded-panel px-5 py-4 text-left text-bone text-body outline-none focus:shadow-[var(--shadow-panel-strong),0_0_0_1px_rgb(229_50_45/0.45)]"
       />
       <Button type="submit" variant="primary" className="self-center" disabled={!text.trim()} data-testid="answer">
         Answer
@@ -525,7 +525,7 @@ function ChatDrawer({ runId }: { runId: string }) {
         label="free text / the agent reads the dossier and evidence"
         title="Tell it anything"
         trigger={
-          <Button size="lg" className="shadow[var(--shadow-panel-strong)]" data-testid="chat-open">
+          <Button size="lg" className="shadow-[var(--shadow-panel-strong)]" data-testid="chat-open">
             <span className="size-1.5 rounded-full bg-signal" />
             Talk to the agent
           </Button>
@@ -546,7 +546,7 @@ function ChatDrawer({ runId }: { runId: string }) {
                   "max-w-[90%] rounded-card px-4 py-3 text-ui",
                   m.role === "user"
                     ? "self-end bg-bone text-ink"
-                    : "self-start bg-glass text-bone shadow[inset_0_0_0_1px_var(--color-line)]",
+                    : "self-start bg-glass text-bone shadow-[inset_0_0_0_1px_var(--color-line)]",
                 )}
               >
                 {m.text ? (
@@ -566,7 +566,7 @@ function ChatDrawer({ runId }: { runId: string }) {
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
               placeholder="We tried Reels in spring, nothing stuck"
-              className="h-10 min-w-0 flex-1 rounded-chip bg-glass px-4 text-bone text-ui outline-none shadow[inset_0_0_0_1px_var(--color-line-strong)] placeholder:text-bone-4 focus:shadow[inset_0_0_0_1px_rgb(229_50_45/0.5)]"
+              className="h-10 min-w-0 flex-1 rounded-chip bg-glass px-4 text-bone text-ui outline-none shadow-[inset_0_0_0_1px_var(--color-line-strong)] placeholder:text-bone-4 focus:shadow-[inset_0_0_0_1px_rgb(229_50_45/0.5)]"
             />
             <Button type="submit" variant="primary" size="md" loading={busy} disabled={!draft.trim()}>
               Send

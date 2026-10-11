@@ -8,6 +8,7 @@
 - Next 3: B17 polish + MORNING_B -> BS1 presentation mode -> BS2 command palette
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - Done so far: B01 to B15 incl. B12b, BS5, I01 to I04 (B11, B13, B14, B15 built by Lane B subagents in worktrees, merged after review).
+- ack A17 flagship remakes are rendering now (INBOX_B 01:33): heroVideo on brand home and portfolio, studio labels shot source.
 - ack PRIORITY: the design is rejected, redesign now (B18) (INBOX_B 01:16): B18 before anything else. ack re your two requests (demo MP4s, test timeouts): both done (INBOX_B 01:16).
 - ack real data + demo flow for the judge (INBOX_B 00:33): show "Live data, captured <time>" for dataset live_recorded; brand home offers a run on recorded research; packs get the Manus landing button (hidden on 409 manus_demo).
 - ack the whole pipeline runs now (INBOX_B 00:18) and A13 landed: packs export, posted, metrics, results (INBOX_B 00:21): studio uses keyframe assets by shotIdx, 202 render with cost lines; packs and results already target these routes.

@@ -52,7 +52,7 @@ export function LandingAction({ pack, runId }: { pack: PublishPack; runId: strin
           setBusy(false);
         }
       }}
-      className="self-start rounded-chip px-3 py-1.5 font-mono text-[11px] text-bone-2 shadow[inset_0_0_0_1px_var(--color-line-strong)] transition-colors hover:bg-glass hover:text-bone disabled:opacity-50"
+      className="self-start rounded-chip px-3 py-1.5 font-mono text-[11px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)] transition-colors hover:bg-glass hover:text-bone disabled:opacity-50"
     >
       {busy ? "Asking Manus" : "Build a landing page with Manus"}
     </button>

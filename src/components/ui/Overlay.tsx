@@ -27,7 +27,7 @@ export function Dialog({
         <D.Overlay className="overlay fixed inset-0 z-50 bg-[rgb(17_17_17/0.28)]" />
         <D.Content
           className={cn(
-            "dialog glass -translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 z-50 w-[min(92vw,520px)] p-6 shadow[var(--shadow-panel-strong)]",
+            "dialog glass -translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 z-50 w-[min(92vw,520px)] p-6 shadow-[var(--shadow-panel-strong)]",
             "bg-raised",
             className,
           )}
@@ -72,7 +72,7 @@ export function Sheet({
           aria-describedby={undefined}
           className={cn(
             "sheet fixed inset-y-2 right-2 z-50 flex w-[min(calc(100vw-16px),460px)] flex-col overflow-hidden rounded-panel",
-            "bg-raised shadow[var(--shadow-panel-strong)]",
+            "bg-raised shadow-[var(--shadow-panel-strong)]",
             className,
           )}
         >
@@ -110,7 +110,7 @@ export function Tooltip({
           <T.Content
             side={side}
             sideOffset={8}
-            className="tooltip z-50 max-w-64 rounded-[8px] bg-raised px-2.5 py-1.5 font-mono text-[11px] text-bone leading-snug shadow[var(--shadow-panel-strong)]"
+            className="tooltip z-50 max-w-64 rounded-[8px] bg-raised px-2.5 py-1.5 font-mono text-[11px] text-bone leading-snug shadow-[var(--shadow-panel-strong)]"
           >
             {content}
           </T.Content>

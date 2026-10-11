@@ -20,7 +20,7 @@ export function BrandMark({
   return (
     <span
       className={cn(
-        "relative grid shrink-0 place-items-center overflow-hidden rounded-[10px] bg-bone/5 shadow[inset_0_0_0_1px_var(--color-line)]",
+        "relative grid shrink-0 place-items-center overflow-hidden rounded-[10px] bg-bone/5 shadow-[inset_0_0_0_1px_var(--color-line)]",
         className,
       )}
       style={{ width: size, height: size }}

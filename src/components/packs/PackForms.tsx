@@ -13,10 +13,10 @@ import { METRIC_KEYS, type MetricKey, parseMetrics } from "./metrics";
 
 export const inputClass = cn(
   "h-11 w-full min-w-0 rounded-card bg-[rgb(255_255_255/0.03)] px-3.5 font-mono text-bone text-ui tabular-nums outline-none",
-  "shadow[inset_0_0_0_1px_var(--color-line-strong)] transition-shadow duration-150 placeholder:text-bone-4",
-  "hover:shadow[inset_0_0_0_1px_rgb(17_17_17/0.22)] focus-visible:outline-none",
-  "focus:shadow[inset_0_0_0_1px_rgb(229_50_45/0.65),0_0_0_3px_rgb(229_50_45/0.12)]",
-  "aria-invalid:shadow[inset_0_0_0_1px_rgb(192_53_43/0.6)]",
+  "shadow-[inset_0_0_0_1px_var(--color-line-strong)] transition-shadow duration-150 placeholder:text-bone-4",
+  "hover:shadow-[inset_0_0_0_1px_rgb(17_17_17/0.22)] focus-visible:outline-none",
+  "focus:shadow-[inset_0_0_0_1px_rgb(229_50_45/0.65),0_0_0_3px_rgb(229_50_45/0.12)]",
+  "aria-invalid:shadow-[inset_0_0_0_1px_rgb(192_53_43/0.6)]",
 );
 
 const POST_URL_HINT: Partial<Record<Channel, string>> = {
@@ -75,7 +75,7 @@ export function MarkPostedDialog({ pack, runId }: { pack: PublishPack; runId: st
       description={`Paste the link to the live ${platform} post so its results can be followed.`}
       trigger={
         <Button className="flex-1" data-testid="pack-mark-posted">
-          <span aria-hidden className="absolute inset-0 rounded-chip shadow[inset_0_0_0_1px_rgb(229_50_45/0.32)]" />
+          <span aria-hidden className="absolute inset-0 rounded-chip shadow-[inset_0_0_0_1px_rgb(229_50_45/0.32)]" />
           <CheckGlyph className="text-signal" />
           Mark posted
         </Button>
