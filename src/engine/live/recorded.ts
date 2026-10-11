@@ -46,6 +46,8 @@ export async function exportRecorded(db: Db, runId: string, spend: Record<string
     events: await keptEvents(db, runId),
     spend,
   };
+  // flag the local row too, so this machine treats it as the brand's recorded dataset
+  await upsertRun(db, rec.run);
   fs.mkdirSync(RECORDED_DIR, { recursive: true });
   const f = path.join(RECORDED_DIR, `${brand.slug}.json`);
   fs.writeFileSync(f, `${JSON.stringify(rec, null, 1)}\n`);
