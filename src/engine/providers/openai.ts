@@ -1,5 +1,6 @@
 import fs from "node:fs";
-import OpenAI from "openai";
+import path from "node:path";
+import OpenAI, { toFile } from "openai";
 import type { Db } from "../db/client";
 import { probe } from "../media/ffmpeg";
 import { callProvider } from "./call";
@@ -73,13 +74,24 @@ export async function generateImage(
     estimateUsd: PRICES.openai.imagePerImage * (o.quality === "high" ? 3 : 1),
     demo: o.demo,
     live: async () => {
-      const r = await oa().images.generate({
-        model: IMAGE_MODEL(),
-        prompt,
-        size: o.size ?? "1024x1536",
-        quality: o.quality ?? "medium",
-        n: 1,
-      });
+      // with reference images (e.g. the brand's real art to show on a phone screen) use the edit endpoint
+      const r = o.refs?.length
+        ? await oa().images.edit({
+            model: IMAGE_MODEL(),
+            image: await Promise.all(
+              o.refs.map((f) => toFile(fs.createReadStream(f), path.basename(f).replace(/\.webp$/i, ".png"))),
+            ),
+            prompt,
+            size: o.size ?? "1024x1536",
+            quality: o.quality ?? "medium",
+          })
+        : await oa().images.generate({
+            model: IMAGE_MODEL(),
+            prompt,
+            size: o.size ?? "1024x1536",
+            quality: o.quality ?? "medium",
+            n: 1,
+          });
       const b64 = r.data?.[0]?.b64_json;
       if (!b64) throw new Error("OpenAI image: empty response");
       return {

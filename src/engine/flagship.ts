@@ -118,13 +118,13 @@ export async function planShots(
       }),
     },
   );
-  // only keep brand images that really exist
+  // only keep brand images that really exist; a brand_image shot without one becomes a generated frame
   return {
-    shots: r.value.shots.map((x) =>
-      x.source === "brand_image" && (!x.imageRef || !files.includes(x.imageRef))
-        ? { ...x, source: "generated" as const, imageRef: undefined }
-        : x,
-    ),
+    shots: r.value.shots.map((x) => {
+      const ok = !!x.imageRef && files.includes(x.imageRef);
+      if (x.source === "brand_image" && !ok) return { ...x, source: "generated" as const, imageRef: undefined };
+      return ok ? x : { ...x, imageRef: undefined };
+    }),
   };
 }
 
@@ -144,8 +144,15 @@ async function keyframeFor(
   let usd = 0;
   let demo = false;
   if (s.source === "brand_image" && s.imageRef) {
-    png = await sharp(path.join(brandAssetsDir(), brand.slug, s.imageRef))
-      .resize(1080, 1920, { fit: "cover", position: "attention" })
+    // brand art is often transparent (black in video): flatten onto the brand's light color, then fill 9:16
+    // without cropping the subject away (contain on the same background for square or wide art)
+    const bg = brand.dossier.visual.colors.at(-1) ?? "#FFFFFF";
+    const src = path.join(brandAssetsDir(), brand.slug, s.imageRef);
+    const meta = await sharp(src).metadata();
+    const portrait = (meta.height ?? 1) / (meta.width ?? 1) > 1.3;
+    png = await sharp(src)
+      .flatten({ background: bg })
+      .resize(1080, 1920, { fit: portrait ? "cover" : "contain", position: "attention", background: bg })
       .png()
       .toBuffer();
   } else {
@@ -153,11 +160,34 @@ async function keyframeFor(
       s.style === "photoreal"
         ? `${s.visualPrompt}. ${PHOTOREAL}`
         : `${s.visualPrompt}. Style: ${brand.dossier.visual.styleNotes ?? ""} Vertical 9:16, no text.`;
-    const img = await generateImage(db, prompt, {
-      runId: c.runId,
-      quality: "high",
-      demo: () => demoKeyframe(brand, s),
-    });
+    // a generated frame that shows the brand's real art (on a phone, a poster) gets that image as a reference
+    let refs: string[] | undefined;
+    if (s.imageRef) {
+      const ref = path.join(brandAssetsDir(), brand.slug, s.imageRef);
+      if (fs.existsSync(ref)) {
+        const flat = path.resolve(
+          process.env.ASSETS_DIR || "data/assets",
+          "tmp",
+          `${brand.slug}_${path.parse(s.imageRef).name}.png`,
+        );
+        fs.mkdirSync(path.dirname(flat), { recursive: true });
+        await sharp(ref)
+          .flatten({ background: brand.dossier.visual.colors.at(-1) ?? "#FFFFFF" })
+          .png()
+          .toFile(flat);
+        refs = [flat];
+      }
+    }
+    const img = await generateImage(
+      db,
+      refs ? `${prompt} The screen or print shows exactly the attached brand image.` : prompt,
+      {
+        runId: c.runId,
+        quality: "high",
+        refs,
+        demo: () => demoKeyframe(brand, s),
+      },
+    );
     png = img.png;
     provider = img.mode === "live" ? "openai" : "local";
     model = img.model;
@@ -303,7 +333,7 @@ export async function buildFlagship(
     if (rv.decision === "accept") break;
     // regenerate weak shots: new frame for generated shots, new motion for brand images
     const next: Concept["shots"] = [...c.shots];
-    for (const w of weak.slice(0, 4)) {
+    for (const w of weak.sort((a, b) => a.score - b.score).slice(0, 3)) {
       const s = next[w.idx];
       const fix = w.issues[0] ? ` Fix: ${w.issues[0]}` : "";
       const updated = {
