@@ -1,0 +1,1 @@
+B 2026-10-11T23:46:17+03:00 DataClient interface, live (fetch+zod+SSE) and mock (in-memory store from DEMO_RUNS, ~60s scripted run, consult pause), TanStack Query hooks, /lab/stream, vitest for sse + mock run
