@@ -55,13 +55,9 @@ export function Settings() {
     <Page>
       <PageHead
         eyebrow="Providers / spend"
-        title={
-          <>
-            What runs live, <span className="text-bone-2">and what it costs.</span>
-          </>
-        }
+        title="What runs live, and what it costs."
         actions={
-          <dl className="flex w-full overflow-hidden rounded-card md:w-auto bg-raised shadow-[var(--shadow-panel)]">
+          <dl className="flex w-full overflow-hidden rounded-card border border-line bg-raised md:w-auto">
             <Readout label="live">
               {ready ? (
                 <span className="flex items-center gap-2">
@@ -106,13 +102,12 @@ export function Settings() {
           />
         ) : (
           <div data-testid="provider-grid">
-            {GROUPS.map((g, gi) => (
+            {GROUPS.map((g) => (
               <ProviderGroup
                 key={g.role}
                 {...g}
                 rows={rows.filter((r) => r.info.role === g.role)}
                 loading={providers.isLoading}
-                delay={gi * 120}
               />
             ))}
           </div>
@@ -207,7 +202,6 @@ function ModePanel({ live, loading, failed }: { live: Row[]; loading: boolean; f
       aria-label="Modes"
       data-testid="mode-panel"
       className="glass rise grid overflow-hidden md:grid-cols-[1fr_1.25fr_1fr]"
-      style={{ animationDelay: "200ms" }}
     >
       <Cell label="This cockpit">
         <div className="flex items-center gap-3">
@@ -222,10 +216,12 @@ function ModePanel({ live, loading, failed }: { live: Row[]; loading: boolean; f
       </Cell>
 
       <Cell label="Provider modes">
-        <p className="flex flex-wrap items-center gap-1.5 font-mono text-[11px] text-bone-2">
+        <p className="flex flex-wrap items-center gap-1.5 text-[12px] text-bone-2">
           <Token>key present</Token>
           <span aria-hidden>+</span>
-          <Token>in LIVE_PROVIDERS</Token>
+          <Token>
+            in <code className="ml-1 font-mono text-[11px]">LIVE_PROVIDERS</code>
+          </Token>
           <span aria-hidden>=</span>
           <Badge tone="pass">Live</Badge>
           <span className="text-bone-3">otherwise</span>
@@ -243,7 +239,7 @@ function ModePanel({ live, loading, failed }: { live: Row[]; loading: boolean; f
             <Skeleton className="h-6 w-16 rounded-chip" />
           </div>
         ) : failed ? (
-          <p className="font-mono text-[11px] text-bone-3">Unknown: provider status did not load.</p>
+          <p className="text-[12.5px] text-bone-3">Unknown: provider status did not load.</p>
         ) : live.length ? (
           <ul className="flex flex-wrap gap-1.5">
             {live.map((r) => (
@@ -276,7 +272,7 @@ function Cell({ label, children }: { label: string; children: React.ReactNode })
 
 function Token({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex h-6 items-center rounded-cell bg-raised-2 px-2 text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)]">
+    <span className="inline-flex h-6 items-center rounded-cell border border-line-strong bg-raised-2 px-2 text-bone">
       {children}
     </span>
   );
@@ -288,14 +284,12 @@ function ProviderGroup({
   blurb,
   rows,
   loading,
-  delay,
 }: {
   role: string;
   title: string;
   blurb: string;
   rows: Row[];
   loading: boolean;
-  delay: number;
 }) {
   const live = rows.filter((r) => r.status?.mode === "live").length;
   return (
@@ -308,18 +302,13 @@ function ProviderGroup({
           {title}
         </h3>
         <p className="mt-2 text-bone-2 text-ui">{blurb}</p>
-        <p className="mt-3 font-mono text-[11px] text-bone-3 tabular-nums">
-          {loading ? "reading status" : `${live} of ${rows.length} live`}
+        <p className="mt-3 text-[12px] text-bone-3 tabular-nums">
+          {loading ? "Reading status" : `${live} of ${rows.length} live`}
         </p>
       </header>
       <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-        {rows.map((r, i) => (
-          <li
-            key={r.id}
-            className="rise"
-            style={{ animationDelay: `${delay + i * 60}ms` }}
-            data-testid={`provider-${r.id}`}
-          >
+        {rows.map((r) => (
+          <li key={r.id} className="rise" data-testid={`provider-${r.id}`}>
             {loading ? <SkeletonCard lines={2} className="h-full min-h-[208px]" /> : <Tile row={r} />}
           </li>
         ))}
@@ -359,7 +348,7 @@ function Fact({ label, on, warn, children }: { label: string; on?: boolean; warn
       <dt className="mono-label text-[10px]">{label}</dt>
       <dd
         className={cn(
-          "mt-1 flex items-center gap-1.5 font-mono text-ui",
+          "mt-1 flex items-center gap-1.5 text-ui",
           on ? (warn ? "text-warn" : "text-bone") : "text-bone-3",
         )}
       >
@@ -382,7 +371,10 @@ function Budgets({ rows, spend, loading }: { rows: Row[]; spend?: SpendResponse;
   }, [loading]);
 
   return (
-    <div className="glass-flat grid overflow-hidden lg:grid-cols-[300px_1fr]" data-testid="budgets">
+    <div
+      className="grid overflow-hidden rounded-panel border border-line bg-raised lg:grid-cols-[300px_1fr]"
+      data-testid="budgets"
+    >
       <div className="flex flex-col justify-between gap-6 border-line border-b p-6 lg:border-r lg:border-b-0">
         <div>
           <p className="mono-label">total spent</p>
@@ -394,7 +386,7 @@ function Budgets({ rows, spend, loading }: { rows: Row[]; spend?: SpendResponse;
             )}
           </div>
         </div>
-        <div className="flex flex-col gap-1 font-mono text-[11px] text-bone-3 tabular-nums">
+        <div className="flex flex-col gap-1 text-[12px] text-bone-3 tabular-nums">
           <p>
             {spend
               ? `USD across ${formatCount(spend.entries.length)} paid ${spend.entries.length === 1 ? "call" : "calls"}`
@@ -445,7 +437,7 @@ function BudgetLine({ row, spentUsd, filled }: { row: Row; spentUsd: number; fil
           <span className="mono-label">cap</span>
           <span className="text-bone tabular-nums">{formatCount(cap)} credits</span>
         </p>
-        <p className="font-mono text-[11px] text-bone-3">Metered by Manus in credits, not in USD.</p>
+        <p className="text-[12px] text-bone-3">Metered by Manus in credits, not in USD.</p>
       </div>
     );
   if (cap !== undefined)
@@ -456,7 +448,7 @@ function BudgetLine({ row, spentUsd, filled }: { row: Row; spentUsd: number; fil
         <span className="mono-label">spent</span>
         <span className="text-bone tabular-nums">{formatUsd(spentUsd)}</span>
       </p>
-      <p className="border-line border-t border-dashed pt-2 font-mono text-[11px] text-bone-3">no cap set</p>
+      <p className="border-line border-t border-dashed pt-2 text-[12px] text-bone-3">No cap set</p>
     </div>
   );
 }

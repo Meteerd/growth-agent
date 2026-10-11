@@ -4,18 +4,18 @@ import { useEffect, useRef, useState } from "react";
 import { DemoBadge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { NumberTicker } from "@/components/ui/NumberTicker";
-import { PhoneFrame } from "@/components/ui/PhoneFrame";
 import { toast } from "@/components/ui/Toast";
-import { CHANNEL_LABELS, type Concept, type MetricSnapshot, type PublishPack } from "@/contracts";
+import { type Asset, CHANNEL_LABELS, type Concept, type MetricSnapshot, type PublishPack } from "@/contracts";
 import { getClient } from "@/lib/client/api";
+import { referenceImages } from "@/lib/client/brandAssets";
 import { cn } from "@/lib/client/cn";
 import { timeAgo } from "@/lib/client/format";
-import { useConceptAssets } from "@/lib/client/queries";
+import { MOCK_VIDEO } from "@/lib/client/mock/client";
+import { useBrand, useConceptAssets } from "@/lib/client/queries";
 import { LandingAction } from "./LandingAction";
 import { METRIC_KEYS } from "./metrics";
 import { CheckGlyph, MarkPostedDialog, MetricsDialog } from "./PackForms";
 
-const STILL_FORMATS = new Set<Concept["format"]>(["static", "carousel", "text_post"]);
 const ASPECT_RATIO: Record<Concept["aspect"], string> = {
   "9:16": "9 / 16",
   "4:5": "4 / 5",
@@ -62,12 +62,12 @@ export function PackCard({
       data-testid={`pack-card-${pack.id}`}
       data-status={pack.status}
       className={cn(
-        "glass-flat relative grid overflow-hidden transition-shadow duration-500",
-        "md:grid-cols-[232px_minmax(0,1fr)] xl:grid-cols-[232px_minmax(0,1fr)_316px]",
-        posted && "shadow-[var(--shadow-panel),inset_0_1px_0_0_rgb(31_122_77/0.22)]",
+        "grid overflow-hidden rounded-panel border bg-raised transition-colors duration-200",
+        "md:grid-cols-[288px_minmax(0,1fr)] xl:grid-cols-[288px_minmax(0,1fr)_304px]",
+        posted ? "border-[rgb(31_122_77/0.4)]" : "border-line",
       )}
     >
-      <Cover pack={pack} concept={concept} demo={demo} />
+      <Cover pack={pack} concept={concept} n={n} demo={demo} />
 
       <div className="min-w-0 p-5 md:p-6">
         <header>
@@ -78,13 +78,13 @@ export function PackCard({
             </p>
             <StatusPill posted={posted} />
           </div>
-          <h3 id={titleId} className="mt-3 font-display text-[26px] text-bone leading-[1.08] md:text-[30px]">
+          <h3 id={titleId} className="mt-3 font-display text-[24px] text-bone leading-[1.1] md:text-[28px]">
             {concept?.title ?? `${platform} post`}
           </h3>
           {concept?.hook && (
-            <p className="mt-2.5 flex gap-2.5 text-bone-2 text-ui">
-              <span className="mono-label mt-px shrink-0 text-bone-3">hook</span>
-              <span className="">{concept.hook}</span>
+            <p className="mt-2.5 text-bone-2 text-ui">
+              <span className="font-medium text-bone">Hook: </span>
+              {concept.hook}
             </p>
           )}
         </header>
@@ -111,10 +111,7 @@ export function PackCard({
           {tags.length > 0 && (
             <ul className="mt-3.5 flex flex-wrap gap-1.5" aria-label="Hashtags">
               {tags.map((t) => (
-                <li
-                  key={t}
-                  className="rounded-chip bg-glass px-2.5 py-1 font-mono text-[11px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line)]"
-                >
+                <li key={t} className="rounded-[4px] border border-line px-2 py-0.5 text-[12px] text-bone-2">
                   {t}
                 </li>
               ))}
@@ -143,20 +140,20 @@ export function PackCard({
 
       <div
         className={cn(
-          "flex min-w-0 flex-col gap-6 border-line border-t bg-[rgb(255_255_255/0.012)] p-5 md:col-start-2 md:p-6",
+          "flex min-w-0 flex-col gap-6 border-line border-t p-5 md:col-start-2 md:p-6",
           "xl:col-start-3 xl:row-start-1 xl:border-t-0 xl:border-l",
         )}
       >
-        <dl className="grid grid-cols-[auto_1fr] items-baseline gap-x-4 gap-y-2">
-          <dt className="mono-label">Post time</dt>
+        <dl className="grid grid-cols-[auto_1fr] items-baseline gap-x-4 gap-y-2 text-[12.5px]">
+          <dt className="text-bone-2">Post time</dt>
           <dd className="text-right font-mono text-[12px] text-bone tabular-nums">
             {pack.postAt ? (
               <time dateTime={pack.postAt}>{postTime.format(new Date(pack.postAt))}</time>
             ) : (
-              <span className="text-bone-2">your call</span>
+              <span className="font-sans text-bone-2">your call</span>
             )}
           </dd>
-          <dt className="mono-label">Pack</dt>
+          <dt className="text-bone-2">Pack</dt>
           <dd className="truncate text-right font-mono text-[12px] text-bone-3">{pack.id}</dd>
         </dl>
 
@@ -187,38 +184,85 @@ export function PackCard({
   );
 }
 
-function Cover({ pack, concept, demo }: { pack: PublishPack; concept?: Concept; demo: boolean }) {
-  const still = concept ? STILL_FORMATS.has(concept.format) : false;
-  const { data: assets } = useConceptAssets(still ? undefined : pack.conceptId);
-  const video = assets?.find((a) => a.id === pack.videoAssetId) ?? assets?.filter((a) => a.kind === "video").at(-1);
+const byShot = (a: Asset, b: Asset) => (a.shotIdx ?? 0) - (b.shotIdx ?? 0);
+
+/**
+ * Real media only: the rendered video in a black viewer, else a rendered still or keyframe, else the brand's own
+ * art labelled as such. The mock placeholder video is never shown as if it were a render.
+ */
+function Cover({ pack, concept, n, demo }: { pack: PublishPack; concept?: Concept; n: number; demo: boolean }) {
+  const { data: assets = [] } = useConceptAssets(pack.conceptId);
+  const { data: brand } = useBrand(pack.brandId);
+  const [bad, setBad] = useState<string[]>([]);
+  const drop = (u: string) => () => setBad((b) => [...b, u]);
+  const ok = (a?: Asset) => (a && !bad.includes(a.url) ? a : undefined);
+
+  const videos = assets.filter((a) => a.kind === "video" && a.url !== MOCK_VIDEO);
+  const video = ok(videos.find((a) => a.id === pack.videoAssetId) ?? videos.at(-1));
+  const keyframe = ok(assets.filter((a) => a.kind === "keyframe").sort(byShot)[0]);
+  const still =
+    ok(assets.find((a) => a.kind === "cover")) ??
+    ok(assets.find((a) => a.kind === "image" && pack.imageAssetIds.includes(a.id))) ??
+    keyframe;
+  const art = referenceImages(brand).filter((u) => !bad.includes(u));
+  const artUrl = art.length ? art[(n - 1) % art.length] : undefined;
+  const text = concept?.format === "text_post";
   const aspect = concept?.aspect ?? "9:16";
+  const secs = video?.durationSec;
+
+  const caption = text
+    ? "Text post, no image"
+    : video
+      ? "Render"
+      : still
+        ? still.kind === "keyframe"
+          ? `Keyframe, shot ${(still.shotIdx ?? 0) + 1}`
+          : "Rendered image"
+        : artUrl
+          ? "Brand art, no render yet"
+          : "No render yet";
+
   return (
-    <div
-      className={cn(
-        "relative flex flex-col items-center gap-4 border-line border-b p-5 md:row-span-2 md:border-r md:border-b-0 xl:row-span-1",
-        "bg-[rgb(0_0_0/0.22)]",
-      )}
-    >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-70"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgb(17 17 17 / 0.035) 1px, transparent 1px), linear-gradient(to bottom, rgb(17 17 17 / 0.035) 1px, transparent 1px)",
-          backgroundSize: "16px 16px",
-          maskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, #000 20%, transparent 100%)",
-        }}
-      />
-      <div className="relative w-full max-w-[192px]">
-        {video ? (
-          <PhoneFrame src={video.url} empty="Render missing" className="max-w-none" />
-        ) : (
-          <CoverTile title={concept?.title ?? CHANNEL_LABELS[pack.platform]} aspect={aspect} format={concept?.format} />
-        )}
+    <div className="flex min-w-0 flex-col border-line border-b md:row-span-2 md:border-r md:border-b-0 xl:row-span-1">
+      <div className={cn("grid flex-1 place-items-center p-6", text ? "bg-raised-2" : "bg-viewer")}>
+        <div
+          className={cn("relative w-full overflow-hidden rounded-[3px]", text ? "bg-raised" : "bg-raised-2")}
+          style={{ aspectRatio: ASPECT_RATIO[aspect], maxWidth: aspect === "16:9" ? 248 : 224 }}
+        >
+          {text ? (
+            <TextTile
+              platform={CHANNEL_LABELS[pack.platform]}
+              title={concept?.title}
+              body={concept?.body ?? pack.caption}
+            />
+          ) : video ? (
+            <Viewer src={video.url} poster={keyframe?.url} onError={drop(video.url)} />
+          ) : still || artUrl ? (
+            // biome-ignore lint/performance/noImgElement: engine assets and brand art from the asset route
+            <img
+              src={still?.url ?? artUrl}
+              alt=""
+              loading="lazy"
+              onError={drop((still?.url ?? artUrl)!)}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          ) : (
+            <p className="absolute inset-0 grid place-items-center p-4 text-center text-[12px] text-bone-3">
+              No render yet
+            </p>
+          )}
+        </div>
       </div>
-      <div className="relative flex w-full max-w-[192px] items-center justify-between gap-2 font-mono text-[10.5px] text-bone-3">
-        <span className="truncate tabular-nums">
-          {video ? `${aspect} / ${video.durationSec ? `${Math.round(video.durationSec)} s` : "video"}` : aspect}
+      <div className="flex items-center justify-between gap-2 border-line border-t px-4 py-2.5 text-[12px]">
+        <span className="truncate text-bone-2">
+          {caption}
+          {video && (
+            <span className="font-mono text-bone-3 tabular-nums">
+              {" "}
+              {aspect}
+              {secs ? `, ${Math.round(secs)}s` : ""}
+            </span>
+          )}
         </span>
         {demo && <DemoBadge label="Demo" />}
       </div>
@@ -226,75 +270,81 @@ function Cover({ pack, concept, demo }: { pack: PublishPack; concept?: Concept; 
   );
 }
 
-/** Designed stand-in when there is no rendered file: the concept's title set as a cover at its aspect. */
-function CoverTile({
-  title,
-  aspect,
-  format,
-}: {
-  title: string;
-  aspect: Concept["aspect"];
-  format?: Concept["format"];
-}) {
-  const text = format === "text_post";
+/** Program-monitor player: muted loop, click to pause, record-red playhead along the bottom. */
+function Viewer({ src, poster, onError }: { src: string; poster?: string; onError: () => void }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const [t, setT] = useState(0);
+  const toggle = () => {
+    const v = ref.current;
+    if (!v) return;
+    if (v.paused) v.play().catch(onError);
+    else v.pause();
+  };
   return (
-    <div
-      className="relative w-full overflow-hidden rounded-card bg-raised-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)]"
-      style={{ aspectRatio: ASPECT_RATIO[aspect] }}
-    >
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background: text
-            ? "radial-gradient(90% 70% at 100% 0%, rgb(60 224 255 / 0.12), transparent 70%)"
-            : "radial-gradient(110% 60% at 15% 0%, rgb(91 60 255 / 0.34), transparent 70%), radial-gradient(80% 50% at 100% 100%, rgb(60 224 255 / 0.16), transparent 70%)",
-        }}
+    <>
+      <video
+        ref={ref}
+        src={src}
+        poster={poster}
+        muted
+        loop
+        autoPlay
+        playsInline
+        preload="metadata"
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onTimeUpdate={(e) => setT(e.currentTarget.currentTime / (e.currentTarget.duration || 1))}
+        onError={onError}
+        className="absolute inset-0 h-full w-full bg-viewer object-cover"
       />
-      <div
-        aria-hidden
-        className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(180deg,transparent,rgb(17_17_17/0.7))]"
-      />
-      <div className="relative flex h-full flex-col justify-between p-3.5">
-        <div className="flex items-center justify-between font-mono text-[9.5px] text-bone-3 uppercase tracking-[0.08em]">
-          <span>{aspect}</span>
-          <span className="truncate pl-2">{formatLabel(format) ?? "post"}</span>
-        </div>
-        <p
-          className={cn(
-            "text-bone",
-            text ? "font-medium text-[15px] leading-snug" : "font-display text-[21px] leading-[1.08]",
-          )}
-        >
-          {title}
-        </p>
-        <div className="flex items-center gap-1.5 font-mono text-[9.5px] text-bone-3 uppercase tracking-[0.08em]">
-          <span className="size-1 rounded-full bg-bone-3" />
-          {text ? "text only" : "no render yet"}
-        </div>
+      <button
+        onClick={toggle}
+        aria-label={playing ? "Pause the render" : "Play the render"}
+        className="absolute inset-0 grid place-items-center"
+      >
+        {!playing && (
+          <span className="grid size-11 place-items-center rounded-full bg-raised text-bone">
+            <svg viewBox="0 0 16 16" className="ml-0.5 size-4" aria-hidden>
+              <path d="M4 2.5v11l9-5.5-9-5.5Z" fill="currentColor" />
+            </svg>
+          </span>
+        )}
+      </button>
+      <div aria-hidden className="absolute inset-x-0 bottom-0 h-[3px] bg-[rgb(255_255_255/0.2)]">
+        <div className="h-full bg-signal" style={{ width: `${t * 100}%` }} />
       </div>
+    </>
+  );
+}
+
+/** A text post has no media: show the post itself, set like the platform will show it. */
+function TextTile({ platform, title, body }: { platform: string; title?: string; body: string }) {
+  return (
+    <div className="absolute inset-0 flex flex-col gap-2 p-3.5">
+      <p className="text-[11px] text-bone-3">{platform}</p>
+      {title && <p className="line-clamp-3 font-semibold text-[14px] text-bone leading-snug">{title}</p>}
+      <p className="line-clamp-4 text-[11.5px] text-bone-2 leading-snug">{body}</p>
     </div>
   );
 }
 
-/** Ready to Posted: colours cross over and the label slides up (both labels share one grid cell, so no width jump). */
+/** Ready to Posted: colours cross over and the label slides (both labels share one grid cell, so no width jump). */
 function StatusPill({ posted }: { posted: boolean }) {
   const label =
-    "col-start-1 row-start-1 flex items-center gap-1.5 transition-[opacity,transform] duration-[380ms] ease-out";
+    "col-start-1 row-start-1 flex items-center gap-1.5 transition-[opacity,transform] duration-200 ease-out";
   return (
     <span
       data-testid="pack-status"
       data-state={posted ? "posted" : "ready"}
       className={cn(
-        "inline-grid h-6 shrink-0 items-center overflow-hidden rounded-chip px-2.5 font-mono text-[10.5px] uppercase tracking-[0.06em]",
-        "transition-[background-color,box-shadow,color] duration-[380ms] ease-out",
-        posted
-          ? "bg-[rgb(31_122_77/0.1)] text-pass shadow-[inset_0_0_0_1px_rgb(31_122_77/0.35)]"
-          : "text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)]",
+        "inline-grid h-6 shrink-0 items-center overflow-hidden rounded-chip border px-2.5 font-medium text-[12px]",
+        "transition-colors duration-200 ease-out",
+        posted ? "border-[rgb(31_122_77/0.35)] bg-[rgb(31_122_77/0.08)] text-pass" : "border-line-strong text-bone",
       )}
     >
       <span aria-hidden={posted} className={cn(label, posted && "-translate-y-full opacity-0")}>
-        <span className="size-1.5 rounded-full bg-signal " />
+        <span className="size-1.5 rounded-full bg-bone" />
         Ready
       </span>
       <span aria-hidden={!posted} className={cn(label, !posted && "translate-y-full opacity-0")}>
@@ -349,7 +399,7 @@ function CopyButton({
       variant="quiet"
       onClick={copy}
       data-testid={testId}
-      className={cn("h-7 min-w-[86px] px-2.5 font-mono text-[11px]", copied && "text-pass hover:text-pass")}
+      className={cn("h-7 min-w-[86px] px-2.5 text-[12px]", copied && "text-pass hover:text-pass")}
     >
       {copied ? <CheckGlyph className="size-3" /> : <CopyGlyph />}
       <span aria-live="polite">{copied ? "Copied" : label}</span>
@@ -373,7 +423,7 @@ function Checklist({ items }: { items: string[] }) {
       </div>
       <div aria-hidden className="mt-2 h-px bg-line">
         <div
-          className="h-px bg-signal  transition-[width] duration-500 ease-out"
+          className="h-px bg-bone transition-[width] duration-200 ease-out"
           style={{ width: `${items.length ? (count / items.length) * 100 : 0}%` }}
         />
       </div>
@@ -382,7 +432,7 @@ function Checklist({ items }: { items: string[] }) {
           const on = !!done[i];
           return (
             <li key={it}>
-              <label className="-mx-2 flex cursor-pointer items-start gap-3 rounded-card px-2 py-1.5 transition-colors duration-150 hover:bg-glass">
+              <label className="-mx-2 flex cursor-pointer items-start gap-3 rounded-card px-2 py-1.5 transition-colors duration-150 hover:bg-raised-2/60">
                 <input
                   type="checkbox"
                   className="peer sr-only"
@@ -392,30 +442,24 @@ function Checklist({ items }: { items: string[] }) {
                 <span
                   aria-hidden
                   className={cn(
-                    "mt-px grid size-4 shrink-0 place-items-center rounded-[4px] transition-[background-color,box-shadow] duration-200 ease-out",
-                    "peer-focus-visible:outline-[1.5px] peer-focus-visible:outline-signal peer-focus-visible:outline-offset-2 peer-focus-visible:outline-solid",
-                    on
-                      ? "bg-signal shadow-[0_0_0_1px_rgb(229_50_45/0.7)]"
-                      : "shadow-[inset_0_0_0_1px_rgb(17_17_17/0.24)]",
+                    "mt-px grid size-4 shrink-0 place-items-center rounded-[3px] border transition-colors duration-150",
+                    "peer-focus-visible:outline-2 peer-focus-visible:outline-bone peer-focus-visible:outline-offset-2 peer-focus-visible:outline-solid",
+                    on ? "border-bone bg-bone" : "border-bone-4 bg-raised",
                   )}
                 >
-                  <svg viewBox="0 0 12 12" className="size-3 text-ink" fill="none">
+                  <svg viewBox="0 0 12 12" className={cn("size-3 text-ink", !on && "opacity-0")} fill="none">
                     <path
                       d="M2.6 6.3 5 8.6l4.4-5"
                       stroke="currentColor"
                       strokeWidth="1.7"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      pathLength={1}
-                      strokeDasharray={1}
-                      strokeDashoffset={on ? 0 : 1}
-                      className="transition-[stroke-dashoffset] delay-75 duration-[350ms] ease-out"
                     />
                   </svg>
                 </span>
                 <span
                   className={cn(
-                    "text-ui transition-colors duration-200",
+                    "text-ui transition-colors duration-150",
                     on ? "text-bone-3 line-through decoration-bone-4" : "text-bone-2",
                   )}
                 >
@@ -440,14 +484,14 @@ function PostedBlock({ pack, latest }: { pack: PublishPack; latest?: MetricSnaps
       <div>
         <div className="flex items-baseline justify-between gap-3">
           <span className="mono-label">Live post</span>
-          {pack.postedAt && <span className="font-mono text-[11px] text-bone-3">posted {timeAgo(pack.postedAt)}</span>}
+          {pack.postedAt && <span className="text-[12px] text-bone-3">posted {timeAgo(pack.postedAt)}</span>}
         </div>
         {safe ? (
           <a
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-1.5 flex items-center gap-1.5 font-mono text-[12px] text-bone transition-colors hover:text-signal"
+            className="group mt-1.5 flex items-center gap-1.5 font-mono text-[12px] text-bone underline decoration-line-strong underline-offset-4 transition-colors hover:decoration-bone"
           >
             <span className="truncate">{short}</span>
             <ArrowGlyph />
@@ -460,26 +504,26 @@ function PostedBlock({ pack, latest }: { pack: PublishPack; latest?: MetricSnaps
         <div data-testid="pack-metrics">
           <div className="flex items-baseline justify-between gap-3">
             <span className="mono-label">Latest numbers</span>
-            <span className="font-mono text-[11px] text-bone-3">
+            <span className="text-[12px] text-bone-3">
               {latest.source === "manual" ? "entered" : "synced"} {timeAgo(latest.capturedAt)}
             </span>
           </div>
-          <dl className="mt-2 flex flex-wrap gap-px overflow-hidden rounded-card bg-line p-px">
+          <dl className="mt-2 grid grid-cols-3 gap-px overflow-hidden rounded-card border border-line bg-line">
             {present.map((k) => (
-              <div key={k} className="min-w-[30%] flex-1 bg-raised px-3 py-2.5">
-                <dt className="font-mono text-[10px] text-bone-3 uppercase tracking-[0.08em]">{k}</dt>
-                <dd className="mt-1 text-bone text-body">
+              <div key={k} className="flex flex-col-reverse bg-raised px-3 py-2.5">
+                <dt className="mt-1 text-[11.5px] text-bone-3">{k}</dt>
+                <dd className="text-bone text-body">
                   <NumberTicker value={latest[k] ?? 0} from={0} />
                 </dd>
               </div>
             ))}
             {Array.from({ length: (3 - (present.length % 3)) % 3 }, (_, i) => (
-              <div key={`pad-${i}`} aria-hidden className="min-w-[30%] flex-1 bg-raised" />
+              <div key={`pad-${i}`} aria-hidden className="bg-raised" />
             ))}
           </dl>
         </div>
       ) : (
-        <p className="rounded-card px-3 py-2.5 font-mono text-[11px] text-bone-3 leading-relaxed shadow-[inset_0_0_0_1px_var(--color-line)]">
+        <p className="rounded-card border border-line px-3 py-2.5 text-[12.5px] text-bone-2">
           Waiting for first metrics. Enter them from {CHANNEL_LABELS[pack.platform]} insights once the post has numbers.
         </p>
       )}
@@ -523,12 +567,7 @@ function ReplyGlyph() {
 
 function ArrowGlyph() {
   return (
-    <svg
-      viewBox="0 0 16 16"
-      className="size-3 shrink-0 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-      fill="none"
-      aria-hidden
-    >
+    <svg viewBox="0 0 16 16" className="size-3 shrink-0" fill="none" aria-hidden>
       <path d="M5 11 11 5M6 5h5v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );

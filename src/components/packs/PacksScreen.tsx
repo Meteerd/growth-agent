@@ -41,18 +41,17 @@ export function PacksScreen({ runId }: { runId: string }) {
 
       <section
         aria-label="How posting works"
-        className="rise glass-flat mb-12 grid overflow-hidden md:grid-cols-[minmax(0,1fr)_auto]"
-        style={{ animationDelay: "180ms" }}
+        className="rise mb-12 grid overflow-hidden rounded-panel border border-line bg-raised md:grid-cols-[minmax(0,1fr)_auto]"
       >
         <div className="flex gap-4 p-5 md:p-6">
           <span
             aria-hidden
-            className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full font-mono text-[11px] text-warn shadow-[inset_0_0_0_1px_rgb(183_121_31/0.35)]"
+            className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full border border-[rgb(183_121_31/0.4)] font-semibold text-[12px] text-warn"
           >
             !
           </span>
           <div>
-            <p className="mono-label">Why there is no post button</p>
+            <p className="font-semibold text-[13px] text-bone">Why there is no post button</p>
             <p className="mt-2 max-w-[68ch] text-bone-2 text-ui">
               TikTok and YouTube keep API uploads from an unaudited app private, so a post sent from here would reach
               nobody. Download the pack and post it by hand or from the platform's own app, then paste the link here.
@@ -98,19 +97,19 @@ export function PacksScreen({ runId }: { runId: string }) {
                 <header className="rise flex items-end justify-between gap-4 lg:sticky lg:top-24 lg:flex-col lg:items-start lg:justify-start lg:self-start">
                   <div>
                     <p className="font-mono text-[11px] text-bone-3 tabular-nums">{String(gi + 1).padStart(2, "0")}</p>
-                    <h2 id={`group-${platform}`} className="mt-2 font-display text-[32px] leading-none md:text-[36px]">
+                    <h2 id={`group-${platform}`} className="mt-2 font-display text-[30px] leading-none md:text-[34px]">
                       {CHANNEL_LABELS[platform]}
                     </h2>
                   </div>
-                  <p className="font-mono text-[11px] text-bone-3 tabular-nums lg:mt-3">
-                    {items.length} {items.length === 1 ? "pack" : "packs"} / {done} posted
+                  <p className="text-[12.5px] text-bone-2 tabular-nums lg:mt-3">
+                    {items.length} {items.length === 1 ? "pack" : "packs"}, {done} posted
                   </p>
                 </header>
                 <ul className="flex min-w-0 flex-col gap-4">
                   {items.map((p) => {
                     const n = order.get(p.id) ?? 0;
                     return (
-                      <li key={p.id} className="rise" style={{ animationDelay: `${160 + n * 60}ms` }}>
+                      <li key={p.id} className="rise">
                         <PackCard
                           pack={p}
                           n={n}
@@ -154,7 +153,7 @@ function LoadingGroups() {
         {[0, 1].map((i) => (
           <div
             key={i}
-            className="glass-flat grid overflow-hidden md:grid-cols-[232px_minmax(0,1fr)] xl:grid-cols-[232px_minmax(0,1fr)_316px]"
+            className="glass-flat grid overflow-hidden md:grid-cols-[288px_minmax(0,1fr)] xl:grid-cols-[288px_minmax(0,1fr)_304px]"
           >
             <div className="grid place-items-center border-line border-b p-5 md:border-r md:border-b-0">
               <Skeleton className="aspect-[9/16] w-full max-w-[192px] rounded-card" />

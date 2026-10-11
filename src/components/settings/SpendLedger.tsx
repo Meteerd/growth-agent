@@ -66,10 +66,10 @@ export function SpendLedger({ spend, loading }: { spend?: SpendResponse; loading
   const rows = newestFirst(spend.entries);
   const total = spend.totalUsd ?? rows.reduce((a, e) => a + e.usd, 0);
   return (
-    <div className="glass-flat overflow-hidden" data-testid="spend-ledger">
+    <div className="overflow-hidden rounded-panel border border-line bg-raised" data-testid="spend-ledger">
       <table className="w-full border-collapse text-ui">
         <caption className="sr-only">Spend ledger, newest first</caption>
-        <thead className="hidden bg-[rgb(255_255_255/0.02)] md:table-header-group">
+        <thead className="hidden bg-raised-2/50 md:table-header-group">
           <tr className="border-line border-b">
             <th scope="col" className={TH}>
               time
@@ -92,12 +92,8 @@ export function SpendLedger({ spend, loading }: { spend?: SpendResponse; loading
           </tr>
         </thead>
         <tbody className="block md:table-row-group">
-          {rows.map((e, i) => (
-            <tr
-              key={e.id}
-              className={`${TR} rise transition-colors duration-150 hover:bg-glass`}
-              style={{ animationDelay: `${Math.min(i, 12) * 40}ms` }}
-            >
+          {rows.map((e) => (
+            <tr key={e.id} className={`${TR} transition-colors duration-150 hover:bg-glass-strong`}>
               <td className={`${TD} order-4 whitespace-nowrap`}>
                 <time dateTime={e.ts} title={exact.format(new Date(e.ts))} className="font-mono text-bone-2">
                   {timeAgo(e.ts)}
@@ -120,7 +116,7 @@ export function SpendLedger({ spend, loading }: { spend?: SpendResponse; loading
             </tr>
           ))}
         </tbody>
-        <tfoot className="block border-line border-t bg-[rgb(255_255_255/0.02)] md:table-footer-group">
+        <tfoot className="block border-line border-t bg-raised-2/50 md:table-footer-group">
           <tr className="flex items-baseline justify-between gap-4 px-4 py-4 md:table-row md:p-0">
             <td colSpan={5} className="mono-label md:px-4 md:py-4">
               total, {formatCount(rows.length)} {rows.length === 1 ? "call" : "calls"}
