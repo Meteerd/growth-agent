@@ -52,19 +52,19 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Score all candidate channels on the six axes with explicit weights; ChannelPlan with rationale, evidence ids, formats, cadence, first steps, KPIs, targets (named subreddits, hashtags); notNow with reasons; versioned PATCH.
   - Accept: a.clinic plan puts `meta_ads` in notNow citing RX4; Evreon ranks LinkedIn first and has no TikTok in its top 3; Hound includes TikTok/Reels and named subreddits.
 
-- [ ] **A11 Production phase + video**
+- [x] **A11 Production phase + video** (commit 0bb219d)
   - Concepts for top channels (3 to 6), shot lists, keyframes (OpenAI image when live; demo: locally generated branded frames via `sharp`/SVG, labelled demo), approve endpoints, render draft/final (fal image-to-video when live; demo: Remotion Ken Burns), OpenAI TTS voiceover, Remotion assembly to MP4, cost estimate before render.
   - Accept: demo render produces a playable 1080x1920 MP4 for one Hound concept (show its metadata); cost estimate returns numbers from the provider price table.
 
-- [ ] **A11b Remake from blueprint + every winning format**
+- [x] **A11b Remake from blueprint + every winning format** (commit 0bb219d)
   - Production builds concepts from blueprints: same structure, timing, shot types and hook mechanism, our brand's product/claims/visuals (`assets/brands/`), `shotMap` to the blueprint; then format variants (`variantOf`) for each channel the plan picked (9:16 video, 4:5 static, carousel, text post).
   - Accept: for one Hound blueprint, a 9:16 concept whose shots map 1:1 to blueprint purposes, plus at least one static and one text variant; all pass compliance.
 
-- [ ] **A11c Self-review loop (the agent watches our own video)**
+- [x] **A11c Self-review loop (the agent watches our own video)** (commit 0bb219d)
   - After each render: sample frames + transcript of our MP4, Claude vision scores against the blueprint and the rubric in PRODUCT_SPEC 2.3b step 6, `Review` per round; regenerate the weakest shots (keyframe or clip) and re-render, max 2 rounds, within caps; final decision recorded.
   - Accept: demo run produces at least 2 review rounds for one concept with per-shot scores, and the second round's lowest-scoring shot was regenerated (show the review JSON).
 
-- [ ] **A12 Compliance**
+- [x] **A12 Compliance** (commit 0bb219d)
   - Rule packs from `docs/BRANDS.md` into `src/engine/rules/`, checker with structured output, auto-revise up to 2 times, blocks render/export on fail.
   - Accept: tests: an a.clinic caption naming "Ozempic" fails RX1; a Hound script promising "cure separation anxiety in 7 days" fails P1; clean versions pass.
 
