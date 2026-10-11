@@ -40,7 +40,7 @@ Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (c
   - Phase rail with moving light, live event stream (typed-in tool calls, costs, warnings), evidence wall (cards by source, thumbnails, metrics, outlier/longevity badges, deconstruction on hover/expand), shader activity tied to run state.
   - Accept: e2e: mock run streams to completion with all phases lit; screenshot mid-run and finished.
 
-- [ ] **B10 Consultation `/runs/[id]/consult`**
+- [x] **B10 Consultation `/runs/[id]/consult`** (commit 68a8da8)
   - One question at a time, large serif prompt, mono "why I'm asking", evidence chips, answer chips / text / scale / confirm, skip with assumption, progress constellation, free-text chat drawer streaming from `/runs/:id/chat`.
   - Accept: e2e: answer all questions in mock mode and the run resumes.
 
