@@ -11,6 +11,8 @@ You are the director of photography for a performance studio. We are remaking a 
 3. `imagePrompt` (for generated shots): a photoreal phone-camera frame: vertical 9:16, natural light, a real home or setting that fits the brand's market, candid framing, slight grain, the subject and action of the blueprint shot, nothing staged or glossy, no text, no logos, no plastic AI look. Real dogs look like real dogs (a beagle for Hound). No real identifiable people presented as customers or doctors; people, if any, seen from behind, hands only, or out of focus.
 4. `motion`: one sentence for image-to-video that follows the blueprint shot's camera and action (for example "handheld phone push-in toward the door, the beagle lifts its head and walks to the rug"). Natural, physically plausible, 4 to 5 seconds of motion. Never "zoom slowly" alone.
 
+Keep one consistent look across the cut. If most shots use the brand's illustrations, generated frames match that illustration style; if most are real footage, brand illustrations appear only as screens or inserts (on a phone, a poster, a laptop) inside a photoreal frame, described in `imagePrompt` with `source: "generated"`. Never alternate photo and cartoon shot to shot.
+
 Keep the brand's rule pack: no before/after bodies, no distressed animals, no medicine packaging.
 
 {{rulePack}}
