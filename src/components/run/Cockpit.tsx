@@ -2,6 +2,7 @@
 
 import { MotionConfig, motion } from "motion/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -10,7 +11,9 @@ import { NumberTicker } from "@/components/ui/NumberTicker";
 import { Panel } from "@/components/ui/Panel";
 import { PhaseRail } from "@/components/ui/PhaseRail";
 import { Skeleton } from "@/components/ui/Skeleton";
+import { toast } from "@/components/ui/Toast";
 import { type Evidence, type EvidenceSource, PHASES, type Phase, type RunEvent } from "@/contracts";
+import { getClient } from "@/lib/client/api";
 import { cn } from "@/lib/client/cn";
 import { useFieldActivity } from "@/lib/client/field";
 import { clock, PHASE_LABELS, SOURCE_LABELS } from "@/lib/client/format";
@@ -92,7 +95,21 @@ function RunActions() {
 }
 
 function NextStep() {
-  const { liveStatus, runId, events, ended } = useRunCtx();
+  const { liveStatus, runId, events, ended, run } = useRunCtx();
+  const router = useRouter();
+  const startOnResearch = async () => {
+    if (!run) return;
+    const client = getClient();
+    try {
+      const next = await client.startRun(
+        run.brandId,
+        client.mode === "live" ? { kind: "full", reuseResearchFrom: runId } : { kind: "full" },
+      );
+      router.push(client.mode === "live" ? `/runs/${next.id}?pace=150` : `/runs/${next.id}`);
+    } catch (e) {
+      toast({ title: "The run did not start", body: e instanceof Error ? e.message : undefined, tone: "fail" });
+    }
+  };
   const questions = events.filter((e) => e.type === "question").length;
   const packs = events.filter((e) => e.type === "pack").length;
   const hasPlan = events.some((e) => e.type === "plan");
@@ -107,6 +124,18 @@ function NextStep() {
         cta="Start the consultation"
       >
         Only what the data could not answer. The run waits until you answer or skip.
+      </Banner>
+    );
+  else if ((ended || liveStatus === "done") && !packs && !hasPlan)
+    body = (
+      <Banner
+        tone="pass"
+        testId="research-done"
+        title={`Research complete: ${events.filter((e) => e.type === "evidence").length} evidence, ${events.filter((e) => e.type === "blueprint").length} winners taken apart.`}
+        cta="Start a run on this research"
+        onAction={startOnResearch}
+      >
+        Nothing was produced in this run. The next run reuses this research and goes straight to the consultation.
       </Banner>
     );
   else if (ended || liveStatus === "done")
@@ -155,14 +184,17 @@ function Banner({
   cta,
   children,
   testId,
+  onAction,
 }: {
   tone: "warn" | "pass" | "signal";
   title: string;
-  href: string;
+  href?: string;
   cta: string;
   children?: React.ReactNode;
   testId?: string;
+  onAction?: () => Promise<void>;
 }) {
+  const [busy, setBusy] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, y: -8 }}
@@ -180,12 +212,30 @@ function Banner({
         <p className="font-serif text-[24px] leading-tight">{title}</p>
         {children && <div className="mt-1 text-bone-2 text-ui">{children}</div>}
       </div>
-      <Button variant="primary" asChild>
-        <Link href={href}>{cta}</Link>
-      </Button>
+      {onAction ? (
+        <Button
+          variant="primary"
+          loading={busy}
+          onClick={async () => {
+            setBusy(true);
+            await onAction();
+            setBusy(false);
+          }}
+        >
+          {cta}
+        </Button>
+      ) : (
+        <Button variant="primary" asChild>
+          <Link href={href ?? "#"}>{cta}</Link>
+        </Button>
+      )}
     </motion.div>
   );
 }
+
+/** The best one-line version of a hook: spoken, else written, else what is seen. Never empty. */
+export const hookLine = (h: { spoken?: string; onScreenText?: string; visual: string }) =>
+  [h.spoken, h.onScreenText, h.visual].map((x) => x?.trim()).find((x) => x && !/^not visible/i.test(x)) ?? h.visual;
 
 /** Manus deep research: visible, real work with a link to the task (BS5). */
 function ManusCard() {
@@ -264,7 +314,7 @@ function Blueprints() {
                 </span>
               </div>
               <p className="line-clamp-2 font-serif text-[19px] italic leading-snug">
-                &ldquo;{b.hook.spoken ?? b.hook.onScreenText ?? b.hook.visual}&rdquo;
+                &ldquo;{hookLine(b.hook)}&rdquo;
               </p>
               <div className="flex h-1.5 gap-[2px] overflow-hidden rounded-full">
                 {b.shots.map((s) => (
