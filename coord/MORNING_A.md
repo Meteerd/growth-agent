@@ -26,8 +26,25 @@ pnpm dev                      # http://localhost:3000
 8. **Compliance gate + packs**: zip per post (video, images, caption, hashtags, first comment, checklist, cover), mark posted, manual metrics, learnings (only from real numbers, cross-brand only when a pattern holds in 2+ brands).
 Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack (never published by us), resume of interrupted runs, spend ledger with caps.
 
+## What is already in the database (real data, this machine)
+| Brand | Run | What it is |
+|---|---|---|
+| Hound | `run_mv4c9xtr8203508c41` | Recorded live research pass (`live_recorded`): 73 real items from Instagram, TikTok, Reddit, YouTube, Meta Ad Library, Spiral, site, plus Manus deep research (landscape, 10 competitors incl. Woofz and Dogo, community rules). 3 blueprints from real winning videos. |
+| Hound | `run_mv4e0ud7671d68be0a` | Full live run on that research: consultation (questions skipped, so the plan states its assumptions), plan TikTok 79 > Shorts 73 > Reels 55 > Reddit 54, 6 concepts, review, packs. `pnpm eval-run` 47/47. Flagship remake `concept_1d68be0a_1`. |
+| Hound | `run_mv4cox1z4e0569d023` | Earlier full live run (on demo research) with the first fal final render (6 Kling clips) and a Manus-built landing page for its TikTok pack (unpublished). |
+| a.clinic | `run_mv4cgiqt5f95119dba` | Recorded live research pass: 82 real items (TikTok, Instagram, Meta Ad Library, Spiral, YouTube, site) + Manus task. 3 blueprints. |
+| a.clinic | `run_mv4e8sfdbc1e6575ad` | Full live run on that research, all Slovak concepts, Meta paid "not now" (RX4), SEO/Reels/TikTok organic. `pnpm eval-run` 52/52. Flagship remake `concept_1e6575ad_1`. |
+| all four | `run_<slug>_demo` | Deterministic demo runs (labelled demo), with locally built demo keyframes and review videos. |
+
 ## The 2-minute demo path
-(to be filled in below with the exact run ids once the overnight live runs finish)
+1. Portfolio: four brands; Hound and a.clinic show their flagship video (`heroVideo`) and "Live data, captured ..." on the latest run.
+2. Hound: open the recorded research run and replay it (`/api/runs/run_mv4c9xtr8203508c41/events?pace=150`): crawl, Spiral and Apify sources, relevance filter, deconstruction, Manus task link, blueprints.
+3. Reverse-engineer view: the winner's blueprint next to our remake, shot for shot (`concept_1d68be0a_1.shotMap`).
+4. Consultation live: start a run on the recorded research (`POST /api/brands/hound/runs {"kind":"full","reuseResearchFrom":"recorded"}`), answer 2 or 3 questions in front of the judge (Claude, live). The rest of that run takes ~10 minutes, so for direction, studio and packs switch to `run_mv4e0ud7671d68be0a` which already finished.
+5. Direction: ranked channels with six-axis scores, explicit weights, evidence links, "not now" with reasons.
+6. Studio: the flagship video, its keyframes (brand images or photoreal frames), the two review rounds with per-shot scores.
+7. Packs: download the zip; show the Manus landing page link on the Hound TikTok pack.
+8. a.clinic in 20 seconds: same loop, Slovak content, Meta paid blocked by RX4 with the reason.
 
 ## Live vs demo (overnight)
 - `LIVE_PROVIDERS` = anthropic, openai, firecrawl, youtube. fal, Apify, Manus, Spiral, Higgsfield ran only in smoke tests and the recorded live passes.
