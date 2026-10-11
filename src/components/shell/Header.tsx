@@ -25,9 +25,14 @@ export function Wordmark({ className }: { className?: string }) {
 
 export function DataModeChip() {
   return DATA_MODE === "mock" ? (
-    <DemoBadge label="Mock data" />
+    <span data-dev>
+      <DemoBadge label="Mock data" />
+    </span>
   ) : (
-    <span className="inline-flex h-6 items-center gap-1.5 rounded-chip px-2.5 font-medium text-[11.5px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)]">
+    <span
+      data-dev
+      className="inline-flex h-6 items-center gap-1.5 rounded-chip px-2.5 font-medium text-[11.5px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)]"
+    >
       <StatusDot status="live" />
       Engine
     </span>

@@ -4,6 +4,7 @@ import { MotionConfig, motion } from "motion/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { isPresenting } from "@/components/shell/PresentMode";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { EvidenceCard, sourceHue } from "@/components/ui/EvidenceCard";
@@ -73,9 +74,28 @@ function usePhaseNotes(events: RunEvent[]) {
   }, [events]);
 }
 
+// pitch replay speeds (ms between events), shown in presentation mode
+const SPEEDS: [string, number][] = [
+  ["1x", 600],
+  ["2x", 300],
+  ["4x", 150],
+];
+
+function usePresenting() {
+  const [on, setOn] = useState(false);
+  useEffect(() => {
+    const read = () => setOn(isPresenting());
+    read();
+    window.addEventListener("nexus-present", read);
+    return () => window.removeEventListener("nexus-present", read);
+  }, []);
+  return on;
+}
+
 function RunActions() {
-  const { liveStatus, replay, ended, events } = useRunCtx();
+  const { liveStatus, replay, ended, events, pace: ctxPace } = useRunCtx();
   const done = ended || liveStatus === "done";
+  const present = usePresenting();
   return (
     <Panel tone="hairline" className="flex flex-col gap-3 p-4">
       <p className="mono-label">run</p>
@@ -87,6 +107,23 @@ function RunActions() {
         <Button size="sm" onClick={() => replay(250)} data-testid="replay">
           Replay the run
         </Button>
+      )}
+      {present && (
+        <div className="flex flex-col gap-1.5" data-testid="replay-speed">
+          <p className="text-[12px] text-bone-2">Replay speed</p>
+          <div className="flex gap-1">
+            {SPEEDS.map(([label, pace]) => (
+              <Button
+                key={label}
+                size="sm"
+                variant={pace === ctxPace ? "primary" : "ghost"}
+                onClick={() => replay(pace)}
+              >
+                {label}
+              </Button>
+            ))}
+          </div>
+        </div>
       )}
     </Panel>
   );
