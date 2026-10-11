@@ -43,9 +43,11 @@ export const CHANNEL_LABELS: Record<Channel, string> = {
 export const PHASES = [
   "intake",
   "research",
+  "reverse_engineer",
   "consult",
   "direction",
   "production",
+  "review",
   "compliance",
   "pack",
   "measure",
@@ -92,6 +94,8 @@ export const RUN_EVENT_TYPES = [
   "tool_call",
   "tool_result",
   "evidence",
+  "blueprint",
+  "review",
   "question",
   "plan",
   "concept",
@@ -216,3 +220,40 @@ export const SCORE_AXIS_LABELS: Record<ScoreAxis, string> = {
   speedToSignal: "Cost and speed to first signal",
   modelFit: "Business-model fit",
 };
+
+export const ASPECTS = ["9:16", "4:5", "1:1", "16:9"] as const;
+export const Aspect = z.enum(ASPECTS);
+export type Aspect = z.infer<typeof Aspect>;
+
+export const BLUEPRINT_STRUCTURES = [
+  "problem_agitate_solve",
+  "story",
+  "listicle",
+  "myth_vs_fact",
+  "demo",
+  "founder_story",
+  "testimonial_style",
+  "other",
+] as const;
+export const BlueprintStructure = z.enum(BLUEPRINT_STRUCTURES);
+export type BlueprintStructure = z.infer<typeof BlueprintStructure>;
+
+export const SHOT_TYPES = [
+  "talking_head",
+  "ugc_selfie",
+  "broll",
+  "product_closeup",
+  "screen_recording",
+  "text_card",
+  "other",
+] as const;
+export const ShotType = z.enum(SHOT_TYPES);
+export type ShotType = z.infer<typeof ShotType>;
+
+export const SHOT_PURPOSES = ["hook", "problem", "agitate", "solution", "demo", "proof", "offer", "cta"] as const;
+export const ShotPurpose = z.enum(SHOT_PURPOSES);
+export type ShotPurpose = z.infer<typeof ShotPurpose>;
+
+export const REVIEW_DECISIONS = ["accept", "regenerate"] as const;
+export const ReviewDecision = z.enum(REVIEW_DECISIONS);
+export type ReviewDecision = z.infer<typeof ReviewDecision>;

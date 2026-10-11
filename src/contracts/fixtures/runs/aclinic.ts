@@ -6,6 +6,7 @@ import {
   type DemoRunBundle,
   type EvSpec,
   iso,
+  makeBlueprint,
   makeCompliance,
   makeConcepts,
   makeConnections,
@@ -13,6 +14,7 @@ import {
   makePacks,
   makePlan,
   makeQuestions,
+  makeReviews,
   type QSpec,
 } from "../builder";
 
@@ -543,6 +545,7 @@ const concepts: ConceptSpec[] = [
     hashtags: ["#zdravie", "#lekar", "#chudnutie", "#slovensko"],
     cta: "Začať dotazník na a.clinic",
     remakes: [3, 11, 31],
+    blueprint: "bp_aclinic_1",
     remakeNote:
       "Myth-vs-fact structure from the top doctor creators, delivered by an illustrated fictional doctor (no consent for real faces yet). No product, no outcome promises.",
   },
@@ -619,9 +622,67 @@ const concepts: ConceptSpec[] = [
       "Answers the top objection threads (is an online doctor real, what does it cost) as an article; no medicine names.",
     body: "Sections: 1) Čo je online konzultácia. 2) Kto sú lekári a ako ich overíte. 3) Čo je ePredpis. 4) Koľko to stojí a kedy to uvidíte. 5) Kedy online konzultácia nestačí a treba osobnú návštevu.",
   },
+  {
+    channel: "instagram_reels",
+    format: "carousel",
+    aspect: "4:5",
+    variantOf: 0,
+    title: "Nie je to o vôli (carousel)",
+    hook: "Mýtus: stačí mať vôľu",
+    angle: "Myth vs fact remake as a 5-slide carousel",
+    language: "sk",
+    shots: [
+      [1, "Slide 1: painterly illustration, bold text 'Mýtus: stačí mať vôľu'", "Mýtus: stačí mať vôľu"],
+      [1, "Slide 2: 'Fakt: váha je zdravotná téma'", "Fakt: váha je zdravotná téma"],
+      [1, "Slide 3: questionnaire on a phone", "1. Dotazník"],
+      [1, "Slide 4: illustrated video call", "2. Konzultácia s lekárom"],
+      [1, "Slide 5: a.clinic logo, 'Celá cena vopred'", "Celá cena vopred"],
+    ],
+    caption: "Váha je zdravotná téma, nie test vôle. Lekár vždy rozhoduje individuálne.",
+    hashtags: ["#zdravie", "#lekar", "#slovensko"],
+    cta: "Začať dotazník",
+    remakes: [3, 6],
+    remakeNote: "Carousel variant of the myth-vs-fact remake.",
+  },
 ];
 
 const evidence = makeEvidence(brand, runId, E);
+const blueprints = [
+  makeBlueprint(brand, runId, {
+    evidence: 3,
+    structure: "myth_vs_fact",
+    hook: {
+      endSec: 3,
+      visual: "Doctor in a white coat looks straight into the camera",
+      spoken: "Proč vám diety nefungují? Není to o vůli.",
+      onScreenText: "Není to o vůli",
+      mechanism: "Authority + shame removal: a doctor contradicts a belief the viewer holds about themselves",
+      whyItStops: "It takes the blame off the viewer in the first sentence, from someone with authority.",
+    },
+    shots: [
+      [
+        0,
+        3,
+        "talking_head",
+        "hook",
+        "doctor",
+        "states the myth to camera",
+        "Mýtus: stačí vůle",
+        "Proč vám diety nefungují?",
+      ],
+      [3, 7, "talking_head", "problem", "doctor", "explains it is a health topic", "Fakt: zdravotní téma"],
+      [7, 11, "broll", "solution", "phone", "questionnaire on screen", "1. Dotazník"],
+      [11, 15, "broll", "solution", "video call", "doctor on laptop", "2. Lékař"],
+      [15, 18, "broll", "proof", "care team message", "follow-up notification", "3. Podpora"],
+      [18, 21, "text_card", "cta", "end card", "follow for part 2", "Díl 2 zítra"],
+    ],
+    camera: "static tripod, medium close-up",
+    emotionalArc: "shame -> validation -> calm plan",
+    cta: { atSec: 18, mechanic: "Serial cliffhanger: follow for part 2", text: "Follow for part 2" },
+    whyItWins:
+      "9.4x the account median: shame removal from a doctor is the strongest stop in this niche, and the steps make the next action feel safe. No product is named, so it is also the compliant structure.",
+  }),
+];
 const questions = makeQuestions(brand, runId, Q, true);
 const plan = makePlan(
   brand,
@@ -723,6 +784,10 @@ const plan = makePlan(
   ],
 );
 const conceptsOut = makeConcepts(brand, runId, concepts);
+const { reviews, assets } = makeReviews(brand, conceptsOut[0], [80, 74, 83, 58, 81, 86], {
+  idx: 3,
+  issues: ["Illustrated doctor's hands are warped (AI artifact)", "Laptop screen text unreadable"],
+});
 const compliance = makeCompliance(brand, conceptsOut, [
   {
     conceptIdx: 0,
@@ -755,11 +820,13 @@ const base = {
   run,
   connections,
   evidence,
+  blueprints,
   questions,
   plan,
   concepts: conceptsOut,
   compliance,
   packs,
-  assets: [],
+  assets,
+  reviews,
 };
 export const aclinicDemo: DemoRunBundle = { ...base, events: buildEvents(base) };

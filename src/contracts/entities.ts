@@ -1,6 +1,8 @@
 import { z } from "zod";
 import {
+  Aspect,
   AssetKind,
+  BlueprintStructure,
   Channel,
   ChannelMode,
   ComplianceStatus,
@@ -17,9 +19,12 @@ import {
   Phase,
   ProviderId,
   QuestionKind,
+  ReviewDecision,
   RunEventType,
   RunKind,
   RunStatus,
+  ShotPurpose,
+  ShotType,
   Vertical,
 } from "./enums";
 
@@ -294,6 +299,75 @@ export const ChannelPlan = z.object({
 });
 export type ChannelPlan = z.infer<typeof ChannelPlan>;
 
+// ---------------------------------------------------------------- Reverse engineering
+
+export const BlueprintShot = z.object({
+  idx: z.number().int().nonnegative(),
+  t0: z.number().nonnegative(),
+  t1: z.number().nonnegative(),
+  shotType: ShotType,
+  camera: z.string(),
+  subject: z.string(),
+  action: z.string(),
+  onScreenText: z.string().optional(),
+  voiceover: z.string().optional(),
+  audioCue: z.string().optional(),
+  transition: z.string().optional(),
+  purpose: ShotPurpose,
+});
+export type BlueprintShot = z.infer<typeof BlueprintShot>;
+
+export const Blueprint = z.object({
+  id: Id,
+  evidenceId: Id,
+  brandId: Id,
+  runId: Id,
+  sourceUrl: z.string().optional(),
+  durationSec: z.number().positive(),
+  aspect: Aspect,
+  structure: BlueprintStructure,
+  hook: z.object({
+    endSec: z.number().nonnegative(),
+    visual: z.string(),
+    spoken: z.string().optional(),
+    onScreenText: z.string().optional(),
+    mechanism: z.string(),
+    whyItStops: z.string(),
+  }),
+  shots: z.array(BlueprintShot),
+  pacing: z.object({ cutsPer10s: z.number().nonnegative(), avgShotSec: z.number().nonnegative() }),
+  emotionalArc: z.string(),
+  cta: z.object({ atSec: z.number().nonnegative(), mechanic: z.string(), text: z.string().optional() }),
+  whyItWins: z.string(),
+  transcript: z.string().optional(),
+  /** local files under ASSETS_DIR; may be missing on other machines */
+  frames: z.array(z.object({ t: z.number(), url: z.string() })),
+  demo: z.boolean(),
+  createdAt: Iso,
+});
+export type Blueprint = z.infer<typeof Blueprint>;
+
+export const Review = z.object({
+  id: Id,
+  conceptId: Id,
+  assetId: Id,
+  round: z.number().int().positive(),
+  overall: z.number().min(0).max(100),
+  blueprintMatch: z.number().min(0).max(100),
+  perShot: z.array(
+    z.object({ idx: z.number().int().nonnegative(), score: z.number().min(0).max(100), issues: z.array(z.string()) }),
+  ),
+  complianceOk: z.boolean(),
+  decision: ReviewDecision,
+  notes: z.string(),
+  createdAt: Iso,
+  /** additive: shots regenerated as a result of this review */
+  regeneratedShots: z.array(z.number().int().nonnegative()).optional(),
+  /** additive: demo fixture flag */
+  demo: z.boolean().optional(),
+});
+export type Review = z.infer<typeof Review>;
+
 // ---------------------------------------------------------------- Production
 
 export const Shot = z.object({
@@ -323,6 +397,13 @@ export const Concept = z.object({
   hashtags: z.array(z.string()),
   cta: z.string(),
   remakesEvidenceIds: z.array(z.string()),
+  blueprintId: z.string().optional(),
+  shotMap: z
+    .array(z.object({ shotIdx: z.number().int().nonnegative(), blueprintShotIdx: z.number().int().nonnegative() }))
+    .optional(),
+  /** concept id this is a format variant of */
+  variantOf: z.string().optional(),
+  aspect: Aspect.default("9:16"),
   compliance: ComplianceStatus,
   estimatedCostUsd: z.number().nonnegative(),
   status: ConceptStatus,

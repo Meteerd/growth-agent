@@ -6,6 +6,7 @@ import {
   type DemoRunBundle,
   type EvSpec,
   iso,
+  makeBlueprint,
   makeCompliance,
   makeConcepts,
   makeConnections,
@@ -13,6 +14,7 @@ import {
   makePacks,
   makePlan,
   makeQuestions,
+  makeReviews,
   type QSpec,
 } from "../builder";
 
@@ -219,11 +221,36 @@ const concepts: ConceptSpec[] = [
     hashtags: ["#healthtech", "#clinics", "#gdpr"],
     cta: "Book a 20-minute demo",
     remakes: [10],
+    blueprint: "bp_evreon_1",
     remakeNote: "Uses the multilingual demo structure; visuals are Evreon UI mocks, no real patient data.",
   },
 ];
 
 const evidence = makeEvidence(brand, runId, E);
+const blueprints = [
+  makeBlueprint(brand, runId, {
+    evidence: 10,
+    structure: "demo",
+    hook: {
+      endSec: 4,
+      visual: "Phone with an intake form in Turkish",
+      onScreenText: "The patient speaks Turkish. The doctor reads English.",
+      mechanism: "Language gap + instant resolution",
+      whyItStops: "Every multilingual clinic knows the problem; seeing it solved in one cut is the payoff.",
+    },
+    shots: [
+      [0, 4, "screen_recording", "hook", "intake form in Turkish", "patient fills it in"],
+      [4, 8, "screen_recording", "demo", "doctor summary in English", "source links highlight"],
+      [8, 12, "screen_recording", "proof", "scanned document", "filed with a link"],
+      [12, 15, "text_card", "cta", "end card", "book a demo", "Book a demo"],
+    ],
+    camera: "screen capture",
+    emotionalArc: "friction -> clarity -> trust",
+    cta: { atSec: 12, mechanic: "Book a demo", text: "Book a demo" },
+    whyItWins:
+      "3x the account median in a small B2B niche: it shows the product doing one hard thing in seconds, and every claim is visible on screen.",
+  }),
+];
 const questions = makeQuestions(brand, runId, Q, true);
 const plan = makePlan(
   brand,
@@ -303,6 +330,10 @@ const plan = makePlan(
   ],
 );
 const conceptsOut = makeConcepts(brand, runId, concepts);
+const { reviews, assets } = makeReviews(brand, conceptsOut[1], [86, 70, 84, 90], {
+  idx: 1,
+  issues: ["Summary text too small for mobile", "Source-link highlight not visible"],
+});
 const compliance = makeCompliance(brand, conceptsOut);
 const packs = makePacks(brand, runId, conceptsOut);
 const connections = makeConnections(brand, ["firecrawl", "youtube"], ["apify", "manus"], ["stripe", "posthog"]);
@@ -312,11 +343,13 @@ const base = {
   run,
   connections,
   evidence,
+  blueprints,
   questions,
   plan,
   concepts: conceptsOut,
   compliance,
   packs,
-  assets: [],
+  assets,
+  reviews,
 };
 export const evreonDemo: DemoRunBundle = { ...base, events: buildEvents(base) };

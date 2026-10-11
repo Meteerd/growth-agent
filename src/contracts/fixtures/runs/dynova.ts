@@ -6,6 +6,7 @@ import {
   type DemoRunBundle,
   type EvSpec,
   iso,
+  makeBlueprint,
   makeCompliance,
   makeConcepts,
   makeConnections,
@@ -13,6 +14,7 @@ import {
   makePacks,
   makePlan,
   makeQuestions,
+  makeReviews,
   type QSpec,
 } from "../builder";
 
@@ -199,6 +201,7 @@ const concepts: ConceptSpec[] = [
     hashtags: ["#saglik", "#beslenme", "#dna", "#wellness"],
     cta: "dynova.health",
     remakes: [4, 2],
+    blueprint: "bp_dynova_1",
     remakeNote: "Personalization story arc from the top outlier; our own visuals and script; no medical claims.",
   },
   {
@@ -224,6 +227,29 @@ const concepts: ConceptSpec[] = [
 ];
 
 const evidence = makeEvidence(brand, runId, E);
+const blueprints = [
+  makeBlueprint(brand, runId, {
+    evidence: 4,
+    structure: "story",
+    hook: {
+      endSec: 3,
+      visual: "Two identical plates side by side",
+      spoken: "Aynı diyet arkadaşıma yaradı, bana yaramadı.",
+      mechanism: "Relatable unfairness",
+      whyItStops: "Everyone has a friend for whom the same diet worked.",
+    },
+    shots: [
+      [0, 3, "broll", "hook", "two plates", "side by side", "Aynı diyet"],
+      [3, 12, "talking_head", "problem", "creator", "explains the frustration", "Neden?"],
+      [12, 24, "product_closeup", "solution", "test kit and report", "opens the kit, reads the report", "Kendi verin"],
+      [24, 30, "text_card", "cta", "end card", "link in bio", "Link bioda"],
+    ],
+    emotionalArc: "frustration -> curiosity -> control",
+    cta: { atSec: 24, mechanic: "Link in bio", text: "Link bioda" },
+    whyItWins:
+      "13.7x the account median: a relatable unfairness hook, answered by personal data instead of a new diet.",
+  }),
+];
 const questions = makeQuestions(brand, runId, Q, true);
 const plan = makePlan(
   brand,
@@ -279,6 +305,10 @@ const plan = makePlan(
   ],
 );
 const conceptsOut = makeConcepts(brand, runId, concepts);
+const { reviews, assets } = makeReviews(brand, conceptsOut[0], [84, 62, 80, 88], {
+  idx: 1,
+  issues: ["Kit box rendered with a fake brand name", "Lighting does not match the premium style"],
+});
 const compliance = makeCompliance(brand, conceptsOut);
 const packs = makePacks(brand, runId, conceptsOut);
 const connections = makeConnections(
@@ -293,11 +323,13 @@ const base = {
   run,
   connections,
   evidence,
+  blueprints,
   questions,
   plan,
   concepts: conceptsOut,
   compliance,
   packs,
-  assets: [],
+  assets,
+  reviews,
 };
 export const dynovaDemo: DemoRunBundle = { ...base, events: buildEvents(base) };

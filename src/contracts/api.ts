@@ -1,6 +1,7 @@
 import { z } from "zod";
 import {
   Asset,
+  Blueprint,
   Brand,
   BrandDossier,
   BrandSummary,
@@ -13,6 +14,7 @@ import {
   ProviderStatus,
   PublishPack,
   Question,
+  Review,
   Run,
   RunEvent,
   SpendEntry,
@@ -45,6 +47,9 @@ export const API = {
   conceptApprove: (id: string) => `/api/concepts/${id}/approve`,
   conceptRender: (id: string) => `/api/concepts/${id}/render`,
   conceptAssets: (id: string) => `/api/concepts/${id}/assets`,
+  conceptReviews: (id: string) => `/api/concepts/${id}/reviews`,
+  runBlueprints: (id: string) => `/api/runs/${id}/blueprints`,
+  blueprint: (id: string) => `/api/blueprints/${id}`,
   packDownload: (id: string) => `/api/packs/${id}/download`,
   packPosted: (id: string) => `/api/packs/${id}/posted`,
   packMetrics: (id: string) => `/api/packs/${id}/metrics`,
@@ -148,6 +153,10 @@ export const RenderResponse = z.object({ concept: Concept, estimatedCostUsd: z.n
 export type RenderResponse = z.infer<typeof RenderResponse>;
 
 export const AssetsResponse = z.array(Asset);
+export const ReviewsResponse = z.array(Review);
+export const BlueprintsResponse = z.array(Blueprint);
+export const BlueprintResponse = Blueprint.extend({ evidence: Evidence.optional() });
+export type BlueprintResponse = z.infer<typeof BlueprintResponse>;
 
 // ---------------------------------------------------------------- packs / results
 

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  Blueprint,
   Brand,
   ChannelPlan,
   CONTRACTS_VERSION,
@@ -10,6 +11,7 @@ import {
   Evidence,
   PublishPack,
   Question,
+  Review,
   Run,
   RunEvent,
   SEED_BRANDS,
@@ -38,6 +40,40 @@ describe("contracts", () => {
         for (const c of bundle.compliance) ComplianceCheck.parse(c);
         for (const p of bundle.packs) PublishPack.parse(p);
         for (const e of bundle.events) RunEvent.parse(e);
+        for (const b of bundle.blueprints) Blueprint.parse(b);
+        for (const r of bundle.reviews) Review.parse(r);
+      });
+
+      it("has a blueprint, an aligned remake with a shotMap, and two review rounds", () => {
+        expect(bundle.blueprints.length).toBeGreaterThanOrEqual(1);
+        const bp = bundle.blueprints[0];
+        expect(bundle.evidence.some((e) => e.id === bp.evidenceId)).toBe(true);
+        const remake = bundle.concepts.find((c) => c.blueprintId === bp.id);
+        expect(remake).toBeDefined();
+        expect(remake?.shotMap?.length).toBe(bp.shots.length);
+        expect(remake?.shots.length).toBe(bp.shots.length);
+        const rounds = bundle.reviews.filter((r) => r.conceptId === remake?.id);
+        expect(rounds.map((r) => r.round)).toEqual([1, 2]);
+        expect(rounds[0].decision).toBe("regenerate");
+        expect(rounds[1].decision).toBe("accept");
+        const weakest = rounds[0].perShot.reduce((a, b) => (b.score < a.score ? b : a));
+        expect(rounds[0].regeneratedShots).toEqual([weakest.idx]);
+      });
+
+      it("phases appear in pipeline order", () => {
+        const order = [
+          "intake",
+          "research",
+          "reverse_engineer",
+          "consult",
+          "direction",
+          "production",
+          "review",
+          "compliance",
+          "pack",
+        ];
+        const seen = bundle.events.filter((e) => e.type === "phase_started").map((e) => e.phase);
+        expect(seen).toEqual(order);
       });
 
       it("demo rows are labelled and ids resolve", () => {
@@ -71,6 +107,12 @@ describe("contracts", () => {
     });
   }
 
+  it("Hound has format variants of its remake (static + text)", () => {
+    const h = DEMO_RUNS.hound;
+    const variants = h.concepts.filter((c) => c.variantOf === "concept_hound_1");
+    expect(variants.map((v) => v.format).sort()).toEqual(["static", "text_post"]);
+  });
+
   it("Hound and a.clinic are rich: 30+ evidence from 5+ sources, 6 questions, 4 concepts with shots", () => {
     for (const slug of ["hound", "aclinic"]) {
       const b = DEMO_RUNS[slug];
@@ -78,9 +120,9 @@ describe("contracts", () => {
       expect(new Set(b.evidence.map((e) => e.source)).size).toBeGreaterThanOrEqual(5);
       expect(b.evidence.filter((e) => e.deconstruction).length).toBeGreaterThanOrEqual(15);
       expect(b.questions.length).toBe(6);
-      expect(b.concepts.length).toBe(4);
+      expect(b.concepts.length).toBeGreaterThanOrEqual(4);
       expect(b.concepts.filter((c) => c.shots.length >= 4).length).toBeGreaterThanOrEqual(3);
-      expect(b.packs.length).toBe(4);
+      expect(b.packs.length).toBe(b.concepts.length);
     }
   });
 

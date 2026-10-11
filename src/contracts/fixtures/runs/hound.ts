@@ -6,6 +6,7 @@ import {
   type DemoRunBundle,
   type EvSpec,
   iso,
+  makeBlueprint,
   makeCompliance,
   makeConcepts,
   makeConnections,
@@ -13,6 +14,7 @@ import {
   makePacks,
   makePlan,
   makeQuestions,
+  makeReviews,
   type QSpec,
 } from "../builder";
 
@@ -596,6 +598,7 @@ const concepts: ConceptSpec[] = [
     hashtags: ["#dogtraining", "#separationanxiety", "#dogsoftiktok", "#beagle", "#puppytraining"],
     cta: "Take the 1-minute quiz at houndapp.xyz",
     remakes: [2, 17, 29],
+    blueprint: "bp_hound_1",
     remakeNote:
       "Keeps the reveal structure (door closes, dog alone, turn, calm dog) from the two biggest outliers; the dog, footage, routine and words are ours.",
   },
@@ -674,9 +677,92 @@ const concepts: ConceptSpec[] = [
       "Answers the most common question in the top threads with practical steps; product only disclosed, not pitched.",
     body: "Our beagle used to pace and cry the second the door closed. What helped: 1) departures of 10 seconds, then 30, then a minute; 2) boring goodbyes; 3) never leaving straight after a walk; 4) logging every session so we could see progress on bad days. It took weeks, not days, and some days went backwards. If your dog is in real distress, a vet or qualified behaviorist is the right first call.",
   },
+  {
+    channel: "instagram_reels",
+    format: "static",
+    aspect: "4:5",
+    variantOf: 0,
+    title: "Day 1 vs day 14 (static)",
+    hook: "Day 1 vs day 14. Same dog. 10 minutes a day.",
+    angle: "The reveal idea as a single split image for the feed",
+    language: "en",
+    shots: [
+      [
+        1,
+        "Split image, flat warm illustration: left, beagle pacing by the door (Day 1); right, same beagle asleep on a rug (Day 14); cream background, orange accents",
+        "Day 1 vs Day 14. Same dog.",
+      ],
+    ],
+    caption: "Same dog, two weeks of 10-minute practice. Progress, not a promise. Plan for your dog: link in bio.",
+    hashtags: ["#dogtraining", "#separationanxiety", "#dogsofinstagram"],
+    cta: "Take the 1-minute quiz",
+    remakes: [2, 10],
+    remakeNote: "Static variant of the reveal remake: the same day-1 vs day-14 payoff in one image.",
+  },
+  {
+    channel: "x",
+    format: "text_post",
+    variantOf: 0,
+    title: "Day 1 vs day 14 (text)",
+    hook: "I filmed my dog the moment I left the house. Day 1 vs day 14:",
+    angle: "The reveal as a short thread",
+    language: "en",
+    shots: [],
+    caption: "Thread version of the reveal remake.",
+    hashtags: [],
+    cta: "houndapp.xyz",
+    remakes: [2],
+    remakeNote: "Text variant of the reveal remake.",
+    body: "Day 1: paced and cried at the door within a minute. What we changed: tiny departures (10 s, then 30 s), boring goodbyes, never leaving right after a walk, 10 minutes of practice a day. Day 14: lay down on the rug before I reached the stairs. Every dog is different; severe cases should start with a vet.",
+  },
 ];
 
 const evidence = makeEvidence(brand, runId, E);
+const blueprints = [
+  makeBlueprint(brand, runId, {
+    evidence: 2,
+    structure: "problem_agitate_solve",
+    hook: {
+      endSec: 2.5,
+      visual: "Front door closing from inside, phone propped on a shelf facing the dog",
+      spoken: "I set up a camera to see what my dog does when I leave",
+      onScreenText: "Day 1. Camera on.",
+      mechanism: "Hidden-camera curiosity + owner guilt",
+      whyItStops: "Every owner has wondered what happens after the door closes; the camera promises the answer.",
+    },
+    shots: [
+      [
+        0,
+        2.5,
+        "ugc_selfie",
+        "hook",
+        "front door",
+        "door closes, camera rolling",
+        "Day 1. Camera on.",
+        "I set up a camera to see what my dog does when I leave",
+      ],
+      [2.5, 6, "broll", "problem", "dog alone", "dog paces and whines at the door", "This was every morning"],
+      [
+        6,
+        10,
+        "screen_recording",
+        "solution",
+        "phone with a daily routine",
+        "owner taps today's 10-minute exercise",
+        "10 minutes a day",
+      ],
+      [10, 14, "broll", "demo", "calendar", "streak of ticks fills in", "Day 14"],
+      [14, 18, "broll", "proof", "same dog", "dog lies down calmly as the door closes", "Day 14. Same dog."],
+      [18, 21, "text_card", "cta", "end card", "follow / routine CTA", "Follow for the routine"],
+    ],
+    emotionalArc: "guilt -> curiosity -> relief",
+    cta: { atSec: 18, mechanic: "Follow for the routine (soft CTA, comment bait)", text: "Follow for the routine" },
+    whyItWins:
+      "14x the account median: a reveal answers a question every owner has, the day-1 vs day-14 contrast gives a clear payoff without promising a cure, and the routine is the turn so the product fits naturally.",
+    transcript:
+      "I set up a camera to see what my dog does when I leave. This was every morning. So we practised, ten minutes a day. Day fourteen.",
+  }),
+];
 const questions = makeQuestions(brand, runId, Q, true);
 const plan = makePlan(
   brand,
@@ -788,6 +874,10 @@ const plan = makePlan(
   ],
 );
 const conceptsOut = makeConcepts(brand, runId, concepts);
+const { reviews, assets } = makeReviews(brand, conceptsOut[0], [82, 78, 54, 80, 85, 88], {
+  idx: 2,
+  issues: ["On-screen text on the phone mock is garbled", "Shot reads as generic UI, not Hound"],
+});
 const compliance = makeCompliance(brand, conceptsOut, [
   {
     conceptIdx: 0,
@@ -815,11 +905,13 @@ const base = {
   run,
   connections,
   evidence,
+  blueprints,
   questions,
   plan,
   concepts: conceptsOut,
   compliance,
   packs,
-  assets: [],
+  assets,
+  reviews,
 };
 export const houndDemo: DemoRunBundle = { ...base, events: buildEvents(base) };

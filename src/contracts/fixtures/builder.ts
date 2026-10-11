@@ -1,5 +1,7 @@
 import type {
   Asset,
+  Blueprint,
+  BlueprintShot,
   Brand,
   ChannelPlan,
   ChannelRec,
@@ -11,11 +13,14 @@ import type {
   EvidenceMetrics,
   PublishPack,
   Question,
+  Review,
   Run,
   RunEvent,
   Shot,
 } from "../entities";
 import type {
+  Aspect,
+  BlueprintStructure,
   Channel,
   ChannelMode,
   ConceptFormat,
@@ -24,6 +29,8 @@ import type {
   Phase,
   ProviderId,
   RunEventType,
+  ShotPurpose,
+  ShotType,
 } from "../enums";
 
 /** Everything one complete GTM run produced. Lane B's mock replays `events`; the engine replays the rest. */
@@ -32,12 +39,14 @@ export interface DemoRunBundle {
   run: Run;
   connections: Connection[];
   evidence: Evidence[];
+  blueprints: Blueprint[];
   questions: Question[];
   plan: ChannelPlan;
   concepts: Concept[];
   compliance: ComplianceCheck[];
   packs: PublishPack[];
   assets: Asset[];
+  reviews: Review[];
   events: RunEvent[];
 }
 
@@ -232,6 +241,11 @@ export interface ConceptSpec {
   remakes: number[];
   remakeNote: string;
   body?: string;
+  aspect?: Aspect;
+  /** index (0-based) of the blueprint in the bundle this concept remakes; shots map 1:1 in order */
+  blueprint?: string;
+  /** 0-based index of the concept this is a format variant of */
+  variantOf?: number;
 }
 
 /** Rough draft cost: keyframes ($0.04 each) + draft image-to-video ($0.05/s) + TTS. Demo runs spend $0. */
@@ -272,8 +286,142 @@ export function makeConcepts(brand: Brand, runId: string, specs: ConceptSpec[]):
       remakeNote: c.remakeNote,
       body: c.body,
       revisions: 0,
+      aspect: c.aspect ?? (c.format === "text_post" ? "1:1" : "9:16"),
+      ...(c.blueprint
+        ? { blueprintId: c.blueprint, shotMap: shots.map((s) => ({ shotIdx: s.idx, blueprintShotIdx: s.idx })) }
+        : {}),
+      ...(c.variantOf !== undefined ? { variantOf: `concept_${brand.slug}_${c.variantOf + 1}` } : {}),
     };
   });
+}
+
+// ---------------------------------------------------------------- blueprints + reviews
+
+export type BpShotSpec = [
+  t0: number,
+  t1: number,
+  shotType: ShotType,
+  purpose: ShotPurpose,
+  subject: string,
+  action: string,
+  onScreenText?: string,
+  voiceover?: string,
+];
+
+export interface BlueprintSpec {
+  evidence: number;
+  structure: BlueprintStructure;
+  hook: Blueprint["hook"];
+  shots: BpShotSpec[];
+  emotionalArc: string;
+  cta: Blueprint["cta"];
+  whyItWins: string;
+  transcript?: string;
+  camera?: string;
+}
+
+export function makeBlueprint(brand: Brand, runId: string, spec: BlueprintSpec, i = 1): Blueprint {
+  const shots: BlueprintShot[] = spec.shots.map(
+    ([t0, t1, shotType, purpose, subject, action, onScreenText, voiceover], idx) => ({
+      idx,
+      t0,
+      t1,
+      shotType,
+      camera: spec.camera ?? "handheld phone, static",
+      subject,
+      action,
+      onScreenText,
+      voiceover,
+      transition: idx === 0 ? undefined : "hard cut",
+      purpose,
+    }),
+  );
+  const durationSec = shots.at(-1)?.t1 ?? 0;
+  return {
+    id: `bp_${brand.slug}_${i}`,
+    evidenceId: evId(brand.slug, spec.evidence),
+    brandId: brand.id,
+    runId,
+    durationSec,
+    aspect: "9:16",
+    structure: spec.structure,
+    hook: spec.hook,
+    shots,
+    pacing: {
+      cutsPer10s: Math.round(((shots.length - 1) / durationSec) * 100) / 10,
+      avgShotSec: Math.round((durationSec / shots.length) * 10) / 10,
+    },
+    emotionalArc: spec.emotionalArc,
+    cta: spec.cta,
+    whyItWins: spec.whyItWins,
+    transcript: spec.transcript,
+    frames: [],
+    demo: true,
+    createdAt: iso(200 + i * 10),
+  };
+}
+
+/** Two review rounds for one rendered concept: round 1 finds the weakest shot and regenerates it, round 2 accepts. */
+export function makeReviews(
+  brand: Brand,
+  concept: Concept,
+  round1: number[],
+  weakest: { idx: number; issues: string[] },
+): {
+  reviews: Review[];
+  assets: Asset[];
+} {
+  const assets: Asset[] = [1, 2].map((r) => ({
+    id: `asset_${concept.id}_video_r${r}`,
+    brandId: brand.id,
+    conceptId: concept.id,
+    kind: "video",
+    url: `/api/assets/demo/${brand.slug}/${concept.id}_r${r}.mp4`,
+    provider: "local",
+    model: "remotion-kenburns",
+    costUsd: 0,
+    width: 1080,
+    height: 1920,
+    durationSec: concept.shots.reduce((a, s) => a + s.durationSec, 0),
+    demo: true,
+    createdAt: iso(600 + r * 20),
+  }));
+  const avg = (xs: number[]) => Math.round(xs.reduce((a, b) => a + b, 0) / xs.length);
+  const round2 = round1.map((s, i) => (i === weakest.idx ? Math.max(s + 24, 80) : Math.min(100, s + 3)));
+  const reviews: Review[] = [
+    {
+      id: `review_${concept.id}_1`,
+      conceptId: concept.id,
+      assetId: assets[0].id,
+      round: 1,
+      overall: avg(round1),
+      blueprintMatch: avg(round1) + 6,
+      perShot: round1.map((score, idx) => ({ idx, score, issues: idx === weakest.idx ? weakest.issues : [] })),
+      complianceOk: true,
+      decision: "regenerate",
+      notes: `Shot ${weakest.idx + 1} is the weakest (${round1[weakest.idx]}): ${weakest.issues.join("; ")}. Regenerating its keyframe and re-rendering.`,
+      createdAt: iso(625),
+      regeneratedShots: [weakest.idx],
+      demo: true,
+    },
+    {
+      id: `review_${concept.id}_2`,
+      conceptId: concept.id,
+      assetId: assets[1].id,
+      round: 2,
+      overall: avg(round2),
+      blueprintMatch: avg(round2) + 4,
+      perShot: round2.map((score, idx) => ({ idx, score, issues: [] })),
+      complianceOk: true,
+      decision: "accept",
+      notes: "Hook lands inside 2 s, text inside safe zones, pacing matches the blueprint. Accepted.",
+      createdAt: iso(650),
+      demo: true,
+    },
+  ];
+  concept.status = "rendered";
+  concept.videoAssetId = assets[1].id;
+  return { reviews, assets };
 }
 
 export function makeCompliance(
@@ -426,6 +574,25 @@ export function buildEvents(b: Omit<DemoRunBundle, "events">): RunEvent[] {
   push("research", "cost", "Research cost (demo: no live spend)", { costUsd: 0 });
   push("research", "phase_completed", `${b.evidence.length} evidence items from ${bySource.size} sources`);
 
+  // reverse engineer
+  push("reverse_engineer", "phase_started", "Watching the winners shot by shot");
+  for (const bp of b.blueprints) {
+    const src = b.evidence.find((e) => e.id === bp.evidenceId);
+    push("reverse_engineer", "tool_call", `watch_video: ${src?.title ?? bp.evidenceId}`, {
+      data: { tool: "watch_video", evidenceId: bp.evidenceId },
+    });
+    push(
+      "reverse_engineer",
+      "blueprint",
+      `Blueprint: ${bp.shots.length} shots, ${bp.structure}, hook ends at ${bp.hook.endSec}s`,
+      {
+        refId: bp.id,
+        detail: bp.whyItWins,
+      },
+    );
+  }
+  push("reverse_engineer", "phase_completed", `${b.blueprints.length} blueprint(s)`);
+
   // consult
   push("consult", "phase_started", "Consultation: only what the data could not answer");
   for (const q of b.questions) push("consult", "question", q.prompt, { refId: q.id, detail: q.why });
@@ -449,6 +616,17 @@ export function buildEvents(b: Omit<DemoRunBundle, "events">): RunEvent[] {
   push("production", "phase_started", "Writing concepts that remake proven structures");
   for (const c of b.concepts) push("production", "concept", c.title, { refId: c.id, detail: c.hook });
   push("production", "phase_completed", `${b.concepts.length} concepts`);
+  if (b.reviews.length) {
+    push("review", "phase_started", "Watching our own render");
+    for (const r of b.reviews) {
+      push("review", "review", `Round ${r.round}: ${r.overall}/100, ${r.decision}`, {
+        refId: r.id,
+        detail: r.notes,
+        data: { conceptId: r.conceptId, round: r.round, decision: r.decision },
+      });
+    }
+    push("review", "phase_completed", "Self-review done");
+  }
   push("compliance", "phase_started", `Checking against ${b.brand.rulePack}`);
   for (const cc of b.compliance) {
     push(
