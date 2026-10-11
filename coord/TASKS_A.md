@@ -99,7 +99,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
 - [x] **I05** Off-topic live evidence (cats, politics on Reddit; generic Meta ads): per-source Claude relevance filter (keeps when unsure), Reddit scoped to a subreddit.
 - [x] **I06** Live passes mixed demo items (bundle website + app-store reviews) into real data; recorded exports keep only real items.
 - [x] **I07** Blueprints of single-take ads came out as 1 shot: lower-threshold re-detection, even frame sampling, beat-based splitting in the prompt (1 -> 3 shots on the same ads).
-- [x] **I08** Keyframes generated one by one (~30 s each live): now 3 in parallel.
+- [x] **I08** Keyframes and fal clips generated one by one (~30 s and ~70 s each live): now 3 in parallel.
 - [x] **I09** An unreachable or failing site killed the run at intake: now Firecrawl -> direct fetch (20 s timeout) -> continue with warnings. Test (commit 797b8e9).
 - [x] **I10** Unicode brand names (Slovak, Turkish) produce clean slugs. Test (commit 797b8e9).
 - [x] **I11** A crashed script left its run "running" and a stale queued run would be auto-resumed (and spend) on the next server start: resume only stale runs, live-pass marks failures, stale runs cancelled.
