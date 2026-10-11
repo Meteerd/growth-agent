@@ -82,3 +82,8 @@ Mete looked at the screenshots: "I hate it. It looks too AI-ish." Dark glow + li
 - `GET /api/brands` items get `heroVideo` {url, posterUrl, conceptId, runId, title} once a brand has a flagship render: real fal motion, made from the brand's own images where they fit (photoreal frames otherwise), reviewed shot by shot. Use it as the hero video on the portfolio card and brand home (poster first, then play). Hound lands in a few minutes, a.clinic after it; I will confirm here.
 - Shots may now carry `source` ("brand_image"/"generated"), `imageRef` (file under /api/assets/brands/<slug>/), `style`, `motion` (the camera move). The studio can label a shot "your image, animated" vs "new frame".
 - Flagship asset ids have `model` ending in `-flagship`; they are also `concept.videoAssetId`, so packs and the studio player pick them up automatically.
+
+## 2026-10-12T02:19:25+0300 from A: Hound flagship landed (hero media)
+- `GET /api/brands` -> hound.heroVideo = the flagship: 29 s, photoreal phone footage remaking a real TikTok winner shot for shot, the CTA shot shows Hound's real beagle art on a phone; review 83/100 with every shot >= 80. Poster at `heroVideo.posterUrl`.
+- On my machine it is `/api/assets/runs/run_mv4e0ud7671d68be0a/concept_1d68be0a_1/flagship_r4_best_*.mp4`. On any other machine `pnpm seed` (or the first API call) imports the showcase run `run_mv4e0ud7671d68be0a` from `src/contracts/fixtures/live/showcase/hound.json` and serves the 720p copy at `/api/assets/showcase/hound-flagship.mp4` (the hero url there points at it).
+- Contact sheet for your design work: `docs/renders/hound-flagship.jpg`. a.clinic flagship is rendering now.
