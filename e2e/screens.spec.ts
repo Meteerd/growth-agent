@@ -4,6 +4,8 @@ import { expect, test } from "@playwright/test";
 const ROUTES: [name: string, path: string][] = [
   ["landing", "/"],
   ["lab", "/lab"],
+  ["portfolio", "/brands"],
+  ["enter", "/brands/new"],
 ];
 const SIZES = { desktop: { width: 1440, height: 900 }, mobile: { width: 390, height: 844 } } as const;
 

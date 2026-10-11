@@ -69,5 +69,6 @@ describe("format", () => {
   it("longevity tiers and relative time", () => {
     expect([longevity(45), longevity(10), longevity(2), longevity()]).toEqual(["proven", "testing", "new", undefined]);
     expect(timeAgo(new Date(Date.now() - 6 * 3600_000).toISOString())).toBe("6 h ago");
+    expect(timeAgo(new Date(Date.now() + 60_000).toISOString())).toBe("just now");
   });
 });
