@@ -21,6 +21,7 @@ import {
   RunEvent as RunEventSchema,
   type SpendEntry,
 } from "@/contracts";
+import { bus, runChannel } from "./bus";
 import type { Db } from "./db/client";
 import * as t from "./db/schema";
 import { nowIso } from "./ids";
@@ -253,6 +254,7 @@ export async function updateRun(db: Db, id: string, patch: Partial<Run>): Promis
   if (!cur) return null;
   const next = { ...cur, ...patch };
   await upsertRun(db, next);
+  if (patch.status && patch.status !== cur.status) bus.emit(runChannel(id), { status: patch.status });
   return next;
 }
 
@@ -287,6 +289,7 @@ export async function appendEvent(db: Db, e: Omit<RunEvent, "id" | "ts"> & { ts?
         costUsd: ev.costUsd ?? null,
         data: ev.data === undefined ? null : ev.data,
       });
+      bus.emit(runChannel(ev.runId), ev);
       return ev;
     } catch (err) {
       if (attempt === 4) throw err;
