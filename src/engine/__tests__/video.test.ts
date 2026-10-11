@@ -46,3 +46,16 @@ describe("Ad916 compositor", () => {
     expect(fs.existsSync(out)).toBe(true);
   }, 60_000);
 });
+
+describe("caption fitting", () => {
+  it("never truncates long captions (Slovak listicle line) and shrinks the font instead", async () => {
+    const { fitCaption } = await import("@/engine/video/compose");
+    const t =
+      "4 kroky: dotazník · konzultácia s lekárom · ePredpis, ak je vhodný · pravidelné kontroly so starostlivým tímom a odpovede na otázky";
+    const f = fitCaption(t);
+    expect(f.lines.join(" ")).toBe(t);
+    expect(f.size).toBeLessThan(58);
+    expect(fitCaption("Short hook").size).toBe(58);
+    expect(fitCaption("Starostlivosť o váhu bez čakárne 🩺").lines.join(" ")).toBe("Starostlivosť o váhu bez čakárne");
+  });
+});

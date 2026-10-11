@@ -6,6 +6,7 @@ import type { Asset, Blueprint, Brand, Concept, Review } from "@/contracts";
 import { type BetaContentBlockParam, loadPrompt, structured } from "./agent/claude";
 import { makeCtx } from "./agent/context";
 import { reviewRender } from "./agent/phases/review";
+import { checkText } from "./compliance/check";
 import type { Db } from "./db/client";
 import { HttpError } from "./http";
 import { newId, nowIso } from "./ids";
@@ -18,6 +19,7 @@ import {
   getBrand,
   getConcept,
   getRun,
+  insertCompliance,
   listReviews,
   upsertAsset,
   upsertConcept,
@@ -312,7 +314,8 @@ export async function buildFlagship(
       .join(" | "),
   });
 
-  // 2. frames
+  // 2. frames (captions first: long lines cannot be read in a 4 s shot)
+  if (await tightenCaptions(db, c.id)) c = (await getConcept(db, c.id)) ?? c;
   const shots = [...c.shots];
   const queue = [...shots];
   const cur = c;
@@ -391,8 +394,31 @@ export async function repairFlagship(db: Db, conceptId: string): Promise<Flagshi
   const bp = c.blueprintId ? await getBlueprint(db, c.blueprintId) : null;
   const run = (await getRun(db, c.runId))!;
   const ctx = (await makeCtx(db, run.id, new AbortController().signal)).forPhase("review");
-  const prev = (await listReviews(db, c.id)).at(-1);
+  let prev = (await listReviews(db, c.id)).at(-1);
   if (!prev) throw new HttpError(409, "no_review", "Build the flagship first");
+  if (await tightenCaptions(db, c.id)) c = (await getConcept(db, c.id))!;
+  // 0. free pass: re-compose with the existing frames and clips (caption/layout fixes cost nothing) and re-review
+  {
+    let a = (await renderConcept(db, c.id, "final", { label: `flagship_r${prev.round + 1}_recompose` })).asset;
+    a = { ...a, model: `${a.model}-flagship` };
+    await upsertAsset(db, a);
+    c = (await getConcept(db, c.id))!;
+    const r0 = await reviewRender(ctx, c, bp, a.id, prev.round + 1, []);
+    r0.decision = r0.perShot.some((p) => p.score < 80) ? "regenerate" : "accept";
+    r0.notes = `Re-composed with the same frames and clips. ${r0.notes}`;
+    await upsertReview(db, r0);
+    await appendEvent(db, {
+      runId: c.runId,
+      phase: "review",
+      type: "review",
+      title: `Flagship recompose: ${r0.overall}/100`,
+      refId: r0.id,
+      detail: r0.notes,
+      data: { conceptId: c.id, round: r0.round, perShot: r0.perShot },
+    });
+    prev = r0;
+    if (r0.decision === "accept") return { concept: c, asset: a, reviews: [r0] };
+  }
   const weak = prev.perShot
     .filter((p) => p.score < 80)
     .sort((a, b) => a.score - b.score)
@@ -403,7 +429,13 @@ export async function repairFlagship(db: Db, conceptId: string): Promise<Flagshi
     shots: c.shots.map((s) => {
       const w = weak.find((x) => x.idx === s.idx);
       if (!w) return s;
-      if (s.style === "screen" || (s.source === "generated" && s.imageRef)) return { ...s, clipAssetId: undefined };
+      if (s.style === "screen" || (s.source === "generated" && s.imageRef))
+        return {
+          ...s,
+          clipAssetId: undefined,
+          keyframeAssetId: undefined,
+          visualPrompt: `${s.visualPrompt} Fix: ${w.issues[0] ?? ""}`.trim(),
+        };
       return {
         ...s,
         clipAssetId: undefined,
@@ -411,6 +443,13 @@ export async function repairFlagship(db: Db, conceptId: string): Promise<Flagshi
       };
     }),
   };
+  // inserts and screens get a new frame (OpenAI only); animated shots keep their frame and get new motion
+  const brand = (await getBrand(db, c.brandId))!;
+  const withFrames = [...c.shots];
+  for (const s of c.shots)
+    if (!s.keyframeAssetId)
+      withFrames[s.idx] = { ...s, keyframeAssetId: (await keyframeFor(db, brand, c, s, " (repair)")).id };
+  c = { ...c, shots: withFrames };
   await upsertConcept(db, c);
   const reviews: Review[] = [];
   const render = async (label: string) => {
@@ -422,11 +461,12 @@ export async function repairFlagship(db: Db, conceptId: string): Promise<Flagshi
   let asset = await render(`flagship_r${prev.round + 1}`);
   c = (await getConcept(db, c.id))!;
   let rv = await reviewRender(ctx, c, bp, asset.id, prev.round + 1, []);
+  const prevScores = prev.perShot;
   // keep the best version of every changed shot
   const reverted: number[] = [];
   for (const w of weak) {
     const now = rv.perShot.find((p) => p.idx === w.idx)?.score ?? 0;
-    if (now < w.score) reverted.push(w.idx);
+    if (now < (prevScores.find((p) => p.idx === w.idx)?.score ?? w.score)) reverted.push(w.idx);
   }
   if (reverted.length) {
     c = { ...c, shots: c.shots.map((s) => (reverted.includes(s.idx) ? { ...before[s.idx] } : s)) };
@@ -435,6 +475,7 @@ export async function repairFlagship(db: Db, conceptId: string): Promise<Flagshi
     c = (await getConcept(db, c.id))!;
     rv = await reviewRender(ctx, c, bp, asset.id, prev.round + 1, []);
   }
+  rv.round = prev.round + 1;
   rv.decision = "accept";
   rv.regeneratedShots = weak.map((w) => w.idx).filter((i) => !reverted.includes(i));
   rv.notes = `${rv.notes}${reverted.length ? ` (kept the earlier version of shot(s) ${reverted.map((i) => i + 1).join(", ")}, which scored better)` : ""}`;
@@ -452,4 +493,61 @@ export async function repairFlagship(db: Db, conceptId: string): Promise<Flagshi
   const vf = urlToFile(asset.url)!;
   await extractFrame(vf, 1.2, `${vf}.poster.jpg`, 720).catch(() => undefined);
   return { concept: c, asset, reviews };
+}
+
+const Tightened = z.object({ shots: z.array(z.object({ idx: z.number(), onScreenText: z.string() })) });
+
+/** Shorten on-screen lines over 8 words (same language, same meaning); compliance is re-checked before saving. */
+export async function tightenCaptions(db: Db, conceptId: string): Promise<number> {
+  const c = (await getConcept(db, conceptId))!;
+  const brand = (await getBrand(db, c.brandId))!;
+  const long = c.shots.filter((s) => (s.onScreenText ?? "").split(/\s+/).length > 8);
+  if (!long.length) return 0;
+  const r = await structured(
+    { db, runId: c.runId, phase: "production" },
+    {
+      route: "production",
+      system: `You edit on-screen captions for short vertical ads. Each caption must be readable in its shot: at most 7 words, same language (${c.language}), same meaning, no new claims, plain words. Keep numbering and arrows only if they help. The voiceover carries the detail.\n\n${rulePackText(brand.rulePack)}`,
+      user: JSON.stringify(
+        long.map((s) => ({
+          idx: s.idx,
+          durationSec: s.durationSec,
+          onScreenText: s.onScreenText,
+          voiceover: s.voiceover,
+        })),
+      ),
+      schema: Tightened,
+      note: `flagship: tighten captions ${c.id}`,
+      maxTokens: 3000,
+      demo: () => ({
+        shots: long.map((s) => ({
+          idx: s.idx,
+          onScreenText: (s.onScreenText ?? "").split(/\s+/).slice(0, 7).join(" "),
+        })),
+      }),
+    },
+  );
+  const next = c.shots.map((s) => {
+    const t = r.value.shots.find((x) => x.idx === s.idx);
+    return t ? { ...s, onScreenText: t.onScreenText } : s;
+  });
+  const check = await checkText(db, {
+    brand,
+    text: next.map((s) => s.onScreenText ?? "").join("\n"),
+    targetType: "concept",
+    targetId: c.id,
+    runId: c.runId,
+  });
+  await insertCompliance(db, check);
+  if (check.status === "fail") return 0;
+  await upsertConcept(db, { ...c, shots: next });
+  await appendEvent(db, {
+    runId: c.runId,
+    phase: "production",
+    type: "log",
+    title: `Tightened ${long.length} caption(s) for readability`,
+    refId: c.id,
+    detail: r.value.shots.map((x) => `${x.idx + 1}: ${x.onScreenText}`).join(" | "),
+  });
+  return long.length;
 }

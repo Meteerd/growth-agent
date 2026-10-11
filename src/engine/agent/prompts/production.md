@@ -10,6 +10,7 @@ Dossier (claims allowed and forbidden, voice, visual style, assets), operator an
 
 ## Every concept
 - `hook`: the first line or on-screen text, scroll-stopping, in the concept's language.
+- On-screen text (`onScreenText`) is at most 8 words per shot (a viewer reads about 3 words per second); the voiceover carries the rest.
 - `shots`: `visualPrompt` is an image-generation brief in English: subject, setting, action, framing, lighting, plus the brand style block given below. No real people's likenesses, no logos of other brands, no text in the image (on-screen text goes in `onScreenText`). `voiceover` in the concept's language, short.
 - `caption` (platform-native, honest), `hashtags` (3 to 6, real), `cta` matching the brand's real CTA.
 - `remakesEvidenceIds`: the ids of the winners it remakes (exactly as given). `remakeNote`: one sentence on what structure is kept and what is original.
