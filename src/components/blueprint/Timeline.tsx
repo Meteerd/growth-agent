@@ -1,16 +1,14 @@
 "use client";
 
-import { motion } from "motion/react";
 import { useRef, useState } from "react";
-import { NumberTicker } from "@/components/ui/NumberTicker";
 import type { Blueprint, Review, Shot } from "@/contracts";
 import { cn } from "@/lib/client/cn";
 import { PURPOSE_COLOR, PURPOSE_LABEL } from "@/lib/client/purpose";
-import { nearestFrame, scoreTone, shotScore } from "./align";
+import { scoreTone, shotScore } from "./align";
 
 const TONE_TEXT = { pass: "text-pass", warn: "text-warn", fail: "text-fail" } as const;
 
-/** A frame from the analysed video when this machine has it; otherwise a designed card that describes the shot. */
+/** A frame from the analysed video when this machine has it; otherwise a dark card that describes the shot. */
 export function ShotFrame({
   url,
   fallback,
@@ -25,9 +23,8 @@ export function ShotFrame({
   reference?: boolean;
 }) {
   const [broken, setBroken] = useState(false);
-  const hue = PURPOSE_COLOR[purpose];
   return (
-    <div className={cn("relative overflow-hidden bg-raised", className)}>
+    <div className={cn("relative overflow-hidden bg-viewer", className)}>
       {url && !broken ? (
         <>
           {/* biome-ignore lint/performance/noImgElement: frames and keyframes come from the engine asset route */}
@@ -39,25 +36,27 @@ export function ShotFrame({
             loading="lazy"
           />
           {reference && (
-            <span className="absolute top-1.5 left-1.5 rounded-[4px] bg-ink/70 px-1 font-mono text-[8.5px] text-bone-2 uppercase tracking-[0.06em]">
-              ref
+            <span className="absolute top-1 left-1 rounded-[2px] bg-white/85 px-1 font-semibold text-[#111] text-[8.5px] uppercase tracking-[0.04em]">
+              brand art
             </span>
           )}
         </>
       ) : (
-        <div
-          className="absolute inset-0 flex items-center p-2.5"
-          style={{
-            background: `repeating-linear-gradient(115deg, ${hue}18 0 1px, transparent 1px 8px), radial-gradient(120% 80% at 0% 0%, ${hue}22, transparent 60%), #0c0e13`,
-          }}
-        >
-          <p className="line-clamp-4 font-display text-[13px] text-bone-2 leading-snug">{fallback}</p>
+        <div className="absolute inset-0 flex flex-col justify-end gap-1 p-2">
+          <span className="h-[2px] w-6" style={{ background: PURPOSE_COLOR[purpose] }} />
+          <p className="line-clamp-3 text-[10.5px] text-white/70 leading-snug">{fallback}</p>
         </div>
       )}
     </div>
   );
 }
 
+const LANE_LABEL = "w-[76px] shrink-0 pr-3 text-right text-[11px] font-semibold text-bone-2";
+
+/**
+ * NLE-style lanes on one time axis: V1 the original's shots, V2 our remake aligned through shotMap,
+ * T1 the words, and the beat tape. One red playhead crosses every lane; click or drag anywhere to scrub.
+ */
 export function Timeline({
   bp,
   aligned,
@@ -66,7 +65,6 @@ export function Timeline({
   review,
   t,
   onScrub,
-  scanning,
 }: {
   bp: Blueprint;
   aligned: (Shot | undefined)[];
@@ -75,7 +73,6 @@ export function Timeline({
   review?: Review;
   t: number;
   onScrub: (t: number) => void;
-  scanning: boolean;
 }) {
   const track = useRef<HTMLDivElement>(null);
   const D = bp.durationSec;
@@ -83,6 +80,8 @@ export function Timeline({
   const activeIdx = active === -1 ? bp.shots.length - 1 : active;
   const pct = (x: number) => `${(x / D) * 100}%`;
   const ticks = Array.from({ length: Math.floor(D) + 1 }, (_, i) => i);
+  const noRemake = aligned.every((x) => !x);
+  const tickEvery = D > 30 ? 5 : 2;
 
   const fromPointer = (clientX: number) => {
     const r = track.current!.getBoundingClientRect();
@@ -95,181 +94,121 @@ export function Timeline({
 
   return (
     <div className="overflow-x-auto">
-      <div className="min-w-[780px]">
-        <div className="grid grid-cols-[112px_1fr] gap-x-4">
-          {/* ruler */}
-          <div />
-          <div className="relative h-11">
+      <div className="flex min-w-[760px]">
+        <div className="flex flex-col pt-7" aria-hidden>
+          <div className={cn(LANE_LABEL, "flex h-[84px] items-center justify-end")}>V1 Original</div>
+          <div className={cn(LANE_LABEL, "mt-1 flex h-[84px] items-center justify-end")}>V2 Remake</div>
+          <div className={cn(LANE_LABEL, "mt-1 flex h-9 items-center justify-end")}>T1 Words</div>
+          <div className={cn(LANE_LABEL, "mt-1 flex h-6 items-center justify-end")}>Beats</div>
+        </div>
+        <div
+          ref={track}
+          role="slider"
+          tabIndex={0}
+          aria-label="Timeline position"
+          aria-valuemin={0}
+          aria-valuemax={D}
+          aria-valuenow={Math.round(t * 10) / 10}
+          aria-valuetext={`${t.toFixed(1)} seconds, shot ${activeIdx + 1}: ${PURPOSE_LABEL[bp.shots[activeIdx].purpose]}`}
+          data-testid="timeline"
+          className="relative min-w-0 flex-1 cursor-ew-resize touch-none select-none"
+          onPointerDown={(e) => {
+            e.currentTarget.setPointerCapture(e.pointerId);
+            fromPointer(e.clientX);
+          }}
+          onPointerMove={(e) => {
+            if (e.buttons === 1) fromPointer(e.clientX);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowRight") {
+              e.preventDefault();
+              step(1);
+            } else if (e.key === "ArrowLeft") {
+              e.preventDefault();
+              step(-1);
+            } else if (e.key === "Home") onScrub(0);
+            else if (e.key === "End") onScrub(D - 0.001);
+          }}
+        >
+          <div className="relative h-7 border-line border-b">
             {ticks.map((s) => (
-              <span key={s} className="absolute bottom-0 h-full" style={{ left: pct(s) }}>
-                <span className={cn("absolute bottom-0 w-px bg-line-strong", s % 2 === 0 ? "h-2.5" : "h-1.5")} />
-                {s % 2 === 0 && (
-                  <span className="absolute bottom-3 -translate-x-1/2 font-mono text-[9.5px] text-bone-3">{s}s</span>
+              <span key={s} className="absolute bottom-0" style={{ left: pct(s) }}>
+                <span className={cn("absolute bottom-0 w-px bg-bone-4", s % tickEvery === 0 ? "h-2.5" : "h-1.5")} />
+                {s % tickEvery === 0 && (
+                  <span className="absolute bottom-3 -translate-x-1/2 font-mono text-[10px] text-bone-3">{tc(s)}</span>
                 )}
               </span>
             ))}
-            <span className="absolute bottom-0 h-full" style={{ left: pct(bp.hook.endSec) }}>
-              <span className="absolute top-0 left-1 whitespace-nowrap rounded-[4px] bg-signal-dim px-1 font-mono text-[9px] text-signal">
-                hook ends {bp.hook.endSec}s
-              </span>
-              <span className="absolute inset-y-0 w-px border-signal/50 border-l border-dashed" />
-            </span>
           </div>
 
-          {/* rows + scan line share one positioned track */}
-          <div className="flex flex-col justify-around py-1">
-            <RowLabel title="The winner" sub={`${bp.shots.length} shots, ${D}s`} />
-            <div className="h-8" />
-            <RowLabel
-              title="Our remake"
-              sub={aligned.filter(Boolean).length ? "aligned shot for shot" : "not produced yet"}
-            />
-          </div>
-          <div
-            ref={track}
-            role="slider"
-            tabIndex={0}
-            aria-label="Timeline position"
-            aria-valuemin={0}
-            aria-valuemax={D}
-            aria-valuenow={Math.round(t * 10) / 10}
-            aria-valuetext={`${t.toFixed(1)} seconds, shot ${activeIdx + 1}: ${PURPOSE_LABEL[bp.shots[activeIdx].purpose]}`}
-            data-testid="timeline"
-            className="relative cursor-ew-resize select-none touch-none rounded-card outline-offset-4"
-            onPointerDown={(e) => {
-              e.currentTarget.setPointerCapture(e.pointerId);
-              fromPointer(e.clientX);
-            }}
-            onPointerMove={(e) => {
-              if (e.buttons === 1) fromPointer(e.clientX);
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "ArrowRight") {
-                e.preventDefault();
-                step(1);
-              } else if (e.key === "ArrowLeft") {
-                e.preventDefault();
-                step(-1);
-              } else if (e.key === "Home") onScrub(0);
-              else if (e.key === "End") onScrub(D - 0.001);
-            }}
-          >
-            {/* winner */}
-            <div className="relative h-[138px]">
-              {bp.shots.map((s, i) => {
-                const frame = nearestFrame(bp.frames, s.t0, s.t1);
-                const on = i === activeIdx;
-                return (
-                  <motion.div
-                    key={s.idx}
-                    data-testid={`bp-shot-${i}`}
-                    data-active={on || undefined}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: on ? 1 : 0.62, y: 0 }}
-                    transition={{ duration: 0.45, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute inset-y-0 px-[2px]"
-                    style={{ left: pct(s.t0), width: pct(s.t1 - s.t0) }}
-                  >
-                    <div
-                      className={cn("relative h-full overflow-hidden rounded-[8px] transition-shadow duration-300")}
-                      style={{
-                        boxShadow: on
-                          ? `0 0 0 1px ${PURPOSE_COLOR[s.purpose]}, 0 12px 40px -12px ${PURPOSE_COLOR[s.purpose]}66`
-                          : "inset 0 0 0 1px rgb(17 17 17 / 0.08)",
-                      }}
-                    >
-                      <ShotFrame
-                        url={frame?.url}
-                        fallback={`${s.subject}: ${s.action}`}
-                        purpose={s.purpose}
-                        className="h-full w-full"
-                      />
-                      <span
-                        className="absolute inset-x-0 top-0 h-[3px]"
-                        style={{ background: PURPOSE_COLOR[s.purpose] }}
-                      />
-                      <span
-                        className="absolute top-2 left-2 rounded-[4px] bg-ink/75 px-1.5 py-0.5 font-mono text-[9.5px] uppercase tracking-[0.06em]"
-                        style={{ color: PURPOSE_COLOR[s.purpose] }}
-                      >
-                        {PURPOSE_LABEL[s.purpose]}
-                      </span>
-                      {s.onScreenText && (
-                        <span className="absolute inset-x-2 bottom-2 line-clamp-2 rounded-[4px] bg-ink/70 px-1.5 py-1 text-[11px] text-bone leading-tight">
-                          {s.onScreenText}
-                        </span>
-                      )}
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* alignment threads */}
-            <svg className="block h-8 w-full" viewBox={`0 0 ${D * 100} 40`} preserveAspectRatio="none" aria-hidden>
-              {bp.shots.map((s, i) => {
-                const x = ((s.t0 + s.t1) / 2) * 100;
-                const on = i === activeIdx;
-                return (
-                  <g key={s.idx}>
-                    <line
-                      x1={x}
-                      y1={0}
-                      x2={x}
-                      y2={40}
-                      stroke={on ? PURPOSE_COLOR[s.purpose] : "rgb(17 17 17 / 0.14)"}
-                      strokeWidth={on ? 2 : 1}
-                      vectorEffect="non-scaling-stroke"
-                      strokeDasharray={aligned[i] ? undefined : "3 4"}
-                    />
-                    <circle
-                      cx={x}
-                      cy={20}
-                      r={on ? 3.5 : 2}
-                      fill={on ? PURPOSE_COLOR[s.purpose] : "rgb(17 17 17 / 0.3)"}
-                      vectorEffect="non-scaling-stroke"
-                    />
-                  </g>
-                );
-              })}
-            </svg>
-
-            {/* remake */}
-            <div className="relative h-[138px]">
-              {aligned.every((x) => !x) && (
+          <div className="relative h-[84px]">
+            {bp.shots.map((s, i) => {
+              const inShot = bp.frames.filter((f) => f.t >= s.t0 && f.t < s.t1);
+              const on = i === activeIdx;
+              return (
                 <div
-                  className="absolute inset-0 flex items-center justify-center rounded-[10px] border border-line-strong border-dashed bg-[repeating-linear-gradient(115deg,rgb(17_17_17/0.03)_0_1px,transparent_1px_9px)] text-center"
-                  data-testid="remake-pending"
+                  key={s.idx}
+                  data-testid={`bp-shot-${i}`}
+                  data-active={on || undefined}
+                  className="absolute inset-y-0 px-px"
+                  style={{ left: pct(s.t0), width: pct(s.t1 - s.t0) }}
                 >
-                  <p className="max-w-md font-display text-[18px] text-bone-2">
-                    The remake lands here, shot for shot, once production runs on this research.
-                  </p>
+                  <div
+                    className={cn(
+                      "flex h-full overflow-hidden rounded-[3px] bg-viewer",
+                      on && "outline-2 outline-bone outline-offset-1 outline",
+                    )}
+                  >
+                    {inShot.length ? (
+                      inShot.map((f) => (
+                        <ShotFrame
+                          key={f.t}
+                          url={f.url}
+                          fallback=""
+                          purpose={s.purpose}
+                          className="h-full min-w-[34px] flex-1"
+                        />
+                      ))
+                    ) : (
+                      <ShotFrame fallback={`${s.subject}: ${s.action}`} purpose={s.purpose} className="h-full w-full" />
+                    )}
+                  </div>
                 </div>
-              )}
-              {bp.shots.map((s, i) => {
+              );
+            })}
+          </div>
+
+          <div className="relative mt-1 h-[84px]">
+            {noRemake && (
+              <div
+                className="absolute inset-0 grid place-items-center rounded-[3px] border border-line-strong border-dashed bg-raised-2"
+                data-testid="remake-pending"
+              >
+                <p className="text-[13px] text-bone-2">
+                  The remake lands here, shot for shot, once production runs on this research.
+                </p>
+              </div>
+            )}
+            {!noRemake &&
+              bp.shots.map((s, i) => {
                 const ours = aligned[i];
                 const on = i === activeIdx;
                 const kf = ours ? keyframes.get(ours.idx) : undefined;
                 const ref = !kf && references.length ? references[i % references.length] : undefined;
                 const sc = shotScore(review, ours?.idx);
                 return (
-                  <motion.div
+                  <div
                     key={s.idx}
                     data-testid={`remake-shot-${i}`}
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: ours ? (on ? 1 : 0.62) : 0.35, y: 0 }}
-                    transition={{ duration: 0.45, delay: 0.25 + i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute inset-y-0 px-[2px]"
+                    className="absolute inset-y-0 px-px"
                     style={{ left: pct(s.t0), width: pct(s.t1 - s.t0) }}
                   >
                     {ours ? (
                       <div
-                        className="relative h-full overflow-hidden rounded-[8px] transition-shadow duration-300"
-                        style={{
-                          boxShadow: on
-                            ? "0 0 0 1px var(--color-signal), 0 12px 40px -12px rgb(229 50 45 / 0.45)"
-                            : "inset 0 0 0 1px rgb(17 17 17 / 0.1)",
-                        }}
+                        className={cn(
+                          "relative h-full overflow-hidden rounded-[3px]",
+                          on && "outline-2 outline-bone outline-offset-1 outline",
+                        )}
                       >
                         <ShotFrame
                           url={kf ?? ref}
@@ -278,77 +217,91 @@ export function Timeline({
                           purpose={s.purpose}
                           className="h-full w-full"
                         />
-                        <span
-                          className="absolute inset-x-0 bottom-0 h-[3px]"
-                          style={{ background: PURPOSE_COLOR[s.purpose] }}
-                        />
                         {sc && (
                           <span
                             title={sc.issues.join("; ") || "No issues found"}
                             className={cn(
-                              "absolute top-2 right-2 rounded-[4px] bg-ink/80 px-1.5 py-0.5 font-mono text-[11px] tabular-nums",
+                              "absolute top-1 right-1 rounded-[2px] bg-white px-1 font-mono text-[10.5px] tabular-nums",
                               TONE_TEXT[scoreTone(sc.score)],
                             )}
                             data-testid={`remake-score-${i}`}
                           >
-                            <NumberTicker value={sc.score} from={0} duration={1.2} />
-                          </span>
-                        )}
-                        {ours.onScreenText && (
-                          <span className="absolute inset-x-2 bottom-2.5 line-clamp-2 rounded-[4px] bg-ink/70 px-1.5 py-1 text-[11px] text-bone leading-tight">
-                            {ours.onScreenText}
+                            {sc.score}
                           </span>
                         )}
                       </div>
-                    ) : aligned.some(Boolean) ? (
-                      <div className="grid h-full place-items-center rounded-[8px] border border-line border-dashed font-mono text-[10px] text-bone-4">
+                    ) : (
+                      <div className="grid h-full place-items-center rounded-[3px] border border-line border-dashed text-[10px] text-bone-3">
                         no shot
                       </div>
-                    ) : null}
-                  </motion.div>
+                    )}
+                  </div>
                 );
               })}
-            </div>
+          </div>
 
-            {/* scan line */}
-            <div className="pointer-events-none absolute -top-1 -bottom-1 z-10" style={{ left: pct(t) }} aria-hidden>
-              <span className="absolute inset-y-0 -left-px w-[2px] bg-signal " />
-              <span className="absolute -top-6 -translate-x-1/2 whitespace-nowrap rounded-[4px] bg-signal px-1.5 py-0.5 font-mono text-[10px] text-ink tabular-nums">
-                {scanning ? "watching " : ""}
-                {t.toFixed(1)}s
-              </span>
-              {scanning && (
-                <span className="absolute inset-y-0 right-0 w-24 bg-[linear-gradient(90deg,transparent,rgb(229_50_45/0.10))]" />
-              )}
-            </div>
+          <div className="relative mt-1 h-9">
+            {bp.shots.map((s, i) => (
+              <div
+                key={s.idx}
+                className="absolute inset-y-0 px-px"
+                style={{ left: pct(s.t0), width: pct(s.t1 - s.t0) }}
+              >
+                <div
+                  className={cn(
+                    "h-full overflow-hidden rounded-[3px] border-line border-l px-1.5 py-1",
+                    i === activeIdx && "bg-raised-2",
+                  )}
+                >
+                  <p className="line-clamp-2 text-[10.5px] text-bone-2 leading-tight">
+                    {s.voiceover ?? s.onScreenText ?? ""}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="relative mt-1 h-6">
+            {bp.shots.map((s) => (
+              <div
+                key={s.idx}
+                className="absolute inset-y-0 px-px"
+                style={{ left: pct(s.t0), width: pct(s.t1 - s.t0) }}
+              >
+                <div
+                  className="flex h-full items-center rounded-[2px] px-1.5"
+                  style={{ background: PURPOSE_COLOR[s.purpose] }}
+                >
+                  <span className="truncate font-semibold text-[10px] text-white uppercase tracking-[0.04em]">
+                    {PURPOSE_LABEL[s.purpose]}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <span
+            className="pointer-events-none absolute top-7 bottom-0 w-px border-bone-3 border-l border-dashed"
+            style={{ left: pct(bp.hook.endSec) }}
+            aria-hidden
+          />
+          <div className="pointer-events-none absolute top-0 bottom-0 z-10" style={{ left: pct(t) }} aria-hidden>
+            <span className="absolute top-0 -left-[6px] h-0 w-0 border-x-[6px] border-x-transparent border-t-[8px] border-t-signal" />
+            <span className="absolute top-0 bottom-0 -left-px w-[2px] bg-signal" />
           </div>
         </div>
-        {/* legend */}
-        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 pl-[128px]">
-          {Object.entries(PURPOSE_LABEL).map(([k, v]) => (
-            <span
-              key={k}
-              className="flex items-center gap-1.5 font-mono text-[10px] text-bone-3 uppercase tracking-[0.06em]"
-            >
-              <span
-                className="size-1.5 rounded-full"
-                style={{ background: PURPOSE_COLOR[k as keyof typeof PURPOSE_COLOR] }}
-              />
-              {v}
-            </span>
-          ))}
-          <span className="ml-auto font-mono text-[10px] text-bone-3">drag, click, or use the arrow keys</span>
-        </div>
+      </div>
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 pl-[76px] text-[11px] text-bone-3">
+        <span>Dashed line: the hook ends at {bp.hook.endSec}s.</span>
+        <span>Click, drag, or use the arrow keys to move between shots.</span>
       </div>
     </div>
   );
 }
 
-function RowLabel({ title, sub }: { title: string; sub: string }) {
-  return (
-    <div className="flex h-[138px] flex-col justify-center">
-      <p className="font-display text-[20px] leading-tight">{title}</p>
-      <p className="mt-1 font-mono text-[10px] text-bone-3">{sub}</p>
-    </div>
-  );
+/** 2.5 -> "00:02.5" (timecode: minutes, seconds and tenths). */
+export function tc(s: number) {
+  const m = Math.floor(s / 60);
+  const sec = s - m * 60;
+  return `${String(m).padStart(2, "0")}:${sec.toFixed(1).padStart(4, "0")}`;
 }

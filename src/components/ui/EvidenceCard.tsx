@@ -48,7 +48,7 @@ export function SourceArt({
     >
       <div className="absolute inset-x-3 bottom-2.5 flex items-end justify-between">
         <span className="font-display text-[18px] leading-none text-bone-2">{label ?? kind}</span>
-        <span className="font-mono text-[9px] text-bone-3 uppercase tracking-[0.08em]">no media kept</span>
+        <span className="text-[10.5px] text-bone-3">no media kept</span>
       </div>
     </div>
   );
@@ -115,7 +115,7 @@ export function EvidenceCard({
             <button
               onClick={onToggle}
               aria-expanded={!!expanded}
-              className="flex items-center justify-between rounded-[8px] px-0 text-left font-mono text-[11px] text-bone-2 transition-colors hover:text-bone"
+              className="flex items-center justify-between rounded-[4px] px-0 text-left text-[12px] text-bone-2 transition-colors hover:text-bone"
             >
               <span>{expanded ? "Hide deconstruction" : "Deconstruct"}</span>
               <span aria-hidden className={cn("transition-transform duration-300", expanded && "rotate-45")}>
@@ -149,7 +149,10 @@ export function EvidenceCard({
                   )}
                 </dl>
                 {onOpenBlueprint && (
-                  <button onClick={onOpenBlueprint} className="mt-3 font-mono text-[11px] text-signal hover:underline">
+                  <button
+                    onClick={onOpenBlueprint}
+                    className="mt-3 text-[12px] text-bone underline decoration-bone-4 underline-offset-4"
+                  >
                     Open the blueprint
                   </button>
                 )}

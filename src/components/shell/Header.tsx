@@ -27,7 +27,7 @@ export function DataModeChip() {
   return DATA_MODE === "mock" ? (
     <DemoBadge label="Mock data" />
   ) : (
-    <span className="inline-flex h-6 items-center gap-1.5 rounded-chip px-2.5 font-mono text-[10.5px] text-bone-2 uppercase tracking-[0.06em] shadow[inset_0_0_0_1px_var(--color-line-strong)]">
+    <span className="inline-flex h-6 items-center gap-1.5 rounded-chip px-2.5 font-medium text-[11.5px] text-bone-2 shadow[inset_0_0_0_1px_var(--color-line-strong)]">
       <StatusDot status="live" />
       Engine
     </span>

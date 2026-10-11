@@ -39,7 +39,7 @@ export function PhoneFrame({
   return (
     <div className={cn("relative mx-auto aspect-[9/19.5] w-full max-w-[300px]", className)}>
       <div className="absolute inset-0 rounded-[44px] bg-[linear-gradient(160deg,#2a2d35,#0b0c10_40%,#1a1c22)] p-[3px] shadow[inset_0_0_0_1px_rgb(255_255_255/0.08)]">
-        <div className="relative h-full w-full overflow-hidden rounded-[41px] bg-ink">
+        <div className="relative h-full w-full overflow-hidden rounded-[41px] bg-viewer">
           <div
             aria-hidden
             className="absolute top-2.5 left-1/2 z-20 h-[22px] w-[84px] -translate-x-1/2 rounded-full bg-black"

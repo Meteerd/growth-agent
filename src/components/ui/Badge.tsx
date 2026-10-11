@@ -22,7 +22,7 @@ export function Badge({
   return (
     <span
       className={cn(
-        "inline-flex h-6 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-chip px-2.5 font-mono text-[10.5px] uppercase tracking-[0.06em]",
+        "inline-flex h-6 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-chip px-2.5 font-medium text-[11.5px]",
         TONE[tone],
         className,
       )}
@@ -40,7 +40,7 @@ export function DemoBadge({ className, label = "Demo data" }: { className?: stri
     <span
       title="Deterministic demo fixtures, not live data"
       className={cn(
-        "inline-flex h-6 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-chip border border-bone-3 border-dashed px-2.5 font-mono text-[10.5px] text-bone-2 uppercase tracking-[0.06em]",
+        "inline-flex h-6 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-chip border border-bone-4 border-dashed px-2.5 font-medium text-[11.5px] text-bone-2",
         className,
       )}
     >
