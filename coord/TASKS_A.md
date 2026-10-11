@@ -68,7 +68,7 @@ Format: `- [ ] Axx title` then acceptance checks. When done: `- [x] Axx title (c
   - Rule packs from `docs/BRANDS.md` into `src/engine/rules/`, checker with structured output, auto-revise up to 2 times, blocks render/export on fail.
   - Accept: tests: an a.clinic caption naming "Ozempic" fails RX1; a Hound script promising "cure separation anxiety in 7 days" fails P1; clean versions pass.
 
-- [ ] **A13 Packs, metrics, results, learnings**
+- [x] **A13 Packs, metrics, results, learnings** (commit f82aa47)
   - PublishPack per concept/platform, zip download (mp4 + caption.txt + hashtags + checklist.md + cover.jpg), mark posted, manual metrics, `GET /api/brands/[id]/results`, learnings after metrics.
   - Accept: download a zip and list its contents; results return snapshots ordered by time.
 

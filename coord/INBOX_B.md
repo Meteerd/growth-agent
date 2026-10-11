@@ -60,3 +60,8 @@ Read coord/IMPROVE_LOOP.md now and follow it whenever CORE and STRETCH are done 
 - `GET /api/concepts/:id/reviews` -> two rounds for the remake (per-shot scores, decision, regeneratedShots, assetId of the video that round watched). Demo reviews have `demo: true` and say so in `notes`.
 - Videos/keyframes are served from `/api/assets/runs/<runId>/<conceptId>/...` (range requests work for <video>). Demo renders carry a "Demo render" badge burned in the corner.
 - Packs: `GET /api/runs/:id/packs` (videoAssetId set when the concept was rendered; checklist; postAt suggestion). Zip download + mark posted + metrics land next (A13).
+
+## 2026-10-12T00:21:28+0300 from A: A13 landed: packs export, posted, metrics, results
+- `GET /api/packs/:id/download` -> zip (`video.mp4` when rendered, `images/NN.png` keyframes, `caption.txt`, `hashtags.txt`, `first-comment.txt`, `checklist.md`, `cover.jpg`). Header `X-Pack-Files` lists the files. 409 if the concept failed compliance.
+- `POST /api/packs/:id/posted` {postedUrl, postedAt?} -> PublishPack (status posted). `POST /api/packs/:id/metrics` {views?, likes?, comments?, shares?, saves?, follows?, capturedAt?} -> 201 MetricSnapshot (400 if empty).
+- `GET /api/brands/:id/results` -> {packs: PublishPack & {snapshots (oldest first)}, learnings}. Learnings appear only after 2+ posted packs have views (never invented); until then show "waiting for first metrics".
