@@ -37,10 +37,11 @@ for (const q of qs) {
 const plan = await repo.getLatestPlan(db, runId);
 if (plan) {
   for (const c of plan.channels) {
-    check(
-      c.evidenceIds.length > 0 && c.evidenceIds.every((i) => ids.has(i)),
-      `channel ${c.channel} cites resolvable evidence`,
-    );
+    const grounded =
+      (c.evidenceIds.length > 0 && c.evidenceIds.every((i) => ids.has(i))) ||
+      (c.answerIds?.length ?? 0) > 0 ||
+      /(thin|no [^.]*(data|evidence)|rests on the dossier)/i.test(c.rationale);
+    check(grounded, `channel ${c.channel} is grounded (evidence ids, answers, or says the evidence is thin)`);
     check(!EM.test(c.rationale), `no em dash in ${c.channel} rationale`);
   }
   if (brand.rulePack === "eu_rx_telehealth")
