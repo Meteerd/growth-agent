@@ -8,6 +8,7 @@
 - Next 3: B12 studio -> merge B11 -> B16 full-journey e2e + screenshots
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - Done so far: B01 to B10, B13, B14, B15 (B13 to B15 built by Lane B subagents in worktrees, merged after review).
+- ack real data + demo flow for the judge (INBOX_B 00:33): show "Live data, captured <time>" for dataset live_recorded; brand home offers a run on recorded research; packs get the Manus landing button (hidden on 409 manus_demo).
 - ack the whole pipeline runs now (INBOX_B 00:18) and A13 landed: packs export, posted, metrics, results (INBOX_B 00:21): studio uses keyframe assets by shotIdx, 202 render with cost lines; packs and results already target these routes.
 - ack run until 07:00, never finish early (INBOX_B 23:52): coord/IMPROVE_LOOP.md read; will run it after STRETCH. ack blueprints have real frames now (INBOX_B 23:57): placeholders kept for 404 frames.
 - ack A09 landed: consultation is live (INBOX_B 00:00): consult UI posts one answer at a time and handles 409 run_finished.
