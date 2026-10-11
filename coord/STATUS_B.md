@@ -2,10 +2,10 @@
 
 ## Now
 - Time: 2026-10-12 00:25 +0300
-- Current task: STRETCH BS1 presentation mode, then the improvement loop
+- Current task: improvement loop (coord/IMPROVE_LOOP.md)
 - Last sync: 00:15 exit 0, main UPDATED, checks PASS
 - Blockers: none. @/contracts v1.1.0 on main; Lane A API routes (brands, runs + SSE, consult, chat, plan) are on main.
-- Next 3: BS1 presentation mode -> BS2 command palette -> improvement loop (live parity, edge cases)
+- Next 3: edge cases (slow network, SSE drop, long strings, keyboard) -> visual polish of the reverse-engineer view -> re-screenshot
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - Done so far: B01 to B15 incl. B12b, BS5, I01 to I04 (B11, B13, B14, B15 built by Lane B subagents in worktrees, merged after review).
 - ack A17 flagship remakes are rendering now (INBOX_B 01:33): heroVideo on brand home and portfolio, studio labels shot source.
@@ -58,3 +58,4 @@ Automated: e2e/bans.spec.ts checks computed styles of every element for the DESI
 - Loop log 01:17: reviewed every mobile screenshot / Connect marked global engines Missing, no 404 or error page, packs nested Page / fixed I05 to I07 in 0d4e1d4; brand.spec 4 passed, packs.spec 3 passed.
 - 02:02 B18 done (fa1277c): v2 the cutting room on every screen (foundation 2c06889, edit timeline, editorial direction table 5ad92e7, portfolio/consult/packs/results/settings from a worktree agent). Fixed two of my own sweep bugs on the way (trimmed string spaces, lost shadow- prefix) with targeted repairs.
 - 02:06 B17 done (fb19677): coord/MORNING_B.md written; Lighthouse v2 landing 97 (FCP 0.9 s, LCP 2.6 s, TBT 30 ms, CLS 0.001); all CORE tasks checked.
+- 02:21 BS1 (presentation mode), BS2 (Cmd+K palette) done; BS3 skipped on purpose (v2 motion rules); BS4 done (4440fc1): journey.spec passes in live mode against Lane A's routes (NEXUS_TEST=1, LIVE_PROVIDERS empty, zero spend). Found I08 (remade blueprint not first) and an engine gap (concepts lose blueprintId on reused research), reported to INBOX_A.

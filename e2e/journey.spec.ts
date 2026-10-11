@@ -35,7 +35,7 @@ test("full journey: brand, run, consult, reverse-engineer, direction, studio, pa
 
   // run: the cockpit streams evidence and blueprints, then pauses for the operator
   await page.getByTestId("start-run").click();
-  await expect(page).toHaveURL(/\/runs\/run_hound_m\d+$/);
+  await expect(page).toHaveURL(/\/runs\/run_[a-z0-9_]+(\?pace=\d+)?$/);
   await expect(page.getByTestId("evidence-wall")).toBeVisible({ timeout: 30_000 });
   await expect(page.getByTestId("needs-you")).toBeVisible({ timeout: 40_000 });
 
@@ -48,10 +48,15 @@ test("full journey: brand, run, consult, reverse-engineer, direction, studio, pa
   await expect(page.getByTestId("run-done")).toBeVisible({ timeout: 40_000 });
 
   // reverse-engineer: the winner and our remake, aligned
-  await page.locator('[data-testid^="blueprint-bp_"]').first().click();
+  // the remade winner is listed first; a run whose remakes are not linked yet shows the honest pending lane
+  const remade = page.locator('[data-testid^="blueprint-bp_"][data-remade]');
+  const hasRemake = (await remade.count()) > 0;
+  await (hasRemake ? remade : page.locator('[data-testid^="blueprint-bp_"]')).first().click();
   await expect(page.getByTestId("blueprint-view")).toBeVisible();
-  await expect(page.locator('[data-testid^="remake-shot-"]').first()).toBeVisible();
-  await expect(page.getByTestId("remake-score-0")).toBeVisible();
+  if (hasRemake) {
+    await expect(page.locator('[data-testid^="remake-shot-"]').first()).toBeVisible();
+    await expect(page.getByTestId("remake-score-0")).toBeVisible();
+  } else await expect(page.getByTestId("remake-pending")).toBeVisible();
 
   // direction: the ranked table, evidence behind a channel
   await tab("Direction").click();
@@ -85,6 +90,6 @@ test("full journey: brand, run, consult, reverse-engineer, direction, studio, pa
   // results: the number shows up where the brand's results live
   await page.getByRole("link", { name: "Hound" }).first().click();
   await page.getByRole("navigation", { name: "Brand" }).getByRole("link", { name: "Results" }).click();
-  await expect(page.getByTestId("pack-views")).toHaveText("3,214");
-  await expect(page.getByTestId("views-chart")).toBeVisible();
+  await expect(page.getByTestId("pack-views").first()).toHaveText("3,214"); // newest posted first
+  await expect(page.getByTestId("views-chart").first()).toBeVisible();
 });

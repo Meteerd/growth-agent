@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { PresentMode } from "@/components/shell/PresentMode";
 import { Providers } from "@/components/shell/Providers";
 import { Toaster } from "@/components/ui/Toast";
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/client/product";
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${sans.variable} ${mono.variable}`}>
       <body>
+        <PresentMode />
         <Providers>{children}</Providers>
         <Toaster />
       </body>

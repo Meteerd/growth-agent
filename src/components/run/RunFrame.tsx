@@ -84,6 +84,7 @@ function RunHeader() {
           <NumberTicker value={cost} format="usd" />
         </span>
         <span
+          data-dev
           className="hidden items-center gap-1.5 font-mono text-[10.5px] text-bone-3 md:flex"
           title="Event stream connection"
         >
