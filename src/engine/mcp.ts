@@ -102,19 +102,17 @@ export const TOOLS: Tool[] = [
       const items = (
         await listEvidence(db, runId, { source: a.source as string | undefined, kind: a.kind as string | undefined })
       ).filter((e) => !q || `${e.title} ${e.text ?? ""} ${e.deconstruction?.hook ?? ""}`.toLowerCase().includes(q));
-      return items
-        .slice(0, Number(a.limit ?? 25))
-        .map((e) => ({
-          id: e.id,
-          source: e.source,
-          kind: e.kind,
-          title: e.title,
-          url: e.url,
-          author: e.author,
-          metrics: e.metrics,
-          deconstruction: e.deconstruction,
-          demo: e.demo,
-        }));
+      return items.slice(0, Number(a.limit ?? 25)).map((e) => ({
+        id: e.id,
+        source: e.source,
+        kind: e.kind,
+        title: e.title,
+        url: e.url,
+        author: e.author,
+        metrics: e.metrics,
+        deconstruction: e.deconstruction,
+        demo: e.demo,
+      }));
     },
   },
   {
