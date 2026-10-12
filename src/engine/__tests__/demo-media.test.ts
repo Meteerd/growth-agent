@@ -28,5 +28,6 @@ describe("demo media on a fresh clone (Lane B request)", () => {
     const info = await probe(urlToFile(r2!.url)!);
     expect([info.width, info.height]).toEqual([1080, 1920]);
     expect(await prepareDemoMedia(db)).toBe(0);
-  });
+    // renders 8 demo videos: under a full parallel `pnpm check` on a hot laptop this needs more than the default 120 s
+  }, 300_000);
 });
