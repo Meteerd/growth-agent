@@ -28,7 +28,7 @@ test("full journey: brand, run, consult, reverse-engineer, direction, studio, pa
 
   // enter: landing to portfolio to brand
   await page.goto("/");
-  await page.getByRole("link", { name: "portfolio of four live brands" }).click();
+  await page.getByRole("link", { name: "Open the live demo" }).first().click();
   await expect(page.getByTestId("brand-card-hound")).toBeVisible();
   await page.getByTestId("brand-card-hound").click();
   await expect(page.getByTestId("dossier")).toBeVisible();

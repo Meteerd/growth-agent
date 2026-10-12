@@ -470,6 +470,10 @@ function Cta() {
         <p className="max-w-[60ch] text-[14px] text-white/85">
           The demo shows recorded runs on the four brands. Nothing is posted and no money is spent without a human.
         </p>
+        <p className="max-w-[60ch] text-[14px] text-white/85">
+          <span className="font-semibold text-white">What&apos;s next:</span> a daily or monthly research refresh per
+          brand, so the plan keeps up with the market.
+        </p>
       </div>
     </section>
   );
