@@ -10,6 +10,10 @@ export const falClipCost = (sec: number) => 0.25 + Math.max(0, sec - 5) * 0.05;
 
 const headers = () => ({ Authorization: `Key ${process.env.FAL_KEY}`, "content-type": "application/json" });
 
+/** Circuit breaker: once fal says the account is locked (no balance), stop calling it in this process. */
+const g = globalThis as unknown as { __falLocked?: string };
+export const falLocked = () => g.__falLocked;
+
 interface QueueRes {
   request_id: string;
   status_url: string;
@@ -33,6 +37,7 @@ export async function imageToVideo(
   },
 ): Promise<{ file: string | null; mode: "live" | "demo"; usd: number; model: string }> {
   const dur = o.durationSec ?? 5;
+  if (g.__falLocked) throw new Error(`fal unavailable: ${g.__falLocked}`);
   const out = await callProvider(db, {
     provider: "fal",
     note: `image-to-video ${dur}s: ${o.prompt.slice(0, 50)}`,
@@ -42,23 +47,26 @@ export async function imageToVideo(
     live: async () => {
       const jpeg = await sharp(o.imageFile).resize(720, 1280, { fit: "cover" }).jpeg({ quality: 88 }).toBuffer();
       const image_url = `data:image/jpeg;base64,${jpeg.toString("base64")}`;
-      const sub = await okJson<QueueRes>(
-        await fetchRetry(`https://queue.fal.run/${FAL_I2V_MODEL()}`, {
-          method: "POST",
-          headers: headers(),
-          body: JSON.stringify({
-            prompt: o.prompt,
-            image_url,
-            duration: String(dur),
-            negative_prompt: "blur, distortion, warped hands, extra limbs, text, watermark",
-            cfg_scale: 0.5,
-          }),
-          signal: o.signal,
-          timeoutMs: 60_000,
-          retries: 1,
+      const res0 = await fetchRetry(`https://queue.fal.run/${FAL_I2V_MODEL()}`, {
+        method: "POST",
+        headers: headers(),
+        body: JSON.stringify({
+          prompt: o.prompt,
+          image_url,
+          duration: String(dur),
+          negative_prompt: "blur, distortion, warped hands, extra limbs, text, watermark",
+          cfg_scale: 0.5,
         }),
-        "fal submit",
-      );
+        signal: o.signal,
+        timeoutMs: 60_000,
+        retries: 1,
+      });
+      if (res0.status === 403 || res0.status === 402) {
+        const body = (await res0.text()).slice(0, 200);
+        if (/balance|locked|credit/i.test(body)) g.__falLocked = "account balance exhausted (top up at fal.ai)";
+        throw new Error(`fal submit HTTP ${res0.status}: ${body}`);
+      }
+      const sub = await okJson<QueueRes>(res0, "fal submit");
       const until = Date.now() + 12 * 60_000;
       for (;;) {
         if (Date.now() > until) throw new Error("fal: timed out waiting for the clip");

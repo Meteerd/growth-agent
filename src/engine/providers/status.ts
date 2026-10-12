@@ -3,6 +3,7 @@ import { PROVIDER_IDS, PROVIDER_INFO } from "@/contracts";
 import type { Db } from "../db/client";
 import { spentByProvider } from "../repo";
 import { budgetFor, isLive, keyPresent } from "./env";
+import { falLocked } from "./fal";
 
 /** Providers whose key was verified by scripts/check-keys.sh on 11 Oct (see docs/APIS.md). */
 const VERIFIED = new Set(["anthropic", "openai", "apify", "manus", "firecrawl", "fal", "youtube", "spiral"]);
@@ -20,13 +21,14 @@ export async function providerStatuses(db: Db): Promise<ProviderStatus[]> {
           ? "Key present; demo by default (scarce credits: smoke test + real-data pass only)"
           : "Key present; not in LIVE_PROVIDERS, demo data"
         : "No key: demo data (labelled)";
+    const locked = p === "fal" ? falLocked() : undefined;
     const s: ProviderStatus = {
       provider: p,
       mode: live ? "live" : "demo",
       keyPresent: key,
       verified: key && VERIFIED.has(p),
       spentUsd: Math.round((spent[p] ?? 0) * 10000) / 10000,
-      note,
+      note: locked ? `Unavailable: ${locked}` : note,
       label: info.label,
       usedFor: info.usedFor,
     };
