@@ -5,8 +5,9 @@ import { beforeAll, describe, expect, it } from "vitest";
 import type { Db } from "@/engine/db/client";
 import { buildFlagship } from "@/engine/flagship";
 import { exportShowcase, importShowcase } from "@/engine/live/showcase";
-import { getRun, listConcepts, listEvidence } from "@/engine/repo";
+import { getRun, listConcepts, listEvidence, listPacksByRun } from "@/engine/repo";
 import { seed } from "@/engine/seed";
+import { packZip } from "@/engine/services/packs";
 import { freshDb, runToEnd } from "@/engine/test-utils";
 
 let db: Db;
@@ -39,6 +40,11 @@ describe("showcase export/import", () => {
       // demo evidence never travels as "real"
       expect((await listEvidence(db2, runId)).every((e) => !e.demo)).toBe(true);
       expect(fs.existsSync(path.join(process.env.ASSETS_DIR!, "showcase/dynova-flagship.mp4"))).toBe(true);
+      // the flagship's pack zips with the video on the new machine too
+      const remake = (await listConcepts(db2, runId)).find((c) => c.blueprintId)!;
+      const pack = (await listPacksByRun(db2, runId)).find((p) => p.conceptId === remake.id && p.videoAssetId);
+      expect(pack).toBeTruthy();
+      expect((await packZip(db2, pack!.id)).files).toContain("video.mp4");
     } finally {
       delete process.env.SHOWCASE_DIR;
       delete process.env.RENDER_DIR;
