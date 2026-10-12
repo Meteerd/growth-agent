@@ -6,7 +6,7 @@ import { PRODUCT_NAME } from "@/lib/client/product";
 import { BlurText } from "./bits/BlurText";
 import { CountUp } from "./bits/CountUp";
 import { Magnet } from "./bits/Magnet";
-import { brands, clips, compliance, stats } from "./data";
+import { brands, camplan, clips, compliance, stats } from "./data";
 import { LoopVideo } from "./LoopVideo";
 import { UrlBar } from "./UrlBar";
 
@@ -275,11 +275,56 @@ function Stats() {
 }
 
 function Brands() {
+  const cp = camplan();
   return (
     <Section id="brands">
-      <Eyebrow>Four brands.</Eyebrow>
+      <Eyebrow>{cp ? "Five brands." : "Four brands."}</Eyebrow>
       <Heading text="Same engine. Different answers." />
       <ul className="mt-12 border-line border-t">
+        {cp && (
+          <li
+            data-testid="brand-camplan"
+            className="grid-cols-1 grid gap-6 border-line border-b py-8 md:grid-cols-[180px_minmax(0,1fr)_minmax(0,1fr)] md:gap-10"
+          >
+            <div className="aspect-[9/16] w-[160px] overflow-hidden rounded-[10px] bg-[#111] md:w-full">
+              <LoopVideo src={cp.video.src} poster={cp.video.poster} label={`${cp.name} ad`} />
+            </div>
+            <div>
+              <div className="flex items-center gap-3">
+                {/* biome-ignore lint/performance/noImgElement: the brand's own app icon */}
+                <img
+                  src={cp.logo}
+                  alt=""
+                  className="size-9 rounded-[8px] border border-line bg-white object-contain p-1"
+                />
+                <h3 className="font-semibold text-[28px] text-bone tracking-[-0.03em]">{cp.name}</h3>
+              </div>
+              <p className="mt-3 text-[16px] text-bone-2">{cp.oneLiner}</p>
+              <p className="mt-5 text-[15px] text-bone">
+                <span className="text-bone-3">Lead ad, English: </span>
+                {cp.title}
+              </p>
+              <p className="mt-2 text-[14px] text-bone-2 leading-relaxed">
+                {cp.ads} ads made for {cp.countries.join(", ")}. {cp.note}
+              </p>
+            </div>
+            <div>
+              <p className="font-semibold text-[12px] text-bone-3 uppercase tracking-[0.08em]">What the engine read</p>
+              <ol className="mt-3 flex flex-col gap-2">
+                {cp.research.map((r) => (
+                  <li key={r.label} className="flex items-center gap-3 text-[15px]">
+                    <span className="w-12 text-right font-mono text-[13px] text-bone">{r.count}</span>
+                    <span className="flex-1 text-bone-2">{r.label}</span>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-5 text-[14px] text-bone-2 leading-relaxed">
+                Plus {cp.competitorAds} live competitor ads from the Meta Ad Library, of which {cp.competitorWinners}{" "}
+                have run 45+ days or in 3+ variants: taken apart and fed into the next ads.
+              </p>
+            </div>
+          </li>
+        )}
         {brands().map((b) => (
           <li
             key={b.slug}

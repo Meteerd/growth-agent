@@ -231,3 +231,24 @@ export function carousel(slug: string) {
       .map((x) => ({ n: x.n, role: x.role, headline: x.headline, src: `/showcase/carousels/${slug}/${x.png}` })),
   };
 }
+
+/** Camplan (private brand; the founder approved its ads and research counts going public): public/showcase/camplan.json,
+ * written by Lane A from the run's evidence counts and the Apify competitor pull. No business data. */
+export function camplan() {
+  const f = path.resolve("public/showcase/camplan.json");
+  if (!fs.existsSync(f)) return undefined;
+  return JSON.parse(fs.readFileSync(f, "utf8")) as {
+    slug: string;
+    name: string;
+    logo: string;
+    oneLiner: string;
+    countries: string[];
+    video: { src: string; poster: string };
+    title: string;
+    research: { label: string; count: number }[];
+    competitorWinners: number;
+    competitorAds: number;
+    ads: number;
+    note: string;
+  };
+}

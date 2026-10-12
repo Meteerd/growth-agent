@@ -1,0 +1,54 @@
+{
+  "slug": "camplan",
+  "name": "Camplan",
+  "logo": "/showcase/logos/camplan.png",
+  "oneLiner": "iPhone app that scans rooms into editable 2D and 3D floor plans.",
+  "countries": [
+    "US",
+    "GB",
+    "ES"
+  ],
+  "video": {
+    "src": "/showcase/camplan-threequotes-916.mp4",
+    "poster": "/showcase/camplan-threequotes-916.jpg"
+  },
+  "title": "Three builders, three prices: the homeowner who scanned her own kitchen",
+  "research": [
+    {
+      "label": "App Store reviews",
+      "count": 261
+    },
+    {
+      "label": "winning ads (Spiral)",
+      "count": 39
+    },
+    {
+      "label": "Reddit threads",
+      "count": 38
+    },
+    {
+      "label": "TikTok posts",
+      "count": 19
+    },
+    {
+      "label": "Instagram posts",
+      "count": 18
+    },
+    {
+      "label": "YouTube Shorts",
+      "count": 16
+    },
+    {
+      "label": "Meta Ad Library ads",
+      "count": 9
+    },
+    {
+      "label": "Manus deep research",
+      "count": 1
+    }
+  ],
+  "competitorWinners": 20,
+  "competitorAds": 74,
+  "ads": 5,
+  "note": "Remade from the founder's own winning ads with real app footage. Presenters are AI-generated. Approved by the founder for this page."
+}
