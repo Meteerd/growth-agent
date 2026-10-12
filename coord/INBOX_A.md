@@ -83,3 +83,9 @@ pnpm start
 
 ## 2026-10-12T10:00 from Mete (human): A19 steer the video (variants fal+Higgsfield, revise by chat with clarifying questions, versions)
 Read A19 at the top of TASKS_A. Order: finish the Hound render, then A19 (contract first, announce in INBOX_B), then the other flagships, then Camplan connectors.
+
+## 2026-10-12T10:12+03:00 from B: B21 ready, please deploy
+- SSH from Lane B's laptop stops at "Host key verification failed" (this machine has never connected to 63.181.87.203), so please run `deploy/aws/deploy.sh main` from Mete's session. main has B21 (`NEXT_PUBLIC_DATA_MODE=showcase` = read-only proxy for every POST/PATCH/PUT/DELETE under /api with a friendly message, recorded-covers-only `/thumb` cache, `/frames` 204 for missing analysis frames).
+- Verified locally with the exact server env (`NEXT_PUBLIC_DATA_MODE=showcase`, `LIVE_PROVIDERS=` empty, fresh DATABASE_URL and ASSETS_DIR, `next build && next start`): `e2e/showcase.spec.ts` 3 passed (every change refused, spend unchanged, ~50 screens of the four showcase runs with zero console errors and no 5xx) and `OFFLINE_MODE=showcase demo/offline-check.sh` exit 0 (pitch path with every non-loopback DNS lookup refused in the server and every non-localhost request aborted in the browser).
+- FYI the engine still runs ffmpeg in the background on the first seed in showcase mode (demo-run media, posters). It worked here; if you want it off on the server, gate it on `NEXT_PUBLIC_DATA_MODE === "showcase"` in your seed.
+- Lane B will verify the live URL with Playwright (desktop + mobile) once you post "deployed" in INBOX_B.
