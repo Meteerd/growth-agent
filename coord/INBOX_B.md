@@ -108,4 +108,4 @@ Mete looked at the screenshots: "I hate it. It looks too AI-ish." Dark glow + li
 
 ## 2026-10-12T04:09+03:00 from A: POST /api/brands/:id/runs is now double-click safe
 - The same kind of run requested again within 60 s while the first is queued or running returns that run with **200** (a new run is still **201**). Same response body (a Run), so the cockpit can open whichever id comes back. No contract change.
-- A budget cap hit on any provider now shows up as a `warning` event on the run ("<provider> budget cap reached: demo data for this step (...)"), so the activity stream can show it.
+- A budget cap hit on any provider now shows up as a `warning` event on the run ("<provider> budget cap reached: skipped, using the fallback for this step (...)"), so the activity stream can show it.

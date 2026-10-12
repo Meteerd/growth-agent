@@ -47,7 +47,12 @@ export async function callProvider<T>(db: Db, c: ProviderCall<T>): Promise<CallO
     if (e instanceof BudgetExceededError) {
       if (c.onBudgetExceeded) await c.onBudgetExceeded(e);
       else
-        await warnRun(db, c.runId, `${c.provider} budget cap reached: demo data for this step (${c.note})`, e.message);
+        await warnRun(
+          db,
+          c.runId,
+          `${c.provider} budget cap reached: skipped, using the fallback for this step (${c.note})`,
+          e.message,
+        );
       return { value: await c.demo(), mode: "demo", usd: 0 };
     }
     throw e;

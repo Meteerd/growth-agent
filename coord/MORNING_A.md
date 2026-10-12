@@ -60,7 +60,7 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 
 ## Safety and quality rules added overnight (each has a test)
 - A live run never mixes demo data into real research: a provider that is not live is skipped with a warning (demo runs keep labelled demo data).
-- Any provider hitting its budget cap leaves a `warning` event on the run ("<provider> budget cap reached: demo data for this step").
+- Any provider hitting its budget cap leaves a `warning` event on the run ("<provider> budget cap reached: skipped, using the fallback for this step").
 - Double click on "start run" starts one run (same request within 60 s returns the active run).
 - Consultation: all questions skipped, duplicate posts and late answers behave (one resume, assumptions recorded, 409 after the run ends).
 - Video captions over 12 words are shortened by Claude before the compliance check; the fallback never cuts mid-phrase.
