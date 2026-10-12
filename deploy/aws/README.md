@@ -1,7 +1,8 @@
 # AWS deploy (read-only showcase)
 
 - Server: AWS Lightsail `nexus-demo`, eu-central-1 (Frankfurt), Ubuntu 24.04, 4 GB, static IP 63.181.87.203.
-- URL: https://63-181-87-203.sslip.io (Caddy, automatic HTTPS).
+- URLs: https://rekampols.xyz (primary, once DNS points here; www redirects) and https://63-181-87-203.sslip.io (always works). Caddy, automatic HTTPS.
+- DNS (Namecheap, Advanced DNS): A record `@` -> 63.181.87.203 and A record `www` -> 63.181.87.203; delete Namecheap's default parking/redirect records.
 - Access: SSH as `ubuntu` with Mete's key or Emir's GitHub keys. The server pulls the repo with a read-only deploy key.
 - No provider API keys live on the server. `deploy.sh` refuses to deploy if any are present. The site runs in `NEXT_PUBLIC_DATA_MODE=showcase` (read-only, recorded data + flagship videos).
 
