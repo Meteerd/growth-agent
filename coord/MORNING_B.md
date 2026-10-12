@@ -5,7 +5,7 @@ Written 12 Oct 2026, 02:10 +03, updated through the night (see the log at the bo
 ## The short version
 - Every screen in PRODUCT_SPEC section 4 works, in mock mode and against Lane A's real API routes.
 - The UI is the **v2 "cutting room"** design Mete asked for at 01:16 (paper, ink, one record-red accent, Inter Tight, real media first). The v1 dark/glow/lime/serif look is gone from every route; an automated audit (`e2e/bans.spec.ts`) proves it on all 14 routes.
-- `pnpm check` green, `pnpm e2e` green (89 passed, 10 live-only skipped), live parity spec green (10 passed), Lighthouse 97 on the landing page.
+- `pnpm check` green, `pnpm e2e` green (92 passed, 13 live-only skipped, 23 spec files), live parity spec green (10 passed), Lighthouse 97 on the landing page.
 - Lane B spent $0. It never calls a provider; live-mode checks ran with `LIVE_PROVIDERS` empty.
 
 ## How to run
@@ -61,7 +61,9 @@ E2E_DATA=live E2E_PORT=3200 pnpm exec playwright test e2e/live.spec.ts
 | Lab | `/lab`, `/lab/stream` | `lab-*.png` | mock-stream.spec (full scripted run with the consult pause) |
 | Full loop | all of the above | | journey.spec: brand, run, consult, reverse-engineer, direction, studio, packs, results in one session |
 
-Other things that exist: designed 404 and error boundary, loading/empty/error states on every screen, keyboard paths (consult letters, timeline arrows and Home/End, Enter submits, Esc closes), reduced motion respected (the playhead autoplay is skipped).
+Quality specs that also run in `pnpm e2e`: `bans.spec` (v2 hard bans on 14 routes), `quality.spec` (zero console errors and warnings on 14 routes, fit at 768 px, back/forward), `strings.spec` (44-character Turkish domain and long Slovak dossier text at 390 px), `a11y.spec` (keyboard-only landing to intake, visible focus, reduced motion), `present.spec` (BS1 `?present=1`), `palette.spec` (BS2 Cmd+K). Live-only: `live.spec` (read-only parity), `resilience.spec` (engine down with retry, slow network, stream drop and reconnect); `journey.spec` also passes with `E2E_DATA=live`.
+
+Other things that exist: Cmd+K palette (header "Jump to"), presentation mode (`?present=1`: no dev chrome, larger for a projector, replay speeds in the cockpit), designed 404 and error boundary, loading/empty/error states on every screen, keyboard paths (consult letters, timeline arrows and Home/End, Enter submits, Esc closes), reduced motion respected (the playhead autoplay is skipped).
 
 ## Mock vs live
 - **Mock** (`NEXT_PUBLIC_DATA_MODE=mock`): an in-browser store built from `@/contracts` fixtures; a scripted run plays in about 60 s (20 s in e2e) and pauses at the consultation until answers are posted. Mock state lasts one page load (client navigation keeps it). Mock never shows the placeholder video as a render.
