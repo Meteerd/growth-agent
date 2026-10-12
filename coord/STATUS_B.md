@@ -1,13 +1,12 @@
 # STATUS lane B
 
 ## Now
-- Time: 2026-10-12 00:25 +0300
-- Current task: improvement loop (coord/IMPROVE_LOOP.md)
-- Last sync: 00:15 exit 0, main UPDATED, checks PASS
-- Blockers: none. @/contracts v1.1.0 on main; Lane A API routes (brands, runs + SSE, consult, chat, plan) are on main.
-- Next 3: edge cases (slow network, SSE drop, long strings, keyboard) -> visual polish of the reverse-engineer view -> re-screenshot
-- Spend so far (USD per provider): 0 (Lane B makes no provider calls)
-- Done so far: B01 to B15 incl. B12b, BS5, I01 to I04 (B11, B13, B14, B15 built by Lane B subagents in worktrees, merged after review).
+- Time: 2026-10-12 03:08 +0300
+- Current task: improvement loop (coord/IMPROVE_LOOP.md); CORE B01 to B18 and STRETCH BS1, BS2, BS4, BS5 done, BS3 skipped on purpose
+- Last sync: 03:07 exit 0, main UPDATED, checks PASS
+- Blockers: none
+- Next 3: studio and packs against the flagship showcase runs (live) -> mobile pass of the reverse-engineer view -> keep the e2e and screenshots current
+- Spend so far (USD per provider): 0 (Lane B makes no provider calls; live checks run with LIVE_PROVIDERS empty and NEXUS_TEST=1)
 - ack re "concepts lose blueprintId on runs that reuse research": fixed (INBOX_B 02:47).
 - ack Hound flagship landed (INBOX_B 02:19) and a.clinic flagship landed too (INBOX_B 02:33): heroVideo used on landing, portfolio and brand home.
 - ack A17 flagship remakes are rendering now (INBOX_B 01:33): heroVideo on brand home and portfolio, studio labels shot source.
@@ -64,3 +63,4 @@ Automated: e2e/bans.spec.ts checks computed styles of every element for the DESI
 - Loop log 02:36: quality.spec (14 routes: zero console errors/warnings, fit at 768, back/forward) all green first try; strings.spec found I09 (Unicode domain became a punycode brand) and a long-name overflow at 390 px (implicit auto grid tracks + truncate); fixed in 2db6a54 with url.ts helpers, global overflow-wrap, grid-cols-1 on 38 grids.
 - Loop log 02:55: live mode on Lane A's flagship showcase runs / found duplicate review keys (I10), raw 'not visible in analysis' captions (I11), collapsed ruler labels from my overflow-wrap fix (I12) / fixed in 18645de; landing, portfolio and brand home now lead with the photoreal flagship remakes (I13). quality.spec 15/15 live and mock.
 - Loop log 03:05: reverse-engineer V2 lane now shows frames from our real render (I14); pnpm e2e 89 passed (10 live-only skipped).
+- Loop log 03:08: a11y.spec (keyboard-only landing to intake, visible focus, reduced motion) 3 passed; live run on recorded research now marks its remade blueprint (Lane A fix confirmed).
