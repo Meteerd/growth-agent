@@ -50,7 +50,7 @@ function Eyebrow({ children }: { children: ReactNode }) {
 
 function Section({ id, children, className }: { id?: string; children: ReactNode; className?: string }) {
   return (
-    <section id={id} className={cn("border-line border-t", className ?? "bg-raised")}>
+    <section id={id} className={cn("border-line border-t", className ?? "bg-ink")}>
       <div className="mx-auto max-w-[1440px] border-line px-4 py-20 md:border-x md:px-10 md:py-28">{children}</div>
     </section>
   );
@@ -300,7 +300,7 @@ function Stats() {
     [s.languages.length, `languages: ${s.languages.join(", ")}`],
   ];
   return (
-    <section className="border-line border-t bg-raised">
+    <section className="border-line border-t bg-ink">
       <div className="mx-auto grid max-w-[1440px] grid-cols-2 border-line md:grid-cols-5 md:border-x">
         {cells.map(([n, label], i) => (
           <div
@@ -489,7 +489,7 @@ export function Site() {
         <BuiltWith />
         <Cta />
       </main>
-      <footer className="border-line border-t bg-raised">
+      <footer className="border-line border-t bg-ink">
         <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-4 px-4 py-8 text-[13px] text-bone-2 md:px-10">
           <Wordmark />
           <p>Built at 10X Your Brand (Slush&apos;D x Manus), Istanbul, 12 Oct 2026.</p>

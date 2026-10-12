@@ -9,8 +9,8 @@ test.describe("portfolio and enter", () => {
 
   test("create a brand from the landing page and see it in the portfolio", async ({ page }) => {
     await page.goto("/");
-    await page.getByLabel("Brand website").fill("example-dogs.com");
-    await page.getByRole("button", { name: "Start" }).click();
+    await page.getByLabel("Your brand's website").fill("example-dogs.com");
+    await page.getByRole("button", { name: "Take it apart" }).click();
     await expect(page).toHaveURL(/\/brands\/new\?url=/);
     await expect(page.getByTestId("intake-stream")).toBeVisible();
     await expect(page.getByTestId("intake-done")).toBeVisible({ timeout: 20_000 });

@@ -15,7 +15,7 @@ export function Showcase() {
   });
   return (
     <>
-      <header className="border-line border-b bg-raised">
+      <header className="border-line border-b bg-ink">
         <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 md:px-10">
           <Wordmark />
           <nav className="flex items-center gap-2 text-[14px]">
@@ -28,7 +28,7 @@ export function Showcase() {
           </nav>
         </div>
       </header>
-      <main className="bg-raised">
+      <main className="bg-ink">
         <section className="mx-auto max-w-[1440px] border-line px-4 py-16 md:border-x md:px-10 md:py-20">
           <p className="font-semibold text-[12px] text-signal uppercase tracking-[0.1em]">Results.</p>
           <h1 className="mt-4 max-w-[18ch] font-semibold text-[clamp(2.6rem,6vw,5.6rem)] text-bone leading-[0.95] tracking-[-0.045em]">

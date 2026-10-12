@@ -30,22 +30,32 @@ export function flagship(slug: string) {
   return { src: `/renders/${name}.mp4`, poster: `/showcase/posters/${slug}.jpg`, dubs };
 }
 
-/** Extra short clips Lane A makes for the landing (public/showcase/*.mp4, poster beside each as .jpg). */
+/** Short clips Lane A makes for the landing (public/showcase/index.json). Talking clips are AI-generated presenters
+ * and say so on the tile. */
 export function clips() {
-  const dir = path.resolve("public/showcase");
-  if (!fs.existsSync(dir)) return [];
-  return fs
-    .readdirSync(dir)
-    .filter((f) => f.endsWith(".mp4"))
-    .sort()
-    .map((f) => {
-      const jpg = f.replace(/\.mp4$/, ".jpg");
-      return {
-        src: `/showcase/${f}`,
-        poster: fs.existsSync(path.join(dir, jpg)) ? `/showcase/${jpg}` : undefined,
-        label: f.replace(/\.mp4$/, "").replace(/[-_]+/g, " "),
-      };
-    });
+  const f = path.resolve("public/showcase/index.json");
+  if (!fs.existsSync(f)) return [];
+  type Clip = {
+    id: string;
+    brand: string;
+    label: string;
+    aiPresenter?: boolean;
+    files: { vertical?: string; poster?: string };
+  };
+  return (JSON.parse(fs.readFileSync(f, "utf8")) as Clip[]).flatMap((c) =>
+    c.files.vertical
+      ? [
+          {
+            id: c.id,
+            src: c.files.vertical,
+            poster: c.files.poster,
+            label: c.label.split(":")[0],
+            ai: !!c.aiPresenter,
+            note: c.label.split(": ")[1],
+          },
+        ]
+      : [],
+  );
 }
 
 export function brands() {

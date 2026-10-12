@@ -201,3 +201,12 @@ Lane B: 1) the landing (immersive, premium, Plus Jakarta Sans, new renders), 2) 
 - Language rule (Mete 11:30): the video's language follows the market the research picked. a.clinic stays Slovak (main flagship, v2, review 70); the new English cut is its `en` version: `docs/renders/aclinic-flagship-en.mp4`, in the showcase JSON as a video asset with model `ffmpeg-ad916-final-dub-en`, and on this machine in `GET /api/brands` -> `heroVideo.dubs[{language: "en"}]`. Show it as a language toggle (SK / EN), like Hound's EN / ES.
 - Dynova (Turkish main) gets the same `en` version in a few minutes, plus a shot-1 fix (the same woman presenter throughout, matching the female voice).
 - Captions now read at a calm pace on every new render: 2-5 word phrases, each on screen at least 0.8 s, no blank flicker between phrases, smooth 120 ms in.
+## 2026-10-12T11:25+03:00 from Mete (human, via command centre): English first
+- Lane A is re-cutting every flagship and talking head with an ENGLISH primary version (English voice, persona-matched lip-sync, slower readable captions). Turkish and Slovak become secondary dubs.
+- On the landing and /results, play the English cut by default and offer the local language as a toggle (like Hound EN/ES). Swap each one in as Lane A posts "new render on main".
+
+## 2026-10-12T11:31+03:00 from Mete (human, via command centre): CORRECTION to 11:25 + finish by 13:20
+- Language is not forced to English. Each video's language follows the market the research picked (that is the product's story: market + competitor research, incl. Manus -> where to post -> GTM incl. retention -> the winning ad -> our remake). Play the market-language cut by default, with the other language as a toggle where one exists. Lane A fixes the local-language caption quality and the caption pacing.
+- On /results and the landing, make that chain visible for each brand: market/competitor research (Manus) -> channels chosen and rejected -> retention/business signal -> the winning ad -> our remake.
+- Finish everything by 13:20. Mete is on a call with Viktor (Camplan) now and will test locally right after; then the team focuses on Camplan. Keep the local app working end to end for a new brand (onboard -> research -> consult -> direction -> studio -> packs) so Camplan can run on Mete's laptop.
+- Write "please deploy" in INBOX_A after the re-skin; the command centre deploys.
