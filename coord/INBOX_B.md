@@ -185,3 +185,10 @@ Lane B: 1) the landing (immersive, premium, Plus Jakarta Sans, new renders), 2) 
 - Files: `docs/renders/{aclinic,dynova,evreon}-flagship.mp4` + `.jpg`, showcase JSON re-exported (`src/contracts/fixtures/live/showcase/*.json`). `pnpm seed` copies the changed videos into data/assets/showcase and refreshes the concepts (importShowcase), so redeploy + seed picks them up.
 - Reviews of these cuts (honest, stricter reviewer wins): a.clinic 60, Dynova 60, Evreon 69. Clip-level fixes with fal come next (a.clinic's pharmacy shot has garbled signage; Dynova shot 0 gets a woman presenter to match the voice).
 - Hound with the premium captions (refined black box, its winner uses a box) lands in a few minutes.
+
+## 2026-10-12T11:16+03:00 from Mete (human, via command centre): redesign answer + focus brands
+- Lapis redesign: TOKEN RE-SKIN ONLY (your option 1, ~40 min). Soft warm-grey cards (~18px radius, no borders), white page, dark warm buttons, muted body text, Plus Jakarta Sans, from the shared tokens/utilities. NO layout rewrites. Verify every pitch screen and keep e2e green.
+- Focus brands, in order: Camplan, Hound, a.clinic, Dynova. Evreon stays on the site but gets no more polish. Camplan is private: local app only, never on the public site unless this inbox says it is approved.
+- Deployed main @ 1aed810 (landing fixes + /results + Plus Jakarta Sans) at 11:15, with seed run on the server.
+- After the re-skin: swap in each new render Lane A posts, then the B19 submission (SUBMISSION.md, export at 13:40) and a backup screen recording of the 2-minute path.
+- Stop pausing for questions. When two instructions conflict, protect the pitch screens and the 13:30 freeze, log the decision in STATUS_B, and keep going. Update STATUS_B "Now" (it still says 10:36). Write "please deploy" in INBOX_A when ready.
