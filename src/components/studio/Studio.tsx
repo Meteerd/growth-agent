@@ -21,7 +21,7 @@ import { CHANNEL_LABELS, type Concept, type RenderTier, type RunEvent, type Shot
 import { getClient } from "@/lib/client/api";
 import { referenceImages } from "@/lib/client/brandAssets";
 import { cn } from "@/lib/client/cn";
-import { formatUsd, unquote } from "@/lib/client/format";
+import { formatUsd, secs, unquote } from "@/lib/client/format";
 import { qk, useBrand, useConceptAssets } from "@/lib/client/queries";
 
 const VIDEO_FORMATS = new Set([
@@ -413,7 +413,7 @@ function ShotCard({
         />
         {pending && <div className="skeleton absolute inset-0 rounded-none" />}
         <span className="absolute top-1.5 right-1.5 rounded-[4px] bg-ink/75 px-1 font-mono text-[10px] text-bone">
-          {s.durationSec}s
+          {secs(s.durationSec)}
         </span>
         {s.onScreenText && !burned && (
           <span className="absolute inset-x-1.5 bottom-1.5 line-clamp-2 rounded-[4px] bg-ink/70 px-1.5 py-1 text-[10.5px] leading-tight">

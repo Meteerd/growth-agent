@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { useRunCtx } from "@/components/run/RunContext";
 import { Badge, ComplianceBadge, DemoBadge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -11,7 +11,7 @@ import { EmptyState, ErrorState } from "@/components/ui/States";
 import { type Blueprint, CHANNEL_LABELS, type Concept, type Review, type Shot } from "@/contracts";
 import { referenceImages } from "@/lib/client/brandAssets";
 import { cn } from "@/lib/client/cn";
-import { formatCount, SOURCE_LABELS, unquote } from "@/lib/client/format";
+import { formatCount, SOURCE_LABELS, secs, unquote } from "@/lib/client/format";
 import { PURPOSE_COLOR, PURPOSE_LABEL } from "@/lib/client/purpose";
 import { useBlueprint, useBrand, useConceptAssets, useConceptReviews, useConcepts } from "@/lib/client/queries";
 import { alignRemake, keyframeUrls, latestReview, scoreTone, shotAt, shotScore } from "./align";
@@ -149,6 +149,7 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
                 }
                 purpose={shot.purpose}
                 className="h-full w-full"
+                textTop
               />
               {seen(shot.onScreenText) && <Caption text={shot.onScreenText!} />}
             </Viewer>
@@ -163,6 +164,7 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
                     fallback={ours.visualPrompt}
                     purpose={shot.purpose}
                     className="h-full w-full"
+                    textTop
                   />
                   {ours.onScreenText && <Caption text={ours.onScreenText} />}
                 </>
@@ -243,7 +245,7 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
               <Stat k="vs account median" v={`${ev.metrics.outlierScore.toFixed(1)}x`} />
             )}
             {ev?.metrics.daysRunning != null && <Stat k="Running" v={`${ev.metrics.daysRunning} days`} />}
-            <Stat k="Length" v={`${bp.durationSec}s`} />
+            <Stat k="Length" v={secs(bp.durationSec)} />
             <Stat k="Cuts" v={`${bp.pacing.cutsPer10s} per 10s`} />
             <Stat k="Structure" v={bp.structure.replaceAll("_", " ")} />
           </dl>
@@ -276,7 +278,7 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
       <div className="grid-cols-1 grid gap-4 lg:grid-cols-3">
         <ShotCard
           title={`Their shot ${idx + 1}`}
-          sub={`${shot.t0}s to ${shot.t1}s`}
+          sub={`${secs(shot.t0)} to ${secs(shot.t1)}`}
           purpose={shot.purpose}
           testId="their-shot"
           rows={[
@@ -300,7 +302,7 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
           {remake && (
             <p className="text-[13px] text-bone-2">
               Remake: {remake.title}, {CHANNEL_LABELS[remake.channel]},{" "}
-              {remake.shots.reduce((s, x) => s + x.durationSec, 0)}s.{" "}
+              {secs(remake.shots.reduce((s, x) => s + x.durationSec, 0))}.{" "}
               <Link
                 href={`/runs/${run?.id ?? ""}/studio`}
                 className="text-bone underline decoration-bone-4 underline-offset-4"
@@ -443,7 +445,7 @@ function ShotCard({
   );
 }
 
-function Rows({ rows }: { rows: readonly (readonly [string, string | undefined])[] }) {
+function Rows({ rows }: { rows: readonly (readonly [string, ReactNode | undefined])[] }) {
   return (
     <dl className="mt-3 flex flex-col gap-1.5 text-[13px]">
       {rows
@@ -478,7 +480,7 @@ function OurShot({
     <Panel tone="flat" className="p-4" data-testid="our-shot">
       <Head
         title={`Our shot ${shot.idx + 1}`}
-        sub={`${shot.durationSec}s`}
+        sub={secs(shot.durationSec)}
         purpose={purpose}
         aside={
           sc ? (
@@ -488,7 +490,7 @@ function OurShot({
       />
       <Rows
         rows={[
-          ["Visual", shot.visualPrompt],
+          ["Visual", <Clamp key={shot.idx} text={shot.visualPrompt} />],
           ["On screen", seen(shot.onScreenText)],
           ["Voiceover", seen(shot.voiceover)],
         ]}
@@ -503,6 +505,24 @@ function OurShot({
         </ul>
       )}
     </Panel>
+  );
+}
+
+/** Engine prompts can run to a dozen lines once repair notes are appended; show five, expand on request. */
+function Clamp({ text }: { text: string }) {
+  const [open, setOpen] = useState(false);
+  if (text.length < 320) return text;
+  return (
+    <>
+      <span className={cn(!open && "line-clamp-5")}>{text}</span>
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="mt-1 block text-[12px] text-bone-2 underline decoration-bone-4 underline-offset-4"
+      >
+        {open ? "Show less" : "Show the full prompt"}
+      </button>
+    </>
   );
 }
 
