@@ -1,2044 +1,18 @@
 {
-  "recordedAt": "2026-10-11T21:33:17.677Z",
+  "recordedAt": "2026-10-12T08:43:29.418Z",
   "actor": "clockworks/tiktok-scraper",
   "input": {
     "hashtags": [
-      "dogtraining",
-      "separationanxiety",
-      "perrosdetiktok"
+      "dogseparationanxiety"
     ],
     "searchQueries": [
-      "dog cries when I leave",
-      "puppy barking alone at home"
+      "dog separation anxiety training"
     ],
-    "resultsPerPage": 9,
+    "resultsPerPage": 4,
     "shouldDownloadVideos": false,
     "shouldDownloadCovers": false
   },
   "items": [
-    {
-      "id": "7695093154218904864",
-      "text": "Lustige Momente mit Hunden😂😂#dog #funnydogs #funnypets #lustigeclips ##viral ",
-      "textLanguage": "de",
-      "createTime": 1791653497,
-      "createTimeISO": "2026-10-10T17:31:37.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "7693142031258436630",
-        "name": "pawloop2",
-        "profileUrl": "https://www.tiktok.com/@pawloop2",
-        "nickName": "PawLoop",
-        "verified": false,
-        "signature": "Funny Dogs and Cats🐕🐈‍⬛😂\nMy Videos will make you laugh😂😂\nFollow me for more😊\n🎯- 1.000🏆",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-avt-0068-euttp/61950007648c3c188d54664c2a2858e5~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=303c6edb&x-expires=1791925200&x-signature=iSyB2fHY6X5WtD61ZK3T3pjR318%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 4,
-        "friends": 0,
-        "fans": 31,
-        "heart": 853,
-        "video": 4,
-        "digg": 31,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-avt-0068-euttp/61950007648c3c188d54664c2a2858e5~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=303c6edb&x-expires=1791925200&x-signature=iSyB2fHY6X5WtD61ZK3T3pjR318%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "Monkeys Spinning Monkeys（纯享版）",
-        "musicAuthor": "Fmoel",
-        "musicOriginal": false,
-        "musicAlbum": "Lost In Winter（迷失在冬天）",
-        "playUrl": "https://sf19.tiktokcdn-us.com/obj/tos-alisg-ve-2774/oECAQUjSIVoMfBUBzjDgXI9XN0AZEEFg7m2t5e",
-        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oIDBd6G4LAhdpASnAzvCFCfaK0eEEGAeARAW5I~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oIDBd6G4LAhdpASnAzvCFCfaK0eEEGAeARAW5I~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "musicId": "7553100640827541546"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@pawloop2/video/7695093154218904864",
-      "videoMeta": {
-        "height": 1024,
-        "width": 576,
-        "duration": 63,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast2a-p-0037-euttp/o4Wwd1ADfABqAOB7CniKsoIo9iIdTZSAATiEB3~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=xz62YRuDscxh3Fj5ofXTzhfupVU%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/6f09536963c02aff1c2512e8ce89aed9/6acea3d1/video/tos/useast2a/tos-useast2a-v-0037-euttp/ee565f0faa0d4286abbf7a04eb3b1495/?a=1988&bti=ODszNWYuMDE6&&bt=3852&ft=4KLMeMzm8Zmo02P9ba4jVy6fdpWrKsd.&mime_type=video_mp4&rc=MzN4PGo5cjY6ZTMzZjczNUBpMzN4PGo5cjY6ZTMzZjczNUA1Nm1mMmRzYDJhLS1kMTNzYSM1Nm1mMmRzYDJhLS1kMTNzcw%3D%3D&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00050000",
-            "source": "ASR",
-            "sourceUnabbreviated": "automatic speech recognition",
-            "version": "1:big_caption",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/6f09536963c02aff1c2512e8ce89aed9/6acea3d1/video/tos/useast2a/tos-useast2a-v-0037-euttp/ee565f0faa0d4286abbf7a04eb3b1495/?a=1988&bti=ODszNWYuMDE6&&bt=3852&ft=4KLMeMzm8Zmo02P9ba4jVy6fdpWrKsd.&mime_type=video_mp4&rc=MzN4PGo5cjY6ZTMzZjczNUBpMzN4PGo5cjY6ZTMzZjczNUA1Nm1mMmRzYDJhLS1kMTNzYSM1Nm1mMmRzYDJhLS1kMTNzcw%3D%3D&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00050000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast2a-p-0037-euttp/o4Wwd1ADfABqAOB7CniKsoIo9iIdTZSAATiEB3~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=xz62YRuDscxh3Fj5ofXTzhfupVU%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 129,
-      "shareCount": 17,
-      "playCount": 6242,
-      "collectCount": 16,
-      "commentCount": 4,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "dog",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "funnydogs",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "funnypets",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "lustigeclips",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "viral",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "perrosdetiktok",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "perrosdetiktok",
-        "views": 4000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7695225614395051294",
-      "text": "Witches 🧙🧙‍♀️🧙‍♂️\n#pomeranian #funnyvideos #dog #fun #halloween ",
-      "textLanguage": "en",
-      "createTime": 1791684346,
-      "createTimeISO": "2026-10-11T02:05:46.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "7579521873215800334",
-        "name": "gangsterspitz",
-        "profileUrl": "https://www.tiktok.com/@gangsterspitz",
-        "nickName": "Gangsterspitz",
-        "verified": false,
-        "signature": "Gangster Spitz 🐾\nThe smallest gangster on Tik Tok🕶️\nFollow for a new crazy story every day🖤",
-        "bioLink": null,
-        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/2642a3ba7de4d6a7473e24b4422e3163~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=30581fe2&x-expires=1791925200&x-signature=1sIdxxQK%2BOYV4bvG7DXPb1jn0uo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 7,
-        "friends": 0,
-        "fans": 91000,
-        "heart": 2700000,
-        "video": 426,
-        "digg": 44,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/2642a3ba7de4d6a7473e24b4422e3163~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=30581fe2&x-expires=1791925200&x-signature=1sIdxxQK%2BOYV4bvG7DXPb1jn0uo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "оригинальный звук",
-        "musicAuthor": "Gangsterspitz",
-        "musicOriginal": true,
-        "playUrl": "https://v19.tiktokcdn-us.com/2711681cecac3f16ceb850c55d064005/6acc5501/video/tos/useast8/tos-useast8-v-27dcd7-tx2/o8vKcfXKDAtEBCAEAa2iB9Aq7iZiEkEV1odtAD/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThBWmOGXq8Zmo&mime_type=audio_mpeg&rc=Mzs7b3A5cnhoZTMzaTU8NEBpMzs7b3A5cnhoZTMzaTU8NEBiNF9qMmRzcTJhLS1kMTJzYSNiNF9qMmRzcTJhLS1kMTJzcw%3D%3D&vvpl=1&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00070000",
-        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/2642a3ba7de4d6a7473e24b4422e3163~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=30581fe2&x-expires=1791925200&x-signature=1sIdxxQK%2BOYV4bvG7DXPb1jn0uo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/2642a3ba7de4d6a7473e24b4422e3163~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=30581fe2&x-expires=1791925200&x-signature=1sIdxxQK%2BOYV4bvG7DXPb1jn0uo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7695228706000358174"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@gangsterspitz/video/7695225614395051294",
-      "videoMeta": {
-        "height": 1280,
-        "width": 720,
-        "duration": 15,
-        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/o8AAB7IautERsIiKP5K0uPIzJCis8BCAryVyv~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=dtD8D0yfqhg9by5pHMlj92133ps%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "720p",
-        "format": "mp4",
-        "subtitleLinks": null,
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/o8AAB7IautERsIiKP5K0uPIzJCis8BCAryVyv~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=dtD8D0yfqhg9by5pHMlj92133ps%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 3023,
-      "shareCount": 837,
-      "playCount": 185800,
-      "collectCount": 503,
-      "commentCount": 65,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "pomeranian",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "funnyvideos",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dog",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "fun",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "halloween",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "perrosdetiktok",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "perrosdetiktok",
-        "views": 4000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7695062425258822913",
-      "text": "🥹\n\n#shihtzu #perro #perritos #shihtzusoftiktok ",
-      "textLanguage": "un",
-      "createTime": 1791646348,
-      "createTimeISO": "2026-10-10T15:32:28.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "7354088247049962501",
-        "name": "appa_elshihtzu",
-        "profileUrl": "https://www.tiktok.com/@appa_elshihtzu",
-        "nickName": "appa_shihtzurp",
-        "verified": false,
-        "signature": "Un Shihtzu en el mundo de cinco michis 🐶⚡️✨",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/ec57371329f3f10b22726b9777238b01~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=a6ed750f&x-expires=1791925200&x-signature=Q3%2FgZz2zLu%2BeegGH9H7UVf8sP9E%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 81,
-        "friends": 0,
-        "fans": 15700,
-        "heart": 955600,
-        "video": 323,
-        "digg": 1247,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/ec57371329f3f10b22726b9777238b01~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=a6ed750f&x-expires=1791925200&x-signature=Q3%2FgZz2zLu%2BeegGH9H7UVf8sP9E%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "original sound",
-        "musicAuthor": "ARIA VEGA",
-        "musicOriginal": true,
-        "playUrl": "https://v16m.tiktokcdn-us.com/a78f7230d086025b5711aab65da75eda/6acc5507/video/tos/alisg/tos-alisg-v-27dcd7/o0eDAkVIJD9GYCQCAZgRQeIBLoETFASfhAkUAI/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThBWmOGXq8Zmo&mime_type=audio_mpeg&rc=M3g0M3k5cjY7ZDMzODU8NEBpM3g0M3k5cjY7ZDMzODU8NEBkMWFpMmQ0NmZhLS1kMS1zYSNkMWFpMmQ0NmZhLS1kMS1zcw%3D%3D&vvpl=1&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00078000",
-        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/84df926410b666bd007ee44b7a7acf23~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=dc697335&x-expires=1791925200&x-signature=q9IoMjn9Kurwr%2BPusyXL2cxD%2F78%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/84df926410b666bd007ee44b7a7acf23~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=dc697335&x-expires=1791925200&x-signature=q9IoMjn9Kurwr%2BPusyXL2cxD%2F78%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7684412596436503304"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@appa_elshihtzu/video/7695062425258822913",
-      "videoMeta": {
-        "height": 1024,
-        "width": 576,
-        "duration": 13,
-        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oMVsg5EIIBgq33yfNWFcKxDObookBEAfDBlREh~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=uFdiK%2FeRmhEhV0EITu%2Bv8W68Rj8%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": null,
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oMVsg5EIIBgq33yfNWFcKxDObookBEAfDBlREh~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=uFdiK%2FeRmhEhV0EITu%2Bv8W68Rj8%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 5515,
-      "shareCount": 845,
-      "playCount": 43900,
-      "collectCount": 180,
-      "commentCount": 35,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "shihtzu",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "perro",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "perritos",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "shihtzusoftiktok",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "perrosdetiktok",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "perrosdetiktok",
-        "views": 4000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7694767796059671841",
-      "text": "Time for fun \n\n#dog #chihuahua ",
-      "textLanguage": "en",
-      "createTime": 1791577743,
-      "createTimeISO": "2026-10-09T20:29:03.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "7341375798837232673",
-        "name": "tinychi.bigmood",
-        "profileUrl": "https://www.tiktok.com/@tinychi.bigmood",
-        "nickName": "Chihuahua The Dog",
-        "verified": false,
-        "signature": "Tiny dog. Big drama.\nI voice her life — follow for daily chaos & cuteness",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/2b270bef9c521c3955cdc628d03df7b5~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=395c1b48&x-expires=1791925200&x-signature=%2F7pq%2FPUJrU0sLZnki19w0d4fO%2Bg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 157,
-        "friends": 0,
-        "fans": 25200,
-        "heart": 405100,
-        "video": 657,
-        "digg": 2248,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/2b270bef9c521c3955cdc628d03df7b5~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=395c1b48&x-expires=1791925200&x-signature=%2F7pq%2FPUJrU0sLZnki19w0d4fO%2Bg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "original sound",
-        "musicAuthor": "Chihuahua The Dog",
-        "musicOriginal": true,
-        "playUrl": "https://v16m.tiktokcdn-us.com/92041cb5f706b698b73c33bcfab1494b/6acc54fc/video/tos/useast2a/tos-useast2a-v-2370-euttp/oY0IQvyIL3AnDequYFUQUXEASD0SfHCAJAB6Gm/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThBWmOGXq8Zmo&mime_type=audio_mpeg&rc=ajNpdXQ5cjduZTMzZjU8NUBpajNpdXQ5cjduZTMzZjU8NUBfaDAvMmQ0cTFhLS1kMTNzYSNfaDAvMmQ0cTFhLS1kMTNzcw%3D%3D&vvpl=1&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00070000",
-        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/2b270bef9c521c3955cdc628d03df7b5~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=395c1b48&x-expires=1791925200&x-signature=%2F7pq%2FPUJrU0sLZnki19w0d4fO%2Bg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/2b270bef9c521c3955cdc628d03df7b5~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=395c1b48&x-expires=1791925200&x-signature=%2F7pq%2FPUJrU0sLZnki19w0d4fO%2Bg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7694767799595584289"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@tinychi.bigmood/video/7694767796059671841",
-      "videoMeta": {
-        "height": 1022,
-        "width": 576,
-        "duration": 10,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast2a-p-0037-euttp/ooGFKEBXIsRmO50aBfyPSQUjqRPnPDeqyDEQAD~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=FBPzUSVHIKk331hreoGUAZbGMxI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": null,
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast2a-p-0037-euttp/ooGFKEBXIsRmO50aBfyPSQUjqRPnPDeqyDEQAD~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=FBPzUSVHIKk331hreoGUAZbGMxI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 2541,
-      "shareCount": 2232,
-      "playCount": 200400,
-      "collectCount": 243,
-      "commentCount": 78,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "dog",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "chihuahua",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "perrosdetiktok",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "perrosdetiktok",
-        "views": 4000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7695441199196310798",
-      "text": "Maria Y Firulais aprendiendo a nadar en la piscinita. Firulais mueve las patica’ como si estuviera cruzando el Caribe, pero todavía tiene los pies pegados al piso.\n#MariaYFirulais #perro #comedia #humor #chiwawa #chihuahua #Firulais",
-      "textLanguage": "es",
-      "createTime": 1791734550,
-      "createTimeISO": "2026-10-11T16:02:30.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "7522572192619349047",
-        "name": "mariayfirulais",
-        "profileUrl": "https://www.tiktok.com/@mariayfirulais",
-        "nickName": "MariaYFirulais",
-        "verified": false,
-        "signature": "Soy María este es mi perrito Firulais,",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/1155055dace137a9db00d52a76d53d8e~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=fd922689&x-expires=1791925200&x-signature=bp4N3v5RWCXyWEjUjr41TMdD%2FjM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 0,
-        "friends": 0,
-        "fans": 26600,
-        "heart": 126800,
-        "video": 73,
-        "digg": 68,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/1155055dace137a9db00d52a76d53d8e~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=fd922689&x-expires=1791925200&x-signature=bp4N3v5RWCXyWEjUjr41TMdD%2FjM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "original sound - MariaYFirulais",
-        "musicAuthor": "MariaYFirulais",
-        "musicOriginal": true,
-        "playUrl": "https://v19.tiktokcdn-us.com/1d48b2b495994d0e4cdf0026e2cef352/6acc552e/video/tos/useast5/tos-useast5-v-27dcd7-tx/oQy7sDybMCSbwqOUrDsE7bMsDIDJg3FfqLBXRf/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThBWmOGXq8Zmo&mime_type=audio_mpeg&rc=Njw1aDYzOTw2NmRnN2c1M0BpamR3NW85cjl1ZTMzZzU8NEAvLjFeYGIzXi8xYzBgLTUvYSM1a3NwMmRzMzJhLS1kMS9zcw%3D%3D&vvpl=1&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e000d0000",
-        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/1155055dace137a9db00d52a76d53d8e~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=fd922689&x-expires=1791925200&x-signature=bp4N3v5RWCXyWEjUjr41TMdD%2FjM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/1155055dace137a9db00d52a76d53d8e~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=fd922689&x-expires=1791925200&x-signature=bp4N3v5RWCXyWEjUjr41TMdD%2FjM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7695441295703018254"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@mariayfirulais/video/7695441199196310798",
-      "videoMeta": {
-        "height": 1280,
-        "width": 720,
-        "duration": 60,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/oMAisvAAiLg5anDEWovA3yBAH4lIusYsNkFlb~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=5EwlhEpS94u913O7knOqiUrSWMA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "720p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "spa-ES",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/14b01619dbde0dceb74ea3730014fd94/6acea3ce/video/tos/useast5/tos-useast5-v-0068-tx/0a9f59de09764c809397d1e5eba0d01f/?a=1988&bti=ODszNWYuMDE6&&bt=16863&ft=4KLMeMzm8Zmo02P9ba4jVy6fdpWrKsd.&mime_type=video_mp4&rc=amp0dnQ5cnB1ZTMzZzgzNEBpamp0dnQ5cnB1ZTMzZzgzNEAybmxmMmRrMTJhLS1kLy9zYSMybmxmMmRrMTJhLS1kLy9zcw%3D%3D&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00050000",
-            "source": "ASR",
-            "sourceUnabbreviated": "automatic speech recognition",
-            "version": "1:whisper_lid",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/14b01619dbde0dceb74ea3730014fd94/6acea3ce/video/tos/useast5/tos-useast5-v-0068-tx/0a9f59de09764c809397d1e5eba0d01f/?a=1988&bti=ODszNWYuMDE6&&bt=16863&ft=4KLMeMzm8Zmo02P9ba4jVy6fdpWrKsd.&mime_type=video_mp4&rc=amp0dnQ5cnB1ZTMzZzgzNEBpamp0dnQ5cnB1ZTMzZzgzNEAybmxmMmRrMTJhLS1kLy9zYSMybmxmMmRrMTJhLS1kLy9zcw%3D%3D&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00050000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/oMAisvAAiLg5anDEWovA3yBAH4lIusYsNkFlb~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=5EwlhEpS94u913O7knOqiUrSWMA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 604,
-      "shareCount": 34,
-      "playCount": 40600,
-      "collectCount": 120,
-      "commentCount": 19,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "perrosdetiktok",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "perrosdetiktok",
-        "views": 4000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7694777892953132302",
-      "text": "Chihuahua #FunnyDogs #DogTok #DogsOfTikTok #FunnyPets #ChihuahuaLife #PetComedy #FYP",
-      "textLanguage": "en",
-      "createTime": 1791586800,
-      "createTimeISO": "2026-10-09T23:00:00.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "7262366566754223147",
-        "name": "littlebarkco",
-        "profileUrl": "https://www.tiktok.com/@littlebarkco",
-        "nickName": "Little bark Co",
-        "verified": false,
-        "signature": "All kinds of cat and dog supplies\nUS FBT Warehouse | Fast Local Shipping\nTap here 👇🏻 to view all items",
-        "bioLink": null,
-        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/0d37365445741d52fb1a999016e2534d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=5fa8a7d0&x-expires=1791925200&x-signature=mdqYkY5%2BFyOvy%2F16%2FL7JMIj%2F6oU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 9,
-        "friends": 0,
-        "fans": 17000,
-        "heart": 151500,
-        "video": 130,
-        "digg": 8,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/0d37365445741d52fb1a999016e2534d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=5fa8a7d0&x-expires=1791925200&x-signature=mdqYkY5%2BFyOvy%2F16%2FL7JMIj%2F6oU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "original sound - Little bark Co",
-        "musicAuthor": "Little bark Co",
-        "musicOriginal": true,
-        "playUrl": "https://v19.tiktokcdn-us.com/e2c1271726d8212b2448606d39ee3582/6acc5501/video/tos/useast5/tos-useast5-v-27dcd7-tx/oQfEIKvjW6mt7tQLlQA3MqYowDimB1BKZ6BpLi/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThBWmOGXq8Zmo&mime_type=audio_mpeg&rc=ZGc3aTM6NDU7ZGU5NDtoOUBpMzg2bnQ5cm1vZTMzZzU8NEBeYzJiX2BiNjAxL2IuNS9jYSNfaTBlMmRjYzFhLS1kMS9zcw%3D%3D&vvpl=1&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e000f8000",
-        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/0d37365445741d52fb1a999016e2534d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=5fa8a7d0&x-expires=1791925200&x-signature=mdqYkY5%2BFyOvy%2F16%2FL7JMIj%2F6oU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/0d37365445741d52fb1a999016e2534d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=5fa8a7d0&x-expires=1791925200&x-signature=mdqYkY5%2BFyOvy%2F16%2FL7JMIj%2F6oU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7694777903619377933"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@littlebarkco/video/7694777892953132302",
-      "videoMeta": {
-        "height": 1280,
-        "width": 720,
-        "duration": 15,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/oMjiBadIPlMsiAviYAB0Vg427AkAJDVNlAAME~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=hXvaA2Rs7i078y%2FnzA5HSmWUMJU%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "720p",
-        "format": "mp4",
-        "subtitleLinks": null,
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/oMjiBadIPlMsiAviYAB0Vg427AkAJDVNlAAME~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=hXvaA2Rs7i078y%2FnzA5HSmWUMJU%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 43200,
-      "shareCount": 20300,
-      "playCount": 764500,
-      "collectCount": 2825,
-      "commentCount": 2629,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "perrosdetiktok",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "perrosdetiktok",
-        "views": 4000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7670723009568607495",
-      "text": "mucho me miran amiguitos 🐾haha\n#dogsoftiktok #mascotas #humor #perrostiktokers ",
-      "textLanguage": "es",
-      "createTime": 1785979385,
-      "createTimeISO": "2026-08-06T01:23:05.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "6807923933163471878",
-        "name": "doki_adc",
-        "profileUrl": "https://www.tiktok.com/@doki_adc",
-        "nickName": "Doki🦴🐾",
-        "verified": false,
-        "signature": "💙 Doki & Bonnie 💗\n����Lima, Perú (05/01/22)\n🌤️+ sonrisas, - estrés",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/cb492f6ce573cad10fe7e837a77414bb~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=d6d0712c&x-expires=1791925200&x-signature=PQybH5g40qcCRQZYs%2BtPltB5aws%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 29,
-        "friends": 0,
-        "fans": 63900,
-        "heart": 2800000,
-        "video": 343,
-        "digg": 6129,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/cb492f6ce573cad10fe7e837a77414bb~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=d6d0712c&x-expires=1791925200&x-signature=PQybH5g40qcCRQZYs%2BtPltB5aws%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "sonido original",
-        "musicAuthor": "💙🐶Dartagnan🐶💙",
-        "musicOriginal": true,
-        "playUrl": "https://v19.tiktokcdn-us.com/d6bf4e826946c6320492155a1e7b3161/6acc54fd/video/tos/useast5/tos-useast5-v-27dcd7c799-tx/c279258ae30b4f56becbe3a1011cbf83/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThBWmOGXq8Zmo&mime_type=audio_mpeg&rc=ams4amk6Zms3aTMzNzU8M0Bpams4amk6Zms3aTMzNzU8M0BiLjEycjQwNG5gLS1kMTZzYSNiLjEycjQwNG5gLS1kMTZzcw%3D%3D&vvpl=1&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00078000",
-        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/d6f0472483e96d8a7eec3374945fd73d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b3391dd1&x-expires=1791925200&x-signature=elgh7hx0LMwqwaQKFiYWrEX0bKo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/d6f0472483e96d8a7eec3374945fd73d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b3391dd1&x-expires=1791925200&x-signature=elgh7hx0LMwqwaQKFiYWrEX0bKo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7202456208039496454"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@doki_adc/video/7670723009568607495",
-      "videoMeta": {
-        "height": 1024,
-        "width": 576,
-        "duration": 12,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/owWIfjvnDDw5IoEnYyFDAHQEjAtAA0wfIAEUAe~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=srYEZOXAlhqmVvOp5hSCONUF23E%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/f295c22eb67fb97829bcdbea0ba0df42/6acea39e/video/tos/alisg/tos-alisg-pv-0037/032b6f06a08f4bbb96ee442c21fcc69e/?a=1988&bti=ODszNWYuMDE6&&bt=3543&ft=4KLMeMzm8Zmo02P9ba4jVy6fdpWrKsd.&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmM2l3NWw5cnB4PDMzODczNEBpM2l3NWw5cnB4PDMzODczNEBjRl5Nc3FePmJKYSNvYF90aHFmOiNsZmxeMmRrMG1hLS1kMTFzYSNsZmxeMmRrMG1hLS1kMTFzcw%3D%3D&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00070000",
-            "source": "MT",
-            "sourceUnabbreviated": "machine translation",
-            "version": "4",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/f295c22eb67fb97829bcdbea0ba0df42/6acea39e/video/tos/alisg/tos-alisg-pv-0037/032b6f06a08f4bbb96ee442c21fcc69e/?a=1988&bti=ODszNWYuMDE6&&bt=3543&ft=4KLMeMzm8Zmo02P9ba4jVy6fdpWrKsd.&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmM2l3NWw5cnB4PDMzODczNEBpM2l3NWw5cnB4PDMzODczNEBjRl5Nc3FePmJKYSNvYF90aHFmOiNsZmxeMmRrMG1hLS1kMTFzYSNsZmxeMmRrMG1hLS1kMTFzcw%3D%3D&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00070000"
-          },
-          {
-            "language": "spa-ES",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/226ea25b5fa5760966e7c300894cc60d/6acea39e/video/tos/alisg/tos-alisg-pv-0037/222e0a10c5ac466b90425f7be3992c3a/?a=1988&bti=ODszNWYuMDE6&&bt=3543&ft=4KLMeMzm8Zmo02P9ba4jVy6fdpWrKsd.&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmM2l3NWw5cnB4PDMzODczNEBpM2l3NWw5cnB4PDMzODczNEBjRl5Nc3FePmJKYSNvYF90aHFmOiNsZmxeMmRrMG1hLS1kMTFzYSNsZmxeMmRrMG1hLS1kMTFzcw%3D%3D&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00070000",
-            "source": "ASR",
-            "sourceUnabbreviated": "automatic speech recognition",
-            "version": "1:whisper_lid",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/226ea25b5fa5760966e7c300894cc60d/6acea39e/video/tos/alisg/tos-alisg-pv-0037/222e0a10c5ac466b90425f7be3992c3a/?a=1988&bti=ODszNWYuMDE6&&bt=3543&ft=4KLMeMzm8Zmo02P9ba4jVy6fdpWrKsd.&mime_type=video_mp4&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmM2l3NWw5cnB4PDMzODczNEBpM2l3NWw5cnB4PDMzODczNEBjRl5Nc3FePmJKYSNvYF90aHFmOiNsZmxeMmRrMG1hLS1kMTFzYSNsZmxeMmRrMG1hLS1kMTFzcw%3D%3D&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00070000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/owWIfjvnDDw5IoEnYyFDAHQEjAtAA0wfIAEUAe~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=srYEZOXAlhqmVvOp5hSCONUF23E%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 60600,
-      "shareCount": 35900,
-      "playCount": 1400000,
-      "collectCount": 5172,
-      "commentCount": 1664,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "dogsoftiktok",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "mascotas",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "humor",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "perrostiktokers",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "perrosdetiktok",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "perrosdetiktok",
-        "views": 4000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7694545567720017182",
-      "text": "A cute Doberman from @samgam81 is being extra whiny, making sure everyone nearby knows that this dog has some very important complaints that absolutely cannot wait. The dramatic little whines turn the normally strong and serious-looking Doberman into a total softie, making this a relatable Doberman meme, whining dog video, and funny pet reaction for anyone whose dog has mastered the art of complaining until they get attention. Use this CapCut template… with the whiny Doberman, your own dog, another needy pet, or a favorite character to make a dramatic complaint meme, funny reaction edit, or perfectly over-the-top “I need attention right now” moment. #capcut #capcutpioneer #pioneertemplate #doberman #whinydog  🥹🥹",
-      "textLanguage": "en",
-      "createTime": 1791526037,
-      "createTimeISO": "2026-10-09T06:07:17.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "7411306525799121963",
-        "name": "wxm88888",
-        "profileUrl": "https://www.tiktok.com/@wxm88888",
-        "nickName": "Nina",
-        "verified": false,
-        "signature": "",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/e204c62892960d946d34e9682642c328~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=80451f8c&x-expires=1791925200&x-signature=jEAWdVNwZkhdea3frGBQXr7J0%2BU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 45,
-        "friends": 0,
-        "fans": 28200,
-        "heart": 427000,
-        "video": 634,
-        "digg": 255,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/e204c62892960d946d34e9682642c328~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=80451f8c&x-expires=1791925200&x-signature=jEAWdVNwZkhdea3frGBQXr7J0%2BU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "original sound",
-        "musicAuthor": "MemeScreens",
-        "musicOriginal": true,
-        "playUrl": "https://v16m.tiktokcdn-us.com/43c6107986cdb85fad840b89028b2599/6acc54fa/video/tos/alisg/tos-alisg-v-27dcd7/oIAf1DiemqIWFAG1FLGfjkLuAIKfAJlIGFdAIQ/?a=1233&bti=ODszNWYuMDE6&&bt=126&ft=GSDrKInz7ThBWmOGXq8Zmo&mime_type=audio_mpeg&rc=anlldXM5cjNxZDMzODU8NEBpanlldXM5cjNxZDMzODU8NEBsZV41MmRjNnNhLS1kMS1zYSNsZV41MmRjNnNhLS1kMS1zcw%3D%3D&vvpl=1&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00078000",
-        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/da2e008852be3e3942bfb7fc04ae2ac2~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=847b2b13&x-expires=1791925200&x-signature=vmjQvtJvG%2BcIrWBUYmkBH0yjQbM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/da2e008852be3e3942bfb7fc04ae2ac2~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=847b2b13&x-expires=1791925200&x-signature=vmjQvtJvG%2BcIrWBUYmkBH0yjQbM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7691994778980731668"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@wxm88888/video/7694545567720017182",
-      "videoMeta": {
-        "height": 1280,
-        "width": 720,
-        "duration": 8,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/o8aBBVsrioBhiJREVEIl6RxpEDhIAviAOVQkX~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=8xRWsYwafp1khkLd0%2FX60zYa4%2FE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "720p",
-        "format": "mp4",
-        "subtitleLinks": null,
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/o8aBBVsrioBhiJREVEIl6RxpEDhIAviAOVQkX~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=8xRWsYwafp1khkLd0%2FX60zYa4%2FE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 41400,
-      "shareCount": 20200,
-      "playCount": 520800,
-      "collectCount": 3425,
-      "commentCount": 382,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "capcut",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "capcutpioneer",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "pioneertemplate",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "doberman",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "whinydog",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "perrosdetiktok",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "perrosdetiktok",
-        "views": 4000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7689144233101397255",
-      "text": "No me veo trabajando 😴\n#chihuahuastiktok #chihuahua #humor #fyp #perritostiktokers ",
-      "textLanguage": "es",
-      "createTime": 1790268407,
-      "createTimeISO": "2026-09-24T16:46:47.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "7504535901860889605",
-        "name": "soycoco.chihuahua",
-        "profileUrl": "https://www.tiktok.com/@soycoco.chihuahua",
-        "nickName": "Coco",
-        "verified": false,
-        "signature": "Hola, soy Coco🐶\n15/08/24🐾\n🇬🇹",
-        "bioLink": null,
-        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/09d6e26a44e65e758d486554220dd153~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=628599d5&x-expires=1791925200&x-signature=1t%2BtB9j6SW2bsXVTfUOHkz913iw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 5,
-        "friends": 0,
-        "fans": 4513,
-        "heart": 98600,
-        "video": 36,
-        "digg": 325,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/09d6e26a44e65e758d486554220dd153~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=628599d5&x-expires=1791925200&x-signature=1t%2BtB9j6SW2bsXVTfUOHkz913iw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "sonido original",
-        "musicAuthor": "🇨🇴 @cosnay31 🇨🇴",
-        "musicOriginal": true,
-        "playUrl": "https://v19.tiktokcdn-us.com/89daf4f33c13b98d52df738304b50adf/6acc5501/video/tos/useast5/tos-useast5-v-27dcd7c799-tx/22390bd7c0784bef912076cefd61d35b/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThBWmOGXq8Zmo&mime_type=audio_mpeg&rc=M29qbzk6ZjppbDMzNzU8M0BpM29qbzk6ZjppbDMzNzU8M0Bva15vcjRfai1gLS1kMTZzYSNva15vcjRfai1gLS1kMTZzcw%3D%3D&vvpl=1&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00078000",
-        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/e054337806a8225e847032b315b40169~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=3c7dd993&x-expires=1791925200&x-signature=eM3ZlBgnxKV66NEHpBwZ3IcdviE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/e054337806a8225e847032b315b40169~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=3c7dd993&x-expires=1791925200&x-signature=eM3ZlBgnxKV66NEHpBwZ3IcdviE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7242064277350222597"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@soycoco.chihuahua/video/7689144233101397255",
-      "videoMeta": {
-        "height": 1024,
-        "width": 576,
-        "duration": 11,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/okyPIAcDqCp5JQDFEAAVnAIiEB6qftNgORQfFz~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=ldYDx%2FAUIaybrUFOeuh3OSFVdNM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "spa-ES",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/71fbf888ecef4168c3d6d5522cd8114b/6acea39d/video/tos/alisg/tos-alisg-pv-0037/e9140c0be5da4227b4f70b75d78f75e3/?a=1988&bti=ODszNWYuMDE6&&bt=860&ft=4KLMeMzm8Zmo02P9ba4jVy6fdpWrKsd.&mime_type=video_mp4&rc=MzR0Z3A5cjZvZDMzODczNEBpMzR0Z3A5cjZvZDMzODczNEA1amBtMmRjMG5hLS1kMWBzYSM1amBtMmRjMG5hLS1kMWBzcw%3D%3D&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00070000",
-            "source": "ASR",
-            "sourceUnabbreviated": "automatic speech recognition",
-            "version": "1:whisper_lid",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/71fbf888ecef4168c3d6d5522cd8114b/6acea39d/video/tos/alisg/tos-alisg-pv-0037/e9140c0be5da4227b4f70b75d78f75e3/?a=1988&bti=ODszNWYuMDE6&&bt=860&ft=4KLMeMzm8Zmo02P9ba4jVy6fdpWrKsd.&mime_type=video_mp4&rc=MzR0Z3A5cjZvZDMzODczNEBpMzR0Z3A5cjZvZDMzODczNEA1amBtMmRjMG5hLS1kMWBzYSM1amBtMmRjMG5hLS1kMWBzcw%3D%3D&l=20261011213305FCF7E43DC7358DD9BBE2&btag=e00070000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/okyPIAcDqCp5JQDFEAAVnAIiEB6qftNgORQfFz~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=ldYDx%2FAUIaybrUFOeuh3OSFVdNM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 12700,
-      "shareCount": 5725,
-      "playCount": 555300,
-      "collectCount": 2159,
-      "commentCount": 188,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "chihuahuastiktok",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "chihuahua",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "humor",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "fyp",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "perritostiktokers",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "perrosdetiktok",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "perrosdetiktok",
-        "views": 4000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7099671683186855214",
-      "text": "Does your dog jump on you and your guests? Jumping For Attention Part 2 #dogtraining #dogtrainer #dogs",
-      "textLanguage": "en",
-      "createTime": 1653021129,
-      "createTimeISO": "2022-05-20T04:32:09.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "6597242227985317893",
-        "name": "dogtrainerofficial",
-        "profileUrl": "https://www.tiktok.com/@dogtrainerofficial",
-        "nickName": "Sam Hoke | Dog Trainer",
-        "verified": false,
-        "signature": "Certified Professional Dog Trainer\nLos Angeles & Chicago\ndogs@samhoke.com",
-        "bioLink": null,
-        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/6158ee455e163a6ea25fd275438a791f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=a6eb40de&x-expires=1791925200&x-signature=iKumAvWbUIdnldlwn8RmSuV3mdc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 362,
-        "friends": 0,
-        "fans": 576900,
-        "heart": 12800000,
-        "video": 139,
-        "digg": 10600,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/6158ee455e163a6ea25fd275438a791f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=a6eb40de&x-expires=1791925200&x-signature=iKumAvWbUIdnldlwn8RmSuV3mdc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "original sound",
-        "musicAuthor": "Sam Hoke | Dog Trainer",
-        "musicOriginal": true,
-        "playUrl": "https://v16m.tiktokcdn-us.com/87f152f8dc92c9f4ca31909975f5b4c3/6acc552b/video/tos/useast5/tos-useast5-v-27dcd7-tx/6efe4b935d7c428281589f8a34f0bdbe/?a=1233&bti=ODszNWYuMDE6&&bt=113&ft=GSDrKInz7ThBWmOGXq8Zmo&mime_type=video_mp4&rc=anJ0Zzs6ZmxrZDMzZzU8NEBpanJ0Zzs6ZmxrZDMzZzU8NEA1cmBycjRnZzBgLS1kMS9zYSM1cmBycjRnZzBgLS1kMS9zcw%3D%3D&vvpl=1&l=20261011213305B808DBB69E8E46AEF8BA&btag=e000d0000",
-        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/6158ee455e163a6ea25fd275438a791f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=a6eb40de&x-expires=1791925200&x-signature=iKumAvWbUIdnldlwn8RmSuV3mdc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/6158ee455e163a6ea25fd275438a791f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=a6eb40de&x-expires=1791925200&x-signature=iKumAvWbUIdnldlwn8RmSuV3mdc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7099671631886388014"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@dogtrainerofficial/video/7099671683186855214",
-      "videoMeta": {
-        "height": 1024,
-        "width": 576,
-        "duration": 57,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/ad4e016d5bd6405abb6fe1c9c6327045_1653021133~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/ba78ac2865af4872be09b18a5104ad4f.image?dr=9634&x-expires=1791925200&x-signature=bx8QzU2Yh813XQHRMOt0sma9Wc0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/ec000827abd42b269b0101342bc07540/6acea3cb/video/tos/useast5/tos-useast5-v-0068-tx/aa1d832c239a4cef9ec9cfb876339719/?a=1988&bti=ODszNWYuMDE6&&bt=7918&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M3Jyb2c6Zm1rZDMzZzczNEBpM3Jyb2c6Zm1rZDMzZzczNEBzZGNgcjRnZTBgLS1kMS9zYSNzZGNgcjRnZTBgLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00048000",
-            "source": "ASR",
-            "sourceUnabbreviated": "automatic speech recognition",
-            "version": "1",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/ec000827abd42b269b0101342bc07540/6acea3cb/video/tos/useast5/tos-useast5-v-0068-tx/aa1d832c239a4cef9ec9cfb876339719/?a=1988&bti=ODszNWYuMDE6&&bt=7918&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M3Jyb2c6Zm1rZDMzZzczNEBpM3Jyb2c6Zm1rZDMzZzczNEBzZGNgcjRnZTBgLS1kMS9zYSNzZGNgcjRnZTBgLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00048000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/ad4e016d5bd6405abb6fe1c9c6327045_1653021133~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/ba78ac2865af4872be09b18a5104ad4f.image?dr=9634&x-expires=1791925200&x-signature=bx8QzU2Yh813XQHRMOt0sma9Wc0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 2100000,
-      "shareCount": 159100,
-      "playCount": 18800000,
-      "collectCount": 126470,
-      "commentCount": 5968,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "dogtraining",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtrainer",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogs",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "dogtraining",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "dogtraining",
-        "views": 35000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7098501349179952427",
-      "text": "Another episode of free dog training! #dog #puppy #dogtraining #doglover  #atlanta #fyp #viral",
-      "textLanguage": "en",
-      "createTime": 1652748638,
-      "createTimeISO": "2022-05-17T00:50:38.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "6925062278714885126",
-        "name": "kaizen.canine",
-        "profileUrl": "https://www.tiktok.com/@kaizen.canine",
-        "nickName": "Kaizen Canine | Everything Dog",
-        "verified": false,
-        "signature": "🐶 Making living with your dog simple & digestible day by day. 📍ATL",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/638b1188a3f2c6a8451711fe105ffadd~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e2072268&x-expires=1791925200&x-signature=EowJvsfDCGQrOLDBRGKKxZ6b7DQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 158,
-        "friends": 0,
-        "fans": 369500,
-        "heart": 10000000,
-        "video": 1016,
-        "digg": 4175,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/638b1188a3f2c6a8451711fe105ffadd~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e2072268&x-expires=1791925200&x-signature=EowJvsfDCGQrOLDBRGKKxZ6b7DQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "Love You So",
-        "musicAuthor": "The King Khan & BBQ Show",
-        "musicOriginal": false,
-        "musicAlbum": "Love You So",
-        "playUrl": "https://sf19.tiktokcdn-us.com/obj/tos-alisg-ve-2774/6a790bec1bf640c185753440ca131a7e",
-        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/6aa2532c996940c484c6513b9049d494~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/6aa2532c996940c484c6513b9049d494~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "musicId": "6728562975734515713"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@kaizen.canine/video/7098501349179952427",
-      "videoMeta": {
-        "height": 1024,
-        "width": 576,
-        "duration": 114,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/05ca21a0bac0415a83968a62829b7d58_1652748661~tplv-tiktokx-dmt-logom:tos-useast5-p-0000-tx/7cd3da379a2c4d4c88eb17c5d93f30e5.image?dr=9634&x-expires=1791925200&x-signature=En6RV2WtqySbwP1PvlXc%2Bcv0cCM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/ac629580ab14f1339c297bda7373263f/6acea404/video/tos/useast5/tos-useast5-v-0068-tx/ca22f981f8b0474db2bc211d130ec412/?a=1988&bti=ODszNWYuMDE6&&bt=9896&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M2tqOjU6ZmZpZDMzZzczNEBpM2tqOjU6ZmZpZDMzZzczNEBfL3EtcjRvLS5gLS1kMS9zYSNfL3EtcjRvLS5gLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00050000",
-            "source": "ASR",
-            "sourceUnabbreviated": "automatic speech recognition",
-            "version": "1",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/ac629580ab14f1339c297bda7373263f/6acea404/video/tos/useast5/tos-useast5-v-0068-tx/ca22f981f8b0474db2bc211d130ec412/?a=1988&bti=ODszNWYuMDE6&&bt=9896&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M2tqOjU6ZmZpZDMzZzczNEBpM2tqOjU6ZmZpZDMzZzczNEBfL3EtcjRvLS5gLS1kMS9zYSNfL3EtcjRvLS5gLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00050000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/05ca21a0bac0415a83968a62829b7d58_1652748661~tplv-tiktokx-dmt-logom:tos-useast5-p-0000-tx/7cd3da379a2c4d4c88eb17c5d93f30e5.image?dr=9634&x-expires=1791925200&x-signature=En6RV2WtqySbwP1PvlXc%2Bcv0cCM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 400500,
-      "shareCount": 1191,
-      "playCount": 3000000,
-      "collectCount": 20502,
-      "commentCount": 545,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "dog",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "puppy",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtraining",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "doglover",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "atlanta",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "fyp",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "viral",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "dogtraining",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "dogtraining",
-        "views": 35000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7093245746144677166",
-      "text": "There is a right approach! Follow for free dog training tips!  #dogtraining #baddog #dogtrainer #dogtips #dogsoftiktok #puppyjumping #sandiegodogtrainer",
-      "textLanguage": "en",
-      "createTime": 1651524974,
-      "createTimeISO": "2022-05-02T20:56:14.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "7057349153808237614",
-        "name": "lovingdogtrainingllc",
-        "profileUrl": "https://www.tiktok.com/@lovingdogtrainingllc",
-        "nickName": "Vivi | Positive Dog Trainer",
-        "verified": false,
-        "signature": "✨Teaching YOU to train your dog with positivity✨ NO force/fear\n\nWork with me ⤵️",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/f36cf708640fd7f9b8e48bfcf2eb8622~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=5c822df9&x-expires=1791925200&x-signature=0CwFGG6qMiRLZDKU96evk4VLNis%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 106,
-        "friends": 0,
-        "fans": 21700,
-        "heart": 271400,
-        "video": 214,
-        "digg": 1564,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/f36cf708640fd7f9b8e48bfcf2eb8622~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=5c822df9&x-expires=1791925200&x-signature=0CwFGG6qMiRLZDKU96evk4VLNis%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "Crave You (feat. Giselle)",
-        "musicAuthor": "Flight Facilities",
-        "musicOriginal": false,
-        "musicAlbum": "Down to Earth",
-        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/e1341a3b65c14e96ab1046e220c725e9~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=78c3fe00&x-expires=1791774000&x-signature=Inq1tX3Cr0xoUkqqgJLVlKc0YrU%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-v-2774/e1341a3b65c14e96ab1046e220c725e9~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9640&refresh_token=78c3fe00&x-expires=1791774000&x-signature=Inq1tX3Cr0xoUkqqgJLVlKc0YrU%3D&t=4d5b0474&ps=13740610&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "musicId": "6731122144685606914"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@lovingdogtrainingllc/video/7093245746144677166",
-      "videoMeta": {
-        "height": 1024,
-        "width": 576,
-        "duration": 16,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/3790e9b5b0c74c4f839b4bc2d33592f6~tplv-tiktokx-dmt-logom:tos-useast5-p-0000-tx/d43cc8b5ca5947609414c159147b91b9.image?dr=9634&x-expires=1791925200&x-signature=N9EP6kT%2Fyo35DCTt9H6KRXmFgK4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/8d83a5b009993f4ba897eab797157fdc/6acea3a2/video/tos/useast5/tos-useast5-v-0068-tx/e32c583d875149b481d1d74c02516caa/?a=1988&bti=ODszNWYuMDE6&&bt=5791&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M3hmdDQ6Zmk3PDMzZzczNEBpM3hmdDQ6Zmk3PDMzZzczNEAya2pocjRvXmxgLS1kMS9zYSMya2pocjRvXmxgLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00078000",
-            "source": "ASR",
-            "sourceUnabbreviated": "automatic speech recognition",
-            "version": "1",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/8d83a5b009993f4ba897eab797157fdc/6acea3a2/video/tos/useast5/tos-useast5-v-0068-tx/e32c583d875149b481d1d74c02516caa/?a=1988&bti=ODszNWYuMDE6&&bt=5791&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M3hmdDQ6Zmk3PDMzZzczNEBpM3hmdDQ6Zmk3PDMzZzczNEAya2pocjRvXmxgLS1kMS9zYSMya2pocjRvXmxgLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00078000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/3790e9b5b0c74c4f839b4bc2d33592f6~tplv-tiktokx-dmt-logom:tos-useast5-p-0000-tx/d43cc8b5ca5947609414c159147b91b9.image?dr=9634&x-expires=1791925200&x-signature=N9EP6kT%2Fyo35DCTt9H6KRXmFgK4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 22400,
-      "shareCount": 743,
-      "playCount": 900000,
-      "collectCount": 655,
-      "commentCount": 65,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "dogtraining",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "baddog",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtrainer",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtips",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogsoftiktok",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "puppyjumping",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "sandiegodogtrainer",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "dogtraining",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "dogtraining",
-        "views": 35000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7100177300846693638",
-      "text": "Traveling to California with the best ❤️🐾 #bestdog #travel #dogtrick #amazingdog #dogtrainer #dogtraining",
-      "textLanguage": "en",
-      "createTime": 1653138854,
-      "createTimeISO": "2022-05-21T13:14:14.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "6964721334412755973",
-        "name": "alexcotedogtrainer",
-        "profileUrl": "https://www.tiktok.com/@alexcotedogtrainer",
-        "nickName": "Alexandra Côté",
-        "verified": false,
-        "signature": "I am passionate about dog training. I do shows and competitions with my dogs ❤️",
-        "bioLink": null,
-        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/dc9b25730d9a125be26fd9fd47a63235~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=7f94d782&x-expires=1791925200&x-signature=gKK%2Fij7oNGuZHU0bUVfpkoGaw2A%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 82,
-        "friends": 0,
-        "fans": 281900,
-        "heart": 5600000,
-        "video": 114,
-        "digg": 113,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/dc9b25730d9a125be26fd9fd47a63235~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=7f94d782&x-expires=1791925200&x-signature=gKK%2Fij7oNGuZHU0bUVfpkoGaw2A%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "Love You So",
-        "musicAuthor": "The King Khan & BBQ Show",
-        "musicOriginal": false,
-        "musicAlbum": "Love You So",
-        "playUrl": "https://sf19.tiktokcdn-us.com/obj/tos-alisg-ve-2774/6a790bec1bf640c185753440ca131a7e",
-        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/6aa2532c996940c484c6513b9049d494~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/6aa2532c996940c484c6513b9049d494~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "musicId": "6728562975734515713"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@alexcotedogtrainer/video/7100177300846693638",
-      "videoMeta": {
-        "height": 1024,
-        "width": 576,
-        "duration": 15,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/7e8e64bf715040ecae3b872017bd9cf4_1653138855~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=d8UNcSDod4F8M%2BykE0CfIVkOy90%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": null,
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/7e8e64bf715040ecae3b872017bd9cf4_1653138855~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=d8UNcSDod4F8M%2BykE0CfIVkOy90%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 156300,
-      "shareCount": 55000,
-      "playCount": 7100000,
-      "collectCount": 3685,
-      "commentCount": 3228,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "bestdog",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "travel",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtrick",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "amazingdog",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtrainer",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtraining",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "dogtraining",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "dogtraining",
-        "views": 35000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7099636073206238507",
-      "text": "Bringing home a new puppy? Here are some essentials. #puppy #dogtraining #dogtrainingtips #puppytraining #puppytips #dog #atl #TopGunMode #fyp",
-      "textLanguage": "en",
-      "createTime": 1653012837,
-      "createTimeISO": "2022-05-20T02:13:57.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "6925062278714885126",
-        "name": "kaizen.canine",
-        "profileUrl": "https://www.tiktok.com/@kaizen.canine",
-        "nickName": "Kaizen Canine | Everything Dog",
-        "verified": false,
-        "signature": "🐶 Making living with your dog simple & digestible day by day. 📍ATL",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/638b1188a3f2c6a8451711fe105ffadd~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e2072268&x-expires=1791925200&x-signature=EowJvsfDCGQrOLDBRGKKxZ6b7DQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 158,
-        "friends": 0,
-        "fans": 369500,
-        "heart": 10000000,
-        "video": 1016,
-        "digg": 4175,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/638b1188a3f2c6a8451711fe105ffadd~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e2072268&x-expires=1791925200&x-signature=EowJvsfDCGQrOLDBRGKKxZ6b7DQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "Love You So",
-        "musicAuthor": "The King Khan & BBQ Show",
-        "musicOriginal": false,
-        "musicAlbum": "Love You So",
-        "playUrl": "https://sf19.tiktokcdn-us.com/obj/tos-alisg-ve-2774/6a790bec1bf640c185753440ca131a7e",
-        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/6aa2532c996940c484c6513b9049d494~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/6aa2532c996940c484c6513b9049d494~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "musicId": "6728562975734515713"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@kaizen.canine/video/7099636073206238507",
-      "videoMeta": {
-        "height": 1024,
-        "width": 576,
-        "duration": 93,
-        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/30ea8b2d2cd74eebbe2955341dfc9f8c~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/c875a50842314119ba2e48272b0606de.image?dr=9634&x-expires=1791925200&x-signature=zFKAM4aaZv06Dj%2B9pY4%2FSysU%2BoM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/aae39456de357369898fa5ff8bd0795f/6acea3ef/video/tos/useast5/tos-useast5-v-0068-tx/a961572321c5496186239abf82a7ace1/?a=1988&bti=ODszNWYuMDE6&&bt=4650&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M2VlamU6ZmlpZDMzZzczNEBpM2VlamU6ZmlpZDMzZzczNEBoaWtwcjQwZDBgLS1kMS9zYSNoaWtwcjQwZDBgLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00050000",
-            "source": "LC",
-            "sourceUnabbreviated": "creator caption",
-            "version": "3",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/aae39456de357369898fa5ff8bd0795f/6acea3ef/video/tos/useast5/tos-useast5-v-0068-tx/a961572321c5496186239abf82a7ace1/?a=1988&bti=ODszNWYuMDE6&&bt=4650&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M2VlamU6ZmlpZDMzZzczNEBpM2VlamU6ZmlpZDMzZzczNEBoaWtwcjQwZDBgLS1kMS9zYSNoaWtwcjQwZDBgLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00050000"
-          },
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/68db1213790fa8e4fcc3f158f4ddb753/6acea3ef/video/tos/useast5/tos-useast5-v-0068-tx/a9986ec7e1e945bab4069450b69b6799/?a=1988&bti=ODszNWYuMDE6&&bt=4650&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M2VlamU6ZmlpZDMzZzczNEBpM2VlamU6ZmlpZDMzZzczNEBoaWtwcjQwZDBgLS1kMS9zYSNoaWtwcjQwZDBgLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00050000",
-            "source": "MU",
-            "version": "3",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/68db1213790fa8e4fcc3f158f4ddb753/6acea3ef/video/tos/useast5/tos-useast5-v-0068-tx/a9986ec7e1e945bab4069450b69b6799/?a=1988&bti=ODszNWYuMDE6&&bt=4650&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M2VlamU6ZmlpZDMzZzczNEBpM2VlamU6ZmlpZDMzZzczNEBoaWtwcjQwZDBgLS1kMS9zYSNoaWtwcjQwZDBgLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00050000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/30ea8b2d2cd74eebbe2955341dfc9f8c~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/c875a50842314119ba2e48272b0606de.image?dr=9634&x-expires=1791925200&x-signature=zFKAM4aaZv06Dj%2B9pY4%2FSysU%2BoM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 472800,
-      "shareCount": 1358,
-      "playCount": 5000000,
-      "collectCount": 24387,
-      "commentCount": 1501,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "puppy",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtraining",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtrainingtips",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "puppytraining",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "puppytips",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dog",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "atl",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "topgunmode",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "fyp",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "dogtraining",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "dogtraining",
-        "views": 35000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7095099885048892715",
-      "text": "Relationship is everything #fyp #viral #dogtraining #germanshepherd",
-      "textLanguage": "en",
-      "createTime": 1651956674,
-      "createTimeISO": "2022-05-07T20:51:14.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "6898146048536331269",
-        "name": "jonasblackofficial",
-        "profileUrl": "https://www.tiktok.com/@jonasblackofficial",
-        "nickName": "jonasblackshop",
-        "verified": false,
-        "signature": "𝔄𝔪𝔢𝔯𝔦𝔠𝔞’𝔰 𝔒𝔲𝔱𝔩𝔞𝔴 𝔇𝔬𝔤 𝔗𝔯𝔞𝔦𝔫𝔢𝔯",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/31ec28c348484fc3a61a6420f8b897a5~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=2395ffe0&x-expires=1791925200&x-signature=Zmhi%2F8NAhqvRkbbvD2dreX43LVI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 61,
-        "friends": 0,
-        "fans": 1600000,
-        "heart": 39500000,
-        "video": 1405,
-        "digg": 6571,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/31ec28c348484fc3a61a6420f8b897a5~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=2395ffe0&x-expires=1791925200&x-signature=Zmhi%2F8NAhqvRkbbvD2dreX43LVI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "About Damn Time",
-        "musicAuthor": "Lizzo",
-        "musicOriginal": false,
-        "musicAlbum": "About Damn Time",
-        "playUrl": "https://sf16.tiktokcdn-us.com/obj/tos-alisg-ve-2774/ab03919245354d02bcdc21554c893b6c",
-        "coverMediumUrl": "https://p19-common.tiktokcdn-us.com/tos-alisg-v-2774/52397087268241adac86c12e7f1951c7~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p19-common.tiktokcdn-us.com/tos-alisg-v-2774/52397087268241adac86c12e7f1951c7~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "musicId": "7086201843973621762"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@jonasblackofficial/video/7095099885048892715",
-      "videoMeta": {
-        "height": 1024,
-        "width": 576,
-        "duration": 45,
-        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/b47f9b20e98847dcb92eecf220af5902~tplv-tiktokx-dmt-logom:tos-useast5-p-0000-tx/492dedeba1a24c7198aa3b6f5797b619.image?dr=9634&x-expires=1791925200&x-signature=pugsywxyr%2FMyVx000v%2B%2BtiX4sxE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/4ec21f93b889fdb61fb98a9bd0ca6032/6acea3bf/video/tos/useast5/tos-useast5-v-0068-tx/c1a71da54642410381d2abfca6a9d2ae/?a=1988&bti=ODszNWYuMDE6&&bt=9225&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=MzxwOGY6Zm9nPDMzZzczNEBpMzxwOGY6Zm9nPDMzZzczNEA1ai0xcjRnam9gLS1kMS9zYSM1ai0xcjRnam9gLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00050000",
-            "source": "ASR",
-            "sourceUnabbreviated": "automatic speech recognition",
-            "version": "1",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/4ec21f93b889fdb61fb98a9bd0ca6032/6acea3bf/video/tos/useast5/tos-useast5-v-0068-tx/c1a71da54642410381d2abfca6a9d2ae/?a=1988&bti=ODszNWYuMDE6&&bt=9225&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=MzxwOGY6Zm9nPDMzZzczNEBpMzxwOGY6Zm9nPDMzZzczNEA1ai0xcjRnam9gLS1kMS9zYSM1ai0xcjRnam9gLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00050000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/b47f9b20e98847dcb92eecf220af5902~tplv-tiktokx-dmt-logom:tos-useast5-p-0000-tx/492dedeba1a24c7198aa3b6f5797b619.image?dr=9634&x-expires=1791925200&x-signature=pugsywxyr%2FMyVx000v%2B%2BtiX4sxE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 1200000,
-      "shareCount": 1267,
-      "playCount": 8200000,
-      "collectCount": 26521,
-      "commentCount": 1583,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "fyp",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "viral",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtraining",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "germanshepherd",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "dogtraining",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "dogtraining",
-        "views": 35000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7105814331471842566",
-      "text": "training Mars to do the Evil Twin dance 😈 #windsprite #dogtraining",
-      "textLanguage": "en",
-      "createTime": 1654451327,
-      "createTimeISO": "2022-06-05T17:48:47.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "6693656292916118534",
-        "name": "jessicaluxee",
-        "profileUrl": "https://www.tiktok.com/@jessicaluxee",
-        "nickName": "jessica 🪽",
-        "verified": false,
-        "signature": "jessica@jessicaluxe.com\n\noutfits, pregnancy & in-between 🪽\nshop my page 👇🏼",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/fc7b68f17db1fa60d2f34e94dd108283~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=ca8560a5&x-expires=1791925200&x-signature=%2BbLk55SOf5JUrirky6EkpUpRTSg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 188,
-        "friends": 0,
-        "fans": 88600,
-        "heart": 5000000,
-        "video": 1722,
-        "digg": 823,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/fc7b68f17db1fa60d2f34e94dd108283~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=ca8560a5&x-expires=1791925200&x-signature=%2BbLk55SOf5JUrirky6EkpUpRTSg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "original sound",
-        "musicAuthor": "jessica 🪽",
-        "musicOriginal": true,
-        "playUrl": "https://v16m.tiktokcdn-us.com/640a44075af76a6dcd18df3084050344/6acc5523/video/tos/useast5/tos-useast5-v-27dcd7c799-tx/da25681429db4d8d83d9426215e37f7a/?a=1233&bti=ODszNWYuMDE6&&bt=106&ft=GSDrKInz7ThBWmOGXq8Zmo&mime_type=video_mp4&rc=M3Bubjo6ZjNoZDMzNzU8M0BpM3Bubjo6ZjNoZDMzNzU8M0BuXm9mcjQwbWJgLS1kMTZzYSNuXm9mcjQwbWJgLS1kMTZzcw%3D%3D&vvpl=1&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00048000",
-        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/fc7b68f17db1fa60d2f34e94dd108283~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=ca8560a5&x-expires=1791925200&x-signature=%2BbLk55SOf5JUrirky6EkpUpRTSg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/fc7b68f17db1fa60d2f34e94dd108283~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=ca8560a5&x-expires=1791925200&x-signature=%2BbLk55SOf5JUrirky6EkpUpRTSg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7105814344228227845"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@jessicaluxee/video/7105814331471842566",
-      "videoMeta": {
-        "height": 1024,
-        "width": 576,
-        "duration": 49,
-        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/1f82c943734f45c6809b331bd993e98c_1654451331~tplv-tiktokx-dmt-logom:tos-useast2a-v-0068/021caebd513a408486185ac5d88c1281.image?dr=9634&x-expires=1791925200&x-signature=SdoFLSoHh%2B1A03cYjYFx%2BhJQQHI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/baeb45f26a199c482c9ba9d5059c39c1/6acea3c3/video/tos/useast5/tos-useast5-v-0068c799-tx/a7086b4250094a57806cfabdfcae3414/?a=1988&bti=ODszNWYuMDE6&&bt=432&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M2RxbGU6ZmZoZDMzNzczM0BpM2RxbGU6ZmZoZDMzNzczM0AwcmtjcjQwbGJgLS1kMTZzYSMwcmtjcjQwbGJgLS1kMTZzcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00048000",
-            "source": "MU",
-            "version": "3",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/baeb45f26a199c482c9ba9d5059c39c1/6acea3c3/video/tos/useast5/tos-useast5-v-0068c799-tx/a7086b4250094a57806cfabdfcae3414/?a=1988&bti=ODszNWYuMDE6&&bt=432&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M2RxbGU6ZmZoZDMzNzczM0BpM2RxbGU6ZmZoZDMzNzczM0AwcmtjcjQwbGJgLS1kMTZzYSMwcmtjcjQwbGJgLS1kMTZzcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00048000"
-          },
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/4a8d5984ebbd4e32507dcf2040069c82/6acea3c3/video/tos/useast5/tos-useast5-v-0068c799-tx/42e77994e64d4ae89b3a26fbdc1bda5f/?a=1988&bti=ODszNWYuMDE6&&bt=432&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M2RxbGU6ZmZoZDMzNzczM0BpM2RxbGU6ZmZoZDMzNzczM0AwcmtjcjQwbGJgLS1kMTZzYSMwcmtjcjQwbGJgLS1kMTZzcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00048000",
-            "source": "LC",
-            "sourceUnabbreviated": "creator caption",
-            "version": "3",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/4a8d5984ebbd4e32507dcf2040069c82/6acea3c3/video/tos/useast5/tos-useast5-v-0068c799-tx/42e77994e64d4ae89b3a26fbdc1bda5f/?a=1988&bti=ODszNWYuMDE6&&bt=432&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=M2RxbGU6ZmZoZDMzNzczM0BpM2RxbGU6ZmZoZDMzNzczM0AwcmtjcjQwbGJgLS1kMTZzYSMwcmtjcjQwbGJgLS1kMTZzcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00048000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-p-0068/1f82c943734f45c6809b331bd993e98c_1654451331~tplv-tiktokx-dmt-logom:tos-useast2a-v-0068/021caebd513a408486185ac5d88c1281.image?dr=9634&x-expires=1791925200&x-signature=SdoFLSoHh%2B1A03cYjYFx%2BhJQQHI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 506400,
-      "shareCount": 366,
-      "playCount": 2600000,
-      "collectCount": 6929,
-      "commentCount": 192,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "windsprite",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtraining",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "dogtraining",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "dogtraining",
-        "views": 35000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7096241665307921707",
-      "text": "Share this with a puppy owner and save their sanity! 🐶 Link in bio to train with me in-person & online. Hamilton Dog TrainingLocated in Bellevue, WA#puppy #puppytraining #puppytips #puppytrainingtips #puppytraining101 #dogtraining #dogtrainers #dogtrainer  #fyp #foryou #foryoupage #puppytips",
-      "textLanguage": "en",
-      "createTime": 1652222516,
-      "createTimeISO": "2022-05-10T22:41:56.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "7067443612188673070",
-        "name": "hamiltondogtraining",
-        "profileUrl": "https://www.tiktok.com/@hamiltondogtraining",
-        "nickName": "Hamilton Dog Training",
-        "verified": false,
-        "signature": "⚡️ Want a dog who listens off-leash ANYWHERE?\nStart training:",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/d1e0c836519fddc47325cc9dc4e9b1ff~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=cd9c3d1a&x-expires=1791925200&x-signature=VzmABlFhWr4PwcmCq6n4o0kn3yU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 1,
-        "friends": 0,
-        "fans": 314500,
-        "heart": 3300000,
-        "video": 111,
-        "digg": 42,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/d1e0c836519fddc47325cc9dc4e9b1ff~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=cd9c3d1a&x-expires=1791925200&x-signature=VzmABlFhWr4PwcmCq6n4o0kn3yU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "original sound",
-        "musicAuthor": "Hamilton Dog Training",
-        "musicOriginal": true,
-        "playUrl": "https://v16m.tiktokcdn-us.com/fc87983009de2cd77711567629a3e3ff/6acc552e/video/tos/useast5/tos-useast5-v-27dcd7-tx/a8534268d9704b4c9026b90f8a9a0e70/?a=1233&bti=ODszNWYuMDE6&&bt=103&ft=GSDrKInz7ThBWmOGXq8Zmo&mime_type=video_mp4&rc=M244NTM6ZmdoPDMzZzU8NEBpM244NTM6ZmdoPDMzZzU8NEAyXm9lcjRnaHFgLS1kMS9zYSMyXm9lcjRnaHFgLS1kMS9zcw%3D%3D&vvpl=1&l=20261011213305B808DBB69E8E46AEF8BA&btag=e000d0000",
-        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/d1e0c836519fddc47325cc9dc4e9b1ff~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=cd9c3d1a&x-expires=1791925200&x-signature=VzmABlFhWr4PwcmCq6n4o0kn3yU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/d1e0c836519fddc47325cc9dc4e9b1ff~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=cd9c3d1a&x-expires=1791925200&x-signature=VzmABlFhWr4PwcmCq6n4o0kn3yU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7096241654369176366"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@hamiltondogtraining/video/7096241665307921707",
-      "videoMeta": {
-        "height": 1024,
-        "width": 576,
-        "duration": 60,
-        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/9f1578cb3d4e46bc9def394fcf2c70cf_1652222517~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=8GGTn4iJRXcUx9CDC8vLfsHmln4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "540p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/e532cadfc57ca8a95d1c8742431c7cf9/6acea3ce/video/tos/useast5/tos-useast5-v-0068-tx/954defc6590c45d2bdab41d050f84d58/?a=1988&bti=ODszNWYuMDE6&&bt=6371&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=am41ZjY6ZnFoPDMzZzczNEBpam41ZjY6ZnFoPDMzZzczNEBsL21jcjRvZnFgLS1kMS9zYSNsL21jcjRvZnFgLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00050000",
-            "source": "ASR",
-            "sourceUnabbreviated": "automatic speech recognition",
-            "version": "1",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/e532cadfc57ca8a95d1c8742431c7cf9/6acea3ce/video/tos/useast5/tos-useast5-v-0068-tx/954defc6590c45d2bdab41d050f84d58/?a=1988&bti=ODszNWYuMDE6&&bt=6371&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=am41ZjY6ZnFoPDMzZzczNEBpam41ZjY6ZnFoPDMzZzczNEBsL21jcjRvZnFgLS1kMS9zYSNsL21jcjRvZnFgLS1kMS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00050000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/9f1578cb3d4e46bc9def394fcf2c70cf_1652222517~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=8GGTn4iJRXcUx9CDC8vLfsHmln4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 268900,
-      "shareCount": 21300,
-      "playCount": 4800000,
-      "collectCount": 42846,
-      "commentCount": 1907,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "puppy",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "puppytraining",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "puppytips",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "puppytrainingtips",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "puppytraining101",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtraining",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtrainers",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtrainer",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "fyp",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "foryou",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "foryoupage",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "puppytips",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "dogtraining",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "dogtraining",
-        "views": 35000000000
-      },
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7694721730409024782",
-      "text": "Puppy biting is not just about redirecting to a toy. We’re desensitizing him to touch, interrupting the biting with the leash, and then showing him what he is allowed to bite.\n#dogtraining #dogtrainer #dogs #dogtrainingtips #dogobedience #puppy #puppytraining",
-      "textLanguage": "en",
-      "createTime": 1791567037,
-      "createTimeISO": "2026-10-09T17:30:37.000Z",
-      "isAd": false,
-      "hasTikTokShopProduct": false,
-      "authorMeta": {
-        "id": "7489528717684540462",
-        "name": "mcmahondogtraining",
-        "profileUrl": "https://www.tiktok.com/@mcmahondogtraining",
-        "nickName": "Ethan McMahon",
-        "verified": false,
-        "signature": "Train Your Dog For Less Than $1 Per Day 👇",
-        "bioLink": null,
-        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/ae6c4ac507c48fa521d0955238d94f1f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=8b7dd847&x-expires=1791925200&x-signature=B2fY5o2N7zwaEK4jwQYcrRMeoe4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 1,
-        "friends": 0,
-        "fans": 475300,
-        "heart": 12600000,
-        "video": 331,
-        "digg": 150,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/ae6c4ac507c48fa521d0955238d94f1f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=8b7dd847&x-expires=1791925200&x-signature=B2fY5o2N7zwaEK4jwQYcrRMeoe4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "original sound",
-        "musicAuthor": "Ethan McMahon",
-        "musicOriginal": true,
-        "playUrl": "https://v16m.tiktokcdn-us.com/de5cf83a327ca889933c40a33e01b49e/6acc5595/video/tos/useast5/tos-useast5-v-27dcd7-tx/owDZpElEBIkJJAJ0wifMBuAAaiL6A1BK4xQE1J/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThBWmOGXq8Zmo&mime_type=audio_mpeg&rc=M240eGs5cmxsZTMzZzU8NEBpM240eGs5cmxsZTMzZzU8NEA1aWUyMmRzNjFhLS1kMS9zYSM1aWUyMmRzNjFhLS1kMS9zcw%3D%3D&vvpl=1&l=20261011213305B808DBB69E8E46AEF8BA&btag=e000d0000",
-        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/ae6c4ac507c48fa521d0955238d94f1f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=8b7dd847&x-expires=1791925200&x-signature=B2fY5o2N7zwaEK4jwQYcrRMeoe4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/ae6c4ac507c48fa521d0955238d94f1f~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=8b7dd847&x-expires=1791925200&x-signature=B2fY5o2N7zwaEK4jwQYcrRMeoe4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7694721838399671053"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@mcmahondogtraining/video/7694721730409024782",
-      "videoMeta": {
-        "height": 1280,
-        "width": 720,
-        "duration": 163,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-85c255-tx/oUIgJFVokC7mHBDVQfHaikCAE6JV2k9f1flJDM~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=62STYbdl9n34whxilFS%2FGnkgyOM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "720p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/4c6100653e11dd360101672196ca6035/6acea435/video/tos/useast5/tos-useast5-v-85c255-tx/df79b4fac42e49af93c58c56c15b694a/?a=1988&bti=ODszNWYuMDE6&&bt=4950&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=am02NXg5cmlsZTQzZzM2NEBpam02NXg5cmlsZTQzZzM2NEBhaWhuMmRzNjFhLS1kLS9zYSNhaWhuMmRzNjFhLS1kLS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00048000",
-            "source": "ASR",
-            "sourceUnabbreviated": "automatic speech recognition",
-            "version": "1:big_caption",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/4c6100653e11dd360101672196ca6035/6acea435/video/tos/useast5/tos-useast5-v-85c255-tx/df79b4fac42e49af93c58c56c15b694a/?a=1988&bti=ODszNWYuMDE6&&bt=4950&ft=aEKq_qT0mIoPD12VNRJI3wUsZ2AbMeF~O5&mime_type=video_mp4&rc=am02NXg5cmlsZTQzZzM2NEBpam02NXg5cmlsZTQzZzM2NEBhaWhuMmRzNjFhLS1kLS9zYSNhaWhuMmRzNjFhLS1kLS9zcw%3D%3D&l=20261011213305B808DBB69E8E46AEF8BA&btag=e00048000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-85c255-tx/oUIgJFVokC7mHBDVQfHaikCAE6JV2k9f1flJDM~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=62STYbdl9n34whxilFS%2FGnkgyOM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 47600,
-      "shareCount": 4328,
-      "playCount": 654900,
-      "collectCount": 6702,
-      "commentCount": 90,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": null,
-          "name": "dogtraining",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtrainer",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogs",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogtrainingtips",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "dogobedience",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "puppy",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": null,
-          "name": "puppytraining",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "input": "dogtraining",
-      "isStory": false,
-      "searchHashtag": {
-        "name": "dogtraining",
-        "views": 35000000000
-      },
-      "commentsDatasetUrl": null
-    },
     {
       "id": "7675980446479486222",
       "text": "#puppytraining #doganxiety #puppytrainingtips #dogtraining #puppyseperationanxiety ",
@@ -2054,26 +28,26 @@
         "verified": false,
         "signature": "🐾 cocker spaniel mom\n✅ easy daily training tips",
         "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/006391021cc520ef946b5ac949c73ee0~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=7ec260c7&x-expires=1791925200&x-signature=Z9NmHu5VyHjNht4WvfPrVrA4P2I%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/006391021cc520ef946b5ac949c73ee0~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=8811ee9a&x-expires=1791964800&x-signature=oB5GFLAWkJVZxQDCluqlNQCSfwQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
         "privateAccount": false,
         "createTime": null,
         "hasActiveStory": false,
         "following": 12,
         "friends": 0,
-        "fans": 1131,
-        "heart": 29400,
+        "fans": 1133,
+        "heart": 29500,
         "video": 45,
         "digg": 522,
         "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/006391021cc520ef946b5ac949c73ee0~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=7ec260c7&x-expires=1791925200&x-signature=Z9NmHu5VyHjNht4WvfPrVrA4P2I%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/006391021cc520ef946b5ac949c73ee0~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=8811ee9a&x-expires=1791964800&x-signature=oB5GFLAWkJVZxQDCluqlNQCSfwQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
       },
       "musicMeta": {
         "musicName": "original sound",
         "musicAuthor": "SpongeBob background music",
         "musicOriginal": true,
-        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast5/tos-useast5-v-27dcd7-tx/80cbd5d7c6f64cf39ce4cef3b294868e/?a=1988&bti=ODszNWYuMDE6&&bt=126&ft=GcAInInz7ThBWmOGXq8Zmo&mime_type=video_mp4&rc=ajc5cWZ5Z2lrNTMzNzU8M0Bpajc5cWZ5Z2lrNTMzNzU8M0BtNW40My1ubV5gLS1kMTZzYSNtNW40My1ubV5gLS1kMTZzcw%3D%3D&expire=1791776045&l=202610112133054616E0E3EB5265ADE260&ply_type=3&policy=3&signature=f03536d6ea086a500cb1a8686ae7bb5f&tk=0&btag=e00048000",
-        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/68a990669ed14c098d1f7a15f0e8f937~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=53d5d860&x-expires=1791925200&x-signature=Rw2FTvg%2FG8BKhXaZuMV395FcvHk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/68a990669ed14c098d1f7a15f0e8f937~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=53d5d860&x-expires=1791925200&x-signature=Rw2FTvg%2FG8BKhXaZuMV395FcvHk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast5/tos-useast5-v-27dcd7-tx/80cbd5d7c6f64cf39ce4cef3b294868e/?a=1988&bti=ODszNWYuMDE6&&bt=126&ft=GcAInInz7ThyEVOGXq8Zmo&mime_type=video_mp4&rc=ajc5cWZ5Z2lrNTMzNzU8M0Bpajc5cWZ5Z2lrNTMzNzU8M0BtNW40My1ubV5gLS1kMTZzYSNtNW40My1ubV5gLS1kMTZzcw%3D%3D&expire=1791816256&l=2026101208431629F4C04CE9066F155E26&ply_type=3&policy=3&signature=766c8155ecda9592066882d61e015084&tk=0&btag=e00048000",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/68a990669ed14c098d1f7a15f0e8f937~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=4237ffa2&x-expires=1791964800&x-signature=h75sF5OMrgwghtE3X8vV%2FzebRqU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/68a990669ed14c098d1f7a15f0e8f937~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=4237ffa2&x-expires=1791964800&x-signature=h75sF5OMrgwghtE3X8vV%2FzebRqU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
         "musicId": "6959500151362800390"
       },
       "webVideoUrl": "https://www.tiktok.com/@training.with.ani/video/7675980446479486222",
@@ -2081,17 +55,17 @@
         "height": 0,
         "width": 0,
         "duration": 0,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/5a66255f484b4d04b7910894f8d15532~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=8lmyM44hKFlLg9UiDfiYU3fwcuc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/5a66255f484b4d04b7910894f8d15532~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=ZAvmVzFYPG%2Bqj7rRVHReGazJJqY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
         "subtitleLinks": null,
         "transcriptionLink": null,
         "aiVideoDescription": null,
         "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/5a66255f484b4d04b7910894f8d15532~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=8lmyM44hKFlLg9UiDfiYU3fwcuc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/5a66255f484b4d04b7910894f8d15532~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=ZAvmVzFYPG%2Bqj7rRVHReGazJJqY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
       },
-      "diggCount": 2274,
-      "shareCount": 708,
-      "playCount": 76300,
-      "collectCount": 1637,
+      "diggCount": 2295,
+      "shareCount": 714,
+      "playCount": 76800,
+      "collectCount": 1653,
       "commentCount": 35,
       "repostCount": 0,
       "mentions": [],
@@ -2132,32 +106,32 @@
       "isSlideshow": true,
       "slideshowImageLinks": [
         {
-          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/5a66255f484b4d04b7910894f8d15532~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=9swA4QcyiH0R%2BToaET3mXypTK5Y%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/5a66255f484b4d04b7910894f8d15532~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=9swA4QcyiH0R%2BToaET3mXypTK5Y%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/5a66255f484b4d04b7910894f8d15532~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=ZAvmVzFYPG%2Bqj7rRVHReGazJJqY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/5a66255f484b4d04b7910894f8d15532~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=ZAvmVzFYPG%2Bqj7rRVHReGazJJqY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
         },
         {
-          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/4b03ea16e0784663a29ac8b5928ab991~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=0xSnfZfiirNymdToVb79p0gyYNE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/4b03ea16e0784663a29ac8b5928ab991~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=0xSnfZfiirNymdToVb79p0gyYNE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+          "tiktokLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/4b03ea16e0784663a29ac8b5928ab991~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=bpqIBc3MNk%2FM7AjVHKjE56Pbe6U%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/4b03ea16e0784663a29ac8b5928ab991~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=bpqIBc3MNk%2FM7AjVHKjE56Pbe6U%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
         },
         {
-          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/6f84dbc2bf6e43c183afbbfa7de4bf21~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=JwBNBloC9MsjCAWGZdqehO1LfnA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/6f84dbc2bf6e43c183afbbfa7de4bf21~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=JwBNBloC9MsjCAWGZdqehO1LfnA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+          "tiktokLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/6f84dbc2bf6e43c183afbbfa7de4bf21~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=M5%2BsJNkIuPLRNdP9sXGqsEztSzY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/6f84dbc2bf6e43c183afbbfa7de4bf21~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=M5%2BsJNkIuPLRNdP9sXGqsEztSzY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
         },
         {
-          "tiktokLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/750edb8fe5cf4ec9aae4bdc17325b876~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=uCgrXXR6yREUETXoxm2c3EZCzjc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/750edb8fe5cf4ec9aae4bdc17325b876~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=uCgrXXR6yREUETXoxm2c3EZCzjc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+          "tiktokLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/750edb8fe5cf4ec9aae4bdc17325b876~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=WcsWRm%2FSsuK%2BsSf4D8FeRsfDoVA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/750edb8fe5cf4ec9aae4bdc17325b876~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=WcsWRm%2FSsuK%2BsSf4D8FeRsfDoVA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
         },
         {
-          "tiktokLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/5194c5bd92024fb184e4f3c4dd190030~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=scpdKAdbSJjWYZ%2BNuvKH74NTuPQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/5194c5bd92024fb184e4f3c4dd190030~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=scpdKAdbSJjWYZ%2BNuvKH74NTuPQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/5194c5bd92024fb184e4f3c4dd190030~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=UNpXNZRX%2FVCBBEDlXfdWPr%2BuUlw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/5194c5bd92024fb184e4f3c4dd190030~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=UNpXNZRX%2FVCBBEDlXfdWPr%2BuUlw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
         },
         {
-          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/b6e2e9b4c53b485792c53a2f7475a99d~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=JWOkZqMNfe8rBwr%2FSX927B8pqQY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/b6e2e9b4c53b485792c53a2f7475a99d~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=JWOkZqMNfe8rBwr%2FSX927B8pqQY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/b6e2e9b4c53b485792c53a2f7475a99d~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=XfiSO%2FPYhIBlyEG6D%2FrHU6wgMVo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/b6e2e9b4c53b485792c53a2f7475a99d~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=XfiSO%2FPYhIBlyEG6D%2FrHU6wgMVo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
         },
         {
-          "tiktokLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/2dc328b10b3347028722f97881a20c91~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=8%2Be76SZcV1zLgTbPNEnm%2FBwbcaM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/2dc328b10b3347028722f97881a20c91~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=8%2Be76SZcV1zLgTbPNEnm%2FBwbcaM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+          "tiktokLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/2dc328b10b3347028722f97881a20c91~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=l%2FHueBu8Fao9j3qUIk0bOyno9jo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
+          "downloadLink": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-i-photomode-tx/2dc328b10b3347028722f97881a20c91~tplv-photomode-image.jpeg?dr=9616&x-expires=1791964800&x-signature=l%2FHueBu8Fao9j3qUIk0bOyno9jo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
         }
       ],
       "isPinned": false,
@@ -2165,72 +139,103 @@
       "shortDramaSeriesInfo": null,
       "mediaUrls": [],
       "isStory": false,
-      "searchQuery": "dog cries when I leave",
+      "searchQuery": "dog separation anxiety training",
       "commentsDatasetUrl": null
     },
     {
-      "id": "7622311309882739975",
-      "text": "Most dogs don’t cry because they’re “clingy”\nthey cry because we leave for too long, too fast\n\nStart small. Come back before panic. Build slowly.\nThat’s how you teach them you always come back 🐾\n\n#dogtraining #puppytraining #separationanxiety #dogtips #dogbehavior ",
+      "id": "7681224648851213590",
+      "text": "How we helped our puppy with seperation anxiety and can now happily leave her for up to 4 hours, 6 hours absolute max in an emergency etc and she is fine!\n\nSeperation anxiety is a huge struggle for Vizslas so it was a lot of work for us to get to this point! We are not trainers but a few of you have been asking so this is just some of the stuff we did! \n\n1. Picking up and dropping keys regularly so the sound wasn’t a trigger \n\n2. Crate drills - treats in crate, let out crate, shuttting door etc and extending the time \n\n3. Doors a bore drill - opening and shutting door, extending to leaving house etc \n\n4. Treats while we were gone, ignored when we got in\n\n5. Crate training - put in while I work and while we sleep to make it her comfy downtime space \n\n6. Commit to it and not let it stop us from living our lives! \n\n#seperationanxiety #seperationanxietytraining #vizsla #puppytraining #howtoleavepuppyathome",
       "textLanguage": "en",
-      "createTime": 1774707653,
-      "createTimeISO": "2026-03-28T14:20:53.000Z",
+      "createTime": 1788424486,
+      "createTimeISO": "2026-09-03T08:34:46.000Z",
       "isAd": false,
       "authorMeta": {
-        "id": "7260983338789749765",
-        "name": "fluffylilmaple",
-        "profileUrl": "https://www.tiktok.com/@fluffylilmaple",
-        "nickName": "fluffylilmaple",
+        "id": "7544722493606200342",
+        "name": "junovizsla5",
+        "profileUrl": "https://www.tiktok.com/@junovizsla5",
+        "nickName": "JunoVizsla",
         "verified": false,
-        "signature": "Maple 🍁 | Poochon\nTraining • care • daily pup life\nMaplepoochon@gmail.com 📧",
+        "signature": "Hiking, training, running and outdoor adventures. 🌲 Cute, chaotic, just a girl.\n\nCollabs: JunoVizsla@gmail.com\nDiscounts below ⬇️",
         "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/b7f60c27326fb8dfdd74936b2182370c~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e75f0d94&x-expires=1791925200&x-signature=fgcxIKBUarQGK%2Fi4TIWLbJ5wbIU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/a7149395ba305ec1239b038df0a9d4b2~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=db733933&x-expires=1791964800&x-signature=crOuwbChdJZ0tXCrkWa7sGnyGek%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
         "privateAccount": false,
         "createTime": null,
         "hasActiveStory": false,
-        "following": 318,
+        "following": 225,
         "friends": 0,
-        "fans": 5001,
-        "heart": 151600,
-        "video": 247,
-        "digg": 2394,
+        "fans": 1415,
+        "heart": 40000,
+        "video": 228,
+        "digg": 4242,
         "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/b7f60c27326fb8dfdd74936b2182370c~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e75f0d94&x-expires=1791925200&x-signature=fgcxIKBUarQGK%2Fi4TIWLbJ5wbIU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/a7149395ba305ec1239b038df0a9d4b2~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=db733933&x-expires=1791964800&x-signature=crOuwbChdJZ0tXCrkWa7sGnyGek%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
       },
       "musicMeta": {
-        "musicName": "Inventing",
-        "musicAuthor": "Matilda Mann",
+        "musicName": "Dancing With Myself - 7\" Version",
+        "musicAuthor": "Generation X & Billy Idol",
         "musicOriginal": false,
-        "musicAlbum": "Inventing",
-        "playUrl": "https://sf16.tiktokcdn-us.com/obj/tos-alisg-ve-2774/oAEFstB6QeZQYsElwfvDaYXVpld9lDHBDIEgCB",
-        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oQYwiAaMBSADzl64P5U2WAiErdkP0WiEAoDDA~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/oQYwiAaMBSADzl64P5U2WAiErdkP0WiEAoDDA~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "musicId": "7553388060521270038"
+        "musicAlbum": "Dancing With Myself",
+        "playUrl": "https://sf16.tiktokcdn-us.com/obj/tos-alisg-ve-2774/oorYAQfdmvnQaKS86JQelkeMpfmM1FWHAT3GYm",
+        "coverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/okZghTpGCvWt6fQpZMdBBXobYEEdEAFDACAgfD~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common.tiktokcdn-us.com/tos-alisg-v-2774/okZghTpGCvWt6fQpZMdBBXobYEEdEAFDACAgfD~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
+        "musicId": "7403113824579143697"
       },
-      "webVideoUrl": "https://www.tiktok.com/@fluffylilmaple/video/7622311309882739975",
+      "webVideoUrl": "https://www.tiktok.com/@junovizsla5/video/7681224648851213590",
       "videoMeta": {
-        "height": 0,
-        "width": 0,
-        "duration": 0,
-        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/18a4c0dbbddc45a6897094e27eec3912~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=1aqYJpZ%2Bla57o%2Fl%2FDAXGKjfk9p8%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-        "subtitleLinks": null,
+        "height": 1024,
+        "width": 576,
+        "duration": 96,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/owmPBIGBWIYczEZCwtGxxACiBpZkaBMSitMEZ~tplv-tiktokx-origin.image?dr=9636&x-expires=1791964800&x-signature=0kcgbcNbKmoXhSe4Lp0BMRdZlt0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/678c3bc233968eff79acfd41ba675753/6acf4105/video/tos/useast5/tos-useast5-v-0068c799-tx/0391318d79b643c3b7a91450dffd9927/?a=1988&bti=ODszNWYuMDE6&&bt=2395&ft=aEKq_qT0mIoPD129WSJI3wUTQqAbMeF~O5&mime_type=video_mp4&rc=amc3M2o5cjltZDMzbzczNUBpamc3M2o5cjltZDMzbzczNUBsbV9fMmQ0L2BhLS1kMTFzYSNsbV9fMmQ0L2BhLS1kMTFzcw%3D%3D&l=2026101208431629F4C04CE9066F155E26&btag=e00050000",
+            "source": "LC",
+            "sourceUnabbreviated": "creator caption",
+            "version": "8",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/678c3bc233968eff79acfd41ba675753/6acf4105/video/tos/useast5/tos-useast5-v-0068c799-tx/0391318d79b643c3b7a91450dffd9927/?a=1988&bti=ODszNWYuMDE6&&bt=2395&ft=aEKq_qT0mIoPD129WSJI3wUTQqAbMeF~O5&mime_type=video_mp4&rc=amc3M2o5cjltZDMzbzczNUBpamc3M2o5cjltZDMzbzczNUBsbV9fMmQ0L2BhLS1kMTFzYSNsbV9fMmQ0L2BhLS1kMTFzcw%3D%3D&l=2026101208431629F4C04CE9066F155E26&btag=e00050000"
+          },
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/182d588a38b0ba14a32556024607ee89/6acf4105/video/tos/useast5/tos-useast5-v-0068c799-tx/13bb6b36117644d0881a6193397e2750/?a=1988&bti=ODszNWYuMDE6&&bt=2395&ft=aEKq_qT0mIoPD129WSJI3wUTQqAbMeF~O5&mime_type=video_mp4&rc=amc3M2o5cjltZDMzbzczNUBpamc3M2o5cjltZDMzbzczNUBsbV9fMmQ0L2BhLS1kMTFzYSNsbV9fMmQ0L2BhLS1kMTFzcw%3D%3D&l=2026101208431629F4C04CE9066F155E26&btag=e00050000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "8",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/182d588a38b0ba14a32556024607ee89/6acf4105/video/tos/useast5/tos-useast5-v-0068c799-tx/13bb6b36117644d0881a6193397e2750/?a=1988&bti=ODszNWYuMDE6&&bt=2395&ft=aEKq_qT0mIoPD129WSJI3wUTQqAbMeF~O5&mime_type=video_mp4&rc=amc3M2o5cjltZDMzbzczNUBpamc3M2o5cjltZDMzbzczNUBsbV9fMmQ0L2BhLS1kMTFzYSNsbV9fMmQ0L2BhLS1kMTFzcw%3D%3D&l=2026101208431629F4C04CE9066F155E26&btag=e00050000"
+          }
+        ],
         "transcriptionLink": null,
         "aiVideoDescription": null,
         "aiVideoSummary": null,
-        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/18a4c0dbbddc45a6897094e27eec3912~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=1aqYJpZ%2Bla57o%2Fl%2FDAXGKjfk9p8%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/owmPBIGBWIYczEZCwtGxxACiBpZkaBMSitMEZ~tplv-tiktokx-origin.image?dr=9636&x-expires=1791964800&x-signature=0kcgbcNbKmoXhSe4Lp0BMRdZlt0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
       },
-      "diggCount": 1563,
-      "shareCount": 311,
-      "playCount": 80200,
-      "collectCount": 602,
-      "commentCount": 10,
+      "diggCount": 348,
+      "shareCount": 64,
+      "playCount": 9549,
+      "collectCount": 134,
+      "commentCount": 34,
       "repostCount": 0,
       "mentions": [],
       "detailedMentions": [],
       "hashtags": [
         {
-          "id": "25742",
-          "name": "dogtraining",
-          "title": "From treats and toys, to collars and commands, show us your best #DogTraining methods.",
+          "id": "1559276",
+          "name": "seperationanxiety",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "1692252653674502",
+          "name": "seperationanxietytraining",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": "2096496",
+          "name": "vizsla",
+          "title": null,
           "cover": null
         },
         {
@@ -2240,62 +245,90 @@
           "cover": null
         },
         {
-          "id": "9788793",
-          "name": "separationanxiety",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": "18001390",
-          "name": "dogtips",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": "16716088",
-          "name": "dogbehavior",
+          "id": "7681223106085535747",
+          "name": "howtoleavepuppyathome",
           "title": null,
           "cover": null
         }
       ],
       "effectStickers": [],
-      "isSlideshow": true,
-      "slideshowImageLinks": [
-        {
-          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/18a4c0dbbddc45a6897094e27eec3912~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=1aqYJpZ%2Bla57o%2Fl%2FDAXGKjfk9p8%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/18a4c0dbbddc45a6897094e27eec3912~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=1aqYJpZ%2Bla57o%2Fl%2FDAXGKjfk9p8%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
-        },
-        {
-          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/6b05650bc6ee4bc59b98de698367ece7~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=NmWy5I%2B5GxhyIj84h89t%2BFSUi10%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/6b05650bc6ee4bc59b98de698367ece7~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=NmWy5I%2B5GxhyIj84h89t%2BFSUi10%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
-        },
-        {
-          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/6495bf4ccc394352ad2f6f53e3cb78d6~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=yY%2FgTSqNbLM2N3pL1fQqj%2BH8IQo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/6495bf4ccc394352ad2f6f53e3cb78d6~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=yY%2FgTSqNbLM2N3pL1fQqj%2BH8IQo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
-        },
-        {
-          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/598c3c6bd92b47a788c643e6997f7c5a~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=JuRhIqN421nbnXXoiSydn0n0II0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/598c3c6bd92b47a788c643e6997f7c5a~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=JuRhIqN421nbnXXoiSydn0n0II0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
-        },
-        {
-          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/8ab4c906a8b748cd8ba2beaf9b2b3d12~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=XKPS3lhHHxbDlruMegjXc4Wo0LM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/8ab4c906a8b748cd8ba2beaf9b2b3d12~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=XKPS3lhHHxbDlruMegjXc4Wo0LM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
-        },
-        {
-          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/cfc1e2e7dd324134b3eadd65516b35e8~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=Z%2BBgfRPnvcJb1vF7D0pH8xp1IG0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/cfc1e2e7dd324134b3eadd65516b35e8~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=Z%2BBgfRPnvcJb1vF7D0pH8xp1IG0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
-        },
-        {
-          "tiktokLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/3d4aa94f145340b0b718666c0271b447~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=uZhHKa0BET3SpayNEM4h9qK%2BcOE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1",
-          "downloadLink": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-i-photomode-sg/3d4aa94f145340b0b718666c0271b447~tplv-photomode-image.jpeg?dr=9616&x-expires=1791925200&x-signature=uZhHKa0BET3SpayNEM4h9qK%2BcOE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5&ftpl=1"
-        }
-      ],
+      "isSlideshow": false,
       "isPinned": false,
       "isSponsored": false,
       "shortDramaSeriesInfo": null,
       "mediaUrls": [],
       "isStory": false,
-      "searchQuery": "dog cries when I leave",
+      "searchQuery": "dog separation anxiety training",
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7613068016762309910",
+      "text": "Timing is everything in separation anxiety training, and it’s more than just how long you leave your dog alone.\nGetting the timing right can make training easier for both you and your dog, and it’s key to building confident, relaxed alone time. Here’s what to consider:\n1️⃣ Time of day matters\nTrain when your dog is naturally calm and settled. Make sure their needs have been met, and that external distractions, like noisy neighbours or household activity, are minimal. Training when your dog is already stressed or overexcited can make sessions harder and slow progress.\n2️⃣ Timing of repetitions\nYour dog needs time to fully relax before the next repetition. I usually recommend a short break of 20–60 seconds, but this will vary depending on your dog, some may need longer.\n3️⃣ Timing of duration increases\nOnly increase the target duration in your next training session after a successful session where your dog remained calm and relaxed.\n4️⃣ Warm-ups and target duration\nWarm-ups ease your dog into training and allow multiple positive exposures to being alone in one session. Keep warm-ups much shorter than your target duration, a common mistake is making warm-ups too long, which can increase stress before the main session even begins.\n5️⃣ Timing of returning early\nSometimes your dog may start showing subtle signs of stress during a session. Recognising these signals and returning earlier than planned prevents overloading them, reduces anxiety, and helps your dog associate alone time with calm, positive experiences.\nTiming isn’t just a detail, it’s a foundation for successful separation anxiety training. Pay attention to these cues, and your dog will learn faster, stay calmer, and build confidence more reliably.\nIf you’re unsure how to structure sessions around your dog’s ideal timing, or want personalised guidance for your dog’s separation anxiety, book a free call via the link in my bio. ",
+      "textLanguage": "en",
+      "createTime": 1772555534,
+      "createTimeISO": "2026-03-03T16:32:14.000Z",
+      "isAd": false,
+      "authorMeta": {
+        "id": "7473109174966060065",
+        "name": "thecaninesaconsulant",
+        "profileUrl": "https://www.tiktok.com/@thecaninesaconsulant",
+        "nickName": "Separation Anxiety Consultant",
+        "verified": false,
+        "signature": "Helping owners & their dogs overcome separation anxiety. \nRemote, effective training that builds lasting confidence. \nMore info 👇",
+        "bioLink": null,
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/b272b7fbd7e558e733e254172853333b~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=5ce71793&x-expires=1791964800&x-signature=tGaFECBON0p8qLVsNewW9IDtVAM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 44,
+        "friends": 0,
+        "fans": 3516,
+        "heart": 14200,
+        "video": 273,
+        "digg": 1041,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/b272b7fbd7e558e733e254172853333b~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=5ce71793&x-expires=1791964800&x-signature=tGaFECBON0p8qLVsNewW9IDtVAM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+      },
+      "musicMeta": {
+        "musicName": "original sound - Mix.Mix",
+        "musicAuthor": "Mix.Mix",
+        "musicOriginal": true,
+        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/alisg/tos-alisg-v-27dcd7/owJqmBaSCeoMGI8oikQFEHq4IBpfKHEV8gDVUj/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThyEVOGXq8Zmo&mime_type=audio_mpeg&rc=OTM8ZTg7NWQ3Ojw6aGg8ZUBpMzlkdHg5cnA3NjMzODU8NEA2MTMxMjQwNTYxYDUvNTZeYSNlaF5lMmRrMGVhLS1kMS1zcw%3D%3D&expire=1791816230&l=2026101208431629F4C04CE9066F155E26&ply_type=3&policy=3&signature=3ec502e7da91ab2dc5e7cd6a7d0e0190&tk=0&btag=e00088000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/e45803c0e12d0516002870de6164580a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=985734f1&x-expires=1791964800&x-signature=GHrWmgjg2RVQSYV2d0g3cSJ7UF0%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/e45803c0e12d0516002870de6164580a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=985734f1&x-expires=1791964800&x-signature=GHrWmgjg2RVQSYV2d0g3cSJ7UF0%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "musicId": "7557675545849957121"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@thecaninesaconsulant/video/7613068016762309910",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 8,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o0EiNGI0EiQBB8pBADAclYY2CwBsvqAanaBvA~tplv-tiktokx-origin.image?dr=9636&x-expires=1791964800&x-signature=lIJ3EpkfDPUD40%2B1dNkW1lvU3xA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": null,
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o0EiNGI0EiQBB8pBADAclYY2CwBsvqAanaBvA~tplv-tiktokx-origin.image?dr=9636&x-expires=1791964800&x-signature=lIJ3EpkfDPUD40%2B1dNkW1lvU3xA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+      },
+      "diggCount": 377,
+      "shareCount": 48,
+      "playCount": 43700,
+      "collectCount": 137,
+      "commentCount": 18,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [],
+      "effectStickers": [],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "isStory": false,
+      "searchQuery": "dog separation anxiety training",
       "commentsDatasetUrl": null
     },
     {
@@ -2313,18 +346,18 @@
         "verified": false,
         "signature": "Carly | Separation Anxiety Specialist ✨ \nHelping dogs overcome separation anxiety \nBook a FREE Call👇🏻\nhttps://www.lunadreamsuk.co.uk",
         "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/3625e6667e7578b021b0bc1d355dbbaf~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=3382545d&x-expires=1791925200&x-signature=iCCvjv06sptYj%2BecXuhBPAU2qck%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/3625e6667e7578b021b0bc1d355dbbaf~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=fc774323&x-expires=1791964800&x-signature=YL%2FILlezQ3u79DQ38i1nFpoFp1s%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
         "privateAccount": false,
         "createTime": null,
         "hasActiveStory": false,
         "following": 58,
         "friends": 0,
         "fans": 569,
-        "heart": 4279,
+        "heart": 4280,
         "video": 141,
         "digg": 210,
         "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/3625e6667e7578b021b0bc1d355dbbaf~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=3382545d&x-expires=1791925200&x-signature=iCCvjv06sptYj%2BecXuhBPAU2qck%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/3625e6667e7578b021b0bc1d355dbbaf~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=fc774323&x-expires=1791964800&x-signature=YL%2FILlezQ3u79DQ38i1nFpoFp1s%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
       },
       "musicMeta": {
         "musicName": "Hey There Delilah",
@@ -2341,23 +374,23 @@
         "height": 1024,
         "width": 576,
         "duration": 45,
-        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oIezHGGfynG3gAIHlIVLiR0GGEc0fgGfgmQAIW~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=EbBGoE210JKo2ZJConMTATvaRac%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oIezHGGfynG3gAIHlIVLiR0GGEc0fgGfgmQAIW~tplv-tiktokx-origin.image?dr=9636&x-expires=1791964800&x-signature=DX90Vd4wM2k78bGl6FE5oL6%2BUpw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
         "definition": "540p",
         "format": "mp4",
         "subtitleLinks": [
           {
             "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/1db20d2b3de465146db81c6239629a63/6acea3bf/video/tos/useast5/tos-useast5-v-0068c799-tx/6f04f0224892469a8be41a3162fb57f5/?a=1988&bti=ODszNWYuMDE6&&bt=1293&ft=aEKq_qT0mIoPD12VNRJI3wUF9cAbMeF~O5&mime_type=video_mp4&rc=ams7O3M5cjlzOjMzbzczNUBpams7O3M5cjlzOjMzbzczNUBqXmBoMmRjNXNhLS1kMTFzYSNqXmBoMmRjNXNhLS1kMTFzcw%3D%3D&l=202610112133054616E0E3EB5265ADE260&btag=e00048000",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/61b8e1aef9fcc826761f8a896a94b790/6acf40d2/video/tos/useast5/tos-useast5-v-0068c799-tx/6f04f0224892469a8be41a3162fb57f5/?a=1988&bti=ODszNWYuMDE6&&bt=1293&ft=4KLMeMzm8Zmo0vzCba4jVXB2dpWrKsd.&mime_type=video_mp4&rc=ams7O3M5cjlzOjMzbzczNUBpams7O3M5cjlzOjMzbzczNUBqXmBoMmRjNXNhLS1kMTFzYSNqXmBoMmRjNXNhLS1kMTFzcw%3D%3D&l=2026101208431629F4C04CE9066F155E26&btag=e00048000",
             "source": "ASR",
             "sourceUnabbreviated": "automatic speech recognition",
             "version": "1:big_caption",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/1db20d2b3de465146db81c6239629a63/6acea3bf/video/tos/useast5/tos-useast5-v-0068c799-tx/6f04f0224892469a8be41a3162fb57f5/?a=1988&bti=ODszNWYuMDE6&&bt=1293&ft=aEKq_qT0mIoPD12VNRJI3wUF9cAbMeF~O5&mime_type=video_mp4&rc=ams7O3M5cjlzOjMzbzczNUBpams7O3M5cjlzOjMzbzczNUBqXmBoMmRjNXNhLS1kMTFzYSNqXmBoMmRjNXNhLS1kMTFzcw%3D%3D&l=202610112133054616E0E3EB5265ADE260&btag=e00048000"
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/61b8e1aef9fcc826761f8a896a94b790/6acf40d2/video/tos/useast5/tos-useast5-v-0068c799-tx/6f04f0224892469a8be41a3162fb57f5/?a=1988&bti=ODszNWYuMDE6&&bt=1293&ft=4KLMeMzm8Zmo0vzCba4jVXB2dpWrKsd.&mime_type=video_mp4&rc=ams7O3M5cjlzOjMzbzczNUBpams7O3M5cjlzOjMzbzczNUBqXmBoMmRjNXNhLS1kMTFzYSNqXmBoMmRjNXNhLS1kMTFzcw%3D%3D&l=2026101208431629F4C04CE9066F155E26&btag=e00048000"
           }
         ],
         "transcriptionLink": null,
         "aiVideoDescription": null,
         "aiVideoSummary": null,
-        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oIezHGGfynG3gAIHlIVLiR0GGEc0fgGfgmQAIW~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=EbBGoE210JKo2ZJConMTATvaRac%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oIezHGGfynG3gAIHlIVLiR0GGEc0fgGfgmQAIW~tplv-tiktokx-origin.image?dr=9636&x-expires=1791964800&x-signature=DX90Vd4wM2k78bGl6FE5oL6%2BUpw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
       },
       "diggCount": 251,
       "shareCount": 32,
@@ -2393,215 +426,136 @@
           "cover": null
         }
       ],
-      "effectStickers": [
-        {
-          "name": "No filter 2",
-          "ID": "156393571",
-          "stickerStats": {
-            "useCount": 0
-          }
-        }
-      ],
+      "effectStickers": [],
       "isSlideshow": false,
       "isPinned": false,
       "isSponsored": false,
       "shortDramaSeriesInfo": null,
       "mediaUrls": [],
       "isStory": false,
-      "searchQuery": "dog cries when I leave",
+      "searchQuery": "dog separation anxiety training",
       "commentsDatasetUrl": null
     },
     {
-      "id": "7556632825814912287",
-      "text": "Telling my dog I’m leaving her AGAIN. She’s crying real tears.😭 💔 #chihuahua #separationanxiety ",
+      "id": "7690615327465475360",
+      "text": "The method that has the best results, the highest chance of actually treating the issue, and is also the most humane option, is without a doubt systematic desensitization. But desensitization is NOT just “start small and gradually raise the difficulty” - your dog is going to catch on to that really quickly and probably start getting very stressed out. This is a process that needs to be done intentionally, carefully, and ideally with a strong knowledge base to guide you.\n\nAnd that’s where I’d love to help! I work with separation anxiety dogs all day, every day, and I would love to help you with yours. I offer free 30 minute Zoom calls if you’d like to learn more about 1:1 support; I also run free virtual info sessions on the first Wednesday of every month, and I run the Separation Anxiety Membership which is a guided DIY program designed to take you through the entire process from start to finish.\n\nHead to my profile to get started, or drop your questions in the comments!\n\n#separationanxiety #separationanxietydog #separationanxietyadvice #separationanxietytips #DogTraining ",
       "textLanguage": "en",
-      "createTime": 1759415715,
-      "createTimeISO": "2025-10-02T14:35:15.000Z",
+      "createTime": 1790610921,
+      "createTimeISO": "2026-09-28T15:55:21.000Z",
       "isAd": false,
+      "hasTikTokShopProduct": false,
       "authorMeta": {
-        "id": "7192751191615751211",
-        "name": "bruiserandellewoods",
-        "profileUrl": "https://www.tiktok.com/@bruiserandellewoods",
-        "nickName": "Blondie The Chihuahua👑",
+        "id": "7138761932358829061",
+        "name": "betternaturedogtraining",
+        "profileUrl": "https://www.tiktok.com/@betternaturedogtraining",
+        "nickName": "Better Nature Dog Training",
         "verified": false,
-        "signature": "Keeping Blondie’s memory alive 🌈🕊️\nA safe space for those missing their pets\nYou’re not alone❤️\n#blondiethechihuahua #chiwannas",
+        "signature": "Separation Anxiety/Reactivity Specialist\nBSc, CSAT\nWelfare driven training🐾\nBook a free call for separation anxiety👇🏻",
         "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/fc823c28e5649a34f2e34b3d8aecf172~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=4c237c49&x-expires=1791925200&x-signature=xZbMTw8ZtbNGDJTFhs%2FMSBBv73Y%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-avt-0068-euttp/5164ac0069476d949270e24bbe37d5ab~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b12b7a90&x-expires=1791964800&x-signature=wdvhJ2%2F0IZ8IE9zO8zxbPAWRV%2Bc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
         "privateAccount": false,
         "createTime": null,
         "hasActiveStory": false,
-        "following": 134,
+        "following": 141,
         "friends": 0,
-        "fans": 178300,
-        "heart": 10600000,
-        "video": 370,
-        "digg": 2671,
+        "fans": 26300,
+        "heart": 326100,
+        "video": 684,
+        "digg": 625,
         "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/fc823c28e5649a34f2e34b3d8aecf172~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=4c237c49&x-expires=1791925200&x-signature=xZbMTw8ZtbNGDJTFhs%2FMSBBv73Y%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-avt-0068-euttp/5164ac0069476d949270e24bbe37d5ab~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b12b7a90&x-expires=1791964800&x-signature=wdvhJ2%2F0IZ8IE9zO8zxbPAWRV%2Bc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
       },
       "musicMeta": {
         "musicName": "original sound",
-        "musicAuthor": "Blondie The Chihuahua👑",
+        "musicAuthor": "Better Nature Dog Training",
         "musicOriginal": true,
-        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast8/tos-useast8-v-27dcd7-tx2/oQojaAAORGIZqeOeCvLIAtGLovETQWAII5ejqR/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThBWmOGXq8Zmo&mime_type=audio_mpeg&rc=anloOXU5cjw7NjMzaTU8NEBpanloOXU5cjw7NjMzaTU8NEAwZWRzMmRjb2NhLS1kMTJzYSMwZWRzMmRjb2NhLS1kMTJzcw%3D%3D&expire=1791776050&l=202610112133054616E0E3EB5265ADE260&ply_type=3&policy=3&signature=c2ea4b1270aeed76b53e5fbaaa42bf19&tk=0&btag=e00050000",
-        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/fc823c28e5649a34f2e34b3d8aecf172~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=4c237c49&x-expires=1791925200&x-signature=xZbMTw8ZtbNGDJTFhs%2FMSBBv73Y%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/fc823c28e5649a34f2e34b3d8aecf172~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=4c237c49&x-expires=1791925200&x-signature=xZbMTw8ZtbNGDJTFhs%2FMSBBv73Y%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7556632758827764511"
+        "playUrl": "https://v16m.tiktokcdn-us.com/f0fca492bf1e05d2df9113ee5e174b69/6accf2a1/video/tos/useast2a/tos-useast2a-v-2370-euttp/osQ1uW3EACJDAI7IYBFqCGFDQCmXADoefouUrw/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThtEVOGXq8Zmo&mime_type=audio_mpeg&rc=ajs6anI5cnU7ZDMzZjU8NUBpajs6anI5cnU7ZDMzZjU8NUAtXzUyMmRrb3FhLS1kMTNzYSMtXzUyMmRrb3FhLS1kMTNzcw%3D%3D&vvpl=1&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00050000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-avt-0068-euttp/5164ac0069476d949270e24bbe37d5ab~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b12b7a90&x-expires=1791964800&x-signature=wdvhJ2%2F0IZ8IE9zO8zxbPAWRV%2Bc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-avt-0068-euttp/5164ac0069476d949270e24bbe37d5ab~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b12b7a90&x-expires=1791964800&x-signature=wdvhJ2%2F0IZ8IE9zO8zxbPAWRV%2Bc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "musicId": "7690615347581389600"
       },
-      "webVideoUrl": "https://www.tiktok.com/@bruiserandellewoods/video/7556632825814912287",
+      "webVideoUrl": "https://www.tiktok.com/@betternaturedogtraining/video/7690615327465475360",
       "videoMeta": {
-        "height": 1280,
-        "width": 720,
-        "duration": 64,
-        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/ogIvsVQAqYALUIRjOUjdaven0pGJICEQfFaRAe~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=KTFGKSjHm%2F4veAwj5mtdZRdbuXk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "720p",
-        "format": "mp4",
-        "subtitleLinks": [
-          {
-            "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/ac5028559249369fb50d1b49cb5c8093/6acea3d2/video/tos/useast8/tos-useast8-v-0068-tx2/637c832edc5a48f8bf74bc1e240bdbab/?a=1988&bti=ODszNWYuMDE6&&bt=8445&ft=aEKq_qT0mIoPD12VNRJI3wUF9cAbMeF~O5&mime_type=video_mp4&rc=M2hpNXA5cmQ7NjMzaTczNEBpM2hpNXA5cmQ7NjMzaTczNEBpc2NkMmRrbmNhLS1kMTJzYSNpc2NkMmRrbmNhLS1kMTJzcw%3D%3D&l=202610112133054616E0E3EB5265ADE260&btag=e00048000",
-            "source": "ASR",
-            "sourceUnabbreviated": "automatic speech recognition",
-            "version": "1:big_caption",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/ac5028559249369fb50d1b49cb5c8093/6acea3d2/video/tos/useast8/tos-useast8-v-0068-tx2/637c832edc5a48f8bf74bc1e240bdbab/?a=1988&bti=ODszNWYuMDE6&&bt=8445&ft=aEKq_qT0mIoPD12VNRJI3wUF9cAbMeF~O5&mime_type=video_mp4&rc=M2hpNXA5cmQ7NjMzaTczNEBpM2hpNXA5cmQ7NjMzaTczNEBpc2NkMmRrbmNhLS1kMTJzYSNpc2NkMmRrbmNhLS1kMTJzcw%3D%3D&l=202610112133054616E0E3EB5265ADE260&btag=e00048000"
-          }
-        ],
-        "transcriptionLink": null,
-        "aiVideoDescription": null,
-        "aiVideoSummary": null,
-        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/ogIvsVQAqYALUIRjOUjdaven0pGJICEQfFaRAe~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=KTFGKSjHm%2F4veAwj5mtdZRdbuXk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
-      },
-      "diggCount": 19000,
-      "shareCount": 1070,
-      "playCount": 154400,
-      "collectCount": 2587,
-      "commentCount": 130,
-      "repostCount": 0,
-      "mentions": [],
-      "detailedMentions": [],
-      "hashtags": [
-        {
-          "id": "18179",
-          "name": "chihuahua",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": "9788793",
-          "name": "separationanxiety",
-          "title": null,
-          "cover": null
-        }
-      ],
-      "effectStickers": [
-        {
-          "name": "No filter 2",
-          "ID": "156393571",
-          "stickerStats": {
-            "useCount": 0
-          }
-        }
-      ],
-      "isSlideshow": false,
-      "isPinned": false,
-      "isSponsored": false,
-      "shortDramaSeriesInfo": null,
-      "mediaUrls": [],
-      "isStory": false,
-      "searchQuery": "dog cries when I leave",
-      "commentsDatasetUrl": null
-    },
-    {
-      "id": "7607534029981748502",
-      "text": "Alone time is trained —\nnot forced.\n\nIf your puppy cries the second you leave, it’s not “being dramatic.”\n\nIt’s panic. Or uncertainty. Or simply never having been taught how to be alone safely.\n\nMost separation struggles happen because we jump too far, too fast:\n\n• Leaving for 2 hours when they can only cope with 2 minutes\n• Only practicing alone time when we actually need to leave\n• Returning when they’re already distressed\n\nAlone time is a skill.\nAnd skills are built gradually.\n\nStart here:\n\n1️⃣ Practice 5–10 second absences multiple times a day\n2️⃣ Return before crying escalates\n3️⃣ Keep arrivals calm and boring\n4️⃣ Build duration slowly — seconds before minutes\n\nConfidence grows in layers.\n\nYou wouldn’t expect a child to self-soothe in a brand-new environment overnight.\n\nYour puppy is no different.\n\nIf you’re struggling with crate or alone training, my step-by-step Crate Training Quick Start Bundle walks you through exactly how to build calm independence.\n\nComment CALM and I’ll send you the details 🤍\nSave this for later — you’ll need it.\n\n#puppytraining #separationanxiety #newpuppy ",
-      "textLanguage": "en",
-      "createTime": 1771267050,
-      "createTimeISO": "2026-02-16T18:37:30.000Z",
-      "isAd": false,
-      "authorMeta": {
-        "id": "6814413845672477701",
-        "name": "saradogtraining",
-        "profileUrl": "https://www.tiktok.com/@saradogtraining",
-        "nickName": "Sara | Puppy & Dog Trainer",
-        "verified": false,
-        "signature": "🐶 Helping families raise calm Doodle puppies\n📺 Featured Dog Behaviour Expert on BBC\n🏅 Accredited Dog Trainer | London\n⬇️ Puppy training plans & guides",
-        "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/6524482b7842ff60993cf36794fc9b5c~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=c6e652f0&x-expires=1791925200&x-signature=1MX0KFgOaa8Ob8x8Z7CwDEH%2B9rU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "privateAccount": false,
-        "createTime": null,
-        "hasActiveStory": false,
-        "following": 532,
-        "friends": 0,
-        "fans": 9132,
-        "heart": 137000,
-        "video": 929,
-        "digg": 942,
-        "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/6524482b7842ff60993cf36794fc9b5c~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=c6e652f0&x-expires=1791925200&x-signature=1MX0KFgOaa8Ob8x8Z7CwDEH%2B9rU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
-      },
-      "musicMeta": {
-        "musicName": "original sound",
-        "musicAuthor": "Sara | Puppy & Dog Trainer",
-        "musicOriginal": true,
-        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/no1a/tos-no1a-v-2370-no/o8PkDfntUEqkIexlWApgFBPmInJ2CAhSEF3ABq/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThBWmOGXq8Zmo&mime_type=audio_mpeg&rc=amw2a205cnVwOTMzbzU8NUBpamw2a205cnVwOTMzbzU8NUBoLnBpMmRjNDZhLS1kMTFzYSNoLnBpMmRjNDZhLS1kMTFzcw%3D%3D&expire=1791776007&l=202610112133054616E0E3EB5265ADE260&ply_type=3&policy=3&signature=f1e8b8a1d6d5e17f96d5a68f4202c8be&tk=0&btag=e00078000",
-        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/6524482b7842ff60993cf36794fc9b5c~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=c6e652f0&x-expires=1791925200&x-signature=1MX0KFgOaa8Ob8x8Z7CwDEH%2B9rU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/6524482b7842ff60993cf36794fc9b5c~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=c6e652f0&x-expires=1791925200&x-signature=1MX0KFgOaa8Ob8x8Z7CwDEH%2B9rU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7607534048008784662"
-      },
-      "locationMeta": {
-        "address": "W Park Rd, Newchapel, Lingfield RH7 6HW, UK",
-        "city": "Tandridge",
-        "cityCode": "7294168",
-        "countryCode": "2635167",
-        "locationName": "London England Temple",
-        "locationId": "22535865257839289"
-      },
-      "webVideoUrl": "https://www.tiktok.com/@saradogtraining/video/7607534029981748502",
-      "videoMeta": {
-        "height": 970,
-        "width": 540,
-        "duration": 21,
-        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o4BWWukfRpEkskFFBHDm1IF2I9fkgA1IELx3QE~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=BCvGwdQWmqdYRqP0tSKJ5kMUjOU%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "height": 1024,
+        "width": 576,
+        "duration": 155,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast2a-p-0037-euttp/oMyfGKeGMQafjxVIuGwEVdVR1D9AFIYYLIQZQg~tplv-tiktokx-dmt-logom:tos-useast2a-i-0068-euttp/ooLv8AjVdAYKGGPAIfbRFjGFMe1eQ7lAII0gIG.image?dr=9634&x-expires=1791964800&x-signature=uOUv38fPyspac%2F6sr9cqWGju4fo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
         "definition": "540p",
         "format": "mp4",
-        "subtitleLinks": null,
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/d8bfeebd7bcabae7f14c45a9cea215c6/6acf4141/video/tos/useast2a/tos-useast2a-v-0037-euttp/d9b504b5d0ce4745bcffaf46eed91b94/?a=1988&bti=ODszNWYuMDE6&&bt=2839&ft=aEKq_qT0mIoPD12-WSJI3wUEcSAbMeF~O5&mime_type=video_mp4&rc=M2RvdXA5cjY7ZDMzZjczNUBpM2RvdXA5cjY7ZDMzZjczNUBlZXBpMmQ0anFhLS1kMTNzYSNlZXBpMmQ0anFhLS1kMTNzcw%3D%3D&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00050000",
+            "source": "LC",
+            "sourceUnabbreviated": "creator caption",
+            "version": "8",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/d8bfeebd7bcabae7f14c45a9cea215c6/6acf4141/video/tos/useast2a/tos-useast2a-v-0037-euttp/d9b504b5d0ce4745bcffaf46eed91b94/?a=1988&bti=ODszNWYuMDE6&&bt=2839&ft=aEKq_qT0mIoPD12-WSJI3wUEcSAbMeF~O5&mime_type=video_mp4&rc=M2RvdXA5cjY7ZDMzZjczNUBpM2RvdXA5cjY7ZDMzZjczNUBlZXBpMmQ0anFhLS1kMTNzYSNlZXBpMmQ0anFhLS1kMTNzcw%3D%3D&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00050000"
+          },
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/374c674b9f8d9ff0ec4556fe84072e2c/6acf4141/video/tos/useast2a/tos-useast2a-v-0037-euttp/2e32f02aa47a47ed879869ba5cace587/?a=1988&bti=ODszNWYuMDE6&&bt=2839&ft=aEKq_qT0mIoPD12-WSJI3wUEcSAbMeF~O5&mime_type=video_mp4&rc=M2RvdXA5cjY7ZDMzZjczNUBpM2RvdXA5cjY7ZDMzZjczNUBlZXBpMmQ0anFhLS1kMTNzYSNlZXBpMmQ0anFhLS1kMTNzcw%3D%3D&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00050000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "8",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/374c674b9f8d9ff0ec4556fe84072e2c/6acf4141/video/tos/useast2a/tos-useast2a-v-0037-euttp/2e32f02aa47a47ed879869ba5cace587/?a=1988&bti=ODszNWYuMDE6&&bt=2839&ft=aEKq_qT0mIoPD12-WSJI3wUEcSAbMeF~O5&mime_type=video_mp4&rc=M2RvdXA5cjY7ZDMzZjczNUBpM2RvdXA5cjY7ZDMzZjczNUBlZXBpMmQ0anFhLS1kMTNzYSNlZXBpMmQ0anFhLS1kMTNzcw%3D%3D&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00050000"
+          }
+        ],
         "transcriptionLink": null,
         "aiVideoDescription": null,
         "aiVideoSummary": null,
-        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o4BWWukfRpEkskFFBHDm1IF2I9fkgA1IELx3QE~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=BCvGwdQWmqdYRqP0tSKJ5kMUjOU%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast2a-p-0037-euttp/oMyfGKeGMQafjxVIuGwEVdVR1D9AFIYYLIQZQg~tplv-tiktokx-dmt-logom:tos-useast2a-i-0068-euttp/ooLv8AjVdAYKGGPAIfbRFjGFMe1eQ7lAII0gIG.image?dr=9634&x-expires=1791964800&x-signature=uOUv38fPyspac%2F6sr9cqWGju4fo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8"
       },
-      "diggCount": 445,
-      "shareCount": 68,
-      "playCount": 38100,
-      "collectCount": 99,
-      "commentCount": 22,
+      "diggCount": 145,
+      "shareCount": 10,
+      "playCount": 2831,
+      "collectCount": 56,
+      "commentCount": 15,
       "repostCount": 0,
       "mentions": [],
       "detailedMentions": [],
       "hashtags": [
         {
-          "id": "7110603",
-          "name": "puppytraining",
-          "title": null,
-          "cover": null
-        },
-        {
-          "id": "9788793",
+          "id": null,
           "name": "separationanxiety",
           "title": null,
           "cover": null
         },
         {
-          "id": "14750",
-          "name": "newpuppy",
+          "id": null,
+          "name": "separationanxietydog",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "separationanxietyadvice",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "separationanxietytips",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "dogtraining",
           "title": null,
           "cover": null
         }
       ],
       "effectStickers": [
         {
-          "name": "No filter 2",
-          "ID": "156393571",
+          "ID": "1359854",
+          "name": "lashes",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "458381719045",
+          "name": "lashes",
           "stickerStats": {
             "useCount": 0
           }
@@ -2612,114 +566,126 @@
       "isSponsored": false,
       "shortDramaSeriesInfo": null,
       "mediaUrls": [],
+      "input": "dogseparationanxiety",
       "isStory": false,
-      "searchQuery": "dog cries when I leave",
+      "searchHashtag": {
+        "name": "dogseparationanxiety",
+        "views": 46800000
+      },
       "commentsDatasetUrl": null
     },
     {
-      "id": "7609088661883194654",
-      "text": "I need help! How do I make this easier for her when I leave?\n#dogsoftiktok #doglover #puppytiktok #bernedoodle #dogmom ",
+      "id": "7656097040870526221",
+      "text": "3 tips in 3 minutes that I’d give any dog owner dealing with separation anxiety. because trust me, I’ve been there. (It’s also how i got started on tiktok! I was vlogging my whole process) good luck 🤍\n#noodleyorkcity #separationanxiety #doganxiety #dogtips #puppytips ",
       "textLanguage": "en",
-      "createTime": 1771629025,
-      "createTimeISO": "2026-02-20T23:10:25.000Z",
+      "createTime": 1782574048,
+      "createTimeISO": "2026-06-27T15:27:28.000Z",
       "isAd": false,
+      "hasTikTokShopProduct": false,
       "authorMeta": {
-        "id": "6613405763779379205",
-        "name": "olibearbernedoodle",
-        "profileUrl": "https://www.tiktok.com/@olibearbernedoodle",
-        "nickName": "olibearbernedoodle",
+        "id": "7059424184486134830",
+        "name": "noodleyorkcity",
+        "profileUrl": "https://www.tiktok.com/@noodleyorkcity",
+        "nickName": "NoodleYorkCity",
         "verified": false,
-        "signature": "Hi, I'm Oli\nI’m a mini Bernedoodle girl\nThanks for loving me\nKiss kiss 💋 🐶 💕",
+        "signature": "personality trait: being a dog mom in nyc🫠\nemail: noodleyorkcity21@gmail.com",
         "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/3a2a9e7c760d501eaa5c5662480e1bcf~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=13ba9403&x-expires=1791925200&x-signature=OhSKStfsWLIk0G4UCI7zXxH99Xk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/66a825ec7dbeebe0a78a90bc3375c439~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=7336409b&x-expires=1791964800&x-signature=hzWD8asoObN67dMWEj414Oz4Uis%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
         "privateAccount": false,
         "createTime": null,
         "hasActiveStory": false,
-        "following": 70,
+        "following": 76,
         "friends": 0,
-        "fans": 1431,
-        "heart": 59300,
-        "video": 48,
-        "digg": 205,
+        "fans": 37200,
+        "heart": 2400000,
+        "video": 1048,
+        "digg": 3688,
         "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/3a2a9e7c760d501eaa5c5662480e1bcf~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=13ba9403&x-expires=1791925200&x-signature=OhSKStfsWLIk0G4UCI7zXxH99Xk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/66a825ec7dbeebe0a78a90bc3375c439~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=7336409b&x-expires=1791964800&x-signature=hzWD8asoObN67dMWEj414Oz4Uis%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8"
       },
       "musicMeta": {
         "musicName": "original sound",
-        "musicAuthor": "olibearbernedoodle",
+        "musicAuthor": "NoodleYorkCity",
         "musicOriginal": true,
-        "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast8/tos-useast8-v-27dcd7-tx2/oQEIPeGILAUFM0xSATK4ECFosVfIIqAeATdOaI/?a=1988&bti=ODszNWYuMDE6&&bt=125&ft=GcAInInz7ThBWmOGXq8Zmo&mime_type=audio_mpeg&rc=M2R4am85cnJoOTMzaTU8NEBpM2R4am85cnJoOTMzaTU8NEBiMnFhMmRrZ2BhLS1kMTJzYSNiMnFhMmRrZ2BhLS1kMTJzcw%3D%3D&expire=1791775995&l=202610112133054616E0E3EB5265ADE260&ply_type=3&policy=3&signature=6722c6b561d845f880ce141571cb8792&tk=0&btag=e00070000",
-        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/3a2a9e7c760d501eaa5c5662480e1bcf~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=13ba9403&x-expires=1791925200&x-signature=OhSKStfsWLIk0G4UCI7zXxH99Xk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/3a2a9e7c760d501eaa5c5662480e1bcf~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=13ba9403&x-expires=1791925200&x-signature=OhSKStfsWLIk0G4UCI7zXxH99Xk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-        "musicId": "7609088677305682718"
+        "playUrl": "https://v16m.tiktokcdn-us.com/a3b74cf655b9334abbef4c6ea35a007f/6accf2c0/video/tos/useast5/tos-useast5-v-27dcd7-tx/ow8ePAgYjU1zfmxugAA12lQfC4Df4fRAkaQeDT/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThtEVOGXq8Zmo&mime_type=audio_mpeg&rc=amk0eXU5cnN4OzMzZzU8NEBpamk0eXU5cnN4OzMzZzU8NEBzcDE0MmQ0a3NhLS1kMS9zYSNzcDE0MmQ0a3NhLS1kMS9zcw%3D%3D&vvpl=1&l=202610120843170F15FFB5BB7F2010D7BC&btag=e000c8000",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/66a825ec7dbeebe0a78a90bc3375c439~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=7336409b&x-expires=1791964800&x-signature=hzWD8asoObN67dMWEj414Oz4Uis%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/66a825ec7dbeebe0a78a90bc3375c439~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=7336409b&x-expires=1791964800&x-signature=hzWD8asoObN67dMWEj414Oz4Uis%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "musicId": "7656097189529783054"
       },
-      "webVideoUrl": "https://www.tiktok.com/@olibearbernedoodle/video/7609088661883194654",
+      "webVideoUrl": "https://www.tiktok.com/@noodleyorkcity/video/7656097040870526221",
       "videoMeta": {
         "height": 1280,
         "width": 720,
-        "duration": 9,
-        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oYCZjFG0MUdeJYuex6ccqNNIIIhLQITkIQAAeZ~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=2zo4CNPoc91HBNeV4z5YPcY2Jfo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 186,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/oMcfVbPIaKGiGgEQiFLoA1DGA4IIZObee9fR9k~tplv-tiktokx-origin.image?dr=9636&x-expires=1791964800&x-signature=5vcGVREd3JuYHNFQaT9qPHo39nw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
         "definition": "720p",
         "format": "mp4",
         "subtitleLinks": [
           {
             "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/63656ae63f7bc20faf78a4dfe777da89/6acea39b/video/tos/useast8/tos-useast8-v-0068-tx2/3205b47451624ff9aa10713b3ddac046/?a=1988&bti=ODszNWYuMDE6&&bt=3014&ft=aEKq_qT0mIoPD12VNRJI3wUF9cAbMeF~O5&mime_type=video_mp4&rc=M2Z3PHI5cjxoOTMzaTczNEBpM2Z3PHI5cjxoOTMzaTczNEBmMW1jMmRrZmBhLS1kMTJzYSNmMW1jMmRrZmBhLS1kMTJzcw%3D%3D&l=202610112133054616E0E3EB5265ADE260&btag=e00070000",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/200af39cc7ab5681134003cd141b8974/6acf4160/video/tos/useast5/tos-useast5-v-0068-tx/6cc403a04729448fb912461adefa7e3e/?a=1988&bti=ODszNWYuMDE6&&bt=9587&ft=aEKq_qT0mIoPD12-WSJI3wUEcSAbMeF~O5&mime_type=video_mp4&rc=M3E1ZnM5cnR4OzMzZzczNEBpM3E1ZnM5cnR4OzMzZzczNEA0cmkwMmRrZ3NhLS1kMS9zYSM0cmkwMmRrZ3NhLS1kMS9zcw%3D%3D&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00048000",
             "source": "ASR",
             "sourceUnabbreviated": "automatic speech recognition",
             "version": "1:big_caption",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/63656ae63f7bc20faf78a4dfe777da89/6acea39b/video/tos/useast8/tos-useast8-v-0068-tx2/3205b47451624ff9aa10713b3ddac046/?a=1988&bti=ODszNWYuMDE6&&bt=3014&ft=aEKq_qT0mIoPD12VNRJI3wUF9cAbMeF~O5&mime_type=video_mp4&rc=M2Z3PHI5cjxoOTMzaTczNEBpM2Z3PHI5cjxoOTMzaTczNEBmMW1jMmRrZmBhLS1kMTJzYSNmMW1jMmRrZmBhLS1kMTJzcw%3D%3D&l=202610112133054616E0E3EB5265ADE260&btag=e00070000"
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/200af39cc7ab5681134003cd141b8974/6acf4160/video/tos/useast5/tos-useast5-v-0068-tx/6cc403a04729448fb912461adefa7e3e/?a=1988&bti=ODszNWYuMDE6&&bt=9587&ft=aEKq_qT0mIoPD12-WSJI3wUEcSAbMeF~O5&mime_type=video_mp4&rc=M3E1ZnM5cnR4OzMzZzczNEBpM3E1ZnM5cnR4OzMzZzczNEA0cmkwMmRrZ3NhLS1kMS9zYSM0cmkwMmRrZ3NhLS1kMS9zcw%3D%3D&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00048000"
           }
         ],
         "transcriptionLink": null,
         "aiVideoDescription": null,
         "aiVideoSummary": null,
-        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oYCZjFG0MUdeJYuex6ccqNNIIIhLQITkIQAAeZ~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=2zo4CNPoc91HBNeV4z5YPcY2Jfo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/oMcfVbPIaKGiGgEQiFLoA1DGA4IIZObee9fR9k~tplv-tiktokx-origin.image?dr=9636&x-expires=1791964800&x-signature=5vcGVREd3JuYHNFQaT9qPHo39nw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8"
       },
-      "diggCount": 694,
-      "shareCount": 42,
-      "playCount": 36100,
-      "collectCount": 37,
-      "commentCount": 124,
+      "diggCount": 1229,
+      "shareCount": 137,
+      "playCount": 22600,
+      "collectCount": 492,
+      "commentCount": 25,
       "repostCount": 0,
       "mentions": [],
       "detailedMentions": [],
       "hashtags": [
         {
-          "id": "1587543376171009",
-          "name": "dogsoftiktok",
-          "title": "Here's to all the #DogsOfTikTok.",
-          "cover": null
-        },
-        {
-          "id": "18013",
-          "name": "doglover",
+          "id": null,
+          "name": "noodleyorkcity",
           "title": null,
           "cover": null
         },
         {
-          "id": "1593238513307650",
-          "name": "puppytiktok",
+          "id": null,
+          "name": "separationanxiety",
           "title": null,
           "cover": null
         },
         {
-          "id": "62765071",
-          "name": "bernedoodle",
+          "id": null,
+          "name": "doganxiety",
           "title": null,
           "cover": null
         },
         {
-          "id": "2153105",
-          "name": "dogmom",
+          "id": null,
+          "name": "dogtips",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "puppytips",
           "title": null,
           "cover": null
         }
       ],
       "effectStickers": [
         {
-          "name": "No filter 2",
-          "ID": "156393571",
+          "ID": "1359854",
+          "name": "lashes",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "458381719045",
+          "name": "lashes",
           "stickerStats": {
             "useCount": 0
           }
@@ -2730,84 +696,126 @@
       "isSponsored": false,
       "shortDramaSeriesInfo": null,
       "mediaUrls": [],
+      "input": "dogseparationanxiety",
       "isStory": false,
-      "searchQuery": "dog cries when I leave",
+      "searchHashtag": {
+        "name": "dogseparationanxiety",
+        "views": 46800000
+      },
       "commentsDatasetUrl": null
     },
     {
-      "id": "7688779414057864478",
-      "text": "meet georgie & help a girl out🙃",
+      "id": "7581868680695368982",
+      "text": "How do you teach a dog with separation anxiety that being alone is safe when they start panicking the second you’re out of sight - or worse, they’re already panicking while you’re getting ready to leave?\n\nOne way to get started is to simply remove those pre-departure cues - keys, coats, shoes - just step outside for a second or two without them! We can add them in systematically later, but this helps us get right at the root of why your dog is anxious - being alone.\n\nAny questions about this strategy? Drop a comment below! Like and follow for part 2, and if you need specialist help with your dog’s separation anxiety, you can book a free Zoom call through my profile!\n\n#separationanxiety #separationanxietytips #separationanxietydog #dogtraining #predeparturecues ",
       "textLanguage": "en",
-      "createTime": 1790183471,
-      "createTimeISO": "2026-09-23T17:11:11.000Z",
+      "createTime": 1765291374,
+      "createTimeISO": "2025-12-09T14:42:54.000Z",
       "isAd": false,
+      "hasTikTokShopProduct": false,
       "authorMeta": {
-        "id": "6765638390858073093",
-        "name": "erikaapapag",
-        "profileUrl": "https://www.tiktok.com/@erikaapapag",
-        "nickName": "Erika",
+        "id": "7138761932358829061",
+        "name": "betternaturedogtraining",
+        "profileUrl": "https://www.tiktok.com/@betternaturedogtraining",
+        "nickName": "Better Nature Dog Training",
         "verified": false,
-        "signature": "idk what i’m doing\n\nemail: erikaapapag@gmail.com",
+        "signature": "Separation Anxiety/Reactivity Specialist\nBSc, CSAT\nWelfare driven training🐾\nBook a free call for separation anxiety👇🏻",
         "bioLink": null,
-        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/4f5331b257c2dc59b23695287ec44374~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=6d6420b2&x-expires=1791925200&x-signature=zyHjsSIzH%2BrOdtMQMJFr0jUtxW8%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+        "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-avt-0068-euttp/5164ac0069476d949270e24bbe37d5ab~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b12b7a90&x-expires=1791964800&x-signature=wdvhJ2%2F0IZ8IE9zO8zxbPAWRV%2Bc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
         "privateAccount": false,
         "createTime": null,
         "hasActiveStory": false,
-        "following": 245,
+        "following": 141,
         "friends": 0,
-        "fans": 8502,
-        "heart": 183800,
-        "video": 211,
-        "digg": 9586,
+        "fans": 26300,
+        "heart": 326100,
+        "video": 684,
+        "digg": 625,
         "followDatasetUrl": null,
-        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/4f5331b257c2dc59b23695287ec44374~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=6d6420b2&x-expires=1791925200&x-signature=zyHjsSIzH%2BrOdtMQMJFr0jUtxW8%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+        "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-avt-0068-euttp/5164ac0069476d949270e24bbe37d5ab~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b12b7a90&x-expires=1791964800&x-signature=wdvhJ2%2F0IZ8IE9zO8zxbPAWRV%2Bc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
       },
       "musicMeta": {
-        "musicName": "Veludo Noite",
-        "musicAuthor": "The Pizza Boys",
-        "musicOriginal": false,
-        "musicAlbum": "Candle Cage",
-        "playUrl": "https://sf19.tiktokcdn-us.com/obj/tos-alisg-ve-2774/ocSgAJfBNIxyZnqt50aYRaiNoBgCLiHWiQDeMg",
-        "coverMediumUrl": "https://p19-common.tiktokcdn-us.com/tos-alisg-v-2774/oUAASwEIIAgq82afGoFDRPDgmfHijtCIDBNZAx~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "originalCoverMediumUrl": "https://p19-common.tiktokcdn-us.com/tos-alisg-v-2774/oUAASwEIIAgq82afGoFDRPDgmfHijtCIDBNZAx~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast5",
-        "musicId": "7667609163505321994"
+        "musicName": "original sound",
+        "musicAuthor": "Better Nature Dog Training",
+        "musicOriginal": true,
+        "playUrl": "https://v16m.tiktokcdn-us.com/81337587a1ce132d773c143d360d2443/6accf277/video/tos/no1a/tos-no1a-v-2370-no/o0EAIkKfDuAI1fUJyaOp9AFV4AsDgBgFCQwQwB/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThtEVOGXq8Zmo&mime_type=audio_mpeg&rc=MzNkZnI5cnY2NzMzbzU8NUBpMzNkZnI5cnY2NzMzbzU8NUBiZDBjMmRrXnBhLS1kMTFzYSNiZDBjMmRrXnBhLS1kMTFzcw%3D%3D&vvpl=1&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00050000",
+        "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-avt-0068-euttp/5164ac0069476d949270e24bbe37d5ab~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b12b7a90&x-expires=1791964800&x-signature=wdvhJ2%2F0IZ8IE9zO8zxbPAWRV%2Bc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast2a-avt-0068-euttp/5164ac0069476d949270e24bbe37d5ab~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=b12b7a90&x-expires=1791964800&x-signature=wdvhJ2%2F0IZ8IE9zO8zxbPAWRV%2Bc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "musicId": "7581868711894223638"
       },
-      "webVideoUrl": "https://www.tiktok.com/@erikaapapag/video/7688779414057864478",
+      "webVideoUrl": "https://www.tiktok.com/@betternaturedogtraining/video/7581868680695368982",
       "videoMeta": {
-        "height": 1280,
-        "width": 720,
-        "duration": 96,
-        "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oMdD8ifiaAWD15JqQIAKIXA26ZILicCMByGgC0~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=IIf%2FaE0SoL4rd0gTJn%2BCICsw0NI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "definition": "720p",
+        "height": 1024,
+        "width": 576,
+        "duration": 113,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o4E4IACHINInA6B08iQwfaskUm0C3i7wywBWAg~tplv-tiktokx-origin.image?dr=9636&x-expires=1791964800&x-signature=QJVj8F%2BD3sBmAHhiG%2Bzq1FVTQH0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+        "definition": "540p",
         "format": "mp4",
         "subtitleLinks": [
           {
             "language": "eng-US",
-            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/5c14596ee115a894c5ce91133b300ee0/6acea3f2/video/tos/useast8/tos-useast8-v-0068-tx2/50ae103142544151aa68c491f83cb4ef/?a=1988&bti=ODszNWYuMDE6&&bt=8346&ft=aEKq_qT0mIoPD12VNRJI3wUF9cAbMeF~O5&mime_type=video_mp4&rc=anZrOWw5cnYzZDMzaTczNEBpanZrOWw5cnYzZDMzaTczNEAxY181MmRzXm5hLS1kMTJzYSMxY181MmRzXm5hLS1kMTJzcw%3D%3D&l=202610112133054616E0E3EB5265ADE260&btag=e00048000",
-            "source": "ASR",
-            "sourceUnabbreviated": "automatic speech recognition",
-            "version": "1:big_caption",
-            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/5c14596ee115a894c5ce91133b300ee0/6acea3f2/video/tos/useast8/tos-useast8-v-0068-tx2/50ae103142544151aa68c491f83cb4ef/?a=1988&bti=ODszNWYuMDE6&&bt=8346&ft=aEKq_qT0mIoPD12VNRJI3wUF9cAbMeF~O5&mime_type=video_mp4&rc=anZrOWw5cnYzZDMzaTczNEBpanZrOWw5cnYzZDMzaTczNEAxY181MmRzXm5hLS1kMTJzYSMxY181MmRzXm5hLS1kMTJzcw%3D%3D&l=202610112133054616E0E3EB5265ADE260&btag=e00048000"
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/49c848ebea08c6ffbdc02e2ab5ef0fcb/6acf4117/video/tos/useast5/tos-useast5-v-0068c799-tx/c9bea9f4e909499284a264da145bf787/?a=1988&bti=ODszNWYuMDE6&&bt=1025&ft=aEKq_qT0mIoPD12-WSJI3wUEcSAbMeF~O5&mime_type=video_mp4&rc=M3Q2PG45cnU2NzMzbzczNUBpM3Q2PG45cnU2NzMzbzczNUBeLS5yMmRzM3BhLS1kMTFzYSNeLS5yMmRzM3BhLS1kMTFzcw%3D%3D&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00050000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "8:big_caption",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/49c848ebea08c6ffbdc02e2ab5ef0fcb/6acf4117/video/tos/useast5/tos-useast5-v-0068c799-tx/c9bea9f4e909499284a264da145bf787/?a=1988&bti=ODszNWYuMDE6&&bt=1025&ft=aEKq_qT0mIoPD12-WSJI3wUEcSAbMeF~O5&mime_type=video_mp4&rc=M3Q2PG45cnU2NzMzbzczNUBpM3Q2PG45cnU2NzMzbzczNUBeLS5yMmRzM3BhLS1kMTFzYSNeLS5yMmRzM3BhLS1kMTFzcw%3D%3D&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00050000"
           }
         ],
         "transcriptionLink": null,
         "aiVideoDescription": null,
         "aiVideoSummary": null,
-        "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oMdD8ifiaAWD15JqQIAKIXA26ZILicCMByGgC0~tplv-tiktokx-origin.image?dr=9636&x-expires=1791925200&x-signature=IIf%2FaE0SoL4rd0gTJn%2BCICsw0NI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o4E4IACHINInA6B08iQwfaskUm0C3i7wywBWAg~tplv-tiktokx-origin.image?dr=9636&x-expires=1791964800&x-signature=QJVj8F%2BD3sBmAHhiG%2Bzq1FVTQH0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8"
       },
-      "diggCount": 86,
-      "shareCount": 24,
-      "playCount": 1666,
-      "collectCount": 2,
-      "commentCount": 26,
+      "diggCount": 8656,
+      "shareCount": 823,
+      "playCount": 145200,
+      "collectCount": 2330,
+      "commentCount": 203,
       "repostCount": 0,
       "mentions": [],
       "detailedMentions": [],
-      "hashtags": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "separationanxiety",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "separationanxietytips",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "separationanxietydog",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "dogtraining",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "predeparturecues",
+          "title": null,
+          "cover": null
+        }
+      ],
       "effectStickers": [
         {
-          "name": "No filter 2",
-          "ID": "156393571",
+          "ID": "1359854",
+          "name": "lashes",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "458381719045",
+          "name": "lashes",
           "stickerStats": {
             "useCount": 0
           }
@@ -2818,8 +826,146 @@
       "isSponsored": false,
       "shortDramaSeriesInfo": null,
       "mediaUrls": [],
+      "input": "dogseparationanxiety",
       "isStory": false,
-      "searchQuery": "dog cries when I leave",
+      "searchHashtag": {
+        "name": "dogseparationanxiety",
+        "views": 46800000
+      },
+      "commentsDatasetUrl": null
+    },
+    {
+      "id": "7274712077300813099",
+      "text": "How To Solve Separation Anxiety with your dogs. Part 1 - Why Do Dogs Develop Separation Anxiety?\n\n#dog #dogtraining #cesarmillan ",
+      "textLanguage": "en",
+      "createTime": 1693775909,
+      "createTimeISO": "2023-09-03T21:18:29.000Z",
+      "isAd": false,
+      "hasTikTokShopProduct": false,
+      "authorMeta": {
+        "id": "6760932881579770886",
+        "name": "imcesarmillan",
+        "profileUrl": "https://www.tiktok.com/@imcesarmillan",
+        "nickName": "Cesar Millan",
+        "verified": true,
+        "signature": "I whisper to dogs. \nSubscribe to my YouTube Channel!",
+        "bioLink": null,
+        "avatar": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/b13b5c44ac92a57aa7a7974f9b12552a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=096e6713&x-expires=1791964800&x-signature=fu5zzJvH9rPM3164XCD7d5vkZsA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "privateAccount": false,
+        "createTime": null,
+        "hasActiveStory": false,
+        "following": 503,
+        "friends": 0,
+        "fans": 3700000,
+        "heart": 24200000,
+        "video": 1124,
+        "digg": 2881,
+        "followDatasetUrl": null,
+        "originalAvatarUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/b13b5c44ac92a57aa7a7974f9b12552a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=096e6713&x-expires=1791964800&x-signature=fu5zzJvH9rPM3164XCD7d5vkZsA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8"
+      },
+      "musicMeta": {
+        "musicName": "original sound",
+        "musicAuthor": "Cesar Millan",
+        "musicOriginal": true,
+        "playUrl": "https://v16m.tiktokcdn-us.com/43e5cd81015bc8933a0a093410783944/6accf282/video/tos/useast5/tos-useast5-v-27dcd7-tx/oAAbPegfCFaJDnA7I68DoqAIHFDU9kxSgABpI7/?a=1233&bti=ODszNWYuMDE6&&bt=125&ft=GSDrKInz7ThtEVOGXq8Zmo&mime_type=audio_mpeg&rc=andqcTM6ZmRpbTMzZzU8NEBpandqcTM6ZmRpbTMzZzU8NEBybmBecjQwZG5gLS1kMS9zYSNybmBecjQwZG5gLS1kMS9zcw%3D%3D&vvpl=1&l=202610120843170F15FFB5BB7F2010D7BC&btag=e000c8000",
+        "coverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/b13b5c44ac92a57aa7a7974f9b12552a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=096e6713&x-expires=1791964800&x-signature=fu5zzJvH9rPM3164XCD7d5vkZsA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "originalCoverMediumUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/b13b5c44ac92a57aa7a7974f9b12552a~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=096e6713&x-expires=1791964800&x-signature=fu5zzJvH9rPM3164XCD7d5vkZsA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+        "musicId": "7274712127062002475"
+      },
+      "locationMeta": {
+        "address": "20340 Blue Cloud Rd, Santa Clarita, CA 91390, USA",
+        "city": "Los Angeles",
+        "cityCode": "5368381",
+        "countryCode": "6252001",
+        "locationName": "Cesar Millan's Dog Psychology Center",
+        "locationId": "21568295371329448"
+      },
+      "webVideoUrl": "https://www.tiktok.com/@imcesarmillan/video/7274712077300813099",
+      "videoMeta": {
+        "height": 1024,
+        "width": 576,
+        "duration": 124,
+        "coverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/ce4d8fe609ae4c9590662adab70724fc_1693775911~tplv-tiktokx-origin.image?dr=9636&x-expires=1791964800&x-signature=V%2F0MF1Sa1JeBs%2BlenqIJeBRJwd0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+        "definition": "540p",
+        "format": "mp4",
+        "subtitleLinks": [
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/9bb6b87c9c76c1a2b755c49ab039100a/6acf4123/video/tos/useast5/tos-useast5-v-0068-tx/50d9dda0daa34f7785854285aed22dec/?a=1988&bti=ODszNWYuMDE6&&bt=6672&ft=aEKq_qT0mIoPD12-WSJI3wUEcSAbMeF~O5&mime_type=video_mp4&rc=ajw4NTs6ZnBpbTMzZzczNEBpajw4NTs6ZnBpbTMzZzczNEAzcnFqcjRvYG5gLS1kMS9zYSMzcnFqcjRvYG5gLS1kMS9zcw%3D%3D&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00048000",
+            "source": "MT",
+            "sourceUnabbreviated": "machine translation",
+            "version": "8",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/9bb6b87c9c76c1a2b755c49ab039100a/6acf4123/video/tos/useast5/tos-useast5-v-0068-tx/50d9dda0daa34f7785854285aed22dec/?a=1988&bti=ODszNWYuMDE6&&bt=6672&ft=aEKq_qT0mIoPD12-WSJI3wUEcSAbMeF~O5&mime_type=video_mp4&rc=ajw4NTs6ZnBpbTMzZzczNEBpajw4NTs6ZnBpbTMzZzczNEAzcnFqcjRvYG5gLS1kMS9zYSMzcnFqcjRvYG5gLS1kMS9zcw%3D%3D&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00048000"
+          },
+          {
+            "language": "eng-US",
+            "downloadLink": "https://v16m-webapp.tiktokcdn-us.com/578a3435d25ff8368794c63eef467e7f/6acf4123/video/tos/useast5/tos-useast5-v-0068-tx/f43e13fa4ebc4b2fb51446a80589527f/?a=1988&bti=ODszNWYuMDE6&&bt=6672&ft=aEKq_qT0mIoPD12-WSJI3wUEcSAbMeF~O5&mime_type=video_mp4&rc=ajw4NTs6ZnBpbTMzZzczNEBpajw4NTs6ZnBpbTMzZzczNEAzcnFqcjRvYG5gLS1kMS9zYSMzcnFqcjRvYG5gLS1kMS9zcw%3D%3D&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00048000",
+            "source": "LC",
+            "sourceUnabbreviated": "creator caption",
+            "version": "8",
+            "tiktokLink": "https://v16m-webapp.tiktokcdn-us.com/578a3435d25ff8368794c63eef467e7f/6acf4123/video/tos/useast5/tos-useast5-v-0068-tx/f43e13fa4ebc4b2fb51446a80589527f/?a=1988&bti=ODszNWYuMDE6&&bt=6672&ft=aEKq_qT0mIoPD12-WSJI3wUEcSAbMeF~O5&mime_type=video_mp4&rc=ajw4NTs6ZnBpbTMzZzczNEBpajw4NTs6ZnBpbTMzZzczNEAzcnFqcjRvYG5gLS1kMS9zYSMzcnFqcjRvYG5gLS1kMS9zcw%3D%3D&l=202610120843170F15FFB5BB7F2010D7BC&btag=e00048000"
+          }
+        ],
+        "transcriptionLink": null,
+        "aiVideoDescription": null,
+        "aiVideoSummary": null,
+        "originalCoverUrl": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/ce4d8fe609ae4c9590662adab70724fc_1693775911~tplv-tiktokx-origin.image?dr=9636&x-expires=1791964800&x-signature=V%2F0MF1Sa1JeBs%2BlenqIJeBRJwd0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8"
+      },
+      "diggCount": 40300,
+      "shareCount": 6894,
+      "playCount": 1500000,
+      "collectCount": 7158,
+      "commentCount": 313,
+      "repostCount": 0,
+      "mentions": [],
+      "detailedMentions": [],
+      "hashtags": [
+        {
+          "id": null,
+          "name": "dog",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "dogtraining",
+          "title": null,
+          "cover": null
+        },
+        {
+          "id": null,
+          "name": "cesarmillan",
+          "title": null,
+          "cover": null
+        }
+      ],
+      "effectStickers": [
+        {
+          "ID": "1359854",
+          "name": "lashes",
+          "stickerStats": {
+            "useCount": 0
+          }
+        },
+        {
+          "ID": "458381719045",
+          "name": "lashes",
+          "stickerStats": {
+            "useCount": 0
+          }
+        }
+      ],
+      "isSlideshow": false,
+      "isPinned": false,
+      "isSponsored": false,
+      "shortDramaSeriesInfo": null,
+      "mediaUrls": [],
+      "input": "dogseparationanxiety",
+      "isStory": false,
+      "searchHashtag": {
+        "name": "dogseparationanxiety",
+        "views": 46800000
+      },
       "commentsDatasetUrl": null
     }
   ]

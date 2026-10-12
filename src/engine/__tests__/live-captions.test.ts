@@ -173,3 +173,21 @@ describe("A18 captions are centred on the frame", () => {
     }
   });
 });
+
+describe("A18 captions never carry over a cut", () => {
+  it("a group that started in a shot ends at that shot's cut", async () => {
+    const { clampToCuts } = await import("../video/captions");
+    const g = clampToCuts(
+      [
+        { words: [{ word: "them.", start: 4.6, end: 4.9 }], t0: 4.6, t1: 5.6 },
+        { words: [{ word: "Next", start: 5.6, end: 5.9 }], t0: 5.6, t1: 6.5 },
+      ],
+      [
+        { t0: 0, t1: 5.2 },
+        { t0: 5.2, t1: 10 },
+      ],
+    );
+    expect(g[0]!.t1).toBeCloseTo(5.2);
+    expect(g[1]!.t1).toBeCloseTo(6.5);
+  });
+});

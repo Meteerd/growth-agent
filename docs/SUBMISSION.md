@@ -56,3 +56,6 @@ Across all sources (Apify, Spiral, YouTube, Manus, the brand's site): 299 real c
 
 ## Members
 TODO for the humans: name, email, LinkedIn for each member.
+
+## What's next
+- Scheduled research refresh (daily or monthly per brand): re-run the market, competitor and winner research, flag new winners and shifts, and update the channel strategy and the remakes automatically (not built for the demo).

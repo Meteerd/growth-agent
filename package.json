@@ -33,7 +33,9 @@
     "revise": "tsx scripts/revise.ts",
     "showcase-clips": "tsx scripts/showcase-clips.ts",
     "variants": "tsx scripts/variants.ts",
-    "english": "tsx scripts/english.ts"
+    "english": "tsx scripts/english.ts",
+    "carousel": "tsx scripts/carousel.ts",
+    "review-1200": "tsx scripts/review-1200.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
