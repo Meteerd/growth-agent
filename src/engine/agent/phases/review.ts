@@ -11,6 +11,7 @@ import { generateKeyframes, renderConcept } from "../../services/concepts";
 import { urlToFile } from "../../video/files";
 import { type BetaContentBlockParam, loadPrompt, structured } from "../claude";
 import type { PhaseCtx } from "../context";
+import { mergeRenderWatch, watchRender } from "../watcher";
 
 export const ReviewDraft = z.object({
   overall: z.number(),
@@ -238,7 +239,18 @@ export async function reviewRender(
     createdAt: new Date().toISOString(),
     demo: r.mode === "demo",
   };
-  return measured ? applyMeasurements(review, measured) : review;
+  const measuredReview = measured ? applyMeasurements(review, measured) : review;
+  // A18: on finals Gemini watches the whole cut with sound; the stricter of the two reviewers wins
+  if (!final) return measuredReview;
+  const w = await watchRender(ctx.db, { file: urlToFile(asset.url)!, concept: c, bp, runId: ctx.run.id }).catch(
+    async (e) => {
+      await ctx.emit("warning", "Gemini could not watch the render; Claude's frame review only", {
+        detail: e instanceof Error ? e.message : String(e),
+      });
+      return null;
+    },
+  );
+  return w ? mergeRenderWatch(measuredReview, w) : measuredReview;
 }
 
 /** Render the remake, watch it, regenerate the weakest shot, re-render: at most 2 rounds. */

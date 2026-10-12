@@ -65,6 +65,8 @@ export const PROVIDER_IDS = [
   "higgsfield",
   "youtube",
   "spiral",
+  "elevenlabs",
+  "gemini",
   "revenuecat",
   "posthog",
   "stripe",

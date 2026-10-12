@@ -11,6 +11,8 @@ export const PROVIDER_KEY_ENV: Record<ProviderId, string[]> = {
   higgsfield: ["HIGGSFIELD_API_KEY"],
   youtube: ["YOUTUBE_API_KEY"],
   spiral: ["SPIRAL_API_KEY"],
+  elevenlabs: ["ELEVENLABS_API_KEY"],
+  gemini: ["GEMINI_API_KEY"],
   revenuecat: ["REVENUECAT_API_KEY"],
   posthog: ["POSTHOG_API_KEY"],
   stripe: ["STRIPE_SECRET_KEY"],
