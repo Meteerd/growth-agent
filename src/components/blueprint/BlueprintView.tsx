@@ -11,7 +11,7 @@ import { EmptyState, ErrorState } from "@/components/ui/States";
 import { type Blueprint, CHANNEL_LABELS, type Concept, type Review, type Shot } from "@/contracts";
 import { referenceImages } from "@/lib/client/brandAssets";
 import { cn } from "@/lib/client/cn";
-import { formatCount, SOURCE_LABELS } from "@/lib/client/format";
+import { formatCount, SOURCE_LABELS, unquote } from "@/lib/client/format";
 import { PURPOSE_COLOR, PURPOSE_LABEL } from "@/lib/client/purpose";
 import { useBlueprint, useBrand, useConceptAssets, useConceptReviews, useConcepts } from "@/lib/client/queries";
 import { alignRemake, keyframeUrls, latestReview, scoreTone, shotAt, shotScore } from "./align";
@@ -23,9 +23,6 @@ const TONE_TEXT = { pass: "text-pass", warn: "text-warn", fail: "text-fail" } as
 /** Our render's time for a moment of the original: same shot, same fraction of it (shots map 1:1 via shotMap). */
 /** The engine writes "not visible in analysis" when a frame did not show it; that is missing data, not text. */
 export const seen = (v?: string) => (v && !/^not visible/i.test(v.trim()) ? v : undefined);
-
-/** Strips the quotes the engine sometimes keeps around a quoted line, so we never print two pairs. */
-const unquote = (v: string) => v.trim().replace(/^["“”']+|["“”']+$/g, "");
 
 export function remakeTime(bp: Pick<Blueprint, "shots">, aligned: (Shot | undefined)[], all: Shot[], t: number) {
   const i = shotAt(bp.shots, t);

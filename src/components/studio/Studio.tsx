@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { keyframeUrls } from "@/components/blueprint/align";
 import { ShotFrame } from "@/components/blueprint/Timeline";
+import { useVideoFrames } from "@/components/blueprint/useVideoFrames";
 import { useRunCtx } from "@/components/run/RunContext";
 import { Badge, ComplianceBadge, DemoBadge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -20,7 +21,7 @@ import { CHANNEL_LABELS, type Concept, type RenderTier, type RunEvent, type Shot
 import { getClient } from "@/lib/client/api";
 import { referenceImages } from "@/lib/client/brandAssets";
 import { cn } from "@/lib/client/cn";
-import { formatUsd } from "@/lib/client/format";
+import { formatUsd, unquote } from "@/lib/client/format";
 import { qk, useBrand, useConceptAssets } from "@/lib/client/queries";
 
 const VIDEO_FORMATS = new Set([
@@ -111,7 +112,7 @@ function ConceptCard({ c, active, onSelect }: { c: Concept; active: boolean; onS
         <ComplianceBadge status={c.compliance} />
       </div>
       <p className="font-medium text-bone text-ui leading-snug">{c.title}</p>
-      <p className="line-clamp-2 font-display text-[15px] text-bone-2 leading-snug">&ldquo;{c.hook}&rdquo;</p>
+      <p className="line-clamp-2 font-display text-[15px] text-bone-2 leading-snug">&ldquo;{unquote(c.hook)}&rdquo;</p>
       <div className="flex flex-wrap items-center gap-1.5">
         {c.blueprintId && !c.variantOf && <Badge tone="signal">Remake</Badge>}
         {c.variantOf && <Badge tone="cyan">Variant {c.aspect}</Badge>}
@@ -133,9 +134,30 @@ function Workbench({ c, events, demo }: { c: Concept; events: RunEvent[]; demo: 
   const [tier, setTier] = useState<RenderTier>("draft");
   const [quote, setQuote] = useState<{ usd: number; lines?: { provider: string; item: string; usd: number }[] }>();
   const [busy, setBusy] = useState(false);
-  const keyframes = useMemo(() => keyframeUrls(assets, c.shots), [assets, c.shots]);
+  const stored = useMemo(() => keyframeUrls(assets, c.shots), [assets, c.shots]);
   const refs = referenceImages(brand);
   const video = assets?.find((a) => a.id === c.videoAssetId) ?? assets?.filter((a) => a.kind === "video").at(-1);
+  // when the per-shot keyframes are not on this machine but the render is, take each shot's frame from the render
+  const mids = useMemo(() => {
+    let t = 0;
+    return [...c.shots]
+      .sort((a, b) => a.idx - b.idx)
+      .map((sh) => {
+        const m = t + sh.durationSec / 2;
+        t += sh.durationSec;
+        return [sh.idx, m] as const;
+      });
+  }, [c.shots]);
+  // never the mock placeholder (public/media), only real renders
+  const fromVideo = useVideoFrames(
+    video && c.status === "rendered" && !video.url.startsWith("/media/") ? video.url : undefined,
+    mids.map(([, m]) => m),
+  );
+  const keyframes = useMemo(() => {
+    const m = new Map(stored);
+    for (const [idx, t] of mids) if (!m.has(idx) && fromVideo.get(t)) m.set(idx, fromVideo.get(t)!);
+    return m;
+  }, [stored, mids, fromVideo]);
   const allApproved = c.shots.length > 0 && c.shots.every((s) => s.approved);
   const blocked = c.compliance === "fail";
 
@@ -206,14 +228,14 @@ function Workbench({ c, events, demo }: { c: Concept; events: RunEvent[]; demo: 
             {c.blueprintId && (
               <Link
                 href={`/runs/${runId}/blueprints/${c.blueprintId}`}
-                className="ml-auto font-mono text-[11px] text-signal hover:underline"
+                className="ml-auto text-[12.5px] text-bone underline decoration-bone-4 underline-offset-4 hover:decoration-bone"
               >
                 See the winner it remakes
               </Link>
             )}
           </div>
           <h2 className="font-display text-[clamp(1.9rem,3.4vw,2.8rem)] leading-[1.04]">{c.title}</h2>
-          <p className="font-display text-[20px] text-bone-2">&ldquo;{c.hook}&rdquo;</p>
+          <p className="font-display text-[20px] text-bone-2">&ldquo;{unquote(c.hook)}&rdquo;</p>
           <p className="max-w-3xl text-bone-2 text-ui">
             <span className="mono-label mr-2">angle</span>
             {c.angle}
@@ -243,6 +265,7 @@ function Workbench({ c, events, demo }: { c: Concept; events: RunEvent[]; demo: 
                   s={s}
                   i={i}
                   url={keyframes.get(s.idx)}
+                  burned={!stored.has(s.idx) && keyframes.has(s.idx)}
                   reference={!keyframes.get(s.idx) ? refs[i % Math.max(1, refs.length)] : undefined}
                   pending={pendingShot === s.idx}
                   onApprove={() => approve([s.idx])}
@@ -344,6 +367,7 @@ function ShotCard({
   s,
   i,
   url,
+  burned,
   reference,
   pending,
   onApprove,
@@ -352,6 +376,8 @@ function ShotCard({
   s: Shot;
   i: number;
   url?: string;
+  /** the frame comes from the render, so its captions are already burned in */
+  burned?: boolean;
   reference?: string;
   pending: boolean;
   onApprove: () => void;
@@ -383,7 +409,7 @@ function ShotCard({
         <span className="absolute top-1.5 right-1.5 rounded-[4px] bg-ink/75 px-1 font-mono text-[10px] text-bone">
           {s.durationSec}s
         </span>
-        {s.onScreenText && (
+        {s.onScreenText && !burned && (
           <span className="absolute inset-x-1.5 bottom-1.5 line-clamp-2 rounded-[4px] bg-ink/70 px-1.5 py-1 text-[10.5px] leading-tight">
             {s.onScreenText}
           </span>
