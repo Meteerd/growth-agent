@@ -187,3 +187,13 @@ Errors: `{error: {code, message}}` with proper HTTP status.
 
 ## 9. Later (not tonight)
 Deploy to Vercel or Netlify: hosted libSQL (Turso) or Postgres for data, object storage for assets, background runs via `after()`/a queue, video render kept local or moved to Remotion Lambda.
+
+## 10. Added overnight by Lane A (all additive; see coord/CONTRACT_CHANGES.md)
+- **Runs on recorded research:** `POST /api/brands/:id/runs {kind, reuseResearchFrom?: runId | "recorded"}` copies a finished research run's evidence and blueprints, replays its gathering events and goes straight to the consultation. Recorded passes have `dataset: "live_recorded"` + `capturedAt`.
+- **Flagship remakes (A17):** `Shot.source` ("brand_image" | "generated"), `Shot.imageRef`, `Shot.style` ("photoreal" | "illustration" | "screen"), `Shot.motion`; `BrandSummary.heroVideo {url, posterUrl, conceptId, runId, title}`. Built by `pnpm flagship <conceptId>` (src/engine/flagship.ts).
+- **Manus landing page:** `POST /api/packs/:id/landing` -> PublishPack with `landingUrl` (Manus task link; the site is left unpublished).
+- **MCP:** `POST /api/mcp` (Streamable HTTP, JSON) with list_brands, get_dossier, update_dossier, get_rule_pack, search_evidence, get_channel_plan, log_results, get_learnings.
+- **Assets:** `/api/assets/brands/<slug>/<file>` (committed brand images), `/api/assets/showcase/<slug>-flagship.mp4` (showcase copies), `/api/assets/runs/...` and `/api/assets/frames/...` (local renders and analysed frames), `*.mp4.poster.jpg` built on demand.
+- **Video:** the Ad916 spec renders with sharp + ffmpeg-static (src/engine/video/compose.ts); motion comes from fal (Kling 2.1 standard image-to-video); `remotion/` keeps the Remotion composition (RENDERER=remotion).
+- **Ops scripts:** `pnpm smoke <provider>`, `pnpm live-pass <slug> [--no-manus]`, `pnpm full-run <slug> [--fal]`, `pnpm flagship <conceptId> [--repair]`, `pnpm redo-reverse <runId> [manusTaskId] [--manus-only]`, `pnpm export-showcase <runId>`, `pnpm landing <packId>`, `pnpm eval-run <runId>`, `pnpm eval-all`, `pnpm test:engine-e2e`.
+- **Safety:** spend ledger with per-provider caps and in-flight reservations; runs keep a file heartbeat (data/heartbeats) and are resumed after a restart only when stale and interrupted < 6 h ago.
