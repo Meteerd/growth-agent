@@ -130,7 +130,7 @@ export function Example() {
 export function Loop() {
   return (
     <section className="mx-auto max-w-[1440px] px-4 py-[var(--spacing-section-sm)] md:px-8">
-      <SectionHead index="01" title="One engine runs the whole go-to-market." />
+      <SectionHead index="02" title="One engine runs the whole go-to-market." />
       <ol className="mt-10 grid grid-cols-2 border-line border-t md:grid-cols-5">
         {LOOP.map(([t, d], i) => (
           <li key={t} className="border-line border-b p-4 md:border-r md:p-5 md:[&:nth-child(5n)]:border-r-0">
@@ -147,7 +147,7 @@ export function Loop() {
 export function Brands() {
   return (
     <section className="mx-auto max-w-[1440px] px-4 py-[var(--spacing-section-sm)] md:px-8">
-      <SectionHead index="02" title="Four real brands. Four legal regimes." />
+      <SectionHead index="03" title="Four real brands. Four legal regimes." />
       <ul className="grid-cols-1 mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {SEED_BRANDS.map((b) => {
           const cover = b.dossier.visual.referenceImages?.[0];
@@ -215,7 +215,7 @@ const RULES: [string, string][] = [
 export function Rules() {
   return (
     <section className="mx-auto max-w-[1440px] px-4 py-[var(--spacing-section-sm)] md:px-8">
-      <SectionHead index="03" title="House rules." />
+      <SectionHead index="04" title="House rules." />
       <ul className="grid-cols-1 mt-10 grid border-line border-t md:grid-cols-2">
         {RULES.map(([t, d], i) => (
           <li

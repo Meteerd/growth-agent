@@ -1,3 +1,4 @@
+import { Cuts } from "@/components/landing/Cuts";
 import { Hero } from "@/components/landing/Hero";
 import { Brands, Example, Footer, Loop, Rules } from "@/components/landing/Sections";
 import { DataModeChip, Wordmark } from "@/components/shell/Header";
@@ -14,6 +15,7 @@ export default function Landing() {
       <main>
         <Hero />
         <Example />
+        <Cuts />
         <Loop />
         <Brands />
         <Rules />

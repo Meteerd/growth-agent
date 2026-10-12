@@ -33,7 +33,7 @@ E2E_DATA=live E2E_PORT=3200 pnpm exec playwright test e2e/live.spec.ts
 ```
 
 ## The 2-minute demo click path
-1. **`/`** (10 s): the headline, then the real example: the winning TikTok ("Just let them cry it out", 28.8x its account median) next to Nexus's photoreal remake for Hound, playing (self-review 83/100). **Open the side by side** goes straight into its reverse-engineer view.
+1. **`/`** (10 s): the headline, then the real example: the winning TikTok ("Just let them cry it out", 28.8x its account median) next to Nexus's photoreal remake for Hound, playing (self-review 83/100). **Open the side by side** goes straight into its reverse-engineer view. Scroll once: **Same engine. Three brands, three languages.** shows the three flagship cuts frame by frame (Hound in English, a.clinic in Slovak, Dynova in Turkish) with their self-review scores; each row opens its side by side.
 2. **Portfolio** (10 s): four real brands led by their own imagery; Hound and a.clinic cards play their flagship remakes; numbers below are real (zero until posts are marked posted).
 3. **Hound > Start a run** (20 s): in live mode it builds on the recorded research and replays it paced (`?pace=150`): the cockpit fills the evidence wall by source (73 real items), the Manus deep-research card links to the real Manus task, blueprints appear.
 4. **The cockpit says "The agent has N questions"** > **Start the consultation** (25 s): answer 3 questions live (letters A, B, C pick options), skip one to show the stated assumption. The run resumes on its own.
