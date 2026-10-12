@@ -20,6 +20,8 @@ if [ -n "${FIRECRAWL_API_KEY:-}" ]; then row firecrawl set "$(verdict "$(code ht
 if [ -n "${FAL_KEY:-}" ]; then row fal set "$(verdict "$(code 'https://api.fal.ai/v1/models?limit=1' -H "Authorization: Key $FAL_KEY")")"; else row fal MISSING demo; fi
 if [ -n "${YOUTUBE_API_KEY:-}" ]; then row youtube set "$(verdict "$(code "https://www.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=US&key=$YOUTUBE_API_KEY")")"; else row youtube MISSING demo; fi
 if [ -n "${SPIRAL_API_KEY:-}" ]; then row spiral set "$(verdict "$(code https://public-api.spiral.ad/v1/usage -H "Authorization: Bearer $SPIRAL_API_KEY")")"; else row spiral MISSING "apify fallback"; fi
+if [ -n "${ELEVENLABS_API_KEY:-}" ]; then row elevenlabs set "$(verdict "$(code https://api.elevenlabs.io/v1/user -H "xi-api-key: $ELEVENLABS_API_KEY")")"; else row elevenlabs MISSING "openai tts fallback"; fi
+if [ -n "${GEMINI_API_KEY:-}" ]; then row gemini set "$(verdict "$(code https://generativelanguage.googleapis.com/v1beta/models -H "x-goog-api-key: $GEMINI_API_KEY")")"; else row gemini MISSING "frame checks only"; fi
 for v in HIGGSFIELD_API_KEY REVENUECAT_API_KEY POSTHOG_API_KEY STRIPE_SECRET_KEY PADDLE_API_KEY META_ACCESS_TOKEN; do
   if [ -n "${!v:-}" ]; then row "${v%%_*}" set "present (validated by the app's smoke test)"; else row "${v%%_*}" MISSING demo; fi
 done

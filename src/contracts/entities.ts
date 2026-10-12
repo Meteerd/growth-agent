@@ -397,6 +397,8 @@ export const Shot = z.object({
   style: z.enum(["photoreal", "illustration", "screen"]).optional(),
   /** additive (A17): the camera move and action for image-to-video, following the blueprint shot */
   motion: z.string().optional(),
+  /** additive (A18): where the native caption sits so it never covers the subject (default upper third) */
+  captionRegion: z.enum(["upper", "middle", "lower"]).optional(),
 });
 export type Shot = z.infer<typeof Shot>;
 

@@ -30,7 +30,7 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 | Brand | Run | What it is |
 |---|---|---|
 | Hound | `run_mv4c9xtr8203508c41` | Recorded live research pass (`live_recorded`): 73 real items from Instagram, TikTok, Reddit, YouTube, Meta Ad Library, Spiral, site, plus Manus deep research (landscape, 10 competitors incl. Woofz and Dogo, community rules). 3 blueprints from real winning videos. |
-| Hound | `run_mv4e0ud7671d68be0a` | Full live run on that research: consultation (questions skipped, so the plan states its assumptions), plan TikTok 79 > Shorts 73 > Reels 55 > Reddit 54, 6 concepts, review, packs. `pnpm eval-run` 47/47. Flagship remake `concept_1d68be0a_1`. |
+| Hound | `run_mv4e0ud7671d68be0a` | Full live run on that research: consultation (questions skipped, so the plan states its assumptions), plan TikTok 79 > Shorts 73 > Reels 55 > Reddit 54, 6 concepts, review, packs. `pnpm eval-run` 58/58. Flagship remake `concept_1d68be0a_1`. |
 | Hound | `run_mv4cox1z4e0569d023` | Earlier full live run (on demo research) with the first fal final render (6 Kling clips) and a Manus-built landing page for its TikTok pack (unpublished). |
 | a.clinic | `run_mv4cgiqt5f95119dba` | Recorded live research pass: 82 real items (TikTok, Instagram, Meta Ad Library, Spiral, YouTube, site) + Manus task. 3 blueprints. |
 | a.clinic | `run_mv4e8sfdbc1e6575ad` | Full live run on that research, all Slovak concepts, Meta paid "not now" (RX4), SEO/Reels/TikTok organic. Flagship remake `concept_1e6575ad_1`. |
@@ -49,7 +49,7 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 8. a.clinic in 20 seconds: same loop, Slovak content, Meta paid blocked by RX4 with the reason.
 
 ## Live vs demo (overnight)
-- `LIVE_PROVIDERS` = anthropic, openai, firecrawl, youtube. fal, Apify, Manus, Spiral, Higgsfield ran only in smoke tests and the recorded live passes.
+- `LIVE_PROVIDERS` = anthropic, openai, firecrawl, youtube. Apify, Manus and Spiral ran only in smoke tests and the recorded live passes; fal and Higgsfield ran in their smoke tests and for the flagship clips (`pnpm flagship` forces them live, within their caps).
 - Demo data is always labelled (`demo: true`, "Demo data" in the UI, "Demo keyframe" / "Demo render" burned into demo images and videos).
 
 ## Flagship videos (A17, the hero media)
@@ -57,7 +57,7 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 - **a.clinic** `concept_1e6575ad_1`: Slovak 4-step listicle remake: home, sticky notes, laptop and phone with a.clinic's real doctor art, local pharmacy, checklist, the a.clinic page. Review 82/100, every shot >= 80. `docs/renders/aclinic-flagship.jpg` / `.mp4`.
 - **Dynova** `concept_91d09027_1`: Turkish explainer remake ("Genel öneriler varken gen testi gerekli mi?"): a man with the Dynova kit, at-home sample to lab, "teşhis değil, bilgi" (not a diagnosis), routine from your own data, dynova.health on a phone. Review 81/100, every shot >= 80, clips by Higgsfield (fal balance ran out). `docs/renders/dynova-flagship.jpg` / `.mp4`.
 - **Evreon AI** `concept_f352d515_1`: English LinkedIn product-demo remake for UK practices: an unread referral stack, a waiting patient, a scanned foreign-language letter, Evreon reading and linking it to its source, "50+ languages, EU data residency, never diagnoses", book a 20-minute demo (all claims from the site). Review 81/100, every shot >= 80 (68 at first; the fixes are in I38, I42, I44). `docs/renders/evreon-flagship.jpg` / `.mp4`.
-- How: Claude picks per shot a real brand image or a frame in the winner's look (photoreal for real-footage winners), OpenAI gpt-image-2 renders frames (brand art goes onto screens through an image-edit reference), fal Kling 2.1 animates the shots (screens stay still), ffmpeg composes captions, voiceover and end card, Claude reviews against the blueprint and an AI-tells rubric, weak shots are fixed (keep-best per shot). `pnpm flagship <conceptId> [--repair] [--sheet docs/renders/x.jpg]`.
+- How: Claude picks per shot a real brand image or a frame in the winner's look (photoreal for real-footage winners), OpenAI gpt-image-2 renders frames (brand art goes onto screens through an image-edit reference; frames are a true 1080x1920 with a centered crop and a safe area), fal Kling 2.1 animates the shots (Higgsfield Kling when fal is out; screens stay still), ffmpeg composes captions, voiceover and end card, Claude reviews against the blueprint and an AI-tells rubric, weak shots are fixed (keep-best per shot). `pnpm flagship <conceptId> [--repair] [--sheet docs/renders/x.jpg]`.
 
 ## Safety and quality rules added overnight (each has a test)
 - A live run never mixes demo data into real research: a provider that is not live is skipped with a warning (demo runs keep labelled demo data).
@@ -73,10 +73,10 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 - **fal account balance is exhausted** (fal answered "User is locked. Exhausted balance" at 03:24 when our ledger showed $7.25 of the $8 cap, so the account had less than our cap). Final renders now fall back to stills with a warning, and the engine stops calling fal for the rest of the process. Top up fal (event credits) before rendering more motion. Motion fell back to Higgsfield (Kling image-to-video), which rendered the Dynova flagship and part of Evreon's, until Higgsfield reached its $8 cap (ledger estimates) at about 04:15. New final renders now keep stills with camera moves (a warning event says so) until fal is topped up or the cap is raised.
 - **Sora**: the OpenAI video endpoint returns 404 for our key (model listed, API not enabled). `soraClip()` is ready if access is enabled.
 - **Remotion** composition is in `remotion/` but timed out loading in headless Chrome here; the same Ad916 spec renders with sharp + ffmpeg (fast, no browser). `RENDERER=remotion` retries it.
-- **Review scores move by up to ~20 points between reviews of an unchanged shot** (model judgment). The repair pass keeps the best version of each shot; the last review is the shipped cut.
+- **Review scores moved by up to ~10-20 points between reviews of an unchanged shot** (model judgment). Since 04:22 a review sees the previous scores of unchanged shots and keeps them within 3 points unless it names a new defect; the repair pass keeps the best version of each shot; the last review is the shipped cut.
 - **Blueprint frames of third-party videos** exist only on this machine (`data/`, never committed). Other machines show placeholders; blueprint JSON is in the repo.
-- Evreon and Dynova research passes ran without new Manus tasks (Manus credits); their Manus slot is empty in the recorded data.
-- `pnpm eval-all` now also checks concept language and caption readability (video captions 12 words max, slides 40). One b-roll draft in the a.clinic live run was over that and was shortened (compliance re-checked); new runs shorten wordy video captions before the compliance check. Otherwise it passes for every current run; the two superseded early Hound runs (`run_mv4dl43id902ec6a1f`, `run_mv4cox1z4e0569d023`) predate the consultation fix and cite skipped answers as "you said". Use `run_mv4e0ud7671d68be0a` for Hound.
+- Evreon and Dynova research passes ran without new Manus tasks (Manus credits): their recorded data has no Manus item (this machine's DB still holds the 2 labelled demo Manus items in those runs). New live runs skip a non-live source instead of mixing in demo items.
+- `pnpm eval-all` now also checks concept language and caption readability (video captions 12 words max, slides 40). One b-roll draft in the a.clinic live run was over that and was shortened (compliance re-checked); new runs shorten wordy video captions before the compliance check. Otherwise it passes for every current run (re-run at 04:55); the two superseded early Hound runs (`run_mv4dl43id902ec6a1f`, `run_mv4cox1z4e0569d023`) predate the consultation fix and cite skipped answers as "you said". Use `run_mv4e0ud7671d68be0a` for Hound.
 - In the recorded full runs the consultation questions were **skipped by script** (no human), so plans say "assuming ...". In the demo a person answers.
 - `pnpm build` passes; Turbopack prints file-tracing warnings for dynamic asset paths (harmless locally).
 - Starting the dev server resumes interrupted runs only if their heartbeat is stale and they were interrupted less than 6 hours ago (older ones are marked failed, never resumed, so no surprise spend).
@@ -93,3 +93,5 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 | YouTube | $0 (free quota) | none |
 | Spiral | credits (~20 ads analysed) | none |
 | Manus | 3 lite tasks (credits) | 500 credits |
+
+_Last update: 12 Oct 04:55 (Lane A)._

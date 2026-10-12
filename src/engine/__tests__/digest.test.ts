@@ -34,3 +34,48 @@ describe("fixture text is well formed", () => {
     expect(JSON.stringify(out)).not.toMatch(/\\ud[89ab]/i);
   });
 });
+
+describe("what Claude is told about the operator", () => {
+  it("dossier digest keeps real answers and drops skip notes", async () => {
+    const { dossierDigest } = await import("@/engine/agent/digest");
+    const { SEED_BRANDS } = await import("@/contracts");
+    const b = SEED_BRANDS[0]!;
+    const brand = {
+      ...b,
+      dossier: {
+        ...b.dossier,
+        operatorNotes: [
+          { questionId: "q1", prompt: "Budget?", answer: "Zero paid for now", at: "2026-10-12T00:00:00.000Z" },
+          {
+            questionId: "q2",
+            prompt: "Who is on camera?",
+            answer: "Skipped. Assumption: nobody",
+            at: "2026-10-12T00:00:00.000Z",
+          },
+        ],
+      },
+    };
+    const d = JSON.parse(dossierDigest(brand));
+    expect(d.operatorAnswers.map((n: { questionId: string }) => n.questionId)).toEqual(["q1"]);
+  });
+
+  it("answers digest marks skipped questions as assumptions, never as something the operator said", async () => {
+    const { answersDigest } = await import("@/engine/agent/digest");
+    const base = { runId: "r", kind: "text", why: "w", evidenceIds: [], required: true } as const;
+    const out = answersDigest([
+      { ...base, id: "q_1", order: 1, prompt: "Budget?", answer: 0 },
+      { ...base, id: "q_2", order: 2, prompt: "Camera?", skipped: true, assumption: "nobody on camera" },
+    ] as never);
+    expect(out).toContain("[q_1] Budget? -> operator answered: 0");
+    expect(out).toContain("[q_2] Camera? -> NOT ANSWERED");
+    expect(out).toContain("nobody on camera");
+  });
+
+  it("clipCaption handles empty, exact-length and punctuation-only input", async () => {
+    const { clipCaption } = await import("@/engine/agent/phases/production");
+    expect(clipCaption("")).toBe("");
+    const eight = "one two three four five six seven eight";
+    expect(clipCaption(eight)).toBe(eight);
+    expect(clipCaption("→ → → → → → → → → →")).toBe("→ → → → → → → → → →");
+  });
+});

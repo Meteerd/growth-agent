@@ -272,22 +272,39 @@ export async function renderConcept(
       if (!a || !urlToFile(a.url) || !fs.existsSync(urlToFile(a.url)!))
         throw new Error(`keyframe missing for shot ${s.idx + 1}`);
       const clip = s.clipAssetId ? await getAsset(db, s.clipAssetId) : null;
-      shots.push({ src: a.url, clipSrc: clip?.url, durationSec: s.durationSec, text: s.onScreenText });
+      shots.push({
+        src: a.url,
+        clipSrc: clip?.url,
+        durationSec: s.durationSec,
+        text: s.onScreenText,
+        captionRegion: s.captionRegion,
+      });
     }
     const demo =
       shots.length > 0 &&
       (await Promise.all(c.shots.map((s) => getAsset(db, s.keyframeAssetId!)))).some((a) => a?.demo);
     const outFile = path.resolve(process.env.ASSETS_DIR || "data/assets", dir, `${o.label ?? tier}_${n}.mp4`);
+    // music bed (A18): the concept's music asset (ElevenLabs or operator-provided); a final without one says so
+    const music = (await listAssets(db, c.id)).filter((a) => a.kind === "music").at(-1);
+    const musicFile = music ? urlToFile(music.url) : null;
+    const musicSrc = musicFile && fs.existsSync(musicFile) ? music!.url : undefined;
+    if (!musicSrc && tier === "final")
+      await emit("warning", "No music bed for this final render: voice only", {
+        refId: c.id,
+        detail: "Add a music asset to the concept (ElevenLabs music when ELEVENLABS_API_KEY is set) and render again.",
+      });
     const r = await renderAd(
       {
         shots,
         voiceoverSrc,
+        musicSrc,
         brandName: brand.name,
         colors: brand.dossier.visual.colors,
         logoSrc: brand.dossier.visual.logoUrl,
         cta: c.cta,
         badge: demo ? "Demo render" : undefined,
         endCardSec: c.format === "static" ? 0.5 : 2,
+        motionQuality: tier === "final" && !demo ? "final" : "draft",
       },
       outFile,
     );
