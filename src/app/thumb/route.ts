@@ -11,6 +11,22 @@ const DIR = path.resolve("data/thumbs");
 const HOSTS = /(^|\.)(cdninstagram\.com|fbcdn\.net|tiktokcdn(-us|-eu)?\.com|ytimg\.com|spiral\.ad)$/i;
 const MAX_BYTES = 4_000_000;
 
+let covers: Promise<Set<string>> | undefined;
+/** Every cover URL in the recorded fixtures (src/contracts/fixtures/live), read once. */
+function recordedCovers() {
+  covers ??= (async () => {
+    const set = new Set<string>();
+    const root = path.resolve("src/contracts/fixtures/live");
+    const files = (await fs.readdir(root, { recursive: true })).filter((f) => f.endsWith(".json"));
+    for (const f of files) {
+      const text = await fs.readFile(path.join(root, f), "utf8");
+      for (const m of text.matchAll(/"(?:thumbnailUrl|coverUrl)":\s*("(?:[^"\\]|\\.)*")/g)) set.add(JSON.parse(m[1]));
+    }
+    return set;
+  })();
+  return covers;
+}
+
 export async function GET(req: Request) {
   const raw = new URL(req.url).searchParams.get("u") ?? "";
   let src: URL;
@@ -21,8 +37,9 @@ export async function GET(req: Request) {
   }
   if (src.protocol !== "https:" || !HOSTS.test(src.hostname)) return new Response(null, { status: 400 });
 
-  // the public read-only build sends the browser to the CDN instead of filling its disk on demand
-  if (process.env.NEXT_PUBLIC_READONLY === "1") return Response.redirect(src, 302);
+  // the public showcase only caches covers that are in the recorded data, so its disk use stays bounded
+  if (process.env.NEXT_PUBLIC_DATA_MODE === "showcase" && !(await recordedCovers()).has(raw))
+    return new Response(null, { status: 204 });
 
   const file = path.join(DIR, createHash("sha1").update(raw).digest("hex"));
   const ok = (body: Uint8Array, type: string) =>
