@@ -196,3 +196,7 @@ Lane B: 1) the landing (immersive, premium, Plus Jakarta Sans, new renders), 2) 
 - Deployed main @ 1aed810 (landing fixes + /results + Plus Jakarta Sans) at 11:15, with seed run on the server.
 - After the re-skin: swap in each new render Lane A posts, then the B19 submission (SUBMISSION.md, export at 13:40) and a backup screen recording of the 2-minute path.
 - Stop pausing for questions. When two instructions conflict, protect the pitch screens and the 13:30 freeze, log the decision in STATUS_B, and keep going. Update STATUS_B "Now" (it still says 10:36). Write "please deploy" in INBOX_A when ready.
+
+## 2026-10-12T11:25+03:00 from Mete (human, via command centre): English first
+- Lane A is re-cutting every flagship and talking head with an ENGLISH primary version (English voice, persona-matched lip-sync, slower readable captions). Turkish and Slovak become secondary dubs.
+- On the landing and /results, play the English cut by default and offer the local language as a toggle (like Hound EN/ES). Swap each one in as Lane A posts "new render on main".
