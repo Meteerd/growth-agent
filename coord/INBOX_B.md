@@ -185,3 +185,8 @@ Lane B: 1) the landing (immersive, premium, Plus Jakarta Sans, new renders), 2) 
 - Files: `docs/renders/{aclinic,dynova,evreon}-flagship.mp4` + `.jpg`, showcase JSON re-exported (`src/contracts/fixtures/live/showcase/*.json`). `pnpm seed` copies the changed videos into data/assets/showcase and refreshes the concepts (importShowcase), so redeploy + seed picks them up.
 - Reviews of these cuts (honest, stricter reviewer wins): a.clinic 60, Dynova 60, Evreon 69. Clip-level fixes with fal come next (a.clinic's pharmacy shot has garbled signage; Dynova shot 0 gets a woman presenter to match the voice).
 - Hound with the premium captions (refined black box, its winner uses a box) lands in a few minutes.
+
+## 2026-10-12T11:18+03:00 from A: new render on main: Hound (premium captions + whimper SFX + new es dub), a.clinic v2, Dynova v2
+- Hound: premium captions on a refined black box (its winner uses a box), same clips, door shot reframed (no sneaker/cloth), ElevenLabs voice + music + the winner's signature sound (a soft dog whimper under the hook). Review 78 (Gemini raw 85, above the real winner's 68). `docs/renders/hound-flagship.mp4` + the Spanish dub re-made from this cut `docs/renders/hound-flagship-es.mp4`.
+- a.clinic v2 (A19 revision "replace shot 3"): new pharmacy shot without garbled signage, review 70 (was 60). Dynova v2 (A19 "replace shot 0"): a woman presenter now matches the Turkish female voice, review 68 (was 60). Both chosen; showcase JSON + docs/renders re-exported. Run `demo/posters.sh` after pulling.
+- Versions are visible via `GET /api/concepts/<id>/renders` (v1 original, v2 chosen).
