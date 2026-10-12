@@ -206,7 +206,7 @@ export function audioGraph(
     const bed = hasMusic
       ? [
           `${voice},asplit=2[vo1][vo2]`,
-          `[${voIdx + 1}:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,atrim=0:${t},afade=t=in:d=0.4,afade=t=out:st=${Math.max(0, total - 1.5).toFixed(3)}:d=1.5,volume=0.5[mus]`,
+          `[${voIdx + 1}:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,atrim=0:${t},afade=t=in:d=0.4,afade=t=out:st=${Math.max(0, total - 1.5).toFixed(3)}:d=1.5,volume=0.7[mus]`,
           "[mus][vo2]sidechaincompress=threshold=0.02:ratio=10:attack=15:release=350:makeup=1[duck]",
           "[vo1][duck]amix=inputs=2:duration=first:normalize=0[bed]",
         ].join(";")
@@ -217,7 +217,7 @@ export function audioGraph(
   const fadeAt = Math.max(0, total - 1.5).toFixed(3);
   return [
     `${voice},asplit=2[vo1][vo2]`,
-    `[${voIdx + 1}:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,atrim=0:${t},afade=t=in:d=0.4,afade=t=out:st=${fadeAt}:d=1.5,volume=0.5[mus]`,
+    `[${voIdx + 1}:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,atrim=0:${t},afade=t=in:d=0.4,afade=t=out:st=${fadeAt}:d=1.5,volume=0.7[mus]`,
     `[mus][vo2]sidechaincompress=threshold=0.02:ratio=10:attack=15:release=350:makeup=1[duck]`,
     `[vo1][duck]amix=inputs=2:duration=first:normalize=0,${norm}[a]`,
   ].join(";");
@@ -309,6 +309,7 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
     clip?: string;
     clipLen?: number;
     seq?: string;
+    screen?: boolean;
     overlays?: { file: string; t0: number; t1: number }[];
   }[] = [];
   for (const [i, s] of p.shots.entries()) {
@@ -341,6 +342,7 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
       clip: hasClip ? steady : undefined,
       clipLen: hasClip ? (await probe(steady!)).durationSec : undefined,
       seq,
+      screen: hasClip && !!s.screen,
     });
     onProgress?.((i + 1) / (p.shots.length + 2));
   }
@@ -358,9 +360,19 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
       inputs.push("-i", f.clip);
       // a clip a little shorter than its shot plays slightly slower (max 1.4x) instead of freezing at the end
       const stretch = f.clipLen && f.clipLen < f.dur - 0.04 ? Math.min(1.4, f.dur / f.clipLen) : 1;
-      parts.push(
-        `[${v}:v]${stretch > 1 ? `setpts=${stretch.toFixed(4)}*PTS,` : ""}scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[b${i}]`,
-      );
+      if (f.screen) {
+        // screen in frame: the recording at 70% over a blurred, darker copy of itself; the top stays clear for captions
+        const sw = Math.round(W * 0.7);
+        parts.push(
+          `[${v}:v]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,split=2[sa${i}][sb${i}]`,
+          `[sa${i}]scale=270:480,boxblur=12:2,eq=brightness=-0.18:saturation=0.8,scale=${W}:${H}[sbg${i}]`,
+          `[sb${i}]scale=${sw}:-2[sfg${i}]`,
+          `[sbg${i}][sfg${i}]overlay=(W-w)/2:${Math.round(H * 0.4)},format=yuv420p,setsar=1[b${i}]`,
+        );
+      } else
+        parts.push(
+          `[${v}:v]${stretch > 1 ? `setpts=${stretch.toFixed(4)}*PTS,` : ""}scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[b${i}]`,
+        );
     } else if (f.seq) {
       // final still: the camera move rendered per frame with float transforms (no zoompan, no rounding jitter)
       inputs.push("-framerate", "30", "-i", f.seq);

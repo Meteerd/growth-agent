@@ -111,6 +111,8 @@ export const RUN_EVENT_TYPES = [
   "log",
   // additive (A02): run status changes (queued/running/waiting_input/done/failed/cancelled)
   "status",
+  // additive (A19): a render version / revision progress (data: { conceptId, renderId, status, plan? })
+  "revision",
 ] as const;
 export const RunEventType = z.enum(RUN_EVENT_TYPES);
 export type RunEventType = z.infer<typeof RunEventType>;

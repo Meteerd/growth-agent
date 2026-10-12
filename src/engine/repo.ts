@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import { and, asc, desc, eq, gt, inArray, sql } from "drizzle-orm";
 import {
   type Asset,
@@ -15,17 +17,20 @@ import {
   type MetricSnapshot,
   type PublishPack,
   type Question,
+  type RenderVersion,
   type Review,
   type Run,
   type RunEvent,
   RunEvent as RunEventSchema,
   type SpendEntry,
 } from "@/contracts";
+import { readVoices } from "./audio/voices";
 import { bus, runChannel } from "./bus";
 import type { Db } from "./db/client";
 import * as t from "./db/schema";
 import { nowIso } from "./ids";
 import { wellFormedDeep } from "./text";
+import { fileToUrl } from "./video/files";
 
 const clean = <T extends object>(o: T): T =>
   Object.fromEntries(Object.entries(o).filter(([, v]) => v !== null && v !== undefined)) as T;
@@ -108,6 +113,20 @@ export async function listBrandSummaries(db: Db): Promise<BrandSummary[]> {
   const videos = (
     await db.select().from(t.assets).where(eq(t.assets.kind, "video")).orderBy(desc(t.assets.createdAt))
   ).filter((a) => (a.body.model ?? "").includes("flagship"));
+  const dubRows = (
+    await db.select().from(t.assets).where(eq(t.assets.kind, "video")).orderBy(desc(t.assets.createdAt))
+  ).filter((a) => /-dub-[a-z]{2}$/.test(a.body.model ?? ""));
+  const dubsFor = (conceptId: string) => {
+    const seen = new Set<string>();
+    return dubRows
+      .filter((a) => a.conceptId === conceptId)
+      .map((a) => ({
+        language: (a.body.model ?? "").slice(-2),
+        url: a.body.url,
+        posterUrl: `${a.body.url}.poster.jpg`,
+      }))
+      .filter((d) => (seen.has(d.language) ? false : (seen.add(d.language), true)));
+  };
   const conceptRows = videos.length
     ? await db
         .select()
@@ -120,7 +139,10 @@ export async function listBrandSummaries(db: Db): Promise<BrandSummary[]> {
         )
     : [];
   return brands.map((b) => {
-    const hero = videos.find((v) => v.brandId === b.id);
+    // the hero is the flagship concept's chosen video (A19), else the newest flagship render
+    const hero =
+      videos.find((v) => v.brandId === b.id && conceptRows.some((c) => c.body.videoAssetId === v.id)) ??
+      videos.find((v) => v.brandId === b.id);
     const heroConcept = hero ? conceptRows.find((c) => c.id === hero.conceptId) : undefined;
     const brandRuns = runRows.filter((r) => r.brandId === b.id);
     const brandPacks = packRows.filter((p) => p.brandId === b.id);
@@ -141,9 +163,11 @@ export async function listBrandSummaries(db: Db): Promise<BrandSummary[]> {
               conceptId: heroConcept.id,
               runId: heroConcept.runId,
               title: heroConcept.body.title,
+              ...(dubsFor(heroConcept.id).length ? { dubs: dubsFor(heroConcept.id) } : {}),
             },
           }
         : {}),
+      ...(voiceFor(b) ? { voice: voiceFor(b) } : {}),
       ...(last
         ? {
             lastRun: clean({
@@ -707,4 +731,43 @@ export async function importBundle(db: Db, b: DemoRunBundle, opts: { withEvents?
       }
     }
   }
+}
+
+// ---------------------------------------------------------------- render versions (A19)
+
+export async function upsertRenderVersion(db: Db, v: RenderVersion): Promise<void> {
+  const row = { id: v.id, conceptId: v.conceptId, version: v.version, body: v, createdAt: v.createdAt };
+  await db.insert(t.renderVersions).values(row).onConflictDoUpdate({ target: t.renderVersions.id, set: row });
+}
+
+export async function listRenderVersions(db: Db, conceptId: string): Promise<RenderVersion[]> {
+  const rows = await db
+    .select()
+    .from(t.renderVersions)
+    .where(eq(t.renderVersions.conceptId, conceptId))
+    .orderBy(asc(t.renderVersions.version));
+  return rows.map((r) => r.body);
+}
+
+/** The brand's cast voice (A18) with a sample: the chosen casting take, when it is on this machine. */
+function voiceFor(b: Brand): BrandSummary["voice"] {
+  const lang = (b.languages[0] ?? "en").toLowerCase().slice(0, 2);
+  const book = readVoices()[b.slug] ?? {};
+  const v = book[lang] ?? Object.values(book)[0];
+  if (!v) return undefined;
+  const k = (v.candidates ?? []).findIndex((c) => c.voiceId === v.voiceId);
+  const take = path.resolve(
+    process.env.ASSETS_DIR || "data/assets",
+    "casting",
+    b.slug,
+    v.language,
+    `take_${k + 1}.mp3`,
+  );
+  return {
+    name: v.name.trim(),
+    voiceId: v.voiceId,
+    language: v.language,
+    persona: v.persona || undefined,
+    sampleUrl: k >= 0 && fs.existsSync(take) ? fileToUrl(take) : undefined,
+  };
 }

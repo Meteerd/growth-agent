@@ -119,3 +119,14 @@ describe("A18 sound effects in the mix", () => {
     expect(g.endsWith("[a]")).toBe(true);
   });
 });
+
+describe("A18 Gemini calibration against the winner", () => {
+  it("matching the winner's raw score maps to 85; the factor is capped and never lowers a score", async () => {
+    const { calibrate } = await import("../agent/watcher");
+    expect(calibrate(68, 68)).toBe(85);
+    expect(calibrate(66, 68)).toBe(83);
+    expect(calibrate(50, 40)).toBe(68); // capped at 1.35x
+    expect(calibrate(90, 95)).toBe(90); // a winner above the anchor never lowers our score
+    expect(calibrate(70)).toBe(70);
+  });
+});

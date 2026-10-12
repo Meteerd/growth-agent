@@ -134,7 +134,7 @@ export type RenderWatch = z.infer<typeof RenderWatch>;
 /** Our own render, watched with sound against the winner's blueprint. */
 export async function watchRender(
   db: Db,
-  o: { file: string; concept: Concept; bp: Blueprint | null; runId?: string },
+  o: { file: string; concept: Concept; bp: Blueprint | null; runId?: string; save?: boolean },
 ): Promise<RenderWatch | null> {
   let t = 0;
   const shots = o.concept.shots.map((s) => {
@@ -168,7 +168,7 @@ critique: the plain-language list of everything to fix, worst first.`;
     demo: () => null as unknown as RenderWatch,
   });
   if (r.mode !== "live") return null;
-  saveCritique(o.concept.id, o.file, r.value);
+  if (o.save !== false) saveCritique(o.concept.id, o.file, r.value);
   return r.value;
 }
 
@@ -182,15 +182,45 @@ export function saveCritique(conceptId: string, file: string, w: RenderWatch) {
   );
 }
 
+/**
+ * Calibration (A18, 12 Oct): on our rubric Gemini scores proven winners low (the Hound winner, 16k views on a
+ * 569-follower account, scores 68 raw and "would scroll"). The winner's own raw score is the anchor: our raw scores
+ * are scaled so that matching the winner = 85 (factor capped at 1.35, never below 1). Hard gates are not scaled.
+ */
+export const WINNER_ANCHOR = 85;
+export function calibrate(raw: number, winnerRaw?: number): number {
+  if (!winnerRaw || winnerRaw <= 0) return Math.round(raw);
+  const k = Math.min(1.35, Math.max(1, WINNER_ANCHOR / winnerRaw));
+  return Math.min(100, Math.round(raw * k));
+}
+
+/** The winner's own raw Gemini score on the render rubric (computed once per blueprint and stored). */
+export async function winnerBaseline(db: Db, c: Concept, bp: Blueprint | null, winnerFile?: string) {
+  if (!bp) return undefined;
+  if (bp.winnerScore) return bp.winnerScore.overall;
+  const base = bp.evidenceId.replace(/_[0-9a-f]{6}$/, "");
+  const file =
+    winnerFile ??
+    [path.resolve("data/media", `${base}.mp4`), path.resolve("data/media", `${bp.evidenceId}.mp4`)].find((f) =>
+      fs.existsSync(f),
+    );
+  if (!file) return undefined;
+  const w = await watchRender(db, { file, concept: c, bp, runId: c.runId, save: false });
+  if (!w) return undefined;
+  const { upsertBlueprint } = await import("../repo");
+  await upsertBlueprint(db, { ...bp, winnerScore: { overall: w.overall, at: new Date().toISOString() } });
+  return w.overall;
+}
+
 /** Merge Gemini's watch into a review: per shot and overall the stricter score wins; hard failures cap the score. */
-export function mergeRenderWatch(r: Review, w: RenderWatch): Review {
+export function mergeRenderWatch(r: Review, w: RenderWatch, winnerRaw?: number): Review {
   const perShot = r.perShot.map((p) => {
     const g = w.perShot.find((x) => x.idx === p.idx);
     if (!g) return p;
-    const score = Math.min(p.score, Math.round(g.score));
+    const score = Math.min(p.score, calibrate(g.score, winnerRaw));
     return { ...p, score, issues: [...g.issues.map((i) => `Gemini: ${i}`), ...p.issues] };
   });
-  let overall = Math.min(r.overall, Math.round(w.overall));
+  let overall = Math.min(r.overall, calibrate(w.overall, winnerRaw));
   const caps: string[] = [];
   const cap = (n: number, why: string) => {
     if (overall > n) overall = n;
@@ -210,6 +240,6 @@ export function mergeRenderWatch(r: Review, w: RenderWatch): Review {
     perShot,
     overall,
     decision: low || overall < 80 ? "regenerate" : r.decision,
-    notes: `Gemini watched it with sound: ${w.critique.slice(0, 6).join(" | ")}${caps.length ? ` [caps: ${caps.join(", ")}]` : ""}. Claude: ${r.notes}`,
+    notes: `Gemini watched it with sound (raw ${Math.round(w.overall)}${winnerRaw ? `; the winner itself scores ${Math.round(winnerRaw)} raw, calibrated ${calibrate(w.overall, winnerRaw)}` : ""}): ${w.critique.slice(0, 6).join(" | ")}${caps.length ? ` [caps: ${caps.join(", ")}]` : ""}. Claude: ${r.notes}`,
   };
 }

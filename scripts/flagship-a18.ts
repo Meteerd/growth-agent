@@ -14,6 +14,26 @@ const { exportShowcase } = await import("@/engine/live/showcase");
 const repo = await import("@/engine/repo");
 const db = await getDb();
 const t0 = Date.now();
+if (args.includes("--review-only")) {
+  // re-review the concept's current video (no render): Claude frames + Gemini with sound, calibrated
+  const { makeCtx } = await import("@/engine/agent/context");
+  const { reviewRender } = await import("@/engine/agent/phases/review");
+  const c = (await repo.getConcept(db, args[0]!))!;
+  const bp = c.blueprintId ? await repo.getBlueprint(db, c.blueprintId) : null;
+  const ctx = (await makeCtx(db, c.runId, new AbortController().signal)).forPhase("review");
+  const prev = (await repo.listReviews(db, c.id)).at(-1);
+  const rv = await reviewRender(ctx, c, bp, c.videoAssetId!, (prev?.round ?? 0) + 1, []);
+  rv.decision = rv.perShot.some((p) => p.score < 80) || rv.overall < 80 ? "regenerate" : "accept";
+  await repo.upsertReview(db, rv);
+  console.log(
+    JSON.stringify(
+      { overall: rv.overall, perShot: rv.perShot.map((p) => p.score), notes: rv.notes.slice(0, 1200) },
+      null,
+      2,
+    ),
+  );
+  process.exit(0);
+}
 const r = await buildA18(db, args[0]!, {
   mode: (arg("--mode") as "voice_led" | "picture_locked") ?? "voice_led",
   animateAll: args.includes("--animate-all"),
