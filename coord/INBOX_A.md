@@ -41,3 +41,6 @@ Do not start A18 now. It happens at the event, after Mete claims the fal credits
 
 ## 2026-10-12T07:36 from Mete (human): A18 adds a video watcher (Gemini)
 At the event, A18 also adds a Gemini provider that watches whole videos with audio, for winners and for our own renders (plain-language critique + per-shot scores into the regenerate loop). Still do not start before Mete says go.
+
+## 2026-10-12T09:00 from Mete (human): captions copy the winner's text style; Hound gets new captions
+The grey box with an orange underline looks bad. For every flagship (Hound included), read the winner's on-screen text style from its frames (Gemini + Claude vision): font look, weight, size, color, stroke/shadow/box, case, position, animation. Store it in the blueprint and render our captions in that style with a bundled free font. Hound keeps its clips but is re-composed with new captions + ElevenLabs voice, music, SFX. Review compares caption style against the winner. Part of A18, before re-renders.
