@@ -8,7 +8,7 @@ import { BlurText } from "./bits/BlurText";
 import { CountUp } from "./bits/CountUp";
 import { Magnet } from "./bits/Magnet";
 import { brands, clips, compliance, proof, stats } from "./data";
-import { LoopVideo } from "./LoopVideo";
+import { DubbedLoop, LoopVideo } from "./LoopVideo";
 import { UrlBar } from "./UrlBar";
 
 // The public website (B20). Uplane-style rhythm: a full-bleed hero graded in one colour with a contrast streak, then
@@ -215,7 +215,13 @@ function Proof() {
         </div>
         <div className="grid-cols-1 grid gap-6 bg-raised p-6 sm:grid-cols-[minmax(0,260px)_minmax(0,1fr)] md:p-8">
           <div className="aspect-[9/16] w-full overflow-hidden rounded-[10px] bg-[#111]">
-            <LoopVideo src={p.remake.src} poster={p.remake.poster} label="Our remake for Hound" />
+            <DubbedLoop
+              src={p.remake.src}
+              poster={p.remake.poster}
+              label="Our remake for Hound"
+              original={p.remake.language}
+              dubs={p.remake.dubs}
+            />
           </div>
           <div className="flex flex-col">
             <p className="text-[13px] text-bone-3">Our remake for Hound</p>
@@ -225,6 +231,8 @@ function Proof() {
             <p className="mt-4 text-[15px] text-bone-2 leading-relaxed">
               Same six beats, same timing, same hook mechanism. Hound&apos;s own app, beagle art and words. The
               creator&apos;s footage, voice, face and script are never reused.
+              {p.remake.dubs.length > 0 &&
+                " Switch the language on the video: the voice is re-spoken, the captions re-timed."}
             </p>
             {p.remake.review != null && (
               <p className="mt-6 font-mono text-[13px] text-bone-2">

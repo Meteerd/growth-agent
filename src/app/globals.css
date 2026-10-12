@@ -317,3 +317,29 @@ html[data-present="1"] [data-dev] {
     opacity: 1 !important;
   }
 }
+
+/* route change bar (RouteProgress): grows while the next screen loads, fills and fades on arrival */
+@keyframes route-load {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(0.7);
+  }
+}
+@keyframes route-done {
+  from {
+    transform: scaleX(0.7);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+.route-loading {
+  animation: route-load 2.5s cubic-bezier(0.1, 0.7, 0.3, 1) forwards;
+}
+.route-done {
+  animation: route-done 300ms ease-out forwards;
+}

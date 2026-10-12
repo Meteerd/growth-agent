@@ -19,8 +19,14 @@ function read(dir: "showcase" | "runs", slug: string): DemoRunBundle | undefined
 /** A flagship render: served from docs/renders by /renders, poster frame in public/showcase/posters. */
 export function flagship(slug: string) {
   const name = `${slug}-flagship`;
-  if (!fs.existsSync(path.resolve("docs/renders", `${name}.mp4`))) return undefined;
-  return { src: `/renders/${name}.mp4`, poster: `/showcase/posters/${slug}.jpg` };
+  const dir = path.resolve("docs/renders");
+  if (!fs.existsSync(path.join(dir, `${name}.mp4`))) return undefined;
+  // dubbed versions sit beside the original as <slug>-flagship-<language>.mp4 (Lane A, ElevenLabs Dubbing)
+  const dubs = fs.readdirSync(dir).flatMap((f) => {
+    const m = f.match(new RegExp(`^${name}-([a-z]{2})\\.mp4$`));
+    return m ? [{ lang: m[1], src: `/renders/${f}` }] : [];
+  });
+  return { src: `/renders/${name}.mp4`, poster: `/showcase/posters/${slug}.jpg`, dubs };
 }
 
 /** Extra short clips Lane A makes for the landing (public/showcase/*.mp4, poster beside each as .jpg). */
@@ -54,7 +60,10 @@ export function brands() {
       {
         slug,
         name: seed.name,
-        logo: logoOnDark(seed),
+        // small copies of the real marks for the landing (public/showcase/logos); the full files are 100x heavier
+        logo: fs.existsSync(path.resolve("public/showcase/logos", `${slug}.png`))
+          ? `/showcase/logos/${slug}.png`
+          : logoOnDark(seed),
         oneLiner: seed.dossier.oneLiner,
         countries: seed.countries,
         runId: b.run.id,
@@ -131,7 +140,7 @@ export function proof() {
       t1: s.t1,
       what: s.action,
     })),
-    remake: { ...media, title: c.title, review: review?.overall, shots: c.shots.length },
+    remake: { ...media, title: c.title, review: review?.overall, shots: c.shots.length, language: c.language },
   };
 }
 
