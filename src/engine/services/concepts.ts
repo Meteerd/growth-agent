@@ -145,6 +145,28 @@ export async function renderConcept(
   if (!isVideo(c)) throw new HttpError(400, "not_video", "This concept has no shots to render");
   const brand = (await getBrand(db, c.brandId))!;
   const emit = emitter(db, c, o.phase ?? "production", o.emit);
+  // a frame or clip whose file is not on this machine (e.g. an imported showcase run) counts as missing
+  const onDisk = async (id?: string) => {
+    const a = id ? await getAsset(db, id) : null;
+    const f = a ? urlToFile(a.url) : null;
+    return !!f && fs.existsSync(f);
+  };
+  const healed = await Promise.all(
+    c.shots.map(async (s) => ({
+      ...s,
+      keyframeAssetId: (await onDisk(s.keyframeAssetId)) ? s.keyframeAssetId : undefined,
+      clipAssetId: (await onDisk(s.clipAssetId)) ? s.clipAssetId : undefined,
+    })),
+  );
+  const lost = healed.filter((s, i) => s.keyframeAssetId !== c!.shots[i]!.keyframeAssetId).length;
+  const lostClips = healed.filter((s, i) => s.clipAssetId !== c!.shots[i]!.clipAssetId).length;
+  if (lost || lostClips) {
+    c = { ...c, shots: healed };
+    await upsertConcept(db, c);
+    await emit("warning", `${lost} frame(s) and ${lostClips} clip(s) are not on this machine: rebuilding them`, {
+      refId: c.id,
+    });
+  }
   // only the shots without a frame get one (never overwrite frames that exist)
   for (const s of c.shots.filter((x) => !x.keyframeAssetId))
     c = await generateKeyframes(db, c.id, { emit, shotIdx: s.idx });

@@ -2,6 +2,7 @@ import type { Phase, Run, RunKind, RunStatus } from "@/contracts";
 import type { Db } from "./db/client";
 import { HttpError } from "./http";
 import { newId, nowIso } from "./ids";
+import { isLive } from "./providers/env";
 import { appendEvent, getRun, updateRun, upsertRun } from "./repo";
 
 const ALLOWED: Record<RunStatus, RunStatus[]> = {
@@ -71,7 +72,7 @@ export async function createRun(db: Db, brandId: string, kind: RunKind, opts: { 
     status: "queued",
     phase: kind === "production_only" ? "production" : "intake",
     costUsd: 0,
-    demo: opts.demo ?? false,
+    demo: opts.demo ?? !isLive("anthropic"),
     createdAt: nowIso(),
   };
   await upsertRun(db, run);

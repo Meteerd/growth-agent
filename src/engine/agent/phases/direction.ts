@@ -15,7 +15,7 @@ import { appendEvent, getLatestPlan, insertPlan, listBlueprints, listEvidence, l
 import { rulePackText } from "../../rules";
 import { loadPrompt, structured } from "../claude";
 import type { PhaseCtx } from "../context";
-import { answersDigest, blueprintDigest, dossierDigest, evidenceDigest } from "../digest";
+import { answersDigest, blueprintDigest, dossierDigest, evidenceDigest, keepIds, resolveCitations } from "../digest";
 
 const Axis = z.number();
 export const ChannelAssessment = z.object({
@@ -143,7 +143,7 @@ export function buildPlan(
       scores: x.scores,
       mode: x.c.mode,
       rationale: x.c.rationale,
-      evidenceIds: x.c.evidenceIds.filter((id) => evidenceIds.has(id)),
+      evidenceIds: keepIds(x.c.evidenceIds, evidenceIds),
       answerIds: x.c.answerIds.filter((id) => answerIds.has(id)),
       formats: x.c.formats,
       cadence: x.c.cadence,
@@ -158,7 +158,7 @@ export function buildPlan(
     .map((x) => ({
       channel: x.c.channel,
       reason: x.c.notNowReason || (x.c.recommend ? `Scored ${x.score}/100, below the channels above.` : x.c.rationale),
-      evidenceIds: x.c.evidenceIds.filter((id) => evidenceIds.has(id)),
+      evidenceIds: keepIds(x.c.evidenceIds, evidenceIds),
     }));
   return {
     id: `plan_${runId.slice(-8)}_v${version}`,
@@ -282,6 +282,10 @@ export async function direction(ctx: PhaseCtx): Promise<void> {
     new Set(evidence.map((e) => e.id)),
     new Set(qs.map((q) => q.id)),
   );
+  const evIds = new Set(evidence.map((e) => e.id));
+  plan.summary = resolveCitations(plan.summary, evIds);
+  for (const c of plan.channels) c.rationale = resolveCitations(c.rationale, evIds);
+  for (const n of plan.notNow) n.reason = resolveCitations(n.reason, evIds);
   for (const c of plan.channels)
     await ctx.emit("thinking", `${c.channel}: ${c.score}/100 (${c.mode})`, {
       detail: c.rationale,

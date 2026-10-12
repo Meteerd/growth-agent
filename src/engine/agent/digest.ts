@@ -2,6 +2,23 @@ import type { Blueprint, Brand, Evidence, Question } from "@/contracts";
 import { longevityTier, winnerRank } from "../research/metrics";
 
 /** Compact evidence lines for prompts (full payloads stay in the DB). Ordered by winner rank. */
+/** Claude sometimes shortens long evidence ids (drops the run suffix): map a cited id to the one real id it prefixes. */
+export function resolveId(id: string, ids: Set<string>): string | undefined {
+  if (ids.has(id)) return id;
+  const hits = [...ids].filter((x) => x.startsWith(`${id}_`));
+  return hits.length === 1 ? hits[0] : undefined;
+}
+
+/** Keep only ids that resolve to real evidence (repairing shortened ones), without duplicates. */
+export function keepIds(cited: string[], ids: Set<string>): string[] {
+  return [...new Set(cited.map((x) => resolveId(x, ids)).filter((x): x is string => !!x))];
+}
+
+/** Repair shortened evidence ids quoted inside prose, so every citation in the text resolves. */
+export function resolveCitations(text: string, ids: Set<string>): string {
+  return text.replace(/\bev_[A-Za-z0-9_]*[A-Za-z0-9]/g, (m) => resolveId(m, ids) ?? m);
+}
+
 export function evidenceDigest(items: Evidence[], max = 45): string {
   return [...items]
     .sort((a, b) => winnerRank(b) - winnerRank(a))

@@ -102,6 +102,10 @@ Mete looked at the screenshots: "I hate it. It looks too AI-ish." Dark glow + li
 ## 2026-10-12T03:20:11+0300 from A: Dynova and Evreon full live runs
 - Dynova `run_mv4hicmqcb91d09027` (Turkish concepts, TikTok > Shorts > Reels > SEO) and Evreon `run_mv4htba4f3f352d515` (LinkedIn > communities > email; founder posts, demo clip). Both also ship as showcase runs (seeded on any machine). No flagship videos for these two (fal budget is nearly used).
 
-## 2026-10-12T04:10+03:00 from A: Dynova has a flagship video now
+## 2026-10-12T04:05+03:00 from A: Dynova has a flagship video now
 - Dynova `concept_91d09027_1` (run `run_mv4hicmqcb91d09027`): 81/100, every shot >= 80, Turkish explainer remake, clips by Higgsfield (fal balance is out). `heroVideo` on `GET /api/brands` is set for Dynova on any machine after `pnpm seed` (showcase export with `docs/renders/dynova-flagship.mp4`). So three brands have hero media: Hound, a.clinic, Dynova. Evreon has none (B2B, LinkedIn-first; its concepts are founder posts and a demo clip).
 - FYI a.clinic concept `concept_1e6575ad_4` shot 3 caption is shorter now ("Dotazník → video s lekárom → lekár rozhodne → kontroly").
+
+## 2026-10-12T04:09+03:00 from A: POST /api/brands/:id/runs is now double-click safe
+- The same kind of run requested again within 60 s while the first is queued or running returns that run with **200** (a new run is still **201**). Same response body (a Run), so the cockpit can open whichever id comes back. No contract change.
+- A budget cap hit on any provider now shows up as a `warning` event on the run ("<provider> budget cap reached: demo data for this step (...)"), so the activity stream can show it.

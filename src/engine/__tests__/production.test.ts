@@ -197,3 +197,19 @@ describe("clipCaption (fallback without a model)", () => {
     expect(clipCaption("Short and fine")).toBe("Short and fine");
   });
 });
+
+describe("render on a machine without the original files", () => {
+  it("rebuilds a frame whose file is gone instead of failing, with a warning", async () => {
+    const fs = await import("node:fs");
+    const { listEvents } = await import("@/engine/repo");
+    const c = (await listConcepts(db, runId)).find((x) => x.blueprintId)!;
+    const first = await renderConcept(db, c.id, "draft");
+    const kf = (await getAsset(db, first.concept.shots[0]!.keyframeAssetId!))!;
+    fs.rmSync(urlToFile(kf.url)!);
+    const again = await renderConcept(db, c.id, "draft");
+    expect(again.concept.shots[0]!.keyframeAssetId).not.toBe(kf.id);
+    expect(fs.existsSync(urlToFile(again.asset.url)!)).toBe(true);
+    const warn = (await listEvents(db, c.runId)).filter((e) => e.type === "warning").at(-1);
+    expect(warn?.title).toContain("not on this machine");
+  });
+});

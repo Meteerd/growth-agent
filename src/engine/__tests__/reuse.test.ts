@@ -34,6 +34,25 @@ describe("reuse research (recorded data powers a live consultation)", () => {
     expect(evs.map((e) => e.id)).toEqual(evs.map((_, i) => i + 1));
   });
 
+  it("a double click starts one run: simultaneous identical requests get the same run", async () => {
+    const post = () =>
+      createRun(
+        req("/api/brands/dynova/runs", { method: "POST", json: { kind: "full", reuseResearchFrom: "recorded" } }),
+        ctx({ id: "dynova" }),
+      );
+    const [a, b] = await Promise.all([post(), post()]);
+    expect([a.status, b.status].sort()).toEqual([200, 201]);
+    const [ra, rb] = [await a.json(), await b.json()];
+    expect(ra.id).toBe(rb.id);
+    await waitForRun(ra.id);
+    // once the first run is waiting for the operator, a new request starts a new run
+    const c = await post();
+    expect(c.status).toBe(201);
+    const rc = await c.json();
+    expect(rc.id).not.toBe(ra.id);
+    await waitForRun(rc.id);
+  });
+
   it("404 when there is nothing to reuse", async () => {
     const { createBrand: newBrand } = await import("@/engine/services/brands");
     const { brand } = await newBrand(db, { url: "https://nothing-recorded.example", name: "Fresh" });

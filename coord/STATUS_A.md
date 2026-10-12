@@ -1,7 +1,7 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-12 04:10 +03
+- Time: 2026-10-12 04:05 +03
 - Current task: IMPROVE loop (all CORE + STRETCH + A17 checked); MORNING_A kept current
 - Last sync: 03:55 exit 0, main UPDATED, checks PASS
 - Blockers:
@@ -35,4 +35,4 @@
 - 02:33 A17 done. Flagships: Hound concept_1d68be0a_1 (run_mv4e0ud7671d68be0a) 83/100, shots 85/86/81/84/85/80: six photoreal phone-footage shots (beagle at the door, keys, chew toy, hand on head) remaking a real TikTok myth-vs-fact winner, CTA shot holds a phone showing Hound's real beagle art. a.clinic concept_1e6575ad_1 (run_mv4e8sfdbc1e6575ad) 82/100, shots 80/83/82/85/80/80: Slovak home footage, sticky-note 4 steps, laptop/phone with a.clinic's real doctor art, local pharmacy, checklist, phone with the a.clinic page. Contact sheets in docs/renders/. Sora unavailable (404), fal Kling 2.1 used.
 - 02:47 ack concepts lose blueprintId on runs that reuse research (INBOX_A 02:16): fixed with fallback linking + test
 - 03:29 IMPROVE: fresh-clone check OK; Dynova + Evreon live research and full runs; eval-all all green on current runs; fal balance exhausted (circuit breaker added)
-- 04:10 IMPROVE I29-I31: Dynova flagship 81/100 (every shot >= 80, Higgsfield clips) exported as showcase; wordy video captions shortened before compliance; clause-safe fallback; eval checks language + readability; tests for motion fallback, flagship repair, tightened-caption compliance
+- 04:05 IMPROVE I29-I31: Dynova flagship 81/100 (every shot >= 80, Higgsfield clips) exported as showcase; wordy video captions shortened before compliance; clause-safe fallback; eval checks language + readability; tests for motion fallback, flagship repair, tightened-caption compliance

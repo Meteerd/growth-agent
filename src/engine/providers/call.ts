@@ -1,6 +1,7 @@
 import type { ProviderId } from "@/contracts";
 import type { Db } from "../db/client";
 import { BudgetExceededError, recordSpend, reserve } from "../ledger";
+import { appendEvent, getRun } from "../repo";
 import { isLive } from "./env";
 
 export interface LiveResult<T> {
@@ -19,7 +20,7 @@ export interface ProviderCall<T> {
   estimateUsd: number;
   live: () => Promise<LiveResult<T>>;
   demo: () => Promise<T> | T;
-  /** called when the cap blocks a live call; the step continues in demo */
+  /** called when the cap blocks a live call; the step continues in demo (default: a warning event on the run) */
   onBudgetExceeded?: (err: BudgetExceededError) => Promise<void> | void;
   /** tests only: force a mode without touching env */
   mode?: "live" | "demo";
@@ -44,7 +45,9 @@ export async function callProvider<T>(db: Db, c: ProviderCall<T>): Promise<CallO
     release = await reserve(db, c.provider, c.estimateUsd, c.budgetOverride);
   } catch (e) {
     if (e instanceof BudgetExceededError) {
-      await c.onBudgetExceeded?.(e);
+      if (c.onBudgetExceeded) await c.onBudgetExceeded(e);
+      else
+        await warnRun(db, c.runId, `${c.provider} budget cap reached: demo data for this step (${c.note})`, e.message);
       return { value: await c.demo(), mode: "demo", usd: 0 };
     }
     throw e;
@@ -56,4 +59,11 @@ export async function callProvider<T>(db: Db, c: ProviderCall<T>): Promise<CallO
   } finally {
     release();
   }
+}
+
+/** A visible warning in the run's event stream (current phase), so a cap hit never silently mixes demo data in. */
+async function warnRun(db: Db, runId: string | undefined, title: string, detail: string) {
+  if (!runId) return;
+  const run = await getRun(db, runId);
+  if (run) await appendEvent(db, { runId, phase: run.phase, type: "warning", title, detail });
 }

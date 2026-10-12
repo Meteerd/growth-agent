@@ -62,6 +62,34 @@ describe("consult phase", () => {
     expect(statuses).toEqual(["running", "waiting_input", "running", "done"]);
   });
 
+  it("all questions skipped twice at once: one resume, assumptions recorded, late answers refused", async () => {
+    const run = await createRun(db, "brand_aclinic", "full");
+    await runPipeline(db, run.id, new AbortController().signal);
+    const qs = await listQuestions(db, run.id);
+    const all = qs.map((q) => ({ questionId: q.id, skip: true }));
+    const post = () =>
+      answers(req(`/api/runs/${run.id}/answers`, { method: "POST", json: { answers: all } }), ctx({ id: run.id }));
+    const [a, b] = await Promise.all([post(), post()]);
+    expect([a.status, b.status]).toEqual([200, 200]);
+    await waitForRun(run.id);
+    expect((await getRun(db, run.id))?.status).toBe("done");
+    const statuses = (await listEvents(db, run.id))
+      .filter((e) => e.type === "status")
+      .map((e) => (e.data as { status: string }).status);
+    expect(statuses).toEqual(["running", "waiting_input", "running", "done"]);
+    const notes = (await getBrand(db, "brand_aclinic"))!.dossier.operatorNotes ?? [];
+    expect(notes.filter((n) => qs.some((q) => q.id === n.questionId)).length).toBe(qs.length);
+    expect(notes.every((n) => !qs.some((q) => q.id === n.questionId) || n.answer.startsWith("Skipped."))).toBe(true);
+    const late = await answers(
+      req(`/api/runs/${run.id}/answers`, {
+        method: "POST",
+        json: { answers: [{ questionId: qs[0]!.id, value: "x" }] },
+      }),
+      ctx({ id: run.id }),
+    );
+    expect(late.status).toBe(409);
+  });
+
   it("rejects unknown questions and answers to finished runs", async () => {
     const r = await answers(
       req("/api/runs/run_hound_demo/answers", {
