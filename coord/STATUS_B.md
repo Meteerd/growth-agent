@@ -69,3 +69,4 @@ Automated: e2e/bans.spec.ts checks computed styles of every element for the DESI
 - Loop log 03:18: live studio on the Hound showcase run / storyboard showed brand art for photoreal shots, doubled captions and quotes / fixed I15 in b9ed616 (frames from the render).
 - Loop log 03:24: live cockpit, direction, packs and mobile reverse-engineer on the showcase run / red used as decoration in 7 places, doubled hook quotes / fixed I16 in 60f531e.
 - Loop log 03:31: Dynova (Turkish) and Evreon live runs: cockpit, direction, studio, packs at 1440 and 390: zero console errors, no overflow (8 passed); studio now says when a render lives only on the engine machine.
+- Loop log 03:37: resilience.spec live (engine down + retry, slow network skeletons, SSE drop and reconnect) 3 passed; mobile landing: section numbers split by overflow-wrap anywhere, switched to break-word, strings/quality/screens 29 passed.
