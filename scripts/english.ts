@@ -40,12 +40,21 @@ const tr = await structured(
     user: JSON.stringify({
       title: src.title,
       cta: src.cta,
-      shots: src.shots.map((s) => ({ idx: s.idx, durationSec: s.durationSec, voiceover: s.voiceover ?? "", onScreenText: s.onScreenText ?? "" })),
+      shots: src.shots.map((s) => ({
+        idx: s.idx,
+        durationSec: s.durationSec,
+        voiceover: s.voiceover ?? "",
+        onScreenText: s.onScreenText ?? "",
+      })),
     }),
     schema: T,
     note: `english version ${id}`,
     maxTokens: 4000,
-    demo: () => ({ title: src.title, cta: src.cta, shots: src.shots.map((s) => ({ idx: s.idx, voiceover: s.voiceover ?? "", onScreenText: s.onScreenText ?? "" })) }),
+    demo: () => ({
+      title: src.title,
+      cta: src.cta,
+      shots: src.shots.map((s) => ({ idx: s.idx, voiceover: s.voiceover ?? "", onScreenText: s.onScreenText ?? "" })),
+    }),
   },
 );
 const shots = src.shots.map((s) => {
@@ -81,7 +90,12 @@ await repo.upsertConcept(db, {
 const book = readVoices()[brand.slug] ?? {};
 if (!book.en) {
   const primary = book[src.language] ?? Object.values(book)[0]!;
-  saveBrandVoice(brand.slug, { ...primary, language: "en", why: `${primary.why} English version: same voice (persona continuity), eleven_multilingual_v2.`, chosenAt: nowIso() });
+  saveBrandVoice(brand.slug, {
+    ...primary,
+    language: "en",
+    why: `${primary.why} English version: same voice (persona continuity), eleven_multilingual_v2.`,
+    chosenAt: nowIso(),
+  });
 }
 
 const r = await buildA18(db, enId, {
@@ -94,6 +108,18 @@ const r = await buildA18(db, enId, {
 });
 
 // the market-language cut stays the main flagship; this English cut is its "en" version (served as heroVideo.dubs)
-console.log(JSON.stringify({ concept: enId, video: r.asset.url, overall: r.review.overall, perShot: r.review.perShot.map((p) => p.score), notes: r.review.notes.slice(0, 600) }, null, 2));
+console.log(
+  JSON.stringify(
+    {
+      concept: enId,
+      video: r.asset.url,
+      overall: r.review.overall,
+      perShot: r.review.perShot.map((p) => p.score),
+      notes: r.review.notes.slice(0, 600),
+    },
+    null,
+    2,
+  ),
+);
 if (process.argv.includes("--export")) console.log("export:", await exportShowcase(db, src.runId));
 process.exit(0);

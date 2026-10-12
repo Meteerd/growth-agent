@@ -139,21 +139,24 @@ const TALK: { id: string; slug: string; line: string; presenter: string; label: 
     id: "hound-talk",
     slug: "hound",
     line: "If your dog panics when you leave, don't just let them cry it out. Practise tiny absences they can handle, and build up slowly, at their pace.",
-    presenter: "a friendly young British woman in her late 20s sitting on her living room floor next to a calm beagle, talking to her phone's front camera",
+    presenter:
+      "a friendly young British woman in her late 20s sitting on her living room floor next to a calm beagle, talking to her phone's front camera",
     label: "Hound (EN-GB): dog owner talking to camera",
   },
   {
     id: "aclinic-talk",
     slug: "aclinic",
     line: "Weight care without the waiting room. A short health questionnaire, then a video consultation with a licensed doctor, and you see the full price before you pay.",
-    presenter: "a calm, warm woman in her late 30s at a bright kitchen table at home, talking to her phone's front camera",
+    presenter:
+      "a calm, warm woman in her late 30s at a bright kitchen table at home, talking to her phone's front camera",
     label: "a.clinic (EN): talking to camera",
   },
   {
     id: "dynova-talk",
     slug: "dynova",
     line: "General advice is written for the average person. Your Dynova report comes from your own sample. It doesn't diagnose anything, it shows your tendencies.",
-    presenter: "a warm Turkish woman in her early 30s with dark hair in a bright modern apartment, talking to her phone's front camera",
+    presenter:
+      "a warm Turkish woman in her early 30s with dark hair in a bright modern apartment, talking to her phone's front camera",
     label: "Dynova (EN): talking to camera",
   },
 ];
@@ -173,8 +176,16 @@ async function auroraTalk(png: string, mp3: string, out: string, sec: number) {
           headers: h,
           body: JSON.stringify({
             model_id: "creatify-aurora",
-            image: { type: "inline_base64", content_base64: fs.readFileSync(png).toString("base64"), mime_type: "image/png" },
-            audio: { type: "inline_base64", content_base64: fs.readFileSync(mp3).toString("base64"), mime_type: "audio/mpeg" },
+            image: {
+              type: "inline_base64",
+              content_base64: fs.readFileSync(png).toString("base64"),
+              mime_type: "image/png",
+            },
+            audio: {
+              type: "inline_base64",
+              content_base64: fs.readFileSync(mp3).toString("base64"),
+              mime_type: "audio/mpeg",
+            },
             resolution: "720p",
           }),
           timeoutMs: 120_000,
@@ -228,7 +239,10 @@ async function klingTalk(png: string, mp3: string, out: string, sec: number) {
         if (st.status === "COMPLETED") break;
         if (st.status === "FAILED" || st.status === "ERROR") throw new Error(`fal avatar ${st.status}`);
       }
-      const res = await okJson<{ video?: { url?: string } }>(await fetchRetry(sub.response_url, { headers: h }), "fal result");
+      const res = await okJson<{ video?: { url?: string } }>(
+        await fetchRetry(sub.response_url, { headers: h }),
+        "fal result",
+      );
       const vid = await fetchRetry(res.video!.url!, { timeoutMs: 120_000 });
       fs.writeFileSync(out, Buffer.from(await vid.arrayBuffer()));
       return { result: out, usd: 0.2 * Math.ceil(sec), units: `${sec.toFixed(1)}s avatar pro` };
@@ -250,7 +264,13 @@ if (only !== "broll")
       const brand = (await repo.listBrands(db)).find((b) => b.slug === t.slug)!;
       const voice = brandVoice(t.slug, "en") ?? brandVoice(t.slug, (brand.languages[0] ?? "en").slice(0, 2))!;
       // 1. audio first: the brand's voice speaks the script, with word timestamps
-      const tts = await ttsWithTimestamps(db, { voiceId: voice.voiceId, text: t.line, modelId: voice.modelId, settings: voice.settings, note: `showcase ${t.id}` });
+      const tts = await ttsWithTimestamps(db, {
+        voiceId: voice.voiceId,
+        text: t.line,
+        modelId: voice.modelId,
+        settings: voice.settings,
+        note: `showcase ${t.id}`,
+      });
       if (!tts.mp3) throw new Error("no voice");
       const mp3 = path.join(WORK, `${t.id}_en.mp3`);
       fs.writeFileSync(mp3, tts.mp3);
@@ -277,12 +297,39 @@ if (only !== "broll")
       // 3. captions = the spoken words, timed from the ElevenLabs word timestamps
       const dur = (await probe(out)).durationSec;
       const pattern = await renderCaptionFrames(
-        { style: premiumStyle(undefined, brand.dossier.visual.colors[0] ?? "#FFD60A"), words: markEmphasis(tts.words, [brand.name]), regions: [{ t0: 0, t1: dur + 1, region: "lower" }] },
+        {
+          style: premiumStyle(undefined, brand.dossier.visual.colors[0] ?? "#FFD60A"),
+          words: markEmphasis(tts.words, [brand.name]),
+          regions: [{ t0: 0, t1: dur + 1, region: "lower" }],
+        },
         dur,
         path.join(WORK, `${t.id}_caps`),
       );
       const cap = path.join(WORK, `${t.id}_final.mp4`);
-      await ffmpeg(["-y", "-i", out, "-framerate", "30", "-i", pattern, "-filter_complex", "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30[b];[1:v]format=rgba[c];[b][c]overlay=0:0:eof_action=pass,format=yuv420p[v]", "-map", "[v]", "-map", "0:a?", "-c:v", "libx264", "-crf", "18", "-c:a", "aac", "-t", String(dur), cap]);
+      await ffmpeg([
+        "-y",
+        "-i",
+        out,
+        "-framerate",
+        "30",
+        "-i",
+        pattern,
+        "-filter_complex",
+        "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30[b];[1:v]format=rgba[c];[b][c]overlay=0:0:eof_action=pass,format=yuv420p[v]",
+        "-map",
+        "[v]",
+        "-map",
+        "0:a?",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "18",
+        "-c:a",
+        "aac",
+        "-t",
+        String(dur),
+        cap,
+      ]);
       // 4. Gemini watches it with sound: lip sync, persona = voice, captions = words
       const w = await watch(db, {
         file: cap,
@@ -290,12 +337,28 @@ if (only !== "broll")
         fps: 4,
         note: `talking-head check ${t.id}`,
         prompt: `Watch this short talking-head clip WITH sound. Script: "${t.line}". Voice: ${voice.name} (${voice.persona}). Score lipSync 0-100 (do the lips match the spoken words exactly, no drift), natural 0-100 (looks like a real person filming herself), personaMatchesVoice (gender, age, accent and look fit the voice), spokenMatchesCaptions (captions show the spoken words). issues: what is wrong.`,
-        demo: () => ({ lipSync: 0, personaMatchesVoice: true, spokenMatchesCaptions: true, natural: 0, issues: ["demo"] }),
+        demo: () => ({
+          lipSync: 0,
+          personaMatchesVoice: true,
+          spokenMatchesCaptions: true,
+          natural: 0,
+          issues: ["demo"],
+        }),
       }).catch(() => null);
       console.log("check", t.id, tool, JSON.stringify(w?.value));
-      if (w?.value && (w.value.lipSync < 60 || !w.value.personaMatchesVoice)) console.log("REJECTED by the watcher:", t.id);
+      if (w?.value && (w.value.lipSync < 60 || !w.value.personaMatchesVoice))
+        console.log("REJECTED by the watcher:", t.id);
       const files = await exportBoth(cap, t.id, Math.min(10, dur), true);
-      save({ id: t.id, brand: t.slug, kind: "talking", language: "en", label: `${t.label} (AI-generated presenter, lip-synced by ${tool})`, aiPresenter: true, files, durationSec: Math.min(10, dur) });
+      save({
+        id: t.id,
+        brand: t.slug,
+        kind: "talking",
+        language: "en",
+        label: `${t.label} (AI-generated presenter, lip-synced by ${tool})`,
+        aiPresenter: true,
+        files,
+        durationSec: Math.min(10, dur),
+      });
     } catch (e) {
       console.log("talk failed", t.id, e instanceof Error ? e.message : e);
     }

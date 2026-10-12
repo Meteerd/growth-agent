@@ -124,13 +124,13 @@ export async function listBrandSummaries(db: Db): Promise<BrandSummary[]> {
     return [
       ...(enVid ? [{ language: "en", url: enVid.body.url, posterUrl: `${enVid.body.url}.poster.jpg` }] : []),
       ...dubRows
-      .filter((a) => a.conceptId === conceptId)
-      .map((a) => ({
-        language: (a.body.model ?? "").slice(-2),
-        url: a.body.url,
-        posterUrl: `${a.body.url}.poster.jpg`,
-      }))
-      .filter((d) => (seen.has(d.language) ? false : (seen.add(d.language), true))),
+        .filter((a) => a.conceptId === conceptId)
+        .map((a) => ({
+          language: (a.body.model ?? "").slice(-2),
+          url: a.body.url,
+          posterUrl: `${a.body.url}.poster.jpg`,
+        }))
+        .filter((d) => (seen.has(d.language) ? false : (seen.add(d.language), true))),
     ];
   };
   const conceptRows = videos.length
@@ -149,7 +149,9 @@ export async function listBrandSummaries(db: Db): Promise<BrandSummary[]> {
     // the market-language concept leads; an English version (<id>_en) is a dub of it
     const mainConcept = (v: (typeof videos)[number]) => !(v.conceptId ?? "").endsWith("_en");
     const hero =
-      videos.find((v) => v.brandId === b.id && mainConcept(v) && conceptRows.some((c) => c.body.videoAssetId === v.id)) ??
+      videos.find(
+        (v) => v.brandId === b.id && mainConcept(v) && conceptRows.some((c) => c.body.videoAssetId === v.id),
+      ) ??
       videos.find((v) => v.brandId === b.id && mainConcept(v)) ??
       videos.find((v) => v.brandId === b.id);
     const heroConcept = hero ? conceptRows.find((c) => c.id === hero.conceptId) : undefined;

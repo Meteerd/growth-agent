@@ -54,7 +54,26 @@ export async function exportShowcase(db: Db, runId: string): Promise<string> {
     // the market's language is the main flagship (Mete, 11:30); an English version (<id>_en) is exported as its dub
     if (c.id.endsWith("_en") && vid?.model?.includes("flagship")) {
       const out = path.join(renderDir(), `${brand.slug}-flagship-en.mp4`);
-      await ffmpeg(["-y", "-i", urlToFile(vid.url)!, "-vf", "scale=720:-2", "-c:v", "libx264", "-preset", "slow", "-crf", "26", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out]);
+      await ffmpeg([
+        "-y",
+        "-i",
+        urlToFile(vid.url)!,
+        "-vf",
+        "scale=720:-2",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "slow",
+        "-crf",
+        "26",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "128k",
+        "-movflags",
+        "+faststart",
+        out,
+      ]);
       const base = c.id.slice(0, -3);
       assets.push({
         ...vid,

@@ -113,7 +113,12 @@ export function groupWords(words: CapWord[], per = 3, maxChars = 24): CapGroup[]
   for (let i = 0; i < groups.length; i++) {
     const g = groups[i]!;
     const nx = groups[i + 1];
-    if ((g.length === 1 || span(g, nx) < 0.8) && nx && g.length + nx.length <= 5 && nx[0]!.start - g.at(-1)!.end < 0.6) {
+    if (
+      (g.length === 1 || span(g, nx) < 0.8) &&
+      nx &&
+      g.length + nx.length <= 5 &&
+      nx[0]!.start - g.at(-1)!.end < 0.6
+    ) {
       groups[i] = [...g, ...nx];
       groups.splice(i + 1, 1);
       i--;
