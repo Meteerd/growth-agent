@@ -35,9 +35,11 @@ describe("reuse research (recorded data powers a live consultation)", () => {
   });
 
   it("404 when there is nothing to reuse", async () => {
+    const { createBrand: newBrand } = await import("@/engine/services/brands");
+    const { brand } = await newBrand(db, { url: "https://nothing-recorded.example", name: "Fresh" });
     const res = await createRun(
-      req("/api/brands/evreon/runs", { method: "POST", json: { kind: "full", reuseResearchFrom: "recorded" } }),
-      ctx({ id: "evreon" }),
+      req(`/api/brands/${brand.slug}/runs`, { method: "POST", json: { kind: "full", reuseResearchFrom: "recorded" } }),
+      ctx({ id: brand.slug }),
     );
     expect(res.status).toBe(404);
   });
