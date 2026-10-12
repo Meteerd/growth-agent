@@ -222,7 +222,8 @@ function layoutGroup(
 const esc = (s: string) => {
   const m = /^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(s);
   if (m)
-    return `rgba(${Number.parseInt(m[1]!, 16)},${Number.parseInt(m[2]!, 16)},${Number.parseInt(m[3]!, 16)},${(Number.parseInt(m[4]!, 16) / 255).toFixed(3)})`;
+    // boxes behind captions stay nearly opaque: a see-through box makes the words hard to read
+    return `rgba(${Number.parseInt(m[1]!, 16)},${Number.parseInt(m[2]!, 16)},${Number.parseInt(m[3]!, 16)},${Math.max(0.9, Number.parseInt(m[4]!, 16) / 255).toFixed(3)})`;
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 };
 

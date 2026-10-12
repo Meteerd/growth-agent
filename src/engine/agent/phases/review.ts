@@ -11,7 +11,7 @@ import { generateKeyframes, renderConcept } from "../../services/concepts";
 import { urlToFile } from "../../video/files";
 import { type BetaContentBlockParam, loadPrompt, structured } from "../claude";
 import type { PhaseCtx } from "../context";
-import { mergeRenderWatch, watchRender } from "../watcher";
+import { mergeRenderWatch, watchRender, winnerBaseline } from "../watcher";
 
 export const ReviewDraft = z.object({
   overall: z.number(),
@@ -254,7 +254,8 @@ export async function reviewRender(
       return null;
     },
   );
-  return w ? mergeRenderWatch(measuredReview, w) : measuredReview;
+  const winnerRaw = w ? await winnerBaseline(ctx.db, c, bp).catch(() => undefined) : undefined;
+  return w ? mergeRenderWatch(measuredReview, w, winnerRaw) : measuredReview;
 }
 
 /** Render the remake, watch it, regenerate the weakest shot, re-render: at most 2 rounds. */

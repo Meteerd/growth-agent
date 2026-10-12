@@ -119,6 +119,18 @@ export const BrandSummary = Brand.extend({
       conceptId: z.string(),
       runId: z.string(),
       title: z.string().optional(),
+      /** additive (A18): dubbed versions of the hero video */
+      dubs: z.array(z.object({ language: z.string(), url: z.string(), posterUrl: z.string().optional() })).optional(),
+    })
+    .optional(),
+  /** additive (A18): the brand's cast ElevenLabs voice, with a short local sample */
+  voice: z
+    .object({
+      name: z.string(),
+      voiceId: z.string(),
+      language: z.string(),
+      persona: z.string().optional(),
+      sampleUrl: z.string().optional(),
     })
     .optional(),
   lastRun: z
@@ -411,6 +423,8 @@ export const Blueprint = z.object({
     .optional(),
   /** additive (A18): Gemini's plain-language read of the whole video with sound */
   watchNotes: z.string().optional(),
+  /** additive (A18): the winner's own raw Gemini score on our render rubric (calibration anchor) */
+  winnerScore: z.object({ overall: z.number(), model: z.string().optional(), at: z.string() }).optional(),
 });
 export type Blueprint = z.infer<typeof Blueprint>;
 
@@ -493,6 +507,14 @@ export const Concept = z.object({
   body: z.string().optional(),
   /** additive: compliance revision count (auto-revise max 2) */
   revisions: z.number().int().nonnegative().optional(),
+  /** additive (A18): the soundtrack of the latest final render */
+  audio: z
+    .object({
+      music: z.object({ label: z.string(), prompt: z.string().optional(), url: z.string().optional() }).optional(),
+      sfx: z.array(z.object({ t: z.number(), label: z.string() })).optional(),
+      voice: z.object({ name: z.string(), voiceId: z.string() }).optional(),
+    })
+    .optional(),
 });
 export type Concept = z.infer<typeof Concept>;
 

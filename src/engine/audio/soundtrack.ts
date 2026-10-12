@@ -1,14 +1,14 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-import type { Blueprint, Brand, Concept } from "@/contracts";
+import type { Blueprint, Brand, CaptionStyle, Concept } from "@/contracts";
 import type { Db } from "../db/client";
 import { probe } from "../media/ffmpeg";
 import { composeMusic, soundEffect } from "../providers/elevenlabs";
 import { isLive } from "../providers/env";
 import { type CaptionTrack, type CapWord, HORMOZI, markEmphasis, wordsForSilentText } from "../video/captions";
 import { buildVoiceTrack, globalWords, layoutVoice, speakShots, type VoiceLayout } from "./track";
-import { brandVoice } from "./voices";
+import { type BrandVoice, brandVoice } from "./voices";
 
 /**
  * The whole soundtrack of an ad (A18), ElevenLabs end to end: the brand's cast voice line by line with word
@@ -25,6 +25,14 @@ export interface Soundtrack {
   captions: CaptionTrack;
   usd: number;
   voice: string;
+}
+
+export interface SoundOverrides {
+  voice?: BrandVoice;
+  musicPrompt?: string;
+  sfx?: "on" | "off" | "softer" | "louder";
+  captions?: Partial<CaptionStyle>;
+  hookText?: string;
 }
 
 export function soundtrackAvailable(slug: string, language: string): boolean {
@@ -83,10 +91,13 @@ export async function buildSoundtrack(
     endCardSec: number;
     dir: string;
     music?: boolean;
+    /** A19 revisions: only the named layers change, everything else is the same as before */
+    overrides?: SoundOverrides;
   },
 ): Promise<Soundtrack | null> {
   const c = o.concept;
-  const voice = brandVoice(o.brand.slug, c.language);
+  const ov = o.overrides ?? {};
+  const voice = ov.voice ?? brandVoice(o.brand.slug, c.language);
   if (!voice || !isLive("elevenlabs")) return null;
   fs.mkdirSync(o.dir, { recursive: true });
   const lines = c.shots.map((s) => ({ idx: s.idx, text: s.voiceover ?? "" }));
@@ -113,7 +124,12 @@ export async function buildSoundtrack(
   const keys = [o.brand.name, ...(c.cta.match(/\b[\p{L}.]{3,}\.(com|xyz|health|sk|cz|ai)\b/giu) ?? [])];
   const base = o.bp?.captionStyle ?? HORMOZI;
   // readable on a phone and lively (Mete, 12 Oct): at least 7% of the width, 1 to 3 words at a time
-  const style = { ...base, sizePct: Math.max(7, base.sizePct), wordsPerCaption: Math.min(3, base.wordsPerCaption) };
+  const style = {
+    ...base,
+    sizePct: Math.max(7, base.sizePct),
+    wordsPerCaption: Math.min(3, base.wordsPerCaption),
+    ...(ov.captions ?? {}),
+  };
   const first = c.shots[0];
   // the hook title only when it adds something: a title that repeats the spoken hook reads as doubled text
   const norm = (x: string) =>
@@ -125,8 +141,9 @@ export async function buildSoundtrack(
   const tw = norm(first?.onScreenText ?? "");
   const vw = new Set(norm(first?.voiceover ?? ""));
   const repeats = tw.length > 0 && tw.filter((w) => vw.has(w)).length / tw.length > 0.4;
-  const title =
-    first?.onScreenText && !repeats && (style.hookTitle || lay.starts[0] === undefined)
+  const title = ov.hookText
+    ? { text: ov.hookText, t0: 0, t1: lay.durations[0] ?? 2 }
+    : first?.onScreenText && !repeats && (style.hookTitle || lay.starts[0] === undefined)
       ? { text: first.onScreenText, t0: 0, t1: lay.durations[0] ?? 2 }
       : undefined;
   if (lay.starts[0] === undefined && first?.onScreenText && !title)
@@ -137,7 +154,8 @@ export async function buildSoundtrack(
     regions: c.shots.map((s, i) => ({
       t0: starts[i]!,
       t1: starts[i]! + lay.durations[i]!,
-      region: s.captionRegion ?? style.position,
+      // a framed screen recording keeps the top clear for captions
+      region: s.style === "screen" ? "upper" : (s.captionRegion ?? style.position),
     })),
     title,
   };
@@ -146,7 +164,7 @@ export async function buildSoundtrack(
   let musicFile: string | undefined;
   let prompt: string | undefined;
   if (o.music !== false) {
-    prompt = musicPrompt(o.bp, o.brand, total);
+    prompt = ov.musicPrompt ?? musicPrompt(o.bp, o.brand, total);
     // one bed per concept and prompt, reused while it is long enough (the ad keeps its music across re-renders)
     const h = crypto
       .createHash("sha1")
@@ -173,12 +191,13 @@ export async function buildSoundtrack(
   }
 
   // subtle sound effects: a low hit under the hook, a soft swoosh into every cut
-  const kit = await sfxKit(db, o.brand.slug, c.runId);
+  const kit = ov.sfx === "off" ? {} : await sfxKit(db, o.brand.slug, c.runId);
   const sfx: Soundtrack["sfx"] = [];
-  if (kit.hit) sfx.push({ src: kit.hit, at: 0, gainDb: -15 });
+  const g = ov.sfx === "softer" ? -6 : ov.sfx === "louder" ? 4 : 0;
+  if (kit.hit) sfx.push({ src: kit.hit, at: 0, gainDb: -15 + g });
   for (let i = 1; i < starts.length; i++)
-    if (kit.whoosh) sfx.push({ src: kit.whoosh, at: Math.max(0, starts[i]! - 0.25), gainDb: -19 });
-  if (kit.pop) sfx.push({ src: kit.pop, at: shotsTotal + 0.05, gainDb: -16 });
+    if (kit.whoosh) sfx.push({ src: kit.whoosh, at: Math.max(0, starts[i]! - 0.25), gainDb: -19 + g });
+  if (kit.pop) sfx.push({ src: kit.pop, at: shotsTotal + 0.05, gainDb: -16 + g });
   return {
     voiceFile,
     durations: lay.durations,

@@ -9,6 +9,7 @@ import type {
   Evidence,
   PublishPack,
   Question,
+  RenderVersion,
   Review,
 } from "@/contracts";
 
@@ -172,6 +173,19 @@ export const complianceChecks = sqliteTable(
     createdAt: text("created_at").notNull(),
   },
   (t) => [index("compliance_target_idx").on(t.targetId)],
+);
+
+/** A19: every render of a concept is a version (parent, plan, chosen). */
+export const renderVersions = sqliteTable(
+  "render_versions",
+  {
+    id: text("id").primaryKey(),
+    conceptId: text("concept_id").notNull(),
+    version: integer("version").notNull(),
+    body: text("body", { mode: "json" }).$type<RenderVersion>().notNull(),
+    createdAt: text("created_at").notNull(),
+  },
+  (t) => [index("render_versions_concept_idx").on(t.conceptId)],
 );
 
 export const reviews = sqliteTable(

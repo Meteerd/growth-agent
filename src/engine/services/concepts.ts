@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Asset, Concept, RenderTier, RunEvent } from "@/contracts";
-import { buildSoundtrack, type Soundtrack, soundtrackAvailable } from "../audio/soundtrack";
+import { buildSoundtrack, type SoundOverrides, type Soundtrack, soundtrackAvailable } from "../audio/soundtrack";
 import type { Db } from "../db/client";
 import { HttpError } from "../http";
 import { newId, nowIso } from "../ids";
@@ -147,6 +147,10 @@ export async function renderConcept(
     soundtrack?: "voice_led" | "picture_locked";
     /** A18 flagships: animate screens and inserts too (no still shots in the cut) */
     animateAll?: boolean;
+    /** A19 revisions: replace only these sound/caption layers */
+    overrides?: SoundOverrides;
+    /** A19: never re-animate an existing clip (a re-timed shot slows its clip or holds its last frame) */
+    keepClips?: boolean;
   } = {},
 ): Promise<{ concept: Concept; asset: Asset }> {
   let c = await getConcept(db, conceptId);
@@ -197,6 +201,7 @@ export async function renderConcept(
         mode: o.soundtrack,
         endCardSec: c.format === "static" ? 0.5 : 2,
         dir: path.resolve(process.env.ASSETS_DIR || "data/assets", dir, `sound_${n}`),
+        overrides: o.overrides,
       }).catch(async (e) => {
         await emit("warning", "ElevenLabs soundtrack failed; falling back to the OpenAI voice", {
           detail: e instanceof Error ? e.message : String(e),
@@ -213,7 +218,7 @@ export async function renderConcept(
           const cf = clip ? urlToFile(clip.url) : null;
           const len = cf && fs.existsSync(cf) ? (await probe(cf)).durationSec : 0;
           // compose slows a short clip up to 1.25x (reads as natural slow motion); beyond that it is animated again
-          fixed.push(clip && len * 1.25 < s.durationSec ? { ...s, clipAssetId: undefined } : s);
+          fixed.push(clip && !o.keepClips && len * 1.25 < s.durationSec ? { ...s, clipAssetId: undefined } : s);
         }
         c = { ...c, shots: fixed };
         await upsertConcept(db, { ...c, status: "rendering" });
@@ -362,6 +367,7 @@ export async function renderConcept(
         durationSec: s.durationSec,
         text: s.onScreenText,
         captionRegion: s.captionRegion,
+        screen: s.style === "screen" && !!clip && clip.model?.startsWith("playwright-screen"),
       });
     }
     const demo =

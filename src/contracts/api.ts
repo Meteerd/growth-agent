@@ -211,3 +211,111 @@ export const ChatTokenEvent = z.object({ text: z.string() });
 export const ChatDoneEvent = z.object({ messageId: z.string() });
 export const ChatErrorEvent = z.object({ message: z.string() });
 export const CHAT_EVENT_NAMES = ["token", "question", "done", "error"] as const;
+
+// ---------------------------------------------------------------- A19: render versions, revise by chat, variants
+
+/** The layers a revision can touch; everything else is reused byte for byte. */
+export const REVISION_LAYERS = [
+  "voice",
+  "music",
+  "sfx",
+  "captions",
+  "hook_text",
+  "shots",
+  "pacing",
+  "language",
+] as const;
+export const RevisionLayer = z.enum(REVISION_LAYERS);
+export type RevisionLayer = z.infer<typeof RevisionLayer>;
+
+export const RevisionPlan = z.object({
+  layers: z.array(RevisionLayer),
+  /** plain language, e.g. "voice Lucy -> Hope (warmer, female); captions re-timed; clips reused" */
+  summary: z.string(),
+  voice: z
+    .object({ voiceId: z.string(), name: z.string(), speed: z.number().optional(), stability: z.number().optional() })
+    .optional(),
+  musicPrompt: z.string().optional(),
+  sfx: z.enum(["on", "off", "softer", "louder"]).optional(),
+  captions: z
+    .object({
+      sizePct: z.number().optional(),
+      position: z.enum(["upper", "middle", "lower"]).optional(),
+      case: z.enum(["as_is", "upper", "lower"]).optional(),
+      fill: z.string().optional(),
+      accent: z.string().optional(),
+    })
+    .optional(),
+  hookText: z.string().optional(),
+  shots: z.array(z.object({ idx: z.number().int().nonnegative(), instruction: z.string() })).optional(),
+  language: z.string().optional(),
+});
+export type RevisionPlan = z.infer<typeof RevisionPlan>;
+
+export const RenderVersion = z.object({
+  id: z.string(),
+  conceptId: z.string(),
+  version: z.number().int().positive(),
+  parentId: z.string().optional(),
+  /** what the operator asked for (absent for the original render) */
+  message: z.string().optional(),
+  plan: RevisionPlan.optional(),
+  status: z.enum(["rendering", "ready", "failed"]),
+  assetId: z.string().optional(),
+  assetUrl: z.string().optional(),
+  posterUrl: z.string().optional(),
+  shots: z.array(z.object({ idx: z.number(), provider: z.string(), clipUrl: z.string().optional() })),
+  /** filled when the self-review of this version lands (a few minutes after the video) */
+  review: z.object({ overall: z.number(), perShot: z.array(z.number()), notes: z.string() }).optional(),
+  costUsd: z.number(),
+  chosen: z.boolean(),
+  error: z.string().optional(),
+  createdAt: z.string(),
+});
+export type RenderVersion = z.infer<typeof RenderVersion>;
+
+/** POST /api/concepts/:id/revise */
+export const ReviseRequest = z.object({ message: z.string().min(1), fromRenderId: z.string().optional() });
+export const ReviseResponse = z.union([
+  z.object({
+    status: z.literal("needs_clarification"),
+    question: z.string(),
+    options: z.array(z.string()).min(2).max(4),
+  }),
+  z.object({ status: z.literal("queued"), plan: RevisionPlan, renderId: z.string() }),
+]);
+export type ReviseResponse = z.infer<typeof ReviseResponse>;
+
+/** POST /api/concepts/:id/variants: alternative clips per shot from each provider (runs in the background). */
+export const VariantsRequest = z.object({
+  providers: z
+    .array(z.enum(["fal", "higgsfield"]))
+    .min(1)
+    .default(["fal", "higgsfield"]),
+  shots: z.array(z.number().int().nonnegative()).optional(),
+});
+export const ShotVariant = z.object({
+  clipId: z.string(),
+  idx: z.number(),
+  provider: z.string(),
+  model: z.string().optional(),
+  url: z.string(),
+  chosen: z.boolean(),
+  costUsd: z.number(),
+});
+export type ShotVariant = z.infer<typeof ShotVariant>;
+/** GET /api/concepts/:id/variants -> { shots: { idx, variants: ShotVariant[] }[] } */
+export const VariantsResponse = z.object({
+  shots: z.array(z.object({ idx: z.number(), variants: z.array(ShotVariant) })),
+});
+
+/** PATCH /api/concepts/:id/shots/:idx { chosenClipId } -> the concept (the next render uses that clip) */
+export const ShotPatchRequest = z.object({ chosenClipId: z.string() });
+
+export const A19_ROUTES = {
+  revise: (id: string) => `/api/concepts/${id}/revise`,
+  renders: (id: string) => `/api/concepts/${id}/renders`,
+  choose: (id: string, renderId: string) => `/api/concepts/${id}/renders/${renderId}/choose`,
+  variants: (id: string) => `/api/concepts/${id}/variants`,
+  shot: (id: string, idx: number) => `/api/concepts/${id}/shots/${idx}`,
+} as const;
