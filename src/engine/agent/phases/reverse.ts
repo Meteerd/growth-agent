@@ -42,6 +42,9 @@ export async function watchVideo(
   providedTranscript?: Transcript,
 ): Promise<Watched> {
   const info = await probe(file);
+  if (!(info.durationSec >= 1)) throw new Error("not a playable video (corrupted or empty download)");
+  if (info.durationSec > 180)
+    throw new Error(`video too long to analyse (${Math.round(info.durationSec)} s; max 180 s)`);
   const clean = (xs: number[]) =>
     xs.filter((c, i, arr) => c > 0.2 && c < info.durationSec - 0.2 && (i === 0 || c - arr[i - 1] >= 0.4));
   let cuts = clean(await detectScenes(file));
