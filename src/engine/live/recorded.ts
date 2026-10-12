@@ -13,6 +13,7 @@ import {
   upsertEvidence,
   upsertRun,
 } from "../repo";
+import { scrub } from "../smoke/record";
 
 /** A recorded live research pass (real data, captured once, replayed for the demo). Media stays in data/. */
 export interface RecordedRun {
@@ -50,7 +51,7 @@ export async function exportRecorded(db: Db, runId: string, spend: Record<string
   await upsertRun(db, rec.run);
   fs.mkdirSync(RECORDED_DIR, { recursive: true });
   const f = path.join(RECORDED_DIR, `${brand.slug}.json`);
-  fs.writeFileSync(f, `${JSON.stringify(rec, null, 1)}\n`);
+  fs.writeFileSync(f, `${JSON.stringify(scrub(rec), null, 1)}\n`);
   return f;
 }
 

@@ -23,6 +23,7 @@ import {
   upsertPack,
   upsertReview,
 } from "../repo";
+import { scrub } from "../smoke/record";
 import { urlToFile } from "../video/files";
 
 /**
@@ -100,7 +101,7 @@ export async function exportShowcase(db: Db, runId: string): Promise<string> {
   };
   fs.mkdirSync(showcaseDir(), { recursive: true });
   const f = path.join(showcaseDir(), `${brand.slug}.json`);
-  fs.writeFileSync(f, `${JSON.stringify(bundle)}\n`);
+  fs.writeFileSync(f, `${JSON.stringify(scrub(bundle))}\n`);
   return f;
 }
 
