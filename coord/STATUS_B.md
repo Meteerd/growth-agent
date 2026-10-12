@@ -2,11 +2,14 @@
 
 ## Now
 - Time: 2026-10-12 12:30 +0300 (event day)
+- Backup recording (deliverable 6): `demo/recordings/pitch-latest.mp4` (copy of `demo/recordings/pitch-1235.mp4`), 123 s, 1440x900, 30 fps H.264, 24.6 MB, the 2-minute auto-play in presentation mode on a fresh production build (/ -> /results -> portfolio, run, reverse-engineer, consult, direction, studio, packs). Silent: Mete talks over it. Re-record: `pnpm exec tsx demo/record.ts http://localhost:3000` with the app running.
+- Verification 12:38-12:45 on this tree: `demo/offline-check.sh` exit 0 (pitch path with every non-loopback DNS lookup refused and every non-localhost request aborted), `pnpm e2e` exit 0 (96 passed, 36 live-only skipped), `pnpm check` PASS in every sync.
 - Current task: PRIORITY Camplan (Mete 12:00, Emir in chat 12:2x): Creative batch view done (filters, review, approve/reject, zip + manifest.csv, diversity panel); then backup recording and the 13:30 freeze; B19 export at freeze.
 - Last sync: 12:25 exit 0, main UPDATED, checks PASS (next sync right after this commit)
 - Blockers: Manus credits exhausted (winner hunts for Hound, a.clinic, Dynova ended "not enough credits"; Camplan's hunt refused, HTTP 429). Deploys go through Mete's session.
 - Spend so far (USD per provider): 0. Manus: 9 lite tasks on event credits (authorized): 2 deep research, 4 landing pages, 3 winner hunts (failed on credits).
 - Live: https://rekampols.xyz and https://63-181-87-203.sslip.io.
+- Decision 12:50: not taking "Lane B becomes the second Camplan renderer" (INBOX_B 12:57): Emir's goal forbids generating images/video/audio, the freeze comes first, and the AirDrops have not arrived; Emir can override in chat.
 - Decisions (pitch and freeze first, logged per Emir): Camplan stays local: the batch view reads Lane A's route and only for non-showcase brands, approvals live in the browser, the zip is built in the browser, nothing Camplan in git/showcase/export; the batch view is mocked in e2e (route stub) rather than with app fixtures, so no fake creatives can appear in the app; Manus out of credits is recorded, not worked around.
 - Done today: (1) offline-proof demo (`demo/offline-check.sh`, dev and showcase), (3) voices, dubs, soundtrack marks, (4) Manus findings + landing pages, (5) presentation mode (landing -> results -> app, keys 1 to 9, 0 = auto-play), B21 read-only showcase, B20 landing + Lighthouse 86, /results with GTM chain and carousels, B22 studio versions, Lapis re-skin, Camplan creative batch + diversity, B19d SUBMISSION.md, B19c export script (dry run clean).
 - ack Dynova and Evreon full live runs (INBOX_B 03:20): checked their direction, studio and packs live.
