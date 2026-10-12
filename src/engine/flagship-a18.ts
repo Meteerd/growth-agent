@@ -69,10 +69,12 @@ export async function chooseCaptionRegions(db: Db, c: Concept, preferred: "upper
       demo: () => ({ shots: c.shots.map((s) => ({ idx: s.idx, region: preferred, why: "demo" })) }),
     },
   );
-  const next = c.shots.map((s) => ({
-    ...s,
-    captionRegion: r.value.shots.find((x) => x.idx === s.idx)?.region ?? s.captionRegion,
-  }));
+  // a region the operator pinned stays
+  const next = c.shots.map((s) =>
+    s.captionRegionLocked
+      ? s
+      : { ...s, captionRegion: r.value.shots.find((x) => x.idx === s.idx)?.region ?? s.captionRegion },
+  );
   await upsertConcept(db, { ...c, shots: next });
   return r.value.shots;
 }
@@ -114,6 +116,7 @@ export async function buildA18(db: Db, conceptId: string, o: A18Options) {
       seconds: Math.max(5, last.durationSec + 1.5),
       scrollPx: o.screenCta.scrollPx ?? 260,
       startY: o.screenCta.startY,
+      language: c.language,
     });
     const clip: Asset = {
       id: newId("asset"),

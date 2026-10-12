@@ -374,6 +374,7 @@ export async function renderConcept(
         text: s.onScreenText,
         captionRegion: s.captionRegion,
         screen: s.style === "screen" && !!clip && clip.model?.startsWith("playwright-screen"),
+        framing: s.framing,
       });
     }
     const demo =

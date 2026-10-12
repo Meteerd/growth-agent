@@ -8,10 +8,18 @@ import { ffmpeg } from "../media/ffmpeg";
  * scroll position on an eased curve and takes a full-resolution screenshot, so the motion is exact and the text is
  * crisp. The "app on screen" shot is the real product, not a generated phone. Output: 30 fps MP4, no audio.
  */
+const LOCALES: Record<string, string> = { sk: "sk-SK", cs: "cs-CZ", tr: "tr-TR", en: "en-GB", es: "es-ES" };
+const LANGUAGE_NAMES: Record<string, string[]> = {
+  sk: ["Slovenčina", "Slovensky", "Slovak", "SK"],
+  cs: ["Čeština", "Česky", "Czech", "CZ"],
+  tr: ["Türkçe", "Turkish", "TR"],
+  es: ["Español", "Spanish", "ES"],
+};
+
 export async function recordSite(
   url: string,
   out: string,
-  o: { seconds: number; scrollPx?: number; startY?: number; waitMs?: number } = { seconds: 5 },
+  o: { seconds: number; scrollPx?: number; startY?: number; waitMs?: number; language?: string } = { seconds: 5 },
 ): Promise<string> {
   const { chromium } = await import("@playwright/test");
   const frames = `${out}.frames`;
@@ -24,6 +32,9 @@ export async function recordSite(
       deviceScaleFactor: 2.5,
       isMobile: true,
       hasTouch: true,
+      // the ad's language: the site opens in it (no English modal on a Slovak ad)
+      locale: LOCALES[o.language ?? "en"] ?? "en-GB",
+      extraHTTPHeaders: { "Accept-Language": `${LOCALES[o.language ?? "en"] ?? "en-GB"},${o.language ?? "en"};q=0.9` },
     });
     const page = await ctx.newPage();
     await page.goto(url, { waitUntil: "networkidle", timeout: 45_000 }).catch(() => undefined);
@@ -38,6 +49,43 @@ export async function recordSite(
       "Prijať",
       "Kabul et",
       "Tamam",
+    ]) {
+      const b = page.getByRole("button", { name: t, exact: false }).first();
+      if (await b.isVisible().catch(() => false)) {
+        await b.click({ timeout: 2000 }).catch(() => undefined);
+        break;
+      }
+    }
+    // a language chooser: pick the ad's language
+    for (const t of LANGUAGE_NAMES[o.language ?? ""] ?? []) {
+      const b = page.getByText(t, { exact: true }).first();
+      if (await b.isVisible().catch(() => false)) {
+        await b.click({ timeout: 2000 }).catch(() => undefined);
+        await page.waitForLoadState("networkidle").catch(() => undefined);
+        break;
+      }
+    }
+    // then confirm the chooser
+    for (const t of ["Pokračovať", "Pokračovat", "Continue", "Devam", "Continuar", "OK"]) {
+      const b = page.getByRole("button", { name: t, exact: false }).first();
+      if (await b.isVisible().catch(() => false)) {
+        await b.click({ timeout: 2000 }).catch(() => undefined);
+        await page.waitForTimeout(800);
+        break;
+      }
+    }
+    // a second pass at cookie banners (they often appear after the language is chosen)
+    for (const t of [
+      "Accept all",
+      "Prijať všetky",
+      "Přijmout vše",
+      "Tümünü kabul et",
+      "Aceptar todo",
+      "Accept",
+      "Súhlasím",
+      "Prijať",
+      "Souhlasím",
+      "Kabul et",
     ]) {
       const b = page.getByRole("button", { name: t, exact: false }).first();
       if (await b.isVisible().catch(() => false)) {

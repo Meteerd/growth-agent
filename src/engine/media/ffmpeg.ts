@@ -26,7 +26,7 @@ export function ffmpeg(args: string[], o: { timeoutMs?: number } = {}): Promise<
       { maxBuffer: 64 * 1024 * 1024, timeout: o.timeoutMs ?? 180_000 },
       (err, stdout, stderr) => {
         if (err && !(args.includes("-f") && args.includes("null")))
-          reject(new Error(`ffmpeg failed: ${stderr.split("\n").slice(-4).join(" ")}`));
+          reject(new Error(`ffmpeg failed: ${stderr.split("\n").slice(-12).join(" ")}`));
         else resolve({ stdout, stderr });
       },
     );

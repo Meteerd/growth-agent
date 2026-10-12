@@ -286,20 +286,35 @@ async function runRevision(db: Db, c0: Concept, v: RenderVersion, voice?: BrandV
     } else {
       // shots named in the plan get a new clip; every other clip is reused as is
       if (plan.shots?.length) {
+        // a named shot gets a new clip; a generated shot also gets a new frame from the instruction (a brand
+        // photo keeps its real image)
         const c = (await getConcept(db, c0.id))!;
-        await upsertConcept(db, {
-          ...c,
-          shots: c.shots.map((s) => {
-            const x = plan.shots!.find((y) => y.idx === s.idx);
-            return x
+        const brand = (await getBrand(db, c.brandId))!;
+        const { keyframeFor } = await import("./flagship");
+        const shots = [...c.shots];
+        for (const x of plan.shots) {
+          const s = shots[x.idx];
+          if (!s) continue;
+          const next = {
+            ...s,
+            clipAssetId: undefined,
+            motion: `${(s.motion ?? "").split(" Fix:")[0]} Fix: ${x.instruction}`.trim(),
+            visualPrompt:
+              s.source === "generated"
+                ? `${s.visualPrompt.split(" Change:")[0]} Change: ${x.instruction}`
+                : s.visualPrompt,
+          };
+          shots[x.idx] =
+            s.source === "generated"
               ? {
-                  ...s,
-                  clipAssetId: undefined,
-                  motion: `${(s.motion ?? "").split(" Fix:")[0]} Fix: ${x.instruction}`.trim(),
+                  ...next,
+                  keyframeAssetId: (
+                    await keyframeFor(db, brand, c, next, ` (v${v.version}: ${x.instruction.slice(0, 40)})`)
+                  ).id,
                 }
-              : s;
-          }),
-        });
+              : next;
+        }
+        await upsertConcept(db, { ...c, shots });
       }
       const overrides: SoundOverrides = {
         voice,

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "hound-talk",
+    "brand": "hound",
+    "kind": "talking",
+    "language": "en",
+    "label": "Hound (EN-GB): dog owner talking to camera (AI-generated presenter, lip-synced)",
+    "aiPresenter": true,
+    "files": {
+      "vertical": "/showcase/hound-talk-916.mp4",
+      "landscape": "/showcase/hound-talk-169.mp4",
+      "poster": "/showcase/hound-talk-916.jpg",
+      "posterLandscape": "/showcase/hound-talk-169.jpg"
+    },
+    "durationSec": 4.53
+  },
+  {
+    "id": "aclinic-talk",
+    "brand": "aclinic",
+    "kind": "talking",
+    "language": "sk",
+    "label": "a.clinic (SK): talking to camera (AI-generated presenter, lip-synced)",
+    "aiPresenter": true,
+    "files": {
+      "vertical": "/showcase/aclinic-talk-916.mp4",
+      "landscape": "/showcase/aclinic-talk-169.mp4",
+      "poster": "/showcase/aclinic-talk-916.jpg",
+      "posterLandscape": "/showcase/aclinic-talk-169.jpg"
+    },
+    "durationSec": 3.2
+  }
+]
