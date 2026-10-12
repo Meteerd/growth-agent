@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { globalWords, layoutVoice, type VoiceSegment } from "../audio/track";
 import { wordsFromAlignment } from "../providers/elevenlabs";
-import { audioGraph } from "../video/compose";
 import { captionFrameSvg, groupWords, HORMOZI, markEmphasis, popScale } from "../video/captions";
+import { audioGraph } from "../video/compose";
 
 const words = (text: string, start = 0.2, per = 0.32) =>
   text.split(" ").map((w, i) => ({ word: w, start: start + i * per, end: start + i * per + per * 0.85 }));
