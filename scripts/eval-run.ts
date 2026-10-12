@@ -17,7 +17,7 @@ const brand = (await repo.getBrand(db, run.brandId))!;
 const fails: string[] = [];
 const ok: string[] = [];
 const check = (cond: boolean, msg: string) => (cond ? ok : fails).push(msg);
-const EM = /[—–]/;
+const EM = /\u2014|\s\u2013\s/; // em dashes and dash-as-punctuation; numeric ranges like 3–5 are fine
 
 const evidence = await repo.listEvidence(db, runId);
 const ids = new Set(evidence.map((e) => e.id));
