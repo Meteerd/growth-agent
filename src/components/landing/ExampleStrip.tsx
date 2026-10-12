@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { API, type Asset, type Blueprint, type Concept, type Run } from "@/contracts";
-import { formatCount, SOURCE_LABELS } from "@/lib/client/format";
+import { formatCount, SOURCE_LABELS, secs } from "@/lib/client/format";
 import { DATA_MODE } from "@/lib/client/mode";
 import { PURPOSE_COLOR, PURPOSE_LABEL } from "@/lib/client/purpose";
 
@@ -89,7 +89,7 @@ export function ExampleStrip({
         label={frames ? "The winner, frame by frame" : "What is winning in the niche"}
         note={
           frames
-            ? `${frames.bp.durationSec}s, ${frames.bp.shots.length} shots. Analysed locally; never re-uploaded.`
+            ? `${secs(frames.bp.durationSec)}, ${frames.bp.shots.length} shots. Analysed locally; never re-uploaded.`
             : "Real posts the agent found on 11 Oct. Linked to the source; never re-uploaded."
         }
       >

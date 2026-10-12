@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import type { Blueprint, Review, Shot } from "@/contracts";
 import { cn } from "@/lib/client/cn";
+import { secs } from "@/lib/client/format";
 import { PURPOSE_COLOR, PURPOSE_LABEL } from "@/lib/client/purpose";
 import { scoreTone, shotScore } from "./align";
 
@@ -17,12 +18,15 @@ export function ShotFrame({
   purpose,
   className,
   reference,
+  textTop,
 }: {
   url?: string;
   fallback: string;
   purpose: Blueprint["shots"][number]["purpose"];
   className?: string;
   reference?: boolean;
+  /** in the big viewers the caption sits at the bottom, so the description goes under the label instead */
+  textTop?: boolean;
 }) {
   const [broken, setBroken] = useState(false);
   return (
@@ -44,9 +48,18 @@ export function ShotFrame({
           )}
         </>
       ) : (
-        <div className="absolute inset-0 flex flex-col justify-end gap-1 p-2">
+        <div
+          className={cn("absolute inset-0 flex flex-col gap-1 p-2", textTop ? "justify-start pt-12" : "justify-end")}
+        >
           <span className="h-[2px] w-6" style={{ background: PURPOSE_COLOR[purpose] }} />
-          <p className="line-clamp-3 text-[10.5px] text-white/70 leading-snug">{fallback}</p>
+          <p
+            className={cn(
+              "text-white/70 leading-snug",
+              textTop ? "line-clamp-6 text-[13px]" : "line-clamp-3 text-[10.5px]",
+            )}
+          >
+            {fallback}
+          </p>
         </div>
       )}
     </div>
@@ -300,7 +313,7 @@ export function Timeline({
         </div>
       </div>
       <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 pl-[76px] text-[11px] text-bone-3">
-        <span>Dashed line: the hook ends at {bp.hook.endSec}s.</span>
+        <span>Dashed line: the hook ends at {secs(bp.hook.endSec)}.</span>
         <span>Click, drag, or use the arrow keys to move between shots.</span>
       </div>
     </div>

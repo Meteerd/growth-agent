@@ -16,7 +16,7 @@ import { toast } from "@/components/ui/Toast";
 import { type Evidence, type EvidenceSource, PHASES, type Phase, type RunEvent } from "@/contracts";
 import { getClient } from "@/lib/client/api";
 import { cn } from "@/lib/client/cn";
-import { clock, PHASE_LABELS, SOURCE_LABELS, unquote } from "@/lib/client/format";
+import { clock, PHASE_LABELS, SOURCE_LABELS, secs, unquote } from "@/lib/client/format";
 import { PURPOSE_COLOR } from "@/lib/client/purpose";
 import { useBlueprints, useConcepts, useEvidence } from "@/lib/client/queries";
 import { EventRow } from "./EventRow";
@@ -352,7 +352,7 @@ function Blueprints() {
               <div className="flex items-center justify-between gap-3">
                 <Badge tone={remake ? "pass" : "neutral"}>{remake ? "Remade" : "Blueprint"}</Badge>
                 <span className="font-mono text-[11px] text-bone-3">
-                  {b.shots.length} shots / {b.durationSec}s
+                  {b.shots.length} shots / {secs(b.durationSec)}
                 </span>
               </div>
               <p className="line-clamp-2 font-semibold text-[17px] leading-snug tracking-[-0.01em]">
