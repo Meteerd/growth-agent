@@ -66,3 +66,4 @@ Automated: e2e/bans.spec.ts checks computed styles of every element for the DESI
 - Loop log 03:05: reverse-engineer V2 lane now shows frames from our real render (I14); pnpm e2e 89 passed (10 live-only skipped).
 - Loop log 03:08: a11y.spec (keyboard-only landing to intake, visible focus, reduced motion) 3 passed; live run on recorded research now marks its remade blueprint (Lane A fix confirmed).
 - Loop log 03:18: live studio on the Hound showcase run / storyboard showed brand art for photoreal shots, doubled captions and quotes / fixed I15 in b9ed616 (frames from the render).
+- Loop log 03:24: live cockpit, direction, packs and mobile reverse-engineer on the showcase run / red used as decoration in 7 places, doubled hook quotes / fixed I16 in 60f531e.
