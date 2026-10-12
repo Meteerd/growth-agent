@@ -7,6 +7,7 @@
 - Blockers: none
 - Next 3: studio and packs against the flagship showcase runs (live) -> mobile pass of the reverse-engineer view -> keep the e2e and screenshots current
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls; live checks run with LIVE_PROVIDERS empty and NEXUS_TEST=1)
+- ack Dynova and Evreon full live runs (INBOX_B 03:20): checked their direction, studio and packs live.
 - ack all four brands now have real recorded research (INBOX_B 03:03): brand home labels each run (demo, live data, live) and lists newest first.
 - ack re "concepts lose blueprintId on runs that reuse research": fixed (INBOX_B 02:47).
 - ack Hound flagship landed (INBOX_B 02:19) and a.clinic flagship landed too (INBOX_B 02:33): heroVideo used on landing, portfolio and brand home.
@@ -67,3 +68,5 @@ Automated: e2e/bans.spec.ts checks computed styles of every element for the DESI
 - Loop log 03:08: a11y.spec (keyboard-only landing to intake, visible focus, reduced motion) 3 passed; live run on recorded research now marks its remade blueprint (Lane A fix confirmed).
 - Loop log 03:18: live studio on the Hound showcase run / storyboard showed brand art for photoreal shots, doubled captions and quotes / fixed I15 in b9ed616 (frames from the render).
 - Loop log 03:24: live cockpit, direction, packs and mobile reverse-engineer on the showcase run / red used as decoration in 7 places, doubled hook quotes / fixed I16 in 60f531e.
+- Loop log 03:31: Dynova (Turkish) and Evreon live runs: cockpit, direction, studio, packs at 1440 and 390: zero console errors, no overflow (8 passed); studio now says when a render lives only on the engine machine.
+- Loop log 03:37: resilience.spec live (engine down + retry, slow network skeletons, SSE drop and reconnect) 3 passed; mobile landing: section numbers split by overflow-wrap anywhere, switched to break-word, strings/quality/screens 29 passed.
