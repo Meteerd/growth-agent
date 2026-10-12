@@ -195,7 +195,9 @@ export async function research(ctx: PhaseCtx): Promise<void> {
     });
   };
   // the brand's own numbers (read-only connectors, only for CONNECTOR_BRAND), first: they ground every decision
-  const truth = await businessEvidence(db, ctx.brand, run.id).catch(async (e) => {
+  const truth = await businessEvidence(db, ctx.brand, run.id, (title, detail) =>
+    ctx.emit("warning", title, { detail }),
+  ).catch(async (e) => {
     await ctx.emit("warning", "Business connectors failed: continuing without the brand's own numbers", {
       detail: e instanceof Error ? e.message : String(e),
     });

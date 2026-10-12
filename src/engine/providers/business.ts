@@ -90,18 +90,19 @@ export async function posthogTruth(db: Db, runId?: string): Promise<PosthogTruth
       const pairs = (r: { results: unknown[][] }) =>
         r.results.map((x) => [String(x[0] ?? "(none)"), Number(x[1])] as [string, number]);
       const since = "timestamp > now() - interval 30 day";
-      const [ev, ref, utm, dau] = await Promise.all([
-        hogql(`select event, count() as c from events where ${since} group by event order by c desc limit 15`),
-        hogql(
-          `select properties.$referring_domain as d, count(distinct person_id) as u from events where ${since} and event = '$pageview' group by d order by u desc limit 10`,
-        ),
-        hogql(
-          `select properties.utm_source as s, count(distinct person_id) as u from events where ${since} and properties.utm_source is not null group by s order by u desc limit 10`,
-        ),
-        hogql(
-          `select toDate(timestamp) as d, count(distinct person_id) as u from events where ${since} group by d order by d`,
-        ),
-      ]);
+      // one query at a time: PostHog allows 3 concurrent queries per project
+      const ev = await hogql(
+        `select event, count() as c from events where ${since} group by event order by c desc limit 15`,
+      );
+      const ref = await hogql(
+        `select properties.$referring_domain as d, count(distinct person_id) as u from events where ${since} and event = '$pageview' group by d order by u desc limit 10`,
+      );
+      const utm = await hogql(
+        `select properties.utm_source as s, count(distinct person_id) as u from events where ${since} and properties.utm_source is not null group by s order by u desc limit 10`,
+      );
+      const dau = await hogql(
+        `select toDate(timestamp) as d, count(distinct person_id) as u from events where ${since} group by d order by d`,
+      );
       return {
         result: { topEvents: pairs(ev), referrers: pairs(ref), utmSources: pairs(utm), dailyUsers: pairs(dau) },
         usd: 0,
@@ -113,45 +114,86 @@ export async function posthogTruth(db: Db, runId?: string): Promise<PosthogTruth
 
 // ---------------------------------------------------------------- Databricks
 
-const READ_ONLY = /^\s*(select|show|describe|desc|with)\b/i;
+const WRITE =
+  /\b(insert|update|delete|merge|drop|create|alter|grant|revoke|copy|truncate|replace|optimize|vacuum|call|set|use|refresh|restore|msck|load|put|remove|undrop)\b/i;
+
+/** Read-only guard: one statement, starting with SELECT/SHOW/DESCRIBE/WITH, no write keyword outside strings/comments. */
+export function readOnlySql(statement: string): boolean {
+  const bare = statement
+    .replace(/--[^\n]*/g, " ")
+    .replace(/\/\*[\s\S]*?\*\//g, " ")
+    .replace(/'(?:[^'\\]|\\.|'')*'/g, "''")
+    .replace(/"(?:[^"\\]|\\.)*"/g, '""')
+    .replace(/`[^`]*`/g, "``")
+    .trim()
+    .replace(/;\s*$/, "");
+  if (bare.includes(";")) return false;
+  if (!/^(select|show|describe|desc|with)\b/i.test(bare)) return false;
+  return !WRITE.test(bare);
+}
+
+interface StatementRes {
+  statement_id?: string;
+  status: { state: string; error?: { message?: string } };
+  manifest?: { schema?: { columns?: { name: string }[] }; truncated?: boolean; total_row_count?: number };
+  result?: { data_array?: unknown[][] };
+}
 
 export async function databricksQuery(db: Db, statement: string, runId?: string) {
-  if (!READ_ONLY.test(statement) || /;\s*\S/.test(statement))
-    throw new Error("databricks: read-only (one SELECT/SHOW/DESCRIBE statement)");
+  if (!readOnlySql(statement)) throw new Error("databricks: read-only (one SELECT/SHOW/DESCRIBE statement)");
   const out = await callProvider(db, {
     provider: "databricks",
     note: `sql: ${statement.slice(0, 60)}`,
     runId,
     // serverless SQL warehouse time; small queries are cents at most
     estimateUsd: 0.05,
-    demo: () => null as { columns: string[]; rows: unknown[][] } | null,
+    demo: () => null as { columns: string[]; rows: unknown[][]; truncated: boolean } | null,
     live: async () => {
       const host = (process.env.DATABRICKS_HOST ?? "").replace(/\/$/, "").replace(/^(?!https?:\/\/)/, "https://");
-      const r = await okJson<{
-        status: { state: string; error?: { message?: string } };
-        manifest?: { schema?: { columns?: { name: string }[] } };
-        result?: { data_array?: unknown[][] };
-      }>(
+      const h = { Authorization: `Bearer ${process.env.DATABRICKS_TOKEN}`, "content-type": "application/json" };
+      let r = await okJson<StatementRes>(
         await fetchRetry(`${host}/api/2.0/sql/statements`, {
           method: "POST",
-          headers: { Authorization: `Bearer ${process.env.DATABRICKS_TOKEN}`, "content-type": "application/json" },
+          headers: h,
           body: JSON.stringify({
             statement,
             warehouse_id: process.env.DATABRICKS_WAREHOUSE_ID,
-            wait_timeout: "50s",
-            on_wait_timeout: "CANCEL",
+            ...(process.env.DATABRICKS_CATALOG ? { catalog: process.env.DATABRICKS_CATALOG } : {}),
+            ...(process.env.DATABRICKS_SCHEMA ? { schema: process.env.DATABRICKS_SCHEMA } : {}),
+            // a stopped warehouse takes a while to start: keep the statement running and poll it
+            wait_timeout: "30s",
+            on_wait_timeout: "CONTINUE",
             format: "JSON_ARRAY",
             disposition: "INLINE",
-            row_limit: 500,
+            row_limit: 200,
           }),
-          timeoutMs: 70_000,
+          timeoutMs: 45_000,
         }),
         "databricks statement",
       );
+      const until = Date.now() + 3 * 60_000;
+      while (["PENDING", "RUNNING"].includes(r.status.state) && r.statement_id) {
+        if (Date.now() > until) {
+          await fetchRetry(`${host}/api/2.0/sql/statements/${r.statement_id}/cancel`, {
+            method: "POST",
+            headers: h,
+          }).catch(() => undefined);
+          throw new Error("databricks: statement still running after 3 min (cancelled)");
+        }
+        await new Promise((res) => setTimeout(res, 3000));
+        r = await okJson<StatementRes>(
+          await fetchRetry(`${host}/api/2.0/sql/statements/${r.statement_id}`, { headers: h, timeoutMs: 30_000 }),
+          "databricks status",
+        );
+      }
       if (r.status.state !== "SUCCEEDED")
         throw new Error(`databricks: ${r.status.state} ${r.status.error?.message ?? ""}`);
       return {
-        result: { columns: (r.manifest?.schema?.columns ?? []).map((c) => c.name), rows: r.result?.data_array ?? [] },
+        result: {
+          columns: (r.manifest?.schema?.columns ?? []).map((c) => c.name),
+          rows: r.result?.data_array ?? [],
+          truncated: !!r.manifest?.truncated,
+        },
         usd: 0.01,
       };
     },
@@ -173,8 +215,28 @@ const fmt = (n: number) =>
   Math.abs(n) >= 1000 ? Math.round(n).toLocaleString("en-US") : String(Math.round(n * 100) / 100);
 
 /** The brand's own numbers as compact evidence (only for CONNECTOR_BRAND; never mixed into another brand). */
-export async function businessEvidence(db: Db, brand: Brand, runId: string): Promise<Evidence[]> {
-  if (!connectorBrand() || connectorBrand() !== brand.slug) return [];
+export async function businessEvidence(
+  db: Db,
+  brand: Brand,
+  runId: string,
+  warn: (title: string, detail: string) => Promise<unknown> = async () => undefined,
+): Promise<Evidence[]> {
+  const anyKey = ["REVENUECAT_API_KEY", "POSTHOG_API_KEY", "DATABRICKS_TOKEN"].some((k) =>
+    (process.env[k] ?? "").trim(),
+  );
+  if (!connectorBrand()) {
+    if (anyKey)
+      await warn(
+        "Business connector keys are set but CONNECTOR_BRAND is not",
+        "Set CONNECTOR_BRAND=<brand slug> in .env so RevenueCat/PostHog/Databricks numbers go to that brand (and only that brand).",
+      );
+    return [];
+  }
+  if (connectorBrand() !== brand.slug) return [];
+  const fail = (provider: string) => async (e: unknown) => {
+    await warn(`${provider} connector failed: continuing without it`, e instanceof Error ? e.message : String(e));
+    return null;
+  };
   const out: Evidence[] = [];
   const at = nowIso();
   const base = (id: string, source: Evidence["source"], title: string, text: string): Evidence => ({
@@ -190,7 +252,7 @@ export async function businessEvidence(db: Db, brand: Brand, runId: string): Pro
     capturedAt: at,
     demo: false,
   });
-  const rc = await revenuecatOverview(db, runId).catch(() => null);
+  const rc = await revenuecatOverview(db, runId).catch(fail("RevenueCat"));
   if (rc?.metrics.length)
     out.push(
       base(
@@ -205,7 +267,7 @@ export async function businessEvidence(db: Db, brand: Brand, runId: string): Pro
           .join("; "),
       ),
     );
-  const ph = await posthogTruth(db, runId).catch(() => null);
+  const ph = await posthogTruth(db, runId).catch(fail("PostHog"));
   if (ph)
     out.push(
       base(
@@ -226,14 +288,14 @@ export async function businessEvidence(db: Db, brand: Brand, runId: string): Pro
           .join("\n"),
       ),
     );
-  const tables = await databricksTables(db, runId).catch(() => null);
+  const tables = await databricksTables(db, runId).catch(fail("Databricks"));
   if (tables?.rows.length)
     out.push(
       base(
         "tables",
         "databricks",
         "Databricks tables (live)",
-        `Tables: ${tables.rows.map((r) => `${r[0]}.${r[1]}.${r[2]}`).join(", ")}`,
+        `Tables: ${tables.rows.map((r) => `${r[0]}.${r[1]}.${r[2]}`).join(", ")}${tables.truncated ? " (list truncated at 200)" : ""}`,
       ),
     );
   return out;

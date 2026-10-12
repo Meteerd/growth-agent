@@ -169,8 +169,14 @@ critique: the plain-language list of everything to fix, worst first.`;
     demo: () => null as unknown as RenderWatch,
   });
   if (r.mode !== "live") return null;
-  if (o.save !== false) saveCritique(o.concept.id, o.file, r.value);
-  return r.value;
+  // some fallback models answer on a 0-10 scale: bring it to 0-100
+  const v = r.value;
+  const tenScale = v.overall <= 10 && v.perShot.every((p) => p.score <= 10);
+  const value = tenScale
+    ? { ...v, overall: v.overall * 10, perShot: v.perShot.map((p) => ({ ...p, score: p.score * 10 })) }
+    : v;
+  if (o.save !== false) saveCritique(o.concept.id, o.file, value);
+  return value;
 }
 
 /** Every critique is kept (data/critiques/<concept>.jsonl) so quality can be tracked render over render. */

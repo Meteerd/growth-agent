@@ -217,6 +217,24 @@ export async function buildSoundtrack(
   for (let i = 1; i < starts.length; i++)
     if (kit.whoosh) sfx.push({ src: kit.whoosh, at: Math.max(0, starts[i]! - 0.25), gainDb: -19 + g });
   if (kit.pop) sfx.push({ src: kit.pop, at: shotsTotal + 0.05, gainDb: -16 + g });
+  // the winner's own signature sound under the hook (e.g. a dog whimpering at the door), once, subtle
+  const sig = (o.bp?.audio?.sfx ?? []).find((x) => x.trim() && !/^no\b|^none/i.test(x.trim()));
+  if (sig && ov.sfx !== "off") {
+    const f = path.resolve(
+      process.env.ASSETS_DIR || "data/assets",
+      "sfx",
+      o.brand.slug,
+      `sig_${(o.bp?.id ?? "x").slice(-8)}.mp3`,
+    );
+    if (!fs.existsSync(f))
+      await soundEffect(db, {
+        text: `${sig.replace(/\(.*?\)|\d+:\d+.*$/g, "").slice(0, 160)}. Short, natural, close and realistic, no music.`,
+        durationSec: 2.5,
+        out: f,
+        runId: c.runId,
+      }).catch(() => null);
+    if (fs.existsSync(f)) sfx.push({ src: f, at: 0.4, gainDb: -13 + g });
+  }
   return {
     voiceFile,
     durations: lay.durations,
