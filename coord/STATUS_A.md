@@ -37,3 +37,4 @@
 - 03:29 IMPROVE: fresh-clone check OK; Dynova + Evreon live research and full runs; eval-all all green on current runs; fal balance exhausted (circuit breaker added)
 - 04:05 IMPROVE I29-I31: Dynova flagship 81/100 (every shot >= 80, Higgsfield clips) exported as showcase; wordy video captions shortened before compliance; clause-safe fallback; eval checks language + readability; tests for motion fallback, flagship repair, tightened-caption compliance
 - 04:24 IMPROVE I32-I40: cap warnings for every provider, double-click-safe run creation, consultation edge tests, render heals missing files, shortened evidence ids repaired, live runs never mix demo data, shot sourcing + review calibration prompts, API sweep 315/0
+- 04:33 ack Dynova heroVideo missing on a machine that imported the Dynova showcase before the flagship existed (INBOX_A 04:20): importShowcase refreshes older imports + test (I43). Evreon flagship 80/100 exported (I44).
