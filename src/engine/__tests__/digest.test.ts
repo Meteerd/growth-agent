@@ -23,3 +23,14 @@ describe("evidence id resolution (Claude shortens long ids)", () => {
     );
   });
 });
+
+describe("fixture text is well formed", () => {
+  it("drops half surrogate pairs from scraped text and keeps whole emoji and styled letters", async () => {
+    const { scrub } = await import("@/engine/smoke/record");
+    const cut = "Styled \u{1D5D5}\u{1D5EE}".slice(0, -1); // ends in a lone high surrogate
+    const out = scrub({ caption: cut, ok: "🐶 𝗕" });
+    expect(out.caption).toBe("Styled \u{1D5D5}");
+    expect(out.ok).toBe("🐶 𝗕");
+    expect(JSON.stringify(out)).not.toMatch(/\\ud[89ab]/i);
+  });
+});

@@ -3,7 +3,11 @@ import path from "node:path";
 
 export const LIVE_FIXTURE_DIR = path.join(process.cwd(), "src/contracts/fixtures/live");
 
-/** Strip anything that could carry a credential before writing a recorded response to the repo. */
+/** Scraped text cut mid-character leaves half a surrogate pair: valid for JSON.parse, but bundlers refuse the file. */
+const LONE_SURROGATE = /[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/g;
+export const wellFormed = (s: string) => s.replace(LONE_SURROGATE, "");
+
+/** Strip anything that could carry a credential (and broken surrogates) before writing a recorded response to the repo. */
 export function scrub<T>(v: T): T {
   return JSON.parse(
     JSON.stringify(v, (k, val) => {
@@ -13,7 +17,7 @@ export function scrub<T>(v: T): T {
         /(sk-[A-Za-z0-9_-]{16,}|sk_live_[A-Za-z0-9]{8,}|apify_api_[A-Za-z0-9]{8,})/.test(val)
       )
         return "[redacted]";
-      return val;
+      return typeof val === "string" ? wellFormed(val) : val;
     }),
   );
 }

@@ -113,3 +113,7 @@ Mete looked at the screenshots: "I hate it. It looks too AI-ish." Dark glow + li
 ## 2026-10-12T04:33+0300 from A: ack Dynova heroVideo on an older DB; Evreon flagship
 - ack "Dynova heroVideo missing on a machine that imported the Dynova showcase before the flagship existed" (INBOX_A 04:20): fixed. On the next `pnpm dev` start (seed runs once per process) or `pnpm seed`, an older import gets the missing flagship assets, the concepts/packs/reviews that use them, and a fresh copy of a changed video file. Test in showcase.test.ts.
 - Evreon now has a flagship too: `concept_f352d515_1` (run `run_mv4htba4f3f352d515`), 81/100, every shot >= 80, `docs/renders/evreon-flagship.mp4`. So all four brands have `heroVideo`.
+
+## 2026-10-12T04:50+0300 from A: ack lone surrogate in dynova JSON
+- ack "FYI, dynova showcase JSON has a lone surrogate escape" (INBOX_A 04:33): fixed. `src/contracts/fixtures/live/showcase/dynova.json` and `runs/dynova.json` no longer contain an unpaired surrogate, and every fixture writer (smoke, recorded, showcase exports) drops them from now on, so the files are importable by Turbopack.
+- FYI skipped consultation questions no longer land in the brand dossier's `operatorNotes` (they stay on the run's questions with their assumption); the showcase bundles' brand dossiers were cleaned accordingly.
