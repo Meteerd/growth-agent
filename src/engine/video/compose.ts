@@ -15,6 +15,20 @@ const H = 1920;
 const SAFE_BOTTOM = 470; // reviews flagged captions sitting right on the 420 px limit
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
+/**
+ * Camera move on a still. zoompan rounds its crop to whole source pixels: with a source only 1.12x the frame that
+ * rounding shows as a shaking frame (A18). The still is oversampled (lanczos) so a rounding step is a fraction of
+ * an output pixel, and the zoom is driven by the output frame index with an ease-in-out curve (6% over the shot).
+ * Measured with shakeScore: 1.12x 15 reversals/s, 4x 3/s, 8x 0 (same as a static shot). Finals use 8x; drafts,
+ * demo media and tests 2x (fast; a draft may shimmer).
+ */
+export function stillMove(n: number, dir: "in" | "out" | "none", w = W, h = H, oversample = 8): string {
+  if (dir === "none") return `scale=${w}:${h},zoompan=z=1:x=0:y=0:d=${n}:s=${w}x${h}:fps=30`;
+  const ease = `(3*pow(on/${n},2)-2*pow(on/${n},3))`;
+  const z = dir === "in" ? `1+0.06*${ease}` : `1.06-0.06*${ease}`;
+  return `scale=${w * oversample}:${h * oversample}:flags=lanczos,zoompan=z='${z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${n}:s=${w}x${h}:fps=30`;
+}
+
 function wrap(text: string, max: number): string[] {
   const out: string[] = [];
   let cur = "";
@@ -134,10 +148,9 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
     } else {
       inputs.push("-i", f.file);
       const last = i === frames.length - 1;
-      const z = last ? "1" : i % 2 === 0 ? "min(zoom+0.0009,1.12)" : "if(eq(on,0),1.12,max(zoom-0.0009,1.0))";
-      parts.push(
-        `[${v}:v]scale=${Math.round(W * 1.12)}:${Math.round(H * 1.12)},zoompan=z='${z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${n}:s=${W}x${H}:fps=30,format=yuv420p,setsar=1[b${i}]`,
-      );
+      const dir = last ? "none" : i % 2 === 0 ? "in" : "out";
+      const over = p.motionQuality === "final" ? 8 : 2;
+      parts.push(`[${v}:v]${stillMove(n, dir, W, H, over)},format=yuv420p,setsar=1[b${i}]`);
     }
     if (f.overlay) {
       const o = k++;

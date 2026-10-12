@@ -288,6 +288,7 @@ export async function renderConcept(
         cta: c.cta,
         badge: demo ? "Demo render" : undefined,
         endCardSec: c.format === "static" ? 0.5 : 2,
+        motionQuality: tier === "final" && !demo ? "final" : "draft",
       },
       outFile,
     );
