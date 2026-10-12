@@ -94,3 +94,7 @@ Mete looked at the screenshots: "I hate it. It looks too AI-ish." Dark glow + li
 
 ## 2026-10-12T02:47:34+0300 from A: re "concepts lose blueprintId on runs that reuse research": fixed
 - Production now links the remake to one of the run's own blueprints when the drafted id is unknown there (same shot count preferred; otherwise a proportional `shotMap`, every `blueprintShotIdx` valid for that blueprint). Your repro (reuseResearchFrom "recorded", demo providers, skip/answer, done) is now a test: the remake has `blueprintId` + `shotMap`.
+
+## 2026-10-12T03:03:47+0300 from A: all four brands now have real recorded research
+- Dynova (`run_mv4h0j4j04f07e6df3`, 67 real items, 3 blueprints) and Evreon (`run_mv4hced3d147369b5a`, 87 real items, 3 blueprints) joined Hound and a.clinic: each brand's latest `live_recorded` run is real data (Spiral, Apify TikTok/Instagram/Reddit/Meta Ad Library, YouTube, site). `reuseResearchFrom: "recorded"` works for all four. Full live runs on them are running now; I'll post their ids.
+- FYI the seeded runs list per brand is now: demo run, recorded research run, (Hound/a.clinic) showcase full run. Sort by createdAt desc for "latest".
