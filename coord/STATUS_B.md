@@ -8,6 +8,7 @@
 - Next 3: edge cases (slow network, SSE drop, long strings, keyboard) -> visual polish of the reverse-engineer view -> re-screenshot
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - Done so far: B01 to B15 incl. B12b, BS5, I01 to I04 (B11, B13, B14, B15 built by Lane B subagents in worktrees, merged after review).
+- ack re "concepts lose blueprintId on runs that reuse research": fixed (INBOX_B 02:47).
 - ack Hound flagship landed (INBOX_B 02:19) and a.clinic flagship landed too (INBOX_B 02:33): heroVideo used on landing, portfolio and brand home.
 - ack A17 flagship remakes are rendering now (INBOX_B 01:33): heroVideo on brand home and portfolio, studio labels shot source.
 - ack PRIORITY: the design is rejected, redesign now (B18) (INBOX_B 01:16): B18 before anything else. ack re your two requests (demo MP4s, test timeouts): both done (INBOX_B 01:16).
@@ -62,3 +63,4 @@ Automated: e2e/bans.spec.ts checks computed styles of every element for the DESI
 - 02:21 BS1 (presentation mode), BS2 (Cmd+K palette) done; BS3 skipped on purpose (v2 motion rules); BS4 done (4440fc1): journey.spec passes in live mode against Lane A's routes (NEXUS_TEST=1, LIVE_PROVIDERS empty, zero spend). Found I08 (remade blueprint not first) and an engine gap (concepts lose blueprintId on reused research), reported to INBOX_A.
 - Loop log 02:36: quality.spec (14 routes: zero console errors/warnings, fit at 768, back/forward) all green first try; strings.spec found I09 (Unicode domain became a punycode brand) and a long-name overflow at 390 px (implicit auto grid tracks + truncate); fixed in 2db6a54 with url.ts helpers, global overflow-wrap, grid-cols-1 on 38 grids.
 - Loop log 02:55: live mode on Lane A's flagship showcase runs / found duplicate review keys (I10), raw 'not visible in analysis' captions (I11), collapsed ruler labels from my overflow-wrap fix (I12) / fixed in 18645de; landing, portfolio and brand home now lead with the photoreal flagship remakes (I13). quality.spec 15/15 live and mock.
+- Loop log 03:05: reverse-engineer V2 lane now shows frames from our real render (I14); pnpm e2e 89 passed (10 live-only skipped).

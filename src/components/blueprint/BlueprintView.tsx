@@ -16,12 +16,16 @@ import { PURPOSE_COLOR, PURPOSE_LABEL } from "@/lib/client/purpose";
 import { useBlueprint, useBrand, useConceptAssets, useConceptReviews, useConcepts } from "@/lib/client/queries";
 import { alignRemake, keyframeUrls, latestReview, scoreTone, shotAt, shotScore } from "./align";
 import { ShotFrame, Timeline, tc } from "./Timeline";
+import { useVideoFrames } from "./useVideoFrames";
 
 const TONE_TEXT = { pass: "text-pass", warn: "text-warn", fail: "text-fail" } as const;
 
 /** Our render's time for a moment of the original: same shot, same fraction of it (shots map 1:1 via shotMap). */
 /** The engine writes "not visible in analysis" when a frame did not show it; that is missing data, not text. */
 export const seen = (v?: string) => (v && !/^not visible/i.test(v.trim()) ? v : undefined);
+
+/** Strips the quotes the engine sometimes keeps around a quoted line, so we never print two pairs. */
+const unquote = (v: string) => v.trim().replace(/^["“”']+|["“”']+$/g, "");
 
 export function remakeTime(bp: Pick<Blueprint, "shots">, aligned: (Shot | undefined)[], all: Shot[], t: number) {
   const i = shotAt(bp.shots, t);
@@ -45,12 +49,30 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
   const [playing, setPlaying] = useState(false);
 
   const aligned = useMemo(() => (bp ? alignRemake(bp, remake) : []), [bp, remake]);
-  const keyframes = useMemo(() => keyframeUrls(assets, remake?.shots), [assets, remake]);
+  const stored = useMemo(() => keyframeUrls(assets, remake?.shots), [assets, remake]);
   const review = latestReview(reviews);
   const video =
     assets?.find((a) => a.id === review?.assetId) ??
     assets?.find((a) => a.id === remake?.videoAssetId) ??
     assets?.filter((a) => a.kind === "video").at(-1);
+
+  // our cut's real frames, one per remade shot (taken from the render when no keyframe is stored here)
+  const midTimes = useMemo(() => {
+    if (!bp) return [] as number[];
+    return bp.shots.map((s, i) => (aligned[i] ? remakeTime(bp, aligned, remake?.shots ?? [], (s.t0 + s.t1) / 2) : -1));
+  }, [bp, aligned, remake]);
+  const videoFrames = useVideoFrames(
+    video?.url,
+    midTimes.filter((x) => x >= 0),
+  );
+  const keyframes = useMemo(() => {
+    const m = new Map(stored);
+    aligned.forEach((ours, i) => {
+      const f = videoFrames.get(midTimes[i]);
+      if (ours && !m.has(ours.idx) && f) m.set(ours.idx, f);
+    });
+    return m;
+  }, [stored, aligned, videoFrames, midTimes]);
 
   // the playhead is the only continuous motion; one pass plays on arrival (never under reduced motion)
   const raf = useRef(0);
@@ -257,7 +279,7 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
           purpose={shot.purpose}
           testId="their-shot"
           rows={[
-            ["Shot", `${shot.shotType.replaceAll("_", " ")}, ${shot.camera}`],
+            ["Shot", [shot.shotType.replaceAll("_", " "), seen(shot.camera)].filter(Boolean).join(", ")],
             ["Subject", seen(shot.subject)],
             ["Action", seen(shot.action)],
             ["On screen", seen(shot.onScreenText)],
@@ -496,8 +518,8 @@ function Hook({ bp, onJump }: { bp: Blueprint; onJump: () => void }) {
           </button>
         }
       />
-      {h.spoken && (
-        <p className="font-semibold text-[18px] leading-snug tracking-[-0.01em]">&ldquo;{h.spoken}&rdquo;</p>
+      {seen(h.spoken) && (
+        <p className="font-semibold text-[18px] leading-snug tracking-[-0.01em]">&ldquo;{unquote(h.spoken!)}&rdquo;</p>
       )}
       <Rows
         rows={[

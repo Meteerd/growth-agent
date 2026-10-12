@@ -5,7 +5,7 @@ Written 12 Oct 2026, 02:10 +03, updated through the night (see the log at the bo
 ## The short version
 - Every screen in PRODUCT_SPEC section 4 works, in mock mode and against Lane A's real API routes.
 - The UI is the **v2 "cutting room"** design Mete asked for at 01:16 (paper, ink, one record-red accent, Inter Tight, real media first). The v1 dark/glow/lime/serif look is gone from every route; an automated audit (`e2e/bans.spec.ts`) proves it on all 14 routes.
-- `pnpm check` green, `pnpm e2e` green (71 passed, 10 live-only skipped), live parity spec green (10 passed), Lighthouse 97 on the landing page.
+- `pnpm check` green, `pnpm e2e` green (89 passed, 10 live-only skipped), live parity spec green (10 passed), Lighthouse 97 on the landing page.
 - Lane B spent $0. It never calls a provider; live-mode checks ran with `LIVE_PROVIDERS` empty.
 
 ## How to run
@@ -33,11 +33,11 @@ E2E_DATA=live E2E_PORT=3200 pnpm exec playwright test e2e/live.spec.ts
 ```
 
 ## The 2-minute demo click path
-1. **`/`** (5 s): the headline, then the real example strip: real winning posts the agent found for Hound on 11 Oct, and what Nexus made for Hound below.
-2. **Portfolio** (10 s): four real brands led by their own imagery; numbers below are real (zero until posts are marked posted).
+1. **`/`** (10 s): the headline, then the real example: the winning TikTok ("Just let them cry it out", 28.8x its account median) next to Nexus's photoreal remake for Hound, playing (self-review 83/100). **Open the side by side** goes straight into its reverse-engineer view.
+2. **Portfolio** (10 s): four real brands led by their own imagery; Hound and a.clinic cards play their flagship remakes; numbers below are real (zero until posts are marked posted).
 3. **Hound > Start a run** (20 s): in live mode it builds on the recorded research and replays it paced (`?pace=150`): the cockpit fills the evidence wall by source (73 real items), the Manus deep-research card links to the real Manus task, blueprints appear.
 4. **The cockpit says "The agent has N questions"** > **Start the consultation** (25 s): answer 3 questions live (letters A, B, C pick options), skip one to show the stated assumption. The run resumes on its own.
-5. **Reverse-engineer** (30 s, the moment): from the cockpit's "Winning videos taken apart" card. Two viewers play together (Original left, Our remake right), the red playhead runs over V1/V2/T1/beat lanes, scores per remade shot sit on V2. Click a shot, show "Why it wins" with the numbers, the hook card, and the self-review rounds.
+5. **Reverse-engineer** (30 s, the moment): from the landing's **Open the side by side**, or the cockpit's "Winning videos taken apart" card (the remade one is listed first and marked Remade). Two viewers play together (Original left, Our remake right), the red playhead runs over V1/V2/T1/beat lanes, scores per remade shot sit on V2. Click a shot, show "Why it wins" with the numbers, the hook card, and the self-review rounds.
 6. **Direction** (15 s): the ranked editorial table; open TikTok for the evidence; point at **Not now** (struck through, with the reason; for a.clinic, Meta paid with the LegitScript reason).
 7. **Studio** (10 s): storyboard keyframes (labelled "your image, animated" / "new frame"), approve, render with the estimate shown first.
 8. **Packs > Results** (10 s): copy caption, mark posted with the post URL, enter the first numbers; results shows them, never invented ("Waiting for first metrics" before that).
@@ -66,6 +66,7 @@ Other things that exist: designed 404 and error boundary, loading/empty/error st
 ## Mock vs live
 - **Mock** (`NEXT_PUBLIC_DATA_MODE=mock`): an in-browser store built from `@/contracts` fixtures; a scripted run plays in about 60 s (20 s in e2e) and pauses at the consultation until answers are posted. Mock state lasts one page load (client navigation keeps it). Mock never shows the placeholder video as a render.
 - **Live** (default): every screen verified against Lane A's routes with real seeded data (`e2e/live.spec.ts`, 10 passed, zero console errors). Found and fixed on the recorded live Hound run: research-only runs, empty hook lines, header spend, the remake-pending lane (I01 to I04).
+- Hero media: `GET /api/brands` carries `heroVideo` for Hound and a.clinic (Lane A's A17 flagships, served on any machine from the showcase copies). The landing, portfolio cards and brand home use it; the V2 lane takes its thumbnails from that render when the per-shot keyframes are not on the machine.
 - Third-party frames: analysed ad frames live under `/api/assets/frames/...` only on the machine that ran the analysis (Lane A's). Elsewhere every frame falls back to a dark card that describes the shot; the landing falls back to the real post thumbnails.
 
 ## Known issues
