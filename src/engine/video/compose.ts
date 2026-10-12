@@ -385,7 +385,42 @@ export function reframe(f: { zoom: number; anchorX: number; anchorY: number }): 
   return `scale=${w}:${h}:flags=lanczos,crop=${W}:${H}:${Math.round((w - W) * f.anchorX)}:${Math.round((h - H) * f.anchorY)},`;
 }
 
+/**
+ * At most COMPOSE_SLOTS (2) composes at once on this machine, across processes (renders, revisions, dubs and
+ * scripts run in parallel): a slot is a lock directory created atomically under data/locks; stale locks (> 10 min)
+ * are taken over.
+ */
+async function withComposeSlot<T>(fn: () => Promise<T>): Promise<T> {
+  if (process.env.VITEST === "true") return fn();
+  const dir = path.resolve("data/locks");
+  fs.mkdirSync(dir, { recursive: true });
+  const n = Number(process.env.COMPOSE_SLOTS ?? 2) || 2;
+  for (;;) {
+    for (let i = 0; i < n; i++) {
+      const lock = path.join(dir, `compose_${i}`);
+      try {
+        fs.mkdirSync(lock);
+      } catch {
+        try {
+          if (Date.now() - fs.statSync(lock).mtimeMs > 10 * 60_000) fs.rmSync(lock, { recursive: true, force: true });
+        } catch {}
+        continue;
+      }
+      try {
+        return await fn();
+      } finally {
+        fs.rmSync(lock, { recursive: true, force: true });
+      }
+    }
+    await new Promise((r) => setTimeout(r, 1500));
+  }
+}
+
 export async function composeAd916(p: Ad916Props, out: string, workDir: string, onProgress?: (x: number) => void) {
+  return withComposeSlot(() => composeAd916Now(p, out, workDir, onProgress));
+}
+
+async function composeAd916Now(p: Ad916Props, out: string, workDir: string, onProgress?: (x: number) => void) {
   fs.mkdirSync(workDir, { recursive: true });
   fs.mkdirSync(path.dirname(out), { recursive: true });
   const frames: {

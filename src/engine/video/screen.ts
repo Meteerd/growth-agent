@@ -14,6 +14,7 @@ const LANGUAGE_NAMES: Record<string, string[]> = {
   cs: ["Čeština", "Česky", "Czech", "CZ"],
   tr: ["Türkçe", "Turkish", "TR"],
   es: ["Español", "Spanish", "ES"],
+  en: ["English", "EN"],
 };
 
 export async function recordSite(

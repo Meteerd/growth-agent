@@ -304,12 +304,17 @@ async function runRevision(db: Db, c0: Concept, v: RenderVersion, voice?: BrandV
                 ? `${s.visualPrompt.split(" Change:")[0]} Change: ${x.instruction}`
                 : s.visualPrompt,
           };
+          // "same person as shot N": that shot's frame is the reference, so the face stays consistent
+          const same = /same (woman|man|person|presenter)[^.]*?shot (\d+)/i.exec(x.instruction);
+          const refShot = same ? shots[Number(same[2])] : undefined;
+          const refAsset = refShot?.keyframeAssetId ? await getAsset(db, refShot.keyframeAssetId) : null;
+          const refFile = refAsset ? (urlToFile(refAsset.url) ?? undefined) : undefined;
           shots[x.idx] =
             s.source === "generated"
               ? {
                   ...next,
                   keyframeAssetId: (
-                    await keyframeFor(db, brand, c, next, ` (v${v.version}: ${x.instruction.slice(0, 40)})`)
+                    await keyframeFor(db, brand, c, next, ` (v${v.version}: ${x.instruction.slice(0, 40)})`, refFile)
                   ).id,
                 }
               : next;
