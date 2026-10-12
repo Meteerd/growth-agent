@@ -23,14 +23,14 @@ test("presentation keys follow the pitch path", async ({ page }) => {
   await expect(page.locator("html")).toHaveAttribute("data-present", "1");
   await page.keyboard.press("3");
   await expect(page).toHaveURL(new RegExp(`${DEMO_PATH[2].href}$`));
-  await expect(page.getByTestId("pitch-hud")).toContainText("3/8");
+  await expect(page.getByTestId("pitch-hud")).toContainText(`3/${DEMO_PATH.length}`);
   await page.keyboard.press("]");
   await expect(page).toHaveURL(new RegExp(`${DEMO_PATH[3].href}$`));
   await page.keyboard.press("PageUp");
   await expect(page).toHaveURL(new RegExp(`${DEMO_PATH[2].href}$`));
   await page.keyboard.press("0");
-  await expect(page).toHaveURL(/\/brands$/);
-  await expect(page.getByTestId("pitch-hud")).toContainText("Portfolio");
+  await expect(page).toHaveURL(/:\d+\/$/);
+  await expect(page.getByTestId("pitch-hud")).toContainText(DEMO_PATH[0].label);
   await page.keyboard.press("Escape");
   await expect(page.getByTestId("pitch-hud")).toBeHidden();
 });

@@ -3,13 +3,13 @@ import type { ReactNode } from "react";
 import { Wordmark } from "@/components/shell/Header";
 import { cn } from "@/lib/client/cn";
 import { PRODUCT_NAME } from "@/lib/client/product";
-import { PURPOSE_COLOR } from "@/lib/client/purpose";
 import { BlurText } from "./bits/BlurText";
 import { CountUp } from "./bits/CountUp";
 import { Magnet } from "./bits/Magnet";
 import { brands, clips, compliance, proof, stats } from "./data";
 import { DubbedLoop, LoopVideo } from "./LoopVideo";
 import { UrlBar } from "./UrlBar";
+import { WinnerCard } from "./Winner";
 
 // The public website (B20). Uplane-style rhythm: a full-bleed hero graded in one colour with a contrast streak, then
 // a white editorial grid with hairline columns. Every number and every video is ours and read from the recorded data.
@@ -115,8 +115,17 @@ function Hero() {
           In colour: our remake for Hound, of a TikTok that ran at 28.8x its account median
         </p>
         <h1 className="font-semibold text-[clamp(3.1rem,8.6vw,8.4rem)] leading-[0.9] tracking-[-0.05em]">
-          <BlurText text="The ads that win," className="block" delay={55} />
-          <BlurText text="rebuilt for your brand." className="block" delay={55} />
+          {/* server-rendered words that blur in with CSS at first paint: never hidden waiting for scripts */}
+          {["The ads that win,", "rebuilt for your brand."].map((line, l) => (
+            <span key={line} className="block">
+              {line.split(" ").map((w, i) => (
+                <span key={w} className="hero-word inline-block" style={{ animationDelay: `${(l * 4 + i) * 70}ms` }}>
+                  {w}
+                  {"\u00A0"}
+                </span>
+              ))}
+            </span>
+          ))}
         </h1>
         <p className="mt-6 max-w-[58ch] text-[17px] text-white/90 leading-relaxed md:text-[19px]">
           {PRODUCT_NAME} finds what already wins in your market, takes it apart shot by shot, decides where your brand
@@ -153,66 +162,12 @@ function Hero() {
 function Proof() {
   const p = proof();
   if (!p) return null;
-  const total = p.winner.duration;
   return (
     <Section id="proof">
       <Eyebrow>The proof.</Eyebrow>
       <Heading text="A real winner. Our remake. Shot for shot." />
       <div className="mt-14 grid-cols-1 grid gap-px overflow-hidden rounded-[10px] border border-line bg-line lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-        <div className="flex flex-col bg-[#111] p-6 text-white md:p-8">
-          <p className="text-[13px] text-white/60">The winner, taken apart</p>
-          <p className="mt-1 font-semibold text-[22px] tracking-[-0.02em]">
-            A TikTok by {p.winner.author ?? "a creator"}
-          </p>
-          <dl className="mt-5 grid grid-cols-3 gap-4 border-white/15 border-y py-4 font-mono text-[13px]">
-            <div>
-              <dt className="text-white/50">views</dt>
-              <dd className="mt-1 text-[20px]">{p.winner.views?.toLocaleString("en-US")}</dd>
-            </div>
-            <div>
-              <dt className="text-white/50">vs account median</dt>
-              <dd className="mt-1 text-[20px]">{p.winner.outlier}x</dd>
-            </div>
-            <div>
-              <dt className="text-white/50">length</dt>
-              <dd className="mt-1 text-[20px]">{Math.round(total)}s</dd>
-            </div>
-          </dl>
-          <ol className="mt-5 flex flex-1 flex-col gap-3">
-            {p.beats.map((b) => (
-              <li key={b.t0} className="grid grid-cols-[72px_minmax(0,1fr)] gap-3 text-[14px] leading-snug">
-                <span className="flex items-start gap-2 pt-0.5 font-mono text-[12px] text-white/55">
-                  <span
-                    className="mt-1 size-2 shrink-0 rounded-[2px]"
-                    style={{ background: PURPOSE_COLOR[b.purpose] }}
-                  />
-                  {Math.round(b.t0)}s
-                </span>
-                <span>
-                  <span className="font-semibold">{b.label}.</span> <span className="text-white/75">{b.what}</span>
-                </span>
-              </li>
-            ))}
-          </ol>
-          <div className="mt-6 flex h-2.5 overflow-hidden rounded-full" aria-hidden>
-            {p.beats.map((b) => (
-              <span
-                key={b.t0}
-                style={{ width: `${((b.t1 - b.t0) / total) * 100}%`, background: PURPOSE_COLOR[b.purpose] }}
-              />
-            ))}
-          </div>
-          {p.winner.url && (
-            <a
-              href={p.winner.url}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-5 text-[13px] text-white/70 underline underline-offset-4"
-            >
-              Watch the original on TikTok
-            </a>
-          )}
-        </div>
+        <WinnerCard p={p} />
         <div className="grid-cols-1 grid gap-6 bg-raised p-6 sm:grid-cols-[minmax(0,260px)_minmax(0,1fr)] md:p-8">
           <div className="aspect-[9/16] w-full overflow-hidden rounded-[10px] bg-[#111]">
             <DubbedLoop

@@ -21,7 +21,7 @@ export const viewport: Viewport = { themeColor: "#F3F1EC", colorScheme: "light" 
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   // fonts are self-hosted in public/fonts so the demo works with the venue Wi-Fi down
-  for (const f of ["inter-tight-latin", "jetbrains-mono-latin"])
+  for (const f of ["plus-jakarta-sans-latin", "jetbrains-mono-latin"])
     preload(`/fonts/${f}.woff2`, { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
   return (
     <html lang="en">

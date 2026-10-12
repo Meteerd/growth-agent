@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { CHANNEL_LABELS, type DemoRunBundle, SEED_BRANDS } from "@/contracts";
 import { logoOnDark } from "@/lib/client/brandAssets";
+import { SOURCE_LABELS } from "@/lib/client/format";
 import { PURPOSE_LABEL } from "@/lib/client/purpose";
 
 // Server-side only. Everything the landing shows is read from the recorded runs (src/contracts/fixtures/live) and the
@@ -114,24 +115,31 @@ export function stats() {
   };
 }
 
-/** Hound's flagship: the winning TikTok as its blueprint (beats, numbers, link to the original; we never republish
- * a creator's footage) and our remake. */
-export function proof() {
-  const b = read("showcase", "hound");
+/** A brand's flagship: the winner as its blueprint (beats, numbers, link to the original; we never republish a
+ * creator's footage), our remake with its dubs and latest review, and where the plan sends it. */
+export function proofFor(slug: string) {
+  const b = read("showcase", slug);
+  const seed = SEED_BRANDS.find((x) => x.slug === slug);
   const c = b?.concepts.find((x) => x.blueprintId && !x.variantOf && x.status === "rendered");
   const bp = c && b?.blueprints.find((x) => x.id === c.blueprintId);
   const ev = bp && b?.evidence.find((x) => x.id === bp.evidenceId);
-  const media = flagship("hound");
-  if (!b || !c || !bp || !ev || !media) return undefined;
+  const media = flagship(slug);
+  if (!b || !seed || !c || !bp || !ev || !media) return undefined;
   const review = b.reviews.filter((r) => r.conceptId === c.id).at(-1);
   return {
+    slug,
+    name: seed.name,
     href: `/runs/${b.run.id}/blueprints/${bp.id}`,
     winner: {
       author: ev.author,
       url: ev.url,
+      source: SOURCE_LABELS[ev.source],
+      kind: ev.kind,
       views: ev.metrics.views,
       outlier: ev.metrics.outlierScore,
+      daysRunning: ev.metrics.daysRunning,
       duration: bp.durationSec,
+      structure: bp.structure.replaceAll("_", " "),
     },
     beats: bp.shots.map((s) => ({
       purpose: s.purpose,
@@ -140,9 +148,23 @@ export function proof() {
       t1: s.t1,
       what: s.action,
     })),
-    remake: { ...media, title: c.title, review: review?.overall, shots: c.shots.length, language: c.language },
+    remake: {
+      ...media,
+      title: c.title,
+      review: review?.overall,
+      shots: c.shots.length,
+      language: c.language,
+      channel: CHANNEL_LABELS[c.channel],
+    },
+    channels: (b.plan?.channels ?? [])
+      .slice()
+      .sort((x, y) => x.priority - y.priority)
+      .slice(0, 3)
+      .map((x) => ({ label: CHANNEL_LABELS[x.channel], score: x.score })),
+    notNow: b.plan?.notNow.slice(0, 2).map((n) => ({ label: CHANNEL_LABELS[n.channel], reason: n.reason })) ?? [],
   };
 }
+export const proof = () => proofFor("hound");
 
 /** a.clinic: the paid channel the rule pack refused, and one caption the compliance check sent back. */
 export function compliance() {
