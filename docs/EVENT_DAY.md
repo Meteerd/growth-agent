@@ -7,7 +7,7 @@ Hound's flagship is excellent because every shot is a real AI video clip from fa
 2. **Gemini (the video watcher):** get a key at aistudio.google.com (same Google account as the YouTube key) and paste `GEMINI_API_KEY` in `.env`. Gemini watches whole videos with sound: winners (motion, music, pacing) and our own renders (shake, missing music, bad captions).
 2b. **ElevenLabs:** paste `ELEVENLABS_API_KEY` in `.env` (music beds + native-language voices).
 3. **Go live:** set `LIVE_PROVIDERS=anthropic,openai,firecrawl,youtube,fal,elevenlabs,gemini` (add `apify,manus,spiral` if we run new research). Run `scripts/check-keys.sh`.
-4. **09:30 build starts.** Tell Lane A (Mete's agent): "Start A18 now." It fixes, in this order:
+4. **09:30 build starts. Start both goals at the same time:** on each PC, in a Claude session in the repo (auto mode), type `/goal ` and paste `coord/GOAL_A_EVENT.txt` (Mete) or `coord/GOAL_B_EVENT.txt` (Emir). Both freeze themselves at 13:30. Lane A fixes, in this order:
    - Motion: real fal clips for every shot; no ffmpeg zoompan on flagships (it shakes); smooth fallback + a shake test.
    - Music: ElevenLabs bed per ad matched to the winner's sound, ducked under the voice, stereo, about -14 LUFS.
    - Voice: ElevenLabs in Slovak, Czech, Turkish, English.
