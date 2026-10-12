@@ -109,6 +109,27 @@ describe("brands API (temp SQLite)", () => {
     expect(evil.status).toBe(404);
   });
 
+  it("serves Unicode file names (Turkish, Slovak) and blocks traversal under brands/", async () => {
+    const os = await import("node:os");
+    const path = await import("node:path");
+    const fs = await import("node:fs");
+    const { fileToUrl, urlToFile } = await import("@/engine/video/files");
+    const dir = path.join(os.tmpdir(), `nexus-uni-${Date.now()}`);
+    process.env.ASSETS_DIR = dir;
+    const f = path.join(dir, "runs", "çğış", "kľúč šťava.png");
+    fs.mkdirSync(path.dirname(f), { recursive: true });
+    fs.copyFileSync("assets/brands/hound/logo-icon.png", f);
+    const url = fileToUrl(f);
+    expect(url).not.toMatch(/[^\x20-\x7e]/);
+    expect(urlToFile(url)).toBe(f);
+    const parts = decodeURIComponent(url.replace("/api/assets/", "")).split("/");
+    const res = await getAsset(req(url), ctx({ path: parts }));
+    expect(res.status).toBe(200);
+    const evil = await getAsset(req("/api/assets/brands/../../.env"), ctx({ path: ["brands", "..", "..", ".env"] }));
+    expect(evil.status).toBe(404);
+    expect(urlToFile("/api/assets/brands/..%2F..%2F.env")).toBeNull();
+  });
+
   it("builds a missing video poster on demand", async () => {
     const os = await import("node:os");
     const path = await import("node:path");
