@@ -27,15 +27,15 @@ const GLYPH: Partial<Record<RunEvent["type"], string>> = {
 
 const TONE: Partial<Record<RunEvent["type"], string>> = {
   tool_call: "text-cyan",
-  thinking: "text-[#6B4E71]",
+  thinking: "text-violet",
   evidence: "text-bone",
   warning: "text-warn",
   error: "text-fail",
-  phase_started: "text-signal",
+  phase_started: "text-bone",
   phase_completed: "text-pass",
   question: "text-warn",
-  blueprint: "text-signal",
-  review: "text-signal",
+  blueprint: "text-bone",
+  review: "text-bone",
 };
 
 /** One line of the live event stream. Tool calls type themselves in when `fresh`. */
@@ -55,7 +55,9 @@ export function EventRow({ e, t, fresh }: { e: RunEvent; t?: string; fresh?: boo
         {GLYPH[e.type] ?? "·"}
       </span>
       <span className={cn("min-w-0", isPhase ? "text-bone" : e.type === "thinking" ? "text-bone-2" : "text-bone-2")}>
-        {isPhase && <span className="mr-2 text-signal uppercase tracking-[0.06em]">{PHASE_LABELS[e.phase]}</span>}
+        {isPhase && (
+          <span className="mr-2 font-semibold text-bone uppercase tracking-[0.06em]">{PHASE_LABELS[e.phase]}</span>
+        )}
         {fresh && (e.type === "tool_call" || e.type === "thinking") ? (
           <TypedText text={e.title} cps={e.type === "thinking" ? 90 : 55} />
         ) : (
