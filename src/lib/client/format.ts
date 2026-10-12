@@ -82,3 +82,6 @@ export const VERTICAL_LABELS: Record<string, string> = {
 const regionNames =
   typeof Intl.DisplayNames === "function" ? new Intl.DisplayNames(["en"], { type: "region" }) : undefined;
 export const countryName = (code: string) => regionNames?.of(code) ?? code;
+
+/** Strips quotes the engine keeps around a quoted line, so the UI never prints two pairs. */
+export const unquote = (v: string) => v.trim().replace(/^["“”']+|["“”']+$/g, "");
