@@ -14,6 +14,28 @@ const { exportShowcase } = await import("@/engine/live/showcase");
 const repo = await import("@/engine/repo");
 const db = await getDb();
 const t0 = Date.now();
+// operator overrides: --region 0=upper (pinned caption region), --reframe 0=1.18:0:0 (zoom:anchorX:anchorY)
+{
+  const pick = (k: string) => args.flatMap((a, i) => (a === k ? [args[i + 1]!] : []));
+  const regions = pick("--region");
+  const frames = pick("--reframe");
+  if (regions.length || frames.length) {
+    const c = (await repo.getConcept(db, args[0]!))!;
+    await repo.upsertConcept(db, {
+      ...c,
+      shots: c.shots.map((s) => {
+        const r = regions.map((x) => x.split("=")).find(([i]) => Number(i) === s.idx);
+        const f = frames.map((x) => x.split("=")).find(([i]) => Number(i) === s.idx);
+        const [zoom, ax, ay] = (f?.[1] ?? "").split(":").map(Number);
+        return {
+          ...s,
+          ...(r ? { captionRegion: r[1] as "upper" | "middle" | "lower", captionRegionLocked: true } : {}),
+          ...(f ? { framing: { zoom: zoom!, anchorX: ax ?? 0.5, anchorY: ay ?? 0.5 } } : {}),
+        };
+      }),
+    });
+  }
+}
 if (args.includes("--review-only")) {
   // re-review the concept's current video (no render): Claude frames + Gemini with sound, calibrated
   const { makeCtx } = await import("@/engine/agent/context");

@@ -470,6 +470,12 @@ export const Shot = z.object({
   motion: z.string().optional(),
   /** additive (A18): where the native caption sits so it never covers the subject (default upper third) */
   captionRegion: z.enum(["upper", "middle", "lower"]).optional(),
+  /** additive (A18): reframe the shot's clip (zoom >= 1, anchor 0..1 = which part of the frame stays) */
+  framing: z
+    .object({ zoom: z.number().min(1).max(2), anchorX: z.number().min(0).max(1), anchorY: z.number().min(0).max(1) })
+    .optional(),
+  /** additive (A18): operator-pinned caption region (the automatic chooser keeps it) */
+  captionRegionLocked: z.boolean().optional(),
 });
 export type Shot = z.infer<typeof Shot>;
 

@@ -179,7 +179,8 @@ function layoutGroup(
   let size = (style.sizePct / 100) * W;
   const maxW = SAFE.right - SAFE.left - 40;
   for (let attempt = 0; attempt < 8; attempt++) {
-    const space = font.getAdvanceWidth(" ", size);
+    // a little wider than the font's space: popping words must never touch ("Startevery")
+    const space = font.getAdvanceWidth(" ", size) * 1.35;
     const items = g.words.map((w) => {
       const s = w.emph ? size * 1.12 : size;
       const text = applyCase(w.word, style.case);
@@ -267,7 +268,8 @@ export function captionFrameSvg(tr: CaptionTrack, groups: CapGroup[], t: number)
       const wy = p.baseline - p.size * 0.35;
       const slide = style.animation === "slide" && age < 0.15 ? (1 - ease(age / 0.15)) * 30 : 0;
       const shake = p.w.emph && age < 0.2 ? Math.sin(age * 90) * 4 * (1 - age / 0.2) : 0;
-      const op = style.animation === "fade" ? Math.min(1, (age + 0.03) / 0.12) : 1;
+      // fade-in is quick and never starts see-through (a pale first word is hard to read)
+      const op = style.animation === "fade" ? Math.min(1, 0.6 + (0.4 * (age + 0.03)) / 0.06) : 1;
       const d = font.getPath(p.text, p.x, p.baseline, p.size).toPathData(1);
       const fill = isActive || p.w.emph ? style.accent : style.fill;
       const box =

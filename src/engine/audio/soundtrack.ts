@@ -50,7 +50,7 @@ export function musicPrompt(bp: Blueprint | null, brand: Brand, totalSec: number
     .trim();
   // a winner without music still gets a bed (an ad without one reads as unfinished): very soft and minimal
   const winner = /\bno (background )?music\b/i.test(raw)
-    ? "very soft, minimal ambient pad with a slow gentle pulse, almost unnoticeable, calm and trustworthy"
+    ? "soft but clearly audible warm ambient pad with a slow gentle pulse and light plucked notes, calm and trustworthy"
     : raw;
   const mood = brand.dossier.visual.styleNotes ?? "";
   return [
@@ -128,6 +128,11 @@ export async function buildSoundtrack(
     ...base,
     sizePct: Math.max(7, base.sizePct),
     wordsPerCaption: Math.min(3, base.wordsPerCaption),
+    // a thin outline disappears on bright or pastel backgrounds: at least 12% (or a box behind the words)
+    stroke:
+      base.background === "none"
+        ? { color: base.stroke?.color ?? "#000000", widthPct: Math.max(12, base.stroke?.widthPct ?? 0) }
+        : base.stroke,
     ...(ov.captions ?? {}),
   };
   const first = c.shots[0];

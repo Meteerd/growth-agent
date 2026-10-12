@@ -9,6 +9,8 @@ export interface AdShot {
   captionRegion?: "upper" | "middle" | "lower";
   /** A18: a real screen recording, shown as a framed screen (captions above it, never over the product) */
   screen?: boolean;
+  /** A18: reframe the clip (zoom, anchor 0..1) */
+  framing?: { zoom: number; anchorX: number; anchorY: number };
 }
 
 export interface Ad916Props {

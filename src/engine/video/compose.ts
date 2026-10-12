@@ -180,6 +180,69 @@ async function endCard(p: Ad916Props, out: string) {
 }
 
 /**
+ * The end card animated per frame (A18): a soft brand-tinted background, the real logo popping in, the brand name
+ * in the bundled caption font, and the CTA pill sliding up with a gentle pulse. Writes `<dir>/%05d.jpg`.
+ */
+export async function endCardFrames(p: Ad916Props, n: number, dir: string): Promise<string> {
+  const { fontFor } = await import("./captions");
+  fs.rmSync(dir, { recursive: true, force: true });
+  fs.mkdirSync(dir, { recursive: true });
+  const light = p.colors[3] ?? "#FFFFFF";
+  const brand = p.colors[0] ?? "#111111";
+  const font = fontFor("montserrat", "black");
+  const name = font.getPath(p.brandName, 0, 0, 96);
+  const nb = name.getBoundingBox();
+  const nameD = font.getPath(p.brandName, (W - (nb.x2 - nb.x1)) / 2 - nb.x1, 1130, 96).toPathData(1);
+  const ctaFont = fontFor("montserrat", "bold");
+  const lines = wrap(p.cta, 24);
+  const ctaPaths = lines.map((l, i) => {
+    const w = ctaFont.getAdvanceWidth(l, 54);
+    return ctaFont.getPath(l, (W - w) / 2, 1300 + i * 70, 54).toPathData(1);
+  });
+  const boxH = lines.length * 70 + 80;
+  const logo = p.logoSrc ? urlToFile(p.logoSrc) : null;
+  const logoPng =
+    logo && fs.existsSync(logo)
+      ? await sharp(logo, { density: 300 })
+          .resize(240, 240, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+          .png()
+          .toBuffer()
+      : null;
+  const ease = (x: number) => 1 - (1 - Math.min(1, Math.max(0, x))) ** 3;
+  for (let i = 0; i < n; i++) {
+    const t = i / 30;
+    const logoS = t < 0.12 ? 0.6 + 0.5 * ease(t / 0.12) : t < 0.3 ? 1.1 - 0.1 * ease((t - 0.12) / 0.18) : 1;
+    const up = (1 - ease((t - 0.15) / 0.35)) * 60;
+    const fade = ease((t - 0.1) / 0.3);
+    const pulse = 1 + 0.025 * Math.sin(Math.max(0, t - 0.5) * Math.PI * 2.2);
+    const cy = 1300 + boxH / 2 - 70;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="${light}"/></linearGradient></defs>
+  <rect width="100%" height="100%" fill="url(#g)"/>
+  <g opacity="${fade.toFixed(3)}" transform="translate(0 ${(up * 0.5).toFixed(1)})"><path d="${nameD}" fill="#1b1b1b"/></g>
+  <g opacity="${fade.toFixed(3)}" transform="translate(${W / 2} ${(cy + up).toFixed(1)}) scale(${pulse.toFixed(4)}) translate(${-W / 2} ${-cy})">
+    <rect x="110" y="1222" width="${W - 220}" height="${boxH}" rx="${boxH / 2 > 70 ? 70 : boxH / 2}" fill="${brand}"/>
+    ${ctaPaths.map((d) => `<path d="${d}" fill="#FFFFFF"/>`).join("")}
+  </g>
+</svg>`;
+    const layers: OverlayOptions[] = [];
+    if (logoPng) {
+      const sz = Math.max(2, Math.round(240 * logoS));
+      layers.push({
+        input: await sharp(logoPng).resize(sz, sz).png().toBuffer(),
+        left: Math.round((W - sz) / 2),
+        top: Math.round(760 - sz / 2),
+      });
+    }
+    await sharp(Buffer.from(svg))
+      .composite(layers)
+      .jpeg({ quality: 92 })
+      .toFile(path.join(dir, `${String(i).padStart(5, "0")}.jpg`));
+  }
+  return path.join(dir, "%05d.jpg");
+}
+
+/**
  * The audio of an ad (A18): voice at 48 kHz stereo; a music bed (looped, faded out) ducked under the voice with a
  * sidechain compressor; the mix loudness-normalised to about -14 LUFS (TikTok/Reels level). Without music the voice
  * alone is normalised; the caller warns that the ad has no music bed.
@@ -243,8 +306,12 @@ export async function stillMoveFrames(png: string, n: number, dir: "in" | "out",
       const e = ease(n > 1 ? i / (n - 1) : 0);
       const z = dir === "in" ? 1.02 + 0.07 * e : 1.09 - 0.07 * e;
       const drift = (e - 0.5) * 0.012 * W;
-      await sharp(base.data, { raw: base.info })
+      // two passes: sharp applies extract before affine within one pipeline
+      const moved = await sharp(base.data, { raw: base.info })
         .affine([z, 0, 0, z], { odx: -(z - 1) * (W / 2) + drift, ody: -(z - 1) * (H / 2), interpolator: "bicubic" })
+        .raw()
+        .toBuffer({ resolveWithObject: true });
+      await sharp(moved.data, { raw: moved.info })
         .extract({ left: 0, top: 0, width: W, height: H })
         .jpeg({ quality: 92 })
         .toFile(path.join(out, `${String(i).padStart(5, "0")}.jpg`));
@@ -300,6 +367,24 @@ export async function steadyClip(clip: string): Promise<string> {
   return (await worst(stab)) < raw ? stab : clip;
 }
 
+/**
+ * A long shot (> 5.5 s) gets an editor's punch-in at its midpoint: the second half is a 1.15x tighter crop of the
+ * same clip (a jump cut), so one line over one clip never reads as a frozen still.
+ */
+export function punchIn(src: string, dur: number, out: string): string {
+  const t = (dur / 2).toFixed(3);
+  const w = Math.round((W * 1.15) / 2) * 2;
+  const h = Math.round((H * 1.15) / 2) * 2;
+  return `[${src}]split=2[pa_${out}][pb_${out}];[pa_${out}]trim=end=${t},setpts=PTS-STARTPTS[p1_${out}];[pb_${out}]trim=start=${t},setpts=PTS-STARTPTS,scale=${w}:${h}:flags=lanczos,crop=${W}:${H}:${(w - W) / 2}:${Math.round((h - H) * 0.4)},setsar=1[p2_${out}];[p1_${out}][p2_${out}]concat=n=2:v=1:a=0,format=yuv420p,setsar=1[${out}]`;
+}
+
+/** A static reframe of a clip: scale by `zoom` (lanczos) and crop back to 1080x1920 at the anchor. */
+export function reframe(f: { zoom: number; anchorX: number; anchorY: number }): string {
+  const w = Math.round((W * f.zoom) / 2) * 2;
+  const h = Math.round((H * f.zoom) / 2) * 2;
+  return `scale=${w}:${h}:flags=lanczos,crop=${W}:${H}:${Math.round((w - W) * f.anchorX)}:${Math.round((h - H) * f.anchorY)},`;
+}
+
 export async function composeAd916(p: Ad916Props, out: string, workDir: string, onProgress?: (x: number) => void) {
   fs.mkdirSync(workDir, { recursive: true });
   fs.mkdirSync(path.dirname(out), { recursive: true });
@@ -310,6 +395,7 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
     clipLen?: number;
     seq?: string;
     screen?: boolean;
+    framing?: { zoom: number; anchorX: number; anchorY: number };
     overlays?: { file: string; t0: number; t1: number }[];
   }[] = [];
   for (const [i, s] of p.shots.entries()) {
@@ -343,12 +429,18 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
       clipLen: hasClip ? (await probe(steady!)).durationSec : undefined,
       seq,
       screen: hasClip && !!s.screen,
+      framing: s.framing,
     });
     onProgress?.((i + 1) / (p.shots.length + 2));
   }
   const end = path.join(workDir, "end.png");
   await endCard(p, end);
-  frames.push({ file: end, dur: p.endCardSec });
+  // finals: the end card animates (logo pops in, CTA slides up and pulses) instead of sitting still
+  const endSeq =
+    p.motionQuality === "final" && p.endCardSec >= 1
+      ? await endCardFrames(p, Math.round(p.endCardSec * 30), path.join(workDir, "endcard"))
+      : undefined;
+  frames.push({ file: end, dur: p.endCardSec, seq: endSeq });
 
   const inputs: string[] = [];
   const parts: string[] = [];
@@ -371,7 +463,7 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
         );
       } else
         parts.push(
-          `[${v}:v]${stretch > 1 ? `setpts=${stretch.toFixed(4)}*PTS,` : ""}scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[b${i}]`,
+          `[${v}:v]${stretch > 1 ? `setpts=${stretch.toFixed(4)}*PTS,` : ""}scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},${f.framing ? reframe(f.framing) : ""}fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1${f.dur > 5.5 ? `[pre${i}];${punchIn(`pre${i}`, f.dur, `b${i}`)}` : `[b${i}]`}`,
         );
     } else if (f.seq) {
       // final still: the camera move rendered per frame with float transforms (no zoompan, no rounding jitter)

@@ -153,3 +153,17 @@ Mete wants the site to feel beautiful while it loads too: a short branded intro 
 
 ## 2026-10-12T10:30 from Mete's main session: B21 deployed and verified live
 Deployed main @ c743d9b to the server at 10:4x: https://63-181-87-203.sslip.io serves /, /brands, /brands/hound (200), /api/brands lists the four brands, and POST /api/brands/brand_hound/runs returns 403 read-only. Server env now has NEXT_PUBLIC_DATA_MODE=showcase and NEXT_PUBLIC_READONLY=1. rekampols.xyz is configured on the server and goes live as soon as Emir's Namecheap A records resolve (watched from here). To deploy yourself next time: `ssh-keyscan 63.181.87.203 >> ~/.ssh/known_hosts` once, then `deploy/aws/deploy.sh main` (Emir's GitHub SSH keys are authorized as ubuntu@63.181.87.203). Otherwise write "please deploy" here and it gets done. Next for you: B20 landing (Uplane-led, with beautiful loading states).
+
+## 2026-10-12T10:47 from Mete's main session: B20 deployed live on https://rekampols.xyz (main @ 4a35c4b); review notes
+Live and good: the Uplane-style red media hero, the brand marquee, "THE PROOF." winner vs remake block, the red "Reading the market" panel with "Seven steps. One brain. Every brand." Fixes, in order:
+1. The hero headline is not visible 4 s after load (only the paragraph and the URL bar show). The headline must render immediately (SSR text) and animate from there; never hidden behind the intro.
+2. The site still shows the OLD renders with the grey caption box (hero tiles "Just let them cry it out?...", the proof block, the a.clinic panel). Swap in the NEW Hound flagship (live serif captions, ElevenLabs voice, music, docs/renders/hound-flagship.mp4 at 10:22 and the Spanish dub) everywhere, and each new flagship as Lane A ships it. If the showcase copies live under public/, refresh them from docs/renders.
+3. The proof block shows "self-review 73/100": keep it honest, but show the latest review of the chosen version (Lane A's new Hound review).
+Then B22 (studio revise-by-chat; Lane A's A19 routes are live). Write "please deploy" here when ready; deploys are done from Mete's main session.
+
+## 2026-10-12T10:51 from Mete (human): make the site more immersive and premium, a.clinic-level calm
+Mete reviewed the live site: the design direction is good, now make it more immersive and premium, with the calm, soft, confident feel of a.clinic's own site.
+1. Typography: switch the site to a Gellix-like geometric sans: Plus Jakarta Sans (free, OFL) for display and UI (tight tracking on display), keep a mono only for numbers. (Gellix itself only exists as a TRIAL in the a.clinic repo, not licensed for a public site; if Mete buys it later it is a one-line swap: keep the font in one CSS variable.)
+2. Immersive: big full-bleed video moments (a sticky video that plays as you scroll through the reverse-engineering story, winner and remake scrubbing together), smooth scroll, section transitions, the video wall as a large masonry/stack with hover-to-unmute, React Bits where it adds depth (ScrollVelocity or a marquee of real hooks, TiltedCard or Stack for the remakes, CountUp for numbers, BlurText/SplitText headlines, Magnet CTA). Keep it fast and calm, no gimmicks.
+3. Captions in the videos are being redone by Lane A right now (premium kinetic captions, no grey boxes); swap in each new render as soon as INBOX_B says "new render on main". Until then, prefer the new Hound render in the most visible slots.
+4. Keep the beautiful loading states and the hero headline fix from earlier. Write "please deploy" here when ready.

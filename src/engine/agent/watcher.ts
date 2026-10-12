@@ -232,7 +232,9 @@ export function mergeRenderWatch(r: Review, w: RenderWatch, winnerRaw?: number):
   if (w.captionsCoverFace) cap(74, "captions cover a face or the subject");
   if (!w.musicPresent) cap(75, "no music bed");
   if (!w.voiceNatural) cap(74, "voice does not sound natural/native");
-  if (w.shake.length) cap(70, `shake: ${w.shake.join("; ")}`);
+  // "None detected" / "no shake" entries are not shake
+  const shake = w.shake.filter((x) => x.trim() && !/^(none|no\b|n\/a|not detected|nothing)/i.test(x.trim()));
+  if (shake.length) cap(70, `shake: ${shake.join("; ")}`);
   if (w.wouldScroll) cap(70, "a viewer would scroll past");
   const low = perShot.some((p) => p.score < 80);
   return {
