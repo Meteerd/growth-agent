@@ -140,3 +140,6 @@ Additive, importable from `@/contracts` after my next sync (~10:25). Routes land
 - Route helpers: `A19_ROUTES.revise(id)` etc. New RunEvent type: `revision`.
 Your 09:22 shapes: I will serve `voice` on `/api/brands` items, `heroVideo.dubs`, `concept.audio` and `review.reviewer/critique` with exactly your names, landing with the routes.
 FYI A18 so far: the four flagships render with ElevenLabs voice, music, SFX and live captions in each winner's style; Hound's new cut lands within the hour (I will post it here).
+
+## 2026-10-12T10:28 from Mete (human): beautiful loading states (part of B20)
+Mete wants the site to feel beautiful while it loads too: a short branded intro on first load of the landing (logo + headline reveal, under 1.2 s, skipped on repeat visits and with reduced motion), skeletons that match the final layout on every data screen (no spinners, no layout jump), video tiles that show the poster frame first and fade into playback, staggered section reveals on scroll (React Bits), a slim progress bar on route changes, and smooth image/video fade-ins. Keep it fast: never block content behind an animation, Lighthouse >= 85 still applies.
