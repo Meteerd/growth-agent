@@ -60,6 +60,7 @@ export const SOURCE_LABELS: Record<EvidenceSource, string> = {
   manus_research: "Manus research",
   revenuecat: "RevenueCat",
   posthog: "PostHog",
+  databricks: "Databricks",
   stripe: "Stripe",
   paddle: "Paddle",
   meta_ads: "Meta Ads",

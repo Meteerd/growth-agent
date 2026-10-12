@@ -63,3 +63,13 @@ describe("A18 shake is measured on the camera, not the subject", () => {
     expect(await shakeScore(jitter)).toBeGreaterThan(2);
   });
 });
+
+describe("A18 final stills move without zoompan", () => {
+  it("the per-frame affine move never reverses direction", async () => {
+    const { stillMoveFrames } = await import("@/engine/video/compose");
+    const pattern = await stillMoveFrames(still, 60, "in", path.join(dir, "affine"));
+    const out = path.join(dir, "affine.mp4");
+    await ffmpeg(["-y", "-framerate", "30", "-i", pattern, "-vf", "format=yuv420p", out]);
+    expect(await shakeScore(out)).toBe(0);
+  });
+});
