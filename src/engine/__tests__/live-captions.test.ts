@@ -128,6 +128,7 @@ describe("A18 Gemini calibration against the winner", () => {
     expect(calibrate(50, 40)).toBe(68); // capped at 1.35x
     expect(calibrate(90, 95)).toBe(90); // a winner above the anchor never lowers our score
     expect(calibrate(70)).toBe(70);
+    expect(calibrate(59, 6)).toBe(59); // a winner under 40 raw is not a usable anchor
   });
 });
 

@@ -8,6 +8,7 @@ import { shakeScore } from "../../media/motion-check";
 import { getAsset, getBlueprint, getConcept, listAssets, listConcepts, upsertReview } from "../../repo";
 import { rulePackText } from "../../rules";
 import { generateKeyframes, renderConcept } from "../../services/concepts";
+import { premiumStyle } from "../../video/captions";
 import { urlToFile } from "../../video/files";
 import { type BetaContentBlockParam, loadPrompt, structured } from "../claude";
 import type { PhaseCtx } from "../context";
@@ -246,14 +247,22 @@ export async function reviewRender(
   const measuredReview = measured ? applyMeasurements(review, measured) : review;
   // A18: on finals Gemini watches the whole cut with sound; the stricter of the two reviewers wins
   if (!final) return measuredReview;
-  const w = await watchRender(ctx.db, { file: urlToFile(asset.url)!, concept: c, bp, runId: ctx.run.id }).catch(
-    async (e) => {
-      await ctx.emit("warning", "Gemini could not watch the render; Claude's frame review only", {
-        detail: e instanceof Error ? e.message : String(e),
-      });
-      return null;
-    },
-  );
+  const captionTarget =
+    process.env.CAPTIONS === "winner"
+      ? bp?.captionStyle
+      : premiumStyle(bp?.captionStyle, ctx.brand.dossier.visual.colors[0] ?? "#FFD60A");
+  const w = await watchRender(ctx.db, {
+    file: urlToFile(asset.url)!,
+    concept: c,
+    bp,
+    runId: ctx.run.id,
+    captionTarget,
+  }).catch(async (e) => {
+    await ctx.emit("warning", "Gemini could not watch the render; Claude's frame review only", {
+      detail: e instanceof Error ? e.message : String(e),
+    });
+    return null;
+  });
   const winnerRaw = w ? await winnerBaseline(ctx.db, c, bp).catch(() => undefined) : undefined;
   const steady = !!measured && measured.shake.every((x) => x.reversalsPerSec <= 1);
   return w ? mergeRenderWatch(measuredReview, w, winnerRaw, steady) : measuredReview;

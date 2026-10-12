@@ -43,5 +43,20 @@
       "posterLandscape": "/showcase/dynova-talk-169.jpg"
     },
     "durationSec": 4.8
+  },
+  {
+    "id": "evreon-talk",
+    "brand": "evreon",
+    "kind": "talking",
+    "language": "en",
+    "label": "Evreon (EN-GB): practice manager talking to camera (AI-generated presenter, lip-synced)",
+    "aiPresenter": true,
+    "files": {
+      "vertical": "/showcase/evreon-talk-916.mp4",
+      "landscape": "/showcase/evreon-talk-169.mp4",
+      "poster": "/showcase/evreon-talk-916.jpg",
+      "posterLandscape": "/showcase/evreon-talk-169.jpg"
+    },
+    "durationSec": 5.07
   }
 ]
