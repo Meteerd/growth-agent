@@ -3,6 +3,7 @@ import path from "node:path";
 import { CHANNEL_LABELS, type DemoRunBundle, SEED_BRANDS } from "@/contracts";
 import { logoOnDark } from "@/lib/client/brandAssets";
 import { SOURCE_LABELS } from "@/lib/client/format";
+import MANUS from "@/lib/client/manus-tasks.json";
 import { PURPOSE_LABEL } from "@/lib/client/purpose";
 
 // Server-side only. Everything the landing shows is read from the recorded runs (src/contracts/fixtures/live) and the
@@ -172,6 +173,28 @@ export function proofFor(slug: string) {
       .slice(0, 3)
       .map((x) => ({ label: CHANNEL_LABELS[x.channel], score: x.score })),
     notNow: b.plan?.notNow.slice(0, 2).map((n) => ({ label: CHANNEL_LABELS[n.channel], reason: n.reason })) ?? [],
+    research: research(slug, b),
+    // the business signal the plan weighed: the offers and prices read from the brand's own site
+    offers: seed.dossier.offers.map((o) => (o.price ? `${o.name} ${o.price}` : o.name)).slice(0, 3),
+  };
+}
+
+/** What the research phase found: real items kept, sources, and Manus's competitors and community rules. */
+function research(slug: string, b: DemoRunBundle) {
+  const kept = b.evidence.filter((e) => !e.demo && !NOT_POSTS.has(e.source));
+  const manus = b.evidence.filter((e) => e.source === "manus_research" && !e.demo);
+  const rows = (tag: string) =>
+    (manus.find((e) => e.tags?.includes(tag))?.text ?? "").split("\n").filter((l) => /^.+? \(https?:\/\//.test(l))
+      .length;
+  const extra = (
+    MANUS.research as Record<string, { taskUrl: string; competitors?: unknown[]; communities?: unknown[] }>
+  )[slug];
+  return {
+    items: kept.length,
+    sources: new Set(kept.map((e) => e.source)).size,
+    competitors: rows("competitors") || extra?.competitors?.length || 0,
+    communities: rows("communities") || extra?.communities?.length || 0,
+    manusUrl: manus.find((e) => e.url)?.url ?? extra?.taskUrl,
   };
 }
 export const proof = () => proofFor("hound");
