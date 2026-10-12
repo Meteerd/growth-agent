@@ -251,14 +251,18 @@ export async function reviewRender(
     process.env.CAPTIONS === "winner"
       ? bp?.captionStyle
       : premiumStyle(bp?.captionStyle, ctx.brand.dossier.visual.colors[0] ?? "#FFD60A");
-  const w = await watchRender(ctx.db, { file: urlToFile(asset.url)!, concept: c, bp, runId: ctx.run.id, captionTarget }).catch(
-    async (e) => {
-      await ctx.emit("warning", "Gemini could not watch the render; Claude's frame review only", {
-        detail: e instanceof Error ? e.message : String(e),
-      });
-      return null;
-    },
-  );
+  const w = await watchRender(ctx.db, {
+    file: urlToFile(asset.url)!,
+    concept: c,
+    bp,
+    runId: ctx.run.id,
+    captionTarget,
+  }).catch(async (e) => {
+    await ctx.emit("warning", "Gemini could not watch the render; Claude's frame review only", {
+      detail: e instanceof Error ? e.message : String(e),
+    });
+    return null;
+  });
   const winnerRaw = w ? await winnerBaseline(ctx.db, c, bp).catch(() => undefined) : undefined;
   const steady = !!measured && measured.shake.every((x) => x.reversalsPerSec <= 1);
   return w ? mergeRenderWatch(measuredReview, w, winnerRaw, steady) : measuredReview;
