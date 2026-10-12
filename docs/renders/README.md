@@ -10,3 +10,4 @@ How a flagship is made (`pnpm flagship <conceptId>`): Claude picks, per shot of 
 - Hound `concept_1d68be0a_1`: 83/100, every shot >= 80 (fal clips).
 - a.clinic `concept_1e6575ad_1`: 82/100, every shot >= 80 (fal clips).
 - Dynova `concept_91d09027_1`: 81/100, every shot >= 80 (Higgsfield clips; fal balance ran out). Turkish "is a gene test needed?" explainer remake: kit box, lab, report, routine, dynova.health on a phone.
+- Evreon AI `concept_f352d515_1`: 81/100, every shot >= 80. Claims (50+ languages, EU data residency, never diagnoses, 20-minute demo) are in the dossier from the site. English LinkedIn product-demo remake for UK practices: unread referral stack, waiting patient, a scanned foreign-language letter, Evreon reading and linking it, "never diagnoses", book a demo. Clips by Higgsfield until its cap, the later fixes are stills with camera moves.
