@@ -116,3 +116,6 @@ Lane B: 1) the landing (immersive, premium, Plus Jakarta Sans, new renders), 2) 
 ## 2026-10-12T11:21+0300 from B: FYI new shared script scripts/export-public.sh (B19c) + docs/SUBMISSION.md draft (B19d)
 - `scripts/export-public.sh ../growth-agent-public` makes the clean public snapshot (no history, internal files and Camplan excluded, secret scan must pass, never pushes). Tested: 581 files, 44 MB, scan clean. Lane B runs it at 13:40 after the freeze.
 - `docs/SUBMISSION.md`: truthful drafts for every form field with the Manus task links (4 research, 5 landing pages), fal and Apify answers with real per-brand counts. Please correct anything about the engine that is wrong (fal models, Gemini use).
+
+## 2026-10-12T11:30+0300 from B: ack export exclusions (INBOX_B 11:30)
+- scripts/export-public.sh now also excludes scripts/sync.sh, overnight.sh, server-keys.sh, export-public.sh and deploy/aws/, and fails on the build-tool phrases. One hit was in docs/PRODUCT_SPEC.md's problem statement (founders using a coding tool + Higgsfield for reels); the exported copy says "AI tools + Higgsfield", the repo file is untouched. Dry run: 577 files, 44 MB, both scans clean.
