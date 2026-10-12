@@ -134,7 +134,7 @@ export type RenderWatch = z.infer<typeof RenderWatch>;
 /** Our own render, watched with sound against the winner's blueprint. */
 export async function watchRender(
   db: Db,
-  o: { file: string; concept: Concept; bp: Blueprint | null; runId?: string; save?: boolean },
+  o: { file: string; concept: Concept; bp: Blueprint | null; runId?: string; save?: boolean; captionTarget?: unknown },
 ): Promise<RenderWatch | null> {
   let t = 0;
   const shots = o.concept.shots.map((s) => {
@@ -150,11 +150,12 @@ export async function watchRender(
   const prompt = `You are the strictest short-form ad reviewer at a performance agency. Watch this ad WITH its sound, as a viewer scrolling TikTok/Reels would.
 It remakes a winning ad (blueprint below) for our brand. Language: ${o.concept.language}.
 Shots (seconds): ${JSON.stringify(shots)}
-Winner blueprint: ${JSON.stringify(o.bp ? { structure: o.bp.structure, hook: o.bp.hook, captionStyle: o.bp.captionStyle, audio: o.bp.audio, watchNotes: o.bp.watchNotes } : null)}
+Winner blueprint: ${JSON.stringify(o.bp ? { structure: o.bp.structure, hook: o.bp.hook, audio: o.bp.audio, watchNotes: o.bp.watchNotes } : null)}
+Target caption style (the brand's caption spec, chosen by the operator; it replaces the winner's text style on purpose, so judge captions against THIS, not the winner's font or colours): ${JSON.stringify(o.captionTarget ?? o.bp?.captionStyle ?? null)}
 
 Score each shot 0-100 (80 = good enough to run as a paid ad; anything a viewer would scroll past as fake, cheap or broken is under 70) and the whole ad. Check, with timestamps ("0:04-0:07 the camera shakes"):
 - motion: real-looking footage, smooth camera, no shaking/jitter, no frozen stills pretending to be video, no AI tells (warped hands/paws, morphing faces or objects, garbled text, plastic skin);
-- captions: alive (words pop in as spoken, change every ~0.3-0.8 s; a sentence sitting still on screen fails), synced to the voice, readable, never covering faces/the dog/the product, outside the TikTok UI zones, and in the WINNER's text style (font look, colour, outline/box, position) - a style mismatch is a failing issue;
+- captions: alive (words pop in as spoken, change every ~0.3-0.8 s; a sentence sitting still on screen fails), synced to the voice, readable, never covering faces/the dog/the product, outside the TikTok UI zones, and in the TARGET caption style above (font look, colour, outline/box) - a mismatch with the target is a failing issue;
 - sound: music bed present and fitting the winner's sound, voice natural and native for the language (no robotic or foreign accent), mix balanced, sound effects subtle;
 - the hook in the first 2 s, pacing versus the winner, the CTA.
 critique: the plain-language list of everything to fix, worst first.`;
@@ -189,7 +190,8 @@ export function saveCritique(conceptId: string, file: string, w: RenderWatch) {
  */
 export const WINNER_ANCHOR = 85;
 export function calibrate(raw: number, winnerRaw?: number): number {
-  if (!winnerRaw || winnerRaw <= 0) return Math.round(raw);
+  // a winner that scores under 40 on our rubric (e.g. a 90 s talking head with no music) is not a usable anchor
+  if (!winnerRaw || winnerRaw < 40) return Math.round(raw);
   const k = Math.min(1.35, Math.max(1, WINNER_ANCHOR / winnerRaw));
   return Math.min(100, Math.round(raw * k));
 }
@@ -243,6 +245,6 @@ export function mergeRenderWatch(r: Review, w: RenderWatch, winnerRaw?: number, 
     perShot,
     overall,
     decision: low || overall < 80 ? "regenerate" : r.decision,
-    notes: `Gemini watched it with sound (raw ${Math.round(w.overall)}${winnerRaw ? `; the winner itself scores ${Math.round(winnerRaw)} raw, calibrated ${calibrate(w.overall, winnerRaw)}` : ""}): ${w.critique.slice(0, 6).join(" | ")}${caps.length ? ` [caps: ${caps.join(", ")}]` : ""}. Claude: ${r.notes}`,
+    notes: `Gemini watched it with sound (raw ${Math.round(w.overall)}${winnerRaw && winnerRaw >= 40 ? `; the winner itself scores ${Math.round(winnerRaw)} raw, calibrated ${calibrate(w.overall, winnerRaw)}` : ""}): ${w.critique.slice(0, 6).join(" | ")}${caps.length ? ` [caps: ${caps.join(", ")}]` : ""}. Claude: ${r.notes}`,
   };
 }
