@@ -68,52 +68,20 @@ const Heading = ({ text, className }: { text: string; className?: string }) => (
 );
 
 function Hero() {
-  const list = brands();
-  // the Hound remake is the one tile in full colour (the contrast streak); on phones it sits beside a.clinic
-  const ORDER: Record<string, string> = {
-    aclinic: "order-1",
-    dynova: "hidden md:block md:order-2",
-    hound: "order-2 md:order-3",
-    evreon: "hidden md:block md:order-4",
-  };
+  // Mete, 14:35: the hero is just the line and the URL bar (no video tiles, no colour remake, no marquee)
   return (
-    <section className="relative isolate flex min-h-[max(700px,100svh)] flex-col overflow-hidden bg-signal text-white">
-      <div aria-hidden className="absolute inset-0 -z-10 grid grid-cols-2 md:grid-cols-4">
-        {list.map((b) => (
-          <div key={b.slug} className={cn("relative overflow-hidden", ORDER[b.slug])}>
-            <LoopVideo
-              src={b.media.src}
-              poster={b.media.poster}
-              label=""
-              eager
-              className={b.slug === "hound" ? undefined : "grayscale contrast-125"}
-            />
-            {b.slug !== "hound" && <div className="absolute inset-0 bg-signal mix-blend-multiply" />}
-          </div>
-        ))}
-      </div>
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(10_10_10/0.72)_0%,rgb(10_10_10/0.45)_45%,transparent_70%),linear-gradient(180deg,rgb(10_10_10/0.45)_0%,transparent_28%,rgb(10_10_10/0.35)_55%,rgb(10_10_10/0.88)_100%)]"
-      />
-
+    <section className="relative isolate flex min-h-[max(640px,92svh)] flex-col overflow-hidden bg-[#0a0a0a] text-white">
       <header className="mx-auto flex h-16 w-full max-w-[1440px] items-center justify-between px-4 md:px-10">
         <Wordmark className="text-white" />
-        <div className="flex items-center gap-3">
-          <Link
-            href="/brands"
-            className="rounded-full bg-white px-4 py-2 font-semibold text-[#111] text-[14px] transition-colors duration-150 hover:bg-[#111] hover:text-white"
-          >
-            Open the live demo
-          </Link>
-        </div>
+        <Link
+          href="/brands"
+          className="rounded-full bg-white px-4 py-2 font-semibold text-[#111] text-[14px] transition-colors duration-150 hover:bg-[#111] hover:text-white"
+        >
+          Open the live demo
+        </Link>
       </header>
 
-      <div className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-end px-4 pb-10 md:px-10">
-        <p className="mb-5 inline-flex w-fit items-center gap-2 rounded-full bg-white/12 px-3 py-1.5 text-[13px] text-white ring-1 ring-white/25">
-          <span className="size-1.5 rounded-full bg-white" aria-hidden />
-          In colour: our remake for Hound, of a TikTok that ran at 28.8x its account median
-        </p>
+      <div className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-center px-4 pb-16 md:px-10">
         <h1 className="font-semibold text-[clamp(3.1rem,8.6vw,8.4rem)] leading-[0.9] tracking-[-0.05em]">
           {/* server-rendered words that blur in with CSS at first paint: never hidden waiting for scripts */}
           {["The ads that win,", "rebuilt for your brand."].map((line, l) => (
@@ -127,32 +95,11 @@ function Hero() {
             </span>
           ))}
         </h1>
-        <p className="mt-6 max-w-[58ch] text-[17px] text-white/90 leading-relaxed md:text-[19px]">
-          {PRODUCT_NAME} finds what already wins in your market, takes it apart shot by shot, decides where your brand
-          should post, and remakes the winners with your product and your words. Checked against your legal rules.
-          Posted by you.
+        <p className="mt-6 max-w-[44ch] text-[17px] text-white/75 leading-relaxed md:text-[19px]">
+          Enter your brand. {PRODUCT_NAME} finds what already wins in your market and remakes it for you.
         </p>
         <div className="mt-8">
           <UrlBar />
-        </div>
-      </div>
-
-      <div className="border-white/20 border-t bg-black/25">
-        <div className="mx-auto flex max-w-[1440px] items-center gap-6 overflow-hidden px-4 py-4 md:px-10">
-          <span className="shrink-0 text-[13px] text-white/75">Running four real brands</span>
-          <div className="marquee relative min-w-0 flex-1 overflow-hidden">
-            <span className="sr-only">{list.map((b) => b.name).join(", ")}</span>
-            <div className="marquee-track flex w-max items-center gap-12" aria-hidden>
-              {[...list, ...list, ...list, ...list].map((b, i) => (
-                <span key={`${b.slug}-${i}`} className="flex items-center gap-2.5 whitespace-nowrap">
-                  {/* biome-ignore lint/performance/noImgElement: brand marks from the committed brand assets */}
-                  <img src={b.logo} alt="" className="size-7 rounded-[6px] bg-white object-contain p-1" />
-                  <span className="font-semibold text-[17px] tracking-[-0.02em]">{b.name}</span>
-                  <span className="text-[13px] text-white/60">{b.countries.join(", ")}</span>
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

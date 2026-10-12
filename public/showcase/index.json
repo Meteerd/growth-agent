@@ -1,5 +1,57 @@
 [
   {
+    "id": "camplan-threequotes",
+    "brand": "camplan",
+    "kind": "ad",
+    "language": "en",
+    "label": "Camplan (EN): homeowner, three builders, three quotes (real app footage; AI-generated presenter, lip-synced by elevenlabs creatify-aurora)",
+    "aiPresenter": true,
+    "files": {
+      "vertical": "/showcase/camplan-threequotes-916.mp4",
+      "poster": "/showcase/camplan-threequotes-916.jpg"
+    },
+    "durationSec": 20.8
+  },
+  {
+    "id": "camplan-tapelosesjobs",
+    "brand": "camplan",
+    "kind": "ad",
+    "language": "en",
+    "label": "Camplan (EN): construction worker, my tape measure cost me jobs (real app footage; AI-generated presenter, lip-synced by elevenlabs creatify-aurora)",
+    "aiPresenter": true,
+    "files": {
+      "vertical": "/showcase/camplan-tapelosesjobs-916.mp4",
+      "poster": "/showcase/camplan-tapelosesjobs-916.jpg"
+    },
+    "durationSec": 18.8
+  },
+  {
+    "id": "camplan-listingfirst",
+    "brand": "camplan",
+    "kind": "ad",
+    "language": "en",
+    "label": "Camplan (EN): realtor, plan on the listing the same day (real app footage; AI-generated presenter, lip-synced by elevenlabs creatify-aurora)",
+    "aiPresenter": true,
+    "files": {
+      "vertical": "/showcase/camplan-listingfirst-916.mp4",
+      "poster": "/showcase/camplan-listingfirst-916.jpg"
+    },
+    "durationSec": 16.4
+  },
+  {
+    "id": "camplan-quotefirst",
+    "brand": "camplan",
+    "kind": "ad",
+    "language": "en",
+    "label": "Camplan (EN): contractor, first quote wins the job (real app footage; AI-generated presenter, lip-synced by elevenlabs creatify-aurora)",
+    "aiPresenter": true,
+    "files": {
+      "vertical": "/showcase/camplan-quotefirst-916.mp4",
+      "poster": "/showcase/camplan-quotefirst-916.jpg"
+    },
+    "durationSec": 17.4
+  },
+  {
     "id": "hound-talk",
     "brand": "hound",
     "kind": "talking",
