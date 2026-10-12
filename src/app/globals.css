@@ -121,16 +121,14 @@
   }
 }
 
-/* ---------- surfaces: flat white cards on paper, 1px rule, no blur, no glow ---------- */
+/* ---------- surfaces: soft warm-grey cards on a white page, no border, no blur, no glow ---------- */
 @utility glass {
   background: var(--color-raised);
   border-radius: var(--radius-panel);
-  box-shadow: inset 0 0 0 1px var(--color-line);
 }
 @utility glass-flat {
   background: var(--color-raised);
   border-radius: var(--radius-panel);
-  box-shadow: inset 0 0 0 1px var(--color-line);
 }
 @utility hairline {
   box-shadow: inset 0 0 0 1px var(--color-line);

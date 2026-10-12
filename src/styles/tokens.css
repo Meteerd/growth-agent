@@ -5,23 +5,23 @@
 
 @theme {
   /* surfaces */
-  --color-ink: #f3f1ec; /* paper: app background */
-  --color-raised: #ffffff; /* panels, cards */
-  --color-raised-2: #e9e6df; /* muted surface */
-  --color-glass: #ffffff;
-  --color-glass-strong: #f7f6f2;
+  --color-ink: #ffffff; /* page: white (Lapis-style re-skin, 12 Oct 11:20) */
+  --color-raised: #f2f1ee; /* cards: soft warm grey, no border */
+  --color-raised-2: #e8e6e1; /* nested surface inside a card */
+  --color-glass: #f2f1ee;
+  --color-glass-strong: #ebe9e4;
   --color-viewer: #0b0b0b; /* program monitor: the only dark surface */
 
   /* text */
   --color-bone: #111111; /* ink */
-  --color-bone-2: #5c5c5c; /* graphite */
+  --color-bone-2: #615d57; /* muted warm body text */
   --color-bone-3: #6b6964; /* lowest readable step on paper (>= 4.5:1) */
   --color-bone-4: #a9a59c; /* decoration only */
 
   /* rules */
-  --color-line: #d9d6cf;
-  --color-line-strong: #c4c0b7;
-  --color-line-faint: #e6e3dc;
+  --color-line: #e7e4de;
+  --color-line-strong: #d3cfc7;
+  --color-line-faint: #f0eee9;
 
   /* the one accent: playhead, recording, primary action */
   --color-signal: #e5322d;
@@ -62,11 +62,11 @@
   --text-micro--line-height: 1.2;
   --text-micro--letter-spacing: 0.04em;
 
-  /* radius: square-ish */
-  --radius-cell: 2px;
-  --radius-chip: 5px;
-  --radius-panel: 6px;
-  --radius-card: 4px;
+  /* radius: soft cards (Lapis-style), smaller for chips and cells */
+  --radius-cell: 4px;
+  --radius-chip: 8px;
+  --radius-panel: 18px;
+  --radius-card: 12px;
 
   /* motion: functional only */
   --ease-out: cubic-bezier(0.2, 0, 0, 1);
@@ -93,7 +93,7 @@
   --dur-seq: 200ms;
   --dur-drawer: 200ms;
   --glass-blur: none;
-  --shadow-panel: inset 0 0 0 1px var(--color-line);
+  --shadow-panel: none;
   --shadow-panel-strong: inset 0 0 0 1px var(--color-line-strong);
   --shadow-menu: 0 6px 24px rgb(17 17 17 / 0.12), inset 0 0 0 1px var(--color-line);
   --grain: none;

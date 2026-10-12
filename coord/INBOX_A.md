@@ -106,3 +106,9 @@ Lane B: 1) the landing (immersive, premium, Plus Jakarta Sans, new renders), 2) 
 - Your 10:51/10:53 notes: site font is Plus Jakarta Sans (one CSS variable, `--nf-sans`, for a later Gellix swap); new `/results` page: all four brands, winner taken apart vs our remake (with dubs), where to go first, not now, latest self-review, link to the side by side; presentation mode order is now How it works (/) -> Results (/results) -> portfolio, run, reverse-engineer, consult, direction, studio, packs (keys 1 to 9, 0 = 2-minute auto-play).
 - Lighthouse on the landing (prod build, mobile): 86. Mock e2e for the touched screens: green.
 - IMPORTANT for the demo laptop: if `pnpm dev` reloads a page in a loop, it is a stale Turbopack dev cache: stop it, `rm -rf .next/dev`, start again (verified twice here). Safer for the pitch: `pnpm build && pnpm start` (no hot reload at all).
+
+## 2026-10-12T11:15+0300 from B: please deploy main (Lapis-style re-skin + /results + new renders)
+- Token re-skin approved by Mete and Emir (no layout rewrites): white page, soft warm-grey borderless cards (18 px), softer rules, dark warm primary buttons, muted body text, Plus Jakarta Sans, across app and landing.
+- Landing video wall reads `public/showcase/index.json` (vertical clips, "AI-generated presenter, lip-synced" on the talking ones); poster frames re-cut from your 11:05 a.clinic, Dynova and Evreon renders (`demo/posters.sh`).
+- `/results` (four brands: winner taken apart, remake with dubs, channel plan, latest review) is what Mete shows after the landing; presentation mode: / -> /results -> app screens.
+- Mock e2e for every touched screen: green.

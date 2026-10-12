@@ -1,14 +1,14 @@
 # STATUS lane B
 
 ## Now
-- Time: 2026-10-12 10:36 +0300 (event day)
-- Current task: order approved by Mete and Emir (chat, ~10:10): B21 live (done, verified) -> rekampols.xyz (DNS records set by Emir, waiting for the .xyz registry) -> B20 landing (on main, awaiting redeploy) -> B22 once A19 routes are served -> B19 Manus + submission. Then deliverables 1, 5, 6. Freeze 13:30.
-- Last sync: 10:30 exit 0, main UPDATED, checks PASS
-- Blockers: SSH from this laptop stops at the server's unknown host key, so Mete's session deploys (INBOX_A 10:12, 10:36). rekampols.xyz not yet delegated by the .xyz registry.
+- Time: 2026-10-12 11:15 +0300 (event day)
+- Current task: order approved by Mete and Emir in chat (11:15): Lapis-style token re-skin (done) -> Results for Hound, a.clinic, Dynova -> swap in every new render -> B19 (SUBMISSION.md, export at 13:40) + backup recording. Freeze 13:30. Camplan: local operator app only, never on the public site, showcase build or export unless INBOX_B says Viktor approved.
+- Last sync: see the log below; every step syncs.
+- Blockers: none. Deploys go through Mete's session ("please deploy" in INBOX_A); this laptop does not add the server's host key on its own.
 - Spend so far (USD per provider): 0. Manus: 6 lite tasks on event credits (B19a, authorized): Dynova + Evreon deep research, 4 flagship landing pages (done, unpublished).
-- Live: https://63-181-87-203.sslip.io verified 10:35 (10 pitch routes x desktop/mobile: 200, zero console errors, no overflow; mutations 403 read_only).
-- Done today: (1) offline-proof demo (`demo/offline-check.sh`, dev and `OFFLINE_MODE=showcase`, both exit 0), (4) Manus findings brief + Manus landing on each flagship pack, (5) presentation keys + 2-minute auto-play, B21 read-only showcase build (`deploy/README.md`, `e2e/showcase.spec.ts` 3 passed), B20 landing v1 (Rekampols), canonical metadata.
-- ack beautiful loading states (INBOX_B 10:28): part of B20 polish next. ack A19 contract (INBOX_B 10:15).
+- Live: https://rekampols.xyz (DNS resolved ~10:45, HTTPS 200, www -> apex 301) and https://63-181-87-203.sslip.io.
+- Done today: (1) offline-proof demo (`demo/offline-check.sh`, dev and `OFFLINE_MODE=showcase`, both exit 0), (3) voice per brand with sample button, dub toggle (brand home + landing), soundtrack marks in the studio, (4) Manus findings brief + Manus landing on each flagship pack, (5) presentation keys + 2-minute auto-play (pitch order / -> /results -> app), B21 read-only showcase (`deploy/README.md`, `e2e/showcase.spec.ts`), B20 landing (Rekampols, Plus Jakarta Sans, Lighthouse 86), /results, B22 studio versions + revise by chat + takes, Lapis-style re-skin.
+- Decisions today (pitch and freeze first): stat row uses computed numbers (299 ads/posts kept of 402 found, 12 winners, 8 sources, 4 brands, 3 languages), not the brief's 815/13; the winner is shown as its blueprint, never its footage; no host key added for SSH; dev reload loop = stale `.next/dev` (rm -rf .next/dev) and `pnpm build && pnpm start` recommended for the demo laptop.
 - ack Dynova and Evreon full live runs (INBOX_B 03:20): checked their direction, studio and packs live.
 - ack all four brands now have real recorded research (INBOX_B 03:03): brand home labels each run (demo, live data, live) and lists newest first.
 - ack re "concepts lose blueprintId on runs that reuse research": fixed (INBOX_B 02:47).
