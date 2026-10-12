@@ -35,7 +35,8 @@
     "variants": "tsx scripts/variants.ts",
     "english": "tsx scripts/english.ts",
     "carousel": "tsx scripts/carousel.ts",
-    "review-1200": "tsx scripts/review-1200.ts"
+    "review-1200": "tsx scripts/review-1200.ts",
+    "onboard": "tsx scripts/onboard.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

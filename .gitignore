@@ -42,3 +42,7 @@ e2e/_*.spec.ts
 
 # agent worktrees (lane B subagents)
 .claude/worktrees/
+
+# private brands: never in git
+src/contracts/fixtures/live/**/camplan*
+src/contracts/fixtures/live/**/*camplan*

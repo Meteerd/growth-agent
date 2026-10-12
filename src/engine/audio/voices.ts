@@ -24,12 +24,23 @@ export type VoiceBook = Record<string, Record<string, BrandVoice>>;
 
 export const voicesFile = () => path.resolve(process.env.VOICES_FILE || "assets/voices.json");
 
+/** Private brands (CONNECTOR_BRAND) keep their voices out of git: data/<brand>/voices.json. */
+const privateFile = (slug: string) => {
+  const p = (process.env.CONNECTOR_BRAND ?? "").trim().toLowerCase();
+  return p && slug.startsWith(p) ? path.resolve("data", p, "voices.json") : null;
+};
+
 export function readVoices(): VoiceBook {
+  let book: VoiceBook = {};
   try {
-    return JSON.parse(fs.readFileSync(voicesFile(), "utf8")) as VoiceBook;
-  } catch {
-    return {};
-  }
+    book = JSON.parse(fs.readFileSync(voicesFile(), "utf8")) as VoiceBook;
+  } catch {}
+  const p = (process.env.CONNECTOR_BRAND ?? "").trim().toLowerCase();
+  if (p)
+    try {
+      book = { ...book, ...(JSON.parse(fs.readFileSync(path.resolve("data", p, "voices.json"), "utf8")) as VoiceBook) };
+    } catch {}
+  return book;
 }
 
 export function brandVoice(slug: string, language: string): BrandVoice | undefined {
@@ -37,10 +48,14 @@ export function brandVoice(slug: string, language: string): BrandVoice | undefin
 }
 
 export function saveBrandVoice(slug: string, v: BrandVoice) {
-  const book = readVoices();
+  const file = privateFile(slug) ?? voicesFile();
+  let book: VoiceBook = {};
+  try {
+    book = JSON.parse(fs.readFileSync(file, "utf8")) as VoiceBook;
+  } catch {}
   book[slug] = { ...(book[slug] ?? {}), [v.language]: v };
-  fs.mkdirSync(path.dirname(voicesFile()), { recursive: true });
-  fs.writeFileSync(voicesFile(), `${JSON.stringify(book, null, 2)}\n`);
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, `${JSON.stringify(book, null, 2)}\n`);
 }
 
 /** Persona per brand (who speaks), used when searching the library and when no voice was chosen yet. */
@@ -64,6 +79,13 @@ export const PERSONAS: Record<string, { persona: string; gender?: string; search
     search: ["british", "professional", "narration", "calm"],
   },
 };
+
+/** Personas of private brands live with their data (data/<brand>/personas.json), not in git. */
+try {
+  const p = (process.env.CONNECTOR_BRAND ?? "").trim().toLowerCase();
+  const f = p ? path.resolve("data", p, "personas.json") : "";
+  if (f && fs.existsSync(f)) Object.assign(PERSONAS, JSON.parse(fs.readFileSync(f, "utf8")));
+} catch {}
 
 /** Defaults that read as natural speech for short ads (lower stability = more expressive). */
 export const DEFAULT_SETTINGS: VoiceSettings = {

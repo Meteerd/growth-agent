@@ -9,6 +9,11 @@ export interface AdShot {
   captionRegion?: "upper" | "middle" | "lower";
   /** A18: a real screen recording, shown as a framed screen (captions above it, never over the product) */
   screen?: boolean;
+  /** real footage: start offset (s) in the source clip and playback speed (> 1 = faster) */
+  clipStart?: number;
+  clipSpeed?: number;
+  /** the clip is an app screen recording shown inside a drawn phone (rounded screen, bezel) */
+  phone?: boolean;
   /** A18: reframe the clip (zoom, anchor 0..1) */
   framing?: { zoom: number; anchorX: number; anchorY: number };
 }
@@ -25,6 +30,8 @@ export interface Ad916Props {
   /** label burned in the corner, e.g. "Demo render" */
   badge?: string;
   endCardSec: number;
+  /** a brand outro clip replaces the generated end card (its own audio is never used) */
+  outroSrc?: string;
   /** live captions (A18): word-timed, animated per frame in the winner's style; replaces the per-shot text */
   captions?: import("../src/engine/video/captions").CaptionTrack;
   /** sound effects (A18): short sounds at global times (cuts, the hook), gain in dB */
