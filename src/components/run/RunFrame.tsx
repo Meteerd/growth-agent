@@ -22,7 +22,7 @@ export function RunFrame({ runId, children }: { runId: string; children: React.R
           className="mt-16"
           title="This run does not exist"
           action={
-            <Link className="font-mono text-[12px] text-signal underline underline-offset-4" href="/brands">
+            <Link className="text-[13px] text-bone underline decoration-bone-4 underline-offset-4" href="/brands">
               Back to the portfolio
             </Link>
           }

@@ -16,7 +16,7 @@ import { toast } from "@/components/ui/Toast";
 import { type Evidence, type EvidenceSource, PHASES, type Phase, type RunEvent } from "@/contracts";
 import { getClient } from "@/lib/client/api";
 import { cn } from "@/lib/client/cn";
-import { clock, PHASE_LABELS, SOURCE_LABELS } from "@/lib/client/format";
+import { clock, PHASE_LABELS, SOURCE_LABELS, unquote } from "@/lib/client/format";
 import { PURPOSE_COLOR } from "@/lib/client/purpose";
 import { useBlueprints, useConcepts, useEvidence } from "@/lib/client/queries";
 import { EventRow } from "./EventRow";
@@ -270,7 +270,8 @@ function Banner({
 
 /** The best one-line version of a hook: spoken, else written, else what is seen. Never empty. */
 export const hookLine = (h: { spoken?: string; onScreenText?: string; visual: string }) =>
-  [h.spoken, h.onScreenText, h.visual].map((x) => x?.trim()).find((x) => x && !/^not visible/i.test(x)) ?? h.visual;
+  [h.spoken, h.onScreenText, h.visual].map((x) => x && unquote(x)).find((x) => x && !/^not visible/i.test(x)) ??
+  h.visual;
 
 /** Manus deep research: visible, real work with a link to the task (BS5). */
 function ManusCard() {
@@ -289,9 +290,7 @@ function ManusCard() {
       className="glass-flat flex flex-wrap items-center gap-4 p-4"
       data-testid="manus-card"
     >
-      <span className="grid size-9 place-items-center rounded-[10px] bg-[rgb(229_50_45/0.08)] font-display text-[18px] text-signal shadow-[inset_0_0_0_1px_rgb(229_50_45/0.25)]">
-        M
-      </span>
+      <span className="grid size-9 place-items-center rounded-[4px] bg-bone font-display text-[17px] text-ink">M</span>
       <div className="min-w-0 flex-1">
         <p className="mono-label">manus / deep research task</p>
         <p className="mt-0.5 text-bone text-ui">
@@ -308,7 +307,7 @@ function ManusCard() {
           href={url}
           target="_blank"
           rel="noreferrer"
-          className="font-mono text-[11px] text-signal hover:underline"
+          className="text-[12.5px] text-bone underline decoration-bone-4 underline-offset-4"
           data-testid="manus-link"
         >
           Open the Manus task

@@ -444,7 +444,7 @@ function ShotCard({
           onClick={onApprove}
           disabled={s.approved || pending}
           aria-pressed={s.approved}
-          className="flex-1 rounded-chip py-1 font-mono text-[10.5px] text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)] transition-colors hover:bg-glass disabled:opacity-50 aria-pressed:text-signal"
+          className="flex-1 rounded-chip py-1 font-mono text-[10.5px] text-bone shadow-[inset_0_0_0_1px_var(--color-line-strong)] transition-colors hover:bg-glass disabled:opacity-50 aria-pressed:text-pass"
         >
           {s.approved ? "approved" : "approve"}
         </button>

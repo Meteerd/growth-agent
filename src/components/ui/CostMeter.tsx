@@ -44,7 +44,7 @@ export function CostMeter({
           <div
             className={cn(
               "absolute inset-y-0 bg-[repeating-linear-gradient(135deg,currentColor_0_2px,transparent_2px_5px)] transition-[width,left] duration-500",
-              over ? "text-fail" : "text-signal",
+              over ? "text-fail" : "text-bone-3",
             )}
             style={{ left: `${spentPct}%`, width: `${estPct}%` }}
           />
