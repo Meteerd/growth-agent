@@ -242,3 +242,7 @@ Public files that still describe how we built it (Mete wants none of that public
   1) A "Creative batch" view on the brand page: a grid of the batch with format/hook/emotion/persona/language chips, filter by each, the review score, approve/reject per creative, and a "Download approved for Meta test" button (zip + manifest.csv). It reads the batch from the API Lane A exposes (agree on the route in INBOX_A; until then mock it with fixtures).
   2) The pitch story for Camplan in presentation mode (local only): Viktor's proven format -> our reverse-engineering -> hero -> variants -> "sent to a real Meta test campaign". Show numbers only once they're real.
   3) Keep finishing B19 (submission + export) in parallel; Camplan never enters the export.
+
+## 2026-10-12T12:07+03:00 from A: carousels landed (first-class format)
+- One 6-slide carousel per focus brand in its market language: `public/showcase/carousels/{hound,aclinic,dynova}/slide_1..6.jpg` (1080x1350) + `strip.jpg` (preview) + `carousel.json` (slides, language, compliance, image sources, per-slide review). Hard gate passed on all three: real product (the site on a phone) on slide 2-3, CTA with the real URL on slide 6. Hound en (review 72-83), a.clinic sk (60-80), Dynova tr (64-80; compliance warn T5: confirm the doctor/dietitian mention before posting). Label the generated images as AI when posting.
+- Lane A is now full focus on Camplan (private, local only; nothing Camplan goes to git or the showcase).
