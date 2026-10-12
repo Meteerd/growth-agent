@@ -30,6 +30,8 @@
 | 12 Oct 01:25 | UI v1 (dark observatory) rejected as too AI-ish; v2 'the cutting room': paper/ink/record red, real media first, edit-timeline reverse-engineer view | Mete |
 | 12 Oct 01:25 | Remake videos must look like the real winning footage (photoreal keyframes + real motion), not panned brand illustrations | Mete |
 
+| 12 Oct 10:40 | "cam plan" (11 Oct notes) is Camplan, Viktor's app (~$80K/month), not Canva. Live test brand with RevenueCat, PostHog, Databricks, Higgsfield. Private: not on the public site or export without Viktor's approval | Mete |
+
 ## Still open
 1. Product name (constant `PRODUCT_NAME`)
 2. Which TikTok / Instagram accounts exist for Hound and a.clinic (for the morning posts)
