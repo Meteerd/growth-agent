@@ -4,7 +4,114 @@
       "taskId": "eEWu4CdQDEQGnGW9Hm946o",
       "taskUrl": "https://manus.im/app/eEWu4CdQDEQGnGW9Hm946o",
       "startedAt": "2026-10-12T06:52:52.500Z",
-      "state": "running"
+      "state": "done",
+      "summary": "A concise, evidence-backed map of Dynova’s Turkey GTM landscape showing discovery channels, competitor marketing, communities and self-promotion rules, with explicit unknowns and direct source links.",
+      "channels": [
+        {
+          "channel": "Search and direct web",
+          "why": "Direct discovery via search engines and Dynova-owned discovery funnel are evidenced surfaces in Turkey."
+        },
+        {
+          "channel": "Instagram, YouTube, TikTok and influencer formats",
+          "why": "Social platforms and influencer regulation are documented surfaces; Dynova’s owned social channel is present but buyer-attribution remains unverified."
+        },
+        {
+          "channel": "Health-app and wearable ecosystems",
+          "why": "Local health-app/wearable ecosystems are active discovery/conversion surfaces, even if Dynova’s own app presence is unverified."
+        },
+        {
+          "channel": "Clinic and laboratory websites",
+          "why": "Provider-owned discovery/booking channels appear as potential first-touch surfaces for preventive health products and services."
+        },
+        {
+          "channel": "E-commerce marketplaces",
+          "why": "Marketplaces are a known surface for health products; Dynova’s presence on these surfaces is not confirmed, so attribution is unknown."
+        },
+        {
+          "channel": "Email and partnerships",
+          "why": "Direct inbound channels via email and partnerships are evidenced as surfaces for acquisition/partnerships."
+        },
+        {
+          "channel": "Paid social / Meta ads (Turkey and global)",
+          "why": "Paid media presence is uncertain for Dynova in Turkey; some competitor and industry-ad evidence exists but not for Dynova specifically."
+        },
+        {
+          "channel": "Other Turkish regulatory/market context",
+          "why": "Regulatory context shapes channel viability and messaging in Turkey."
+        }
+      ],
+      "competitors": [
+        {
+          "name": "InsideTracker",
+          "note": "Multi-surface content (ambassador program, Instagram, YouTube) and a combined blood/DNA/wearable data platform."
+        },
+        {
+          "name": "Function Health",
+          "note": "High-volume content ecosystem (Instagram, YouTube health explainers, creator programs) with long-form ad narratives and a U.S.-centric but scalable marketing approach."
+        },
+        {
+          "name": "ZOE",
+          "note": "Long-form YouTube content, podcasts, and TikTok activation."
+        },
+        {
+          "name": "Heads Up Health",
+          "note": "Webinars, podcast, referral program and Turkish storefront presence."
+        },
+        {
+          "name": "SiPhox Health",
+          "note": "Affiliate program and partner-driven content."
+        },
+        {
+          "name": "Superpower",
+          "note": "Waitlist-driven growth with referral mechanics, shareable content (Bio Age cards), viral content drops, creator jobs, and strong Instagram presence."
+        },
+        {
+          "name": "Welltory",
+          "note": "Native campaigns and performance-case studies."
+        }
+      ],
+      "communities": [
+        {
+          "name": "r/QuantifiedSelf",
+          "note": "Promotion limited to the weekly Self-Tracking Tools & Apps Megathread or with [Ad] flair."
+        },
+        {
+          "name": "r/longevity",
+          "note": "Advertising unproven medical treatments and DM-based provider solicitations are prohibited."
+        },
+        {
+          "name": "r/Biohackers",
+          "note": "Vendor talk, discount codes, affiliate links, product DMs, and “where to buy” requests are banned."
+        },
+        {
+          "name": "r/healthylongevity",
+          "note": "Public self-promotion policy not publicly visible."
+        },
+        {
+          "name": "Quantified Self Forum",
+          "note": "Guidelines prohibit spam."
+        },
+        {
+          "name": "WHOOP Community",
+          "note": "Affiliate links and spam prohibited."
+        },
+        {
+          "name": "Biohacking Forums",
+          "note": "General guidelines prohibit spam."
+        },
+        {
+          "name": "Quantified Self Facebook group",
+          "note": "Posts must be about Quantified Self."
+        },
+        {
+          "name": "Longevity Turkey Facebook group",
+          "note": "Group is private."
+        },
+        {
+          "name": "Biohackers Discord",
+          "note": "Discord self-promotion policy not publicly visible."
+        }
+      ]
     },
     "evreon": {
       "taskId": "SSX4iUHYkXZNTAPR868qW6",
