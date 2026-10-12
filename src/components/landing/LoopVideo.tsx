@@ -90,7 +90,7 @@ export function DubbedLoop({
     <div className="relative h-full w-full">
       <LoopVideo key={cur} src={cur} poster={poster} label={`${label}, ${lang}`} sound={sound} />
       <div className="absolute inset-x-2 bottom-2 flex items-center gap-1">
-        {[original, ...dubs.map((d) => d.lang)].map((l) => (
+        {[...new Set([original, ...dubs.map((d) => d.lang)])].map((l) => (
           <button
             key={l}
             type="button"

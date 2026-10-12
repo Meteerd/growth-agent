@@ -4,8 +4,10 @@
 // unpublished in its workspace. Results go to src/lib/client/manus-tasks.json so every machine shows them offline.
 //   pnpm exec tsx demo/manus.ts research dynova evreon
 //   pnpm exec tsx demo/manus.ts landing pack_1d68be0a_1 ...
-//   pnpm exec tsx demo/manus.ts status        (polls every task; fills results and landing titles)
+//   pnpm exec tsx demo/manus.ts hunt hound aclinic dynova   (Mete 11:54: the strongest ads and organic posts per category)
+//   pnpm exec tsx demo/manus.ts status        (polls every task; fills results and landing titles; writes coord/WINNERS_MANUS.md)
 import fs from "node:fs";
+import { z } from "zod";
 import { loadEnv } from "../scripts/env";
 
 loadEnv();
@@ -20,7 +22,31 @@ type Research = Task & {
   communities?: { name: string; note: string }[];
 };
 type Landing = Task & { title?: string; publishStatus?: string };
-type Store = { research: Record<string, Research>; landings: Record<string, Landing> };
+type Hunt = Task & { category: string; items?: z.infer<typeof Winners>["items"] };
+type Store = { research: Record<string, Research>; landings: Record<string, Landing>; hunts?: Record<string, Hunt> };
+
+// Mete's brief (12 Oct 11:54), verbatim apart from the category
+const CATEGORY: Record<string, string> = {
+  hound: "dog-training / puppy apps (Dogo, Woofz, Pupford, Zigzag, GoodPup)",
+  aclinic: "GLP-1 / weight-care telehealth (Hims & Hers, Voy, Numan, Juniper, Ro, Found; SK/CZ creators)",
+  dynova: "DNA tests + personalized supplements (23andMe, Viome, Nebula, Ritual, Care/of, AG1; TR players)",
+};
+const huntPrompt = (category: string) =>
+  `Find the 5 strongest ads and 5 strongest organic posts in ${category} in the last 90 days: paid ads running 45+ days or in 3+ variants (Meta Ad Library), organic posts 5x+ the account median and 50k+ views (TikTok/IG/YouTube), and top carousel posts. For each: URL, platform, format (video/carousel/static), days running or views, why it wins. Facts only, each with its URL; if a number is unknown, say so. Do not ask me questions: decide sensibly and continue. Write everything in English.`;
+const Winners = z.object({
+  items: z.array(
+    z.object({
+      kind: z.enum(["paid_ad", "organic_post", "carousel"]),
+      url: z.string(),
+      platform: z.string(),
+      format: z.string(),
+      brand: z.string(),
+      daysRunning: z.number().optional(),
+      views: z.number().optional(),
+      whyItWins: z.string(),
+    }),
+  ),
+});
 
 const read = (): Store => {
   try {
@@ -90,6 +116,26 @@ if (cmd === "research") {
     write(store);
     console.log(`${packId}: landing started ${taskUrl}`);
   }
+} else if (cmd === "hunt") {
+  store.hunts ??= {};
+  for (const slug of args) {
+    const category = CATEGORY[slug] ?? args.slice(1).join(" ");
+    if (store.hunts[slug]) {
+      console.log(`${slug}: already started ${store.hunts[slug].taskUrl}`);
+      continue;
+    }
+    const out = await callProvider(db, {
+      provider: "manus",
+      note: `manus winner hunt: ${slug} (Mete 11:54)`,
+      estimateUsd: 0,
+      demo: () => null,
+      live: async () => ({ result: await manus.createTask(huntPrompt(category), Winners), usd: 0, units: "1 lite task (credits)" }),
+    });
+    if (!out.value) throw new Error("Manus is not live (key missing or cap reached)");
+    store.hunts[slug] = { taskId: out.value.task_id, taskUrl: url(out.value), startedAt: new Date().toISOString(), state: "running", category };
+    write(store);
+    console.log(`${slug}: hunt started ${store.hunts[slug].taskUrl}`);
+  }
 } else if (cmd === "status") {
   const sentence = (s: string) => (s.match(/^.*?[.;](?=\s|$)/)?.[0] ?? s).trim().replace(/[;.]?$/, ".");
   for (const [slug, r] of Object.entries(store.research)) {
@@ -124,8 +170,37 @@ if (cmd === "research") {
     });
     console.log(`${packId}: ${l.state} ${l.title ?? ""} (${l.publishStatus ?? "no site yet"})`);
   }
+  for (const [slug, h] of Object.entries(store.hunts ?? {})) {
+    if (h.state !== "running") continue;
+    const st = manus.taskState(await manus.listMessages(h.taskId));
+    if (st.state === "running") {
+      console.log(`${slug} hunt: running (${st.brief ?? ""})`);
+      continue;
+    }
+    const v = st.state === "done" && st.success ? Winners.safeParse(st.value) : undefined;
+    Object.assign(h, v?.success ? { state: "done", items: v.data.items } : { state: st.state === "done" ? "error" : st.state });
+    console.log(`${slug} hunt: ${h.state} ${h.items?.length ?? 0} items`);
+  }
   write(store);
+  writeWinners(store);
 } else {
-  console.log("usage: research <slug>... | landing <packId>... | status");
+  console.log("usage: research <slug>... | landing <packId>... | hunt <slug>... | status");
 }
 process.exit(0);
+
+/** coord/WINNERS_MANUS.md for Lane A's research to ingest (only what Manus returned, with its URLs). */
+function writeWinners(st: Store) {
+  const hunts = Object.entries(st.hunts ?? {});
+  if (!hunts.length) return;
+  const lines = ["# Winners found by Manus (Mete's 11:54 brief)", "", "Written by demo/manus.ts from the Manus tasks below; only what Manus returned, each with its URL.", ""];
+  for (const [slug, h] of hunts) {
+    lines.push(`## ${slug}: ${h.category}`, `Task: ${h.taskUrl} (${h.state})`, "");
+    if (h.items?.length) {
+      lines.push("| kind | brand | platform | format | days running | views | URL | why it wins |", "|---|---|---|---|---|---|---|---|");
+      for (const i of h.items)
+        lines.push(`| ${i.kind} | ${i.brand} | ${i.platform} | ${i.format} | ${i.daysRunning ?? "unknown"} | ${i.views ?? "unknown"} | ${i.url} | ${i.whyItWins.replaceAll("|", "/")} |`);
+    }
+    lines.push("");
+  }
+  fs.writeFileSync("coord/WINNERS_MANUS.md", `${lines.join("\n")}\n`);
+}
