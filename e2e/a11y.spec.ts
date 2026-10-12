@@ -4,7 +4,8 @@ test.describe("keyboard and reduced motion", () => {
   test("landing works with the keyboard only", async ({ page }) => {
     await page.goto("/");
     const input = page.getByLabel("Brand website");
-    for (let i = 0; i < 12 && !(await input.evaluate((el) => el === document.activeElement)); i++) await page.keyboard.press("Tab");
+    for (let i = 0; i < 12 && !(await input.evaluate((el) => el === document.activeElement)); i++)
+      await page.keyboard.press("Tab");
     await expect(input).toBeFocused();
     await page.keyboard.type("keyboard-only.com");
     await page.keyboard.press("Enter");
@@ -34,7 +35,9 @@ test.describe("keyboard and reduced motion", () => {
     expect(Number(t)).toBeLessThan(0.1);
     await page.goto("/");
     await page.waitForTimeout(1500);
-    const playing = await page.locator('[data-testid="featured"] video').evaluateAll((vs) => vs.some((v) => !(v as HTMLVideoElement).paused));
+    const playing = await page
+      .locator('[data-testid="featured"] video')
+      .evaluateAll((vs) => vs.some((v) => !(v as HTMLVideoElement).paused));
     expect(playing).toBe(false);
     await ctx.close();
   });
