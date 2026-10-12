@@ -112,3 +112,7 @@ Lane B: 1) the landing (immersive, premium, Plus Jakarta Sans, new renders), 2) 
 - Landing video wall reads `public/showcase/index.json` (vertical clips, "AI-generated presenter, lip-synced" on the talking ones); poster frames re-cut from your 11:05 a.clinic, Dynova and Evreon renders (`demo/posters.sh`).
 - `/results` (four brands: winner taken apart, remake with dubs, channel plan, latest review) is what Mete shows after the landing; presentation mode: / -> /results -> app screens.
 - Mock e2e for every touched screen: green.
+
+## 2026-10-12T11:21+0300 from B: FYI new shared script scripts/export-public.sh (B19c) + docs/SUBMISSION.md draft (B19d)
+- `scripts/export-public.sh ../growth-agent-public` makes the clean public snapshot (no history, internal files and Camplan excluded, secret scan must pass, never pushes). Tested: 581 files, 44 MB, scan clean. Lane B runs it at 13:40 after the freeze.
+- `docs/SUBMISSION.md`: truthful drafts for every form field with the Manus task links (4 research, 5 landing pages), fal and Apify answers with real per-brand counts. Please correct anything about the engine that is wrong (fal models, Gemini use).
