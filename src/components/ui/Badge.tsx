@@ -1,9 +1,10 @@
 import type { ComplianceStatus, ConnectionStatus, RunStatus } from "@/contracts";
 import { cn } from "@/lib/client/cn";
 
-type Tone = "neutral" | "signal" | "pass" | "warn" | "fail" | "violet" | "cyan";
+type Tone = "neutral" | "ink" | "signal" | "pass" | "warn" | "fail" | "violet" | "cyan";
 const TONE: Record<Tone, string> = {
   neutral: "text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)]",
+  ink: "bg-bone text-ink",
   signal: "text-signal bg-signal-dim shadow-[inset_0_0_0_1px_rgb(229_50_45/0.3)]",
   pass: "text-pass bg-[rgb(31_122_77/0.08)] shadow-[inset_0_0_0_1px_rgb(31_122_77/0.28)]",
   warn: "text-warn bg-[rgb(183_121_31/0.08)] shadow-[inset_0_0_0_1px_rgb(183_121_31/0.3)]",
