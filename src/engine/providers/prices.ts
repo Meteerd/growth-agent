@@ -27,7 +27,7 @@ export const PRICES = {
   // tiers); conservative so the cap trips early. See docs/APIS.md.
   // ElevenLabs API list prices (elevenlabs.io/pricing/api, 12 Oct 2026): multilingual v2 $0.08/1K chars, music
   // $0.15/min, SFX ~200 credits each, dubbing v1 $0.50/min; padded so the cap trips early. See docs/APIS.md.
-  elevenlabs: { perThousandChars: 0.1, musicPerMinute: 0.3, sfxEach: 0.03, dubPerMinute: 0.6 },
+  elevenlabs: { perThousandChars: 0.1, musicPerMinute: 0.3, sfxEach: 0.03, dubPerMinute: 0.6, sttPerHour: 0.5 },
   // gemini-3.8-flash paid tier (ai.google.dev pricing, 12 Oct 2026): $0.75/1M in, $3.75/1M out (thinking incl.)
   gemini: { inputPer1M: 0.75, outputPer1M: 3.75 },
 } as const;

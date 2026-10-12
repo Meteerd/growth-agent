@@ -1,14 +1,12 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-12 07:23 +03
-- Current task: STOPPED by Mete at 07:41, A18 paused for the event (last work commit abe91d4)
-- Last sync: 07:23 exit 0, main UPDATED, checks PASS (189/189)
-- Blockers:
-  - fal account balance exhausted (403 locked at 03:24); Higgsfield reached its $8 cap (estimates) at ~04:15. New renders animate nothing until a top-up; stills with camera moves still render.
-  - REVENUECAT, POSTHOG, STRIPE, PADDLE, META keys missing: connectors demo.
-- Next 3: MORNING_A final details -> eval and edge cases from IMPROVE_LOOP -> keep syncing
-- Spend so far (ledger, USD, 04:05): anthropic 10.56 / 150, openai 9.54 / 60, fal 7.25 / 8 (balance out), higgsfield 6.00 / 8, apify 2.33 / 4, firecrawl 0.07 / 3, youtube 0, manus 3 lite tasks
+- Time: 2026-10-12 09:37 +03 (event day, A18 live)
+- Current task: A18 step 4, flagship re-renders (Hound first)
+- Last sync: 09:26 exit 0, main UPDATED, checks PASS (208/208)
+- Blockers: Gemini key is on the free tier (20 requests per model per day); the watcher falls back across 3.8-flash, 3.6-flash, 3-flash-preview, 2.5-flash and 3.5-flash-lite until billing is on (Mete informed 09:20).
+- Voices (assets/voices.json, cast from the ElevenLabs library, 3 takes each, Gemini listened): a.clinic sk "Hope - Natural, Clear and Calm" (OYTbf65OHHFELVut7v2H); Hound en-GB "Lucy - Fresh & Casual" (lcMyyd2HUfFzxdCaC4Ta); Dynova tr "Fili - Warm Turkish Female" (FDs1ZX5J4e4f2c2erxtW); Evreon en-GB "Archer - Conversational" (Fahco4VZzobUeiPqni1S). Model eleven_multilingual_v2.
+- Done today: ElevenLabs provider (TTS with timestamps, voice library, music v2.5, SFX, dubbing, Scribe); Gemini watcher (Files API + JSON schema, model fallback); winners watched (caption style + music/SFX/voice in each blueprint); live per-frame captions (bundled OFL fonts, 1-3 words, pop, spoken-word highlight, key-word slam, breathing; liveness test); camera-based shake metric + automatic vidstab; per-shot caption zones by Claude vision; review = Claude frames + Gemini whole video with sound, stricter wins.
 
 ## Log (one line per finished task, newest last)
 - 23:17 A01 done: Next.js 16.4 scaffold, check/build/dev OK

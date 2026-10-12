@@ -135,7 +135,7 @@ export async function planShots(
 const PHOTOREAL =
   "Photoreal vertical phone video frame, shot on an iPhone, natural window light, real lived-in home, candid framing, slight motion blur and grain, true-to-life colors, no text, no logos, no watermark, not glossy, not CGI.";
 
-async function keyframeFor(
+export async function keyframeFor(
   db: Db,
   brand: Brand,
   c: Concept,

@@ -105,6 +105,16 @@ export function groupWords(words: CapWord[], per = 3, maxChars = 18): CapGroup[]
     }
   }
   if (cur.length) groups.push(cur);
+  // a lone short word ("A", "a", "to") never flashes alone: it joins the next group when that one has room
+  for (let i = 0; i < groups.length - 1; i++) {
+    const g = groups[i]!;
+    const nx = groups[i + 1]!;
+    if (g.length === 1 && g[0]!.word.length <= 3 && nx.length < per && nx[0]!.start - g[0]!.end < 0.35) {
+      groups[i + 1] = [...g, ...nx];
+      groups.splice(i, 1);
+      i--;
+    }
+  }
   return groups.map((g, i) => {
     const t0 = g[0]!.start;
     const end = g.at(-1)!.end;
@@ -208,7 +218,13 @@ function layoutGroup(
   return { placed: [] as Placed[], size, blockH: 0, cy: 0 };
 }
 
-const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+/** Escapes text; an 8-digit hex colour (#RRGGBBAA) becomes rgba() so every SVG renderer reads the alpha. */
+const esc = (s: string) => {
+  const m = /^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(s);
+  if (m)
+    return `rgba(${Number.parseInt(m[1]!, 16)},${Number.parseInt(m[2]!, 16)},${Number.parseInt(m[3]!, 16)},${(Number.parseInt(m[4]!, 16) / 255).toFixed(3)})`;
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+};
 
 /** SVG of the caption layer at time t (transparent background). Empty string when nothing is on screen. */
 export function captionFrameSvg(tr: CaptionTrack, groups: CapGroup[], t: number): string {
@@ -220,12 +236,9 @@ export function captionFrameSvg(tr: CaptionTrack, groups: CapGroup[], t: number)
   const g = groups.find((x) => t >= x.t0 && t < x.t1);
   if (g) {
     const region = regionAt(tr, g.t0);
-    // only the words already spoken are laid out (re-centred as each one pops in, like CapCut pop-up captions);
-    // fade/typewriter keep the whole group's layout so the line does not move
-    const shown =
-      style.animation === "fade" || style.animation === "typewriter"
-        ? g
-        : { ...g, words: g.words.filter((w) => t >= w.start - 0.03) };
+    // only the words already spoken are laid out (re-centred as each one pops in, like CapCut pop-up captions), so
+    // a box behind the line grows with it
+    const shown = { ...g, words: g.words.filter((w) => t >= w.start - 0.03) };
     const lay = layoutGroup(shown, style, font, region);
     // subtle continuous motion so no frame is frozen
     const breathe = 1 + 0.018 * Math.sin((2 * Math.PI * t) / 1.4);
@@ -240,7 +253,7 @@ export function captionFrameSvg(tr: CaptionTrack, groups: CapGroup[], t: number)
       const x1 = Math.max(...lay.placed.map((p) => p.x + p.width)) + lay.size * 0.35;
       const y0 = lay.cy - lay.blockH / 2 - lay.size * 0.18;
       inner.push(
-        `<rect x="${x0.toFixed(1)}" y="${y0.toFixed(1)}" width="${(x1 - x0).toFixed(1)}" height="${(lay.blockH + lay.size * 0.3).toFixed(1)}" rx="${(lay.size * 0.22).toFixed(1)}" fill="${esc(style.backgroundColor ?? "#000000")}" opacity="0.85"/>`,
+        `<rect x="${x0.toFixed(1)}" y="${y0.toFixed(1)}" width="${(x1 - x0).toFixed(1)}" height="${(lay.blockH + lay.size * 0.3).toFixed(1)}" rx="${(lay.size * 0.22).toFixed(1)}" fill="${esc(style.backgroundColor ?? "#000000")}"/>`,
       );
     }
     for (const p of lay.placed) {

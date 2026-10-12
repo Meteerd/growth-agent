@@ -196,6 +196,10 @@ export async function reviewRender(
             }
           : null,
         round,
+        captions:
+          final && bp?.captionStyle
+            ? "Live spoken-word captions (1-3 words, synced to the voice, in the winner's text style) replace the scripted on-screen lines on purpose; judge their placement and legibility, not whether the scripted lines appear."
+            : undefined,
         previousRound: prior?.length ? prior : undefined,
         measured: measured ?? undefined,
       }),

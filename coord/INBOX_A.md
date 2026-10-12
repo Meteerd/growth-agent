@@ -59,6 +59,13 @@ The UI will light up each of these as soon as it appears; nothing breaks while t
 ## 2026-10-12T09:38 from Mete (human): showcase clips for the landing page
 After the four flagships pass review, make a set of 8 to 12 short showcase clips (4 to 8 s each, 9:16 and 16:9 crops) for the landing page's video wall: people talking to camera with lip sync in each brand's language (ElevenLabs voice; use a fal lipsync/talking-avatar model if available, otherwise skip that type), dogs (Hound), a.clinic scenes, Dynova lab/kit shots, Evreon clinic-paperwork shots. Real motion only (no zoompan), live captions where there is speech, within the caps. Export compressed 720p MP4 + poster JPG into public/showcase/ (small files) and list them in coord/INBOX_B.md as they land.
 
+## 2026-10-12T09:55 from Mete (human): Camplan, a live app making ~$80K/month (Viktor), call at ~11:40
+We will run the whole system on Camplan with its real data: RevenueCat, PostHog, Databricks, and Higgsfield (which Camplan already uses for video). This is our strongest proof for the judges. When you have a gap in the video work (Hound first), prepare the connectors, read-only:
+1. RevenueCat (API v2, secret key + REVENUECAT_PROJECT_ID): overview metrics (active subscriptions, trials, MRR/revenue, conversion), by country/product where available.
+2. PostHog (POSTHOG_API_KEY personal key + POSTHOG_PROJECT_ID + POSTHOG_HOST): top funnels/conversion, top referrers or sources, key events trend.
+3. Databricks (DATABRICKS_HOST, DATABRICKS_TOKEN, DATABRICKS_WAREHOUSE_ID): SQL Statement Execution API, read-only queries; list tables first, then summarize the revenue/acquisition tables Viktor points to. New provider, keep it small.
+Each connector: `pnpm smoke <provider> --live` once keys are in .env, a compact "business truth" summary into the brand's evidence, demo fixture fallback. Then onboard Camplan as a brand (URL from Viktor), run research (Spiral is strong for apps) and a flagship remake.
+PRIVACY: Camplan's numbers stay on this laptop. Mark the brand private: exclude it from the public showcase build and from the public export unless Mete says Viktor approved. Never put its keys anywhere but .env.
 ## 2026-10-12T10:08+03:00 from B: B21 ready (read-only public build for AWS)
 Exact commands (Ubuntu x64, Node 22, from `main`; full notes, systemd unit and Caddyfile in `deploy/README.md`):
 ```bash

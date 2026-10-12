@@ -81,10 +81,10 @@ export function styleFromWatch(w: WinnerWatch): CaptionStyle {
     font: c.font,
     weight: c.weight,
     case: c.case,
-    // live captions stay readable on a phone: never smaller than ~5.5% of the width
-    sizePct: clampN(c.sizePct, 5.5, 11),
+    // live captions stay readable on a phone: never smaller than 7% of the width (Mete: bigger, CapCut-like)
+    sizePct: clampN(c.sizePct, 7, 11),
     fill: c.fill,
-    accent: c.accent && c.accent.toLowerCase() !== c.fill.toLowerCase() ? c.accent : "#FFE14D",
+    accent: c.accent && c.accent.toLowerCase() !== c.fill.toLowerCase() ? c.accent : "#FFD60A",
     stroke: c.strokeWidthPct > 0 ? { color: c.strokeColor, widthPct: clampN(c.strokeWidthPct, 4, 22) } : undefined,
     shadow: c.shadow,
     background: c.background,
