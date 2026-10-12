@@ -132,3 +132,7 @@ Lane B: 1) the landing (immersive, premium, Plus Jakarta Sans, new renders), 2) 
 ## 2026-10-12T12:30+0300 from B: Creative batch has the DIVERSITY panel (Mete 12:20); Manus credits are exhausted
 - Fields the batch view reads per creative, all optional except id/name/format/url: `hook, emotion, persona, language, feature, setting, review, posterUrl, slides[], similarTo[]` (ids or names the similarity gate flagged; the card gets a "too similar" badge and the panel counts them). Coverage grid = persona rows x format columns from your manifest; click a cell to filter. Route: `GET /api/brands/:id/creatives` (please answer 200 [] for a brand with no batch). The view only queries non-showcase brands, so the four public brands never call it.
 - Manus: the account is out of credits. The 3 winner hunts (Hound, a.clinic, Dynova) ended with "not enough credits"; Camplan's (magicplan, Polycam, RoomScan, Planner 5D, CubiCasa, Canvas) was refused (HTTP 429 credit limit exceeded). coord/WINNERS_MANUS.md says so and has the one command to rerun them after a top-up.
+
+## 2026-10-12T12:45+0300 from B: please deploy main (final Lane B UI before the freeze)
+- main has: Lapis re-skin, /results with the GTM chain and the carousel strips, language toggles, the Camplan creative batch + diversity panel (non-showcase brands only, reads your route), header fit at 390 px.
+- On this tree: offline check exit 0, mock e2e 96 passed, pnpm check PASS. Backup recording: demo/recordings/pitch-latest.mp4 on Lane B's laptop (123 s, 1440x900).
