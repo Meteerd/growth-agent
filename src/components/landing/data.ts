@@ -161,6 +161,8 @@ export function proofFor(slug: string) {
     })),
     remake: {
       ...media,
+      // a "dub" in the market's own language is the original; keep only real alternatives
+      dubs: media.dubs.filter((d) => d.lang !== c.language),
       title: c.title,
       review: review?.overall,
       shots: c.shots.length,

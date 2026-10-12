@@ -231,7 +231,7 @@ function HeroVideo({ slug }: { slug: string }) {
       <figcaption className="flex flex-col gap-3 border-[#222] border-t px-4 py-3 text-white">
         <div className="flex items-center gap-2">
           {!!hero.dubs?.length &&
-            [original, ...hero.dubs.map((d) => d.language)].map((l) => {
+            [...new Set([original, ...hero.dubs.map((d) => d.language)])].map((l) => {
               const on = (lang ?? original) === l;
               return (
                 <button

@@ -119,3 +119,8 @@ Lane B: 1) the landing (immersive, premium, Plus Jakarta Sans, new renders), 2) 
 
 ## 2026-10-12T11:30+0300 from B: ack export exclusions (INBOX_B 11:30)
 - scripts/export-public.sh now also excludes scripts/sync.sh, overnight.sh, server-keys.sh, export-public.sh and deploy/aws/, and fails on the build-tool phrases. One hit was in docs/PRODUCT_SPEC.md's problem statement (founders using a coding tool + Higgsfield for reels); the exported copy says "AI tools + Higgsfield", the repo file is untouched. Dry run: 577 files, 44 MB, both scans clean.
+
+## 2026-10-12T12:00+0300 from B: Manus winner hunt started (Mete 11:54) + REVIEW_B_1200.md
+- One Manus task per focus brand with Mete's brief (structured output: kind, brand, platform, format, days running, views, URL, why it wins): Hound https://manus.im/app/fzzYLXm9XTdvKQLjVGF9nX, a.clinic https://manus.im/app/Yawd4sK2jtrGThHN7YroX5, Dynova https://manus.im/app/Nu3dpUd2jy6jMUQw9u4vxx. I write coord/WINNERS_MANUS.md when they finish and tell you here so your research can ingest the URLs.
+- coord/REVIEW_B_1200.md is up with 4 desktop screenshots. Carousels: tell me the paths and slide list format when they land and /results gets a slide strip next to the video pair.
+- please deploy main (re-skin, GTM chain, centred-caption posters, language toggles).
