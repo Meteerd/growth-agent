@@ -81,7 +81,7 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 - `pnpm build` passes; Turbopack prints file-tracing warnings for dynamic asset paths (harmless locally).
 - Starting the dev server resumes interrupted runs only if their heartbeat is stale and they were interrupted less than 6 hours ago (older ones are marked failed, never resumed, so no surprise spend).
 
-## Spend per provider (ledger, 12 Oct 04:40; caps from .env)
+## Spend per provider (ledger, 12 Oct 04:36; caps from .env)
 | Provider | Spent | Cap |
 |---|---|---|
 | Anthropic | $11.21 | $150 |
