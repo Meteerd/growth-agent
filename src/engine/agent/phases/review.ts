@@ -70,6 +70,29 @@ async function watchOwn(c: Concept, videoUrl: string, key: string) {
   return { info, frames };
 }
 
+export interface PriorScore {
+  idx: number;
+  score: number;
+  /** frame, clip and caption are the same as when this score was given */
+  unchanged: boolean;
+}
+
+/** The previous review's scores, marking which shots are unchanged since (calibrates the next review). */
+export function priorScores(prev: Review | undefined, before: Concept["shots"], now: Concept["shots"]) {
+  if (!prev) return undefined;
+  return prev.perShot.map((p): PriorScore => {
+    const a = before[p.idx];
+    const b = now[p.idx];
+    const unchanged =
+      !!a &&
+      !!b &&
+      a.keyframeAssetId === b.keyframeAssetId &&
+      a.clipAssetId === b.clipAssetId &&
+      a.onScreenText === b.onScreenText;
+    return { idx: p.idx, score: p.score, unchanged };
+  });
+}
+
 export async function reviewRender(
   ctx: PhaseCtx,
   c: Concept,
@@ -77,6 +100,7 @@ export async function reviewRender(
   assetId: string,
   round: number,
   regenerated: number[],
+  prior?: PriorScore[],
 ): Promise<Review> {
   const asset = await getAsset(ctx.db, assetId);
   if (!asset) throw new Error("render asset missing");
@@ -110,6 +134,7 @@ export async function reviewRender(
             }
           : null,
         round,
+        previousRound: prior?.length ? prior : undefined,
       }),
     },
   ];
@@ -171,6 +196,7 @@ export async function review(ctx: PhaseCtx): Promise<void> {
   }
   const bp = c0.blueprintId ? await getBlueprint(db, c0.blueprintId) : null;
   const regenerated: number[] = [];
+  let last: { review: Review; shots: Concept["shots"] } | undefined;
   for (let round = 1; round <= 2; round++) {
     ctx.check();
     const { asset } = await renderConcept(db, c0.id, "draft", {
@@ -179,7 +205,16 @@ export async function review(ctx: PhaseCtx): Promise<void> {
       phase: "review",
     });
     const c = (await getConcept(db, c0.id))!;
-    const rv = await reviewRender(ctx, c, bp, asset.id, round, regenerated);
+    const rv = await reviewRender(
+      ctx,
+      c,
+      bp,
+      asset.id,
+      round,
+      regenerated,
+      priorScores(last?.review, last?.shots ?? [], c.shots),
+    );
+    last = { review: rv, shots: c.shots };
     if (round === 2 && rv.decision === "regenerate") rv.decision = "accept";
     const weakest = rv.perShot.reduce((a, b) => (b.score < a.score ? b : a), rv.perShot[0]);
     if (rv.decision === "regenerate" && weakest) rv.regeneratedShots = [weakest.idx];

@@ -102,3 +102,22 @@ describe("A17 flagship remake", () => {
     expect(r.reviews.length).toBeGreaterThanOrEqual(1);
   });
 });
+
+describe("review calibration", () => {
+  it("marks shots unchanged only when frame, clip and caption are the same", async () => {
+    const { priorScores } = await import("@/engine/agent/phases/review");
+    const shots = [
+      { idx: 0, keyframeAssetId: "a", clipAssetId: "c", onScreenText: "x" },
+      { idx: 1, keyframeAssetId: "b", onScreenText: "y" },
+      { idx: 2, keyframeAssetId: "d", onScreenText: "z" },
+    ] as never[];
+    const now = [
+      { idx: 0, keyframeAssetId: "a", clipAssetId: "c", onScreenText: "x" },
+      { idx: 1, keyframeAssetId: "b2", onScreenText: "y" },
+      { idx: 2, keyframeAssetId: "d", onScreenText: "z shorter" },
+    ] as never[];
+    const prev = { perShot: [0, 1, 2].map((idx) => ({ idx, score: 70 + idx, issues: [] })) } as never;
+    expect(priorScores(prev, shots, now)?.map((p) => p.unchanged)).toEqual([true, false, false]);
+    expect(priorScores(undefined, shots, now)).toBeUndefined();
+  });
+});
