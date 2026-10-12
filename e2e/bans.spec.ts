@@ -59,7 +59,9 @@ for (const path of ROUTES) {
         if (
           cs.animationIterationCount === "infinite" &&
           cs.animationName !== "none" &&
-          !el.closest('[aria-busy="true"]')
+          !el.closest('[aria-busy="true"]') &&
+          // B20: the landing's brand strip is the one marquee the marketing page is allowed (still under reduced motion)
+          !el.classList.contains("marquee-track")
         )
           out.push(`ambient animation ${cs.animationName}: ${name(el)}`);
       }
