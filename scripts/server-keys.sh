@@ -31,7 +31,7 @@ scp -q "$TMP" "$HOST:/srv/nexus/shared/.env.secrets"
 ssh "$HOST" "chmod 600 /srv/nexus/shared/.env.secrets && sed -i 's/^NEXT_PUBLIC_DATA_MODE=.*/NEXT_PUBLIC_DATA_MODE=live/' /srv/nexus/shared/.env.production"
 H="$(ssh "$HOST" "caddy hash-password --plaintext '$PW'")"
 ssh "$HOST" "sudo tee /etc/caddy/Caddyfile >/dev/null" <<CADDY
-$DOMAIN {
+(app) {
 	encode zstd gzip
 	@writes method POST PUT PATCH DELETE
 	basic_auth @writes {
@@ -45,6 +45,15 @@ $DOMAIN {
 		rewrite * /index.html
 		file_server
 	}
+}
+rekampols.xyz {
+	import app
+}
+www.rekampols.xyz {
+	redir https://rekampols.xyz{uri} permanent
+}
+$DOMAIN {
+	import app
 }
 CADDY
 ssh "$HOST" "sudo caddy validate --config /etc/caddy/Caddyfile >/dev/null 2>&1 && sudo systemctl reload caddy"

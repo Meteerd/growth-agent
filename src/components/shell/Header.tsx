@@ -27,7 +27,7 @@ export function DataModeChip() {
   if (READ_ONLY)
     return (
       <span
-        title="Recorded runs only. Run Nexus locally to start a run."
+        title="Recorded runs only. Live runs happen in the operator app."
         className="inline-flex h-6 items-center rounded-chip px-2.5 font-medium text-[11.5px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)]"
       >
         Read-only showcase

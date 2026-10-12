@@ -1,6 +1,6 @@
 import { expect, type Page, test } from "@playwright/test";
 
-// B21: the public read-only build (NEXT_PUBLIC_READONLY=1, no keys, fresh database). See deploy/README.md.
+// B21: the public read-only build (NEXT_PUBLIC_DATA_MODE=showcase, no keys, fresh database). See deploy/README.md.
 test.skip(process.env.E2E_READONLY !== "1", "runs against the read-only production build only");
 
 type Brand = { slug: string; heroVideo?: { runId: string } };
@@ -61,7 +61,7 @@ test("a visitor pressing Start a run gets the read-only message, not a crash", a
   const start = page.getByRole("button", { name: /start a run/i }).first();
   if (await start.count()) {
     await start.click();
-    await expect(page.getByText(/read-only/i).first()).toBeVisible();
+    await expect(page.getByText(/Live runs happen in the operator app/).first()).toBeVisible();
   }
   expect(problems.filter((p) => !p.includes("403"))).toEqual([]);
 });
