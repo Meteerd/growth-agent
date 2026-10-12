@@ -1,0 +1,741 @@
+{
+  "recordedAt": "2026-10-11T23:55:15.191Z",
+  "query": "B2B video ads for clinic or medical practice software showing a busy front desk, ringing phones or doctors doing paperwork late, solved by AI scheduling and intake automation",
+  "search": {
+    "query": "B2B video ads for clinic or medical practice software showing a busy front desk, ringing phones or doctors doing paperwork late, solved by AI scheduling and intake automation",
+    "app_type": "app",
+    "multimodal": true,
+    "filters": {
+      "campaign_types": null,
+      "min_run_days": 14,
+      "languages": [
+        "en"
+      ],
+      "aspect_ratios": null,
+      "is_active": null,
+      "min_eu_reach": null,
+      "creative_type": "VIDEO",
+      "brand_uuid": null,
+      "meta_page_uuids": null
+    },
+    "total": 10,
+    "data": [
+      {
+        "ad_platform": "meta",
+        "uuid": "095da563-4bb0-4bf7-9996-ed76751e13a0",
+        "meta_page_uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+        "brand_uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+        "similarity_score": 0.461054368834178,
+        "original_media_url": "https://assets.spiral.ad/c/m0XJult4Sejw_YP2tq4tph0Uvl7qq9Zl9cCQpjHBFMlcDce2rrf4sR5idj93CAnXcshWJ_PA_tD_lj_YSjgEtLUZ1DEtbGCRLIF0FLN4Bzm8VaOUjmuAcc1TgtWEzSq7jlG0116cwPmdvQi9AKs1A6dktZYzdVk",
+        "resized_media_url": "https://assets.spiral.ad/c/krvtPT8KLFW0FLqhFOoAycEQGnb9IFwtP7YNClClqRqjIR_xNpYsquuu64jz8P2UsXf_wTkMxuEHgLjrUVItLI9ozFstZKITEZJTJJ4LvEUV3byklkBqhb3lz-WEUzSve_7-rjRmYuT9dpIXar9P9aR6CQ",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LJE{Omt74mkBw?axNKa{$yWBofoL",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/-Y0chhaBwB7HjmEA0waeQBJI63Wb2XDAPA719Zn96L0sXG2WGlNFY8DxI8xKdJPhN4FqJs3nStS37AIjrXfIb9yIkYz1bJ34s7L6UJCY4iIpv-YoA8BbkHtSDElmhQ-zmVvEj-hFFj_8jQzb_k8XH8LfHBV0Iw"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "9daa8d51-c9c8-4cfe-a6e4-bb01f621cdc9",
+        "meta_page_uuid": "e693beca-d8c9-4407-9eef-4fa5bc87dcf8",
+        "brand_uuid": "2c573a08-0a90-4577-ab29-9d793959bd8d",
+        "similarity_score": 0.442083626985553,
+        "original_media_url": "https://assets.spiral.ad/c/J1UipY-LQKxzwr4uwmUmnFoi2vWNf45EC-C4b8DcwLDxD-ljQFGYVpBduxCkD6XHh6Qit0TRgQz5qBlA9Cjb4XQEknEDJwB5JtwMtTru5-7GbPtMtWMaqBs-4wWne8gOLtQVVUfTw4WP-f9D0Oknr6R964AKQjUWTFYbc40ktMUYZmRZtA",
+        "resized_media_url": "https://assets.spiral.ad/c/JzdJbxpu5ILezCT6xHQM7-PD5Yzyepp19H6EQPxl681Bo56QLO8Kzw9WhWqXuaGT8qg1Ae0dUmuRBkengDhQn2bMadUApH927x7tSUXJ3DvE3WTsHU-iJ0U9jMyVqnKuBQoWnhJLk9p3zJvumuaOaxGkYuwNtPtmyf35epPVZiMt",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LMH1_IROJRxu?^oIi_xu?Z^+wcR*",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/Q4MLfmx-Ujjefs3eqYmnzzA9ComoGd-QTjabvLi9bOdeCMq6LIpzsPJ-oQFc4dOZd55YtqZIi4Jfnvdq3KgOz6UbEcO0r7_GhbwYmtBuhm3flS_mGu8JgR1m5i7poQqkmz6W7-7Z2rTgiAZ0I6IN7Azg4vHd0d7s-u5U0iNTv5HoSoL3"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "44c32a36-0e4e-4350-81e4-8d9396577870",
+        "meta_page_uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+        "brand_uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+        "similarity_score": 0.43800682962145,
+        "original_media_url": "https://assets.spiral.ad/c/VP4yFk7y8T5I2Ez79eeS2odZJyD-S3nN4PjsuSzDRUaeaDBksxr_464RtGY2BSj25Vvx1GgZxMA63KxoCi4GliYepoRf_CyZr_pA3SZ9AznZNwM6KC3yWVDsDuU1rR8koslQNaoI4gnNgIlqhheWf7Alvt3DDmY",
+        "resized_media_url": "https://assets.spiral.ad/c/KChBVO2SxAwsjoSV1Gmrf8n-qHwmkgFcTLDnw9q_SfBC9S2ctdJWzD_Q0MZib514h6yEkQoJJa1NFEAqEG3hRLn6FPfrzexNJ8eBl1M0eiayQTFPJ1X5WVpDsAMwYcF8kBoDgeo0CVt2NK00BC7gr5vi1A",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LbG[fyt8-:oz~ToftQj[t5a{M{f5",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/HGxMe8mBfvxKaOC-PcYTKas447UwXMBc2eAFT1kQNSpIdrarIDB7zzU9kV2JX0EQLsj33F4NpkaXlyNjV9erm3rrbD26o2BsPvrMyeqPGPpjvTgx_W_mJhbEMWwe9XJRXm6hmSjaQWxQ8iXyuSNxZnvdqfRDNQ"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "6f0c58ae-b58d-4fa4-a7d1-9c6e2ddc38aa",
+        "meta_page_uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+        "brand_uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+        "similarity_score": 0.43535522782413,
+        "original_media_url": "https://assets.spiral.ad/c/QX1FkXFnjGbHvmqo1mOfXwHsUonQg3k-jc7i9463f-TQ-WFVVxJ701FSPmcajTLpi4iaen_95kfuuQb8m39FbjfTZaHFYPE7zK67HYa0Q9OU5QwGN-LXYAJyHyHUxLEDAQ5Rk2Y1IlOietrqNkAwXlhal_0vEmE",
+        "resized_media_url": "https://assets.spiral.ad/c/j8nFCP1W2h8Lt4zkcz9dQwhkJEy_C8uk3mifpNmtolTLhNUfjtCyA-lnWifwq7ALOZjoik29Yw6zKRD3Nw1tGQSmxTpA25PiJqt7bZszTXVInaM3XkYNHVdNZE4VnAd5-J7hHP4vE6WuadMyzq0VJDCAcA",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LQF}~0tStm-;~q%M%Mxu?bxuxuxa",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/rL5-siIVTgKQGcCCBYF4FK_KRKYTEbnEw7OiUWaGs78kEu7qJiVhVX_KSi5LqVM9ONvejqKlqiMIygfTfPAliSQ-iNmG2CvtCAmcLAa9RJH6O4LEH4MTS5bnPBXoccPyJVwU3SouXtvyNIo648zBFfVvPAFOKw"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "be96846e-e9a5-444e-b9fc-dd91b263d8d1",
+        "meta_page_uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+        "brand_uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+        "similarity_score": 0.435006178023653,
+        "original_media_url": "https://assets.spiral.ad/c/X4G1JzGqhvfDGvcpjbCI2bTWJr3pkK3N2bpZ91iqNy7C4MrpIa4XtbE5lZ7FQR9hnYf0ch6EoBY7c8GAUzY1D7CxmgOxF-pgiMO16gKykGtnN3rCU4GqUiY-rKdxq-FB-t3RxgarhfgYpBsKykTqUECmCnMEmWI",
+        "resized_media_url": "https://assets.spiral.ad/c/BnMa9zM7iv70zJw29XDB-h37XWyOuLvIqnA_YuSo3N52kVJ6WZGGiKeou2HfvCdu_5uWM73h7-4DhvVIVSMjkHyciYGpkeu5AhNLmNH52cJRo-WHFPAiUuJF3Vt2scqtDSxy3YWawFI8RvzznrwYU1zwvQ",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LGHo2l9FFxIA9EIU.8ax0JtRxGRj",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/Y3sI6ATXoQOHnu7DEAwORfm-lfb5VXrhsjI7RKRa_FZ84C5Zz6hYmY0Le1tXg_TBWMNo5VY3FptL8j6Aklhg3mjx9JSkCWyvWAZBg4kHpiG4NaZzbJY43ThxnjjJLejEiiKDCGcluYwfmP67rdH1Ujp_5yUggg"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "5c368de5-060c-4fc1-a64a-9c361cbe1f79",
+        "meta_page_uuid": "b2ac94c1-a521-45d0-9a37-813082c59084",
+        "brand_uuid": "9156d70c-e6d9-4a50-96fe-c4a64ef461c4",
+        "similarity_score": 0.431304799007253,
+        "original_media_url": "https://assets.spiral.ad/c/FHLOuprxIp6fRLFBxXEUdJVgAMHMa8HvtNOgbdAZutEcgxkBSwVN580Wm2l1uH24vSYOcnJQnaZcDdVarM0zgOYrRp7M5i3sQ9_jBz2x_j0qSjWQENAcvw3G8PchJHfLbeOZ-8ShTC8xBqqGkM_u3yvZuYckJLA",
+        "resized_media_url": "https://assets.spiral.ad/c/r-whNI_tW2QcudWAUUTLdOMTiGQLufOpLFT2euYp3tvGZP0XopXHL1PmefWo6fMhhWwMjOCzhh-Kc8CpAPJazT8S2wAXXzw5GwmTke2FfiarAAU6RjxA1UrRfWbsTZt3P1ENzGn_gJDRmoWJ6fwVKFnbQw",
+        "width": 720,
+        "height": 900,
+        "aspect_ratio": "4:5",
+        "blurhash": "LUQvd[ROV{-;M:%gajM{4URPait8",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/-C7WUbj8aoWbXx4LsixurRKhoN-wnkwzVMR2WR2ik5g39eTPXrARcg8R1Q4fABjEgzdKJSE9Bnj2U4eWU93Ft94iSQMcMenbxdLkv4rDZt2BpUXpH-NnbHLsafl7oy3IC4G3QTQneX6L0F5aNkOHkykxOXRuKw"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "0be4a484-11af-441c-bcb8-dda7909f99c8",
+        "meta_page_uuid": "b2ac94c1-a521-45d0-9a37-813082c59084",
+        "brand_uuid": "9156d70c-e6d9-4a50-96fe-c4a64ef461c4",
+        "similarity_score": 0.430384019131673,
+        "original_media_url": "https://assets.spiral.ad/c/vyoLSPuinJveNAw8X_Ru72U-dhcZPhHW7Uuc1TGiluE6vDuHpDlztdxqaIxKGxjVQPZlHiRhZKhuoAq6anhA1EH__YK3tXxxBOZN_63bjzG6QbmlSWAvj_0lCTuJT8WAKehOMd_ObTxahtekmyQTDQxxAAjKNQ",
+        "resized_media_url": "https://assets.spiral.ad/c/9Zvz6vAE3rpfMP44NcPNPZkI70o_4p1zHhQrbcp3BGWXvI487NHzt95R651VpsNluamJ6Cj-s0_Lxksmh8A_VG1JnutOCfjKwEh6cJwdenPNvzfqWaGM4HiJ9lio7hk54As9fJEKj6_gpQI57rlHjiPn",
+        "width": 720,
+        "height": 900,
+        "aspect_ratio": "4:5",
+        "blurhash": "LMEo;_?d*H.8EuM{9rNExVMxRPWA",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/WLoxKCbn_IEi1brx3wiX8RuE9Bi3-xj5Jlq3v9-_qrMCCrq6_fg23mZdWEw6cORsiINcBV7031BQrUR-t-fAzJ710ZyuHn813LO0u6Dzuthj4-A8TKGwAwt88u9OpjOr07g_I0YSCUzgD1XStlcDBhqew7BP2A"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "a2277d81-22a2-4a5a-9fdb-056a3f4648e5",
+        "meta_page_uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+        "brand_uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+        "similarity_score": 0.429481476735186,
+        "original_media_url": "https://assets.spiral.ad/c/IeIYmPgCpyQkpq_F28d3kR30LYtqJCagq-yvAJTOjfbmjpa1r6jH6Y3YenFD3bkdE1h396yW3NpbxT4dZIFiuQdEvI7TlZsrRND0befmtOInn5ifUt8GECjgOlU8-eG91K4WDYweDKEtKTr5b_Gxa3pq7-emQg",
+        "resized_media_url": "https://assets.spiral.ad/c/4JktwqOLmi9DKim9ySXbA-ZKLFulU6qJvzHEFQ_ir1WgfSlVHdtZHgh5LXth7m8ZcMVPrUWPVQ4L_SG5dYDv3zcpWlqppzaGczG7ADpTgA-cWQO0HohLuL1hB0eZy-YYgyiMpLbN3FrsP4JVJGc12-p3",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LFHxHMxwyZ~D+axuo#xa$@aIQ+D$",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/vXL4MVJu2-DJ8PIQQwNY5wTaCtVHzKZfjJAMvxoVRFdM1UyY6ABpkLgCKkemUwHuGHKX2XfbeRHLGIr2OZm-8zpbaGMuCnxG2S3P4CISbsDufmOs8a3wmSp-nd9m9OOHFLyz5Qd6p9Mk8EdwtkObb0_iSlxP"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "6c56370a-3854-4cf5-b891-341bae7a0dc2",
+        "meta_page_uuid": "01b48f08-d0d4-4fcc-a420-104a039c0495",
+        "brand_uuid": "37b0a77c-fd7e-4f66-a8bb-9f716abd1145",
+        "similarity_score": 0.428276513198571,
+        "original_media_url": "https://assets.spiral.ad/c/Q7PN6lG24y0c3uPVIOuhLHzWBY0jmBDKGbaMxLIERVN1Uqr8pSZQe_2-hDp3Edyo4FD9K4PjUCoi1psYc4iVtw70-vfC5XiC5RW3eAKWbwb9kr7LSutMqFRclJj4HX0iL8PczifWBtCv9hP1ovAZgr9cM4P5ZA",
+        "resized_media_url": "https://assets.spiral.ad/c/czsq5IKc-fkmqAI8WgNY3enEWu2qVUqXV_4dyYe0coa7c-fQVlMOMLDIu4kbHXN8Ocbyd-ZWBKlu7ip7O0fuAGSFoh3Nn39UAorupdJ2U2LtkSK8VF6IcSsoEy65osxM2AwYN7dUw-0mog6zG6Z9X9LO",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LES6Pm%M~q%MIUayt7ay~qof9FWB",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/GPz0WFUtvEJ53B8v9y-YKYELYmZtD8MguWULwmnhxEU0r0PaXolZFyGdoO3LDNzFYAtDO4C0FpLOrWx19GORMjZvuwSeyy1zcDx-Tit40gB-XiH0Hyu3otfY-SRkjhNWirwP9aKR7FjwjgbDo537uXPxOmpz"
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "545f3a2c-3ea4-41e6-a433-6df86e4cae09",
+        "meta_page_uuid": "517a86d8-2f24-4aff-a8f1-f9a3d3453a81",
+        "brand_uuid": "c054f870-329a-480b-8331-9e6900cf7145",
+        "similarity_score": 0.427857876121754,
+        "original_media_url": "https://assets.spiral.ad/c/IlEXFMJiSie4t720oDXkqCLgCiATwUx2HpzkL7M2o13VZhv7kMto_gUhaoQkQYxx6r2xuee1AKNM_REFbhKPox1tYwqmfdI4d0s1jpidpMGwbB0FNreRqcn1zMws2BqI6snKjDY61Z1955b4ltZ9VjfCfQfCJLE",
+        "resized_media_url": "https://assets.spiral.ad/c/vGrQn-TbJhekT0c-Wx5fO2VqGYdglMcdJIHyiM4-Angrmzfs42z8LxsP-7-ZZRm0wW0BfDw_fCFn3wwiahRHIw6aGAFAxT7y9Rh-OSlG7UIrd3WDfAUVCz5xh-PY0vdQTeuAx3PT-Sc9oBD3X7zqyDoxag",
+        "width": 720,
+        "height": 1280,
+        "aspect_ratio": "9:16",
+        "blurhash": "LfFYor00R+%M-=M_aekCMxxvRjWB",
+        "creative_type": "VIDEO",
+        "preview_media_url": "https://assets.spiral.ad/c/CV5CiQRUeoe4mSXOKPjdCYNr4OTKCXkgipGVkMZlHLuBU-HQVwEaWxkkv0TbXc6McUXCGJLK_s8X5yTFdqOj9NUybhQrwJdXqm_qr5E0yvFZFWMmHBRFKQK0XUj-PR2nrwsnUNfnmn9E-WRaxP4TB4tmP9cTjg"
+      }
+    ]
+  },
+  "details": {
+    "total": 10,
+    "data": [
+      {
+        "ad_platform": "meta",
+        "uuid": "095da563-4bb0-4bf7-9996-ed76751e13a0",
+        "meta_page_uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+        "brand_uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+        "created_at": "2026-09-06T19:57:57.323923Z",
+        "body": "Kitewrit is the AI-operated prior-authorization and denial-recovery service for small medical practices — built for teams without a billing department. No EHR integration. Pay only on claims recovered.",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/eAYsWk2bHBe3VMha1EpRxr0AUZM1w3HoKetuaCfn1s2ImaUd-U9lU2w_nfBKfD0YtQ3S7_U4Ocs_uEBQaZ2n0nXdMbDI-1d-mL3NLQ8apgLlpDP3vArpTB5kl8N2R8Y-SByegI-OJiU4qZPJRySAYyAYRjzMSsw.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/boSOifOQecTFz_8rbx8jTQ-rkk_U9vOLpx8ejhLp5qvWQTByq-qKd9YfPNLWGoGKyv_He2jzrWRD9fLmtei-S6_rlRV_df-xyC4W92DXRuclkC8jIxSvF_pzUK9BP1shi16J6DznFrRut6bzA3KHunMg7w.jpeg",
+        "start_date": "2026-09-05T07:00:00",
+        "end_date": "2026-09-21T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": 67238,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "MESSENGER",
+          "WHATSAPP",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://kitewrit-5.polsia.io/",
+        "meta_page": {
+          "uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+          "brand": {
+            "uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+            "name": "Polsia",
+            "slug": "polsia",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/polsia/profile.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "9992afe0-afa1-4fdc-a8c9-deba078a7e67",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/02swPKh7iT0kPTxlEpVBoGH69zyoRHnJccz2WZFgUCNv7mEx9nsdebu-E8KU897W-DSOBa0yVB78b_tKlhD1twF1q8ta3qVfx2uRoKXGTG56goT-9SdcKEBRoWHL3_r5x9eVxOYP8qh4BAItHpUwHXe6v0OqS3g.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/cHtkwVaDwHT_lqgQfSTUv3MGRH2Wd5l678m_x0GIMRKM1DDetTckWnFYhItkjwVw8YwmtJ5O6LPGIdlcwEkUItzBC2xkcE_hCTRY2bwbQhHD71VaPo52mTuUXL30_z9WMwhs6aViReLtzFn6r8VX1f6WzVQKTg.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/tuTyCXW4TeKJ6Imc8P_k5JBHESeZCFpvpotq1fsc-76Wpsc5JnRtF4l0g-yyzOzVCuVzcXr-cDcXXMXl-Lhsp94wO2GF2eqXt1YKY5ds0rBEsAdShhR3LhtuL5lmqkNI8K6261-eSM6vl3fuUGd5RSxBJA.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LJE{Omt74mkBw?axNKa{$yWBofoL",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "9daa8d51-c9c8-4cfe-a6e4-bb01f621cdc9",
+        "meta_page_uuid": "e693beca-d8c9-4407-9eef-4fa5bc87dcf8",
+        "brand_uuid": "2c573a08-0a90-4577-ab29-9d793959bd8d",
+        "created_at": "2026-06-19T22:37:39.552351Z",
+        "body": "☎️ On a job and can't answer the phone? Try Clara — an AI receptionist!",
+        "cta_text": "Install now",
+        "original_media_url": "https://assets.spiral.ad/c/iIFZvjn2d6vzBzWkjbK2SGKwnM_98-Uq2ZcsSqygivTJ1N9MMbHQOCDFGynGsoTlbzUp1dJ8MqfqjlahUfTmtBdOWiZKYOL5g5MKkGVmwJONVlZ1L2Uujd5Gm9iqJyNEn2ho6MB0LliuRqkw42fbNSXH9AW7sca__Ennh5VI222nwx6vcw.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/-K8rBbtbiLsb1mdOdgoPN1BvkA5GtqPTBpMuSlPKYGEVDJEMcOCigXcRRpy2fJi-9tJTWrvhpBlF8eqYpK_CuNm-sceCxG2EOjkMpomklkeJHQp8ZpCWw0MucPpaoVZ18ib5wxYuehRpIMP4VcqYzcOYX3Nmimc7d_Qg5j8d9l6m.jpeg",
+        "start_date": "2026-06-19T07:00:00",
+        "end_date": "2026-07-10T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "android",
+        "link_url": "http://play.google.com/store/apps/details?id=ai.forty4pixels.karen",
+        "meta_page": {
+          "uuid": "e693beca-d8c9-4407-9eef-4fa5bc87dcf8",
+          "brand": {
+            "uuid": "2c573a08-0a90-4577-ab29-9d793959bd8d",
+            "name": "Clara - AI Receptionist",
+            "slug": "clara-ai-voice-receptionist",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/mobileapp/6757800516/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "751602f1-54a3-43a0-b608-cd45bc386547",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/3ru-TiHRoSTYZehtKV8Ohp_N40k0rZX37fLZDcYK8kkw8ENUVhbjWbxoqEBbJJ8kWRWP1CRWuV6xa0WFGmFM7OHhwkxkv6IP2j8w9sAP_HDPoOnmL0GegKZ34YKIAMLgYSIFD5MQn7rrtWp_d4FkYAU-HQMMw5wLFiA5hIBKeSo-qZsoKw.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/w34odNQEbYfaxONHTa7AQaZo7pDrpmHFyytC9Vv48xL4FG7k_9pIJ_vxqfwkqnlHy_Din7jjJczbH22bCQ1x9_ffLvH_fhORhN086DNcMNZiLfzYPDlQGNlhlY9ZzAl8W3sS6ltp6dQyXvdLmtfHiSKQuVIRJAsGZwF2at7A5L0BiAPR.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/24Rz0CxqvpZLiT80C1iVC4399ZWXx0rg8UX5xxUDY6OuU1cd0kNsAACNSO6qwIG0xnrfCoVf0IILLLME2vqrAfoE0s0dWlY8FiTUQx87gJ974Q2Z083_lM7QlkPUuCKGB2Zfe98GWMyB50X6b3UEXWT_rBxvmyHl4u99r5cavxuI.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LMH1_IROJRxu?^oIi_xu?Z^+wcR*",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": false
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "44c32a36-0e4e-4350-81e4-8d9396577870",
+        "meta_page_uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+        "brand_uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+        "created_at": "2026-08-30T20:50:03.633049Z",
+        "body": "KestrelDocket watches every license, payer enrollment, and CAQH re-attestation — and files the paperwork before it lapses. Built for small healthcare practices.",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/XLXbECqd37e3IsarAEPxibZiFNnPryHfc5VbedmBSVew3unr448WP2TydiVuaWSx9bXNvVsUbb2kr62TYXLCE-8Ev4zjhnmpjAlpk9Zlv7s2ny7WGh2ju2YViTua7V3s4aaREbBvKhFSQHaAhxSL_o6FyjEBPrs.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/uWD7b5CuATDMMiq6JwUQeAIB0EX5ieEI3WjfHAvlUag61qCH6ldzNUTwC8cQR4iZOLBA9bufa12UjfDWU3CdBuXZR2QHaG6ITQ7LskCIHLRof3A1XxcugY67fRZGSgZixLB0QlUOyXzfu0u95loqh_ehMw.jpeg",
+        "start_date": "2026-08-29T07:00:00",
+        "end_date": "2026-10-10T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "WHATSAPP",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://kestreldocket-3.polsia.io/",
+        "meta_page": {
+          "uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+          "brand": {
+            "uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+            "name": "Polsia",
+            "slug": "polsia",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/polsia/profile.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "873c3890-663f-4b47-9612-d70aa28967ef",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/Pbmh1uAXD7sIQj7d7WxCJAgOQFoxpXkRnEt8Fpr1_yJgbw5SXrHYrguwTDWsKwYSFQ7PpKXRZR-BLJVePC1MQwIYSaB0__qSviWb5wFJcFBG5YC76xMPnW60iqy3m8txdi3OhSn2B3tcpB_K0vfuTbB72k6OJrE.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/Zi8jtMK3ov4FFSkuwi2wVy21Tj2Dj8efqVD-VevSNFCTzURzRQ85cUVyhU-bk3n_5JP7jP-TStFoD-5rKu9PlgutyWhUmXXrBOgkDd52uZgHWToARoxbej-mDovcsF6ODKijM8MTGXPB0WWFuVdpxbYdCkIx3A.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/rfkUiXTc_-W_EVaDsOrzfugtHvInsukBlXGpcH61hAm9Xiu0jnNUy0TvQ53T-z7nnODfuikUerMg9FgEVCZjnSVfXMdiwfdlaKnElJEweXCTprdh5lGYcXzDIXQHK16PQUu-rv7QDFpE3spnUeq_GygRAQ.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LbG[fyt8-:oz~ToftQj[t5a{M{f5",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "6f0c58ae-b58d-4fa4-a7d1-9c6e2ddc38aa",
+        "meta_page_uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+        "brand_uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+        "created_at": "2026-06-11T08:06:45.401357Z",
+        "body": "LoopOps captures every missed call and runs automated follow-ups so local businesses never lose a customer to voicemail. Built for service businesses that can't afford to miss a lead.",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/6_JZKrfonYbFMGI_gebtFijOX19QyzC4KRYSCKdSzYajIwQp-aF8bKNCT37RDX38_cf_XKBuZGUee0WNZNYhiOoN4eVnyZ6g1wA073f2VGmh7U00XYMxhQTkBL1FwyyLD3lWsowNYRksqEDVDtc7JhMW3RsS_Tg.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/zlw_c2wksK0oMokoNQCiaGOQ_w3PTser63Zch1gWxxGZxSkz1lW391znUEZ_VJ8svEDADLTkBisuUIbx9IwMMAGY_YwSa6XcAoEBS3NjlH4jyx7EUF0YFwiNUicpMtTNv09Y_ehc7TeTnDgRm1CiEMb2nQ.jpeg",
+        "start_date": "2026-05-27T07:00:00",
+        "end_date": "2026-06-27T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://loopops-3.polsia.app/",
+        "meta_page": {
+          "uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+          "brand": {
+            "uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+            "name": "Polsia",
+            "slug": "polsia",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/polsia/profile.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "09f01a8f-2881-4ba3-ab8e-270e1cb23c44",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/r_G1HnNVxYc_IvGSzK-mND_ToaLFS0UNTUv1qT-EQr1dg8XDXkABc7XCGzM3av2fZTDdXt0VrFs278d__shUzV-nxPx7o3-BY_iXMdzHJMpglPduqTwZx6E7_sMigir6qtsnd7I3nbr6azmrRsSkcqbwe5t9iyE.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/GweEzpqYy8k43I-l9pJJDXUZBzcMIy62ZFZAJkIOlZwTepcipGJ6-yFOA-OS6P8-0S7pyz8zT5dpI8QM1oR0HpwZGRaRCqXWUEcoHILKYRO77gxM2HEepfGyak3CFOjDA1rsOQDwP65_q29K6c0UIqnlJaD0qg.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/-FYUmRmEvpCSj7ajQOhS4knnV0b-ahk3eBsM0S4M-twJn3d-sHu0PBPeUXv7omMc-P4s8yPaRTbu8BK9YJo-cy1pASz8yWrXHKd24lBvB_nwD-NXq9arYk4H7ZhVoi9zeMdmRP5pBpYOjClHQ9QkjdwMVw.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LQF}~0tStm-;~q%M%Mxu?bxuxuxa",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "be96846e-e9a5-444e-b9fc-dd91b263d8d1",
+        "meta_page_uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+        "brand_uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+        "created_at": "2026-06-22T00:11:17.841972Z",
+        "body": "CatalyftOS is the operating system for your AI-powered business improvement practice. Automate admin, sync your tools, and keep your team aligned — all from one place.\\n\\nBuilt for growth-focused businesses that need more than spreadsheets and sticky notes.",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/S19EZrYsdHvw-qtwXUFvI1-T559FXb_Jw0QjTuBFH-3N6zSqvNA8kL5tSM09cSYGUjBhNDaAsMqXym725VhsP0bTs__fYzq9nwJWJS4n-0YnA6diQzd-vMBGLkxbooZut7MJGJZSwxhjohGjbQLLFtWS26kX_3E.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/QnBM6WSZXrvBT17FupWVQ3xMO1PM1cUQ2-JRPjiRXfCSgjMY4bQs4wckcYciL3Nboq5OGTu-66VzCqMtHi2fMSZSYVjO4HX5fAfM8CLP2zHgm59L9y7UPOKVKKkjvT9WCSuQU_4s8Qkr6o8HvD3gjRi9ag.jpeg",
+        "start_date": "2026-06-19T07:00:00",
+        "end_date": "2026-07-08T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://catalyftos.com/",
+        "meta_page": {
+          "uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+          "brand": {
+            "uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+            "name": "Polsia",
+            "slug": "polsia",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/polsia/profile.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "6ecca02f-6305-4c0c-9c29-18b18c91292d",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/tT1X4cAZbjDVbXMIt57KRi8OVmPCmmOiUWzw8L0dvgmpDWT0-qOAD1GJGzxENs6OkwO48QRCEPuuJ_DIS5tzSz9XGrp4XgZPoNwD-6hLVn4pMRbgzf97K_7NE9ehooRiGv2D0hkd_xFfdxnbQe-AYeuMG9-GtbY.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/RRT8rabALWiUsWMmIySdLX0-83VWi3ZWq3KNbm6VZ7_ysv2gFFf-A0FFfZ7Y95X1V8OTDlFdAfeNx7ZM9gVp7gpBQSfGNpVFjypAvaO82NdmWXPRCA34BLbjB6eInUl7a5Tb2nLfe31CjiqLqtoCNce4FI4QBg.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/tQhUAM_fBs4H0R2ICbZeTLbNpW--sMY7n7Uyo6DF4Di6map9dcmSYfemj5TumsYbFTLw2CKOSuxXvNV6dm-8UpMvcouv6j219Qi9wbkhMl_UxDzLprg_S_QWmh8V5TFN_l1P_rYrhYpu_Nw-Ki25ugHRZg.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LGHo2l9FFxIA9EIU.8ax0JtRxGRj",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "5c368de5-060c-4fc1-a64a-9c361cbe1f79",
+        "meta_page_uuid": "b2ac94c1-a521-45d0-9a37-813082c59084",
+        "brand_uuid": "9156d70c-e6d9-4a50-96fe-c4a64ef461c4",
+        "created_at": "2026-05-07T00:01:27.266061Z",
+        "body": "Prescribe in seconds. No EMR required.\nAccess patient resources, samples, and translation tools—all in one place.\nFree. Built for clinicians.",
+        "cta_text": "Install now",
+        "original_media_url": "https://assets.spiral.ad/c/vvy0VSexfS8UAswF0cuzc7sXyO5_uy9T1mO1S08sH8uXKFfT0xnfySda8suoT1sjcaC0_Y1hAeeQzBL-fgmPcn56L6iUzJ4wf3vrGpg_iP-LR0gxhOfMl0BkhN3Fio0bkuf29GPVjDt4tC0lXpeLhImsHCxyrKM.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/do9cGBKZ-RWtnkwas8Az1Pt_LT_ptWrLBzNmRuzioZTwVTPZ9fknHcDBKzKxAZCQeDHRLm3YjagaIOSuZSf0mFj3qbdbOl-eV7UYdVquIgTw0hd_zqr-plRZyJzmvOJpFG7annfllZNWSKv2sjwdYDAxPQ.jpeg",
+        "start_date": "2026-05-05T07:00:00",
+        "end_date": "2026-05-26T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "MESSENGER"
+        ],
+        "campaign_type": "ios",
+        "link_url": "http://itunes.apple.com/app/id6478404244",
+        "meta_page": {
+          "uuid": "b2ac94c1-a521-45d0-9a37-813082c59084",
+          "brand": {
+            "uuid": "9156d70c-e6d9-4a50-96fe-c4a64ef461c4",
+            "name": "DocUpdate",
+            "slug": "docupdate",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/75df0eca-fb18-4689-951b-2b37132fb09d/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "0f31be63-6c74-4dd2-a2fe-736a30eb496e",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/PPpSpf1tt_aZbRNtXEzcqn_CvzG3Df2EYxQ7DIusuYRv05iA27F9pt3tS3SPfuArsByEtXPC3aTPpLA5b5gh45I3jMRvnJpBh7GPlHB4B0NKwiriElnsPAR4JBYI98P8fooHkrkrdWL5hKJoKr_8L_3_8XUbITI.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/nP71P8hhgniI2lNRI30rt4kBYTgNEse_jYtdc2XnqbIgwC4YTwSyiNbslICAn7FombLhPknZ8O-KLzJtAi7BA1JmBxfRmCNQNhjP2yeIySVvyUsYa6HpHWSz_ICEM6Zl9vWoiaCxMi4hgeCPUO6_NsA_LoG4Rg.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/aCCbtpKuxTX7P3sdb8uEU7uyDBr2QUk2Ee1ayOfZfeDCChQOwbmnJZKJYDMUFozZprpIYhbzvP6obUKohBZrQYamO2Z7mkqbXqlOxY2s4gA8AEnCc6qfbP7NczxXjlipMUJkCnFeD-dFZCaVbjD00veyGg.jpeg",
+            "width": 720,
+            "height": 900,
+            "aspect_ratio": "4:5",
+            "blurhash": "LUQvd[ROV{-;M:%gajM{4URPait8",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "0be4a484-11af-441c-bcb8-dda7909f99c8",
+        "meta_page_uuid": "b2ac94c1-a521-45d0-9a37-813082c59084",
+        "brand_uuid": "9156d70c-e6d9-4a50-96fe-c4a64ef461c4",
+        "created_at": "2026-05-07T00:00:13.322797Z",
+        "body": "Working between clinics or away from your EMR? DocUpdate lets you send prescriptions from your phone in just a few taps. No waiting, no cost — the app is free for clinicians.",
+        "cta_text": "Install now",
+        "original_media_url": "https://assets.spiral.ad/c/gFYlWgWtfib0pdyr15OHcuiUpNc1yvEI8k6kBfutVmkuqJlztCRaCQoQOd5Wt8cghIWbzoj2TIYqmUtDh6y12WzmwW6bwEAXfdtpCgcabEuA0WCFzXKX7O_V23cVsab9NPvG8GEiAqjY2-7cP0kHz6NodsKJmQ.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/-roe1pbCDqh5ce_YGsvVtBvAP--SKDbVfsqTt9rHe_rQzVWF65xCwL1S3WjBo5GddbcP8pe-aGDDgHN1ZYpo04eXX_DR7driHCUbQiS8ssyrByYmBRS4wuYVgFCj6SN5WdfOdx-YeZxpNXmld54Ahl-T.jpeg",
+        "start_date": "2026-05-05T07:00:00",
+        "end_date": "2026-09-07T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "MESSENGER"
+        ],
+        "campaign_type": "android",
+        "link_url": "http://play.google.com/store/apps/details?id=com.impericus.prescriber",
+        "meta_page": {
+          "uuid": "b2ac94c1-a521-45d0-9a37-813082c59084",
+          "brand": {
+            "uuid": "9156d70c-e6d9-4a50-96fe-c4a64ef461c4",
+            "name": "DocUpdate",
+            "slug": "docupdate",
+            "logo_url": "https://assets.spiral.ad/file/mobileapps/75df0eca-fb18-4689-951b-2b37132fb09d/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "c43f2fe0-a7b8-4bb8-bfff-30a28567ed75",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/sJOH1vNwm61T1ujz20iieui5IJb5PKwZOezjROf0K-OXXFL4u6d-bH_eV-V3uzfL76fTZRrjB9rGs0qk8naMQwSJjOZusnkTZRqSlBnL0iQ-QKp9tFfvEn1aNM47OLz-7zu45i-mIVaHbmCc8sv4j3v3pw9ZIw.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/tlv9EgV_E7xtUqHhpbmyRrrnZvo55ep5v3Iyb9IUXgAXghekQJb47HswNTPAtlqZR4B_a5-S8qfD_wADov3VPc2VAhr22lK_EJRKtCEDI7cHVRnxybMWQu65djx_hPPCEzP4giQrJJmX1nRQYb4w-Gui9TTWHw.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/9IQNzzp6kces-7pdsZRfwyF6IRtEQlcr3oDzqyRgyZx5BAOUQiuNVSRpSUg-a-s6s9LgQk8QuQnhEKOoQn55h6vIUTR5ql2KLCc7ZlS6stfsW4ECPLARzCb_DNhdRN41QAExD3EzDLrXk9CkZAQSmIgD.jpeg",
+            "width": 720,
+            "height": 900,
+            "aspect_ratio": "4:5",
+            "blurhash": "LMEo;_?d*H.8EuM{9rNExVMxRPWA",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": false
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "a2277d81-22a2-4a5a-9fdb-056a3f4648e5",
+        "meta_page_uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+        "brand_uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+        "created_at": "2026-06-09T19:45:40.954112Z",
+        "body": "SetPilot is the AI production coordinator that handles crew scheduling, shot lists, and logistics automatically — so you can focus on making great content. Join video production companies already saving hours every shoot day.",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/1HuJHzrifAypmZ7K6njxpOx7ad1sFRcEgiKPLwP4xTlqHCvrEguwsooP9Zj2wgJl09-8LaQjSwUyofxKIgj6dPf_61wtggtF4o5xfa9h-xyFd32hDX_skhEw7KJxNmBjK7LuePs8AXt91Q7pi2_SAyckucS1jw.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/O-Qc1XxhkhM6943cFhFZclR2m8flSONYOqsWtioR4evNDUxONj3fuafha7xJbLWH8LzeVWnhUQ9zA_p625ix5g8JB6NZwAljy3Tsd3zMjT8WEujl2rVExbpx4YVn6S6xLK5w6yUYxoV-M1RGmK0GU6lB.jpeg",
+        "start_date": "2026-05-12T07:00:00",
+        "end_date": "2026-07-09T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://setpilot-4.polsia.app/",
+        "meta_page": {
+          "uuid": "7312fd2a-33e4-40c9-859a-da3a2485ef41",
+          "brand": {
+            "uuid": "ed55bc78-2013-4c64-8a03-a5d1e70f6fec",
+            "name": "Polsia",
+            "slug": "polsia",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/polsia/profile.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "f8e93496-748d-4cc7-86b0-e008112b3f91",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/pih3zg9sy7_xxMoW--CETw1CTZkUBAHr89lg6WI9b9uoraSqMdB-MujiQWCa4K1lg0rD-TCWuwJjgRpHw3BzgQVY9NNZPYK2NSeE_3ZkJtBIUtIP20njSPKPgsDPEVVi1ZBqhkN--cygQqcX9-oXx7mgPHRiOg.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/CXKN19sgQGDNvkxgTwcbs6rO6k8lKhVZZuOIHexXOHe8c3DPo950wb8Ochg8Bvn5gb0DzzsUWLK_HSwx1YKtKAfr2nGjEBFpwavxFoGEPExendLBYpu6V19d2cIDTKV1uhk5ueoVlNp9SmDKqP7ECkHBH15h.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/4szXDyt25e9uCpIKDwb22JaADnbUX9xEJAaygAmcq0O6k2jOcl1BdpI7umcJ_lNXkKTASRNvLq_lSPy7rqobfD8Yo9QBpGoFQf5eemiOD5giKOzi1PBJ-PPnJkai4ODBhLn8GNTg4Omiy3NGT64fCkae.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LFHxHMxwyZ~D+axuo#xa$@aIQ+D$",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "6c56370a-3854-4cf5-b891-341bae7a0dc2",
+        "meta_page_uuid": "01b48f08-d0d4-4fcc-a420-104a039c0495",
+        "brand_uuid": "37b0a77c-fd7e-4f66-a8bb-9f716abd1145",
+        "created_at": "2026-04-30T14:07:30.109833Z",
+        "body": "What’s your CEO Efficiency Index™?\n\nAnswer 24 quick questions and uncover:\n\n✅ How effectively you’re spending your time\n✅ Your biggest leadership bottlenecks\n✅ A personalized plan to buy back 10+ hours/week\n\nThis free audit is fast, fun, and shockingly accurate.\n\nTake the CEO Time Audit now 👇\n\nhttps://scalable.co/tools/time-audit/",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/AwdyW2syJQekvtBySmQsy-4oZLmrLZIvVQVK1d93FR2QACWZIpG36-Tf_EPzNUoyEZnA2IJFG9KRwQRAuptAz8LRHVwdTk72myrm0ilkDpdjYIkxTvXIQ1c8fbZSRrlu_S3Xb7nljg38-eR9k2V4k5sL_aGH9Q.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/IdTe-b39xkGAN3lwg25VehKN-eaFtHRAs0cBrMC7zcx_-8d5bVOz4BH70dQPQIiSjiodu7cxD1l_NZ_3dGYfWR2jb23CnRpzIdblMyhoeAZMKsWpiQyxk4QEwTgQd8E9gEHda1xQtVFJNzOIMlhgmCs8.jpeg",
+        "start_date": "2026-04-07T07:00:00",
+        "end_date": "2026-06-21T07:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER",
+          "THREADS"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://scalable.co/tools/time-audit/",
+        "meta_page": {
+          "uuid": "01b48f08-d0d4-4fcc-a420-104a039c0495",
+          "brand": {
+            "uuid": "37b0a77c-fd7e-4f66-a8bb-9f716abd1145",
+            "name": "The Scalable Company",
+            "slug": "the-scalable-company",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/the_scalable_company/profile.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "8f20aa8f-5df7-4289-b017-cce0dc8d7ca2",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/ghlGnyP29BN17dRxyMGFbWD0Hwn1vfq8mwCuDiRxWQRxaO9QGf3geYYhvic_naJ6iIdwabXMduHifcFSNJiqoHC0lTvfskfco1Ml747kIzVcvHwlABxuRH8Fh0hqNq2eYead3t-a_6PQClQ7dSQUENChDIaLRQ.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/OtZlxvfquGS39z8D9zIIbrQvYrdvf2U-MAMtakFMp6-Zhcou50INFHOXpSnJO7DQGQ-6-w74gcJJyecRavCIJ0D1eFyIn6PNWzeLeZDL77O9OoO7I9g7D7oyS8XtrYCrDOpeWVvRS0gGUBTKGrd8bzlIL7qL.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/NqOWyWvi7iIvjxFDJoU1VrJ6E0sla8nyRKZ7CktNOtrDGj2vJdqTWd6T21z8QHXiNJp8UTaygp4yKD1V4DwTFzXHXs_bRzxqTQLCoGXtV4ZsVYv-PsmuxqNUlgx0VXSKrg2Tt9P2dDvWUqqCu6fJ4DqY.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LES6Pm%M~q%MIUayt7ay~qof9FWB",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      },
+      {
+        "ad_platform": "meta",
+        "uuid": "545f3a2c-3ea4-41e6-a433-6df86e4cae09",
+        "meta_page_uuid": "517a86d8-2f24-4aff-a8f1-f9a3d3453a81",
+        "brand_uuid": "c054f870-329a-480b-8331-9e6900cf7145",
+        "created_at": "2026-08-09T19:30:46.341405Z",
+        "body": "You said \"I'll send a follow-up\" and then never did.\n\nCluely sits in on your meetings, captures every action item, and drafts the follow-up email before you've even left the meeting.",
+        "cta_text": "Learn more",
+        "original_media_url": "https://assets.spiral.ad/c/7ANeckMSE__u7QZqhGLfhA-5hwWeRW5oZOTZdTwE1-4k7eEGuq7v9sqtENizWR3kW71PvJh-O7QsrhPk6AFj64V9pBmowdFcKFbE5TkaRHMSg4Ehz93iJOq6dvM_pqoK2KvCPSX4i9rNI8y-X91BzLgZaRtmXLQ.mp4",
+        "resized_media_url": "https://assets.spiral.ad/c/BmkFfn2c5r4by_wEUHtrljpV81wTw9rTuir9pO9keYqNChwuQ1Ly3ZDdXK7g63ZKn7LVUcmj2Z8SoIleAyXdYLhtl-WXte3Ch9FxJCPmSPexwrh_rcTrHiECSNBJ6x0-xKHXsCPlEDE1C4SkDpsx3nfEoQ.jpeg",
+        "start_date": "2026-08-08T07:00:00",
+        "end_date": "2026-08-24T00:00:00",
+        "is_active": false,
+        "creative_type": "VIDEO",
+        "creative_media_types": "VIDEO",
+        "eu_total_reach": null,
+        "total_active_time": null,
+        "language_code": "en",
+        "language_codes": [
+          "en"
+        ],
+        "meta_publisher_platforms": [
+          "FACEBOOK",
+          "INSTAGRAM"
+        ],
+        "campaign_type": "web",
+        "link_url": "https://cluely.com/",
+        "meta_page": {
+          "uuid": "517a86d8-2f24-4aff-a8f1-f9a3d3453a81",
+          "brand": {
+            "uuid": "c054f870-329a-480b-8331-9e6900cf7145",
+            "name": "Cluely: AI Notetaker",
+            "slug": "cluely",
+            "logo_url": "https://assets.spiral.ad/file/competitors-cache/mobileapp/6755442775/icon.jpg"
+          }
+        },
+        "creatives": [
+          {
+            "uuid": "99336531-2061-4496-8c57-0a7068c7f87d",
+            "media_type": "video",
+            "original_media_url": "https://assets.spiral.ad/c/vVdJa9k_ah-gQujfOutBRchIM2e0M0rGjw58dy8vrvzGnEbNmPOuXBkdIQ-pbHHmjrzuywipK0ZMsuUa41VGaCJcTTb0Ah6ZweVZQ3teoZXRYW3GgKZDa711utZ-S_7ZdirkYQxJK23tw9bbGKDWsdZAMjPE9jo.mp4",
+            "preview_media_url": "https://assets.spiral.ad/c/8PWxoJCGrzLmByomOLeR2elHP77xhkhyQDXdMU14SfiVxPZS9JbSaVDOurb8oPZDosGg2nEfhjdTEeCuPUVZ8Y_JcuHck73mC3fylgIPYSJ7GAxJfWo5jz5VknXXW8_8cNNEIUMSDd_7cL_Ia0_DaZO-HWf5_Q.mp4",
+            "thumbnail_media_url": "https://assets.spiral.ad/c/yFO5iwn9NkXUulmncRzM0r_vtlP8UQZ_VckzHJsTZNKT_Um6JInO3Ah2Xo_-M7ph2Efh9sXvIqcJ5q2-vO45txRSj_qMlQ3MPyFWHXZjWIp2Gyy3gtjxDWX7z4NmDVGcFZwFRNwQEzFDd9cBuqgDWYDO1w.jpeg",
+            "width": 720,
+            "height": 1280,
+            "aspect_ratio": "9:16",
+            "blurhash": "LfFYor00R+%M-=M_aekCMxxvRjWB",
+            "language_code": "en"
+          }
+        ],
+        "audio_transcript": null,
+        "creative_analysis": null,
+        "has_similar": true
+      }
+    ],
+    "missing": []
+  }
+}
