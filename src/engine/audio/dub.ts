@@ -27,7 +27,8 @@ export async function dubFlagship(db: Db, conceptId: string, targetLang: string)
   const dir = path.resolve(process.env.ASSETS_DIR || "data/assets", "runs", c.runId, c.id, `dub_${targetLang}`);
   fs.mkdirSync(dir, { recursive: true });
   const info = await probe(src);
-  const dubbed = path.join(dir, "dubbed.mp4");
+  // one dub per source video (a re-rendered flagship gets a new dub)
+  const dubbed = path.join(dir, `dubbed_${video!.id}.mp4`);
   if (!fs.existsSync(dubbed)) {
     const d = await dubVideo(db, {
       file: src,
