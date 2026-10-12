@@ -2,7 +2,7 @@
 # Offline demo proof. Phase 1 starts the app online and warms the local cover cache (data/thumbs), like a rehearsal.
 # Phase 2 restarts it with every non-loopback DNS lookup and socket refused (e2e/offline-net.cjs) and walks the pitch path
 # in Playwright with every non-localhost browser request aborted. Exit 0 = the demo survives the venue Wi-Fi dropping.
-# Usage: demo/offline-check.sh                         dev server, this machine's database
+# Usage: demo/offline-check.sh                         dev server, fresh database (like a fresh clone)
 #        OFFLINE_MODE=showcase demo/offline-check.sh   the public showcase build (production, fresh database)
 # Stop other `next dev` servers in this folder first. Zero spend: LIVE_PROVIDERS is empty.
 set -uo pipefail
@@ -11,9 +11,11 @@ mkdir -p logs
 PORT="${OFFLINE_PORT:-3300}"
 export NEXT_TELEMETRY_DISABLED=1 NEXUS_TEST=1 LIVE_PROVIDERS= NEXT_PUBLIC_DATA_MODE=live
 NEXT=(./node_modules/.bin/next dev -p "$PORT")
+# a fresh database every time: the check must not depend on what earlier test runs left in data/nexus.db
+FRESH="$(mktemp -d)"
+export DATABASE_URL="file:$FRESH/check.db" ASSETS_DIR="$FRESH/assets"
 if [ "${OFFLINE_MODE:-dev}" = showcase ]; then
-  FRESH="$(mktemp -d)"
-  export NEXT_PUBLIC_DATA_MODE=showcase DATABASE_URL="file:$FRESH/showcase.db" ASSETS_DIR="$FRESH/assets"
+  export NEXT_PUBLIC_DATA_MODE=showcase
   ./node_modules/.bin/next build >logs/offline-build.log 2>&1 || { echo "build failed, see logs/offline-build.log"; exit 1; }
   NEXT=(./node_modules/.bin/next start -p "$PORT")
 fi
