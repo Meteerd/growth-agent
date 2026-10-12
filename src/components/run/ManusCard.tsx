@@ -26,7 +26,8 @@ export function ManusCard() {
   const { data: evidence } = useEvidence(runId);
   const finished = liveStatus === "done" || liveStatus === "failed";
   const items = (evidence ?? []).filter(
-    (e) => e.source === "manus_research" && !e.demo && (finished || revealed.has(e.id)),
+    // a real run never shows demo research; a labelled demo run shows its demo findings
+    (e) => e.source === "manus_research" && (run?.demo || !e.demo) && (finished || revealed.has(e.id)),
   );
   const calls = events.filter((e) => (e.data as { provider?: string } | undefined)?.provider === "manus");
   // brands whose recorded research ran without Manus got a separate real Manus task on 12 Oct (demo/manus.ts)
