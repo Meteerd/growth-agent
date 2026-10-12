@@ -39,7 +39,7 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 | all four | `run_<slug>_demo` | Deterministic demo runs (labelled demo), with locally built demo keyframes and review videos. |
 
 ## The 2-minute demo path
-1. Portfolio: four brands; Hound and a.clinic show their flagship video (`heroVideo`) and "Live data, captured ..." on the latest run.
+1. Portfolio: four brands; Hound, a.clinic and Dynova show their flagship video (`heroVideo`) and "Live data, captured ..." on the latest run.
 2. Hound: open the recorded research run and replay it (`/api/runs/run_mv4c9xtr8203508c41/events?pace=150`): crawl, Spiral and Apify sources, relevance filter, deconstruction, Manus task link, blueprints.
 3. Reverse-engineer view: the winner's blueprint next to our remake, shot for shot (`concept_1d68be0a_1.shotMap`).
 4. Consultation live: start a run on the recorded research (`POST /api/brands/hound/runs {"kind":"full","reuseResearchFrom":"recorded"}`), answer 2 or 3 questions in front of the judge (Claude, live). The rest of that run takes ~10 minutes, so for direction, studio and packs switch to `run_mv4e0ud7671d68be0a` which already finished.
@@ -55,29 +55,30 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 ## Flagship videos (A17, the hero media)
 - **Hound** `concept_1d68be0a_1`: 29 s, six photoreal phone-footage shots remaking a real TikTok myth-vs-fact winner ("Just let them cry it out"? ...), CTA shot holds a phone showing Hound's real beagle art. Review 83/100, every shot >= 80. `docs/renders/hound-flagship.jpg` / `.mp4`.
 - **a.clinic** `concept_1e6575ad_1`: Slovak 4-step listicle remake: home, sticky notes, laptop and phone with a.clinic's real doctor art, local pharmacy, checklist, the a.clinic page. Review 82/100, every shot >= 80. `docs/renders/aclinic-flagship.jpg` / `.mp4`.
+- **Dynova** `concept_91d09027_1`: Turkish explainer remake ("Genel öneriler varken gen testi gerekli mi?"): a man with the Dynova kit, at-home sample to lab, "teşhis değil, bilgi" (not a diagnosis), routine from your own data, dynova.health on a phone. Review 81/100, every shot >= 80, clips by Higgsfield (fal balance ran out). `docs/renders/dynova-flagship.jpg` / `.mp4`.
 - How: Claude picks per shot a real brand image or a frame in the winner's look (photoreal for real-footage winners), OpenAI gpt-image-2 renders frames (brand art goes onto screens through an image-edit reference), fal Kling 2.1 animates the shots (screens stay still), ffmpeg composes captions, voiceover and end card, Claude reviews against the blueprint and an AI-tells rubric, weak shots are fixed (keep-best per shot). `pnpm flagship <conceptId> [--repair] [--sheet docs/renders/x.jpg]`.
 
 ## Known issues
-- **fal account balance is exhausted** (fal answered "User is locked. Exhausted balance" at 03:24 when our ledger showed $7.25 of the $8 cap, so the account had less than our cap). Final renders now fall back to stills with a warning, and the engine stops calling fal for the rest of the process. Top up fal (event credits) before rendering more motion. The Dynova flagship attempt therefore came out as stills only (72/100) and is NOT marked as a flagship.
+- **fal account balance is exhausted** (fal answered "User is locked. Exhausted balance" at 03:24 when our ledger showed $7.25 of the $8 cap, so the account had less than our cap). Final renders now fall back to stills with a warning, and the engine stops calling fal for the rest of the process. Top up fal (event credits) before rendering more motion. Motion now falls back to Higgsfield (Kling image-to-video), which rendered the Dynova flagship.
 - **Sora**: the OpenAI video endpoint returns 404 for our key (model listed, API not enabled). `soraClip()` is ready if access is enabled.
 - **Remotion** composition is in `remotion/` but timed out loading in headless Chrome here; the same Ad916 spec renders with sharp + ffmpeg (fast, no browser). `RENDERER=remotion` retries it.
 - **Review scores move by up to ~20 points between reviews of an unchanged shot** (model judgment). The repair pass keeps the best version of each shot; the last review is the shipped cut.
 - **Blueprint frames of third-party videos** exist only on this machine (`data/`, never committed). Other machines show placeholders; blueprint JSON is in the repo.
 - Evreon and Dynova research passes ran without new Manus tasks (Manus credits); their Manus slot is empty in the recorded data.
-- `pnpm eval-all` passes for every current run; the two superseded early Hound runs (`run_mv4dl43id902ec6a1f`, `run_mv4cox1z4e0569d023`) predate the consultation fix and cite skipped answers as "you said". Use `run_mv4e0ud7671d68be0a` for Hound.
+- `pnpm eval-all` now also checks concept language and caption readability (video captions 12 words max, slides 40). One b-roll draft in the a.clinic live run was over that and was shortened (compliance re-checked); new runs shorten wordy video captions before the compliance check. Otherwise it passes for every current run; the two superseded early Hound runs (`run_mv4dl43id902ec6a1f`, `run_mv4cox1z4e0569d023`) predate the consultation fix and cite skipped answers as "you said". Use `run_mv4e0ud7671d68be0a` for Hound.
 - In the recorded full runs the consultation questions were **skipped by script** (no human), so plans say "assuming ...". In the demo a person answers.
 - `pnpm build` passes; Turbopack prints file-tracing warnings for dynamic asset paths (harmless locally).
 - Starting the dev server resumes interrupted runs only if their heartbeat is stale and they were interrupted less than 6 hours ago (older ones are marked failed, never resumed, so no surprise spend).
 
-## Spend per provider (ledger, 12 Oct 02:35; caps from .env)
+## Spend per provider (ledger, 12 Oct 04:05; caps from .env)
 | Provider | Spent | Cap |
 |---|---|---|
-| Anthropic | $7.01 | $150 |
-| OpenAI | $7.33 | $60 |
-| fal | $7.25 | $8 |
-| Apify | $1.38 | $4 |
-| Firecrawl | $0.05 | $3 |
+| Anthropic | $10.56 | $150 |
+| OpenAI | $9.54 | $60 |
+| fal | $7.25 (account balance ran out) | $8 |
+| Higgsfield | $6.00 (estimates) | $8 |
+| Apify | $2.33 | $4 |
+| Firecrawl | $0.07 | $3 |
 | YouTube | $0 (free quota) | none |
 | Spiral | credits (~20 ads analysed) | none |
 | Manus | 3 lite tasks (credits) | 500 credits |
-| Higgsfield | $0 (auth check only) | $8 |

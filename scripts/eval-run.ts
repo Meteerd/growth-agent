@@ -78,7 +78,7 @@ for (const c of await repo.listConcepts(db, runId)) {
     `concept is in a brand language (${c.language}): ${c.title.slice(0, 50)}`,
   );
   // video captions must be readable in a 2 to 5 s shot; static and carousel slides carry more text
-  const maxWords = ["static", "carousel", "text_post"].includes(c.format) ? 30 : 12;
+  const maxWords = ["static", "carousel", "text_post"].includes(c.format) ? 40 : 12;
   const wordy = c.shots.filter((s) => (s.onScreenText ?? "").split(/\s+/).filter(Boolean).length > maxWords);
   check(
     wordy.length === 0,

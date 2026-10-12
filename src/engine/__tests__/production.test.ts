@@ -163,3 +163,37 @@ describe("packs follow the newest render", () => {
     expect(after.videoAssetId).not.toBe(before.videoAssetId);
   });
 });
+
+describe("caption readability", () => {
+  it("shortens video captions over 12 words and leaves statics and short captions alone", async () => {
+    const { makeCtx } = await import("@/engine/agent/context");
+    const { shortenVideoCaptions } = await import("@/engine/agent/phases/production");
+    const pctx = (await makeCtx(db, runId, new AbortController().signal)).forPhase("production");
+    const all = await listConcepts(db, runId);
+    const video = all.find((c) => c.shots.length > 1 && !["static", "carousel", "text_post"].includes(c.format))!;
+    const still = all.find((c) => c.format === "static" || c.format === "carousel")!;
+    const long = "Bu cümle çok uzun. Kısa bir videoda okunamaz, çünkü on iki kelimeden fazla var";
+    const put = (c: typeof video) => ({
+      ...c,
+      shots: c.shots.map((s, i) => (i === 0 ? { ...s, onScreenText: long } : s)),
+    });
+    const [v, st] = await shortenVideoCaptions(pctx, [put(video), put(still)]);
+    expect(v!.shots[0]!.onScreenText).toBe("Bu cümle çok uzun. Kısa bir videoda okunamaz");
+    expect(v!.shots[1]!.onScreenText).toBe(video.shots[1]!.onScreenText);
+    expect(st!.shots[0]!.onScreenText).toBe(long);
+    const same = [video];
+    expect(await shortenVideoCaptions(pctx, same)).toBe(same);
+  });
+});
+
+describe("clipCaption (fallback without a model)", () => {
+  it("keeps whole clauses and never cuts mid-phrase", async () => {
+    const { clipCaption } = await import("@/engine/agent/phases/production");
+    expect(clipCaption("Dotazník, keď máš čas → video s licencovaným lekárom → lekár rozhodne, čo je vhodné")).toBe(
+      "Dotazník, keď máš čas",
+    );
+    const noBoundary = "Your puppy cries every night because nobody showed you this simple routine yet";
+    expect(clipCaption(noBoundary)).toBe(noBoundary);
+    expect(clipCaption("Short and fine")).toBe("Short and fine");
+  });
+});

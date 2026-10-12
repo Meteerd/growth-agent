@@ -68,7 +68,7 @@ describe("A17 flagship remake", () => {
 
   it("tightens long captions and re-checks them against the rule pack", async () => {
     const c = (await listConcepts(db, runId))[1]!;
-    const long = "Your puppy cries every night because nobody showed you this simple routine yet";
+    const long = "Your puppy cries every night. Nobody showed you this simple routine yet, so here it is";
     await upsertConcept(db, { ...c, shots: c.shots.map((s, i) => (i === 0 ? { ...s, onScreenText: long } : s)) });
     expect(await tightenCaptions(db, c.id)).toBe(1);
     const after = (await getConcept(db, c.id))!;

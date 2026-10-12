@@ -49,6 +49,67 @@ export function styleBlock(b: Brand): string {
 const isVideo = (c: Pick<Concept, "format" | "shots">) =>
   !["static", "carousel", "text_post"].includes(c.format) && c.shots.length > 1;
 
+const words = (t?: string) => (t ?? "").split(/\s+/).filter(Boolean).length;
+const SEP = /^(→|·|-|\||\/)$/;
+
+/**
+ * Fallback shortening without a model: keep whole clauses (cut after punctuation or before an arrow). With no clause
+ * boundary the text is kept as is: a long caption is better than one cut mid-phrase that changes the meaning.
+ */
+export function clipCaption(text: string, max = 8): string {
+  const w = text.split(/\s+/).filter(Boolean);
+  if (w.length <= max) return text;
+  let cut = 0;
+  for (let i = 1; i <= max; i++) {
+    if (/[.!?;:,]$/.test(w[i - 1]!) || SEP.test(w[i] ?? "")) cut = i;
+  }
+  if (cut < 2) return text;
+  const kept = w.slice(0, cut).filter((x) => !SEP.test(x));
+  return kept.join(" ").replace(/[,;:]$/, "");
+}
+const Shortened = z.object({ captions: z.array(z.object({ key: z.string(), onScreenText: z.string() })) });
+
+/**
+ * Video captions over 12 words cannot be read in a 2 to 5 s shot. Shorten them (same language, same meaning, no new
+ * claims) in one call before the compliance check, so the check covers the text that ships.
+ */
+export async function shortenVideoCaptions(ctx: PhaseCtx, concepts: Concept[]): Promise<Concept[]> {
+  const long = concepts.filter(isVideo).flatMap((c) =>
+    c.shots
+      .filter((s) => words(s.onScreenText) > 12)
+      .map((s) => ({
+        key: `${c.id}:${s.idx}`,
+        language: c.language,
+        onScreenText: s.onScreenText!,
+        voiceover: s.voiceover,
+      })),
+  );
+  if (!long.length) return concepts;
+  const r = await structured(
+    { db: ctx.db, runId: ctx.run.id, phase: "production" },
+    {
+      route: "production",
+      system: `You edit on-screen captions for short vertical videos. Rewrite each caption to at most 8 words in its own language, same meaning, no new claims, plain words. The voiceover carries the detail. Return every key.\n\n${rulePackText(ctx.brand.rulePack)}`,
+      user: JSON.stringify(long),
+      schema: Shortened,
+      note: `production: shorten ${long.length} caption(s)`,
+      maxTokens: 4000,
+      demo: () => ({
+        captions: long.map((l) => ({ key: l.key, onScreenText: clipCaption(l.onScreenText) })),
+      }),
+    },
+  );
+  const next = new Map(r.value.captions.filter((x) => words(x.onScreenText) > 0).map((x) => [x.key, x.onScreenText]));
+  await ctx.emit("log", `Shortened ${next.size} on-screen caption(s) for readability`);
+  return concepts.map((c) => ({
+    ...c,
+    shots: c.shots.map((s) => {
+      const t = next.get(`${c.id}:${s.idx}`);
+      return t ? { ...s, onScreenText: t } : s;
+    }),
+  }));
+}
+
 export function draftsToConcepts(
   runId: string,
   brand: Brand,
@@ -206,12 +267,15 @@ export async function production(ctx: PhaseCtx): Promise<void> {
       demo: () => ({ concepts: demoDrafts(ctx) }),
     },
   );
-  const concepts = draftsToConcepts(
-    run.id,
-    brand,
-    out.value.concepts.slice(0, 7),
-    evidence,
-    bps.map((b) => ({ id: b.id, shots: b.shots.length })),
+  const concepts = await shortenVideoCaptions(
+    ctx,
+    draftsToConcepts(
+      run.id,
+      brand,
+      out.value.concepts.slice(0, 7),
+      evidence,
+      bps.map((b) => ({ id: b.id, shots: b.shots.length })),
+    ),
   );
   for (const c0 of concepts) {
     ctx.check();

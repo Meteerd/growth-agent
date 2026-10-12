@@ -5,6 +5,7 @@ import { z } from "zod";
 import type { Asset, Blueprint, Brand, Concept, Review } from "@/contracts";
 import { type BetaContentBlockParam, loadPrompt, structured } from "./agent/claude";
 import { makeCtx } from "./agent/context";
+import { clipCaption } from "./agent/phases/production";
 import { reviewRender } from "./agent/phases/review";
 import { checkText } from "./compliance/check";
 import type { Db } from "./db/client";
@@ -539,7 +540,7 @@ export async function tightenCaptions(db: Db, conceptId: string): Promise<number
       demo: () => ({
         shots: long.map((s) => ({
           idx: s.idx,
-          onScreenText: (s.onScreenText ?? "").split(/\s+/).slice(0, 7).join(" "),
+          onScreenText: clipCaption(s.onScreenText ?? "", 7),
         })),
       }),
     },

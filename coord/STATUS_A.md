@@ -1,14 +1,14 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-12 03:29 +03
+- Time: 2026-10-12 04:10 +03
 - Current task: IMPROVE loop (all CORE + STRETCH + A17 checked); MORNING_A kept current
-- Last sync: 23:37 exit 0, main UPDATED, checks PASS
+- Last sync: 03:55 exit 0, main UPDATED, checks PASS
 - Blockers:
-  - fal account balance exhausted (403 locked) at 03:24: no more motion clips tonight; stills fallback works. Needs a top-up (event credits).
+  - fal account balance exhausted (403 locked) at 03:24; motion falls back to Higgsfield ($6 of $8 used). Top up fal (event credits).
   - REVENUECAT, POSTHOG, STRIPE, PADDLE, META keys missing: connectors demo.
 - Next 3: MORNING_A final details -> eval and edge cases from IMPROVE_LOOP -> keep syncing
-- Spend so far (ledger, USD): anthropic ~7.0 / 150, openai ~6.7 / 60, fal 7.25 / 8 (incl. a $1.00 conservative estimate for clips of a stopped process), apify 1.38 / 4, firecrawl 0.05 / 3, youtube 0, spiral credits (~20 ads), manus 3 lite tasks (credits), higgsfield 0
+- Spend so far (ledger, USD, 04:05): anthropic 10.56 / 150, openai 9.54 / 60, fal 7.25 / 8 (balance out), higgsfield 6.00 / 8, apify 2.33 / 4, firecrawl 0.07 / 3, youtube 0, manus 3 lite tasks
 
 ## Log (one line per finished task, newest last)
 - 23:17 A01 done: Next.js 16.4 scaffold, check/build/dev OK
@@ -35,3 +35,4 @@
 - 02:33 A17 done. Flagships: Hound concept_1d68be0a_1 (run_mv4e0ud7671d68be0a) 83/100, shots 85/86/81/84/85/80: six photoreal phone-footage shots (beagle at the door, keys, chew toy, hand on head) remaking a real TikTok myth-vs-fact winner, CTA shot holds a phone showing Hound's real beagle art. a.clinic concept_1e6575ad_1 (run_mv4e8sfdbc1e6575ad) 82/100, shots 80/83/82/85/80/80: Slovak home footage, sticky-note 4 steps, laptop/phone with a.clinic's real doctor art, local pharmacy, checklist, phone with the a.clinic page. Contact sheets in docs/renders/. Sora unavailable (404), fal Kling 2.1 used.
 - 02:47 ack concepts lose blueprintId on runs that reuse research (INBOX_A 02:16): fixed with fallback linking + test
 - 03:29 IMPROVE: fresh-clone check OK; Dynova + Evreon live research and full runs; eval-all all green on current runs; fal balance exhausted (circuit breaker added)
+- 04:10 IMPROVE I29-I31: Dynova flagship 81/100 (every shot >= 80, Higgsfield clips) exported as showcase; wordy video captions shortened before compliance; clause-safe fallback; eval checks language + readability; tests for motion fallback, flagship repair, tightened-caption compliance
