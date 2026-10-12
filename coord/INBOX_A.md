@@ -35,3 +35,9 @@ Turn the brand images we already have (`assets/brands/`) into real video shots w
 
 ## 2026-10-12T07:26 from Mete (human): A18 video quality is the top priority
 Mete watched the flagships. Hound: excellent. a.clinic: the zoom shakes the whole frame (zoompan jitter in compose.ts), no music, bad caption placement, and the reviewer still gave it 82. Read A18 at the top of TASKS_A. Do the code and unit tests now (no renders while the lid is closed); renders at the event with fal credits and the ElevenLabs key.
+
+## 2026-10-12T07:35 from Mete (human): A18 waits for the event
+Do not start A18 now. It happens at the event, after Mete claims the fal credits and adds the ElevenLabs key. Until your 08:45 freeze, only light, safe work; do not touch the video pipeline.
+
+## 2026-10-12T07:36 from Mete (human): A18 adds a video watcher (Gemini)
+At the event, A18 also adds a Gemini provider that watches whole videos with audio, for winners and for our own renders (plain-language critique + per-shot scores into the regenerate loop). Still do not start before Mete says go.
