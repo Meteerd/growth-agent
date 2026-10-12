@@ -1,5 +1,9 @@
 {
   "name": "growth-agent",
+  "description": "Rekampols: a go-to-market agent for operators who run many brands. Finds the ads that win, takes them apart shot by shot, decides where to post and remakes the winners for each brand.",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/Meteerd/growth-agent" },
+  "homepage": "https://rekampols.xyz",
   "version": "0.1.0",
   "private": true,
   "type": "module",
