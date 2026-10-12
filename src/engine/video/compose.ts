@@ -380,11 +380,12 @@ export function punchIn(src: string, dur: number, out: string): string {
 
 /** The phone frame art (once per compose): a rounded-screen alpha mask and a bezel layer with a soft shadow. */
 async function phoneArt(workDir: string) {
-  const sw = 760;
+  // smaller and bottom-anchored so the top band (above the phone) stays clear for captions
+  const sw = 600;
   const sh = Math.round(sw * (19.5 / 9));
   const x = Math.round((W - sw) / 2);
-  const y = Math.round((H - sh) / 2) + 40;
-  const r = 78;
+  const y = H - sh - 110;
+  const r = 64;
   const mask = path.join(workDir, "phone_mask.png");
   const bezel = path.join(workDir, "phone_bezel.png");
   if (!fs.existsSync(mask))
