@@ -134,7 +134,11 @@ export function BlueprintView({ blueprintId }: { blueprintId: string }) {
           className="flex flex-col overflow-hidden rounded-panel bg-viewer lg:col-span-8"
         >
           <div className="grid flex-1 grid-cols-2 gap-px bg-[#222]">
-            <Viewer label="Original" time={t} recording={playing}>
+            <Viewer
+              label={frame ? "Original" : ev?.thumbnailUrl ? "Original, cover image" : "Original"}
+              time={t}
+              recording={playing}
+            >
               <ShotFrame
                 url={
                   frame?.url ?? ev?.thumbnailUrl /* frames live on the analysing machine; elsewhere the real cover */

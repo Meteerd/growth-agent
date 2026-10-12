@@ -65,6 +65,8 @@ Quality specs that also run in `pnpm e2e`: `bans.spec` (v2 hard bans on 14 route
 
 Other things that exist: Cmd+K palette (header "Jump to"), presentation mode (`?present=1`: no dev chrome, larger for a projector, replay speeds in the cockpit), designed 404 and error boundary, loading/empty/error states on every screen, keyboard paths (consult letters, timeline arrows and Home/End, Enter submits, Esc closes), reduced motion respected (the playhead autoplay is skipped).
 
+Live screenshots (real seeded data, zero spend, the flagship remake in place) are in `e2e/screens/live/`: landing, portfolio, brand home, reverse-engineer (the showcase blueprint), cockpit, direction, studio, packs and settings at 1440x900 and 390x844. Regenerate them with the live server above running, then `E2E_DATA=live E2E_PORT=3200 pnpm exec playwright test e2e/screens-live.spec.ts`.
+
 ## Mock vs live
 - **Mock** (`NEXT_PUBLIC_DATA_MODE=mock`): an in-browser store built from `@/contracts` fixtures; a scripted run plays in about 60 s (20 s in e2e) and pauses at the consultation until answers are posted. Mock state lasts one page load (client navigation keeps it). Mock never shows the placeholder video as a render.
 - **Live** (default): every screen verified against Lane A's routes with real seeded data (`e2e/live.spec.ts`, 10 passed, zero console errors). Found and fixed on the recorded live Hound run: research-only runs, empty hook lines, header spend, the remake-pending lane (I01 to I04).
