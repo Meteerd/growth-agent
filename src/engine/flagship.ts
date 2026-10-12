@@ -6,7 +6,7 @@ import type { Asset, Blueprint, Brand, Concept, Review } from "@/contracts";
 import { type BetaContentBlockParam, loadPrompt, structured } from "./agent/claude";
 import { makeCtx } from "./agent/context";
 import { clipCaption } from "./agent/phases/production";
-import { reviewRender } from "./agent/phases/review";
+import { priorScores, reviewRender } from "./agent/phases/review";
 import { checkText } from "./compliance/check";
 import type { Db } from "./db/client";
 import { HttpError } from "./http";
@@ -15,7 +15,6 @@ import { extractFrame, probe } from "./media/ffmpeg";
 import { generateImage } from "./providers/openai";
 import {
   appendEvent,
-  getAsset,
   getBlueprint,
   getBrand,
   getConcept,
@@ -29,7 +28,7 @@ import {
 import { rulePackText } from "./rules";
 import { renderConcept } from "./services/concepts";
 import { brandAssetsDir, fileToUrl, urlToFile } from "./video/files";
-import { demoKeyframe, writeAsset } from "./video/keyframes";
+import { demoKeyframe, SAFE_AREA, toFrame916, writeAsset } from "./video/keyframes";
 
 /**
  * A17: the flagship remake. Each shot starts from the brand's real image when one fits, otherwise from a frame
@@ -163,8 +162,8 @@ async function keyframeFor(
   } else {
     const prompt =
       s.style === "photoreal"
-        ? `${s.visualPrompt}. ${PHOTOREAL}`
-        : `${s.visualPrompt}. Style: ${brand.dossier.visual.styleNotes ?? ""} Vertical 9:16, no text.`;
+        ? `${s.visualPrompt}. ${PHOTOREAL} ${SAFE_AREA}`
+        : `${s.visualPrompt}. Style: ${brand.dossier.visual.styleNotes ?? ""} Vertical 9:16, no text. ${SAFE_AREA}`;
     // a generated frame that shows the brand's real art (on a phone, a poster) gets that image as a reference
     let refs: string[] | undefined;
     if (s.imageRef) {
@@ -206,7 +205,7 @@ async function keyframeFor(
       });
       return gen(false);
     });
-    png = img.png;
+    png = await toFrame916(img.png);
     provider = img.mode === "live" ? "openai" : "local";
     model = img.model;
     usd = img.usd;
@@ -335,13 +334,23 @@ export async function buildFlagship(
   const ctx = base.forPhase("review");
   const reviews: Review[] = [];
   let asset: Asset | null = null;
+  let last: { review: Review; shots: Concept["shots"] } | undefined;
   const rounds = o.rounds ?? 2;
   for (let round = 1; round <= rounds; round++) {
     asset = (await renderConcept(db, c.id, "final", { label: `flagship_r${round}` })).asset;
     asset = { ...asset, model: `${asset.model}-flagship` };
     await upsertAsset(db, asset);
     c = (await getConcept(db, c.id))!;
-    const rv = await reviewRender(ctx, c, bp, asset.id, round, []);
+    const rv = await reviewRender(
+      ctx,
+      c,
+      bp,
+      asset.id,
+      round,
+      [],
+      priorScores(last?.review, last?.shots ?? [], c.shots),
+    );
+    last = { review: rv, shots: c.shots };
     const weak = rv.perShot.filter((p) => p.score < 80);
     rv.decision = weak.length && round < rounds ? "regenerate" : "accept";
     if (rv.decision === "regenerate") rv.regeneratedShots = weak.map((w) => w.idx);
@@ -398,6 +407,7 @@ export async function repairFlagship(db: Db, conceptId: string): Promise<Flagshi
   const ctx = (await makeCtx(db, run.id, new AbortController().signal)).forPhase("review");
   let prev = (await listReviews(db, c.id)).at(-1);
   if (!prev) throw new HttpError(409, "no_review", "Build the flagship first");
+  const reviewed = c.shots.map((s) => ({ ...s }));
   if (await tightenCaptions(db, c.id)) c = (await getConcept(db, c.id))!;
   // frames removed on purpose (e.g. to re-crop a brand photo) are rebuilt with the flagship frame builder
   if (c.shots.some((s) => !s.keyframeAssetId)) {
@@ -415,7 +425,7 @@ export async function repairFlagship(db: Db, conceptId: string): Promise<Flagshi
     a = { ...a, model: `${a.model}-flagship` };
     await upsertAsset(db, a);
     c = (await getConcept(db, c.id))!;
-    const r0 = await reviewRender(ctx, c, bp, a.id, prev.round + 1, []);
+    const r0 = await reviewRender(ctx, c, bp, a.id, prev.round + 1, [], priorScores(prev, reviewed, c.shots));
     r0.decision = r0.perShot.some((p) => p.score < 80) ? "regenerate" : "accept";
     r0.notes = `Re-composed with the same frames and clips. ${r0.notes}`;
     await upsertReview(db, r0);
@@ -478,7 +488,7 @@ export async function repairFlagship(db: Db, conceptId: string): Promise<Flagshi
   };
   let asset = await render(`flagship_r${prev.round + 1}`);
   c = (await getConcept(db, c.id))!;
-  let rv = await reviewRender(ctx, c, bp, asset.id, prev.round + 1, []);
+  let rv = await reviewRender(ctx, c, bp, asset.id, prev.round + 1, [], priorScores(prev, before, c.shots));
   const prevScores = prev.perShot;
   // keep the best version of every changed shot
   const reverted: number[] = [];
@@ -491,7 +501,7 @@ export async function repairFlagship(db: Db, conceptId: string): Promise<Flagshi
     await upsertConcept(db, c);
     asset = await render(`flagship_r${prev.round + 1}_best`);
     c = (await getConcept(db, c.id))!;
-    rv = await reviewRender(ctx, c, bp, asset.id, prev.round + 1, []);
+    rv = await reviewRender(ctx, c, bp, asset.id, prev.round + 1, [], priorScores(prev, before, c.shots));
   }
   rv.round = prev.round + 1;
   rv.decision = "accept";

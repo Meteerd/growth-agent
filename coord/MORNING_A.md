@@ -45,7 +45,7 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 4. Consultation live: start a run on the recorded research (`POST /api/brands/hound/runs {"kind":"full","reuseResearchFrom":"recorded"}`), answer 2 or 3 questions in front of the judge (Claude, live). The rest of that run takes ~10 minutes, so for direction, studio and packs switch to `run_mv4e0ud7671d68be0a` which already finished.
 5. Direction: ranked channels with six-axis scores, explicit weights, evidence links, "not now" with reasons.
 6. Studio: the flagship video, its keyframes (brand images or photoreal frames), the two review rounds with per-shot scores.
-7. Packs: download the zip; show the Manus landing page link on the Hound TikTok pack.
+7. Packs: download the flagship's TikTok pack zip (`pack_1d68be0a_1`: video, caption, hashtags, checklist, cover). The Manus-built landing page is on `pack_0569d023_1` of the earlier Hound run `run_mv4cox1z4e0569d023` (this machine only; built for an earlier Hound concept, unpublished): https://manus.im/app/495LAe3t6NDkJcXULHZL4T (opens in Mete's Manus account). `POST /api/packs/:id/landing` builds one for any pack when Manus is live (one lite task each).
 8. a.clinic in 20 seconds: same loop, Slovak content, Meta paid blocked by RX4 with the reason.
 
 ## Live vs demo (overnight)
@@ -57,6 +57,16 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 - **a.clinic** `concept_1e6575ad_1`: Slovak 4-step listicle remake: home, sticky notes, laptop and phone with a.clinic's real doctor art, local pharmacy, checklist, the a.clinic page. Review 82/100, every shot >= 80. `docs/renders/aclinic-flagship.jpg` / `.mp4`.
 - **Dynova** `concept_91d09027_1`: Turkish explainer remake ("Genel öneriler varken gen testi gerekli mi?"): a man with the Dynova kit, at-home sample to lab, "teşhis değil, bilgi" (not a diagnosis), routine from your own data, dynova.health on a phone. Review 81/100, every shot >= 80, clips by Higgsfield (fal balance ran out). `docs/renders/dynova-flagship.jpg` / `.mp4`.
 - How: Claude picks per shot a real brand image or a frame in the winner's look (photoreal for real-footage winners), OpenAI gpt-image-2 renders frames (brand art goes onto screens through an image-edit reference), fal Kling 2.1 animates the shots (screens stay still), ffmpeg composes captions, voiceover and end card, Claude reviews against the blueprint and an AI-tells rubric, weak shots are fixed (keep-best per shot). `pnpm flagship <conceptId> [--repair] [--sheet docs/renders/x.jpg]`.
+
+## Safety and quality rules added overnight (each has a test)
+- A live run never mixes demo data into real research: a provider that is not live is skipped with a warning (demo runs keep labelled demo data).
+- Any provider hitting its budget cap leaves a `warning` event on the run ("<provider> budget cap reached: skipped, using the fallback for this step").
+- Double click on "start run" starts one run (same request within 60 s returns the active run).
+- Consultation: all questions skipped, duplicate posts and late answers behave (one resume, assumptions recorded, 409 after the run ends).
+- Video captions over 12 words are shortened by Claude before the compliance check; the fallback never cuts mid-phrase.
+- Shortened evidence ids in Claude's prose ("ev_x_02" for "ev_x_02_52d515") are repaired, so every citation resolves; `pnpm eval-all` checks it.
+- Rendering an imported run on another machine rebuilds missing frames instead of failing.
+- Reviews are calibrated: an unchanged shot keeps its previous score unless the reviewer names a new defect.
 
 ## Known issues
 - **fal account balance is exhausted** (fal answered "User is locked. Exhausted balance" at 03:24 when our ledger showed $7.25 of the $8 cap, so the account had less than our cap). Final renders now fall back to stills with a warning, and the engine stops calling fal for the rest of the process. Top up fal (event credits) before rendering more motion. Motion now falls back to Higgsfield (Kling image-to-video), which rendered the Dynova flagship.

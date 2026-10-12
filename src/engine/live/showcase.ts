@@ -4,7 +4,7 @@ import type { Asset, ComplianceCheck, DemoRunBundle, Review } from "@/contracts"
 import type { Db } from "../db/client";
 import { ffmpeg } from "../media/ffmpeg";
 import {
-  getBlueprint,
+  getAsset,
   getBrand,
   getLatestPlan,
   getRun,
@@ -19,6 +19,9 @@ import {
   listQuestions,
   listReviews,
   upsertAsset,
+  upsertConcept,
+  upsertPack,
+  upsertReview,
 } from "../repo";
 import { urlToFile } from "../video/files";
 
@@ -106,18 +109,35 @@ export function loadShowcase(slug: string): DemoRunBundle | null {
   return fs.existsSync(f) ? (JSON.parse(fs.readFileSync(f, "utf8")) as DemoRunBundle) : null;
 }
 
-/** Seed: import a showcase run (idempotent) and put its flagship video where the asset route serves it. */
+/**
+ * Seed: import a showcase run (idempotent) and put its flagship video where the asset route serves it. A database
+ * that imported an older export of the same run still gets the newer flagship: missing assets are added and the
+ * concepts, packs and reviews that point at them are refreshed; a video file that changed is copied again.
+ */
 export async function importShowcase(db: Db, b: DemoRunBundle): Promise<boolean> {
-  if (await getRun(db, b.run.id)) return false;
-  await importBundle(db, b);
+  const fresh = !(await getRun(db, b.run.id));
+  if (fresh) await importBundle(db, b);
+  const missing = fresh
+    ? b.assets
+    : (await Promise.all(b.assets.map(async (a) => ((await getAsset(db, a.id)) ? null : a)))).filter(
+        (a): a is Asset => !!a,
+      );
   for (const a of b.assets) {
     const src = path.join(renderDir(), path.basename(a.url));
     const dst = urlToFile(a.url);
-    if (dst && fs.existsSync(src) && !fs.existsSync(dst)) {
+    if (dst && fs.existsSync(src) && (!fs.existsSync(dst) || fs.statSync(dst).size !== fs.statSync(src).size)) {
       fs.mkdirSync(path.dirname(dst), { recursive: true });
       fs.copyFileSync(src, dst);
     }
-    await upsertAsset(db, a);
   }
+  for (const a of missing) await upsertAsset(db, a);
+  if (fresh || !missing.length) return fresh;
+  // an older import of this run: bring the rows that use the new flagship up to date
+  const ids = new Set(missing.map((a) => a.id));
+  const concepts = b.concepts.filter((c) => c.videoAssetId && ids.has(c.videoAssetId));
+  for (const c of concepts) await upsertConcept(db, c);
+  const cids = new Set(concepts.map((c) => c.id));
+  for (const p of b.packs.filter((x) => cids.has(x.conceptId))) await upsertPack(db, p);
+  for (const r of b.reviews.filter((x) => cids.has(x.conceptId))) await upsertReview(db, r);
   return true;
 }
