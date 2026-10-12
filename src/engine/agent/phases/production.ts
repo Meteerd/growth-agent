@@ -65,7 +65,8 @@ export function clipCaption(text: string, max = 8): string {
   }
   if (cut < 2) return text;
   const kept = w.slice(0, cut).filter((x) => !SEP.test(x));
-  return kept.join(" ").replace(/[,;:]$/, "");
+  // never return an empty caption (e.g. a line of arrows only)
+  return kept.length ? kept.join(" ").replace(/[,;:]$/, "") : text;
 }
 const Shortened = z.object({ captions: z.array(z.object({ key: z.string(), onScreenText: z.string() })) });
 
