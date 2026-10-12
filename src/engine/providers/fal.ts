@@ -4,9 +4,13 @@ import type { Db } from "../db/client";
 import { callProvider } from "./call";
 import { fetchRetry, okJson } from "./http";
 
-/** Cheapest image-to-video tier for drafts (fal pricing page, Oct 2026: ~$0.25 per 5 s, +$0.05/s). */
-export const FAL_I2V_MODEL = () => process.env.FAL_I2V_MODEL || "fal-ai/kling-video/v2.1/standard/image-to-video";
-export const falClipCost = (sec: number) => 0.25 + Math.max(0, sec - 5) * 0.05;
+/**
+ * Kling 2.5 Turbo Pro (event day, 12 Oct): better motion than 2.1 Standard and ~50 s per clip while 2.1 Standard
+ * timed out in fal's queue. fal pricing: $0.35 per 5 s, +$0.07/s.
+ */
+export const FAL_I2V_MODEL = () => process.env.FAL_I2V_MODEL || "fal-ai/kling-video/v2.5-turbo/pro/image-to-video";
+export const falClipCost = (sec: number) =>
+  FAL_I2V_MODEL().includes("v2.1/standard") ? 0.25 + Math.max(0, sec - 5) * 0.05 : 0.35 + Math.max(0, sec - 5) * 0.07;
 
 const headers = () => ({ Authorization: `Key ${process.env.FAL_KEY}`, "content-type": "application/json" });
 

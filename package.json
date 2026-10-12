@@ -29,7 +29,10 @@
     "watch-winners": "tsx scripts/watch-winners.ts",
     "voices": "tsx scripts/voices.ts",
     "flagship-a18": "tsx scripts/flagship-a18.ts",
-    "dub": "tsx scripts/dub.ts"
+    "dub": "tsx scripts/dub.ts",
+    "revise": "tsx scripts/revise.ts",
+    "showcase-clips": "tsx scripts/showcase-clips.ts",
+    "variants": "tsx scripts/variants.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

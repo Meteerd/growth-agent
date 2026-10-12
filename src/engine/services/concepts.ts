@@ -336,6 +336,12 @@ export async function renderConcept(
         };
         await upsertAsset(db, clip);
         updated[s.idx] = { ...s, clipAssetId: clip.id };
+        // saved as soon as it lands: a stopped render never loses a paid clip
+        await upsertConcept(db, {
+          ...((await getConcept(db, cur.id)) ?? cur),
+          shots: [...updated],
+          status: "rendering",
+        });
         await emit("asset", `Clip ${s.idx + 1}/${cur.shots.length} animated (${r.provider})`, {
           refId: clip.id,
           costUsd: r.usd,

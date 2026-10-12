@@ -19,8 +19,17 @@ function ensureDir(url: string) {
 export async function createDb(url = process.env.DATABASE_URL || "file:./data/nexus.db"): Promise<Db> {
   ensureDir(url);
   const client = createClient({ url });
-  await client.execute("PRAGMA journal_mode = WAL");
-  await client.execute("PRAGMA busy_timeout = 5000");
+  // busy_timeout first: several processes (dev server, renders, scripts) open the same file at once
+  await client.execute("PRAGMA busy_timeout = 15000");
+  for (let i = 0; ; i++) {
+    try {
+      await client.execute("PRAGMA journal_mode = WAL");
+      break;
+    } catch (e) {
+      if (i >= 10 || !/SQLITE_BUSY|locked/i.test(String(e))) throw e;
+      await new Promise((r) => setTimeout(r, 300 * (i + 1)));
+    }
+  }
   const db = drizzle(client, { schema }) as Db;
   await migrate(db, { migrationsFolder: MIGRATIONS });
   return db;
