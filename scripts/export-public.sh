@@ -12,6 +12,7 @@ mkdir -p "$OUT"
 LIST="$(mktemp)"
 git ls-files \
   | grep -Ev '^(\.env|data/|logs/|demo/recordings/|node_modules/|coord/|\.claude/|AGENTS\.md|CLAUDE\.md|e2e/screens/live/)' \
+  | grep -Ev '^(scripts/(sync|overnight|server-keys|export-public)\.sh|deploy/aws/)' \
   | grep -Ev '^docs/' \
   | grep -Evi 'camplan' > "$LIST"
 # docs: only the product, architecture, design and brand rules, our own renders, and the public README source
@@ -19,12 +20,20 @@ git ls-files docs | grep -E '^docs/(PRODUCT_SPEC|ARCHITECTURE|DESIGN|BRANDS)\.md
 rsync -a --files-from="$LIST" ./ "$OUT/"
 rm -f "$LIST"
 cp docs/PUBLIC_README.md "$OUT/README.md"
+# the spec's problem statement names a coding tool founders use for reels; the public copy says "AI tools"
+sed -i.bak 's/Claude Code + Higgsfield/AI tools + Higgsfield/' "$OUT/docs/PRODUCT_SPEC.md" && rm -f "$OUT/docs/PRODUCT_SPEC.md.bak"
 
 # secret scan: provider key shapes, private keys, and any KEY/TOKEN/SECRET assignment with a value
 PATTERNS='sk-ant-[A-Za-z0-9_-]{20,}|sk-proj-[A-Za-z0-9_-]{20,}|sk-[A-Za-z0-9]{32,}|AIza[0-9A-Za-z_-]{35}|apify_api_[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{30,}|gh[ousr]_[A-Za-z0-9]{30,}|xox[abpr]-[A-Za-z0-9-]{10,}|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|(API_KEY|_TOKEN|_SECRET|_KEY)=[^[:space:]$]{12,}'
 if HITS="$(grep -rEn --binary-files=without-match "$PATTERNS" "$OUT")"; then
   echo "SECRET SCAN FAILED: remove these before publishing:"
   echo "$HITS" | cut -c1-200
+  exit 1
+fi
+# internal build notes stay internal (Mete, 11:30); Claude as the product's runtime engine is fine and stays
+if NOTES="$(grep -rEnil --binary-files=without-match 'claude code|/goal|claude -p|co-authored-by' "$OUT")"; then
+  echo "BUILD-NOTES SCAN FAILED: these files mention the build tooling:"
+  echo "$NOTES"
   exit 1
 fi
 FILES="$(find "$OUT" -type f | wc -l | tr -d ' ')"

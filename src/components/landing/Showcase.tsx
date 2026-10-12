@@ -68,7 +68,8 @@ export function Showcase() {
               <h2 className="mt-3 max-w-[30ch] font-semibold text-[clamp(1.7rem,3vw,2.6rem)] text-bone leading-[1.05] tracking-[-0.03em]">
                 {p.remake.title}
               </h2>
-              <div className="mt-8 grid-cols-1 grid gap-px overflow-hidden rounded-[10px] border border-line bg-line lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.7fr)_minmax(0,1fr)]">
+              <Chain p={p} />
+              <div className="mt-4 grid-cols-1 grid gap-px overflow-hidden rounded-[10px] border border-line bg-line lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.7fr)_minmax(0,1fr)]">
                 <WinnerCard p={p} compact />
                 <div className="flex items-center justify-center bg-[#111] p-4">
                   <div className="aspect-[9/16] w-full max-w-[300px] overflow-hidden rounded-[8px]">
@@ -136,5 +137,61 @@ export function Showcase() {
         ))}
       </main>
     </>
+  );
+}
+
+/** The go-to-market chain for one brand, left to right: research, where to go, business, the winner, our remake. */
+function Chain({ p }: { p: NonNullable<ReturnType<typeof proofFor>> }) {
+  const r = p.research;
+  const w = p.winner;
+  const steps: [string, string, string?][] = [
+    [
+      "Market research",
+      `${r.items} real ads and posts from ${r.sources} sources${
+        r.competitors
+          ? `. Manus: ${r.competitors} competitors${r.communities ? `, ${r.communities} communities and their rules` : ""}`
+          : ""
+      }.`,
+      r.manusUrl,
+    ],
+    [
+      "Where to go",
+      `${p.channels.map((c) => c.label).join(", ")} first.${
+        p.notNow.length ? ` Not now: ${p.notNow.map((n) => n.label).join(", ")}.` : ""
+      }`,
+    ],
+    [
+      "Business",
+      p.offers.length ? `${p.offers.join(", ")}, from the brand's site.` : "Offers read from the brand's site.",
+    ],
+    [
+      "The winning ad",
+      `${w.source} ${w.kind}${w.outlier != null ? `, ${w.outlier}x its account median` : w.daysRunning != null ? `, running ${w.daysRunning} days` : ""}.`,
+    ],
+    [
+      "Our remake",
+      `${p.remake.shots} shots in ${p.remake.language.toUpperCase()}${p.remake.review != null ? `, self-review ${p.remake.review}/100` : ""}.`,
+    ],
+  ];
+  return (
+    <ol className="mt-8 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-5" data-testid={`chain-${p.slug}`}>
+      {steps.map(([title, body, href], i) => (
+        <li key={title} className="flex flex-col gap-1.5 rounded-card bg-raised p-4">
+          <span className="font-mono text-[12px] text-signal">{String(i + 1).padStart(2, "0")}</span>
+          <span className="font-semibold text-[15px] text-bone">{title}</span>
+          <span className="text-[13px] text-bone-2 leading-snug">{body}</span>
+          {href && (
+            <a
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-auto text-[12.5px] text-bone underline underline-offset-4"
+            >
+              The Manus task
+            </a>
+          )}
+        </li>
+      ))}
+    </ol>
   );
 }
