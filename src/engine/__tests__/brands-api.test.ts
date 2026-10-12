@@ -94,7 +94,7 @@ describe("brands API (temp SQLite)", () => {
 
   it("GET /api/providers is demo for everything in tests", async () => {
     const list = ((await (await getProviders()).json()) as unknown[]).map((p) => ProviderStatus.parse(p));
-    expect(list).toHaveLength(17);
+    expect(list).toHaveLength(18);
     expect(list.every((p) => p.mode === "demo")).toBe(true);
   });
 

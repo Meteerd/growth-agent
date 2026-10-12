@@ -1,6 +1,7 @@
 import type { Db } from "../db/client";
 import { smokeAnthropic } from "./anthropic";
 import { smokeBlueprint } from "./blueprint";
+import { smokeDatabricks, smokePosthog, smokeRevenuecat } from "./business";
 import { smokeFal } from "./fal";
 import { smokeHiggsfield } from "./higgsfield";
 import { smokeFirecrawl, smokeIntake } from "./intake";
@@ -19,6 +20,9 @@ export const SMOKES: Record<string, Smoke> = {
   sora: smokeSora,
   fal: smokeFal,
   higgsfield: smokeHiggsfield,
+  revenuecat: smokeRevenuecat,
+  posthog: smokePosthog,
+  databricks: smokeDatabricks,
   intake: (db) => smokeIntake(db, process.env.SMOKE_BRAND || "hound"),
 };
 

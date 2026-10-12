@@ -19,6 +19,9 @@ const r = await buildA18(db, args[0]!, {
   animateAll: args.includes("--animate-all"),
   rounds: Number(arg("--rounds") ?? 2),
   sheetPath: arg("--sheet"),
+  screenCta: args.includes("--screen-cta")
+    ? { url: arg("--screen-url"), scrollPx: arg("--scroll") ? Number(arg("--scroll")) : undefined }
+    : undefined,
 });
 if (args.includes("--export")) console.log("export:", await exportShowcase(db, r.concept.runId));
 const spend = await repo.listSpend(db, r.concept.runId);

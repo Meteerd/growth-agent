@@ -224,6 +224,37 @@ export function audioGraph(
 }
 
 /**
+ * A still's camera move rendered frame by frame with sharp's affine transform (float scale and offset, bicubic):
+ * an eased 7% push in (or pull out) with a slight drift, so a still that has no clip still moves smoothly. Writes
+ * `<dir>/%05d.jpg` and returns the pattern.
+ */
+export async function stillMoveFrames(png: string, n: number, dir: "in" | "out", out: string): Promise<string> {
+  fs.rmSync(out, { recursive: true, force: true });
+  fs.mkdirSync(out, { recursive: true });
+  const base = await sharp(png)
+    .resize(W, H, { fit: "cover" })
+    .removeAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  const ease = (x: number) => x * x * (3 - 2 * x);
+  const jobs = Array.from({ length: n }, (_, i) => i);
+  const worker = async () => {
+    for (let i = jobs.shift(); i !== undefined; i = jobs.shift()) {
+      const e = ease(n > 1 ? i / (n - 1) : 0);
+      const z = dir === "in" ? 1.02 + 0.07 * e : 1.09 - 0.07 * e;
+      const drift = (e - 0.5) * 0.012 * W;
+      await sharp(base.data, { raw: base.info })
+        .affine([z, 0, 0, z], { odx: -(z - 1) * (W / 2) + drift, ody: -(z - 1) * (H / 2), interpolator: "bicubic" })
+        .extract({ left: 0, top: 0, width: W, height: H })
+        .jpeg({ quality: 92 })
+        .toFile(path.join(out, `${String(i).padStart(5, "0")}.jpg`));
+    }
+  };
+  await Promise.all(Array.from({ length: 6 }, worker));
+  return path.join(out, "%05d.jpg");
+}
+
+/**
  * A clip whose camera shakes (shakeScore > 1 reversal/s) is stabilised once with vidstab (two passes, kept next to
  * the clip as <clip>.stab.mp4); the steadier of the two versions is used.
  */
@@ -277,6 +308,7 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
     dur: number;
     clip?: string;
     clipLen?: number;
+    seq?: string;
     overlays?: { file: string; t0: number; t1: number }[];
   }[] = [];
   for (const [i, s] of p.shots.entries()) {
@@ -293,12 +325,22 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
     const clip = s.clipSrc ? (urlToFile(s.clipSrc) ?? undefined) : undefined;
     const hasClip = !!clip && fs.existsSync(clip);
     const steady = hasClip && p.motionQuality === "final" ? await steadyClip(clip!) : clip;
+    const seq =
+      !hasClip && p.motionQuality === "final"
+        ? await stillMoveFrames(
+            f,
+            Math.max(1, Math.round(s.durationSec * 30)),
+            i % 2 === 0 ? "in" : "out",
+            path.join(workDir, `move_${i}`),
+          )
+        : undefined;
     frames.push({
       file: f,
       overlays,
       dur: s.durationSec,
       clip: hasClip ? steady : undefined,
       clipLen: hasClip ? (await probe(steady!)).durationSec : undefined,
+      seq,
     });
     onProgress?.((i + 1) / (p.shots.length + 2));
   }
@@ -319,6 +361,10 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
       parts.push(
         `[${v}:v]${stretch > 1 ? `setpts=${stretch.toFixed(4)}*PTS,` : ""}scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[b${i}]`,
       );
+    } else if (f.seq) {
+      // final still: the camera move rendered per frame with float transforms (no zoompan, no rounding jitter)
+      inputs.push("-framerate", "30", "-i", f.seq);
+      parts.push(`[${v}:v]fps=30,trim=end_frame=${n},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[b${i}]`);
     } else {
       inputs.push("-i", f.file);
       const last = i === frames.length - 1;

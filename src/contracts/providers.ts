@@ -73,6 +73,12 @@ export const PROVIDER_INFO: Record<ProviderId, ProviderInfo> = {
   },
   revenuecat: { label: "RevenueCat", usedFor: "Subscriptions and revenue", role: "connector", scarce: false },
   posthog: { label: "PostHog", usedFor: "Funnels and referrers", role: "connector", scarce: false },
+  databricks: {
+    label: "Databricks",
+    usedFor: "Warehouse tables (read-only SQL)",
+    role: "connector",
+    scarce: false,
+  },
   stripe: { label: "Stripe", usedFor: "Paying customers", role: "connector", scarce: false },
   paddle: { label: "Paddle", usedFor: "Paying customers", role: "connector", scarce: false },
   meta: { label: "Meta Ads", usedFor: "Spend and CPA by creative (read-only)", role: "connector", scarce: false },

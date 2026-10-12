@@ -3,6 +3,7 @@ import path from "node:path";
 import type { Asset, ComplianceCheck, DemoRunBundle, Review } from "@/contracts";
 import type { Db } from "../db/client";
 import { ffmpeg } from "../media/ffmpeg";
+import { connectorBrand } from "../providers/business";
 import {
   getAsset,
   getBrand,
@@ -39,6 +40,11 @@ export async function exportShowcase(db: Db, runId: string): Promise<string> {
   const run = await getRun(db, runId);
   if (!run) throw new Error("run not found");
   const brand = (await getBrand(db, run.brandId))!;
+  // a private brand (its own business data is connected) never goes into the public repo or showcase build,
+  // unless Mete confirmed the owner approved (PUBLIC_OK_BRANDS)
+  const ok = (process.env.PUBLIC_OK_BRANDS ?? "").split(",").map((x) => x.trim().toLowerCase());
+  if (brand.slug === connectorBrand() && !ok.includes(brand.slug))
+    throw new Error(`${brand.name} is private (CONNECTOR_BRAND): not exported to the public showcase`);
   const concepts = await listConcepts(db, runId);
   const assets: Asset[] = [];
   const reviews: Review[] = [];

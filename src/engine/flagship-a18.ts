@@ -9,6 +9,7 @@ import { priorScores, reviewRender } from "./agent/phases/review";
 import type { Db } from "./db/client";
 import { contactSheet, keyframeFor } from "./flagship";
 import { HttpError } from "./http";
+import { newId, nowIso } from "./ids";
 import { extractFrame } from "./media/ffmpeg";
 import {
   appendEvent,
@@ -22,7 +23,8 @@ import {
   upsertReview,
 } from "./repo";
 import { renderConcept } from "./services/concepts";
-import { urlToFile } from "./video/files";
+import { fileToUrl, urlToFile } from "./video/files";
+import { recordSite } from "./video/screen";
 
 /**
  * A18 flagship pass: ElevenLabs soundtrack (cast voice, music bed, SFX, live captions in the winner's text style),
@@ -77,6 +79,8 @@ export async function chooseCaptionRegions(db: Db, c: Concept, preferred: "upper
 
 export interface A18Options {
   mode: "voice_led" | "picture_locked";
+  /** the CTA shot becomes a real screen recording of the brand's site on a phone viewport */
+  screenCta?: { url?: string; scrollPx?: number; startY?: number };
   animateAll: boolean;
   rounds: number;
   sheetPath?: string;
@@ -95,6 +99,53 @@ export async function buildA18(db: Db, conceptId: string, o: A18Options) {
   const reviews: Review[] = [];
   let best: { asset: Asset; review: Review; shots: Concept["shots"] } | null = null;
   let last: { review: Review; shots: Concept["shots"] } | undefined;
+  if (o.screenCta) {
+    const last = c.shots.at(-1)!;
+    const url = o.screenCta.url ?? brand.url;
+    const out = path.resolve(
+      process.env.ASSETS_DIR || "data/assets",
+      "runs",
+      c.runId,
+      c.id,
+      `screen_cta_${Date.now().toString(36)}.mp4`,
+    );
+    // long enough for a voice-led re-time of the line
+    await recordSite(url, out, {
+      seconds: Math.max(5, last.durationSec + 1.5),
+      scrollPx: o.screenCta.scrollPx ?? 260,
+      startY: o.screenCta.startY,
+    });
+    const clip: Asset = {
+      id: newId("asset"),
+      brandId: c.brandId,
+      conceptId: c.id,
+      kind: "clip",
+      url: fileToUrl(out),
+      provider: "local",
+      model: `playwright-screen ${url}`,
+      costUsd: 0,
+      width: 1080,
+      height: 1920,
+      durationSec: Math.max(5, last.durationSec + 1.5),
+      demo: false,
+      createdAt: nowIso(),
+      shotIdx: last.idx,
+    };
+    await upsertAsset(db, clip);
+    c = {
+      ...c,
+      shots: c.shots.map((s) => (s.idx === last.idx ? { ...s, clipAssetId: clip.id, style: "screen" as const } : s)),
+    };
+    await upsertConcept(db, c);
+    await appendEvent(db, {
+      runId: c.runId,
+      phase: "production",
+      type: "asset",
+      title: `CTA shot: real screen recording of ${url}`,
+      refId: clip.id,
+      data: { conceptId: c.id, shotIdx: last.idx, url: clip.url, kind: "clip" },
+    });
+  }
   for (let round = 1; round <= o.rounds; round++) {
     // captions keep faces and the subject clear (frames change when shots are regenerated)
     const regions = await chooseCaptionRegions(db, c, bp?.captionStyle?.position ?? "middle").catch(() => null);

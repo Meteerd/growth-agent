@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { Evidence, EvidenceSource } from "@/contracts";
 import { instagramSearch, metaAdsSearch, redditSearch, tiktokSearch } from "../../providers/apify";
+import { businessEvidence } from "../../providers/business";
 import { isLive } from "../../providers/env";
 import { finishLandscape, startLandscape } from "../../providers/manus";
 import { spiralWinners } from "../../providers/spiral";
@@ -193,6 +194,23 @@ export async function research(ctx: PhaseCtx): Promise<void> {
       data: { source: r.source, mode: r.mode, usd: r.usd },
     });
   };
+  // the brand's own numbers (read-only connectors, only for CONNECTOR_BRAND), first: they ground every decision
+  const truth = await businessEvidence(db, ctx.brand, run.id).catch(async (e) => {
+    await ctx.emit("warning", "Business connectors failed: continuing without the brand's own numbers", {
+      detail: e instanceof Error ? e.message : String(e),
+    });
+    return [];
+  });
+  if (truth.length) {
+    await upsertEvidence(db, truth);
+    all.push(...truth);
+    for (const e of truth)
+      await ctx.emit("evidence", e.title, {
+        refId: e.id,
+        detail: e.text?.slice(0, 240),
+        data: { source: e.source, kind: e.kind },
+      });
+  }
   const guard = (p: Promise<SourceResult>, source: EvidenceSource) =>
     p.then(store).catch(async (e) => {
       await ctx.emit("warning", `${source} failed: continuing with the other sources`, {
