@@ -76,7 +76,7 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 - **Review scores moved by up to ~10-20 points between reviews of an unchanged shot** (model judgment). Since 04:22 a review sees the previous scores of unchanged shots and keeps them within 3 points unless it names a new defect; the repair pass keeps the best version of each shot; the last review is the shipped cut.
 - **Blueprint frames of third-party videos** exist only on this machine (`data/`, never committed). Other machines show placeholders; blueprint JSON is in the repo.
 - Evreon and Dynova research passes ran without new Manus tasks (Manus credits): their recorded data has no Manus item (this machine's DB still holds the 2 labelled demo Manus items in those runs). New live runs skip a non-live source instead of mixing in demo items.
-- `pnpm eval-all` now also checks concept language and caption readability (video captions 12 words max, slides 40). One b-roll draft in the a.clinic live run was over that and was shortened (compliance re-checked); new runs shorten wordy video captions before the compliance check. Otherwise it passes for every current run (re-run at 04:57); the two superseded early Hound runs (`run_mv4dl43id902ec6a1f`, `run_mv4cox1z4e0569d023`) predate the consultation fix and cite skipped answers as "you said". Use `run_mv4e0ud7671d68be0a` for Hound.
+- `pnpm eval-all` now also checks concept language and caption readability (video captions 12 words max, slides 40). One b-roll draft in the a.clinic live run was over that and was shortened (compliance re-checked); new runs shorten wordy video captions before the compliance check. Otherwise it passes for every current run (re-run at 04:55); the two superseded early Hound runs (`run_mv4dl43id902ec6a1f`, `run_mv4cox1z4e0569d023`) predate the consultation fix and cite skipped answers as "you said". Use `run_mv4e0ud7671d68be0a` for Hound.
 - In the recorded full runs the consultation questions were **skipped by script** (no human), so plans say "assuming ...". In the demo a person answers.
 - `pnpm build` passes; Turbopack prints file-tracing warnings for dynamic asset paths (harmless locally).
 - Starting the dev server resumes interrupted runs only if their heartbeat is stale and they were interrupted less than 6 hours ago (older ones are marked failed, never resumed, so no surprise spend).
@@ -94,4 +94,4 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 | Spiral | credits (~20 ads analysed) | none |
 | Manus | 3 lite tasks (credits) | 500 credits |
 
-_Last update: 12 Oct 04:58 (Lane A)._
+_Last update: 12 Oct 04:55 (Lane A)._
