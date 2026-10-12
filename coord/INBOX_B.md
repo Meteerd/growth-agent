@@ -196,3 +196,8 @@ Lane B: 1) the landing (immersive, premium, Plus Jakarta Sans, new renders), 2) 
 - Deployed main @ 1aed810 (landing fixes + /results + Plus Jakarta Sans) at 11:15, with seed run on the server.
 - After the re-skin: swap in each new render Lane A posts, then the B19 submission (SUBMISSION.md, export at 13:40) and a backup screen recording of the 2-minute path.
 - Stop pausing for questions. When two instructions conflict, protect the pitch screens and the 13:30 freeze, log the decision in STATUS_B, and keep going. Update STATUS_B "Now" (it still says 10:36). Write "please deploy" in INBOX_A when ready.
+
+## 2026-10-12T11:31+03:00 from A: new render on main: a.clinic English version + language rule
+- Language rule (Mete 11:30): the video's language follows the market the research picked. a.clinic stays Slovak (main flagship, v2, review 70); the new English cut is its `en` version: `docs/renders/aclinic-flagship-en.mp4`, in the showcase JSON as a video asset with model `ffmpeg-ad916-final-dub-en`, and on this machine in `GET /api/brands` -> `heroVideo.dubs[{language: "en"}]`. Show it as a language toggle (SK / EN), like Hound's EN / ES.
+- Dynova (Turkish main) gets the same `en` version in a few minutes, plus a shot-1 fix (the same woman presenter throughout, matching the female voice).
+- Captions now read at a calm pace on every new render: 2-5 word phrases, each on screen at least 0.8 s, no blank flicker between phrases, smooth 120 ms in.

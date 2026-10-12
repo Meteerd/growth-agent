@@ -20,12 +20,13 @@ describe("A18 live captions", () => {
     expect(w[1]!.end).toBeCloseTo(0.99);
   });
 
-  it("groups hold 1 to 3 words and never longer than 1.2 s", () => {
-    const g = groupWords(words("Lekár ktorý berie tvoju váhu vážne bez sedenia v čakárni."), 3);
-    for (const x of g) {
-      expect(x.words.length).toBeGreaterThanOrEqual(1);
-      expect(x.words.length).toBeLessThanOrEqual(3);
-      expect(x.t1 - x.t0).toBeLessThanOrEqual(1.2 + 1e-9);
+  it("groups are readable phrases: 2 to 5 words, on screen at least 0.8 s, no blank gap between them", () => {
+    const g = groupWords(words("Lekár ktorý berie tvoju váhu vážne bez sedenia v čakárni a lieči ťa doma."), 3);
+    for (const [i, x] of g.entries()) {
+      expect(x.words.length).toBeGreaterThanOrEqual(2);
+      expect(x.words.length).toBeLessThanOrEqual(5);
+      expect(x.t1 - x.t0).toBeGreaterThanOrEqual(0.8 - 1e-9);
+      if (g[i + 1]) expect(g[i + 1]!.t0 - x.t1).toBeLessThan(1e-9);
     }
   });
 

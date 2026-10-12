@@ -1,13 +1,14 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-12 10:26 +03 (event day)
-- Current task: A18 step 4 re-renders (a.clinic, Dynova, Evreon on fal Kling 2.5 Turbo; Hound landed 10:24) + Hound es dub; then A19 variants live check, showcase clips, Camplan connectors (keys pending)
-- Last sync: 10:18 exit 0, main UPDATED, checks PASS
-- Blockers: none hard. Gemini free-tier quota (fallback chain); fal Kling 2.1 queue timeouts (switched to 2.5 Turbo Pro, ~50 s/clip); Sora 404 on our key.
-- Voices (assets/voices.json; ElevenLabs library, 3 takes each, Gemini listened): a.clinic sk "Hope - Natural, Clear and Calm" (OYTbf65OHHFELVut7v2H); Hound en-GB "Lucy - Fresh & Casual" (lcMyyd2HUfFzxdCaC4Ta); Dynova tr "Fili - Warm Turkish Female" (FDs1ZX5J4e4f2c2erxtW); Evreon en-GB "Archer - Conversational" (Fahco4VZzobUeiPqni1S). eleven_multilingual_v2.
-- Flagships (review = Claude frames + Gemini whole video with sound, calibrated to the winner, stricter wins): Hound 77 (76/80/79/75/80/78), others rendering.
-- A19: contract + routes + engine landed; live: Hound "add a hook title" planned 27 s, video at 39 s, clips/voice/music reused (v2, not chosen).
+- Time: 2026-10-12 11:27 +03 (event day). Freeze 13:30; Mete wants Hound, a.clinic, Dynova finished on main by 13:20.
+- Focus (Mete 11:15): Camplan > Hound > a.clinic > Dynova; Evreon gets no more work.
+- Current: Dynova shot 1 persona fix (same woman as shot 0, A19 revision); English versions of a.clinic/Dynova (secondary "en" dubs, market language stays primary per Mete 11:30); English 6-10 s talking heads (ElevenLabs Aurora lip sync); Camplan waits for Viktor's keys + URL (CONNECTOR_BRAND=camplan set).
+- Last sync: 11:18 exit 0, main UPDATED, checks PASS.
+- Voices (assets/voices.json, ElevenLabs library, 3 takes each, Gemini listened): a.clinic sk "Hope - Natural, Clear and Calm" (OYTbf65OHHFELVut7v2H); Hound en-GB "Lucy - Fresh & Casual" (lcMyyd2HUfFzxdCaC4Ta); Dynova tr "Fili - Warm Turkish Female" (FDs1ZX5J4e4f2c2erxtW); Evreon en-GB "Archer - Conversational" (Fahco4VZzobUeiPqni1S). English versions reuse the same voice (persona continuity), eleven_multilingual_v2.
+- Flagship reviews (Claude frames + Gemini whole video with sound, calibrated to the winner, stricter wins): Hound 78 (76/82/81/82/77/80), a.clinic v2 70, Dynova v2 68, Evreon 69 (frozen, no more work).
+- Talking-head tool: ElevenLabs Creatify Aurora (/v1/flows/video, image + the ElevenLabs speech audio drives the lips) chosen over fal Kling AI Avatar (v2 standard/pro kept as fallback); quality on par in the side-by-side, keeps the whole presenter in ElevenLabs.
+- Decisions today (conflicts resolved toward the pitch): premium caption spec over the winners' raw text style (Mete 10:53; the review judges against the target spec); market language primary, English as a dub (Mete 11:30 overrides 11:24); measured shake overrides Gemini's "handheld drift" shake; Gemini winner baseline < 40 is not used to calibrate.
 
 ## Log (one line per finished task, newest last)
 - 23:17 A01 done: Next.js 16.4 scaffold, check/build/dev OK
@@ -43,3 +44,4 @@
 - 07:23 new goal from Mete (internet back): sync first. The 07:20 sync failed again on demo-media.test.ts (renders 8 videos, 121 s under load); gave that test its own 300 s timeout (6df632d); 07:23 sync exit 0, main green. Light work only until 08:45, then FROZEN.
 - STOPPED by Mete at 07:41, A18 paused for the event. Last work commit abe91d4 (A18 so far: shake fix + metric, native captions, audio mix with music bed/ducking/-14 LUFS, measured review caps; not started: ElevenLabs provider, Gemini watcher, re-renders). Resumes at the event with coord/GOAL_A_EVENT.txt.
 - 10:24 A18: Hound flagship landed (same clips, ElevenLabs voice/music/SFX, live serif captions in the winner's style, real houndapp.xyz CTA), 77/100; A19 contract/routes/engine + test; business connectors (RevenueCat v2, PostHog HogQL, Databricks SQL, read-only, CONNECTOR_BRAND-bound, private export guard).
+- 11:05-11:18 A18: premium captions (Plus Jakarta Sans, spring-in, brand accent; Hound keeps a refined black box) on all four flagships; a.clinic v2 (new pharmacy shot) 70, Dynova v2 (woman presenter shot 0) 68, Hound 78 + whimper SFX + es re-dub; exports + INBOX_B "new render on main". Business connectors hardened (warnings, CONNECTOR_BRAND check, Databricks polling + strict read-only guard, PostHog sequential, tests).

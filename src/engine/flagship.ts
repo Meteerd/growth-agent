@@ -141,6 +141,8 @@ export async function keyframeFor(
   c: Concept,
   s: Concept["shots"][number],
   note: string,
+  /** A19: another shot's frame as the reference (same person across shots) */
+  refFile?: string,
 ): Promise<Asset> {
   let png: Buffer;
   let provider: Asset["provider"] = "local";
@@ -166,8 +168,8 @@ export async function keyframeFor(
         ? `${s.visualPrompt}. ${PHOTOREAL} ${SAFE_AREA}`
         : `${s.visualPrompt}. Style: ${brand.dossier.visual.styleNotes ?? ""} Vertical 9:16, no text. ${SAFE_AREA}`;
     // a generated frame that shows the brand's real art (on a phone, a poster) gets that image as a reference
-    let refs: string[] | undefined;
-    if (s.imageRef) {
+    let refs: string[] | undefined = refFile && fs.existsSync(refFile) ? [refFile] : undefined;
+    if (!refs && s.imageRef) {
       const ref = path.join(brandAssetsDir(), brand.slug, s.imageRef);
       if (fs.existsSync(ref)) {
         const flat = path.resolve(
@@ -186,7 +188,11 @@ export async function keyframeFor(
     const gen = (withRefs: boolean) =>
       generateImage(
         db,
-        withRefs && refs ? `${prompt} The screen or print shows exactly the attached brand image.` : prompt,
+        withRefs && refs
+          ? refFile
+            ? `${prompt} The same person as in the attached image (same face, hair, clothes and room), in this new moment.`
+            : `${prompt} The screen or print shows exactly the attached brand image.`
+          : prompt,
         {
           runId: c.runId,
           quality: "high",

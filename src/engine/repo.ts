@@ -118,14 +118,20 @@ export async function listBrandSummaries(db: Db): Promise<BrandSummary[]> {
   ).filter((a) => /-dub-[a-z]{2}$/.test(a.body.model ?? ""));
   const dubsFor = (conceptId: string) => {
     const seen = new Set<string>();
-    return dubRows
+    const en = conceptRows.find((c) => c.id === `${conceptId}_en`)?.body.videoAssetId;
+    const enVid = en ? videos.find((v) => v.id === en) : undefined;
+    if (enVid) seen.add("en");
+    return [
+      ...(enVid ? [{ language: "en", url: enVid.body.url, posterUrl: `${enVid.body.url}.poster.jpg` }] : []),
+      ...dubRows
       .filter((a) => a.conceptId === conceptId)
       .map((a) => ({
         language: (a.body.model ?? "").slice(-2),
         url: a.body.url,
         posterUrl: `${a.body.url}.poster.jpg`,
       }))
-      .filter((d) => (seen.has(d.language) ? false : (seen.add(d.language), true)));
+      .filter((d) => (seen.has(d.language) ? false : (seen.add(d.language), true))),
+    ];
   };
   const conceptRows = videos.length
     ? await db
@@ -140,8 +146,11 @@ export async function listBrandSummaries(db: Db): Promise<BrandSummary[]> {
     : [];
   return brands.map((b) => {
     // the hero is the flagship concept's chosen video (A19), else the newest flagship render
+    // the market-language concept leads; an English version (<id>_en) is a dub of it
+    const mainConcept = (v: (typeof videos)[number]) => !(v.conceptId ?? "").endsWith("_en");
     const hero =
-      videos.find((v) => v.brandId === b.id && conceptRows.some((c) => c.body.videoAssetId === v.id)) ??
+      videos.find((v) => v.brandId === b.id && mainConcept(v) && conceptRows.some((c) => c.body.videoAssetId === v.id)) ??
+      videos.find((v) => v.brandId === b.id && mainConcept(v)) ??
       videos.find((v) => v.brandId === b.id);
     const heroConcept = hero ? conceptRows.find((c) => c.id === hero.conceptId) : undefined;
     const brandRuns = runRows.filter((r) => r.brandId === b.id);

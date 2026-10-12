@@ -32,7 +32,8 @@
     "dub": "tsx scripts/dub.ts",
     "revise": "tsx scripts/revise.ts",
     "showcase-clips": "tsx scripts/showcase-clips.ts",
-    "variants": "tsx scripts/variants.ts"
+    "variants": "tsx scripts/variants.ts",
+    "english": "tsx scripts/english.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

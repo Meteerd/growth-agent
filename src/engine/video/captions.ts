@@ -87,42 +87,50 @@ export interface CapGroup {
  * from its first word until the next group starts (at most a short hold after a pause), so the caption changes
  * every ~0.3 to 0.8 s while someone speaks and never holds longer than 1.2 s.
  */
-export function groupWords(words: CapWord[], per = 3, maxChars = 18): CapGroup[] {
+export function groupWords(words: CapWord[], per = 3, maxChars = 24): CapGroup[] {
+  // phrases of 2 to 4 words: a group ends at punctuation, at a real pause (> 0.45 s) or when full
+  const max = Math.max(2, Math.min(4, per + 1));
   const groups: CapWord[][] = [];
   let cur: CapWord[] = [];
   const chars = (ws: CapWord[]) => ws.map((w) => w.word).join(" ").length;
   for (const [i, w] of words.entries()) {
     const prev = words[i - 1];
-    const pause = prev ? w.start - prev.end > 0.35 : false;
-    const tooLong = cur.length > 0 && w.start - cur[0]!.start > 1.0;
-    if (cur.length && (cur.length >= per || chars([...cur, w]) > maxChars || pause || tooLong)) {
+    const pause = prev ? w.start - prev.end > 0.45 : false;
+    if (cur.length && (cur.length >= max || chars([...cur, w]) > maxChars || pause)) {
       groups.push(cur);
       cur = [];
     }
     cur.push(w);
-    if (/[.!?,;:…]$/.test(w.word)) {
+    if (/[.!?,;:…]$/.test(w.word) && cur.length >= 2) {
       groups.push(cur);
       cur = [];
     }
   }
   if (cur.length) groups.push(cur);
-  // a lone short word ("A", "a", "to") never flashes alone: it joins the next group when that one has room
-  for (let i = 0; i < groups.length - 1; i++) {
+  // readable pace (Mete, 11:24): a group is on screen for at least 0.8 s, so a short group joins its neighbour
+  // (never a lone flashing word); merged groups may hold up to 5 words
+  const span = (g: CapWord[], next?: CapWord[]) => (next?.[0]?.start ?? g.at(-1)!.end + 0.4) - g[0]!.start;
+  for (let i = 0; i < groups.length; i++) {
     const g = groups[i]!;
-    const nx = groups[i + 1]!;
-    if (g.length === 1 && g[0]!.word.length <= 3 && nx.length < per && nx[0]!.start - g[0]!.end < 0.35) {
-      groups[i + 1] = [...g, ...nx];
-      groups.splice(i, 1);
+    const nx = groups[i + 1];
+    if ((g.length === 1 || span(g, nx) < 0.8) && nx && g.length + nx.length <= 5 && nx[0]!.start - g.at(-1)!.end < 0.6) {
+      groups[i] = [...g, ...nx];
+      groups.splice(i + 1, 1);
       i--;
+    } else if (g.length === 1 && i > 0 && groups[i - 1]!.length < 5 && g[0]!.start - groups[i - 1]!.at(-1)!.end < 0.6) {
+      groups[i - 1] = [...groups[i - 1]!, ...g];
+      groups.splice(i, 1);
+      i -= 2;
+      if (i < -1) i = -1;
     }
   }
   return groups.map((g, i) => {
     const t0 = g[0]!.start;
     const end = g.at(-1)!.end;
     const next = groups[i + 1]?.[0]?.start;
-    const hold = Math.min(end + 0.3, t0 + 1.2);
-    const t1 = next !== undefined && next - end < 0.35 ? next : Math.max(end, hold);
-    return { words: g, t0, t1: Math.min(t1, next ?? t1) };
+    // no blank flicker: the group holds until the next one appears (or a short hold after the last word)
+    const t1 = next !== undefined && next - end < 1.2 ? next : Math.max(end + 0.5, t0 + 0.8);
+    return { words: g, t0, t1: next !== undefined ? Math.min(t1, next) : t1 };
   });
 }
 
@@ -261,7 +269,8 @@ export function captionFrameSvg(tr: CaptionTrack, groups: CapGroup[], t: number)
     // subtle continuous motion so no frame is frozen
     const breathe = 1 + 0.018 * Math.sin((2 * Math.PI * t) / 1.4);
     const bob = 5 * Math.sin((2 * Math.PI * t) / 2.1);
-    const out = t > g.t1 - 0.07 ? Math.max(0, (g.t1 - t) / 0.07) : 1;
+    // smooth in (120 ms) and a quick fade at the hand-over, never a hard cut
+    const out = Math.min(t > g.t1 - 0.06 ? Math.max(0, (g.t1 - t) / 0.06) : 1, Math.min(1, (t - g.t0 + 0.03) / 0.12));
     const cx = W / 2;
     const active = [...g.words].reverse().find((w) => t >= w.start - 0.03);
     const strokeW = style.stroke ? (style.stroke.widthPct / 100) * lay.size : 0;
