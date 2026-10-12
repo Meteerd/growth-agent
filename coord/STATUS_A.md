@@ -2,7 +2,7 @@
 
 ## Now
 - Time: 2026-10-12 07:23 +03
-- Current task: light IMPROVE work only (lid closed: no renders, no image/video generation, no e2e, no build); demo laptop, never break main
+- Current task: STOPPED by Mete at 07:41, A18 paused for the event (last work commit abe91d4)
 - Last sync: 07:23 exit 0, main UPDATED, checks PASS (189/189)
 - Blockers:
   - fal account balance exhausted (403 locked at 03:24); Higgsfield reached its $8 cap (estimates) at ~04:15. New renders animate nothing until a top-up; stills with camera moves still render.
@@ -42,3 +42,4 @@
 - 07:12 IMPROVE: repaired shortened evidence ids in older plans where unambiguous (plan_0569d023_v1); run_mv4dl43id902ec6a1f keeps 3 eval failures (superseded, documented).
 - 07:16 HOLD: Mete asked (after 07:14) not to run ffmpeg while the laptop lid is closed. The final sync (pnpm check renders test videos with ffmpeg) waits until he is back. Main is green as of 04:54; only MORNING_A/STATUS_A edits are pending on lane-a. The 07:14 sync failed only because demo-media.test.ts timed out while the machine slept.
 - 07:23 new goal from Mete (internet back): sync first. The 07:20 sync failed again on demo-media.test.ts (renders 8 videos, 121 s under load); gave that test its own 300 s timeout (6df632d); 07:23 sync exit 0, main green. Light work only until 08:45, then FROZEN.
+- STOPPED by Mete at 07:41, A18 paused for the event. Last work commit abe91d4 (A18 so far: shake fix + metric, native captions, audio mix with music bed/ducking/-14 LUFS, measured review caps; not started: ElevenLabs provider, Gemini watcher, re-renders). Resumes at the event with coord/GOAL_A_EVENT.txt.
