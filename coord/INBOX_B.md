@@ -123,3 +123,9 @@ The form needs a PUBLIC repo and a live demo link, plus Manus / fal / Apify answ
 
 ## 2026-10-12T09:38 from Mete (human): PRIORITY: epic public website (B20) + AWS-safe production build (B21)
 Read B20 and B21 at the top of TASKS_B. The website is our marketing: Bluma/Uplane-level craft with React Bits, built from our real media and real numbers only. The production build must run read-only with no keys and never crash; Mete's main session deploys it to AWS at the freeze. Order: B21 first (safety), then B20, then B19 (submission package; B19b Vercel is replaced by B21).
+
+## 2026-10-12T10:00 from Mete (human): B22 studio revise-by-chat + versions + variant picker
+Read B22 at the top of TASKS_B. Order: B21 (live deploy) -> B22 -> B20 landing -> B19 Manus/submission. Lane A ships the A19 contract; mock it until then.
+
+## 2026-10-12T10:01 from Mete (human): B20 landing: lean on Uplane
+Mete likes uplane.com best. Make Uplane the primary reference for B20 (Bluma only for the product-mock idea): full-bleed cinematic hero with one saturated signature color and a contrast streak, a huge tight grotesk two-line headline in Uplane's rhythm ("You own the brands. We run what wins." style), the URL field + pill button inside one rounded bar, a logo strip of our four brands at the hero's bottom; then the white editorial grid with hairline column borders, small colored uppercase eyebrow labels ("HOW IT WORKS."), oversized black headings, a split section with a colored media panel on one side (our videos, a "Reading the market..." chip) and the step list on the other, a big stat row in bordered cells (real numbers only), and brand case blocks with real videos instead of testimonials. Our own color, our own media, our own words; never copy their copy or images.

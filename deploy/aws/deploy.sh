@@ -23,7 +23,7 @@ DATABASE_URL=file:/srv/nexus/shared/nexus.db
 ASSETS_DIR=/srv/nexus/shared/assets
 ENVEOF
 fi
-# refuse to deploy if anyone put a provider key into the server env
+# provider keys may only live in shared/.env.secrets (chmod 600), never in the public env file
 if grep -Eq '^(ANTHROPIC|OPENAI|FAL|APIFY|MANUS|ELEVENLABS|GEMINI|SPIRAL|FIRECRAWL|HIGGSFIELD|YOUTUBE)[A-Z_]*=.+' "$ENVF"; then
   echo "DEPLOY ABORTED: provider keys found in $ENVF (showcase must have none)"; exit 1
 fi
@@ -35,6 +35,8 @@ if [ ! -d "$REL/.next" ]; then
   git clone -q --depth 1 --branch "$REF" "$REPO" "$REL"
   cd "$REL"
   cp "$ENVF" .env.production.local
+  # optional live mode: keys placed on the server by a human (scripts/server-keys.sh), never committed
+  if [ -f "$BASE/shared/.env.secrets" ]; then cp "$BASE/shared/.env.secrets" .env.local; chmod 600 .env.local; fi
   set -a; . "$ENVF"; set +a
   corepack pnpm install --frozen-lockfile > "$BASE/shared/install-$SHA.log" 2>&1 || { echo "install failed, see $BASE/shared/install-$SHA.log"; tail -20 "$BASE/shared/install-$SHA.log"; exit 1; }
   corepack pnpm build > "$BASE/shared/build-$SHA.log" 2>&1 || { echo "build failed, live site untouched, see $BASE/shared/build-$SHA.log"; tail -30 "$BASE/shared/build-$SHA.log"; exit 1; }

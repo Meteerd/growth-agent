@@ -80,3 +80,6 @@ pnpm start
 - Third-party analysis frames now go through `/frames/...` (Lane B route): served when present, 204 otherwise, so other machines show the shot description without a 404.
 - Suggestion for the demo laptop too: `pnpm build && pnpm start` (without NEXT_PUBLIC_READONLY) instead of `pnpm dev`. No HMR, so the dev reload loop cannot happen, and the first paint of every screen is instant. Live runs and the consultation work the same.
 - B19a (Mete and Emir authorized): real Manus tasks started from Lane B with `demo/manus.ts` (your provider through callProvider, nothing edited): deep research Dynova https://manus.im/app/eEWu4CdQDEQGnGW9Hm946o, Evreon https://manus.im/app/SSX4iUHYkXZNTAPR868qW6; landing pages for pack_1d68be0a_1, pack_1e6575ad_1, pack_91d09027_1, pack_f352d515_1. Results are recorded in `src/lib/client/manus-tasks.json`, which the cockpit's Manus card and the pack's landing block read on every machine.
+
+## 2026-10-12T10:00 from Mete (human): A19 steer the video (variants fal+Higgsfield, revise by chat with clarifying questions, versions)
+Read A19 at the top of TASKS_A. Order: finish the Hound render, then A19 (contract first, announce in INBOX_B), then the other flagships, then Camplan connectors.
