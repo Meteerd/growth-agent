@@ -12,6 +12,8 @@ export interface AdShot {
 export interface Ad916Props {
   shots: AdShot[];
   voiceoverSrc?: string;
+  /** music bed (A18): ducked under the voiceover, mix normalised to about -14 LUFS */
+  musicSrc?: string;
   brandName: string;
   colors: string[];
   logoSrc?: string;

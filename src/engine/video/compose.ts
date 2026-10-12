@@ -177,6 +177,25 @@ async function endCard(p: Ad916Props, out: string) {
   await sharp(Buffer.from(svg)).composite(layers).png().toFile(out);
 }
 
+/**
+ * The audio of an ad (A18): voice at 48 kHz stereo; a music bed (looped, faded out) ducked under the voice with a
+ * sidechain compressor; the mix loudness-normalised to about -14 LUFS (TikTok/Reels level). Without music the voice
+ * alone is normalised; the caller warns that the ad has no music bed.
+ */
+export function audioGraph(voIdx: number, hasVo: boolean, hasMusic: boolean, total: number): string {
+  const t = total.toFixed(3);
+  const voice = `[${voIdx}:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,apad,atrim=0:${t}`;
+  const norm = "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo";
+  if (!hasMusic) return `${voice},${hasVo ? norm : "anull"}[a]`;
+  const fadeAt = Math.max(0, total - 1.5).toFixed(3);
+  return [
+    `${voice},asplit=2[vo1][vo2]`,
+    `[${voIdx + 1}:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,atrim=0:${t},afade=t=in:d=0.4,afade=t=out:st=${fadeAt}:d=1.5,volume=0.5[mus]`,
+    `[mus][vo2]sidechaincompress=threshold=0.02:ratio=10:attack=15:release=350:makeup=1[duck]`,
+    `[vo1][duck]amix=inputs=2:duration=first:normalize=0,${norm}[a]`,
+  ].join(";");
+}
+
 export async function composeAd916(p: Ad916Props, out: string, workDir: string, onProgress?: (x: number) => void) {
   fs.mkdirSync(workDir, { recursive: true });
   fs.mkdirSync(path.dirname(out), { recursive: true });
@@ -225,18 +244,21 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
     }
     parts.push(`[${cur}]format=yuv420p,setsar=1[v${i}]`);
   });
-  const audioIdx = k;
   const vo = p.voiceoverSrc ? urlToFile(p.voiceoverSrc) : null;
   const hasVo = !!vo && fs.existsSync(vo);
+  const music = p.musicSrc ? urlToFile(p.musicSrc) : null;
+  const hasMusic = !!music && fs.existsSync(music);
   const filter = `${parts.join(";")};${frames.map((_, i) => `[v${i}]`).join("")}concat=n=${frames.length}:v=1:a=0[v]`;
   const total = frames.reduce((a, f) => a + f.dur, 0);
+  const audio = audioGraph(k, hasVo, hasMusic, total);
   await ffmpeg(
     [
       "-y",
       ...inputs,
-      ...(hasVo ? ["-i", vo] : ["-f", "lavfi", "-t", String(total), "-i", "anullsrc=r=44100:cl=stereo"]),
+      ...(hasVo ? ["-i", vo] : ["-f", "lavfi", "-t", String(total), "-i", "anullsrc=r=48000:cl=stereo"]),
+      ...(hasMusic ? ["-stream_loop", "-1", "-i", music] : []),
       "-filter_complex",
-      `${filter};[${audioIdx}:a]apad,atrim=0:${total}[a]`,
+      `${filter};${audio}`,
       "-map",
       "[v]",
       "-map",
@@ -252,7 +274,11 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
       "-c:a",
       "aac",
       "-b:a",
-      "128k",
+      "192k",
+      "-ar",
+      "48000",
+      "-ac",
+      "2",
       "-movflags",
       "+faststart",
       "-t",
