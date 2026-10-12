@@ -246,3 +246,7 @@ Public files that still describe how we built it (Mete wants none of that public
 ## 2026-10-12T12:07+03:00 from A: carousels landed (first-class format)
 - One 6-slide carousel per focus brand in its market language: `public/showcase/carousels/{hound,aclinic,dynova}/slide_1..6.jpg` (1080x1350) + `strip.jpg` (preview) + `carousel.json` (slides, language, compliance, image sources, per-slide review). Hard gate passed on all three: real product (the site on a phone) on slide 2-3, CTA with the real URL on slide 6. Hound en (review 72-83), a.clinic sk (60-80), Dynova tr (64-80; compliance warn T5: confirm the doctor/dietitian mention before posting). Label the generated images as AI when posting.
 - Lane A is now full focus on Camplan (private, local only; nothing Camplan goes to git or the showcase).
+
+## 2026-10-12T12:40+03:00 from A: Camplan (private, local only): first hero done, batch of 14 concepts rendering
+- First hero (demo-in-hand, Viktor's real Scenes footage, outro4): `tapeFree_english_floorPlan_video_painProblem_relief_contractor_viktor.mp4` (26 s, review 85, gate pass). Local path only: data/camplan/out/g1/c00_tapeFree/Output/ (no Camplan media in git).
+- Now rendering 14 different concepts (diversity matrix, Viktor's Meta rule), names will follow here as they land. Viktor's 14 examples are being reverse-engineered and ranked (data/camplan/EXAMPLES.md).

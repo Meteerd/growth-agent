@@ -464,6 +464,8 @@ async function composeAd916Now(p: Ad916Props, out: string, workDir: string, onPr
     seq?: string;
     screen?: boolean;
     phone?: boolean;
+    /** fit the whole clip (e.g. a 4:5 brand outro) over a blurred fill instead of cropping it */
+    fit?: boolean;
     clipStart?: number;
     clipSpeed?: number;
     framing?: { zoom: number; anchorX: number; anchorY: number };
@@ -516,7 +518,7 @@ async function composeAd916Now(p: Ad916Props, out: string, workDir: string, onPr
       : undefined;
   const outro = p.outroSrc ? (urlToFile(p.outroSrc) ?? p.outroSrc) : null;
   if (outro && fs.existsSync(outro))
-    frames.push({ file: end, dur: p.endCardSec, clip: outro, clipLen: (await probe(outro)).durationSec });
+    frames.push({ file: end, dur: p.endCardSec, clip: outro, clipLen: (await probe(outro)).durationSec, fit: true });
   else frames.push({ file: end, dur: p.endCardSec, seq: endSeq });
 
   const phone = frames.some((f) => f.phone) ? await phoneArt(workDir) : null;
@@ -531,7 +533,14 @@ async function composeAd916Now(p: Ad916Props, out: string, workDir: string, onPr
       // a clip a little shorter than its shot plays slightly slower (max 1.4x) instead of freezing at the end
       const stretch = f.clipLen && f.clipLen < f.dur - 0.04 ? Math.min(1.4, f.dur / f.clipLen) : 1;
       const fast = f.clipSpeed && f.clipSpeed !== 1 ? `setpts=PTS/${f.clipSpeed.toFixed(3)},` : "";
-      if (f.phone) {
+      if (f.fit) {
+        parts.push(
+          `[${v}:v]fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,split=2[fa${i}][fb${i}]`,
+          `[fa${i}]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},scale=270:480,boxblur=14:2,eq=brightness=-0.15,scale=${W}:${H},setsar=1[fbg${i}]`,
+          `[fb${i}]scale=${W}:${H}:force_original_aspect_ratio=decrease,setsar=1[ffg${i}]`,
+          `[fbg${i}][ffg${i}]overlay=(W-w)/2:(H-h)/2,format=yuv420p,setsar=1[b${i}]`,
+        );
+      } else if (f.phone) {
         // the real app recording inside a drawn phone: rounded screen (alpha mask) + bezel, over a soft blurred copy
         const { mask, bezel, sw, sh, x, y } = phone!;
         const mi = k++;
