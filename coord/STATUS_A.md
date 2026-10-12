@@ -39,3 +39,4 @@
 - 04:24 IMPROVE I32-I40: cap warnings for every provider, double-click-safe run creation, consultation edge tests, render heals missing files, shortened evidence ids repaired, live runs never mix demo data, shot sourcing + review calibration prompts, API sweep 315/0
 - 04:33 ack Dynova heroVideo missing on a machine that imported the Dynova showcase before the flagship existed (INBOX_A 04:20): importShowcase refreshes older imports + test (I43). Evreon flagship 80/100 exported (I44).
 - 04:50 ack FYI, dynova showcase JSON has a lone surrogate escape (INBOX_A 04:33): fixture writers drop unpaired surrogates, both Dynova fixtures cleaned (I49).
+- 07:12 IMPROVE: repaired shortened evidence ids in older plans where unambiguous (plan_0569d023_v1); run_mv4dl43id902ec6a1f keeps 3 eval failures (superseded, documented).
