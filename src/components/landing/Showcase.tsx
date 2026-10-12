@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/shell/Header";
-import { brands, proofFor, stats } from "./data";
+import { brands, carousel, proofFor, stats } from "./data";
 import { DubbedLoop } from "./LoopVideo";
 import { WinnerCard } from "./Winner";
 
@@ -132,6 +132,7 @@ export function Showcase() {
                   </div>
                 </div>
               </div>
+              <Carousel slug={p.slug} />
             </div>
           </section>
         ))}
@@ -193,5 +194,41 @@ function Chain({ p }: { p: NonNullable<ReturnType<typeof proofFor>> }) {
         </li>
       ))}
     </ol>
+  );
+}
+
+/** The carousel remake next to the video pair: a swipeable strip of its slides. */
+function Carousel({ slug }: { slug: string }) {
+  const c = carousel(slug);
+  if (!c?.slides.length) return null;
+  return (
+    <div className="mt-4 rounded-[10px] bg-raised p-5 md:p-6" data-testid={`carousel-${slug}`}>
+      <div className="flex flex-wrap items-baseline justify-between gap-3">
+        <p className="font-semibold text-[15px] text-bone">
+          Carousel remake, {c.slides.length} slides, {c.language.toUpperCase()}
+        </p>
+        {c.pattern && <p className="max-w-[70ch] text-[13px] text-bone-2">{c.pattern}</p>}
+      </div>
+      <ol className="mt-4 flex snap-x gap-3 overflow-x-auto pb-2">
+        {c.slides.map((x) => (
+          <li key={x.n} className="w-[170px] shrink-0 snap-start md:w-[200px]">
+            {/* biome-ignore lint/performance/noImgElement: carousel slides from public/showcase */}
+            <img
+              src={x.src}
+              alt={`Slide ${x.n}: ${x.headline}`}
+              loading="lazy"
+              className="aspect-[4/5] w-full rounded-[8px] bg-raised-2 object-cover"
+            />
+            <p className="mt-1.5 font-mono text-[11px] text-bone-3">
+              {x.n} / {x.role}
+            </p>
+          </li>
+        ))}
+      </ol>
+      <p className="mt-2 text-[12px] text-bone-3">
+        Slide images are AI-generated, with the brand&apos;s real product on screen; they are labelled as AI when
+        posted.
+      </p>
+    </div>
   );
 }

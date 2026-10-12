@@ -208,3 +208,25 @@ export function compliance() {
   const finding = b?.compliance.flatMap((x) => x.findings).find((f) => f.ruleId === "RX2");
   return refused && { refused: refused.reason, finding };
 }
+
+/** Lane A's carousel remake for a brand (public/showcase/carousels/<slug>/carousel.json): the format it remakes and
+ * its slides. The slide images are AI-generated and say so where they are shown. */
+export function carousel(slug: string) {
+  const dir = path.resolve("public/showcase/carousels", slug);
+  const f = path.join(dir, "carousel.json");
+  if (!fs.existsSync(f)) return undefined;
+  const c = JSON.parse(fs.readFileSync(f, "utf8")) as {
+    language: string;
+    pattern?: string;
+    why?: string;
+    slides: { n: number; role: string; headline: string; png: string }[];
+  };
+  return {
+    language: c.language,
+    pattern: c.pattern,
+    why: c.why,
+    slides: c.slides
+      .filter((x) => fs.existsSync(path.join(dir, x.png)))
+      .map((x) => ({ n: x.n, role: x.role, headline: x.headline, src: `/showcase/carousels/${slug}/${x.png}` })),
+  };
+}

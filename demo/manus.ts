@@ -30,6 +30,8 @@ const CATEGORY: Record<string, string> = {
   hound: "dog-training / puppy apps (Dogo, Woofz, Pupford, Zigzag, GoodPup)",
   aclinic: "GLP-1 / weight-care telehealth (Hims & Hers, Voy, Numan, Juniper, Ro, Found; SK/CZ creators)",
   dynova: "DNA tests + personalized supplements (23andMe, Viome, Nebula, Ritual, Care/of, AG1; TR players)",
+  // competitors' public ads only; nothing private about Camplan goes into the brief
+  camplan: "floor-plan / room-measuring apps (magicplan, Polycam, RoomScan, Planner 5D, CubiCasa, Canvas)",
 };
 const huntPrompt = (category: string) =>
   `Find the 5 strongest ads and 5 strongest organic posts in ${category} in the last 90 days: paid ads running 45+ days or in 3+ variants (Meta Ad Library), organic posts 5x+ the account median and 50k+ views (TikTok/IG/YouTube), and top carousel posts. For each: URL, platform, format (video/carousel/static), days running or views, why it wins. Facts only, each with its URL; if a number is unknown, say so. Do not ask me questions: decide sensibly and continue. Write everything in English.`;

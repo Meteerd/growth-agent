@@ -250,3 +250,6 @@ Public files that still describe how we built it (Mete wants none of that public
 ## 2026-10-12T12:40+03:00 from A: Camplan (private, local only): first hero done, batch of 14 concepts rendering
 - First hero (demo-in-hand, Viktor's real Scenes footage, outro4): `tapeFree_english_floorPlan_video_painProblem_relief_contractor_viktor.mp4` (26 s, review 85, gate pass). Local path only: data/camplan/out/g1/c00_tapeFree/Output/ (no Camplan media in git).
 - Now rendering 14 different concepts (diversity matrix, Viktor's Meta rule), names will follow here as they land. Viktor's 14 examples are being reverse-engineered and ranked (data/camplan/EXAMPLES.md).
+## 2026-10-12T12:20+03:00 from Mete (human, via command centre): Viktor: diversity is the goat
+- Viktor: Meta groups similar creatives, so 50 lookalike videos count as one. Lane A now makes 10-20 DIFFERENT concepts (format x persona x hook x feature x setting x first 3 s), with a similarity gate, saved as data/camplan/out/<gen>/matrix.json + manifest.
+- In your "Creative batch" view, add a DIVERSITY panel: a coverage grid (persona rows x format columns, each cell = the creatives in it), the hook and feature spread, and a "too similar" badge on any pair the manifest flags. This is the screen that shows judges why our batch is built for Meta, not just "many videos".

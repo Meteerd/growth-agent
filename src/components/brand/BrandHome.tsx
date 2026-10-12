@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { CreativeBatch } from "@/components/batch/CreativeBatch";
 import { DatasetBadge } from "@/components/run/DatasetBadge";
 import { RunStatusBadge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -18,6 +19,9 @@ import { formatUsd, PHASE_LABELS, timeAgo } from "@/lib/client/format";
 import { qk, useAction, useBrand, useBrandRuns, useBrands } from "@/lib/client/queries";
 import { VoiceLine } from "./Voice";
 
+// the four public showcase brands have no creative batch; Camplan and new brands do (Lane A, 12 Oct)
+const SHOWCASE_SLUGS = new Set(["hound", "aclinic", "dynova", "evreon"]);
+
 export function BrandHome({ slug }: { slug: string }) {
   const { data: brand, isLoading, error, refetch } = useBrand(slug);
   if (error) return <ErrorState title="Could not load the brand" error={error} onRetry={() => refetch()} />;
@@ -30,7 +34,10 @@ export function BrandHome({ slug }: { slug: string }) {
     );
   return (
     <div className="grid-cols-1 grid gap-6 lg:grid-cols-[minmax(0,1fr)_380px]">
-      <Dossier brand={brand} />
+      <div className="flex min-w-0 flex-col gap-6">
+        <CreativeBatch brandId={brand.id} enabled={!SHOWCASE_SLUGS.has(brand.slug)} />
+        <Dossier brand={brand} />
+      </div>
       <aside className="flex flex-col gap-4">
         <HeroVideo slug={brand.slug} />
         <Runs brand={brand} />

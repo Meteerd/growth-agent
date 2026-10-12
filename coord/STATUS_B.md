@@ -1,14 +1,14 @@
 # STATUS lane B
 
 ## Now
-- Time: 2026-10-12 11:15 +0300 (event day)
-- Current task: order approved by Mete and Emir in chat (11:15): Lapis-style token re-skin (done) -> Results for Hound, a.clinic, Dynova -> swap in every new render -> B19 (SUBMISSION.md, export at 13:40) + backup recording. Freeze 13:30. Camplan: local operator app only, never on the public site, showcase build or export unless INBOX_B says Viktor approved.
-- Last sync: see the log below; every step syncs.
-- Blockers: none. Deploys go through Mete's session ("please deploy" in INBOX_A); this laptop does not add the server's host key on its own.
-- Spend so far (USD per provider): 0. Manus: 6 lite tasks on event credits (B19a, authorized): Dynova + Evreon deep research, 4 flagship landing pages (done, unpublished).
-- Live: https://rekampols.xyz (DNS resolved ~10:45, HTTPS 200, www -> apex 301) and https://63-181-87-203.sslip.io.
-- Done today: (1) offline-proof demo (`demo/offline-check.sh`, dev and `OFFLINE_MODE=showcase`, both exit 0), (3) voice per brand with sample button, dub toggle (brand home + landing), soundtrack marks in the studio, (4) Manus findings brief + Manus landing on each flagship pack, (5) presentation keys + 2-minute auto-play (pitch order / -> /results -> app), B21 read-only showcase (`deploy/README.md`, `e2e/showcase.spec.ts`), B20 landing (Rekampols, Plus Jakarta Sans, Lighthouse 86), /results, B22 studio versions + revise by chat + takes, Lapis-style re-skin.
-- Decisions today (pitch and freeze first): stat row uses computed numbers (299 ads/posts kept of 402 found, 12 winners, 8 sources, 4 brands, 3 languages), not the brief's 815/13; the winner is shown as its blueprint, never its footage; no host key added for SSH; dev reload loop = stale `.next/dev` (rm -rf .next/dev) and `pnpm build && pnpm start` recommended for the demo laptop.
+- Time: 2026-10-12 12:30 +0300 (event day)
+- Current task: PRIORITY Camplan (Mete 12:00, Emir in chat 12:2x): Creative batch view done (filters, review, approve/reject, zip + manifest.csv, diversity panel); then backup recording and the 13:30 freeze; B19 export at freeze.
+- Last sync: 12:25 exit 0, main UPDATED, checks PASS (next sync right after this commit)
+- Blockers: Manus credits exhausted (winner hunts for Hound, a.clinic, Dynova ended "not enough credits"; Camplan's hunt refused, HTTP 429). Deploys go through Mete's session.
+- Spend so far (USD per provider): 0. Manus: 9 lite tasks on event credits (authorized): 2 deep research, 4 landing pages, 3 winner hunts (failed on credits).
+- Live: https://rekampols.xyz and https://63-181-87-203.sslip.io.
+- Decisions (pitch and freeze first, logged per Emir): Camplan stays local: the batch view reads Lane A's route and only for non-showcase brands, approvals live in the browser, the zip is built in the browser, nothing Camplan in git/showcase/export; the batch view is mocked in e2e (route stub) rather than with app fixtures, so no fake creatives can appear in the app; Manus out of credits is recorded, not worked around.
+- Done today: (1) offline-proof demo (`demo/offline-check.sh`, dev and showcase), (3) voices, dubs, soundtrack marks, (4) Manus findings + landing pages, (5) presentation mode (landing -> results -> app, keys 1 to 9, 0 = auto-play), B21 read-only showcase, B20 landing + Lighthouse 86, /results with GTM chain and carousels, B22 studio versions, Lapis re-skin, Camplan creative batch + diversity, B19d SUBMISSION.md, B19c export script (dry run clean).
 - ack Dynova and Evreon full live runs (INBOX_B 03:20): checked their direction, studio and packs live.
 - ack all four brands now have real recorded research (INBOX_B 03:03): brand home labels each run (demo, live data, live) and lists newest first.
 - ack re "concepts lose blueprintId on runs that reuse research": fixed (INBOX_B 02:47).
