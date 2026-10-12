@@ -48,6 +48,7 @@ import {
   RunsResponse,
   SpendResponse,
 } from "@/contracts";
+import { localizeMedia } from "./media";
 import { createMockClient } from "./mock/client";
 import { DATA_MODE } from "./mode";
 import { createSSEParser, openRunStream, type RunStreamHandlers } from "./sse";
@@ -120,7 +121,7 @@ async function request<T>(schema: z.ZodType<T>, url: string, init?: RequestInit 
     },
     body: init?.json !== undefined ? JSON.stringify(init.json) : init?.body,
   });
-  const body = await res.json().catch(() => undefined);
+  const body = localizeMedia(await res.json().catch(() => undefined));
   if (!res.ok) {
     const err = (body as { error?: { code?: string; message?: string } })?.error;
     throw new ApiRequestError(res.status, err?.code ?? "http_error", err?.message ?? `${res.status} ${res.statusText}`);

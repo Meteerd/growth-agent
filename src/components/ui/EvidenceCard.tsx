@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import type { Evidence, EvidenceSource } from "@/contracts";
 import { cn } from "@/lib/client/cn";
 import { formatCount, longevity, SOURCE_LABELS } from "@/lib/client/format";
@@ -67,6 +68,7 @@ export function EvidenceCard({
   onOpenBlueprint?: () => void;
   className?: string;
 }) {
+  const [broken, setBroken] = useState(false);
   const m = e.metrics;
   const tier = longevity(m.daysRunning);
   const outlier = m.outlierScore != null && m.outlierScore >= 2;
@@ -81,9 +83,15 @@ export function EvidenceCard({
       )}
     >
       <span aria-hidden className="absolute inset-x-0 top-0 h-px" style={{ background: hue }} />
-      {e.thumbnailUrl ? (
+      {e.thumbnailUrl && !broken ? (
         // biome-ignore lint/performance/noImgElement: evidence thumbnails come from arbitrary hosts
-        <img src={e.thumbnailUrl} alt="" className="h-28 w-full object-cover" loading="lazy" />
+        <img
+          src={e.thumbnailUrl}
+          alt=""
+          className="h-28 w-full object-cover"
+          loading="lazy"
+          onError={() => setBroken(true)}
+        />
       ) : (
         <SourceArt source={e.source} kind={e.kind} className="h-24" />
       )}

@@ -1,4 +1,5 @@
 import { RUN_EVENT_TYPES, type RunEvent } from "@/contracts";
+import { localizeMedia } from "./media";
 
 export type StreamState = "connecting" | "open" | "reconnecting" | "closed";
 
@@ -48,7 +49,7 @@ export function openRunStream(
   const onMessage = (m: MessageEvent) => {
     let ev: RunEvent;
     try {
-      ev = JSON.parse(m.data);
+      ev = localizeMedia(JSON.parse(m.data));
     } catch {
       return;
     }

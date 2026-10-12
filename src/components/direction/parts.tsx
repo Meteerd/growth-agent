@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Badge } from "@/components/ui/Badge";
 import { sourceHue } from "@/components/ui/EvidenceCard";
 import {
@@ -111,10 +112,19 @@ export function AxisBars({
 
 /** A small evidence thumbnail: the real thumbnail when we have one, else a muted tile with the source name. */
 export function EvidenceTile({ evidence, className }: { evidence?: Evidence; className?: string }) {
+  const [broken, setBroken] = useState(false);
   const base = "relative h-11 w-[52px] shrink-0 overflow-hidden rounded-card border border-line bg-raised-2";
-  if (evidence?.thumbnailUrl)
-    // biome-ignore lint/performance/noImgElement: evidence thumbnails come from arbitrary hosts
-    return <img src={evidence.thumbnailUrl} alt="" loading="lazy" className={cn(base, "object-cover", className)} />;
+  if (evidence?.thumbnailUrl && !broken)
+    return (
+      // biome-ignore lint/performance/noImgElement: evidence thumbnails come from arbitrary hosts
+      <img
+        src={evidence.thumbnailUrl}
+        alt=""
+        loading="lazy"
+        onError={() => setBroken(true)}
+        className={cn(base, "object-cover", className)}
+      />
+    );
   const stat = evidence && evidenceStat(evidence);
   return (
     <span aria-hidden className={cn(base, "flex flex-col justify-between px-1 pt-1.5 pb-1 text-left", className)}>
