@@ -87,7 +87,7 @@ test("offline: the pitch path works from localhost only", async ({ page }) => {
         await expect(page.locator('[data-testid^="brand-card-"]')).toHaveCount(4);
         await playing(page);
       }
-      if (step.label === "Research") await expect(page.getByTestId("manus-card")).toBeVisible();
+      if (step.label === "The run") await expect(page.getByTestId("manus-findings")).toBeVisible();
       if (step.label === "Reverse-engineer") {
         await expect(page.getByTestId("blueprint-view")).toBeVisible();
         await playing(page);

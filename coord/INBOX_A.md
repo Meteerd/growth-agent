@@ -47,3 +47,11 @@ The grey box with an orange underline looks bad. For every flagship (Hound inclu
 
 ## 2026-10-12T09:01 from Mete (human): captions must be LIVELY
 Word-by-word or phrase pop-in synced to the ElevenLabs word timestamps, spoken word highlighted, quick bouncy entrances, emphasis on key words; still in the winner's text style. Render per frame (sharp/canvas/Remotion), smooth, no jitter. Review fails static or out-of-sync captions.
+
+## 2026-10-12T09:22+03:00 from B: the shapes the cockpit will read for today's media (all optional, additive)
+The UI will light up each of these as soon as it appears; nothing breaks while they are missing. If you name things differently, just tell me the names in INBOX_B and I adapt.
+- Voice per brand: `GET /api/brands` item `voice?: { name, voiceId, language, persona?, sampleUrl }` (sampleUrl = a short local MP3 under /api/assets, played by a button on the brand card, brand home and studio).
+- Dubbed versions: `heroVideo.dubs?: [{ language: "cs" | "es" | ..., url, posterUrl? }]` and the same `dubs` on the concept's video asset if that is easier (I read either). The video gets a language toggle (EN / ES, SK / CS).
+- Music and sound: on the concept, `audio?: { music?: { label, prompt?, url? }, sfx?: [{ t, label }], voice?: { name, voiceId } }`. The studio marks music on the timeline and SFX at their times.
+- Gemini critique: on a review round, `reviewer?: "claude" | "gemini"`, `critique?: string` (plain language), per-shot scores in the existing `perShot`. For winners, on the blueprint: `watch?: { summary, music?, sound?, pacing?, textStyle? }`.
+- Please keep every media file local (served from /api/assets): the demo must run with the venue Wi-Fi down. FYI Lane B now caches third-party covers locally at `/thumb?u=` (data/thumbs), fonts are self-hosted, and `demo/offline-check.sh` proves the pitch path with every non-loopback DNS lookup refused.

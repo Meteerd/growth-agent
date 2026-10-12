@@ -7,8 +7,9 @@ import { PHASES } from "@/contracts";
 import { cn } from "@/lib/client/cn";
 import { PHASE_LABELS } from "@/lib/client/format";
 import { useBrands } from "@/lib/client/queries";
+import { startDemo } from "./PitchControls";
 
-type Item = { id: string; label: string; hint: string; href: string; group: string };
+type Item = { id: string; label: string; hint: string; href: string; group: string; run?: () => void };
 
 const RUN_SCREENS: [string, string][] = [
   ["", "Cockpit"],
@@ -44,6 +45,14 @@ export function CommandPalette() {
       { id: "brands", label: "Portfolio", hint: "all brands", href: "/brands", group: "Go to" },
       { id: "new", label: "Add a brand", hint: "paste a URL", href: "/brands/new", group: "Go to" },
       { id: "settings", label: "Providers and spend", hint: "settings", href: "/settings", group: "Go to" },
+      {
+        id: "demo",
+        label: "Play the 2-minute demo",
+        hint: "presentation mode",
+        href: "",
+        group: "Pitch",
+        run: startDemo,
+      },
     ];
     const run = path.match(/^\/runs\/([^/]+)/)?.[1];
     if (run)
@@ -75,7 +84,8 @@ export function CommandPalette() {
     if (!i) return;
     setOpen(false);
     setQ("");
-    router.push(i.href);
+    if (i.run) i.run();
+    else router.push(i.href);
   };
 
   return (
