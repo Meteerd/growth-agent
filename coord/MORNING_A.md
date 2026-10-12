@@ -58,6 +58,16 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 - **Dynova** `concept_91d09027_1`: Turkish explainer remake ("Genel öneriler varken gen testi gerekli mi?"): a man with the Dynova kit, at-home sample to lab, "teşhis değil, bilgi" (not a diagnosis), routine from your own data, dynova.health on a phone. Review 81/100, every shot >= 80, clips by Higgsfield (fal balance ran out). `docs/renders/dynova-flagship.jpg` / `.mp4`.
 - How: Claude picks per shot a real brand image or a frame in the winner's look (photoreal for real-footage winners), OpenAI gpt-image-2 renders frames (brand art goes onto screens through an image-edit reference), fal Kling 2.1 animates the shots (screens stay still), ffmpeg composes captions, voiceover and end card, Claude reviews against the blueprint and an AI-tells rubric, weak shots are fixed (keep-best per shot). `pnpm flagship <conceptId> [--repair] [--sheet docs/renders/x.jpg]`.
 
+## Safety and quality rules added overnight (each has a test)
+- A live run never mixes demo data into real research: a provider that is not live is skipped with a warning (demo runs keep labelled demo data).
+- Any provider hitting its budget cap leaves a `warning` event on the run ("<provider> budget cap reached: demo data for this step").
+- Double click on "start run" starts one run (same request within 60 s returns the active run).
+- Consultation: all questions skipped, duplicate posts and late answers behave (one resume, assumptions recorded, 409 after the run ends).
+- Video captions over 12 words are shortened by Claude before the compliance check; the fallback never cuts mid-phrase.
+- Shortened evidence ids in Claude's prose ("ev_x_02" for "ev_x_02_52d515") are repaired, so every citation resolves; `pnpm eval-all` checks it.
+- Rendering an imported run on another machine rebuilds missing frames instead of failing.
+- Reviews are calibrated: an unchanged shot keeps its previous score unless the reviewer names a new defect.
+
 ## Known issues
 - **fal account balance is exhausted** (fal answered "User is locked. Exhausted balance" at 03:24 when our ledger showed $7.25 of the $8 cap, so the account had less than our cap). Final renders now fall back to stills with a warning, and the engine stops calling fal for the rest of the process. Top up fal (event credits) before rendering more motion. Motion now falls back to Higgsfield (Kling image-to-video), which rendered the Dynova flagship.
 - **Sora**: the OpenAI video endpoint returns 404 for our key (model listed, API not enabled). `soraClip()` is ready if access is enabled.
