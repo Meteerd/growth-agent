@@ -5,7 +5,7 @@ Written 12 Oct 2026, 02:10 +03, updated through the night (see the log at the bo
 ## The short version
 - Every screen in PRODUCT_SPEC section 4 works, in mock mode and against Lane A's real API routes.
 - The UI is the **v2 "cutting room"** design Mete asked for at 01:16 (paper, ink, one record-red accent, Inter Tight, real media first). The v1 dark/glow/lime/serif look is gone from every route; an automated audit (`e2e/bans.spec.ts`) proves it on all 14 routes.
-- `pnpm check` green, `pnpm e2e` green (71 passed, 10 live-only skipped), live parity spec green (10 passed), Lighthouse 97 on the landing page.
+- `pnpm check` green, `pnpm e2e` green (89 passed, 10 live-only skipped), live parity spec green (10 passed), Lighthouse 97 on the landing page.
 - Lane B spent $0. It never calls a provider; live-mode checks ran with `LIVE_PROVIDERS` empty.
 
 ## How to run
