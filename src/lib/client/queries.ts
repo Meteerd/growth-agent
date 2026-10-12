@@ -24,6 +24,8 @@ export const qk = {
   packs: (id: string) => ["packs", id] as const,
   conceptAssets: (id: string) => ["conceptAssets", id] as const,
   conceptReviews: (id: string) => ["conceptReviews", id] as const,
+  renders: (id: string) => ["renders", id] as const,
+  variants: (id: string) => ["variants", id] as const,
   providers: ["providers"] as const,
   spend: ["spend"] as const,
 };
@@ -50,6 +52,19 @@ export const useConceptAssets = (id?: string) =>
   useQuery({ queryKey: qk.conceptAssets(id!), queryFn: () => c().conceptAssets(id!), enabled: !!id });
 export const useConceptReviews = (id?: string) =>
   useQuery({ queryKey: qk.conceptReviews(id!), queryFn: () => c().conceptReviews(id!), enabled: !!id });
+export const useRenders = (id?: string) =>
+  useQuery({
+    queryKey: qk.renders(id!),
+    queryFn: () => c().renders(id!),
+    enabled: !!id,
+    // a version renders in about a minute and its review lands a few minutes later
+    refetchInterval: (q) =>
+      q.state.data?.some((v) => v.status === "rendering" || (v.status === "ready" && !v.review && v.message))
+        ? 3000
+        : false,
+  });
+export const useVariants = (id?: string) =>
+  useQuery({ queryKey: qk.variants(id!), queryFn: () => c().variants(id!), enabled: !!id });
 export const useProviders = () => useQuery({ queryKey: qk.providers, queryFn: () => c().providers() });
 export const useSpend = () => useQuery({ queryKey: qk.spend, queryFn: () => c().spend() });
 

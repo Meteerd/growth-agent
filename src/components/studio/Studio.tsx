@@ -23,6 +23,7 @@ import { referenceImages } from "@/lib/client/brandAssets";
 import { cn } from "@/lib/client/cn";
 import { formatUsd, secs, unquote } from "@/lib/client/format";
 import { qk, useBrand, useConceptAssets } from "@/lib/client/queries";
+import { Revise, Soundtrack } from "./Revise";
 
 const VIDEO_FORMATS = new Set([
   "ugc_talking_head",
@@ -278,6 +279,8 @@ function Workbench({ c, events, demo }: { c: Concept; events: RunEvent[]; demo: 
           <PostPreview c={c} image={keyframes.get(0) ?? refs[0]} imageIsRef={!keyframes.get(0)} />
         )}
 
+        {isVideo(c) && <Revise c={c} />}
+        {isVideo(c) && <Soundtrack c={c} />}
         <Compliance checks={checks} status={c.compliance} revisions={c.revisions} />
       </section>
 

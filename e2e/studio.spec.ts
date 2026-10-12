@@ -25,3 +25,24 @@ test("text posts show the post as it will read", async ({ page }) => {
   await expect(page.getByTestId("post-preview")).toContainText("/ 280");
   await expect(page.getByTestId("compliance")).toBeVisible();
 });
+
+// B22: revise by chat with a clarifying question, a new version, compare two versions, use the new one.
+test("revise by chat, compare versions, use the new one", async ({ page }) => {
+  await page.goto("/runs/run_hound_demo/studio");
+  const revise = page.getByTestId("revise");
+  await expect(revise).toBeVisible();
+  await revise.getByRole("button", { name: "Bigger hook text" }).click();
+  const q = page.getByTestId("revise-question");
+  await expect(q).toBeVisible();
+  await q.getByRole("button", { name: "Only the hook text" }).click();
+  await expect(q).toBeHidden();
+  const strip = page.getByTestId("version-strip");
+  await expect(strip.locator("li")).toHaveCount(2);
+  await expect(strip.locator("li").nth(1)).toContainText("review pending", { timeout: 10_000 });
+  await page.getByTestId("compare-toggle").click();
+  await expect(page.getByTestId("version-players").locator("figure")).toHaveCount(2);
+  await page.getByTestId("use-version").click();
+  await expect(strip.locator("li").nth(1)).toContainText("in use");
+  await page.getByRole("button", { name: /pick takes per shot/i }).click();
+  await expect(page.getByTestId("takes").getByText("fal").first()).toBeVisible();
+});
