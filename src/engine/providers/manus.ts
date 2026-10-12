@@ -225,7 +225,11 @@ export async function finishLandscape(
   task: ManusTask | null,
   o: { timeoutMs: number; onProgress?: (b: string) => void },
 ): Promise<SourceResult> {
-  if (!task) return { source: "manus_research", items: demoFor(ctx, "manus_research"), mode: "demo", usd: 0 };
+  if (!task) {
+    // a live research pass that skips Manus must not mix in demo research
+    const livePass = (process.env.NEXUS_FORCE_LIVE ?? "").includes("apify");
+    return { source: "manus_research", items: livePass ? [] : demoFor(ctx, "manus_research"), mode: "demo", usd: 0 };
+  }
   const { s, events } = await waitForTask(task.task_id, {
     timeoutMs: o.timeoutMs,
     signal: ctx.signal,

@@ -34,6 +34,8 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 | Hound | `run_mv4cox1z4e0569d023` | Earlier full live run (on demo research) with the first fal final render (6 Kling clips) and a Manus-built landing page for its TikTok pack (unpublished). |
 | a.clinic | `run_mv4cgiqt5f95119dba` | Recorded live research pass: 82 real items (TikTok, Instagram, Meta Ad Library, Spiral, YouTube, site) + Manus task. 3 blueprints. |
 | a.clinic | `run_mv4e8sfdbc1e6575ad` | Full live run on that research, all Slovak concepts, Meta paid "not now" (RX4), SEO/Reels/TikTok organic. Flagship remake `concept_1e6575ad_1`. |
+| Dynova | `run_mv4h0j4j04f07e6df3` / `run_mv4hicmqcb91d09027` | Recorded live research (67 real items, Turkish vitamin listicles and supplement Shorts, 3 blueprints) / full live run on it: TikTok > Shorts > Reels > SEO, Turkish concepts. |
+| Evreon | `run_mv4hced3d147369b5a` / `run_mv4htba4f3f352d515` | Recorded live research (87 real items, 3 blueprints) / full live run: LinkedIn first, then practice-manager communities and email; founder posts and demo clips. |
 | all four | `run_<slug>_demo` | Deterministic demo runs (labelled demo), with locally built demo keyframes and review videos. |
 
 ## The 2-minute demo path
@@ -61,7 +63,8 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 - **Remotion** composition is in `remotion/` but timed out loading in headless Chrome here; the same Ad916 spec renders with sharp + ffmpeg (fast, no browser). `RENDERER=remotion` retries it.
 - **Review scores move by up to ~20 points between reviews of an unchanged shot** (model judgment). The repair pass keeps the best version of each shot; the last review is the shipped cut.
 - **Blueprint frames of third-party videos** exist only on this machine (`data/`, never committed). Other machines show placeholders; blueprint JSON is in the repo.
-- **Evreon and Dynova** have demo data only (no live research pass tonight).
+- Evreon and Dynova research passes ran without new Manus tasks (Manus credits); their Manus slot is empty in the recorded data.
+- `pnpm eval-all` passes for every current run; the two superseded early Hound runs (`run_mv4dl43id902ec6a1f`, `run_mv4cox1z4e0569d023`) predate the consultation fix and cite skipped answers as "you said". Use `run_mv4e0ud7671d68be0a` for Hound.
 - In the recorded full runs the consultation questions were **skipped by script** (no human), so plans say "assuming ...". In the demo a person answers.
 - `pnpm build` passes; Turbopack prints file-tracing warnings for dynamic asset paths (harmless locally).
 - Starting the dev server resumes interrupted runs only if their heartbeat is stale and they were interrupted less than 6 hours ago (older ones are marked failed, never resumed, so no surprise spend).

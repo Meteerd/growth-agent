@@ -131,3 +131,13 @@ describe("Claude agent core (recorded responses, no network)", () => {
     expect(loadPrompt("_test", { name: "Hound" })).toContain("Hello Hound");
   });
 });
+
+describe("house style", () => {
+  it("noDashes turns punctuation dashes into commas and keeps numeric ranges", async () => {
+    const { noDashes } = await import("@/engine/agent/claude");
+    expect(noDashes({ a: "Reels — the main channel", b: ["one – two", "3–5 days"] })).toEqual({
+      a: "Reels, the main channel",
+      b: ["one, two", "3–5 days"],
+    });
+  });
+});

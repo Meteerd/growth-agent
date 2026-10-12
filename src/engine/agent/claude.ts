@@ -131,6 +131,18 @@ export function outputSchema(schema: z.ZodType): Record<string, unknown> {
   return strip(js) as Record<string, unknown>;
 }
 
+/** House style: no em dashes in anything we show. Dashes used as punctuation become commas (en dash ranges stay). */
+export function noDashes<T>(v: T): T {
+  if (typeof v === "string")
+    return v
+      .replace(/\s*\u2014\s*/g, ", ")
+      .replace(/\s+\u2013\s+/g, ", ")
+      .replace(/,\s*,/g, ",") as T;
+  if (Array.isArray(v)) return v.map((x) => noDashes(x)) as T;
+  if (v && typeof v === "object") return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, noDashes(x)])) as T;
+  return v;
+}
+
 function safeJson(text: string): unknown {
   try {
     return parseJson(text);
@@ -275,7 +287,7 @@ export async function structured<S extends z.ZodType>(
         }
         await logCost(ctx, totalUsd, `Claude: ${o.note}`, msg);
         return {
-          result: parsed.data as z.infer<S>,
+          result: noDashes(parsed.data) as z.infer<S>,
           usd: totalUsd,
           units: `${msg.usage.input_tokens} in / ${msg.usage.output_tokens} out`,
         };
@@ -339,7 +351,7 @@ export async function text(ctx: CallCtx, o: TextOpts): Promise<StructuredResult<
       const usd = claudeCost(msg.model || model, msg.usage);
       if (msg.stop_reason === "refusal") throw new ClaudeRefusal(msg.stop_details?.category);
       await logCost(ctx, usd, `Claude: ${o.note}`, msg);
-      return { result: textOf(msg), usd };
+      return { result: noDashes(textOf(msg)), usd };
     },
   });
   return out;
