@@ -28,5 +28,20 @@
       "posterLandscape": "/showcase/aclinic-talk-169.jpg"
     },
     "durationSec": 3.2
+  },
+  {
+    "id": "dynova-talk",
+    "brand": "dynova",
+    "kind": "talking",
+    "language": "tr",
+    "label": "Dynova (TR): talking to camera (AI-generated presenter, lip-synced)",
+    "aiPresenter": true,
+    "files": {
+      "vertical": "/showcase/dynova-talk-916.mp4",
+      "landscape": "/showcase/dynova-talk-169.mp4",
+      "poster": "/showcase/dynova-talk-916.jpg",
+      "posterLandscape": "/showcase/dynova-talk-169.jpg"
+    },
+    "durationSec": 4.8
   }
 ]

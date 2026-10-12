@@ -255,7 +255,8 @@ export async function reviewRender(
     },
   );
   const winnerRaw = w ? await winnerBaseline(ctx.db, c, bp).catch(() => undefined) : undefined;
-  return w ? mergeRenderWatch(measuredReview, w, winnerRaw) : measuredReview;
+  const steady = !!measured && measured.shake.every((x) => x.reversalsPerSec <= 1);
+  return w ? mergeRenderWatch(measuredReview, w, winnerRaw, steady) : measuredReview;
 }
 
 /** Render the remake, watch it, regenerate the weakest shot, re-render: at most 2 rounds. */

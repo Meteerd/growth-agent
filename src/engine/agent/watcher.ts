@@ -213,7 +213,7 @@ export async function winnerBaseline(db: Db, c: Concept, bp: Blueprint | null, w
 }
 
 /** Merge Gemini's watch into a review: per shot and overall the stricter score wins; hard failures cap the score. */
-export function mergeRenderWatch(r: Review, w: RenderWatch, winnerRaw?: number): Review {
+export function mergeRenderWatch(r: Review, w: RenderWatch, winnerRaw?: number, measuredSteady?: boolean): Review {
   const perShot = r.perShot.map((p) => {
     const g = w.perShot.find((x) => x.idx === p.idx);
     if (!g) return p;
@@ -234,7 +234,8 @@ export function mergeRenderWatch(r: Review, w: RenderWatch, winnerRaw?: number):
   if (!w.voiceNatural) cap(74, "voice does not sound natural/native");
   // "None detected" / "no shake" entries are not shake
   const shake = w.shake.filter((x) => x.trim() && !/^(none|no\b|n\/a|not detected|nothing)/i.test(x.trim()));
-  if (shake.length) cap(70, `shake: ${shake.join("; ")}`);
+  // the camera metric is the authority on shake: handheld drift Gemini calls "shake" does not cap a steady cut
+  if (shake.length && !measuredSteady) cap(70, `shake: ${shake.join("; ")}`);
   if (w.wouldScroll) cap(70, "a viewer would scroll past");
   const low = perShot.some((p) => p.score < 80);
   return {

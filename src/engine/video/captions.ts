@@ -59,6 +59,7 @@ const FONT_FILES: Record<CaptionStyle["font"], [string, string]> = {
   serif_dm: ["DMSerifDisplay-Regular.ttf", "DMSerifDisplay-Regular.ttf"],
   serif_playfair: ["PlayfairDisplay-ExtraBold.ttf", "PlayfairDisplay-ExtraBold.ttf"],
   handwritten: ["Caveat-Bold.ttf", "Caveat-Bold.ttf"],
+  jakarta: ["PlusJakartaSans-ExtraBold.ttf", "PlusJakartaSans-ExtraBold.ttf"],
 };
 
 const fonts = new Map<string, opentype.Font>();
@@ -140,9 +141,24 @@ export function markEmphasis(words: CapWord[], keys: string[] = []): CapWord[] {
 
 const ease = (x: number) => 1 - (1 - x) ** 3;
 
+/**
+ * A damped spring from `from` to 1 (underdamped: zeta 0.28, omega 33 rad/s): 0.85 -> ~1.06 at ~100 ms -> 1.0,
+ * settled by ~0.3 s. Real easing, not linear (the same maths as Remotion's spring()).
+ */
+export function spring(age: number, from = 0.85): number {
+  if (age <= 0) return from;
+  const z = 0.28;
+  const w0 = 33;
+  const wd = w0 * Math.sqrt(1 - z * z);
+  const e = Math.exp(-z * w0 * age);
+  return 1 - (1 - from) * e * (Math.cos(wd * age) + ((z * w0) / wd) * Math.sin(wd * age));
+}
+
 /** Scale of a word `age` seconds after it was spoken (pop: 80% -> 110% -> 100% in ~160 ms). */
 export function popScale(age: number, anim: CaptionStyle["animation"], emph = false): number {
   if (age < 0) return 0;
+  // key words slam in from bigger; the others spring up from 85%
+  if (anim === "spring") return emph ? spring(age, 1.35) : spring(age, 0.85);
   if (anim === "fade" || anim === "typewriter") return 1;
   const peak = emph ? 1.22 : anim === "bounce" ? 1.14 : 1.1;
   if (age < 0.08) return 0.8 + (peak - 0.8) * ease(age / 0.08);
@@ -266,7 +282,12 @@ export function captionFrameSvg(tr: CaptionTrack, groups: CapGroup[], t: number)
       const isActive = p.w === active;
       const wx = p.x + p.width / 2;
       const wy = p.baseline - p.size * 0.35;
-      const slide = style.animation === "slide" && age < 0.15 ? (1 - ease(age / 0.15)) * 30 : 0;
+      const slide =
+        style.animation === "slide" && age < 0.15
+          ? (1 - ease(age / 0.15)) * 30
+          : style.animation === "spring" && !p.w.emph
+            ? Math.max(0, (1 - spring(age + 0.03, 0.85)) / 0.15) * 14
+            : 0;
       const shake = p.w.emph && age < 0.2 ? Math.sin(age * 90) * 4 * (1 - age / 0.2) : 0;
       // fade-in is quick and never starts see-through (a pale first word is hard to read)
       const op = style.animation === "fade" ? Math.min(1, 0.6 + (0.4 * (age + 0.03)) / 0.06) : 1;
@@ -277,8 +298,9 @@ export function captionFrameSvg(tr: CaptionTrack, groups: CapGroup[], t: number)
           ? `<rect x="${(p.x - p.size * 0.18).toFixed(1)}" y="${(p.baseline - p.size * 0.9).toFixed(1)}" width="${(p.width + p.size * 0.36).toFixed(1)}" height="${(p.size * 1.12).toFixed(1)}" rx="${(p.size * 0.2).toFixed(1)}" fill="${esc(style.backgroundColor ?? style.accent)}"/>`
           : "";
       const textFill = style.background === "word_box" && isActive ? style.fill : fill;
+      // a soft drop shadow: one offset copy, slightly spread, low opacity
       const shadow = style.shadow
-        ? `<path d="${d}" transform="translate(${(p.size * 0.04).toFixed(1)} ${(p.size * 0.06).toFixed(1)})" fill="#000" opacity="0.45"/>`
+        ? `<path d="${d}" transform="translate(${(p.size * 0.025).toFixed(1)} ${(p.size * 0.05).toFixed(1)})" fill="#000" stroke="#000" stroke-width="${(p.size * 0.06).toFixed(1)}" stroke-linejoin="round" opacity="0.32"/>`
         : "";
       const stroke = strokeW
         ? `<path d="${d}" fill="${esc(style.stroke!.color)}" stroke="${esc(style.stroke!.color)}" stroke-width="${strokeW.toFixed(1)}" stroke-linejoin="round"/>`
@@ -376,4 +398,45 @@ export function wordsForSilentText(text: string, t0: number, t1: number): CapWor
   const span = Math.max(0.6, (t1 - t0) * 0.75);
   const per = span / Math.max(1, ws.length);
   return ws.map((w, i) => ({ word: w, start: t0 + 0.1 + i * per, end: t0 + 0.1 + (i + 1) * per }));
+}
+
+/** A brand colour bright enough to read as the active word on video (dark colours are mixed toward white). */
+export function readableAccent(hex: string): string {
+  const m = /^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})/i.exec(hex);
+  if (!m) return "#FFD60A";
+  let [r, g, b] = [m[1], m[2], m[3]].map((x) => Number.parseInt(x!, 16)) as [number, number, number];
+  const lum = () => (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+  for (let i = 0; i < 12 && lum() < 0.42; i++) {
+    r = Math.round(r + (255 - r) * 0.18);
+    g = Math.round(g + (255 - g) * 0.18);
+    b = Math.round(b + (255 - b) * 0.18);
+  }
+  return `#${[r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("")}`.toUpperCase();
+}
+
+/**
+ * The premium caption look (Mete, 12 Oct): bold geometric sans (Plus Jakarta Sans ExtraBold), large, 1 to 3 words,
+ * white with a thin dark stroke and a soft shadow, the active word in the brand's accent, spring-in per word, key
+ * words slam. No box, unless the winner itself uses a box (kept as a refined black box). Position follows the
+ * winner; regions keep faces and the subject clear.
+ */
+export function premiumStyle(winner: CaptionStyle | undefined, brandAccent: string): CaptionStyle {
+  const boxed = winner?.background === "box" || winner?.background === "word_box";
+  return {
+    font: "jakarta",
+    weight: "black",
+    case: "as_is",
+    sizePct: boxed ? 10 : 13,
+    fill: "#FFFFFF",
+    accent: readableAccent(brandAccent),
+    stroke: { color: "#111111", widthPct: boxed ? 0 : 7 },
+    shadow: !boxed,
+    background: boxed ? "box" : "none",
+    backgroundColor: boxed ? "#000000E6" : undefined,
+    position: winner?.position ?? "middle",
+    animation: "spring",
+    wordsPerCaption: Math.min(3, Math.max(1, winner?.wordsPerCaption ?? 3)),
+    hookTitle: winner?.hookTitle ? { ...winner.hookTitle, font: "jakarta" } : undefined,
+    notes: `premium spec over the winner's ${winner?.font ?? "default"} ${winner?.background ?? ""} style`,
+  };
 }

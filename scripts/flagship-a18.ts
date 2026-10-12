@@ -60,6 +60,7 @@ const r = await buildA18(db, args[0]!, {
   mode: (arg("--mode") as "voice_led" | "picture_locked") ?? "voice_led",
   animateAll: args.includes("--animate-all"),
   rounds: Number(arg("--rounds") ?? 2),
+  keepClips: args.includes("--keep-clips"),
   sheetPath: arg("--sheet"),
   screenCta: args.includes("--screen-cta")
     ? { url: arg("--screen-url"), scrollPx: arg("--scroll") ? Number(arg("--scroll")) : undefined }

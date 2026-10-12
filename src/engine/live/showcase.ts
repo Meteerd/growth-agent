@@ -76,6 +76,22 @@ export async function exportShowcase(db: Db, runId: string): Promise<string> {
         out,
       ]);
       assets.push({ ...vid, url: `/api/assets/showcase/${brand.slug}-flagship.mp4`, width: 720, height: 1280 });
+      // dubbed versions (A18): the newest per language, copied by dubFlagship to docs/renders/<slug>-flagship-<lang>.mp4
+      const seen = new Set<string>();
+      for (const d of (await listAssets(db, c.id))
+        .filter((a) => a.kind === "video" && /-dub-[a-z]{2}$/.test(a.model ?? ""))
+        .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))) {
+        const lang = (d.model ?? "").slice(-2);
+        if (seen.has(lang)) continue;
+        seen.add(lang);
+        if (fs.existsSync(path.join(renderDir(), `${brand.slug}-flagship-${lang}.mp4`)))
+          assets.push({
+            ...d,
+            url: `/api/assets/showcase/${brand.slug}-flagship-${lang}.mp4`,
+            width: 720,
+            height: 1280,
+          });
+      }
     }
     reviews.push(...(await listReviews(db, c.id)));
     compliance.push(...(await listCompliance(db, c.id)));
