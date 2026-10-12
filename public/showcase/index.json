@@ -33,8 +33,8 @@
     "id": "dynova-talk",
     "brand": "dynova",
     "kind": "talking",
-    "language": "tr",
-    "label": "Dynova (TR): talking to camera (AI-generated presenter, lip-synced)",
+    "language": "en",
+    "label": "Dynova (EN): talking to camera (AI-generated presenter, lip-synced by elevenlabs creatify-aurora)",
     "aiPresenter": true,
     "files": {
       "vertical": "/showcase/dynova-talk-916.mp4",
@@ -42,7 +42,7 @@
       "poster": "/showcase/dynova-talk-916.jpg",
       "posterLandscape": "/showcase/dynova-talk-169.jpg"
     },
-    "durationSec": 4.8
+    "durationSec": 9.84
   },
   {
     "id": "evreon-talk",

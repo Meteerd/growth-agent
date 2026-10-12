@@ -1,7 +1,7 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-12 11:27 +03 (event day). Freeze 13:30; Mete wants Hound, a.clinic, Dynova finished on main by 13:20.
+- Time: 2026-10-12 11:58 +03 (event day); 12:00 REVIEW CHECKPOINT: no new renders until Mete's beat-by-beat notes. Freeze 13:30; Mete wants Hound, a.clinic, Dynova finished on main by 13:20.
 - Focus (Mete 11:15): Camplan > Hound > a.clinic > Dynova; Evreon gets no more work.
 - Current: Dynova shot 1 persona fix (same woman as shot 0, A19 revision); English versions of a.clinic/Dynova (secondary "en" dubs, market language stays primary per Mete 11:30); English 6-10 s talking heads (ElevenLabs Aurora lip sync); Camplan waits for Viktor's keys + URL (CONNECTOR_BRAND=camplan set).
 - Last sync: 11:18 exit 0, main UPDATED, checks PASS.
@@ -51,3 +51,4 @@
 - STOPPED by Mete at 07:41, A18 paused for the event. Last work commit abe91d4 (A18 so far: shake fix + metric, native captions, audio mix with music bed/ducking/-14 LUFS, measured review caps; not started: ElevenLabs provider, Gemini watcher, re-renders). Resumes at the event with coord/GOAL_A_EVENT.txt.
 - 10:24 A18: Hound flagship landed (same clips, ElevenLabs voice/music/SFX, live serif captions in the winner's style, real houndapp.xyz CTA), 77/100; A19 contract/routes/engine + test; business connectors (RevenueCat v2, PostHog HogQL, Databricks SQL, read-only, CONNECTOR_BRAND-bound, private export guard).
 - 11:05-11:18 A18: premium captions (Plus Jakarta Sans, spring-in, brand accent; Hound keeps a refined black box) on all four flagships; a.clinic v2 (new pharmacy shot) 70, Dynova v2 (woman presenter shot 0) 68, Hound 78 + whimper SFX + es re-dub; exports + INBOX_B "new render on main". Business connectors hardened (warnings, CONNECTOR_BRAND check, Databricks polling + strict read-only guard, PostHog sequential, tests).
+- 11:58 12:00 checkpoint: final cuts on main (captions centred + never across a cut + readable pace); Hound 74-79, a.clinic SK 60 (hard product gate rejects: product only at the end), Dynova TR 64; talking heads EN 7.4/8.5/9.8 s, Gemini lip sync 95 each (Aurora x2, Kling Pro x1); coord/REVIEW_1200.md + coord/WINNERS_1200.md (subagent re-search: Hound Zigzag 275 d/9 variants, @betternaturedogtraining 145k, Woofz 79 variants; a.clinic HealthifyRx 125 d, MeAgain 51 d, Hers 52 d; Dynova AG1 carousel 229 d/18 variants, ZOE 62 d, TR organic partly on-category). Waiting for Mete's notes. Carousel subagent still running.
