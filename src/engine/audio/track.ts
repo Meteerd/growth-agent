@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import type { Db } from "../db/client";
@@ -146,12 +147,29 @@ export async function speakShots(
   let usd = 0;
   let mode: "live" | "demo" = "live";
   for (const [i, l] of lines.entries()) {
+    // same voice, settings and line -> the same take (re-renders cost nothing and keep the read identical)
+    const settings = { ...o.voice.settings, ...(o.speed ? { speed: o.speed } : {}) };
+    const h = crypto
+      .createHash("sha1")
+      .update(
+        JSON.stringify([o.voice.voiceId, o.voice.modelId, settings, l.text, lines[i - 1]?.text, lines[i + 1]?.text]),
+      )
+      .digest("hex")
+      .slice(0, 16);
+    const cache = path.resolve(process.env.ASSETS_DIR || "data/assets", "voice-cache", `${h}.json`);
+    if (fs.existsSync(cache) && fs.existsSync(cache.replace(/\.json$/, ".mp3"))) {
+      const hit = JSON.parse(fs.readFileSync(cache, "utf8")) as VoiceSegment;
+      const file = path.join(o.dir, `line_${l.idx}.mp3`);
+      fs.copyFileSync(cache.replace(/\.json$/, ".mp3"), file);
+      segs.push({ ...hit, idx: l.idx, file });
+      continue;
+    }
     const r = await ttsWithTimestamps(db, {
       voiceId: o.voice.voiceId,
       text: stripEmoji(l.text),
       languageCode: o.voice.language,
       modelId: o.voice.modelId,
-      settings: { ...o.voice.settings, ...(o.speed ? { speed: o.speed } : {}) },
+      settings,
       previousText: lines[i - 1]?.text,
       nextText: lines[i + 1]?.text,
       seed: o.seed,
@@ -167,7 +185,11 @@ export async function speakShots(
     fs.writeFileSync(file, r.mp3);
     // the take may carry a little silence after the last word: trust the timestamps, fall back to the file length
     const dur = r.words.at(-1)?.end ?? (await probe(file)).durationSec;
-    segs.push({ idx: l.idx, file, words: r.words, durationSec: Math.round(dur * 1000) / 1000 });
+    const seg = { idx: l.idx, file, words: r.words, durationSec: Math.round(dur * 1000) / 1000 };
+    segs.push(seg);
+    fs.mkdirSync(path.dirname(cache), { recursive: true });
+    fs.copyFileSync(file, cache.replace(/\.json$/, ".mp3"));
+    fs.writeFileSync(cache, JSON.stringify(seg));
   }
   return { segs, usd, mode };
 }

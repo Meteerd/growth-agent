@@ -335,3 +335,48 @@ export async function subscription(): Promise<{ used: number; limit: number; tie
   const j = (await r.json()) as { character_count: number; character_limit: number; tier: string };
   return { used: j.character_count, limit: j.character_limit, tier: j.tier };
 }
+
+/** Speech to text (Scribe) with word timestamps: used for dubbed audio (captions in the new language). */
+export async function scribe(
+  db: Db,
+  o: { file: string; languageCode?: string; runId?: string; durationSec: number },
+): Promise<{ words: SpokenWord[]; text: string; mode: "live" | "demo"; usd: number }> {
+  const out = await callProvider(db, {
+    provider: "elevenlabs",
+    note: `scribe ${Math.round(o.durationSec)}s ${o.languageCode ?? ""}`.trim(),
+    runId: o.runId,
+    estimateUsd: (o.durationSec / 3600) * PRICES.elevenlabs.sttPerHour + 0.01,
+    demo: () => ({ words: [] as SpokenWord[], text: "" }),
+    live: async () => {
+      const form = new FormData();
+      form.set(
+        "file",
+        new Blob([new Uint8Array(fs.readFileSync(o.file))], { type: "audio/mpeg" }),
+        path.basename(o.file),
+      );
+      form.set("model_id", process.env.ELEVENLABS_STT_MODEL || "scribe_v2");
+      form.set("timestamps_granularity", "word");
+      form.set("tag_audio_events", "false");
+      if (o.languageCode) form.set("language_code", o.languageCode);
+      const r = await okJson<{ text: string; words: { text: string; start: number; end: number; type: string }[] }>(
+        await fetchRetry(`${BASE}/v1/speech-to-text`, {
+          method: "POST",
+          headers: headers(false),
+          body: form,
+          timeoutMs: 180_000,
+          retries: 1,
+        }),
+        "elevenlabs scribe",
+      );
+      const words = (r.words ?? [])
+        .filter((w) => w.type === "word" && w.text.trim())
+        .map((w) => ({ word: w.text.trim(), start: w.start, end: w.end }));
+      return {
+        result: { words, text: r.text },
+        usd: (o.durationSec / 3600) * PRICES.elevenlabs.sttPerHour,
+        units: `${Math.round(o.durationSec)}s scribe`,
+      };
+    },
+  });
+  return { ...out.value, mode: out.mode, usd: out.usd };
+}

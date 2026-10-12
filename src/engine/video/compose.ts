@@ -3,6 +3,7 @@ import path from "node:path";
 import sharp, { type OverlayOptions } from "sharp";
 import type { Ad916Props } from "../../../remotion/types";
 import { ffmpeg, probe } from "../media/ffmpeg";
+import { shakeScore } from "../media/motion-check";
 import { renderCaptionFrames } from "./captions";
 import { urlToFile } from "./files";
 
@@ -222,11 +223,62 @@ export function audioGraph(
   ].join(";");
 }
 
+/**
+ * A clip whose camera shakes (shakeScore > 1 reversal/s) is stabilised once with vidstab (two passes, kept next to
+ * the clip as <clip>.stab.mp4); the steadier of the two versions is used.
+ */
+export async function steadyClip(clip: string): Promise<string> {
+  const stab = `${clip}.stab.mp4`;
+  const len = (await probe(clip)).durationSec;
+  // the worst of the first 2 s (what the review measures) and the whole clip
+  const spans = [
+    { start: 0.15, durationSec: Math.max(0.6, Math.min(2, len - 0.3)) },
+    { start: 0.15, durationSec: Math.max(0.6, Math.min(4.5, len - 0.3)) },
+  ];
+  const worst = async (f: string) =>
+    Math.max(...(await Promise.all(spans.map((x) => shakeScore(f, x).catch(() => 0)))));
+  const raw = await worst(clip);
+  if (raw <= 0.75) return clip;
+  if (!fs.existsSync(stab)) {
+    const trf = `${clip}.trf`;
+    await ffmpeg([
+      "-y",
+      "-i",
+      clip,
+      "-vf",
+      `vidstabdetect=shakiness=10:accuracy=15:stepsize=4:result=${trf}`,
+      "-f",
+      "null",
+      "-",
+    ]);
+    await ffmpeg([
+      "-y",
+      "-i",
+      clip,
+      "-vf",
+      `vidstabtransform=input=${trf}:smoothing=60:optzoom=1:interpol=bicubic,unsharp=5:5:0.5`,
+      "-an",
+      "-c:v",
+      "libx264",
+      "-crf",
+      "16",
+      stab,
+    ]);
+    fs.rmSync(trf, { force: true });
+  }
+  return (await worst(stab)) < raw ? stab : clip;
+}
+
 export async function composeAd916(p: Ad916Props, out: string, workDir: string, onProgress?: (x: number) => void) {
   fs.mkdirSync(workDir, { recursive: true });
   fs.mkdirSync(path.dirname(out), { recursive: true });
-  const frames: { file: string; dur: number; clip?: string; overlays?: { file: string; t0: number; t1: number }[] }[] =
-    [];
+  const frames: {
+    file: string;
+    dur: number;
+    clip?: string;
+    clipLen?: number;
+    overlays?: { file: string; t0: number; t1: number }[];
+  }[] = [];
   for (const [i, s] of p.shots.entries()) {
     const f = path.join(workDir, `shot_${i}.png`);
     // live captions replace the per-shot text layers (only the badge stays per shot)
@@ -239,7 +291,15 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
       f,
     );
     const clip = s.clipSrc ? (urlToFile(s.clipSrc) ?? undefined) : undefined;
-    frames.push({ file: f, overlays, dur: s.durationSec, clip: clip && fs.existsSync(clip) ? clip : undefined });
+    const hasClip = !!clip && fs.existsSync(clip);
+    const steady = hasClip && p.motionQuality === "final" ? await steadyClip(clip!) : clip;
+    frames.push({
+      file: f,
+      overlays,
+      dur: s.durationSec,
+      clip: hasClip ? steady : undefined,
+      clipLen: hasClip ? (await probe(steady!)).durationSec : undefined,
+    });
     onProgress?.((i + 1) / (p.shots.length + 2));
   }
   const end = path.join(workDir, "end.png");
@@ -254,8 +314,10 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
     const v = k++;
     if (f.clip) {
       inputs.push("-i", f.clip);
+      // a clip a little shorter than its shot plays slightly slower (max 1.4x) instead of freezing at the end
+      const stretch = f.clipLen && f.clipLen < f.dur - 0.04 ? Math.min(1.4, f.dur / f.clipLen) : 1;
       parts.push(
-        `[${v}:v]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[b${i}]`,
+        `[${v}:v]${stretch > 1 ? `setpts=${stretch.toFixed(4)}*PTS,` : ""}scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[b${i}]`,
       );
     } else {
       inputs.push("-i", f.file);

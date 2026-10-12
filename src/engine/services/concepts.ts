@@ -1,15 +1,18 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Asset, Concept, RenderTier, RunEvent } from "@/contracts";
+import { buildSoundtrack, type Soundtrack, soundtrackAvailable } from "../audio/soundtrack";
 import type { Db } from "../db/client";
 import { HttpError } from "../http";
 import { newId, nowIso } from "../ids";
+import { probe } from "../media/ffmpeg";
 import { animateShot } from "../providers/motion";
 import { generateImage, speak } from "../providers/openai";
 import { renderEstimate } from "../providers/prices";
 import {
   appendEvent,
   getAsset,
+  getBlueprint,
   getBrand,
   getConcept,
   listAssets,
@@ -136,7 +139,15 @@ export async function renderConcept(
   db: Db,
   conceptId: string,
   tier: RenderTier,
-  o: { emit?: Emit; label?: string; phase?: RunEvent["phase"] } = {},
+  o: {
+    emit?: Emit;
+    label?: string;
+    phase?: RunEvent["phase"];
+    /** A18: ElevenLabs soundtrack (voice, music, SFX, live captions); voice_led re-times shots to the voice */
+    soundtrack?: "voice_led" | "picture_locked";
+    /** A18 flagships: animate screens and inserts too (no still shots in the cut) */
+    animateAll?: boolean;
+  } = {},
 ): Promise<{ concept: Concept; asset: Asset }> {
   let c = await getConcept(db, conceptId);
   if (!c) throw new HttpError(404, "not_found", "Concept not found");
@@ -175,12 +186,82 @@ export async function renderConcept(
   try {
     const n = Date.now().toString(36);
     const dir = path.join("runs", c.runId, c.id);
+    // A18: the ElevenLabs soundtrack (cast voice with word timestamps, music, SFX, live captions)
+    let st: Soundtrack | null = null;
+    if (o.soundtrack && soundtrackAvailable(brand.slug, c.language)) {
+      const bp = c.blueprintId ? await getBlueprint(db, c.blueprintId) : null;
+      st = await buildSoundtrack(db, {
+        concept: c,
+        brand,
+        bp,
+        mode: o.soundtrack,
+        endCardSec: c.format === "static" ? 0.5 : 2,
+        dir: path.resolve(process.env.ASSETS_DIR || "data/assets", dir, `sound_${n}`),
+      }).catch(async (e) => {
+        await emit("warning", "ElevenLabs soundtrack failed; falling back to the OpenAI voice", {
+          detail: e instanceof Error ? e.message : String(e),
+        });
+        return null;
+      });
+      if (st) {
+        const durations = st.durations;
+        const retimed = c.shots.map((s, i) => ({ ...s, durationSec: durations[i] ?? s.durationSec }));
+        // a clip shorter than its re-timed shot is animated again (a frozen tail reads as a still)
+        const fixed = [];
+        for (const s of retimed) {
+          const clip = s.clipAssetId ? await getAsset(db, s.clipAssetId) : null;
+          const cf = clip ? urlToFile(clip.url) : null;
+          const len = cf && fs.existsSync(cf) ? (await probe(cf)).durationSec : 0;
+          // compose slows a short clip up to 1.25x (reads as natural slow motion); beyond that it is animated again
+          fixed.push(clip && len * 1.25 < s.durationSec ? { ...s, clipAssetId: undefined } : s);
+        }
+        c = { ...c, shots: fixed };
+        await upsertConcept(db, { ...c, status: "rendering" });
+        const ts = nowIso();
+        await upsertAsset(db, {
+          id: newId("asset"),
+          brandId: c.brandId,
+          conceptId: c.id,
+          kind: "voice",
+          url: fileToUrl(st.voiceFile),
+          provider: "elevenlabs",
+          model: st.voice,
+          costUsd: st.usd,
+          demo: false,
+          createdAt: ts,
+        });
+        if (st.musicFile)
+          await upsertAsset(db, {
+            id: newId("asset"),
+            brandId: c.brandId,
+            conceptId: c.id,
+            kind: "music",
+            url: fileToUrl(st.musicFile),
+            provider: "elevenlabs",
+            model: "music_v2_5",
+            costUsd: 0,
+            demo: false,
+            createdAt: ts,
+          });
+        await emit(
+          "asset",
+          `Soundtrack: ${st.voice}, ${st.musicFile ? "music bed" : "no music"}, ${st.sfx.length} sound effects`,
+          {
+            refId: c.id,
+            costUsd: st.usd || undefined,
+            detail: st.musicPrompt,
+          },
+        );
+      }
+    }
     // voiceover
-    const voText = c.shots
-      .map((s) => s.voiceover)
-      .filter(Boolean)
-      .join(" ");
-    let voiceoverSrc: string | undefined;
+    const voText = st
+      ? ""
+      : c.shots
+          .map((s) => s.voiceover)
+          .filter(Boolean)
+          .join(" ");
+    let voiceoverSrc: string | undefined = st ? fileToUrl(st.voiceFile) : undefined;
     if (voText) {
       const vo = await speak(db, voText, { runId: c.runId, demo: async () => null });
       if (vo.mp3) {
@@ -213,9 +294,12 @@ export async function renderConcept(
         fs.mkdirSync(path.dirname(outClip), { recursive: true });
         const r = await animateShot(db, {
           imageFile: kfFile,
-          prompt: s.motion
-            ? `${s.motion}. Natural, physically plausible motion, real camera feel, no text, no morphing.`
-            : `${s.visualPrompt}. Subtle natural motion, gentle camera push-in, no text.`,
+          prompt:
+            s.style === "screen" || (s.source === "generated" && s.imageRef)
+              ? "Very slight natural handheld drift, the phone and its screen stay perfectly sharp and unchanged; the screen content does not move, morph or change; no new text, no morphing."
+              : s.motion
+                ? `${s.motion}. Natural, physically plausible motion, real camera feel, no text, no morphing.`
+                : `${s.visualPrompt}. Subtle natural motion, gentle camera push-in, no text.`,
           durationSec: s.durationSec,
           out: outClip,
           runId: cur.runId,
@@ -256,7 +340,7 @@ export async function renderConcept(
       // 3 clips at a time (each takes ~70 s at fal)
       // screens and inserts stay stills: animating a phone screen makes its content morph
       const todo = cur.shots.filter(
-        (s) => !s.clipAssetId && s.style !== "screen" && !(s.source === "generated" && s.imageRef),
+        (s) => !s.clipAssetId && (o.animateAll || (s.style !== "screen" && !(s.source === "generated" && s.imageRef))),
       );
       await Promise.all(
         Array.from({ length: Math.min(3, todo.length) }, async () => {
@@ -287,7 +371,11 @@ export async function renderConcept(
     // music bed (A18): the concept's music asset (ElevenLabs or operator-provided); a final without one says so
     const music = (await listAssets(db, c.id)).filter((a) => a.kind === "music").at(-1);
     const musicFile = music ? urlToFile(music.url) : null;
-    const musicSrc = musicFile && fs.existsSync(musicFile) ? music!.url : undefined;
+    const musicSrc = st?.musicFile
+      ? fileToUrl(st.musicFile)
+      : musicFile && fs.existsSync(musicFile)
+        ? music!.url
+        : undefined;
     if (!musicSrc && tier === "final")
       await emit("warning", "No music bed for this final render: voice only", {
         refId: c.id,
@@ -305,6 +393,8 @@ export async function renderConcept(
         badge: demo ? "Demo render" : undefined,
         endCardSec: c.format === "static" ? 0.5 : 2,
         motionQuality: tier === "final" && !demo ? "final" : "draft",
+        captions: st?.captions,
+        sfx: st?.sfx,
       },
       outFile,
     );

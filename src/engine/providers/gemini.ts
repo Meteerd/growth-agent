@@ -111,10 +111,11 @@ async function generate(
             break; // next model
           }
         }
-        if ((res.status !== 429 && res.status < 500) || i >= 3) {
-          if (res.status === 404) break; // unknown model id: next model
-          return { res, model: m };
+        if (res.status === 404 || (res.status >= 500 && i >= 2) || (res.status === 429 && i >= 3)) {
+          last = res; // unknown model id, or still overloaded after retries: next model
+          break;
         }
+        if (res.status !== 429 && res.status < 500) return { res, model: m };
         await new Promise((r) => setTimeout(r, 15_000 * (i + 1)));
       }
     }

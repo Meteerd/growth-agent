@@ -27,7 +27,9 @@
     "export-showcase": "tsx scripts/export-showcase.ts",
     "eval-all": "tsx scripts/eval-all.ts",
     "watch-winners": "tsx scripts/watch-winners.ts",
-    "voices": "tsx scripts/voices.ts"
+    "voices": "tsx scripts/voices.ts",
+    "flagship-a18": "tsx scripts/flagship-a18.ts",
+    "dub": "tsx scripts/dub.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

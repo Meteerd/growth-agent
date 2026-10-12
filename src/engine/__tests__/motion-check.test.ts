@@ -43,3 +43,23 @@ describe("A18 still camera moves do not shake", () => {
     expect(after).toBe(0);
   });
 });
+
+describe("A18 shake is measured on the camera, not the subject", () => {
+  const loop = async (filter: string, out: string) => {
+    await ffmpeg(["-y", "-loop", "1", "-t", "2", "-r", "30", "-i", still, "-vf", `${filter},format=yuv420p`, out]);
+    return out;
+  };
+  it("a subject moving back and forth in the centre is not shake; the whole frame jittering is", async () => {
+    // a bright square wobbling left/right every frame over a static background
+    const subject = await loop(
+      `drawbox=x='${w / 2 - 80}+12*mod(floor(t*30),2)':y=${h / 2 - 80}:w=160:h=160:color=white:t=fill`,
+      path.join(dir, "subject.mp4"),
+    );
+    const jitter = await loop(
+      `scale=${w + 8}:${h + 8},crop=${w}:${h}:'4+2*mod(n,2)':'4+2*mod(n,2)'`,
+      path.join(dir, "jitter.mp4"),
+    );
+    expect(await shakeScore(subject)).toBe(0);
+    expect(await shakeScore(jitter)).toBeGreaterThan(2);
+  });
+});
