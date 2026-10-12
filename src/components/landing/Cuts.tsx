@@ -7,6 +7,7 @@ import { SOURCE_LABELS, secs } from "@/lib/client/format";
 import { DATA_MODE } from "@/lib/client/mode";
 import aclinicSheet from "../../../docs/renders/aclinic-flagship.jpg";
 import dynovaSheet from "../../../docs/renders/dynova-flagship.jpg";
+import evreonSheet from "../../../docs/renders/evreon-flagship.jpg";
 import houndSheet from "../../../docs/renders/hound-flagship.jpg";
 
 // Lane A's flagship renders (A17): contact sheets of our own output, one frame per shot in cut order.
@@ -14,6 +15,7 @@ const CUTS = [
   { slug: "hound", sheet: houndSheet },
   { slug: "aclinic", sheet: aclinicSheet },
   { slug: "dynova", sheet: dynovaSheet },
+  { slug: "evreon", sheet: evreonSheet },
 ];
 
 // read, not imported: scraped ad text can hold lone surrogate escapes that JSON.parse accepts and the bundler rejects
@@ -24,6 +26,7 @@ function load(slug: string): DemoRunBundle | undefined {
 
 const WORDS: Record<number, string> = { 2: "two", 3: "three", 4: "four" };
 const cap = (w: string) => w[0].toUpperCase() + w.slice(1);
+const count = (n: number) => WORDS[n] ?? String(n);
 const LANGUAGE: Record<string, string> = { en: "English", sk: "Slovak", cs: "Czech", tr: "Turkish" };
 
 // Server-side only: everything shown is read from the showcase fixtures, never invented.
@@ -57,13 +60,13 @@ export function Cuts() {
     return d ? [{ ...d, sheet }] : [];
   });
   if (!rows.length) return null;
+  const languages = new Set(rows.map((r) => r.language)).size;
   return (
     <section className="mx-auto max-w-[1440px] px-4 py-[var(--spacing-section-sm)] md:px-8" data-testid="cuts">
       <div className="flex items-baseline gap-4">
         <span className="font-mono text-[12px] text-bone-3">01</span>
         <h2 className="font-display text-[clamp(1.9rem,4vw,3rem)] leading-[1.02] tracking-[-0.03em]">
-          Same engine. {cap(WORDS[rows.length] ?? String(rows.length))} brands, {WORDS[rows.length] ?? rows.length}{" "}
-          languages.
+          Same engine. {cap(count(rows.length))} brands, {count(languages)} languages.
         </h2>
       </div>
       <p className="mt-3 max-w-2xl pl-9 text-[14px] text-bone-2">
