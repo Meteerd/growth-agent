@@ -14,7 +14,8 @@ import type { CaptionStyle } from "@/contracts";
 const W = 1080;
 const H = 1920;
 /** outside the platform UI: status bar, caption + buttons (bottom ~20%), action rail (right ~15%) */
-const SAFE = { top: 200, bottom: Math.round(H * 0.8), left: 70, right: Math.round(W * 0.85) };
+/** symmetric about the frame centre (the right action rail sets both margins), so captions sit at x = 540 */
+const SAFE = { top: 200, bottom: Math.round(H * 0.8), left: W - Math.round(W * 0.85), right: Math.round(W * 0.85) };
 export const FPS = 30;
 
 export interface CapWord {
@@ -206,7 +207,7 @@ function layoutGroup(
   maxLines = 2,
 ) {
   let size = (style.sizePct / 100) * W;
-  const maxW = SAFE.right - SAFE.left - 40;
+  const maxW = SAFE.right - SAFE.left;
   for (let attempt = 0; attempt < 8; attempt++) {
     // a little wider than the font's space: popping words must never touch ("Startevery")
     const space = font.getAdvanceWidth(" ", size) * 1.35;
@@ -230,11 +231,16 @@ function layoutGroup(
       const lh = size * 1.12;
       const blockH = lines.length * lh;
       const cy = centreY(region, blockH);
-      const cx = (SAFE.left + SAFE.right) / 2;
+      const cx = W / 2;
       const placed: Placed[] = [];
       lines.forEach((ln, li) => {
         const total = ln.reduce((a, it, i) => a + it.width + (i ? space : 0), 0);
-        let x = cx - total / 2;
+        // optical centring: the ink of the line (glyph bounding boxes), not the advance widths, is centred
+        const first = ln[0]!;
+        const last = ln.at(-1)!;
+        const lb = font.getPath(first.text, 0, 0, first.size).getBoundingBox().x1;
+        const rb = last.width - font.getPath(last.text, 0, 0, last.size).getBoundingBox().x2;
+        let x = cx - total / 2 - (lb - rb) / 2;
         const baseline = cy - blockH / 2 + li * lh + size * 0.86;
         for (const it of ln) {
           placed.push({ w: it.w, text: it.text, x, baseline, width: it.width, size: it.size });

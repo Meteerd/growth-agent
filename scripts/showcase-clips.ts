@@ -14,7 +14,7 @@ process.env.NEXUS_FORCE_LIVE = "fal,elevenlabs,openai";
 const { getDb } = await import("@/engine/db/client");
 const repo = await import("@/engine/repo");
 const { ffmpeg, probe, extractFrame } = await import("@/engine/media/ffmpeg");
-const { ttsWithTimestamps } = await import("@/engine/providers/elevenlabs");
+const { ttsWithTimestamps, scribe } = await import("@/engine/providers/elevenlabs");
 const { brandVoice } = await import("@/engine/audio/voices");
 const { generateImage } = await import("@/engine/providers/openai");
 const { callProvider } = await import("@/engine/providers/call");
@@ -263,6 +263,57 @@ if (only !== "broll")
     try {
       const brand = (await repo.listBrands(db)).find((b) => b.slug === t.slug)!;
       const voice = brandVoice(t.slug, "en") ?? brandVoice(t.slug, (brand.languages[0] ?? "en").slice(0, 2))!;
+      // --recaption: reuse the lip-synced video and its exact audio; words from Scribe on that same audio
+      const reMp3 = path.join(WORK, `${t.id}_en.mp3`);
+      const reVid = [path.join(WORK, `${t.id}_aurora.mp4`), path.join(WORK, `${t.id}_klingpro.mp4`)].find((f) =>
+        fs.existsSync(f),
+      );
+      if (process.argv.includes("--recaption") && fs.existsSync(reMp3) && reVid) {
+        const dur0 = (await probe(reVid)).durationSec;
+        const stt = await scribe(db, { file: reMp3, languageCode: "en", durationSec: dur0 });
+        const pattern = await renderCaptionFrames(
+          {
+            style: premiumStyle(undefined, brand.dossier.visual.colors[0] ?? "#FFD60A"),
+            words: markEmphasis(stt.words, [brand.name]),
+            regions: [{ t0: 0, t1: dur0 + 1, region: "lower" }],
+          },
+          dur0,
+          path.join(WORK, `${t.id}_caps`),
+        );
+        const cap = path.join(WORK, `${t.id}_final.mp4`);
+        await ffmpeg([
+          "-y",
+          "-i",
+          reVid,
+          "-framerate",
+          "30",
+          "-i",
+          pattern,
+          "-filter_complex",
+          "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30[b];[1:v]format=rgba[c];[b][c]overlay=0:0:eof_action=pass,format=yuv420p[v]",
+          "-map",
+          "[v]",
+          "-map",
+          "0:a?",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-c:a",
+          "aac",
+          "-t",
+          String(dur0),
+          cap,
+        ]);
+        const files = await exportBoth(cap, t.id, Math.min(10, dur0), true);
+        const prev = index.find((x) => x.id === t.id);
+        save({
+          ...(prev ?? { id: t.id, brand: t.slug, kind: "talking", language: "en", label: t.label, aiPresenter: true }),
+          files,
+          durationSec: Math.min(10, dur0),
+        } as Item);
+        continue;
+      }
       // 1. audio first: the brand's voice speaks the script, with word timestamps
       const tts = await ttsWithTimestamps(db, {
         voiceId: voice.voiceId,

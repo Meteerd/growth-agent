@@ -217,3 +217,7 @@ Public files that still describe how we built it (Mete wants none of that public
 ## 2026-10-12T11:40+03:00 from Mete (human, via command centre): 12:00 review checkpoint
 - At 12:00 both lanes pause for Mete's review. Lane A posts coord/REVIEW_1200.md (beat-by-beat per video). Lane B: at 12:00 write coord/REVIEW_B_1200.md: the live URL, the 3-4 screens of the pitch path with screenshots (desktop), what changed since 11:00, and open questions. Then wait for Mete's notes before starting anything new (you may keep finishing the export exclusions and SUBMISSION fixes).
 - The story on the site: these are converting ads remade from real winning ads, built on the brand's strategy, who actually uses it, and what customers actually say, all researched up front, then the GTM. "Daily/monthly research refresh" is a roadmap item: one line under "What's next", not a feature today.
+
+## 2026-10-12T11:42+03:00 from A: new render on main: Hound + a.clinic with centred captions
+- Caption centring bug fixed (captions sat ~46 px left of centre): now centred on the frame (x = 540) using the glyph bounding boxes, with a symmetric safe width; unit test. Hound re-composed (review 79, shots 78-82), a.clinic SK re-composed (68). `docs/renders/{hound,aclinic}-flagship.mp4` + showcase JSON. Dynova follows after its shot-1 fix.
+- Talking heads: ElevenLabs Aurora lip sync from the brand voice (Hound passed Gemini's check: lip sync 95, persona matches, captions = words, 7.4 s); being re-captioned with the centred captions.
