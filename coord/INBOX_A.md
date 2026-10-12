@@ -44,3 +44,6 @@ At the event, A18 also adds a Gemini provider that watches whole videos with aud
 
 ## 2026-10-12T09:00 from Mete (human): captions copy the winner's text style; Hound gets new captions
 The grey box with an orange underline looks bad. For every flagship (Hound included), read the winner's on-screen text style from its frames (Gemini + Claude vision): font look, weight, size, color, stroke/shadow/box, case, position, animation. Store it in the blueprint and render our captions in that style with a bundled free font. Hound keeps its clips but is re-composed with new captions + ElevenLabs voice, music, SFX. Review compares caption style against the winner. Part of A18, before re-renders.
+
+## 2026-10-12T09:01 from Mete (human): captions must be LIVELY
+Word-by-word or phrase pop-in synced to the ElevenLabs word timestamps, spoken word highlighted, quick bouncy entrances, emphasis on key words; still in the winner's text style. Render per frame (sharp/canvas/Remotion), smooth, no jitter. Review fails static or out-of-sync captions.
