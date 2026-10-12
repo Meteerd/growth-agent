@@ -169,3 +169,15 @@ describe("research phase (demo)", () => {
     });
   }
 });
+
+describe("research phase (live run, providers not live)", () => {
+  it("never mixes demo items into a live run: non-live sources are skipped with a warning", async () => {
+    const run = await createRun(db, "brand_evreon", "research_only", { demo: false });
+    const base = await makeCtx(db, run.id, new AbortController().signal);
+    await research(base.forPhase("research"));
+    const ev = await listEvidence(db, run.id);
+    expect(ev.some((e) => e.demo)).toBe(false);
+    const warnings = (await listEvents(db, run.id)).filter((e) => e.type === "warning");
+    expect(warnings.some((w) => w.title.includes("not live on this machine: skipped"))).toBe(true);
+  });
+});

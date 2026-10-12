@@ -167,6 +167,14 @@ export async function research(ctx: PhaseCtx): Promise<void> {
   // 3. Sources in parallel; each result is stored and streamed as it lands
   const all: Evidence[] = [];
   const store = async (r0: SourceResult) => {
+    // a live run never mixes demo items into real research: a source that is not live here is skipped, visibly
+    if (!run.demo && r0.mode === "demo" && r0.items.some((e) => e.demo)) {
+      await ctx.emit("warning", `${SOURCE_LABEL[r0.source] ?? r0.source} is not live on this machine: skipped`, {
+        detail: "Live runs use real data only. Add the provider to LIVE_PROVIDERS (with its key) to include it.",
+        data: { source: r0.source, mode: "skipped" },
+      });
+      return;
+    }
     const r = r0.mode === "live" ? await relevant(ctx, r0) : r0;
     const label = SOURCE_LABEL[r.source] ?? r.source;
     await ctx.emit("tool_call", `${label} (${r.mode})`, { data: { tool: label, source: r.source, mode: r.mode } });
