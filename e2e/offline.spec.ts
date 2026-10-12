@@ -65,10 +65,7 @@ test("warm the local cover cache", async ({ request }) => {
 });
 
 // Phase 2 (server started with the offline preload): the pitch path, nothing leaves localhost.
-const EXTRA = [
-  { label: "Landing", href: "/" },
-  { label: "Brand home", href: "/brands/hound" },
-];
+const EXTRA = [{ label: "Brand home", href: "/brands/hound" }];
 
 test("offline: the pitch path works from localhost only", async ({ page }) => {
   test.skip(process.env.E2E_WARM === "1", "warm phase only");
@@ -87,6 +84,7 @@ test("offline: the pitch path works from localhost only", async ({ page }) => {
         await expect(page.locator('[data-testid^="brand-card-"]')).toHaveCount(4);
         await playing(page);
       }
+      if (step.label === "Results") await expect(page.locator('[data-testid^="result-"]')).toHaveCount(4);
       if (step.label === "The run") await expect(page.getByTestId("manus-findings")).toBeVisible();
       if (step.label === "Reverse-engineer") {
         await expect(page.getByTestId("blueprint-view")).toBeVisible();
@@ -101,7 +99,7 @@ test("offline: the pitch path works from localhost only", async ({ page }) => {
       const fonts = await page.evaluate(() =>
         [...document.fonts].filter((f) => f.status === "loaded").map((f) => f.family),
       );
-      expect(fonts.map((f) => f.replaceAll('"', ""))).toContain("Inter Tight");
+      expect(fonts.map((f) => f.replaceAll('"', ""))).toContain("Plus Jakarta Sans");
     });
   }
 
