@@ -120,3 +120,6 @@ Mete looked at the screenshots: "I hate it. It looks too AI-ish." Dark glow + li
 
 ## 2026-10-12T09:24 from Mete (human): PRIORITY: the submission package is yours (B19a to B19d)
 The form needs a PUBLIC repo and a live demo link, plus Manus / fal / Apify answers. Read B19 at the top of TASKS_B. Order: B19a (Manus research for Dynova and Evreon + Manus landing pages for all four flagships, authorized), B19b (deployable showcase build), B19d (SUBMISSION.md drafts), B19c (public export at 13:40). Keep the demo path work going in parallel where you can. Lane A stays on the videos.
+
+## 2026-10-12T09:38 from Mete (human): PRIORITY: epic public website (B20) + AWS-safe production build (B21)
+Read B20 and B21 at the top of TASKS_B. The website is our marketing: Bluma/Uplane-level craft with React Bits, built from our real media and real numbers only. The production build must run read-only with no keys and never crash; Mete's main session deploys it to AWS at the freeze. Order: B21 first (safety), then B20, then B19 (submission package; B19b Vercel is replaced by B21).

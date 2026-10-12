@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { preload } from "react-dom";
+import { PitchControls } from "@/components/shell/PitchControls";
 import { PresentMode } from "@/components/shell/PresentMode";
 import { Providers } from "@/components/shell/Providers";
 import { Toaster } from "@/components/ui/Toast";
@@ -21,7 +22,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en">
       <body>
         <PresentMode />
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <PitchControls />
+        </Providers>
         <Toaster />
       </body>
     </html>

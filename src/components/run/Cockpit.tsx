@@ -20,6 +20,7 @@ import { clock, PHASE_LABELS, SOURCE_LABELS, secs, unquote } from "@/lib/client/
 import { PURPOSE_COLOR } from "@/lib/client/purpose";
 import { useBlueprints, useConcepts, useEvidence } from "@/lib/client/queries";
 import { EventRow } from "./EventRow";
+import { ManusCard } from "./ManusCard";
 import { useRunCtx } from "./RunContext";
 
 const RAIL = PHASES.filter((p) => p !== "measure");
@@ -272,50 +273,6 @@ function Banner({
 export const hookLine = (h: { spoken?: string; onScreenText?: string; visual: string }) =>
   [h.spoken, h.onScreenText, h.visual].map((x) => x && unquote(x)).find((x) => x && !/^not visible/i.test(x)) ??
   h.visual;
-
-/** Manus deep research: visible, real work with a link to the task (BS5). */
-function ManusCard() {
-  const { run, events, revealed, runId } = useRunCtx();
-  const { data: evidence } = useEvidence(runId);
-  const items = (evidence ?? []).filter((e) => e.source === "manus_research" && revealed.has(e.id));
-  const calls = events.filter((e) => (e.data as { provider?: string } | undefined)?.provider === "manus");
-  if (!items.length && !calls.length && !run?.manusTaskUrl) return null;
-  const done = items.length > 0 || calls.some((e) => e.type === "tool_result");
-  const url = run?.manusTaskUrl ?? items.find((e) => e.url)?.url;
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: -8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      className="glass-flat flex flex-wrap items-center gap-4 p-4"
-      data-testid="manus-card"
-    >
-      <span className="grid size-9 place-items-center rounded-[4px] bg-bone font-display text-[17px] text-ink">M</span>
-      <div className="min-w-0 flex-1">
-        <p className="mono-label">manus / deep research task</p>
-        <p className="mt-0.5 text-bone text-ui">
-          {done
-            ? `Mapped the market: ${items.length} findings with sources, now on the wall.`
-            : "Manus is mapping the market for this brand, in parallel with the other sources."}
-        </p>
-      </div>
-      <Badge tone={done ? "pass" : "signal"} dot>
-        {done ? "done" : "running"}
-      </Badge>
-      {url && /^https?:\/\//.test(url) && (
-        <a
-          href={url}
-          target="_blank"
-          rel="noreferrer"
-          className="text-[12.5px] text-bone underline decoration-bone-4 underline-offset-4"
-          data-testid="manus-link"
-        >
-          Open the Manus task
-        </a>
-      )}
-    </motion.div>
-  );
-}
 
 function Blueprints() {
   const { runId, revealed } = useRunCtx();

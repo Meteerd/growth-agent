@@ -4,8 +4,12 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { toast } from "@/components/ui/Toast";
 import type { PublishPack } from "@/contracts";
+import recorded from "@/contracts/fixtures/live/manus/landing_status.json";
 import { ApiRequestError, getClient } from "@/lib/client/api";
 import { qk } from "@/lib/client/queries";
+
+// the recorded real Manus landing task (Hound, unpublished) stands in on Hound's TikTok pack until one is built for it
+const RECORDED_BRAND = "brand_hound";
 
 /** Manus builds a matching landing page for the pack. We link to the Manus task; nothing is published by us. */
 export function LandingAction({ pack, runId }: { pack: PublishPack; runId: string }) {
@@ -13,17 +17,31 @@ export function LandingAction({ pack, runId }: { pack: PublishPack; runId: strin
   const [busy, setBusy] = useState(false);
   const [unavailable, setUnavailable] = useState<string>();
   const url = pack.landingUrl;
-  if (url && /^https?:\/\//.test(url))
+  const landing =
+    url && /^https?:\/\//.test(url)
+      ? { url, title: undefined, earlier: false }
+      : pack.brandId === RECORDED_BRAND && pack.platform === "tiktok"
+        ? { url: recorded.taskUrl, title: recorded.website.title, earlier: pack.id !== recorded.packId }
+        : undefined;
+  if (landing)
     return (
-      <a
-        href={url}
-        target="_blank"
-        rel="noreferrer"
-        data-testid="pack-landing"
-        className="self-start text-[12.5px] text-bone underline decoration-line-strong underline-offset-4 hover:decoration-bone"
-      >
-        Landing page: open the Manus task
-      </a>
+      <div className="flex flex-col gap-1 rounded-card border border-line bg-raised-2 p-3" data-testid="pack-landing">
+        <p className="mono-label">Landing page / built by Manus</p>
+        {landing.title && <p className="font-medium text-bone text-ui">{landing.title.replace(" \u2014 ", ": ")}</p>}
+        <p className="text-[12px] text-bone-2 leading-snug">
+          Manus built a matching landing page in its own workspace
+          {landing.earlier ? " for an earlier Hound pack on the same alone-time topic" : ""}. It stays unpublished:
+          Nexus never publishes it.
+        </p>
+        <a
+          href={landing.url}
+          target="_blank"
+          rel="noreferrer"
+          className="self-start text-[12.5px] text-bone underline decoration-line-strong underline-offset-4 hover:decoration-bone"
+        >
+          Open the Manus task
+        </a>
+      </div>
     );
   if (unavailable)
     return (
