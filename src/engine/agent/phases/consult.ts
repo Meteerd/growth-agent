@@ -200,8 +200,10 @@ export async function submitAnswers(
   }
   const brand = await getBrand(db, run.brandId);
   if (brand && notes.length) {
+    // the dossier keeps what the operator told us; a skip stays on the run's question (with its assumption)
     const kept = (brand.dossier.operatorNotes ?? []).filter((n) => !notes.some((x) => x.questionId === n.questionId));
-    await patchDossier(db, brand.id, { operatorNotes: [...kept, ...notes] }, "answer", runId);
+    const told = notes.filter((n) => !n.answer.startsWith("Skipped."));
+    await patchDossier(db, brand.id, { operatorNotes: [...kept, ...told] }, "answer", runId);
   }
   const all = [...byId.values()].sort((a, b) => a.order - b.order);
   return { questions: all, ready: all.every(isSettled) };

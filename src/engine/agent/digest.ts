@@ -77,7 +77,8 @@ export function dossierDigest(b: Brand): string {
     claimsForbidden: d.claimsForbidden,
     visual: { colors: d.visual.colors, styleNotes: d.visual.styleNotes },
     gaps: d.gaps,
-    operatorAnswers: d.operatorNotes ?? [],
+    // a skipped question is not something the operator told us: only real answers count as brand knowledge
+    operatorAnswers: (d.operatorNotes ?? []).filter((n) => !n.answer.startsWith("Skipped.")),
   });
 }
 
