@@ -13,6 +13,7 @@ import type { Db } from "../db/client";
 import { callProvider } from "../providers/call";
 import { claudeCost, claudeEstimate } from "../providers/prices";
 import { appendEvent } from "../repo";
+import { wellFormed, wellFormedDeep } from "../text";
 
 /**
  * The engine's only door to Claude. Every call: adaptive thinking (Opus 5.5 cannot disable it), explicit effort
@@ -216,6 +217,8 @@ export async function structured<S extends z.ZodType>(
   ctx: CallCtx,
   o: StructuredOpts<S>,
 ): Promise<StructuredResult<z.infer<S>>> {
+  // scraped text can carry half a surrogate pair; never send it
+  o = { ...o, system: wellFormed(o.system), user: wellFormedDeep(o.user) };
   const model = MODEL();
   const maxTokens = o.maxTokens ?? 16000;
   let usage: BetaMessage["usage"] | undefined;
@@ -317,6 +320,7 @@ export interface TextOpts {
 
 /** Streaming free-text call (consultation chat). */
 export async function text(ctx: CallCtx, o: TextOpts): Promise<StructuredResult<string>> {
+  o = { ...o, system: wellFormed(o.system), messages: wellFormedDeep(o.messages) };
   const model = MODEL();
   const maxTokens = o.maxTokens ?? 4000;
   const out = await callProvider(ctx.db, {

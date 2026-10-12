@@ -25,6 +25,7 @@ import { bus, runChannel } from "./bus";
 import type { Db } from "./db/client";
 import * as t from "./db/schema";
 import { nowIso } from "./ids";
+import { wellFormedDeep } from "./text";
 
 const clean = <T extends object>(o: T): T =>
   Object.fromEntries(Object.entries(o).filter(([, v]) => v !== null && v !== undefined)) as T;
@@ -368,7 +369,8 @@ export async function listEvents(db: Db, runId: string, afterSeq = 0): Promise<R
 // ---------------------------------------------------------------- evidence, blueprints, questions, plans
 
 export async function upsertEvidence(db: Db, items: Evidence[]): Promise<void> {
-  for (const e of items) {
+  for (const e0 of items) {
+    const e = wellFormedDeep(e0);
     const row = {
       id: e.id,
       brandId: e.brandId,

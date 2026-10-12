@@ -1,11 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
+import { wellFormed } from "../text";
 
 export const LIVE_FIXTURE_DIR = path.join(process.cwd(), "src/contracts/fixtures/live");
-
-/** Scraped text cut mid-character leaves half a surrogate pair: valid for JSON.parse, but bundlers refuse the file. */
-const LONE_SURROGATE = /[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/g;
-export const wellFormed = (s: string) => s.replace(LONE_SURROGATE, "");
 
 /** Strip anything that could carry a credential (and broken surrogates) before writing a recorded response to the repo. */
 export function scrub<T>(v: T): T {

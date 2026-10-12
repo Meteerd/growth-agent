@@ -46,6 +46,25 @@ describe("Claude agent core (recorded responses, no network)", () => {
     expect(recorded?.response.stop_reason).toBe("end_turn");
   });
 
+  it("never sends half a surrogate pair (scraped text cut mid-character)", async () => {
+    const seen = replay(recorded!.response);
+    const cut = "Ad: \u{1D5D5}\u{1D5EE}".slice(0, -1);
+    await structured({ db, mode: "live" }, { ...opts, system: `sys ${cut}`, user: [{ type: "text", text: cut }] });
+    const body = JSON.stringify(seen[0]);
+    expect(body).not.toMatch(/\\ud[89ab][0-9a-f]{2}(?!\\ud[c-f])/i);
+    expect(body).toContain("\u{1D5D5}");
+  });
+
+  it("stores evidence text well formed", async () => {
+    const { seed } = await import("@/engine/seed");
+    const { upsertEvidence, listEvidence } = await import("@/engine/repo");
+    await seed(db);
+    const [e] = await listEvidence(db, "run_hound_demo");
+    await upsertEvidence(db, [{ ...e!, id: "ev_cut", text: "caption \u{1D5D5}".slice(0, -1) }]);
+    const back = (await listEvidence(db, "run_hound_demo")).find((x) => x.id === "ev_cut")!;
+    expect(back.text).toBe("caption ");
+  });
+
   it("parses a recorded structured response, records cost in the ledger and a cost event", async () => {
     const seen = replay(recorded!.response);
     const run = await createRun(db, "brand_hound", "full");
