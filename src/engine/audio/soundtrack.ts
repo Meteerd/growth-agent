@@ -6,7 +6,7 @@ import type { Db } from "../db/client";
 import { probe } from "../media/ffmpeg";
 import { composeMusic, soundEffect } from "../providers/elevenlabs";
 import { isLive } from "../providers/env";
-import { type CaptionTrack, type CapWord, HORMOZI, markEmphasis, wordsForSilentText } from "../video/captions";
+import { type CaptionTrack, type CapWord, HORMOZI, markEmphasis, premiumStyle, wordsForSilentText } from "../video/captions";
 import { buildVoiceTrack, globalWords, layoutVoice, speakShots, type VoiceLayout } from "./track";
 import { type BrandVoice, brandVoice } from "./voices";
 
@@ -122,16 +122,20 @@ export async function buildSoundtrack(
       words.push(...wordsForSilentText(s.onScreenText, starts[s.idx]!, starts[s.idx]! + lay.durations[s.idx]!));
   words.sort((a, b) => a.start - b.start);
   const keys = [o.brand.name, ...(c.cta.match(/\b[\p{L}.]{3,}\.(com|xyz|health|sk|cz|ai)\b/giu) ?? [])];
-  const base = o.bp?.captionStyle ?? HORMOZI;
+  // premium caption spec (Mete, 12 Oct) over the winner's position/box choice; CAPTIONS=winner keeps the raw style
+  const base =
+    process.env.CAPTIONS === "winner"
+      ? (o.bp?.captionStyle ?? HORMOZI)
+      : premiumStyle(o.bp?.captionStyle, o.brand.dossier.visual.colors[0] ?? "#FFD60A");
   // readable on a phone and lively (Mete, 12 Oct): at least 7% of the width, 1 to 3 words at a time
   const style = {
     ...base,
-    sizePct: Math.max(7, base.sizePct),
+    sizePct: Math.max(base.font === "jakarta" ? 9 : 7, base.sizePct),
     wordsPerCaption: Math.min(3, base.wordsPerCaption),
     // a thin outline disappears on bright or pastel backgrounds: at least 12% (or a box behind the words)
     stroke:
       base.background === "none"
-        ? { color: base.stroke?.color ?? "#000000", widthPct: Math.max(12, base.stroke?.widthPct ?? 0) }
+        ? { color: base.stroke?.color ?? "#000000", widthPct: Math.max(base.font === "jakarta" ? 7 : 12, base.stroke?.widthPct ?? 0) }
         : base.stroke,
     ...(ov.captions ?? {}),
   };

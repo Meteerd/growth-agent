@@ -151,6 +151,8 @@ export async function renderConcept(
     overrides?: SoundOverrides;
     /** A19: never re-animate an existing clip (a re-timed shot slows its clip or holds its last frame) */
     keepClips?: boolean;
+    /** never call a video provider in this render (caption/audio-only recompose) */
+    noAnimate?: boolean;
   } = {},
 ): Promise<{ concept: Concept; asset: Asset }> {
   let c = await getConcept(db, conceptId);
@@ -287,7 +289,7 @@ export async function renderConcept(
       }
     }
     // final tier: animate each keyframe with fal (live only; demo keeps Ken Burns on the stills)
-    if (tier === "final") {
+    if (tier === "final" && !o.noAnimate) {
       const updated = [...c.shots];
       const cur = c;
       const animate = async (s: (typeof cur.shots)[number]) => {

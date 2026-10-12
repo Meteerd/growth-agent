@@ -350,6 +350,7 @@ export const CAPTION_FONTS = [
   "serif_dm",
   "serif_playfair",
   "handwritten",
+  "jakarta",
 ] as const;
 export const CaptionStyle = z.object({
   font: z.enum(CAPTION_FONTS),
@@ -365,7 +366,7 @@ export const CaptionStyle = z.object({
   background: z.enum(["none", "box", "word_box"]),
   backgroundColor: z.string().optional(),
   position: z.enum(["upper", "middle", "lower"]),
-  animation: z.enum(["pop", "bounce", "slide", "typewriter", "fade"]),
+  animation: z.enum(["pop", "bounce", "slide", "typewriter", "fade", "spring"]),
   /** words on screen at once (1 to 3 for live captions) */
   wordsPerCaption: z.number().int().min(1).max(4),
   /** the winner's hook title (large text over the first shot), when it has one */

@@ -130,3 +130,19 @@ describe("A18 Gemini calibration against the winner", () => {
     expect(calibrate(70)).toBe(70);
   });
 });
+
+describe("A18 premium captions", () => {
+  it("words spring 0.85 -> ~1.06 -> 1.0 (real easing) and key words slam down from bigger", async () => {
+    const { spring, popScale, premiumStyle, readableAccent } = await import("../video/captions");
+    expect(spring(0)).toBeCloseTo(0.85);
+    const peak = Math.max(...Array.from({ length: 30 }, (_, i) => spring(i / 100)));
+    expect(peak).toBeGreaterThan(1.04);
+    expect(peak).toBeLessThan(1.09);
+    expect(Math.abs(spring(0.5) - 1)).toBeLessThan(0.01);
+    expect(popScale(0.01, "spring", true)).toBeGreaterThan(1.2);
+    // no box unless the winner uses one; the active word is readable on video
+    expect(premiumStyle(undefined, "#1860F0").background).toBe("none");
+    expect(premiumStyle({ background: "box" } as never, "#C07848").background).toBe("box");
+    expect(readableAccent("#781818")).not.toBe("#781818");
+  });
+});

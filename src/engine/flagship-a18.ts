@@ -85,6 +85,8 @@ export interface A18Options {
   screenCta?: { url?: string; scrollPx?: number; startY?: number };
   animateAll: boolean;
   rounds: number;
+  /** caption/audio-only recompose: never generate a clip (stills keep their smooth per-frame move) */
+  keepClips?: boolean;
   sheetPath?: string;
 }
 
@@ -157,7 +159,9 @@ export async function buildA18(db: Db, conceptId: string, o: A18Options) {
       await renderConcept(db, c.id, "final", {
         label: `flagship_a18_r${round}`,
         soundtrack: o.mode,
-        animateAll: o.animateAll,
+        animateAll: o.animateAll && !o.keepClips,
+        keepClips: o.keepClips,
+        noAnimate: o.keepClips,
       })
     ).asset;
     asset = { ...asset, model: `${asset.model}-flagship` };
