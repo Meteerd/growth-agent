@@ -389,7 +389,7 @@ function Stat({ k, v }: { k: string; v: string }) {
   return (
     <div className="py-1.5">
       <dt className="text-[11px] text-bone-3">{k}</dt>
-      <dd className="mt-0.5 truncate font-mono text-[13px] text-bone">{v}</dd>
+      <dd className="mt-0.5 font-mono text-[13px] text-bone leading-snug">{v}</dd>
     </div>
   );
 }
