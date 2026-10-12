@@ -6,10 +6,9 @@ import { PRODUCT_NAME } from "@/lib/client/product";
 import { BlurText } from "./bits/BlurText";
 import { CountUp } from "./bits/CountUp";
 import { Magnet } from "./bits/Magnet";
-import { brands, clips, compliance, proof, stats } from "./data";
-import { DubbedLoop, LoopVideo } from "./LoopVideo";
+import { brands, clips, compliance, stats } from "./data";
+import { LoopVideo } from "./LoopVideo";
 import { UrlBar } from "./UrlBar";
-import { WinnerCard } from "./Winner";
 
 // The public website (B20). Uplane-style rhythm: a full-bleed hero graded in one colour with a contrast streak, then
 // a white editorial grid with hairline columns. Every number and every video is ours and read from the recorded data.
@@ -76,6 +75,11 @@ function Hero() {
     hound: "order-2 md:order-3",
     evreon: "hidden md:block md:order-4",
   };
+  // Camplan (Viktor approved its ads going public) leads the strip; its ads are on the wall below
+  const strip = [
+    { slug: "camplan", name: "Camplan", logo: "/showcase/logos/camplan.png", countries: ["iPhone app"] },
+    ...list.map((b) => ({ slug: b.slug, name: b.name, logo: b.logo, countries: b.countries })),
+  ];
   return (
     <section className="relative isolate flex min-h-[max(700px,100svh)] flex-col overflow-hidden bg-signal text-white">
       <div aria-hidden className="absolute inset-0 -z-10 grid grid-cols-2 md:grid-cols-4">
@@ -133,11 +137,11 @@ function Hero() {
 
       <div className="border-white/20 border-t bg-black/25">
         <div className="mx-auto flex max-w-[1440px] items-center gap-6 overflow-hidden px-4 py-4 md:px-10">
-          <span className="shrink-0 text-[13px] text-white/75">Running four real brands</span>
+          <span className="shrink-0 text-[13px] text-white/75">Running {strip.length} real brands</span>
           <div className="marquee relative min-w-0 flex-1 overflow-hidden">
-            <span className="sr-only">{list.map((b) => b.name).join(", ")}</span>
+            <span className="sr-only">{strip.map((b) => b.name).join(", ")}</span>
             <div className="marquee-track flex w-max items-center gap-12" aria-hidden>
-              {[...list, ...list, ...list, ...list].map((b, i) => (
+              {[...strip, ...strip, ...strip, ...strip].map((b, i) => (
                 <span key={`${b.slug}-${i}`} className="flex items-center gap-2.5 whitespace-nowrap">
                   {/* biome-ignore lint/performance/noImgElement: brand marks from the committed brand assets */}
                   <img src={b.logo} alt="" className="size-7 rounded-[6px] bg-white object-contain p-1" />
@@ -150,54 +154,6 @@ function Hero() {
         </div>
       </div>
     </section>
-  );
-}
-
-function Proof() {
-  const p = proof();
-  if (!p) return null;
-  return (
-    <Section id="proof">
-      <Eyebrow>The proof.</Eyebrow>
-      <Heading text="A real winner. Our remake. Shot for shot." />
-      <div className="mt-14 grid-cols-1 grid gap-px overflow-hidden rounded-[10px] border border-line bg-line lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-        <WinnerCard p={p} />
-        <div className="grid-cols-1 grid gap-6 bg-raised p-6 sm:grid-cols-[minmax(0,260px)_minmax(0,1fr)] md:p-8">
-          <div className="aspect-[9/16] w-full overflow-hidden rounded-[10px] bg-[#111]">
-            <DubbedLoop
-              src={p.remake.src}
-              poster={p.remake.poster}
-              label="Our remake for Hound"
-              original={p.remake.language}
-              dubs={p.remake.dubs}
-            />
-          </div>
-          <div className="flex flex-col">
-            <p className="text-[13px] text-bone-3">Our remake for Hound</p>
-            <p className="mt-1 font-semibold text-[22px] text-bone leading-tight tracking-[-0.02em]">
-              {p.remake.title}
-            </p>
-            <p className="mt-4 text-[15px] text-bone-2 leading-relaxed">
-              Same six beats, same timing, same hook mechanism. Hound&apos;s own app, beagle art and words. The
-              creator&apos;s footage, voice, face and script are never reused.
-              {p.remake.dubs.length > 0 &&
-                " Switch the language on the video: the voice is re-spoken, the captions re-timed."}
-            </p>
-            {p.remake.review != null && (
-              <p className="mt-6 font-mono text-[13px] text-bone-2">
-                self-review <span className="text-[28px] text-bone">{p.remake.review}</span>/100, {p.remake.shots} shots
-              </p>
-            )}
-            <Link
-              href={p.href}
-              className="mt-auto w-fit rounded-full bg-[#111] px-5 py-3 font-semibold text-[14px] text-white transition-colors duration-150 hover:bg-signal"
-            >
-              Open the side by side
-            </Link>
-          </div>
-        </div>
-      </div>
-    </Section>
   );
 }
 
@@ -269,7 +225,7 @@ function Wall() {
         Every clip here was planned, generated, cut, captioned and reviewed by {PRODUCT_NAME}, then checked against the
         brand&apos;s rule pack. Sound off; the voices are in the brands&apos; own languages.
       </p>
-      <ul className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+      <ul className="mt-12 grid grid-cols-3 gap-2 md:grid-cols-6 md:gap-3">
         {tiles.map((t) => (
           <li key={t.key} className="group relative aspect-[9/16] overflow-hidden rounded-[10px] bg-[#111]">
             <LoopVideo src={t.src} poster={t.poster} label={t.label} />
@@ -478,9 +434,8 @@ export function Site() {
     <>
       <main>
         <Hero />
-        <Proof />
-        <HowItWorks />
         <Wall />
+        <HowItWorks />
         <Stats />
         <Brands />
         <Law />

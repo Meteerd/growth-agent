@@ -121,7 +121,8 @@ export function stats() {
     sources: sources.size,
     aclinic: read("runs", "aclinic")?.evidence.filter((e) => !e.demo && !NOT_POSTS.has(e.source)).length ?? 0,
     winners: winners.size,
-    brands: SLUGS.length,
+    // + Camplan when its ads are on the wall (public/showcase/index.json)
+    brands: SLUGS.length + (clips().some((c) => c.id.startsWith("camplan")) ? 1 : 0),
     languages: [...languages].map((l) => LANGUAGE[l] ?? l),
   };
 }
