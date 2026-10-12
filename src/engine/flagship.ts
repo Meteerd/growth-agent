@@ -152,7 +152,8 @@ async function keyframeFor(
     const bg = brand.dossier.visual.colors.at(-1) ?? "#FFFFFF";
     const src = path.join(brandAssetsDir(), brand.slug, s.imageRef);
     const meta = await sharp(src).metadata();
-    const portrait = (meta.height ?? 1) / (meta.width ?? 1) > 1.3;
+    // photos crop to fill the frame; only transparent art (illustrations) is contained on the brand color
+    const portrait = !meta.hasAlpha || (meta.height ?? 1) / (meta.width ?? 1) > 1.3;
     png = await sharp(src)
       .flatten({ background: bg })
       .resize(1080, 1920, { fit: portrait ? "cover" : "contain", position: "attention", background: bg })
@@ -397,6 +398,16 @@ export async function repairFlagship(db: Db, conceptId: string): Promise<Flagshi
   let prev = (await listReviews(db, c.id)).at(-1);
   if (!prev) throw new HttpError(409, "no_review", "Build the flagship first");
   if (await tightenCaptions(db, c.id)) c = (await getConcept(db, c.id))!;
+  // frames removed on purpose (e.g. to re-crop a brand photo) are rebuilt with the flagship frame builder
+  if (c.shots.some((s) => !s.keyframeAssetId)) {
+    const b0 = (await getBrand(db, c.brandId))!;
+    const filled = [...c.shots];
+    for (const s of c.shots)
+      if (!s.keyframeAssetId)
+        filled[s.idx] = { ...s, keyframeAssetId: (await keyframeFor(db, b0, c, s, " (rebuilt)")).id };
+    c = { ...c, shots: filled };
+    await upsertConcept(db, c);
+  }
   // 0. free pass: re-compose with the existing frames and clips (caption/layout fixes cost nothing) and re-review
   {
     let a = (await renderConcept(db, c.id, "final", { label: `flagship_r${prev.round + 1}_recompose` })).asset;
@@ -436,11 +447,17 @@ export async function repairFlagship(db: Db, conceptId: string): Promise<Flagshi
           keyframeAssetId: undefined,
           visualPrompt: `${s.visualPrompt} Fix: ${w.issues[0] ?? ""}`.trim(),
         };
-      return {
-        ...s,
-        clipAssetId: undefined,
-        motion: `${s.motion ?? "subtle natural motion"}. Fix: ${w.issues[0] ?? "keep every shape stable"}. Keep anatomy and objects identical across the shot; minimal motion.`,
-      };
+      const fixedMotion = `${s.motion ?? "subtle natural motion"}. Fix: ${w.issues[0] ?? "keep every shape stable"}. Keep anatomy and objects identical across the shot; minimal motion.`;
+      // a weak generated frame gets a new frame too; a brand image keeps its frame and gets new motion
+      return s.source === "generated"
+        ? {
+            ...s,
+            clipAssetId: undefined,
+            keyframeAssetId: undefined,
+            visualPrompt: `${s.visualPrompt} Fix: ${w.issues[0] ?? ""}`.trim(),
+            motion: fixedMotion,
+          }
+        : { ...s, clipAssetId: undefined, motion: fixedMotion };
     }),
   };
   // inserts and screens get a new frame (OpenAI only); animated shots keep their frame and get new motion

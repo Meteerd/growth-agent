@@ -10,7 +10,7 @@ const args = process.argv.slice(2);
 const conceptId = args[0];
 const sheetIdx = args.indexOf("--sheet");
 const sheetPath = sheetIdx >= 0 ? args[sheetIdx + 1] : undefined;
-process.env.NEXUS_FORCE_LIVE = "fal";
+process.env.NEXUS_FORCE_LIVE = "fal,higgsfield";
 const { getDb } = await import("@/engine/db/client");
 const { buildFlagship, contactSheet, repairFlagship } = await import("@/engine/flagship");
 const { urlToFile } = await import("@/engine/video/files");
