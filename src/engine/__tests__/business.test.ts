@@ -22,7 +22,7 @@ describe("business connectors (read-only, one brand)", () => {
     const brand = { slug: "hound", id: "brand_hound" } as never;
     expect(await businessEvidence({} as never, brand, "run_x", async (t) => warnings.push(t))).toEqual([]);
     expect(warnings[0]).toMatch(/CONNECTOR_BRAND/);
-    process.env.CONNECTOR_BRAND = "camplan";
+    process.env.CONNECTOR_BRAND = "privatebrand";
     expect(await businessEvidence({} as never, brand, "run_x")).toEqual([]);
     process.env.CONNECTOR_BRAND = prev.b;
     process.env.REVENUECAT_API_KEY = prev.k;

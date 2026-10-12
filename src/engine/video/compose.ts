@@ -378,6 +378,38 @@ export function punchIn(src: string, dur: number, out: string): string {
   return `[${src}]split=2[pa_${out}][pb_${out}];[pa_${out}]trim=end=${t},setpts=PTS-STARTPTS[p1_${out}];[pb_${out}]trim=start=${t},setpts=PTS-STARTPTS,scale=${w}:${h}:flags=lanczos,crop=${W}:${H}:${(w - W) / 2}:${Math.round((h - H) * 0.4)},setsar=1[p2_${out}];[p1_${out}][p2_${out}]concat=n=2:v=1:a=0,format=yuv420p,setsar=1[${out}]`;
 }
 
+/** The phone frame art (once per compose): a rounded-screen alpha mask and a bezel layer with a soft shadow. */
+async function phoneArt(workDir: string) {
+  const sw = 760;
+  const sh = Math.round(sw * (19.5 / 9));
+  const x = Math.round((W - sw) / 2);
+  const y = Math.round((H - sh) / 2) + 40;
+  const r = 78;
+  const mask = path.join(workDir, "phone_mask.png");
+  const bezel = path.join(workDir, "phone_bezel.png");
+  if (!fs.existsSync(mask))
+    await sharp(
+      Buffer.from(
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${sw}" height="${sh}"><rect width="${sw}" height="${sh}" fill="#000"/><rect width="${sw}" height="${sh}" rx="${r}" fill="#fff"/></svg>`,
+      ),
+    )
+      .png()
+      .toFile(mask);
+  if (!fs.existsSync(bezel)) {
+    const b = 16;
+    await sharp(
+      Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
+  <rect x="${x - b}" y="${y - b}" width="${sw + 2 * b}" height="${sh + 2 * b}" rx="${r + b}" fill="none" stroke="#0d0d0f" stroke-width="${2 * b}"/>
+  <rect x="${x - b - 2}" y="${y - b - 2}" width="${sw + 2 * b + 4}" height="${sh + 2 * b + 4}" rx="${r + b + 2}" fill="none" stroke="#3a3a3f" stroke-width="3"/>
+  <rect x="${W / 2 - 70}" y="${y + 18}" width="140" height="38" rx="19" fill="#0d0d0f"/>
+</svg>`),
+    )
+      .png()
+      .toFile(bezel);
+  }
+  return { mask, bezel, sw, sh, x, y };
+}
+
 /** A static reframe of a clip: scale by `zoom` (lanczos) and crop back to 1080x1920 at the anchor. */
 export function reframe(f: { zoom: number; anchorX: number; anchorY: number }): string {
   const w = Math.round((W * f.zoom) / 2) * 2;
@@ -430,6 +462,9 @@ async function composeAd916Now(p: Ad916Props, out: string, workDir: string, onPr
     clipLen?: number;
     seq?: string;
     screen?: boolean;
+    phone?: boolean;
+    clipStart?: number;
+    clipSpeed?: number;
     framing?: { zoom: number; anchorX: number; anchorY: number };
     overlays?: { file: string; t0: number; t1: number }[];
   }[] = [];
@@ -464,6 +499,9 @@ async function composeAd916Now(p: Ad916Props, out: string, workDir: string, onPr
       clipLen: hasClip ? (await probe(steady!)).durationSec : undefined,
       seq,
       screen: hasClip && !!s.screen,
+      phone: hasClip && !!s.phone,
+      clipStart: s.clipStart,
+      clipSpeed: s.clipSpeed,
       framing: s.framing,
     });
     onProgress?.((i + 1) / (p.shots.length + 2));
@@ -475,8 +513,12 @@ async function composeAd916Now(p: Ad916Props, out: string, workDir: string, onPr
     p.motionQuality === "final" && p.endCardSec >= 1
       ? await endCardFrames(p, Math.round(p.endCardSec * 30), path.join(workDir, "endcard"))
       : undefined;
-  frames.push({ file: end, dur: p.endCardSec, seq: endSeq });
+  const outro = p.outroSrc ? (urlToFile(p.outroSrc) ?? p.outroSrc) : null;
+  if (outro && fs.existsSync(outro))
+    frames.push({ file: end, dur: p.endCardSec, clip: outro, clipLen: (await probe(outro)).durationSec });
+  else frames.push({ file: end, dur: p.endCardSec, seq: endSeq });
 
+  const phone = frames.some((f) => f.phone) ? await phoneArt(workDir) : null;
   const inputs: string[] = [];
   const parts: string[] = [];
   let k = 0; // next input index
@@ -484,10 +526,27 @@ async function composeAd916Now(p: Ad916Props, out: string, workDir: string, onPr
     const n = Math.max(1, Math.round(f.dur * 30));
     const v = k++;
     if (f.clip) {
-      inputs.push("-i", f.clip);
+      inputs.push(...(f.clipStart ? ["-ss", f.clipStart.toFixed(3)] : []), "-i", f.clip);
       // a clip a little shorter than its shot plays slightly slower (max 1.4x) instead of freezing at the end
       const stretch = f.clipLen && f.clipLen < f.dur - 0.04 ? Math.min(1.4, f.dur / f.clipLen) : 1;
-      if (f.screen) {
+      const fast = f.clipSpeed && f.clipSpeed !== 1 ? `setpts=PTS/${f.clipSpeed.toFixed(3)},` : "";
+      if (f.phone) {
+        // the real app recording inside a drawn phone: rounded screen (alpha mask) + bezel, over a soft blurred copy
+        const { mask, bezel, sw, sh, x, y } = phone!;
+        const mi = k++;
+        const bi = k++;
+        inputs.push("-loop", "1", "-t", String(f.dur), "-i", mask, "-loop", "1", "-t", String(f.dur), "-i", bezel);
+        parts.push(
+          `[${v}:v]${fast}fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,split=2[pa${i}][pb${i}]`,
+          `[pa${i}]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},scale=270:480,boxblur=14:2,eq=brightness=-0.22:saturation=0.7,scale=${W}:${H},setsar=1[pbg${i}]`,
+          `[pb${i}]scale=${sw}:${sh}:force_original_aspect_ratio=increase,crop=${sw}:${sh},format=rgba[pfg${i}]`,
+          `[${mi}:v]scale=${sw}:${sh},format=gray[pm${i}]`,
+          `[pfg${i}][pm${i}]alphamerge[pr${i}]`,
+          `[pbg${i}][pr${i}]overlay=${x}:${y}[pp${i}]`,
+          `[${bi}:v]format=rgba[pz${i}]`,
+          `[pp${i}][pz${i}]overlay=0:0:shortest=1,format=yuv420p,setsar=1[b${i}]`,
+        );
+      } else if (f.screen) {
         // screen in frame: the recording at 70% over a blurred, darker copy of itself; the top stays clear for captions
         const sw = Math.round(W * 0.7);
         parts.push(
@@ -498,7 +557,7 @@ async function composeAd916Now(p: Ad916Props, out: string, workDir: string, onPr
         );
       } else
         parts.push(
-          `[${v}:v]${stretch > 1 ? `setpts=${stretch.toFixed(4)}*PTS,` : ""}scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},${f.framing ? reframe(f.framing) : ""}fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1${f.dur > 5.5 ? `[pre${i}];${punchIn(`pre${i}`, f.dur, `b${i}`)}` : `[b${i}]`}`,
+          `[${v}:v]${fast}${stretch > 1 && !fast ? `setpts=${stretch.toFixed(4)}*PTS,` : ""}scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},${f.framing ? reframe(f.framing) : ""}fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1${f.dur > 5.5 ? `[pre${i}];${punchIn(`pre${i}`, f.dur, `b${i}`)}` : `[b${i}]`}`,
         );
     } else if (f.seq) {
       // final still: the camera move rendered per frame with float transforms (no zoompan, no rounding jitter)

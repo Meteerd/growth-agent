@@ -20,13 +20,14 @@
       "body": [
         "Herkesin listesi farklı, peki seninki?"
       ],
+      "textPosition": "bottom",
       "image": {
         "source": "brand_image",
         "file": "nutrition-products.webp",
         "prompt": null,
         "phoneScreenshot": null
       },
-      "png": "slide_1.png"
+      "png": "slide_1.jpg"
     },
     {
       "n": 2,
@@ -37,13 +38,14 @@
         "Gerçek: Her vücudun ihtiyacı farklı.",
         "Genel listeler senin verine bakmıyor."
       ],
+      "textPosition": "bottom",
       "image": {
         "source": "site_phone",
         "file": "capsules-white.webp",
         "prompt": null,
         "phoneScreenshot": "https://dynova.health (live screenshot, phone viewport)"
       },
-      "png": "slide_2.png"
+      "png": "slide_2.jpg"
     },
     {
       "n": 3,
@@ -54,13 +56,14 @@
         "Gerçek: Beslenme, cilt ve sağlıklı yaşlanma raporları var.",
         "Rapor teşhis koymaz, bilgi verir."
       ],
+      "textPosition": "bottom",
       "image": {
         "source": "brand_image",
         "file": "step-report.webp",
         "prompt": null,
         "phoneScreenshot": null
       },
-      "png": "slide_3.png"
+      "png": "slide_3.jpg"
     },
     {
       "n": 4,
@@ -71,13 +74,14 @@
         "Gerçek: Doktor ve diyetisyenler sürecin içinde.",
         "Sonuçlarını tek başına yorumlamak zorunda değilsin."
       ],
+      "textPosition": "bottom",
       "image": {
         "source": "brand_image",
-        "file": "consult.webp",
+        "file": "generated",
         "prompt": null,
         "phoneScreenshot": null
       },
-      "png": "slide_4.png"
+      "png": "slide_4.jpg"
     },
     {
       "n": 5,
@@ -88,13 +92,14 @@
         "Gerçek: KVKK metni ve veri sayfası yayında.",
         "Karar vermeden önce oku, sonra seç."
       ],
+      "textPosition": "bottom",
       "image": {
         "source": "brand_image",
         "file": "generated",
         "prompt": null,
         "phoneScreenshot": null
       },
-      "png": "slide_5.png"
+      "png": "slide_5.jpg"
     },
     {
       "n": 6,
@@ -104,13 +109,14 @@
       "body": [
         "Raporları ve rutinleri dynova.health'te incele."
       ],
+      "textPosition": "bottom",
       "image": {
         "source": "brand_image",
         "file": "sun-portrait.webp",
         "prompt": null,
         "phoneScreenshot": null
       },
-      "png": "slide_6.png"
+      "png": "slide_6.jpg"
     }
   ],
   "quotes": [],
@@ -152,202 +158,202 @@
       "slides": [
         {
           "slide": 1,
-          "legibility": 86,
-          "nativeFeel": 72,
-          "hookStrength": 64,
-          "overall": 70,
-          "issues": "Type is big and clean on the dark gradient, and the purple accent works. The hook is a generic question that many supplement accounts already use, with no tension, number or myth tease to promise that swiping pays off. The open bottle and capsule shot is tidy but reads as a stock flat lay. The headline could tease the format, for example by naming the 4 myths.",
-          "betterImagePrompt": "Photoreal overhead shot of a cluttered bathroom shelf crowded with many different unlabeled supplement bottles and blister packs, a hand hesitating mid-reach, soft natural window light, slightly messy, real home feel, shallow depth of field, lower half darker for text, no text, no logos"
+          "legibility": 88,
+          "nativeFeel": 76,
+          "hookStrength": 66,
+          "overall": 73,
+          "issues": "Clean, readable headline over a solid dark gradient. The open pill bottle with capsules is a familiar stock-style flat lay, so it blends into the feed. The hook question is generic. A sharper tension line would stop the scroll better, such as a number or a 'you are probably wasting money' angle. The subline is small but readable.",
+          "betterImagePrompt": ""
         },
         {
           "slide": 2,
-          "legibility": 84,
+          "legibility": 88,
           "nativeFeel": 80,
-          "hookStrength": 70,
-          "overall": 79,
-          "issues": "This slide carries the real product: the Dynova site on a phone, clearly visible and on-brand. The headline over the blurred grey background is readable, though the body line is slightly small. The phone mockup is clean but feels a bit like a render, not handheld. Text on the phone screen is small but genuine. This is solid overall.",
+          "hookStrength": 68,
+          "overall": 80,
+          "issues": "The real product is visible: the Dynova site on a phone with the Health and Nutrition cards. This is a strong proof slide. The phone mockup is slightly flat and floats on a blurred background, which makes it feel like a template. Some screen copy is small but acceptable. The headline sits on a busy light background but still holds.",
           "betterImagePrompt": ""
         },
         {
           "slide": 3,
-          "legibility": 76,
-          "nativeFeel": 60,
+          "legibility": 82,
+          "nativeFeel": 68,
           "hookStrength": 62,
-          "overall": 64,
-          "issues": "This is an obvious stock photo of a woman with glasses on a sofa with a laptop, and it has a recognizable stock-library look. The headline cuts across her body and laptop. The body copy sits over a busy area that includes a book with visible DOISNEAU lettering, which competes with the text. The image does not connect to genetic reports. Showing the Dynova report screen on a phone or laptop would make this slide far stronger.",
-          "betterImagePrompt": "Photoreal candid close-up of a person sitting at a kitchen table holding a smartphone showing a colorful wellness report with charts, an open saliva DNA test kit box and tube beside it, warm morning light, natural skin texture, top area calm and uncluttered, lower third softly dark for text, no readable text, no logos"
+          "overall": 68,
+          "issues": "An obvious Unsplash-style stock photo of a woman on a couch with a laptop. It is generic and unrelated to gene report content. The body text runs over a busy area with the book and mug, and the second body line is tight. The visual does not support the claim that the reports cover nutrition, skin, and aging.",
+          "betterImagePrompt": "Photoreal close-up over the shoulder of a woman in her 30s sitting at a wooden kitchen table, a laptop screen showing soft blurred colorful charts and report sections, a small DNA saliva test kit box and tube next to the laptop, warm natural window light, shallow depth of field, lower third of the frame calm and dark for text, candid lifestyle feel, no readable text, no logos"
         },
         {
           "slide": 4,
-          "legibility": 78,
-          "nativeFeel": 55,
-          "hookStrength": 60,
-          "overall": 61,
-          "issues": "This is a glossy stock doctor shot: perfect lighting, a posed stethoscope and a generic clinic look. Hands under the text are half obscured and look awkward. The body copy runs to three lines with an orphaned final word, değilsin. The image feels like an ad, not a creator post, and it does not show the actual consultation experience.",
-          "betterImagePrompt": "Photoreal over-the-shoulder view of a person at home on a video call on a laptop with a friendly dietitian in casual clothing, a printed nutrition report and notebook on the desk, natural daylight, realistic skin and hands, slightly imperfect framing like a phone photo, lower third darker for text, no readable text, no logos"
+          "legibility": 80,
+          "nativeFeel": 58,
+          "hookStrength": 64,
+          "overall": 64,
+          "issues": "Shows AI tells. The doctor on screen has plastic skin and a posed stock smile, and the hands holding the mug and pen look unnatural. The headline overlaps the pen hand. The body text wraps to an orphan word, 'değilsin.' The kitchen is overly perfect and glossy.",
+          "betterImagePrompt": "Photoreal candid shot of a laptop on a cluttered home desk during a video call with a friendly female dietitian in casual clothing, natural imperfect lighting, a real person's hand resting near a notebook with handwritten notes, slightly messy realistic background, phone camera look with mild grain, dark lower half for text overlay, no readable text, no logos"
         },
         {
           "slide": 5,
-          "legibility": 82,
-          "nativeFeel": 68,
-          "hookStrength": 60,
-          "overall": 66,
-          "issues": "Type is clear on the dark lower area. The image is a generic hands-on-phone shot with blurred placeholder text, which misses the chance to show Dynova's actual KVKK or data page as proof. It also feels repetitive after the earlier phone slides. The hands look natural.",
-          "betterImagePrompt": "Photoreal close-up of a hand holding a smartphone displaying a clean privacy settings page with toggle switches and a shield icon, cozy home desk with coffee cup, soft window light, shallow depth of field, lower third darker for text, no readable text, no logos"
+          "legibility": 86,
+          "nativeFeel": 76,
+          "hookStrength": 64,
+          "overall": 73,
+          "issues": "Readable and natural. The hands and phone look believable. The blank, blurry document on screen is a missed opportunity, since showing a real-looking privacy page would add trust. The headline and body sit well on the dark gradient.",
+          "betterImagePrompt": ""
         },
         {
           "slide": 6,
-          "legibility": 80,
-          "nativeFeel": 66,
-          "hookStrength": 58,
-          "overall": 67,
-          "issues": "The CTA with dynova.health is present and the pill button is readable. However, the logo sits directly on the model's forehead and the headline crosses her face, which looks awkward and cluttered. The image feels like a generic beauty stock shot unrelated to tests or reports. A closing shot of the kit or the site would reinforce the product.",
-          "betterImagePrompt": "Photoreal flat lay on a soft beige linen surface showing an unbranded DNA saliva test kit box, collection tube, a smartphone with a blank bright screen, and a few vitamin capsules, gentle natural shadows, generous empty space in the center and top for text, calm minimal premium mood, no text, no logos"
+          "legibility": 78,
+          "nativeFeel": 68,
+          "hookStrength": 60,
+          "overall": 70,
+          "issues": "The CTA with the site is present and the pill button is clear. However, the logo is stamped on the model's forehead and the headline runs across her face, which looks awkward and cluttered. The stock portrait is unrelated to the product. A plain negative-space background or a product shot would make the CTA cleaner.",
+          "betterImagePrompt": "Photoreal minimal still life of a small DNA test kit box, a saliva collection tube, and a smartphone lying face down on a soft beige linen surface, warm morning light, generous empty space in the center and upper area for text, calm premium wellness mood, no readable text, no logos"
         }
       ],
       "productVisibleSlide": 2,
       "productVisibleBeforeLast40": true,
       "ctaOnLastSlide": true,
       "gatePass": true,
-      "notes": "The gate passes: the real Dynova site appears on a phone on slide 2, and the dynova.health CTA is on slide 6. Typography is consistent and readable throughout. The main weaknesses are a soft hook on slide 1 and heavy reliance on stock photography on slides 3, 4 and 6, which drags native feel down. Replace those images with real product moments such as the kit, the report screen, a video consult or the KVKK page so each myth has visible proof. Strengthen slide 1 by teasing the myth-busting format, for example with 4 efsane. Trim the slide 4 body copy to avoid the orphaned final word."
+      "notes": "The gate passes: the Dynova site on a phone appears on slide 2 and the dynova.health CTA is on slide 6. The myth/fact structure is coherent and the copy is compliant, including 'Rapor teşhis koymaz.' The main weaknesses are stock and AI imagery on slides 3, 4, and 6, a generic hook on slide 1, and text overlapping faces and hands on slides 4 and 6. Consider showing the real test kit or report screens on slides 3 and 5 to strengthen product presence and trust."
     },
     "rounds": [
       {
         "slides": [
           {
             "slide": 1,
-            "legibility": 86,
-            "nativeFeel": 72,
+            "legibility": 84,
+            "nativeFeel": 68,
             "hookStrength": 66,
-            "overall": 72,
-            "issues": "Large white headline reads well over the dark gradient. The beige pill-bottle flat lay feels like generic stock and does not tie to genetics or personalization. The question hook is familiar; a sharper tension line or a visual of a crowded supplement shelf would earn the swipe more. The purple accent on 'takviye' is slightly low contrast against the mid-gray zone.",
-            "betterImagePrompt": "Photoreal close-up of a person's hand hesitating in front of a crowded bathroom shelf packed with many different unlabeled supplement bottles and jars, soft natural window light, slightly messy real home, shallow depth of field, phone camera aesthetic, no text, no logos"
+            "overall": 69,
+            "issues": "Headline reads well on the dark gradient, but the purple 'takviye' has weaker contrast than the white words. The spilled pill bottle on beige is a very common stock image, so it blends into every supplement ad in the feed. The question hook is relevant but generic. Nothing signals genetics or personalization yet, which is the actual twist. The 1/6 counter is fine.",
+            "betterImagePrompt": "Photoreal overhead shot of a cluttered bathroom shelf crowded with many different supplement bottles and jars, mixed sizes and colors with labels turned away or blank, natural window light, slightly messy real-home feel, shallow depth of field, dark lower third for text overlay, no text, no logos"
           },
           {
             "slide": 2,
-            "legibility": 84,
-            "nativeFeel": 82,
-            "hookStrength": 70,
-            "overall": 80,
-            "issues": "Strongest slide: the real Dynova site on a phone makes the product clear early. Headline and body are legible on the blurred background. The phone UI text is small at feed size but works as proof. The blurred capsule background is a bit busy behind the body line. Consider tightening the gap between the myth copy and the phone.",
+            "legibility": 76,
+            "nativeFeel": 72,
+            "hookStrength": 62,
+            "overall": 71,
+            "issues": "The real Dynova site on a phone is clearly shown, which satisfies the gate. The headline sits on a mid-grey blurred background, so the white text and purple 'herkese' lose contrast. A darker scrim is needed. The flat mockup over a blurred backdrop looks like a template rather than a creator post. The UI copy inside the phone is too small to read at feed size. The myth is the weakest of the set.",
             "betterImagePrompt": ""
           },
           {
             "slide": 3,
             "legibility": 74,
-            "nativeFeel": 68,
-            "hookStrength": 62,
-            "overall": 67,
-            "issues": "Recognizable stock photo of a woman on a laptop on a sofa, glossy and generic. Body text sits over the busy book and mug area, which hurts readability in the bottom-left. Nothing visually communicates nutrition, skin or aging reports; showing a report screen would land the 'gerçek' point.",
-            "betterImagePrompt": "Photoreal over-the-shoulder shot of a woman on a cozy sofa scrolling a smartphone showing an abstract colorful health report with charts, warm afternoon light, candid home setting, natural skin texture, slightly imperfect framing like a creator photo, no readable text, no logos"
+            "nativeFeel": 70,
+            "hookStrength": 64,
+            "overall": 69,
+            "issues": "The headline crosses the subject's face area and her white sweater. The body copy sits over the light sweater and book, and is only rescued by the gradient. This is a recognizable free-stock lifestyle shot, and the visible 'Doisneau' book title is a distracting real-world text element. Nothing ties the image to genetic reports, so a report screen would be stronger.",
+            "betterImagePrompt": "Photoreal over-the-shoulder view of a young woman on a sofa holding a phone showing a blank colorful wellness report layout with charts, cozy living room, warm natural light, candid unposed moment, dark empty area at the bottom for text, no readable text, no logos"
           },
           {
             "slide": 4,
-            "legibility": 76,
-            "nativeFeel": 64,
-            "hookStrength": 64,
-            "overall": 67,
-            "issues": "Very stock-looking doctor with stethoscope in a bright clinic, clear image-library feel. Text lands over the white coat area; the gradient helps but the purple 'yalnız' and the body lines lose some contrast. A video consultation from the user's perspective would feel more real and on-message.",
-            "betterImagePrompt": "Photoreal first-person view of a laptop on a kitchen table during a video call with a friendly dietitian in a casual clinic office, coffee cup and notebook beside the laptop, soft daylight, realistic skin, candid home vibe, no readable text, no logos"
+            "legibility": 79,
+            "nativeFeel": 58,
+            "hookStrength": 63,
+            "overall": 64,
+            "issues": "This is a glossy stock doctor shot with a white coat, stethoscope and posed expression. It reads as advertising, not as a real consultation. The headline overlaps her hands and stethoscope, which creates visual clutter. The three-line body is long, and the orphaned 'değilsin.' should be fixed. Showing a video call from the user's point of view would make the 'not alone' message concrete.",
+            "betterImagePrompt": "Photoreal point-of-view shot of a laptop on a kitchen table showing a video call with a friendly dietitian in casual professional clothing, a person's hands with a notebook and tea in the foreground, warm home lighting, candid and natural, darker lower half for text, no readable text, no logos"
           },
           {
             "slide": 5,
-            "legibility": 80,
+            "legibility": 86,
             "nativeFeel": 70,
-            "hookStrength": 58,
-            "overall": 66,
-            "issues": "Lab pipettes image is off-topic for a data privacy myth; it signals lab work, not data transparency. Image is muted so text reads fine. Weakest narrative slide; a visual of someone reading a privacy page on a phone would match the copy.",
-            "betterImagePrompt": "Photoreal close-up of hands holding a smartphone displaying a long scrolling document page, person reading attentively at a desk with a cup of tea, soft natural light, shallow depth of field, authentic everyday setting, no readable text, no logos"
+            "hookStrength": 66,
+            "overall": 71,
+            "issues": "The headline and body are well placed on a dark, readable area. However, the phone screen shows an anonymous blur of document text. This is a missed opportunity to show Dynova's real KVKK or data page, which would make the 'it is published' claim credible. The stock hands-and-coffee scene is generic.",
+            "betterImagePrompt": "Photoreal close-up of hands holding a smartphone with a clean bright blank screen suitable for compositing a website screenshot, cozy cafe window seat, soft daylight, a knit sweater sleeve visible, dark moody lower half for text overlay, no text, no logos"
           },
           {
             "slide": 6,
-            "legibility": 82,
-            "nativeFeel": 66,
+            "legibility": 78,
+            "nativeFeel": 64,
             "hookStrength": 60,
-            "overall": 70,
-            "issues": "CTA with dynova.health pill is clear and well placed. The Dynova logo sits directly on the woman's forehead and the headline crosses her face, which looks awkward and cluttered. The calm stock portrait is pleasant but disconnected from the product. Moving the logo off the face or using a phone with the site would close the loop better.",
-            "betterImagePrompt": "Photoreal calm portrait of a woman outdoors at golden hour holding a smartphone loosely at her side, face in the upper third, plenty of soft blurred sky in the center for overlay space, natural skin texture, relaxed expression, no text, no logos"
+            "overall": 66,
+            "issues": "The CTA pill with dynova.health is clear and on the last slide, so it passes. The logo mark is placed directly on the model's forehead, and the headline runs across her nose and mouth, which looks awkward. The eyes-closed glowing-skin portrait is stock beauty imagery that feels unrelated to genetic reports. A final product shot of the kit or app would close stronger.",
+            "betterImagePrompt": "Photoreal flat lay of a minimalist at-home DNA saliva test kit box and sample tube next to a smartphone with a blank screen on a soft lavender linen surface, natural daylight, generous empty space at the top and center for logo and text, no text, no logos"
           }
         ],
         "productVisibleSlide": 2,
         "productVisibleBeforeLast40": true,
         "ctaOnLastSlide": true,
         "gatePass": true,
-        "notes": "Gate passes: the real Dynova site appears on a phone on slide 2 and the last slide carries the dynova.health CTA. Typography is consistent and mostly legible thanks to dark gradients. Main weakness is reliance on recognizable stock photography on slides 1, 3, 4 and 6, plus an off-topic lab image on slide 5, which lowers native feel and narrative fit. Slide 1 hook is generic; a stronger tension line or a relatable shelf visual would improve swipe rate. Fix the logo over the face on slide 6. Copy is sound and claims are appropriately hedged (rapor teşhis koymaz).",
+        "notes": "The gate passes: the real Dynova site appears on slide 2 and the dynova.health CTA is on slide 6. The myth/fact structure is clear and the copy is tight, but the imagery is mostly recognizable stock (pills, couch laptop, white-coat doctor, beauty portrait), which drags native feel into the 60s and 70s. Biggest wins: 1) Put the genetic angle into the slide 1 hook, for example 'Takviye seçerken genlerine baktın mı?'. 2) Show real product screens on slides 3 to 5, such as a report sample, the expert consultation flow and the KVKK page. 3) Add a darker scrim on slide 2. 4) Move the logo off the face on slide 6 and end on the kit or app. Purple accent words consistently lose contrast on mid-tone areas, so consider a lighter lavender or adding a subtle shadow.",
         "round": 1
       },
       {
         "slides": [
           {
             "slide": 1,
-            "legibility": 86,
-            "nativeFeel": 72,
-            "hookStrength": 64,
-            "overall": 70,
-            "issues": "Type is big and clean on the dark gradient, and the purple accent works. The hook is a generic question that many supplement accounts already use, with no tension, number or myth tease to promise that swiping pays off. The open bottle and capsule shot is tidy but reads as a stock flat lay. The headline could tease the format, for example by naming the 4 myths.",
-            "betterImagePrompt": "Photoreal overhead shot of a cluttered bathroom shelf crowded with many different unlabeled supplement bottles and blister packs, a hand hesitating mid-reach, soft natural window light, slightly messy, real home feel, shallow depth of field, lower half darker for text, no text, no logos"
+            "legibility": 88,
+            "nativeFeel": 76,
+            "hookStrength": 66,
+            "overall": 73,
+            "issues": "Clean, readable headline over a solid dark gradient. The open pill bottle with capsules is a familiar stock-style flat lay, so it blends into the feed. The hook question is generic. A sharper tension line would stop the scroll better, such as a number or a 'you are probably wasting money' angle. The subline is small but readable.",
+            "betterImagePrompt": ""
           },
           {
             "slide": 2,
-            "legibility": 84,
+            "legibility": 88,
             "nativeFeel": 80,
-            "hookStrength": 70,
-            "overall": 79,
-            "issues": "This slide carries the real product: the Dynova site on a phone, clearly visible and on-brand. The headline over the blurred grey background is readable, though the body line is slightly small. The phone mockup is clean but feels a bit like a render, not handheld. Text on the phone screen is small but genuine. This is solid overall.",
+            "hookStrength": 68,
+            "overall": 80,
+            "issues": "The real product is visible: the Dynova site on a phone with the Health and Nutrition cards. This is a strong proof slide. The phone mockup is slightly flat and floats on a blurred background, which makes it feel like a template. Some screen copy is small but acceptable. The headline sits on a busy light background but still holds.",
             "betterImagePrompt": ""
           },
           {
             "slide": 3,
-            "legibility": 76,
-            "nativeFeel": 60,
+            "legibility": 82,
+            "nativeFeel": 68,
             "hookStrength": 62,
-            "overall": 64,
-            "issues": "This is an obvious stock photo of a woman with glasses on a sofa with a laptop, and it has a recognizable stock-library look. The headline cuts across her body and laptop. The body copy sits over a busy area that includes a book with visible DOISNEAU lettering, which competes with the text. The image does not connect to genetic reports. Showing the Dynova report screen on a phone or laptop would make this slide far stronger.",
-            "betterImagePrompt": "Photoreal candid close-up of a person sitting at a kitchen table holding a smartphone showing a colorful wellness report with charts, an open saliva DNA test kit box and tube beside it, warm morning light, natural skin texture, top area calm and uncluttered, lower third softly dark for text, no readable text, no logos"
+            "overall": 68,
+            "issues": "An obvious Unsplash-style stock photo of a woman on a couch with a laptop. It is generic and unrelated to gene report content. The body text runs over a busy area with the book and mug, and the second body line is tight. The visual does not support the claim that the reports cover nutrition, skin, and aging.",
+            "betterImagePrompt": "Photoreal close-up over the shoulder of a woman in her 30s sitting at a wooden kitchen table, a laptop screen showing soft blurred colorful charts and report sections, a small DNA saliva test kit box and tube next to the laptop, warm natural window light, shallow depth of field, lower third of the frame calm and dark for text, candid lifestyle feel, no readable text, no logos"
           },
           {
             "slide": 4,
-            "legibility": 78,
-            "nativeFeel": 55,
-            "hookStrength": 60,
-            "overall": 61,
-            "issues": "This is a glossy stock doctor shot: perfect lighting, a posed stethoscope and a generic clinic look. Hands under the text are half obscured and look awkward. The body copy runs to three lines with an orphaned final word, değilsin. The image feels like an ad, not a creator post, and it does not show the actual consultation experience.",
-            "betterImagePrompt": "Photoreal over-the-shoulder view of a person at home on a video call on a laptop with a friendly dietitian in casual clothing, a printed nutrition report and notebook on the desk, natural daylight, realistic skin and hands, slightly imperfect framing like a phone photo, lower third darker for text, no readable text, no logos"
+            "legibility": 80,
+            "nativeFeel": 58,
+            "hookStrength": 64,
+            "overall": 64,
+            "issues": "Shows AI tells. The doctor on screen has plastic skin and a posed stock smile, and the hands holding the mug and pen look unnatural. The headline overlaps the pen hand. The body text wraps to an orphan word, 'değilsin.' The kitchen is overly perfect and glossy.",
+            "betterImagePrompt": "Photoreal candid shot of a laptop on a cluttered home desk during a video call with a friendly female dietitian in casual clothing, natural imperfect lighting, a real person's hand resting near a notebook with handwritten notes, slightly messy realistic background, phone camera look with mild grain, dark lower half for text overlay, no readable text, no logos"
           },
           {
             "slide": 5,
-            "legibility": 82,
-            "nativeFeel": 68,
-            "hookStrength": 60,
-            "overall": 66,
-            "issues": "Type is clear on the dark lower area. The image is a generic hands-on-phone shot with blurred placeholder text, which misses the chance to show Dynova's actual KVKK or data page as proof. It also feels repetitive after the earlier phone slides. The hands look natural.",
-            "betterImagePrompt": "Photoreal close-up of a hand holding a smartphone displaying a clean privacy settings page with toggle switches and a shield icon, cozy home desk with coffee cup, soft window light, shallow depth of field, lower third darker for text, no readable text, no logos"
+            "legibility": 86,
+            "nativeFeel": 76,
+            "hookStrength": 64,
+            "overall": 73,
+            "issues": "Readable and natural. The hands and phone look believable. The blank, blurry document on screen is a missed opportunity, since showing a real-looking privacy page would add trust. The headline and body sit well on the dark gradient.",
+            "betterImagePrompt": ""
           },
           {
             "slide": 6,
-            "legibility": 80,
-            "nativeFeel": 66,
-            "hookStrength": 58,
-            "overall": 67,
-            "issues": "The CTA with dynova.health is present and the pill button is readable. However, the logo sits directly on the model's forehead and the headline crosses her face, which looks awkward and cluttered. The image feels like a generic beauty stock shot unrelated to tests or reports. A closing shot of the kit or the site would reinforce the product.",
-            "betterImagePrompt": "Photoreal flat lay on a soft beige linen surface showing an unbranded DNA saliva test kit box, collection tube, a smartphone with a blank bright screen, and a few vitamin capsules, gentle natural shadows, generous empty space in the center and top for text, calm minimal premium mood, no text, no logos"
+            "legibility": 78,
+            "nativeFeel": 68,
+            "hookStrength": 60,
+            "overall": 70,
+            "issues": "The CTA with the site is present and the pill button is clear. However, the logo is stamped on the model's forehead and the headline runs across her face, which looks awkward and cluttered. The stock portrait is unrelated to the product. A plain negative-space background or a product shot would make the CTA cleaner.",
+            "betterImagePrompt": "Photoreal minimal still life of a small DNA test kit box, a saliva collection tube, and a smartphone lying face down on a soft beige linen surface, warm morning light, generous empty space in the center and upper area for text, calm premium wellness mood, no readable text, no logos"
           }
         ],
         "productVisibleSlide": 2,
         "productVisibleBeforeLast40": true,
         "ctaOnLastSlide": true,
         "gatePass": true,
-        "notes": "The gate passes: the real Dynova site appears on a phone on slide 2, and the dynova.health CTA is on slide 6. Typography is consistent and readable throughout. The main weaknesses are a soft hook on slide 1 and heavy reliance on stock photography on slides 3, 4 and 6, which drags native feel down. Replace those images with real product moments such as the kit, the report screen, a video consult or the KVKK page so each myth has visible proof. Strengthen slide 1 by teasing the myth-busting format, for example with 4 efsane. Trim the slide 4 body copy to avoid the orphaned final word.",
+        "notes": "The gate passes: the Dynova site on a phone appears on slide 2 and the dynova.health CTA is on slide 6. The myth/fact structure is coherent and the copy is compliant, including 'Rapor teşhis koymaz.' The main weaknesses are stock and AI imagery on slides 3, 4, and 6, a generic hook on slide 1, and text overlapping faces and hands on slides 4 and 6. Consider showing the real test kit or report screens on slides 3 and 5 to strengthen product presence and trust.",
         "round": 2
       }
     ],
     "regenerated": {
-      "slide": 5,
-      "from": "lab-tubes.webp",
-      "prompt": "Photoreal close-up of hands holding a smartphone displaying a long scrolling document page, person reading attentively at a desk with a cup of tea, soft natural light, shallow depth of field, authentic everyday setting, no readable text, no logos"
+      "slide": 4,
+      "from": "consult.webp",
+      "prompt": "Photoreal point-of-view shot of a laptop on a kitchen table showing a video call with a friendly dietitian in casual professional clothing, a person's hands with a notebook and tea in the foreground, warm home lighting, candid and natural, darker lower half for text, no readable text, no logos"
     }
   },
   "strip": "strip.jpg",
-  "minutes": 3.16,
-  "createdAt": "2026-10-12T08:54:48.877Z"
+  "minutes": 2.7,
+  "createdAt": "2026-10-12T09:01:52.283Z"
 }

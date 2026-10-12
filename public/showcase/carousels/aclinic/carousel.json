@@ -20,13 +20,14 @@
       "body": [
         "Možno vám nechýbala vôľa, ale lekár."
       ],
+      "textPosition": "bottom",
       "image": {
         "source": "generated",
         "file": "generated",
         "prompt": "Candid iPhone photo of a woman in her early 40s sitting at a kitchen table by a window in a Central European apartment, holding a mug of coffee and looking thoughtfully outside, soft morning natural light, muted warm tones, calm empty wall area in the upper part of the frame, no text, no logos, no screens",
         "phoneScreenshot": null
       },
-      "png": "slide_1.png"
+      "png": "slide_1.jpg"
     },
     {
       "n": 2,
@@ -37,13 +38,14 @@
         "Fakt: na videu hovoríte s licencovaným lekárom.",
         "Recept predpíše, len ak to uzná za vhodné."
       ],
+      "textPosition": "bottom",
       "image": {
         "source": "site_phone",
         "file": "blur-doctor.jpg",
         "prompt": null,
         "phoneScreenshot": "https://a.clinic (live screenshot, phone viewport)"
       },
-      "png": "slide_2.png"
+      "png": "slide_2.jpg"
     },
     {
       "n": 3,
@@ -54,13 +56,14 @@
         "Fakt: dotazník aj konzultácia sú z domu.",
         "ePredpis vyzdvihnete v ktorejkoľvek lekárni na Slovensku."
       ],
+      "textPosition": "bottom",
       "image": {
         "source": "generated",
         "file": "generated",
         "prompt": "Candid iPhone photo of a man in his late 30s sitting on a sofa at home in the evening, laptop on his knees seen from behind so the screen is not visible, relaxed posture, warm lamp light and a plant nearby, calm darker floor area in the lower third, no text, no logos, no visible UI",
         "phoneScreenshot": null
       },
-      "png": "slide_3.png"
+      "png": "slide_3.jpg"
     },
     {
       "n": 4,
@@ -71,13 +74,14 @@
         "Fakt: celú cenu vidíte ešte pred platbou.",
         "Liek sa platí v lekárni, zrušiť môžete kedykoľvek."
       ],
+      "textPosition": "bottom",
       "image": {
         "source": "generated",
         "file": "generated",
         "prompt": "Candid iPhone photo of a neighborhood pharmacy storefront on a quiet street in Bratislava, late afternoon natural light, a woman with a tote bag walking past, shallow depth of field, calm pavement area in the lower third, no readable text, no logos, no pill packs",
         "phoneScreenshot": null
       },
-      "png": "slide_4.png"
+      "png": "slide_4.jpg"
     },
     {
       "n": 5,
@@ -88,13 +92,14 @@
         "Fakt: tím starostlivosti sa vám priebežne ozýva.",
         "Kontroly zapadnú aj do pracovného týždňa."
       ],
+      "textPosition": "bottom",
       "image": {
         "source": "generated",
         "file": "generated",
         "prompt": "Candid iPhone photo of a woman in her mid 30s standing by a balcony door at home, talking on the phone and smiling slightly, casual work clothes, soft daylight, green plants, calm muted lower part of the frame, no text, no logos, no screens visible",
         "phoneScreenshot": null
       },
-      "png": "slide_5.png"
+      "png": "slide_5.jpg"
     },
     {
       "n": 6,
@@ -104,13 +109,14 @@
       "body": [
         "Zaberie asi 10 minút. O ďalšom postupe rozhoduje lekár."
       ],
+      "textPosition": "bottom",
       "image": {
         "source": "brand_image",
         "file": "generated",
         "prompt": null,
         "phoneScreenshot": null
       },
-      "png": "slide_6.png"
+      "png": "slide_6.jpg"
     }
   ],
   "quotes": [],
@@ -159,64 +165,64 @@
       "slides": [
         {
           "slide": 1,
-          "legibility": 85,
+          "legibility": 84,
           "nativeFeel": 82,
-          "hookStrength": 76,
-          "overall": 79,
-          "issues": "Strong, believable lifestyle photo with natural light and no visible AI tells. Headline is big and readable over the grey wall. The body line is small and sits close to the woman's head, so it loses punch at phone size. The hook is relatable, but 'a nič?' is a soft payoff. A sharper tension line or a bigger body line would help.",
+          "hookStrength": 78,
+          "overall": 80,
+          "issues": "Strong, real-feeling moody kitchen shot and a relatable pain-point question. The subline is small at phone size and sits close to the busy table edge. Overall it is a solid hook. It could be sharper with a more specific promise or a number, since the line 'not willpower, a doctor' is the real hook and is buried in the small text.",
           "betterImagePrompt": ""
         },
         {
           "slide": 2,
-          "legibility": 84,
+          "legibility": 82,
           "nativeFeel": 72,
-          "hookStrength": 64,
-          "overall": 74,
-          "issues": "The real a.clinic site is clearly shown on the phone, which satisfies the product gate. The phone mockup over a blurred background reads more like an ad template than a creator post. The on-screen site says '20 minút' while slide 6 says 'asi 10 minút', so align the claims. The fact text is fine, though a bit dense.",
+          "hookStrength": 70,
+          "overall": 76,
+          "issues": "The real product is clearly shown: the a.clinic site on a phone with the 'Chudnutie, spravené správne' screen. The flat floating phone mockup over a blurred background reads as a template rather than an in-hand creator shot. The on-screen small print is unreadable, but that is acceptable. The headline and fact copy are legible.",
           "betterImagePrompt": ""
         },
         {
           "slide": 3,
-          "legibility": 82,
-          "nativeFeel": 78,
-          "hookStrength": 60,
-          "overall": 72,
-          "issues": "Cozy evening home scene that reads authentic. Text sits on a dark gradient and is readable. 'Slovensku' orphans onto its own line, so rebalance the line breaks. The laptop screen is blank and dark. Showing the a.clinic questionnaire on it would reinforce the product.",
+          "legibility": 80,
+          "nativeFeel": 80,
+          "hookStrength": 66,
+          "overall": 74,
+          "issues": "The cozy evening living room feels authentic, and the dark gradient makes the text readable. The headline wraps badly, leaving 'nejde' orphaned on its own line. The body leaves 'Slovensku.' orphaned. The laptop screen is not visible, so there is a missed chance to show the questionnaire or video consult.",
           "betterImagePrompt": ""
         },
         {
           "slide": 4,
-          "legibility": 79,
+          "legibility": 82,
           "nativeFeel": 80,
-          "hookStrength": 58,
-          "overall": 71,
-          "issues": "Real-looking pharmacy street shot, and the green cross is recognizable. The blue highlight on 'stojí,' includes the comma, which looks sloppy. The image ties to pharmacy pickup rather than price transparency, so the visual-message fit is only partial. Body text over the busy storefront is borderline, so strengthen the gradient.",
+          "hookStrength": 62,
+          "overall": 72,
+          "issues": "A believable pharmacy street shot that supports the 'pay at the pharmacy' line. However, the headline is about price transparency, and nothing in the image communicates seeing the price upfront. The visual-to-message link is weak. The text is readable thanks to the gradient.",
           "betterImagePrompt": ""
         },
         {
           "slide": 5,
-          "legibility": 82,
+          "legibility": 74,
           "nativeFeel": 68,
-          "hookStrength": 56,
+          "hookStrength": 60,
           "overall": 66,
-          "issues": "The subject's head is cropped at the top edge, which feels like an accidental crop. The figure is mostly covered by text, and the barefoot standing pose feels stocky. The visual does not clearly communicate an ongoing care team.",
-          "betterImagePrompt": "Photoreal candid shot of a woman in her late 30s sitting at a bright home desk by a window, smiling while on a phone call, notebook and coffee beside her, natural daylight, soft shadows, full head in frame with headroom at top, clear space in lower third, shot on 35mm, realistic skin texture"
+          "issues": "Awkward framing with the top of the head cropped off and bare feet in the bottom area. The headline sits over a light beige outfit and relies heavily on the shadow. The image does not clearly read as a care team checking in; it could just be any phone call.",
+          "betterImagePrompt": "Photoreal candid shot of a woman in her late 30s sitting at a bright home desk by a window, smiling while on a video call on her smartphone held at chest height, screen facing away, natural daylight, relaxed weekday morning mood, full head in frame with generous empty darker space in the lower third, muted neutral tones, shot on a phone camera, no text, no logos"
         },
         {
           "slide": 6,
-          "legibility": 80,
-          "nativeFeel": 48,
-          "hookStrength": 52,
-          "overall": 57,
-          "issues": "A plain blue circle sits where a logo or icon should be, and it reads like a broken placeholder. The heavy dark overlay makes the image muddy. The smiling woman with phone has a generic, slightly AI or stock look. The CTA button with a.clinic is clear, but the final slide lacks energy. Replace the circle with the real logo, or show the questionnaire on the phone screen.",
-          "betterImagePrompt": "Photoreal candid photo of a woman in her 40s on a light sofa at home, holding a smartphone and looking at the screen with a relaxed smile, soft window daylight, neutral warm tones, natural skin texture, slightly off-center composition with clean empty wall space in the upper half, shot on 35mm"
+          "legibility": 70,
+          "nativeFeel": 55,
+          "hookStrength": 60,
+          "overall": 60,
+          "issues": "A large plain blue circle at the top looks like a missing logo placeholder and is an obvious template artifact. The headline and body text run directly across the woman's face, which looks careless. The subline orphans 'lekár.' The CTA pill says 'a.clinic' but is not clearly a URL or an action. 'a.clinic' appears in the headline, so the site is present.",
+          "betterImagePrompt": "Photoreal candid photo of a woman in her 40s sitting on a beige sofa at home, looking down at her smartphone with a calm, focused expression, positioned in the lower half of the frame, plain softly lit warm grey wall filling the upper half as clean empty space, natural window light, authentic everyday look, shot on a phone camera, no text, no logos"
         }
       ],
       "productVisibleSlide": 2,
       "productVisibleBeforeLast40": true,
       "ctaOnLastSlide": true,
       "gatePass": true,
-      "notes": "The gate passes: the real a.clinic site appears on a phone on slide 2, and slide 6 carries the CTA with a.clinic. The myth/fact structure is clear, and the type system is consistent and legible. Main fixes: 1. Remove the blue circle placeholder on slide 6 and use a natural, brighter image, ideally with the real questionnaire on the phone. 2. Reconcile the '20 minút' on the site screenshot with 'asi 10 minút' in the CTA. 3. Recrop slide 5 so the head is in frame. 4. Fix the highlighted comma on slide 4 and the orphan word on slide 3. 5. Consider showing the product again on slide 3, using the laptop screen. Slides 2 to 5 have moderate hooks, so a more surprising fact line per myth would lift swipe-through."
+      "notes": "The gate passes: the a.clinic site on a phone is visible on slide 2, and the last slide carries the questionnaire CTA naming a.clinic. The myth/fact structure is clear and the photography mostly feels native. The biggest fixes are on slide 6: remove the placeholder blue circle, move the text off the face, and make the CTA a clear URL action such as 'Dotazník na a.clinic'. Elsewhere, fix the orphaned words on slides 3 and 6 and reframe slide 5. Consider tying slide 4's visual to upfront pricing, for example a phone showing a price summary. The slide 1 hook would be stronger if the doctor angle were in the headline itself."
     },
     "rounds": [
       {
@@ -224,19 +230,83 @@
           {
             "slide": 1,
             "legibility": 84,
-            "nativeFeel": 84,
-            "hookStrength": 76,
-            "overall": 80,
-            "issues": "Strong natural photo with real skin texture, believable kitchen light and no obvious AI tells. The headline reads well on the grey wall. The orphaned 'nič?' on line three weakens the type block. The hook is relatable but generic; it does not name the weight-loss angle or tease the myth format coming next. Body copy is thin at phone size.",
+            "nativeFeel": 86,
+            "hookStrength": 78,
+            "overall": 81,
+            "issues": "Strong, believable kitchen photo with natural light and a real-looking face. Headline is large and readable, and the blue 'diéty' accent works. The body line is small and sits close to the bottom edge, so it is easy to miss at phone size. The hook is relatable but generic; a sharper tension line or number would stop more thumbs.",
             "betterImagePrompt": ""
           },
           {
             "slide": 2,
             "legibility": 80,
-            "nativeFeel": 70,
+            "nativeFeel": 76,
             "hookStrength": 72,
-            "overall": 75,
-            "issues": "The real a.clinic site on a phone is clearly visible, which satisfies the gate. The mockup is small, centered and floats on a heavy blur, so it reads as an ad template rather than a creator post. The on-screen UI text is too small to read on a phone. The headline is clear. A hand holding the phone in a real setting would feel more native.",
+            "overall": 77,
+            "issues": "The real product is visible here: the a.clinic site on a phone, which is good. The blurred background is flat and slightly template-like. On-screen UI copy is tiny at feed size. The site shows '20 minút' while slide 6 says 'asi 10 minút'. This inconsistency undermines trust, so align the numbers. The hero photo on the site reads a bit stock.",
+            "betterImagePrompt": ""
+          },
+          {
+            "slide": 3,
+            "legibility": 78,
+            "nativeFeel": 84,
+            "hookStrength": 68,
+            "overall": 76,
+            "issues": "Cozy, authentic evening living-room scene. The headline wraps badly and leaves 'nejde' orphaned on its own line. The body also orphans 'Slovensku.' Tighten the line breaks or reduce the font size slightly. The laptop screen is blank, which is a missed chance to show the questionnaire.",
+            "betterImagePrompt": ""
+          },
+          {
+            "slide": 4,
+            "legibility": 82,
+            "nativeFeel": 83,
+            "hookStrength": 70,
+            "overall": 78,
+            "issues": "The pharmacy storefront with the green cross fits the ePrescription story and feels local and real. The blue highlight includes the comma in 'stojí,', which looks sloppy. Pricing is the strongest objection, but no actual price or example is shown, so the claim feels vague.",
+            "betterImagePrompt": ""
+          },
+          {
+            "slide": 5,
+            "legibility": 82,
+            "nativeFeel": 82,
+            "hookStrength": 66,
+            "overall": 76,
+            "issues": "Natural candid phone-call shot that reads like real life. The top of her head is cropped tight against the frame edge. The text block covers most of her body, but the gradient keeps it readable. The message is fine but the least punchy myth in the set.",
+            "betterImagePrompt": ""
+          },
+          {
+            "slide": 6,
+            "legibility": 62,
+            "nativeFeel": 45,
+            "hookStrength": 55,
+            "overall": 52,
+            "issues": "A solid blue circle sits directly over the woman's face, which looks like a placeholder or rendering error. The blue 'dotazníkom' with a glow has weak contrast against the light background. The headline sits on top of her face area, and the photo has a generic AI or stock feel. The CTA pill is clear, but this slide needs a clean image with open space at the top. Ideally it should also show the a.clinic questionnaire on the phone.",
+            "betterImagePrompt": "Photoreal candid photo of a Central European woman in her 40s sitting on a beige sofa in a lived-in Slovak apartment, holding a smartphone at chest height and looking at the screen with a calm, slight smile. Soft natural window light from the side, warm neutral tones, realistic skin texture. Shot on a phone camera at eye level, vertical 4:5 framing, with her positioned in the lower half and plenty of empty plain wall above for text. No text, no logos, no graphics."
+          }
+        ],
+        "productVisibleSlide": 2,
+        "productVisibleBeforeLast40": true,
+        "ctaOnLastSlide": true,
+        "gatePass": true,
+        "notes": "Gate passes: the a.clinic site on a phone appears on slide 2, and the CTA with a.clinic is on slide 6. The myth-versus-fact structure is clear and the photography on slides 1, 3, 4 and 5 feels native. Priority fixes: (1) Remove the blue circle over the face on slide 6 and replace the image, ideally showing the questionnaire on screen. (2) Fix the 20 versus 10 minute inconsistency between the site mockup and the CTA. (3) Fix orphaned words on slide 3 and the highlighted comma on slide 4. (4) Consider adding a concrete price or example on slide 4 to make the transparency claim credible.",
+        "round": 1
+      },
+      {
+        "slides": [
+          {
+            "slide": 1,
+            "legibility": 84,
+            "nativeFeel": 82,
+            "hookStrength": 78,
+            "overall": 80,
+            "issues": "Strong, real-feeling moody kitchen shot and a relatable pain-point question. The subline is small at phone size and sits close to the busy table edge. Overall it is a solid hook. It could be sharper with a more specific promise or a number, since the line 'not willpower, a doctor' is the real hook and is buried in the small text.",
+            "betterImagePrompt": ""
+          },
+          {
+            "slide": 2,
+            "legibility": 82,
+            "nativeFeel": 72,
+            "hookStrength": 70,
+            "overall": 76,
+            "issues": "The real product is clearly shown: the a.clinic site on a phone with the 'Chudnutie, spravené správne' screen. The flat floating phone mockup over a blurred background reads as a template rather than an in-hand creator shot. The on-screen small print is unreadable, but that is acceptable. The headline and fact copy are legible.",
             "betterImagePrompt": ""
           },
           {
@@ -245,116 +315,52 @@
             "nativeFeel": 80,
             "hookStrength": 66,
             "overall": 74,
-            "issues": "Moody, believable living room with good ambient light. The dark lower third supports the text well. The laptop screen is empty and from behind, so it misses a chance to show the consultation or questionnaire. There is an orphan word, 'nejde'. The body copy is long and wraps awkwardly ('na / Slovensku').",
+            "issues": "The cozy evening living room feels authentic, and the dark gradient makes the text readable. The headline wraps badly, leaving 'nejde' orphaned on its own line. The body leaves 'Slovensku.' orphaned. The laptop screen is not visible, so there is a missed chance to show the questionnaire or video consult.",
             "betterImagePrompt": ""
           },
           {
             "slide": 4,
-            "legibility": 78,
-            "nativeFeel": 76,
-            "hookStrength": 64,
-            "overall": 71,
-            "issues": "The pharmacy storefront looks real, but the image illustrates picking up medicine rather than price transparency, which is the actual myth. The headline sits over the walking woman's body, which feels cluttered. There is an orphan, 'neskôr'. The comma after 'stojí' in the highlight looks odd.",
-            "betterImagePrompt": ""
-          },
-          {
-            "slide": 5,
-            "legibility": 80,
-            "nativeFeel": 66,
-            "hookStrength": 62,
-            "overall": 67,
-            "issues": "The subject's head is cropped at the top of the frame, which looks like an accident rather than a choice. The headline covers her torso. The phone call works for 'the care team calls you', but the composition is weak and the shot reads slightly staged.",
-            "betterImagePrompt": "Photoreal vertical 4:5 photo of a woman in her late 30s in a white linen shirt standing by a bright apartment balcony window, smiling while talking on her smartphone, full head and shoulders in frame with generous headroom, soft natural daylight, monstera plant beside her, empty calm lower third of the frame for text, candid lifestyle feel, no text, no logos"
-          },
-          {
-            "slide": 6,
-            "legibility": 76,
-            "nativeFeel": 45,
-            "hookStrength": 50,
-            "overall": 55,
-            "issues": "The CTA with a.clinic is present, but the visual is the weakest in the set. The woman presses a blank white box against her face, which reads as an unfinished product placeholder. A floating blue circle sits over her eyes for no clear reason. A heavy dark overlay muddies the image. The CTA pill only repeats the brand name instead of a clear action plus site.",
-            "betterImagePrompt": "Photoreal vertical 4:5 photo of a smiling woman in her 40s in a beige knit sweater sitting on a sofa at home, holding a smartphone and looking at the screen with a relaxed expression, warm soft window light, clean uncluttered background with calm negative space in the upper half for text, candid lifestyle feel, no text, no logos"
-          }
-        ],
-        "productVisibleSlide": 2,
-        "productVisibleBeforeLast40": true,
-        "ctaOnLastSlide": true,
-        "gatePass": true,
-        "notes": "The gate passes: the real a.clinic site appears on a phone on slide 2, and the CTA with a.clinic is on slide 6. The myth/fact structure is clear and consistently styled. Fix the following before posting. 1) Replace the slide 6 image: remove the blank box and the floating blue circle, and change the pill to an action such as 'Začať na a.clinic'. 2) Reshoot or recrop slide 5 so the head is not cut off. 3) Rebalance line breaks to avoid orphans on slides 1, 3 and 4. 4) Consider showing the questionnaire or a video consult on screen in slide 3 for a second product touchpoint. 5) Sharpen the slide 1 hook so it signals that myths are coming.",
-        "round": 1
-      },
-      {
-        "slides": [
-          {
-            "slide": 1,
-            "legibility": 85,
-            "nativeFeel": 82,
-            "hookStrength": 76,
-            "overall": 79,
-            "issues": "Strong, believable lifestyle photo with natural light and no visible AI tells. Headline is big and readable over the grey wall. The body line is small and sits close to the woman's head, so it loses punch at phone size. The hook is relatable, but 'a nič?' is a soft payoff. A sharper tension line or a bigger body line would help.",
-            "betterImagePrompt": ""
-          },
-          {
-            "slide": 2,
-            "legibility": 84,
-            "nativeFeel": 72,
-            "hookStrength": 64,
-            "overall": 74,
-            "issues": "The real a.clinic site is clearly shown on the phone, which satisfies the product gate. The phone mockup over a blurred background reads more like an ad template than a creator post. The on-screen site says '20 minút' while slide 6 says 'asi 10 minút', so align the claims. The fact text is fine, though a bit dense.",
-            "betterImagePrompt": ""
-          },
-          {
-            "slide": 3,
             "legibility": 82,
-            "nativeFeel": 78,
-            "hookStrength": 60,
-            "overall": 72,
-            "issues": "Cozy evening home scene that reads authentic. Text sits on a dark gradient and is readable. 'Slovensku' orphans onto its own line, so rebalance the line breaks. The laptop screen is blank and dark. Showing the a.clinic questionnaire on it would reinforce the product.",
-            "betterImagePrompt": ""
-          },
-          {
-            "slide": 4,
-            "legibility": 79,
             "nativeFeel": 80,
-            "hookStrength": 58,
-            "overall": 71,
-            "issues": "Real-looking pharmacy street shot, and the green cross is recognizable. The blue highlight on 'stojí,' includes the comma, which looks sloppy. The image ties to pharmacy pickup rather than price transparency, so the visual-message fit is only partial. Body text over the busy storefront is borderline, so strengthen the gradient.",
+            "hookStrength": 62,
+            "overall": 72,
+            "issues": "A believable pharmacy street shot that supports the 'pay at the pharmacy' line. However, the headline is about price transparency, and nothing in the image communicates seeing the price upfront. The visual-to-message link is weak. The text is readable thanks to the gradient.",
             "betterImagePrompt": ""
           },
           {
             "slide": 5,
-            "legibility": 82,
+            "legibility": 74,
             "nativeFeel": 68,
-            "hookStrength": 56,
+            "hookStrength": 60,
             "overall": 66,
-            "issues": "The subject's head is cropped at the top edge, which feels like an accidental crop. The figure is mostly covered by text, and the barefoot standing pose feels stocky. The visual does not clearly communicate an ongoing care team.",
-            "betterImagePrompt": "Photoreal candid shot of a woman in her late 30s sitting at a bright home desk by a window, smiling while on a phone call, notebook and coffee beside her, natural daylight, soft shadows, full head in frame with headroom at top, clear space in lower third, shot on 35mm, realistic skin texture"
+            "issues": "Awkward framing with the top of the head cropped off and bare feet in the bottom area. The headline sits over a light beige outfit and relies heavily on the shadow. The image does not clearly read as a care team checking in; it could just be any phone call.",
+            "betterImagePrompt": "Photoreal candid shot of a woman in her late 30s sitting at a bright home desk by a window, smiling while on a video call on her smartphone held at chest height, screen facing away, natural daylight, relaxed weekday morning mood, full head in frame with generous empty darker space in the lower third, muted neutral tones, shot on a phone camera, no text, no logos"
           },
           {
             "slide": 6,
-            "legibility": 80,
-            "nativeFeel": 48,
-            "hookStrength": 52,
-            "overall": 57,
-            "issues": "A plain blue circle sits where a logo or icon should be, and it reads like a broken placeholder. The heavy dark overlay makes the image muddy. The smiling woman with phone has a generic, slightly AI or stock look. The CTA button with a.clinic is clear, but the final slide lacks energy. Replace the circle with the real logo, or show the questionnaire on the phone screen.",
-            "betterImagePrompt": "Photoreal candid photo of a woman in her 40s on a light sofa at home, holding a smartphone and looking at the screen with a relaxed smile, soft window daylight, neutral warm tones, natural skin texture, slightly off-center composition with clean empty wall space in the upper half, shot on 35mm"
+            "legibility": 70,
+            "nativeFeel": 55,
+            "hookStrength": 60,
+            "overall": 60,
+            "issues": "A large plain blue circle at the top looks like a missing logo placeholder and is an obvious template artifact. The headline and body text run directly across the woman's face, which looks careless. The subline orphans 'lekár.' The CTA pill says 'a.clinic' but is not clearly a URL or an action. 'a.clinic' appears in the headline, so the site is present.",
+            "betterImagePrompt": "Photoreal candid photo of a woman in her 40s sitting on a beige sofa at home, looking down at her smartphone with a calm, focused expression, positioned in the lower half of the frame, plain softly lit warm grey wall filling the upper half as clean empty space, natural window light, authentic everyday look, shot on a phone camera, no text, no logos"
           }
         ],
         "productVisibleSlide": 2,
         "productVisibleBeforeLast40": true,
         "ctaOnLastSlide": true,
         "gatePass": true,
-        "notes": "The gate passes: the real a.clinic site appears on a phone on slide 2, and slide 6 carries the CTA with a.clinic. The myth/fact structure is clear, and the type system is consistent and legible. Main fixes: 1. Remove the blue circle placeholder on slide 6 and use a natural, brighter image, ideally with the real questionnaire on the phone. 2. Reconcile the '20 minút' on the site screenshot with 'asi 10 minút' in the CTA. 3. Recrop slide 5 so the head is in frame. 4. Fix the highlighted comma on slide 4 and the orphan word on slide 3. 5. Consider showing the product again on slide 3, using the laptop screen. Slides 2 to 5 have moderate hooks, so a more surprising fact line per myth would lift swipe-through.",
+        "notes": "The gate passes: the a.clinic site on a phone is visible on slide 2, and the last slide carries the questionnaire CTA naming a.clinic. The myth/fact structure is clear and the photography mostly feels native. The biggest fixes are on slide 6: remove the placeholder blue circle, move the text off the face, and make the CTA a clear URL action such as 'Dotazník na a.clinic'. Elsewhere, fix the orphaned words on slides 3 and 6 and reframe slide 5. Consider tying slide 4's visual to upfront pricing, for example a phone showing a price summary. The slide 1 hook would be stronger if the doctor angle were in the headline itself.",
         "round": 2
       }
     ],
     "regenerated": {
       "slide": 6,
-      "from": "hero_image.jpg",
-      "prompt": "Photoreal vertical 4:5 photo of a smiling woman in her 40s in a beige knit sweater sitting on a sofa at home, holding a smartphone and looking at the screen with a relaxed expression, warm soft window light, clean uncluttered background with calm negative space in the upper half for text, candid lifestyle feel, no text, no logos"
+      "from": "generated",
+      "prompt": "Photoreal candid photo of a Central European woman in her 40s sitting on a beige sofa in a lived-in Slovak apartment, holding a smartphone at chest height and looking at the screen with a calm, slight smile. Soft natural window light from the side, warm neutral tones, realistic skin texture. Shot on a phone camera at eye level, vertical 4:5 framing, with her positioned in the lower half and plenty of empty plain wall above for text. No text, no logos, no graphics."
     }
   },
   "strip": "strip.jpg",
-  "minutes": 6,
-  "createdAt": "2026-10-12T08:57:38.962Z"
+  "minutes": 2.52,
+  "createdAt": "2026-10-12T09:01:41.159Z"
 }
