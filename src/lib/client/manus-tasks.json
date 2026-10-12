@@ -10,7 +10,110 @@
       "taskId": "SSX4iUHYkXZNTAPR868qW6",
       "taskUrl": "https://manus.im/app/SSX4iUHYkXZNTAPR868qW6",
       "startedAt": "2026-10-12T06:52:55.707Z",
-      "state": "running"
+      "state": "done",
+      "summary": "Documented buyer discovery surfaces in GB, HU, and DE include professional forums, medical associations, trade fairs, and leading software directories. Eight direct competitors utilize PR, education, and product demos across Europe. Communities with self-promo rules constrain vendor outreach in public spaces.",
+      "channels": [
+        {
+          "channel": "Practice Index GP Practice Managers Forum (GB)",
+          "why": "Key UK buyer-discovery surface among practice managers."
+        },
+        {
+          "channel": "MFA Forum (DE)",
+          "why": "Active German medical assistants community with explicit advertising restrictions."
+        },
+        {
+          "channel": "MAPOSZ Forum (HU)",
+          "why": "Hungarian practitioner community where practice-management problems are discussed."
+        },
+        {
+          "channel": "r/PrivatePracticeDocs (Reddit)",
+          "why": "International forum where private-practice topics are discussed with explicit anti-promo rules."
+        },
+        {
+          "channel": "r/doctorsUK (Reddit)",
+          "why": "UK physician community discussing practice-management topics with anti-promo norms."
+        },
+        {
+          "channel": "KBV Praxisverwaltungssystem / Virchowbund (DE)",
+          "why": "Primary German-language buyer-discovery surfaces for practice-management software."
+        },
+        {
+          "channel": "Capterra — Medical Practice Management Software",
+          "why": "Widely used software-discovery and review platform across markets."
+        },
+        {
+          "channel": "SourceForge — Medical Practice Management Software in Germany",
+          "why": "Germany-specific discovery surface for PM software."
+        },
+        {
+          "channel": "DMEA/MEDICA trade fairs (DE/EU)",
+          "why": "In-person discovery, demos and networking critical to healthcare IT buyers."
+        },
+        {
+          "channel": "Owned channels: LinkedIn/YouTube product channels (Tandem, Pabau, Semble, Doctolib, CGM One, Medesk, WriteUpp, Cliniko)",
+          "why": "Education, proof points and pipeline-building across multi-language audiences."
+        },
+        {
+          "channel": "PR-led campaigns and case studies (Tandem Health)",
+          "why": "PR-driven campaigns to build awareness in multi-country European market."
+        }
+      ],
+      "competitors": [
+        {
+          "name": "Tandem Health",
+          "note": "Pan-European PR-led launch campaigns."
+        },
+        {
+          "name": "Pabau",
+          "note": "Paid-search optimization."
+        },
+        {
+          "name": "Semble",
+          "note": "PR-led leadership campaigns."
+        },
+        {
+          "name": "Doctolib",
+          "note": "Multi-channel campaigns."
+        },
+        {
+          "name": "CGM / CGM One",
+          "note": "AI telephone assistant."
+        },
+        {
+          "name": "Medesk",
+          "note": "Paid search, SEO, social, referrals."
+        },
+        {
+          "name": "WriteUpp",
+          "note": "Webinars."
+        },
+        {
+          "name": "Cliniko",
+          "note": "Blog content."
+        }
+      ],
+      "communities": [
+        {
+          "name": "Practice Index GP Practice Managers Forum (GB)",
+          "note": "Forum terms state: You can't use any forum to advertise."
+        },
+        {
+          "name": "MAPOSZ Forum (HU)",
+          "note": "Public self-promotion rules not clearly disclosed."
+        },
+        {
+          "name": "MFA Forum (DE)",
+          "note": "Group rules show 'No promotions or spam' and 'No anonymous posts'."
+        },
+        {
+          "name": "r/PrivatePracticeDocs (EN)",
+          "note": "Reddit community rules discourage promotions and require value-first contributions."
+        },
+        {
+          "name": "r/doctorsUK (GB)",
+          "note": "Reddit community rules discourage advertising."
+        }
+      ]
     }
   },
   "landings": {
@@ -18,25 +121,33 @@
       "taskId": "m8AmRpDsXfA82WupCBzruE",
       "taskUrl": "https://manus.im/app/m8AmRpDsXfA82WupCBzruE",
       "startedAt": "2026-10-12T06:53:02.941Z",
-      "state": "running"
+      "state": "done",
+      "title": "Hound — Gentle alone-time practice",
+      "publishStatus": "unpublished"
     },
     "pack_1e6575ad_1": {
       "taskId": "QyuubjsdCietBoxDE9VJhx",
       "taskUrl": "https://manus.im/app/QyuubjsdCietBoxDE9VJhx",
       "startedAt": "2026-10-12T06:53:05.192Z",
-      "state": "running"
+      "state": "done",
+      "title": "a.clinic — Starostlivosť o váhu bez čakárne",
+      "publishStatus": "unpublished"
     },
     "pack_91d09027_1": {
       "taskId": "ELrt8tQJf89VzpgzomDi5X",
       "taskUrl": "https://manus.im/app/ELrt8tQJf89VzpgzomDi5X",
       "startedAt": "2026-10-12T06:53:07.024Z",
-      "state": "running"
+      "state": "done",
+      "title": "Dynova Health — Kişisel verinle karar ver",
+      "publishStatus": "unpublished"
     },
     "pack_f352d515_1": {
       "taskId": "ZcKYphJ7HYprgqT5DXvkA3",
       "taskUrl": "https://manus.im/app/ZcKYphJ7HYprgqT5DXvkA3",
       "startedAt": "2026-10-12T06:53:10.219Z",
-      "state": "running"
+      "state": "done",
+      "title": "Evreon AI — Start every consult with the file read",
+      "publishStatus": "unpublished"
     }
   }
 }

@@ -16,6 +16,7 @@ import { referenceImages } from "@/lib/client/brandAssets";
 import { cn } from "@/lib/client/cn";
 import { formatUsd, PHASE_LABELS, timeAgo } from "@/lib/client/format";
 import { qk, useAction, useBrand, useBrandRuns, useBrands } from "@/lib/client/queries";
+import { VoiceLine } from "./Voice";
 
 export function BrandHome({ slug }: { slug: string }) {
   const { data: brand, isLoading, error, refetch } = useBrand(slug);
@@ -203,32 +204,73 @@ function Dossier({ brand }: { brand: Brand }) {
   );
 }
 
-/** The brand's flagship remake, when the engine has rendered one: poster first, then a muted loop. */
+/** The brand's flagship remake, when the engine has rendered one: poster first, then a muted loop; dubbed versions as a
+ * language toggle (switching language turns the sound on), and the brand's cast voice with its sample. */
 function HeroVideo({ slug }: { slug: string }) {
   const { data: brands } = useBrands();
-  const hero = brands?.find((b) => b.slug === slug)?.heroVideo;
+  const brand = brands?.find((b) => b.slug === slug);
+  const hero = brand?.heroVideo;
+  const [lang, setLang] = useState<string>();
+  const [muted, setMuted] = useState(true);
   if (!hero) return null;
+  const original = brand.voice?.language ?? "orig";
+  const dub = hero.dubs?.find((d) => d.language === lang);
   return (
     <figure className="overflow-hidden rounded-panel bg-viewer" data-testid="hero-video">
       <video
-        src={hero.url}
-        poster={hero.posterUrl}
-        muted
+        key={dub?.url ?? hero.url}
+        src={dub?.url ?? hero.url}
+        poster={dub?.posterUrl ?? hero.posterUrl}
+        muted={muted}
         loop
         playsInline
         autoPlay
         preload="metadata"
         className="mx-auto aspect-[9/16] max-h-[460px] w-auto"
       />
-      <figcaption className="flex items-baseline justify-between gap-3 border-[#222] border-t px-4 py-3 text-white">
-        <span className="truncate text-[13px]">{hero.title}</span>
-        <Link
-          href={`/runs/${hero.runId}/studio`}
-          className="shrink-0 text-[12px] text-white/70 underline underline-offset-4 hover:text-white"
-        >
-          Open in the studio
-        </Link>
+      <figcaption className="flex flex-col gap-3 border-[#222] border-t px-4 py-3 text-white">
+        <div className="flex items-center gap-2">
+          {!!hero.dubs?.length &&
+            [original, ...hero.dubs.map((d) => d.language)].map((l) => {
+              const on = (lang ?? original) === l;
+              return (
+                <button
+                  key={l}
+                  type="button"
+                  aria-pressed={on}
+                  data-testid={`dub-${l}`}
+                  onClick={() => {
+                    setLang(l === original ? undefined : l);
+                    setMuted(false);
+                  }}
+                  className={cn(
+                    "h-7 rounded-[4px] px-2.5 font-mono text-[12px] uppercase transition-colors duration-150",
+                    on ? "bg-white text-[#111]" : "text-white/70 ring-1 ring-white/25 hover:text-white",
+                  )}
+                >
+                  {l}
+                </button>
+              );
+            })}
+          <button
+            type="button"
+            onClick={() => setMuted((m) => !m)}
+            className="ml-auto h-7 rounded-[4px] px-2.5 text-[12px] text-white/70 ring-1 ring-white/25 hover:text-white"
+          >
+            {muted ? "Sound on" : "Sound off"}
+          </button>
+        </div>
+        <div className="flex items-baseline justify-between gap-3">
+          <span className="truncate text-[13px]">{hero.title}</span>
+          <Link
+            href={`/runs/${hero.runId}/studio`}
+            className="shrink-0 text-[12px] text-white/70 underline underline-offset-4 hover:text-white"
+          >
+            Open in the studio
+          </Link>
+        </div>
       </figcaption>
+      {brand.voice && <VoiceLine voice={brand.voice} className="bg-raised px-4 py-3" />}
     </figure>
   );
 }

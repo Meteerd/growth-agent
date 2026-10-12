@@ -13,6 +13,7 @@ import {
   type ProviderStatus,
   type PublishPack,
   type Question,
+  type RenderVersion,
   type Run,
   type RunEvent,
 } from "@/contracts";
@@ -232,6 +233,34 @@ export function createMockClient(): DataClient {
   /** Only what the stream has revealed so far, so mock and live look identical mid-run. */
   const revealed = (rec: RunRec) =>
     new Set(rec.events.slice(0, rec.emitted).flatMap((e) => (e.refId ? [e.refId] : [])));
+
+  const versions = new Map<string, RenderVersion[]>();
+  const asked = new Set<string>();
+  const clips = new Map<string, string>();
+  const versionsOf = (id: string) => {
+    let list = versions.get(id);
+    if (!list) {
+      const { r, c } = conceptOf(id);
+      const video = r.bundle.assets.find((a) => a.conceptId === id && a.kind === "video");
+      list = video
+        ? [
+            {
+              id: `render_${id}_1`,
+              conceptId: id,
+              version: 1,
+              status: "ready",
+              assetUrl: video.url,
+              shots: c.shots.map((sh) => ({ idx: sh.idx, provider: "still" })),
+              costUsd: 0,
+              chosen: true,
+              createdAt: video.createdAt,
+            },
+          ]
+        : [];
+      versions.set(id, list);
+    }
+    return list;
+  };
 
   const client: DataClient = {
     mode: "mock",
@@ -580,6 +609,80 @@ export function createMockClient(): DataClient {
           note: "Mock mode: no provider is called",
         }),
       );
+    },
+    // A19 in the browser: versions live in memory; a vague first request gets one clarifying question
+    async renders(id) {
+      await wait(60);
+      return clone(versionsOf(id));
+    },
+    async revise(id, req) {
+      await wait(300);
+      conceptOf(id); // 404 for an unknown concept, like the engine
+      if (!asked.has(id) && req.message.trim().split(/\s+/).length < 4) {
+        asked.add(id);
+        return {
+          status: "needs_clarification",
+          question: `What should "${req.message.trim()}" change?`,
+          options: ["Only the hook text", "The voice", "The music", "One shot"],
+        };
+      }
+      const list = versionsOf(id);
+      const parent = list.find((v) => v.id === req.fromRenderId) ?? list.at(-1)!;
+      const plan = {
+        layers: ["hook_text" as const],
+        summary: `${req.message.trim()} (mock: every clip, the voice and the music reused)`,
+      };
+      const v: RenderVersion = {
+        ...parent,
+        id: `render_${id}_${list.length + 1}`,
+        version: list.length + 1,
+        parentId: parent.id,
+        message: req.message,
+        plan,
+        status: "rendering",
+        review: undefined,
+        chosen: false,
+        costUsd: 0,
+        createdAt: now(),
+      };
+      list.push(v);
+      setTimeout(() => {
+        v.status = "ready";
+        v.assetUrl = MOCK_VIDEO;
+      }, 2000);
+      return { status: "queued", plan, renderId: v.id };
+    },
+    async chooseRender(id, renderId) {
+      await wait(120);
+      const list = versionsOf(id);
+      for (const v of list) v.chosen = v.id === renderId;
+      return clone(list.find((v) => v.chosen)!);
+    },
+    async variants(id) {
+      await wait(80);
+      const { c } = conceptOf(id);
+      return {
+        shots: c.shots.map((sh) => ({
+          idx: sh.idx,
+          variants: ["fal", "higgsfield"].map((provider) => ({
+            clipId: `clip_${id}_${sh.idx}_${provider}`,
+            idx: sh.idx,
+            provider,
+            url: MOCK_VIDEO,
+            chosen: (clips.get(`${id}:${sh.idx}`) ?? `clip_${id}_${sh.idx}_fal`) === `clip_${id}_${sh.idx}_${provider}`,
+            costUsd: 0,
+          })),
+        })),
+      };
+    },
+    async makeVariants() {
+      await wait(200);
+      return {};
+    },
+    async chooseClip(id, idx, clipId) {
+      await wait(120);
+      clips.set(`${id}:${idx}`, clipId);
+      return clone(conceptOf(id).c);
     },
   };
   return client;

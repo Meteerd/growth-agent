@@ -1,5 +1,6 @@
 import type { z } from "zod";
 import {
+  A19_ROUTES,
   type AnswersRequest,
   API,
   type Asset,
@@ -40,13 +41,17 @@ import {
   QuestionsResponse,
   type RenderRequest,
   RenderResponse,
+  RenderVersion,
   ResultsResponse,
   type Review,
   ReviewsResponse,
+  type ReviseRequest,
+  ReviseResponse,
   type Run,
   Run as RunSchema,
   RunsResponse,
   SpendResponse,
+  VariantsResponse,
 } from "@/contracts";
 import { localizeMedia } from "./media";
 import { createMockClient } from "./mock/client";
@@ -97,6 +102,13 @@ export interface DataClient {
   results(brandId: string): Promise<z.infer<typeof ResultsResponse>>;
   spend(runId?: string): Promise<z.infer<typeof SpendResponse>>;
   providers(): Promise<ProviderStatus[]>;
+  /** A19: render versions of a concept (newest last), revise by chat, pick a version, per-shot takes */
+  renders(conceptId: string): Promise<RenderVersion[]>;
+  revise(conceptId: string, req: z.infer<typeof ReviseRequest>): Promise<ReviseResponse>;
+  chooseRender(conceptId: string, renderId: string): Promise<RenderVersion>;
+  variants(conceptId: string): Promise<z.infer<typeof VariantsResponse>>;
+  makeVariants(conceptId: string, shots?: number[]): Promise<unknown>;
+  chooseClip(conceptId: string, idx: number, clipId: string): Promise<Concept>;
 }
 
 export class ApiRequestError extends Error {
@@ -198,6 +210,14 @@ export const liveClient: DataClient = {
   addMetrics: (id, req) => request(MetricSnapshotSchema, API.packMetrics(id), { method: "POST", json: req }),
   results: (id) => request(ResultsResponse, API.brandResults(id)),
   spend: (runId) => request(SpendResponse, runId ? `${API.spend()}?runId=${runId}` : API.spend()),
+  renders: (id) => request(RenderVersion.array(), A19_ROUTES.renders(id)),
+  revise: (id, req) => request(ReviseResponse, A19_ROUTES.revise(id), { method: "POST", json: req }),
+  chooseRender: (id, renderId) => request(RenderVersion, A19_ROUTES.choose(id, renderId), { method: "POST", json: {} }),
+  variants: (id) => request(VariantsResponse, A19_ROUTES.variants(id)),
+  makeVariants: (id, shots) =>
+    request(VariantsResponse.partial(), A19_ROUTES.variants(id), { method: "POST", json: shots ? { shots } : {} }),
+  chooseClip: (id, idx, clipId) =>
+    request(ConceptSchema, A19_ROUTES.shot(id, idx), { method: "PATCH", json: { chosenClipId: clipId } }),
   providers: () => request(ProvidersResponse, API.providers()),
 };
 
