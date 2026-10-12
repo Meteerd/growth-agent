@@ -55,7 +55,8 @@ describe("consult phase", () => {
     await waitForRun(run.id);
     expect((await getRun(db, run.id))?.status).toBe("done");
     const brand = await getBrand(db, "brand_hound");
-    expect(brand?.dossier.operatorNotes?.length).toBe(qs.length);
+    // answers are brand knowledge; the skipped question stays on the run only
+    expect(brand?.dossier.operatorNotes?.length).toBe(qs.length - 1);
     expect(brand?.dossier.provenance?.find((p) => p.field === "operatorNotes")?.source).toBe("answer");
     const evs = await listEvents(db, run.id);
     const statuses = evs.filter((e) => e.type === "status").map((e) => (e.data as { status: string }).status);
@@ -77,9 +78,10 @@ describe("consult phase", () => {
       .filter((e) => e.type === "status")
       .map((e) => (e.data as { status: string }).status);
     expect(statuses).toEqual(["running", "waiting_input", "running", "done"]);
+    // skips are not brand knowledge: nothing lands in the dossier, the assumptions stay on the run's questions
     const notes = (await getBrand(db, "brand_aclinic"))!.dossier.operatorNotes ?? [];
-    expect(notes.filter((n) => qs.some((q) => q.id === n.questionId)).length).toBe(qs.length);
-    expect(notes.every((n) => !qs.some((q) => q.id === n.questionId) || n.answer.startsWith("Skipped."))).toBe(true);
+    expect(notes.filter((n) => qs.some((q) => q.id === n.questionId))).toHaveLength(0);
+    expect((await listQuestions(db, run.id)).every((q) => q.skipped)).toBe(true);
     const late = await answers(
       req(`/api/runs/${run.id}/answers`, {
         method: "POST",
