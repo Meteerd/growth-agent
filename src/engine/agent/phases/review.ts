@@ -4,7 +4,8 @@ import { z } from "zod";
 import type { Blueprint, Concept, Review } from "@/contracts";
 import { newId } from "../../ids";
 import { extractFrame, probe } from "../../media/ffmpeg";
-import { getAsset, getBlueprint, getConcept, listConcepts, upsertReview } from "../../repo";
+import { shakeScore } from "../../media/motion-check";
+import { getAsset, getBlueprint, getConcept, listAssets, listConcepts, upsertReview } from "../../repo";
 import { rulePackText } from "../../rules";
 import { generateKeyframes, renderConcept } from "../../services/concepts";
 import { urlToFile } from "../../video/files";
@@ -56,6 +57,8 @@ async function watchOwn(c: Concept, videoUrl: string, key: string) {
   const times: { t: number; shot: number }[] = [];
   let t0 = 0;
   for (const s of c.shots) {
+    // right after the cut (does the shot land?), then mid-shot and late: motion and morphing show between frames
+    if (s.idx > 0) times.push({ t: Math.min(info.durationSec - 0.05, t0 + 0.15), shot: s.idx });
     times.push({ t: Math.min(info.durationSec - 0.05, t0 + Math.min(0.6, s.durationSec / 2)), shot: s.idx });
     if (s.durationSec > 2.5) times.push({ t: t0 + s.durationSec * 0.75, shot: s.idx });
     t0 += s.durationSec;
@@ -93,6 +96,57 @@ export function priorScores(prev: Review | undefined, before: Concept["shots"], 
   });
 }
 
+export interface CutMeasurements {
+  /** direction reversals per second of the frame (shakeScore) per shot; > 1 is visible shake */
+  shake: { idx: number; reversalsPerSec: number }[];
+  /** the cut has a music bed under the voice */
+  musicBed: boolean;
+}
+
+/** Measured facts about our own cut, so the review cannot pass what a viewer would see or hear as broken (A18). */
+export async function measureCut(c: Concept, videoFile: string): Promise<CutMeasurements> {
+  const shake: CutMeasurements["shake"] = [];
+  let t0 = 0;
+  for (const s of c.shots) {
+    const dur = Math.min(2, s.durationSec - 0.3);
+    if (dur > 0.5)
+      shake.push({
+        idx: s.idx,
+        reversalsPerSec: await shakeScore(videoFile, { start: t0 + 0.15, durationSec: dur }).catch(() => 0),
+      });
+    t0 += s.durationSec;
+  }
+  return { shake, musicBed: false };
+}
+
+/**
+ * Hard limits from the measurements, applied after the model's judgment on final renders: a shaking shot scores
+ * at most 65 and a cut without a music bed at most 75 overall, whatever the model said.
+ */
+export function applyMeasurements(r: Review, m: CutMeasurements): Review {
+  const perShot = r.perShot.map((p) => {
+    const sh = m.shake.find((x) => x.idx === p.idx);
+    if (!sh || sh.reversalsPerSec <= 1) return p;
+    return {
+      ...p,
+      score: Math.min(p.score, 65),
+      issues: [
+        `The whole frame shakes (${sh.reversalsPerSec.toFixed(1)} direction flips per second): use a real clip or a smooth, oversampled camera move.`,
+        ...p.issues,
+      ],
+    };
+  });
+  let overall = r.overall;
+  let notes = r.notes;
+  if (!m.musicBed) {
+    overall = Math.min(overall, 75);
+    notes = `No music bed: an ad without music reads as unfinished. ${notes}`;
+  }
+  const shotsLow = perShot.some((p) => p.score < 80);
+  overall = Math.min(overall, Math.round(perShot.reduce((a, p) => a + p.score, 0) / Math.max(1, perShot.length)) + 5);
+  return { ...r, perShot, overall, notes, decision: shotsLow || overall < 80 ? "regenerate" : r.decision };
+}
+
 export async function reviewRender(
   ctx: PhaseCtx,
   c: Concept,
@@ -105,6 +159,13 @@ export async function reviewRender(
   const asset = await getAsset(ctx.db, assetId);
   if (!asset) throw new Error("render asset missing");
   const { frames } = await watchOwn(c, asset.url, `${c.id}_r${round}`);
+  const final = (asset.model ?? "").includes("final") && !asset.demo;
+  const measured = final
+    ? {
+        ...(await measureCut(c, urlToFile(asset.url)!)),
+        musicBed: (await listAssets(ctx.db, c.id)).some((a) => a.kind === "music"),
+      }
+    : null;
   const content: BetaContentBlockParam[] = [
     {
       type: "text",
@@ -135,6 +196,7 @@ export async function reviewRender(
           : null,
         round,
         previousRound: prior?.length ? prior : undefined,
+        measured: measured ?? undefined,
       }),
     },
   ];
@@ -162,7 +224,7 @@ export async function reviewRender(
     const p = v.perShot.find((x) => x.idx === s.idx);
     return { idx: s.idx, score: clamp(p?.score ?? v.overall), issues: p?.issues ?? [] };
   });
-  return {
+  const review: Review = {
     id: newId("review"),
     conceptId: c.id,
     assetId,
@@ -176,6 +238,7 @@ export async function reviewRender(
     createdAt: new Date().toISOString(),
     demo: r.mode === "demo",
   };
+  return measured ? applyMeasurements(review, measured) : review;
 }
 
 /** Render the remake, watch it, regenerate the weakest shot, re-render: at most 2 rounds. */
