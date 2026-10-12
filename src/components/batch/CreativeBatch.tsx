@@ -22,6 +22,10 @@ export type Creative = {
   url: string;
   posterUrl?: string;
   slides?: string[];
+  feature?: string;
+  setting?: string;
+  /** ids or names of creatives the similarity gate found too close to this one (Meta would group them) */
+  similarTo?: string[];
 };
 type Verdict = "approved" | "rejected";
 const FACETS = ["format", "hook", "emotion", "persona", "language"] as const;
@@ -138,6 +142,8 @@ export function CreativeBatch({ brandId, enabled = true }: { brandId: string; en
         </button>
       </div>
 
+      <Diversity items={items} onCell={(persona, format) => setFilters((cur) => ({ ...cur, persona, format }))} />
+
       <div className="flex flex-col gap-2">
         {FACETS.filter((f) => values[f].length > 1).map((f) => (
           <div key={f} className="flex flex-wrap items-center gap-1.5">
@@ -174,7 +180,7 @@ export function CreativeBatch({ brandId, enabled = true }: { brandId: string; en
                 v === "rejected" && "opacity-55",
               )}
             >
-              <div className="aspect-[4/5] bg-viewer">
+              <div className="aspect-[4/5] overflow-hidden bg-viewer">
                 {/\.(mp4|webm|mov)(\?|$)/i.test(c.url) ? (
                   <video
                     src={c.url}
@@ -194,6 +200,14 @@ export function CreativeBatch({ brandId, enabled = true }: { brandId: string; en
               </div>
               <div className="flex flex-1 flex-col gap-2 p-3">
                 <p className="break-all font-mono text-[11px] text-bone">{c.name}</p>
+                {!!c.similarTo?.length && (
+                  <span
+                    className="self-start rounded-chip bg-warn px-1.5 py-0.5 font-medium text-[11px] text-white"
+                    title={`Too close to ${c.similarTo.join(", ")}: Meta would group them as one`}
+                  >
+                    too similar
+                  </span>
+                )}
                 <div className="flex flex-wrap gap-1">
                   {FACETS.map((f) =>
                     c[f] ? (
@@ -236,5 +250,96 @@ export function CreativeBatch({ brandId, enabled = true }: { brandId: string; en
         })}
       </ul>
     </section>
+  );
+}
+
+/** Why the batch is built for Meta: which persona x format cells are covered, and how hooks and features spread.
+ * Meta groups lookalike creatives, so empty cells and "too similar" pairs matter more than the count. */
+function Diversity({ items, onCell }: { items: Creative[]; onCell: (persona?: string, format?: string) => void }) {
+  const personas = [...new Set(items.map((c) => c.persona ?? "no persona"))].sort();
+  const formats = [...new Set(items.map((c) => c.format))].sort();
+  const count = (p: string, f: string) =>
+    items.filter((c) => (c.persona ?? "no persona") === p && c.format === f).length;
+  const spread = (k: "hook" | "feature") =>
+    Object.entries(
+      items.reduce<Record<string, number>>((m, c) => {
+        if (c[k]) m[c[k]!] = (m[c[k]!] ?? 0) + 1;
+        return m;
+      }, {}),
+    ).sort((a, b) => b[1] - a[1]);
+  const similar = items.filter((c) => c.similarTo?.length).length;
+  const covered = personas.flatMap((p) => formats.filter((f) => count(p, f))).length;
+  return (
+    <div
+      className="grid-cols-1 grid gap-4 rounded-card bg-ink p-4 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]"
+      data-testid="diversity"
+    >
+      <div className="min-w-0">
+        <p className="font-semibold text-[13px] text-bone">
+          Coverage: {covered} of {personas.length * formats.length} persona x format cells
+        </p>
+        <div className="mt-2 overflow-x-auto">
+          <table className="w-full border-separate border-spacing-1 text-[12px]">
+            <thead>
+              <tr>
+                <th />
+                {formats.map((f) => (
+                  <th key={f} className="px-1 text-left font-normal text-bone-3">
+                    {f}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {personas.map((p) => (
+                <tr key={p}>
+                  <th className="pr-2 text-left font-normal text-bone-2">{p}</th>
+                  {formats.map((f) => {
+                    const n = count(p, f);
+                    return (
+                      <td key={f}>
+                        <button
+                          type="button"
+                          disabled={!n}
+                          onClick={() => onCell(p === "no persona" ? undefined : p, f)}
+                          className={cn(
+                            "h-8 w-full min-w-10 rounded-[6px] font-mono text-[12px]",
+                            n ? "bg-[#2b2620] text-white hover:bg-[#3d3730]" : "bg-raised-2 text-bone-4",
+                          )}
+                        >
+                          {n || "-"}
+                        </button>
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div className="flex min-w-0 flex-col gap-3 text-[12px]">
+        {(["hook", "feature"] as const).map((k) => {
+          const rows = spread(k);
+          return rows.length ? (
+            <div key={k}>
+              <p className="font-semibold text-[13px] text-bone">
+                {rows.length} {k === "hook" ? "hooks" : "features"}
+              </p>
+              <div className="mt-1.5 flex flex-wrap gap-1">
+                {rows.map(([v, n]) => (
+                  <span key={v} className="rounded-chip bg-raised px-1.5 py-0.5 text-bone-2">
+                    {v} <span className="font-mono text-bone-3">{n}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null;
+        })}
+        <p className={cn("font-medium text-[13px]", similar ? "text-warn" : "text-pass")}>
+          {similar ? `${similar} ${similar === 1 ? "creative" : "creatives"} flagged too similar` : "No pair flagged too similar"}
+        </p>
+      </div>
+    </div>
   );
 }

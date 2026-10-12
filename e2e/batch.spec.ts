@@ -26,6 +26,7 @@ const BATCH = [
     language: "en",
     review: 74,
     url: "/media/sample.mp4",
+    similarTo: ["c1"],
   },
   {
     id: "c3",
@@ -62,6 +63,12 @@ test("creative batch: filter, approve, download for a Meta test", async ({ page 
 
   const batch = page.getByTestId("creative-batch");
   await expect(batch.getByTestId("batch-item")).toHaveCount(4);
+  // diversity: 3 of 6 persona x format cells covered, one creative flagged too similar
+  await expect(batch.getByTestId("diversity")).toContainText("3 of 6 persona x format cells");
+  await expect(batch.getByTestId("diversity")).toContainText("1 creative flagged too similar");
+  await expect(batch.getByText("too similar", { exact: true })).toHaveCount(1);
+  await batch.scrollIntoViewIfNeeded();
+  await page.screenshot({ path: "e2e/screens/creative-batch-desktop.png" });
   await batch.getByRole("button", { name: "static", exact: true }).click();
   await expect(batch.getByTestId("batch-item")).toHaveCount(1);
   await batch.getByRole("button", { name: "static", exact: true }).click();
