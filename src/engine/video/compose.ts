@@ -56,7 +56,7 @@ function captionSvg(text: string, accent: string, badge?: string): string {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   ${
     text
-      ? `<rect x="80" y="${y0}" width="${W - 160}" height="${boxH}" rx="24" fill="rgba(0,0,0,0.62)"/>
+      ? `<rect x="80" y="${y0}" width="${W - 160}" height="${boxH}" rx="24" fill="rgba(0,0,0,0.72)"/>
   <rect x="80" y="${y0 + boxH - 8}" width="${W - 160}" height="8" fill="${accent}"/>
   ${lines.map((l, i) => `<text x="${W / 2}" y="${y0 + 25 + size + i * lh}" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="${size}" font-weight="800" fill="#fff">${esc(l)}</text>`).join("")}`
       : ""

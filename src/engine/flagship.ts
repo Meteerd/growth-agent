@@ -134,6 +134,9 @@ export async function planShots(
 
 const PHOTOREAL =
   "Photoreal vertical phone video frame, shot on an iPhone, natural window light, real lived-in home, candid framing, slight motion blur and grain, true-to-life colors, no text, no logos, no watermark, not glossy, not CGI.";
+/** generated frames are cropped from 2:3 to 9:16 (the sides lose ~8% each) and the caption covers the lower third */
+const SAFE_AREA =
+  "Keep every important object fully inside the central 80% of the width with clear margins on both sides, and above the lower third of the frame.";
 
 async function keyframeFor(
   db: Db,
@@ -163,8 +166,8 @@ async function keyframeFor(
   } else {
     const prompt =
       s.style === "photoreal"
-        ? `${s.visualPrompt}. ${PHOTOREAL}`
-        : `${s.visualPrompt}. Style: ${brand.dossier.visual.styleNotes ?? ""} Vertical 9:16, no text.`;
+        ? `${s.visualPrompt}. ${PHOTOREAL} ${SAFE_AREA}`
+        : `${s.visualPrompt}. Style: ${brand.dossier.visual.styleNotes ?? ""} Vertical 9:16, no text. ${SAFE_AREA}`;
     // a generated frame that shows the brand's real art (on a phone, a poster) gets that image as a reference
     let refs: string[] | undefined;
     if (s.imageRef) {
@@ -206,7 +209,8 @@ async function keyframeFor(
       });
       return gen(false);
     });
-    png = img.png;
+    // a true 1080x1920 frame with a centered crop (the compositor's attention crop could cut one side only)
+    png = await sharp(img.png).resize(1080, 1920, { fit: "cover", position: "centre" }).png().toBuffer();
     provider = img.mode === "live" ? "openai" : "local";
     model = img.model;
     usd = img.usd;
