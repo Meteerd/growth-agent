@@ -67,6 +67,27 @@ describe("providers + spend ledger", () => {
     expect((await spentByProvider(db)).fal).toBeCloseTo(0.6);
   });
 
+  it("a cap hit inside a run without its own handler leaves a warning event on the run", async () => {
+    const { seed } = await import("@/engine/seed");
+    const { listEvents } = await import("@/engine/repo");
+    await seed(db);
+    const runId = "run_hound_demo";
+    const out = await callProvider(db, {
+      provider: "higgsfield",
+      note: "clip shot 2",
+      runId,
+      estimateUsd: 5,
+      live: async () => ({ result: "live", usd: 5 }),
+      demo: () => "still",
+      mode: "live",
+      budgetOverride: 1,
+    });
+    expect(out.mode).toBe("demo");
+    const ev = (await listEvents(db, runId)).at(-1)!;
+    expect(ev.type).toBe("warning");
+    expect(ev.title).toContain("higgsfield budget cap reached");
+  });
+
   it("parallel calls cannot overshoot the cap together (reservations)", async () => {
     const slow = () =>
       new Promise<{ result: string; usd: number }>((r) => setTimeout(() => r({ result: "x", usd: 0.4 }), 20));
