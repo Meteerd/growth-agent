@@ -4,7 +4,6 @@ import type { Asset, ComplianceCheck, DemoRunBundle, Review } from "@/contracts"
 import type { Db } from "../db/client";
 import { ffmpeg } from "../media/ffmpeg";
 import {
-  getBlueprint,
   getBrand,
   getLatestPlan,
   getRun,

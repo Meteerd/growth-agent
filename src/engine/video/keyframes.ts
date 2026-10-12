@@ -62,3 +62,12 @@ export function writeAsset(rel: string, data: Buffer): string {
   fs.writeFileSync(file, data);
   return file;
 }
+
+/** Generated images are 2:3; the frame is 9:16 (the sides lose ~8% each) and the caption covers the lower third. */
+export const SAFE_AREA =
+  "Keep every important object fully inside the central 80% of the width with clear margins on both sides, and above the lower third of the frame.";
+
+/** A true 1080x1920 frame with a centered crop (an attention crop can take the whole cut from one side). */
+export async function toFrame916(png: Buffer): Promise<Buffer> {
+  return sharp(png).resize(1080, 1920, { fit: "cover", position: "centre" }).png().toBuffer();
+}

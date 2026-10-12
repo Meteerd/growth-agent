@@ -19,7 +19,7 @@ import {
   upsertPack,
 } from "../repo";
 import { fileToUrl, urlToFile } from "../video/files";
-import { demoKeyframe, writeAsset } from "../video/keyframes";
+import { demoKeyframe, SAFE_AREA, toFrame916, writeAsset } from "../video/keyframes";
 import { renderAd } from "../video/render";
 
 type Emit = (
@@ -53,10 +53,10 @@ export async function generateKeyframes(
   // up to 3 images at once (each live image takes ~30 s)
   const one = async (s: (typeof targets)[number]) => {
     const style = brand.dossier.visual.styleNotes ? ` Style: ${brand.dossier.visual.styleNotes}` : "";
-    const prompt = `${s.visualPrompt}.${style} Vertical 9:16, no text, no logos, no watermarks.`;
+    const prompt = `${s.visualPrompt}.${style} Vertical 9:16, no text, no logos, no watermarks. ${SAFE_AREA}`;
     const img = await generateImage(db, prompt, { runId: c.runId, demo: () => demoKeyframe(brand, s) });
     const n = `${Date.now().toString(36)}${s.idx}`;
-    const file = writeAsset(path.join("runs", c.runId, c.id, `kf_${s.idx}_${n}.png`), img.png);
+    const file = writeAsset(path.join("runs", c.runId, c.id, `kf_${s.idx}_${n}.png`), await toFrame916(img.png));
     const asset: Asset = {
       id: newId("asset"),
       brandId: c.brandId,

@@ -15,7 +15,6 @@ import { extractFrame, probe } from "./media/ffmpeg";
 import { generateImage } from "./providers/openai";
 import {
   appendEvent,
-  getAsset,
   getBlueprint,
   getBrand,
   getConcept,
@@ -29,7 +28,7 @@ import {
 import { rulePackText } from "./rules";
 import { renderConcept } from "./services/concepts";
 import { brandAssetsDir, fileToUrl, urlToFile } from "./video/files";
-import { demoKeyframe, writeAsset } from "./video/keyframes";
+import { demoKeyframe, SAFE_AREA, toFrame916, writeAsset } from "./video/keyframes";
 
 /**
  * A17: the flagship remake. Each shot starts from the brand's real image when one fits, otherwise from a frame
@@ -134,9 +133,6 @@ export async function planShots(
 
 const PHOTOREAL =
   "Photoreal vertical phone video frame, shot on an iPhone, natural window light, real lived-in home, candid framing, slight motion blur and grain, true-to-life colors, no text, no logos, no watermark, not glossy, not CGI.";
-/** generated frames are cropped from 2:3 to 9:16 (the sides lose ~8% each) and the caption covers the lower third */
-const SAFE_AREA =
-  "Keep every important object fully inside the central 80% of the width with clear margins on both sides, and above the lower third of the frame.";
 
 async function keyframeFor(
   db: Db,
@@ -209,8 +205,7 @@ async function keyframeFor(
       });
       return gen(false);
     });
-    // a true 1080x1920 frame with a centered crop (the compositor's attention crop could cut one side only)
-    png = await sharp(img.png).resize(1080, 1920, { fit: "cover", position: "centre" }).png().toBuffer();
+    png = await toFrame916(img.png);
     provider = img.mode === "live" ? "openai" : "local";
     model = img.model;
     usd = img.usd;
