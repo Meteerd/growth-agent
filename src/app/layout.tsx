@@ -3,6 +3,7 @@ import { preload } from "react-dom";
 import { PitchControls } from "@/components/shell/PitchControls";
 import { PresentMode } from "@/components/shell/PresentMode";
 import { Providers } from "@/components/shell/Providers";
+import { RouteProgress } from "@/components/shell/RouteProgress";
 import { Toaster } from "@/components/ui/Toast";
 import { PRODUCT_NAME, PRODUCT_TAGLINE, SITE_URL } from "@/lib/client/product";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en">
       <body>
         <PresentMode />
+        <RouteProgress />
         <Providers>
           {children}
           <PitchControls />
