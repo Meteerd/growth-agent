@@ -1,11 +1,11 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-12 04:05 +03
-- Current task: IMPROVE loop (all CORE + STRETCH + A17 checked); MORNING_A kept current
-- Last sync: 03:55 exit 0, main UPDATED, checks PASS
+- Time: 2026-10-12 04:24 +03
+- Current task: IMPROVE loop (all CORE + STRETCH + A17 checked; I01-I40 done). Evreon flagship repair running.
+- Last sync: 04:20 exit 0, main UPDATED, checks PASS
 - Blockers:
-  - fal account balance exhausted (403 locked) at 03:24; motion falls back to Higgsfield ($6 of $8 used). Top up fal (event credits).
+  - fal account balance exhausted (403 locked at 03:24); Higgsfield reached its $8 cap (estimates) at ~04:15. New renders animate nothing until a top-up; stills with camera moves still render.
   - REVENUECAT, POSTHOG, STRIPE, PADDLE, META keys missing: connectors demo.
 - Next 3: MORNING_A final details -> eval and edge cases from IMPROVE_LOOP -> keep syncing
 - Spend so far (ledger, USD, 04:05): anthropic 10.56 / 150, openai 9.54 / 60, fal 7.25 / 8 (balance out), higgsfield 6.00 / 8, apify 2.33 / 4, firecrawl 0.07 / 3, youtube 0, manus 3 lite tasks
@@ -36,3 +36,4 @@
 - 02:47 ack concepts lose blueprintId on runs that reuse research (INBOX_A 02:16): fixed with fallback linking + test
 - 03:29 IMPROVE: fresh-clone check OK; Dynova + Evreon live research and full runs; eval-all all green on current runs; fal balance exhausted (circuit breaker added)
 - 04:05 IMPROVE I29-I31: Dynova flagship 81/100 (every shot >= 80, Higgsfield clips) exported as showcase; wordy video captions shortened before compliance; clause-safe fallback; eval checks language + readability; tests for motion fallback, flagship repair, tightened-caption compliance
+- 04:24 IMPROVE I32-I40: cap warnings for every provider, double-click-safe run creation, consultation edge tests, render heals missing files, shortened evidence ids repaired, live runs never mix demo data, shot sourcing + review calibration prompts, API sweep 315/0
