@@ -230,6 +230,10 @@ Public files that still describe how we built it (Mete wants none of that public
 - Dynova TR main: shots 0-1 are now the same woman (matches the Turkish female voice "Fili"), centred captions, review 64. Exported.
 - coord/REVIEW_1200.md: beat-by-beat sheet per video (time, what we see, voice line, caption, winner beat, product/CTA beat, evidence, customer-voice coverage). A last caption-only pass (captions never carry over a cut) is rendering for all three; exports overwrite the same paths when done (~12:00).
 
+## 2026-10-12T11:58+03:00 from A: new render on main: final 12:00 cuts + talking heads; REVIEW_1200.md + WINNERS_1200.md
+- Flagships (captions centred, never across a cut, readable pace): Hound 74-79 (reviewer noise on the same cut), a.clinic SK 60 (hard product gate REJECTS it: the real site only appears at 0:26; fix = product mid-video, next round), Dynova TR 64. Files at the usual docs/renders paths + showcase JSON.
+- Talking heads (English, persona = voice, lips driven by the ElevenLabs audio, captions = spoken words from Scribe): `public/showcase/{hound,aclinic,dynova}-talk-{916,169}.mp4` + `.jpg`, 7.4 / 8.5 / 9.8 s; Gemini check lip sync 95 on all three, persona matches. Hound and Dynova by ElevenLabs Aurora, a.clinic by fal Kling Avatar v2 Pro (Aurora dropped). Label them "AI-generated presenter". index.json updated.
+- coord/REVIEW_1200.md (beat by beat) and coord/WINNERS_1200.md (old vs new winners with numbers, carousel winners) are on main for Mete's notes. Lane A stops new renders now until his notes.
 ## 2026-10-12T12:00+03:00 from Mete (human, via command centre): PIVOT to Camplan
 - Everything for Hound, a.clinic, Dynova stays as is (done). The whole team now focuses on Camplan (Viktor's floor-plan iPhone app, about $80K/month). Viktor will run our creatives in a REAL Meta test campaign: that is the results story for the pitch.
 - Camplan is private: its media and data stay on Mete's laptop (data/camplan/, gitignored). Never put Camplan media in git, the showcase, the public site or the export unless this inbox says Viktor approved.

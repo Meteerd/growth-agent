@@ -219,50 +219,104 @@ const scriptText = (s: Script) =>
     `CTA: ${site}`,
   ].join("\n");
 
-log("script", slug, language, `evidence=${evItems.length}`, `run=${runId ?? "none"}`);
-let script = fixUp(await writeScript());
-let cc = await checkText(db, {
-  brand,
-  text: scriptText(script),
-  targetType: "concept",
-  targetId: `carousel_${slug}`,
-  runId,
-});
-const complianceHistory = [{ attempt: 0, status: cc.status, findings: cc.findings }];
-log("compliance", cc.status, cc.findings.map((f) => `${f.severity}:${f.ruleId}`).join(" "));
-if (cc.status === "fail") {
-  const fb = cc.findings
-    .filter((f) => f.severity !== "info")
-    .map((f) => `[${f.severity} ${f.ruleId}] ${f.message}${f.excerpt ? ` (excerpt: "${f.excerpt}")` : ""}`)
-    .join("; ");
-  script = fixUp(await writeScript(fb));
-  cc = await checkText(db, {
+// --rerender: keep the approved copy and images in carousel.json, render again with the current layout and review
+const rerender = process.argv.includes("--rerender");
+type Prev = {
+  pattern: string;
+  why: string;
+  caption: string;
+  hashtags: string[];
+  compliance: {
+    status: "pass" | "warn" | "fail";
+    rulePack: string;
+    history: { attempt: number; status: string; findings: unknown[] }[];
+  };
+  review?: { regenerated?: { slide: number } | null };
+  slides: {
+    role: Script["slides"][number]["role"];
+    headline: string;
+    accentWord: string;
+    body: string[];
+    textPosition?: "top" | "bottom";
+    image: { source: Script["slides"][number]["image"]["source"]; file: string | null; prompt: string | null };
+  }[];
+};
+const prev: Prev | null = rerender ? JSON.parse(fs.readFileSync(path.join(outDir, "carousel.json"), "utf8")) : null;
+let script: Script;
+let cc: { status: "pass" | "warn" | "fail"; rulePack: string };
+let complianceHistory: { attempt: number; status: string; findings: unknown[] }[];
+if (prev) {
+  script = {
+    pattern: prev.pattern,
+    why: prev.why,
+    caption: prev.caption,
+    hashtags: prev.hashtags,
+    slides: prev.slides.map((x) => ({
+      role: x.role,
+      headline: x.headline,
+      accentWord: x.accentWord,
+      body: x.body,
+      textPosition: x.textPosition ?? "bottom",
+      image: {
+        source: x.image.source,
+        file: x.image.file && files.includes(x.image.file) ? x.image.file : "",
+        prompt: x.image.prompt ?? "",
+      },
+      quotes: [],
+    })),
+  };
+  cc = { status: prev.compliance.status, rulePack: prev.compliance.rulePack };
+  complianceHistory = prev.compliance.history;
+  log("rerender", slug, "(copy and compliance from carousel.json)");
+} else {
+  log("script", slug, language, `evidence=${evItems.length}`, `run=${runId ?? "none"}`);
+  script = fixUp(await writeScript());
+  let c = await checkText(db, {
     brand,
     text: scriptText(script),
     targetType: "concept",
     targetId: `carousel_${slug}`,
     runId,
-    attempt: 1,
   });
-  complianceHistory.push({ attempt: 1, status: cc.status, findings: cc.findings });
-  log("compliance (retry)", cc.status, cc.findings.map((f) => `${f.severity}:${f.ruleId}`).join(" "));
-}
-if (cc.status === "fail") {
-  fs.writeFileSync(
-    path.join(outDir, "carousel.json"),
-    JSON.stringify({ brand: slug, language, script, compliance: complianceHistory, rendered: false }, null, 2),
-  );
-  console.error("compliance failed twice: not rendering");
-  process.exit(2);
+  complianceHistory = [{ attempt: 0, status: c.status, findings: c.findings }];
+  log("compliance", c.status, c.findings.map((f) => `${f.severity}:${f.ruleId}`).join(" "));
+  if (c.status === "fail") {
+    const fb = c.findings
+      .filter((f) => f.severity !== "info")
+      .map((f) => `[${f.severity} ${f.ruleId}] ${f.message}${f.excerpt ? ` (excerpt: "${f.excerpt}")` : ""}`)
+      .join("; ");
+    script = fixUp(await writeScript(fb));
+    c = await checkText(db, {
+      brand,
+      text: scriptText(script),
+      targetType: "concept",
+      targetId: `carousel_${slug}`,
+      runId,
+      attempt: 1,
+    });
+    complianceHistory.push({ attempt: 1, status: c.status, findings: c.findings });
+    log("compliance (retry)", c.status, c.findings.map((f) => `${f.severity}:${f.ruleId}`).join(" "));
+  }
+  cc = c;
+  if (c.status === "fail") {
+    fs.writeFileSync(
+      path.join(outDir, "carousel.json"),
+      JSON.stringify({ brand: slug, language, script, compliance: complianceHistory, rendered: false }, null, 2),
+    );
+    console.error("compliance failed twice: not rendering");
+    process.exit(2);
+  }
 }
 
 // quotes must be verbatim in the evidence
-const quoteCheck = script.slides.flatMap((x, i) =>
-  x.quotes.map((q) => {
-    const ev = evidence.find((e) => e.id === q.evidenceId);
-    return { slide: i + 1, ...q, verbatim: !!ev?.text?.includes(q.quote) };
-  }),
-);
+const quoteCheck = prev
+  ? ((prev as Prev & { quotes?: unknown[] }).quotes ?? [])
+  : script.slides.flatMap((x, i) =>
+      x.quotes.map((q) => {
+        const ev = evidence.find((e) => e.id === q.evidenceId);
+        return { slide: i + 1, ...q, verbatim: !!ev?.text?.includes(q.quote) };
+      }),
+    );
 
 // ---------------------------------------------------------------- images
 
@@ -302,7 +356,14 @@ const bgs: string[] = new Array(script.slides.length);
 const queue = script.slides.map((_, i) => i);
 await Promise.all(
   Array.from({ length: 3 }, async () => {
-    for (let i = queue.shift(); i !== undefined; i = queue.shift()) bgs[i] = await bgFor(i);
+    for (let i = queue.shift(); i !== undefined; i = queue.shift()) {
+      const x = script.slides[i]!;
+      const kept = path.join(work, `bg_${i + 1}${prev?.review?.regenerated?.slide === i + 1 ? "_v2" : ""}.png`);
+      if (prev && !x.image.file && fs.existsSync(kept)) {
+        bgs[i] = kept;
+        imgSource[i] = "generated";
+      } else bgs[i] = await bgFor(i);
+    }
   }),
 );
 
@@ -412,6 +473,7 @@ const json = {
     headline: x.headline,
     accentWord: x.accentWord,
     body: x.body,
+    textPosition: x.textPosition,
     image: {
       source: x.image.source,
       file: imgSource[i] ?? null,
