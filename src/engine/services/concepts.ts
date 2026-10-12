@@ -4,7 +4,7 @@ import type { Asset, Concept, RenderTier, RunEvent } from "@/contracts";
 import type { Db } from "../db/client";
 import { HttpError } from "../http";
 import { newId, nowIso } from "../ids";
-import { imageToVideo } from "../providers/fal";
+import { animateShot } from "../providers/motion";
 import { generateImage, speak } from "../providers/openai";
 import { renderEstimate } from "../providers/prices";
 import {
@@ -187,15 +187,17 @@ export async function renderConcept(
         if (!kfFile) return;
         const outClip = path.resolve(process.env.ASSETS_DIR || "data/assets", dir, `clip_${s.idx}_${n}.mp4`);
         fs.mkdirSync(path.dirname(outClip), { recursive: true });
-        const r = await imageToVideo(db, {
+        const r = await animateShot(db, {
           imageFile: kfFile,
           prompt: s.motion
             ? `${s.motion}. Natural, physically plausible motion, real camera feel, no text, no morphing.`
             : `${s.visualPrompt}. Subtle natural motion, gentle camera push-in, no text.`,
-          durationSec: s.durationSec > 5 ? 10 : 5,
+          durationSec: s.durationSec,
           out: outClip,
           runId: cur.runId,
-          demo: async () => null,
+          onFallback: async (why) => {
+            await emit("warning", `Shot ${s.idx + 1}: fal unavailable, trying Higgsfield`, { detail: why });
+          },
         }).catch(async (e) => {
           await emit("warning", `Clip for shot ${s.idx + 1} failed; using the still`, {
             detail: e instanceof Error ? e.message : String(e),
@@ -209,7 +211,7 @@ export async function renderConcept(
           conceptId: cur.id,
           kind: "clip",
           url: fileToUrl(r.file),
-          provider: "fal",
+          provider: r.provider,
           model: r.model,
           costUsd: r.usd,
           width: 1080,
@@ -221,7 +223,7 @@ export async function renderConcept(
         };
         await upsertAsset(db, clip);
         updated[s.idx] = { ...s, clipAssetId: clip.id };
-        await emit("asset", `Clip ${s.idx + 1}/${cur.shots.length} animated (fal)`, {
+        await emit("asset", `Clip ${s.idx + 1}/${cur.shots.length} animated (${r.provider})`, {
           refId: clip.id,
           costUsd: r.usd,
           data: { conceptId: cur.id, shotIdx: s.idx, url: clip.url, kind: "clip" },
