@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DemoBadge, StatusDot } from "@/components/ui/Badge";
 import { cn } from "@/lib/client/cn";
-import { DATA_MODE } from "@/lib/client/mode";
+import { DATA_MODE, READ_ONLY } from "@/lib/client/mode";
 import { PRODUCT_NAME } from "@/lib/client/product";
 
 const NAV = [
@@ -24,6 +24,15 @@ export function Wordmark({ className }: { className?: string }) {
 }
 
 export function DataModeChip() {
+  if (READ_ONLY)
+    return (
+      <span
+        title="Recorded runs only. Run Nexus locally to start a run."
+        className="inline-flex h-6 items-center rounded-chip px-2.5 font-medium text-[11.5px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)]"
+      >
+        Read-only showcase
+      </span>
+    );
   return DATA_MODE === "mock" ? (
     <span data-dev>
       <DemoBadge label="Mock data" />
