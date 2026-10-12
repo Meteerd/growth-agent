@@ -1,0 +1,158 @@
+{
+  "aclinic": {
+    "sk": {
+      "voiceId": "OYTbf65OHHFELVut7v2H",
+      "name": "Hope - Natural, Clear and Calm",
+      "publicOwnerId": "7d272ea0221fbc9ce382a3eaf4d7f907179558360d93b351ec7d344d30023cf9",
+      "modelId": "eleven_multilingual_v2",
+      "language": "sk",
+      "settings": {
+        "stability": 0.7,
+        "similarity_boost": 0.8,
+        "style": 0.15,
+        "use_speaker_boost": true,
+        "speed": 1
+      },
+      "persona": "calm, warm, doctor-led; a trusted physician explaining simply, never salesy",
+      "why": "Most natural and warm delivery. Sounds genuinely empathetic, calm, and trustworthy without any salesy tone, making it ideal for TikTok/Reels. Keep stability high (around 70-80%) to preserve the calm, authoritative physician tone, with style slider around 15-20% to avoid over-dramatization.",
+      "candidates": [
+        {
+          "voiceId": "OYTbf65OHHFELVut7v2H",
+          "name": "Hope - Natural, Clear and Calm",
+          "score": 95,
+          "note": "Most natural and warm delivery. Sounds genuinely empathetic, calm, and trustworthy without any salesy tone, making it ideal for TikTok/Reels."
+        },
+        {
+          "voiceId": "kcQkGnn0HAT2JRDQ4Ljp",
+          "name": "Norah - Warm, Friendly and Clear",
+          "score": 88,
+          "note": "Clear and well-pronounced, but slightly more formal and less intimate compared to Take 1."
+        },
+        {
+          "voiceId": "g6xIsTj2HwM6VR4iXFCw",
+          "name": "Jessica Anne Bogart - Chatty and Friendly",
+          "score": 90,
+          "note": "Calm and authoritative doctor tone, very clear, though slightly more serious in pitch."
+        }
+      ],
+      "chosenAt": "2026-10-12T06:18:49.681Z"
+    }
+  },
+  "hound": {
+    "en": {
+      "voiceId": "lcMyyd2HUfFzxdCaC4Ta",
+      "name": "Lucy - Fresh & Casual",
+      "publicOwnerId": "034ca2102998f015606215ff3002514bf4cb00e019ff9bb4b87d00bc5be91b5c",
+      "modelId": "eleven_multilingual_v2",
+      "language": "en",
+      "settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.8,
+        "style": 0.08,
+        "use_speaker_boost": true,
+        "speed": 1
+      },
+      "persona": "warm, conversational dog owner talking to a friend on TikTok; gentle, a little playful",
+      "why": "Most natural and conversational delivery, fitting the casual TikTok peer tone well. Lower style exaggeration slightly and maintain moderate stability to prevent sharp pitch spikes while preserving conversational flow.",
+      "candidates": [
+        {
+          "voiceId": "MzqUf1HbJ8UmQ0wUsx2p",
+          "name": "Katie X – Clear British Customer Support",
+          "score": 60,
+          "note": "Warm and gentle, but pacing leans slightly too formal and measured for social media."
+        },
+        {
+          "voiceId": "lcMyyd2HUfFzxdCaC4Ta",
+          "name": "Lucy - Fresh & Casual",
+          "score": 68,
+          "note": "Most natural and conversational delivery, fitting the casual TikTok peer tone well."
+        },
+        {
+          "voiceId": "exsUS4vynmxd379XN4yO",
+          "name": "Blondie - Conversational",
+          "score": 53,
+          "note": "Inflections are overly theatrical and dynamic, reducing the effortless friendly feel."
+        }
+      ],
+      "chosenAt": "2026-10-12T06:15:10.576Z"
+    }
+  },
+  "dynova": {
+    "tr": {
+      "voiceId": "FDs1ZX5J4e4f2c2erxtW",
+      "name": "Fili - Warm Turkish Female ",
+      "publicOwnerId": "9c7641abd0b92520e986308ae47c572c22d9a1706348c1acf7bc61319490b211",
+      "modelId": "eleven_multilingual_v2",
+      "language": "tr",
+      "settings": {
+        "stability": 0.6,
+        "similarity_boost": 0.8,
+        "style": 0.15,
+        "use_speaker_boost": true,
+        "speed": 0.97
+      },
+      "persona": "clear, friendly Turkish science explainer; credible and calm, like a health educator",
+      "why": "Calm, clear, and natural delivery that fits the credible health educator persona well. Keep stability moderately high to preserve smoothness, and reduce speed slightly for enhanced clarity.",
+      "candidates": [
+        {
+          "voiceId": "oPC5I9GKjMReiaM29gjY",
+          "name": "Gökçe Deniz - Joyful, Friendly and Warm",
+          "score": 62,
+          "note": "Friendly and upbeat social style, though slightly fast and less authoritative."
+        },
+        {
+          "voiceId": "aEJD8mYP0nuof1XHShVY",
+          "name": "Gozde Arikan - Soft, Warm and Clear",
+          "score": 48,
+          "note": "Noticeable pauses, awkward phrasing rhythm, and robotic inflections."
+        },
+        {
+          "voiceId": "FDs1ZX5J4e4f2c2erxtW",
+          "name": "Fili - Warm Turkish Female ",
+          "score": 68,
+          "note": "Calm, clear, and natural delivery that fits the credible health educator persona well."
+        }
+      ],
+      "chosenAt": "2026-10-12T06:15:19.402Z"
+    }
+  },
+  "evreon": {
+    "en": {
+      "voiceId": "Fahco4VZzobUeiPqni1S",
+      "name": "Archer - Conversational",
+      "publicOwnerId": "8cab967ba4f7385d9544b0f35096242b8c6348e0165fd2bdc6de17c02bc6d60b",
+      "modelId": "eleven_multilingual_v2",
+      "language": "en",
+      "settings": {
+        "stability": 0.65,
+        "similarity_boost": 0.8,
+        "style": 0.15,
+        "use_speaker_boost": true,
+        "speed": 0.95
+      },
+      "persona": "credible UK English professional; measured, confident, clinical-software narrator",
+      "why": "Excellent modern British accent with a measured, confident, and credible tone that fits the clinical professional persona perfectly. Maintain stability around 0.65 to keep the delivery calm and authoritative, and set speed around 0.95x for optimal clarity.",
+      "candidates": [
+        {
+          "voiceId": "Fahco4VZzobUeiPqni1S",
+          "name": "Archer - Conversational",
+          "score": 95,
+          "note": "Excellent modern British accent with a measured, confident, and credible tone that fits the clinical professional persona perfectly."
+        },
+        {
+          "voiceId": "MzqUf1HbJ8UmQ0wUsx2p",
+          "name": "Katie X – Clear British Customer Support",
+          "score": 88,
+          "note": "Clear and articulate, but the pauses between phrases feel slightly overly deliberate and staccato."
+        },
+        {
+          "voiceId": "lUTamkMw7gOzZbFIwmq4",
+          "name": "James - Professional British Male",
+          "score": 82,
+          "note": "Good pronunciation, but the delivery feels a bit rushed and lacks the calm authority expected from a medical narrator."
+        }
+      ],
+      "chosenAt": "2026-10-12T06:18:55.630Z"
+    }
+  }
+}

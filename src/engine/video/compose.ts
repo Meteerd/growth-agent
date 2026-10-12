@@ -3,6 +3,7 @@ import path from "node:path";
 import sharp, { type OverlayOptions } from "sharp";
 import type { Ad916Props } from "../../../remotion/types";
 import { ffmpeg, probe } from "../media/ffmpeg";
+import { renderCaptionFrames } from "./captions";
 import { urlToFile } from "./files";
 
 /**
@@ -182,10 +183,35 @@ async function endCard(p: Ad916Props, out: string) {
  * sidechain compressor; the mix loudness-normalised to about -14 LUFS (TikTok/Reels level). Without music the voice
  * alone is normalised; the caller warns that the ad has no music bed.
  */
-export function audioGraph(voIdx: number, hasVo: boolean, hasMusic: boolean, total: number): string {
+export function audioGraph(
+  voIdx: number,
+  hasVo: boolean,
+  hasMusic: boolean,
+  total: number,
+  sfx: { at: number; gainDb: number }[] = [],
+): string {
   const t = total.toFixed(3);
+  // sound effects: inputs after the voice (and music), each delayed to its time, summed under the mix
+  const sfx0 = voIdx + 1 + (hasMusic ? 1 : 0);
+  const fx = sfx.map((x, i) => {
+    const ms = Math.max(0, Math.round(x.at * 1000));
+    return `[${sfx0 + i}:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,volume=${x.gainDb}dB,adelay=${ms}|${ms},apad,atrim=0:${t}[fx${i}]`;
+  });
+  const withFx = (pre: string, label: string) =>
+    `${pre};${fx.join(";")};[${label}]${sfx.map((_, i) => `[fx${i}]`).join("")}amix=inputs=${sfx.length + 1}:duration=first:normalize=0[pre]`;
   const voice = `[${voIdx}:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,apad,atrim=0:${t}`;
   const norm = "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo";
+  if (sfx.length) {
+    const bed = hasMusic
+      ? [
+          `${voice},asplit=2[vo1][vo2]`,
+          `[${voIdx + 1}:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,atrim=0:${t},afade=t=in:d=0.4,afade=t=out:st=${Math.max(0, total - 1.5).toFixed(3)}:d=1.5,volume=0.5[mus]`,
+          "[mus][vo2]sidechaincompress=threshold=0.02:ratio=10:attack=15:release=350:makeup=1[duck]",
+          "[vo1][duck]amix=inputs=2:duration=first:normalize=0[bed]",
+        ].join(";")
+      : `${voice}[bed]`;
+    return `${withFx(bed, "bed")};[pre]${hasVo || hasMusic ? norm : "anull"}[a]`;
+  }
   if (!hasMusic) return `${voice},${hasVo ? norm : "anull"}[a]`;
   const fadeAt = Math.max(0, total - 1.5).toFixed(3);
   return [
@@ -203,7 +229,15 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
     [];
   for (const [i, s] of p.shots.entries()) {
     const f = path.join(workDir, `shot_${i}.png`);
-    const overlays = await shotLayers(s.src, s.text, s.durationSec, s.captionRegion ?? "upper", p.badge, f);
+    // live captions replace the per-shot text layers (only the badge stays per shot)
+    const overlays = await shotLayers(
+      s.src,
+      p.captions ? undefined : s.text,
+      s.durationSec,
+      s.captionRegion ?? "upper",
+      p.badge,
+      f,
+    );
     const clip = s.clipSrc ? (urlToFile(s.clipSrc) ?? undefined) : undefined;
     frames.push({ file: f, overlays, dur: s.durationSec, clip: clip && fs.existsSync(clip) ? clip : undefined });
     onProgress?.((i + 1) / (p.shots.length + 2));
@@ -221,7 +255,7 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
     if (f.clip) {
       inputs.push("-i", f.clip);
       parts.push(
-        `[${v}:v]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[b${i}]`,
+        `[${v}:v]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=30,tpad=stop_mode=clone:stop_duration=${f.dur.toFixed(3)},trim=duration=${f.dur},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[b${i}]`,
       );
     } else {
       inputs.push("-i", f.file);
@@ -248,15 +282,29 @@ export async function composeAd916(p: Ad916Props, out: string, workDir: string, 
   const hasVo = !!vo && fs.existsSync(vo);
   const music = p.musicSrc ? urlToFile(p.musicSrc) : null;
   const hasMusic = !!music && fs.existsSync(music);
-  const filter = `${parts.join(";")};${frames.map((_, i) => `[v${i}]`).join("")}concat=n=${frames.length}:v=1:a=0[v]`;
   const total = frames.reduce((a, f) => a + f.dur, 0);
-  const audio = audioGraph(k, hasVo, hasMusic, total);
+  // live caption layer: a transparent PNG sequence over the whole cut
+  let capArgs: string[] = [];
+  let capFilter = "";
+  if (p.captions) {
+    const pattern = await renderCaptionFrames(p.captions, total, path.join(workDir, "captions"));
+    capArgs = ["-framerate", "30", "-i", pattern];
+    capFilter = `;[${k}:v]format=rgba[cap];[vcat][cap]overlay=0:0:eof_action=pass:format=auto,format=yuv420p[v]`;
+    k++;
+  }
+  const filter = `${parts.join(";")};${frames.map((_, i) => `[v${i}]`).join("")}concat=n=${frames.length}:v=1:a=0[${p.captions ? "vcat" : "v"}]${capFilter}`;
+  const sfx = (p.sfx ?? [])
+    .map((x) => ({ ...x, file: urlToFile(x.src) ?? x.src }))
+    .filter((x) => fs.existsSync(x.file) && x.at < total);
+  const audio = audioGraph(k, hasVo, hasMusic, total, sfx);
   await ffmpeg(
     [
       "-y",
       ...inputs,
+      ...capArgs,
       ...(hasVo ? ["-i", vo] : ["-f", "lavfi", "-t", String(total), "-i", "anullsrc=r=48000:cl=stereo"]),
       ...(hasMusic ? ["-stream_loop", "-1", "-i", music] : []),
+      ...sfx.flatMap((x) => ["-i", x.file]),
       "-filter_complex",
       `${filter};${audio}`,
       "-map",

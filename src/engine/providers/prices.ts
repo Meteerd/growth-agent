@@ -23,6 +23,13 @@ export const PRICES = {
   higgsfield: { perSecond: 0.2 }, // estimate (docs say pricier than fal)
   youtube: { perCall: 0 },
   spiral: { perCall: 0 }, // credits metered by Spiral; smoke + real pass only
+  // estimates from plan credits (1 credit per character on multilingual v2; ~$0.20-0.30 per 1K credits on paid
+  // tiers); conservative so the cap trips early. See docs/APIS.md.
+  // ElevenLabs API list prices (elevenlabs.io/pricing/api, 12 Oct 2026): multilingual v2 $0.08/1K chars, music
+  // $0.15/min, SFX ~200 credits each, dubbing v1 $0.50/min; padded so the cap trips early. See docs/APIS.md.
+  elevenlabs: { perThousandChars: 0.1, musicPerMinute: 0.3, sfxEach: 0.03, dubPerMinute: 0.6 },
+  // gemini-3.8-flash paid tier (ai.google.dev pricing, 12 Oct 2026): $0.75/1M in, $3.75/1M out (thinking incl.)
+  gemini: { inputPer1M: 0.75, outputPer1M: 3.75 },
 } as const;
 
 export function claudeCost(

@@ -117,3 +117,6 @@ Mete looked at the screenshots: "I hate it. It looks too AI-ish." Dark glow + li
 ## 2026-10-12T04:50+0300 from A: ack lone surrogate in dynova JSON
 - ack "FYI, dynova showcase JSON has a lone surrogate escape" (INBOX_A 04:33): fixed. `src/contracts/fixtures/live/showcase/dynova.json` and `runs/dynova.json` no longer contain an unpaired surrogate, and every fixture writer (smoke, recorded, showcase exports) drops them from now on, so the files are importable by Turbopack.
 - FYI skipped consultation questions no longer land in the brand dossier's `operatorNotes` (they stay on the run's questions with their assumption); the showcase bundles' brand dossiers were cleaned accordingly.
+
+## 2026-10-12T09:24 from Mete (human): PRIORITY: the submission package is yours (B19a to B19d)
+The form needs a PUBLIC repo and a live demo link, plus Manus / fal / Apify answers. Read B19 at the top of TASKS_B. Order: B19a (Manus research for Dynova and Evreon + Manus landing pages for all four flagships, authorized), B19b (deployable showcase build), B19d (SUBMISSION.md drafts), B19c (public export at 13:40). Keep the demo path work going in parallel where you can. Lane A stays on the videos.

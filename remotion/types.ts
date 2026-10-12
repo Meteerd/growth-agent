@@ -21,6 +21,10 @@ export interface Ad916Props {
   /** label burned in the corner, e.g. "Demo render" */
   badge?: string;
   endCardSec: number;
+  /** live captions (A18): word-timed, animated per frame in the winner's style; replaces the per-shot text */
+  captions?: import("../src/engine/video/captions").CaptionTrack;
+  /** sound effects (A18): short sounds at global times (cuts, the hook), gain in dB */
+  sfx?: { src: string; at: number; gainDb: number }[];
   /** still camera moves: "final" oversamples 8x (no pixel-rounding shake, heavy), "draft" 2x (fast, may shimmer) */
   motionQuality?: "draft" | "final";
   [key: string]: unknown;

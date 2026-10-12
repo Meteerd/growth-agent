@@ -327,6 +327,51 @@ export const BlueprintShot = z.object({
 });
 export type BlueprintShot = z.infer<typeof BlueprintShot>;
 
+/** additive (A18): how the winner's on-screen text looks and moves, read from the video (Gemini) and frames */
+export const CAPTION_FONTS = [
+  "tiktok_sans",
+  "montserrat",
+  "poppins",
+  "inter",
+  "anton",
+  "bebas",
+  "serif_dm",
+  "serif_playfair",
+  "handwritten",
+] as const;
+export const CaptionStyle = z.object({
+  font: z.enum(CAPTION_FONTS),
+  weight: z.enum(["bold", "black"]).optional(),
+  case: z.enum(["as_is", "upper", "lower"]),
+  /** font size as a percent of the frame width (TikTok auto captions ~6.5, Hormozi ~9) */
+  sizePct: z.number().min(3).max(16),
+  fill: z.string(),
+  /** the spoken word's highlight colour */
+  accent: z.string(),
+  stroke: z.object({ color: z.string(), widthPct: z.number().min(0).max(30) }).optional(),
+  shadow: z.boolean().optional(),
+  background: z.enum(["none", "box", "word_box"]),
+  backgroundColor: z.string().optional(),
+  position: z.enum(["upper", "middle", "lower"]),
+  animation: z.enum(["pop", "bounce", "slide", "typewriter", "fade"]),
+  /** words on screen at once (1 to 3 for live captions) */
+  wordsPerCaption: z.number().int().min(1).max(4),
+  /** the winner's hook title (large text over the first shot), when it has one */
+  hookTitle: z
+    .object({
+      font: z.enum(CAPTION_FONTS),
+      case: z.enum(["as_is", "upper", "lower"]),
+      sizePct: z.number().min(3).max(16),
+      fill: z.string(),
+      background: z.enum(["none", "box", "word_box"]),
+      backgroundColor: z.string().optional(),
+      position: z.enum(["upper", "middle", "lower"]),
+    })
+    .optional(),
+  notes: z.string().optional(),
+});
+export type CaptionStyle = z.infer<typeof CaptionStyle>;
+
 export const Blueprint = z.object({
   id: Id,
   evidenceId: Id,
@@ -354,6 +399,18 @@ export const Blueprint = z.object({
   frames: z.array(z.object({ t: z.number(), url: z.string() })),
   demo: z.boolean(),
   createdAt: Iso,
+  /** additive (A18): the winner's caption look and motion */
+  captionStyle: CaptionStyle.optional(),
+  /** additive (A18): the winner's sound (music genre/tempo/mood, sound effects, voice delivery), from Gemini */
+  audio: z
+    .object({
+      music: z.string(),
+      sfx: z.array(z.string()),
+      voice: z.string(),
+    })
+    .optional(),
+  /** additive (A18): Gemini's plain-language read of the whole video with sound */
+  watchNotes: z.string().optional(),
 });
 export type Blueprint = z.infer<typeof Blueprint>;
 
