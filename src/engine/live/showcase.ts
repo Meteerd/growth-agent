@@ -85,7 +85,12 @@ export async function exportShowcase(db: Db, runId: string): Promise<string> {
         if (seen.has(lang)) continue;
         seen.add(lang);
         if (fs.existsSync(path.join(renderDir(), `${brand.slug}-flagship-${lang}.mp4`)))
-          assets.push({ ...d, url: `/api/assets/showcase/${brand.slug}-flagship-${lang}.mp4`, width: 720, height: 1280 });
+          assets.push({
+            ...d,
+            url: `/api/assets/showcase/${brand.slug}-flagship-${lang}.mp4`,
+            width: 720,
+            height: 1280,
+          });
       }
     }
     reviews.push(...(await listReviews(db, c.id)));

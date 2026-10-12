@@ -6,7 +6,14 @@ import type { Db } from "../db/client";
 import { probe } from "../media/ffmpeg";
 import { composeMusic, soundEffect } from "../providers/elevenlabs";
 import { isLive } from "../providers/env";
-import { type CaptionTrack, type CapWord, HORMOZI, markEmphasis, premiumStyle, wordsForSilentText } from "../video/captions";
+import {
+  type CaptionTrack,
+  type CapWord,
+  HORMOZI,
+  markEmphasis,
+  premiumStyle,
+  wordsForSilentText,
+} from "../video/captions";
 import { buildVoiceTrack, globalWords, layoutVoice, speakShots, type VoiceLayout } from "./track";
 import { type BrandVoice, brandVoice } from "./voices";
 
@@ -135,7 +142,10 @@ export async function buildSoundtrack(
     // a thin outline disappears on bright or pastel backgrounds: at least 12% (or a box behind the words)
     stroke:
       base.background === "none"
-        ? { color: base.stroke?.color ?? "#000000", widthPct: Math.max(base.font === "jakarta" ? 7 : 12, base.stroke?.widthPct ?? 0) }
+        ? {
+            color: base.stroke?.color ?? "#000000",
+            widthPct: Math.max(base.font === "jakarta" ? 7 : 12, base.stroke?.widthPct ?? 0),
+          }
         : base.stroke,
     ...(ov.captions ?? {}),
   };
