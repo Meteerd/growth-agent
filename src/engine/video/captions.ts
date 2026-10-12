@@ -30,9 +30,12 @@ export interface CaptionTrack {
   style: CaptionStyle;
   words: CapWord[];
   /** where the captions sit over time (per shot, chosen to keep faces and the subject clear) */
-  regions: { t0: number; t1: number; region: CaptionStyle["position"] }[];
+  /** "top" = the band above a framed phone (16-30% of the height) */
+  regions: { t0: number; t1: number; region: CaptionStyle["position"] | "top" }[];
   /** the hook title over the first shot */
   title?: { text: string; t0: number; t1: number };
+  /** an on-screen call to action (pill in the accent colour), held at least 2 s */
+  cta?: { text: string; t0: number; t1: number };
 }
 
 export const HORMOZI: CaptionStyle = {
@@ -189,12 +192,19 @@ export function popScale(age: number, anim: CaptionStyle["animation"], emph = fa
   return 1;
 }
 
-function regionAt(tr: CaptionTrack, t: number): CaptionStyle["position"] {
+function regionAt(tr: CaptionTrack, t: number): CaptionStyle["position"] | "top" {
   return tr.regions.find((r) => t >= r.t0 && t < r.t1)?.region ?? tr.style.position;
 }
 
-function centreY(region: CaptionStyle["position"], blockH: number): number {
-  const c = region === "upper" ? H * 0.3 : region === "middle" ? H * 0.52 : SAFE.bottom - 90 - blockH / 2;
+function centreY(region: CaptionStyle["position"] | "top", blockH: number): number {
+  const c =
+    region === "top"
+      ? H * 0.17
+      : region === "upper"
+        ? H * 0.3
+        : region === "middle"
+          ? H * 0.52
+          : SAFE.bottom - 90 - blockH / 2;
   return Math.min(Math.max(c, SAFE.top + blockH / 2), SAFE.bottom - blockH / 2);
 }
 
@@ -212,7 +222,7 @@ function layoutGroup(
   g: CapGroup,
   style: CaptionStyle,
   font: opentype.Font,
-  region: CaptionStyle["position"],
+  region: CaptionStyle["position"] | "top",
   maxLines = 2,
 ) {
   let size = (style.sizePct / 100) * W;
@@ -279,6 +289,7 @@ export function captionFrameSvg(tr: CaptionTrack, groups: CapGroup[], t: number)
   const parts: string[] = [];
   // hook title: words pop in over the first ~0.6 s, then it breathes
   if (tr.title && t >= tr.title.t0 && t < tr.title.t1) parts.push(titleSvg(tr, t));
+  if (tr.cta && t >= tr.cta.t0 && t < tr.cta.t1) parts.push(ctaSvg(tr, t));
   const g = groups.find((x) => t >= x.t0 && t < x.t1);
   if (g) {
     const region = regionAt(tr, g.t0);
@@ -344,6 +355,27 @@ export function captionFrameSvg(tr: CaptionTrack, groups: CapGroup[], t: number)
   }
   if (!parts.length) return "";
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">${parts.join("")}</svg>`;
+}
+
+/** The on-screen CTA: one line in an accent pill, lower third, springs in, gentle pulse. */
+function ctaSvg(tr: CaptionTrack, t: number): string {
+  const c = tr.cta!;
+  const font = fontFor("jakarta", "black");
+  let size = 64;
+  let w = font.getAdvanceWidth(c.text, size);
+  while (w > 760 && size > 36) {
+    size -= 4;
+    w = font.getAdvanceWidth(c.text, size);
+  }
+  const age = t - c.t0;
+  const s = spring(age, 0.8) * (1 + 0.02 * Math.sin(Math.max(0, age - 0.4) * Math.PI * 2));
+  const cy = H * 0.72;
+  const bb = font.getPath(c.text, 0, 0, size).getBoundingBox();
+  const x = W / 2 - (bb.x1 + bb.x2) / 2;
+  const d = font.getPath(c.text, x, cy + size * 0.35, size).toPathData(1);
+  const pw = w + 90;
+  const ph = size * 1.7;
+  return `<g transform="translate(${W / 2} ${cy}) scale(${s.toFixed(4)}) translate(${-W / 2} ${-cy})"><rect x="${(W - pw) / 2}" y="${(cy - ph / 2).toFixed(1)}" width="${pw.toFixed(1)}" height="${ph.toFixed(1)}" rx="${(ph / 2).toFixed(1)}" fill="${esc(tr.style.accent)}"/><path d="${d}" fill="#FFFFFF"/></g>`;
 }
 
 function titleSvg(tr: CaptionTrack, t: number): string {

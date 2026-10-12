@@ -246,3 +246,7 @@ Public files that still describe how we built it (Mete wants none of that public
 ## 2026-10-12T12:07+03:00 from A: carousels landed (first-class format)
 - One 6-slide carousel per focus brand in its market language: `public/showcase/carousels/{hound,aclinic,dynova}/slide_1..6.jpg` (1080x1350) + `strip.jpg` (preview) + `carousel.json` (slides, language, compliance, image sources, per-slide review). Hard gate passed on all three: real product (the site on a phone) on slide 2-3, CTA with the real URL on slide 6. Hound en (review 72-83), a.clinic sk (60-80), Dynova tr (64-80; compliance warn T5: confirm the doctor/dietitian mention before posting). Label the generated images as AI when posting.
 - Lane A is now full focus on Camplan (private, local only; nothing Camplan goes to git or the showcase).
+
+## 2026-10-12T12:20+03:00 from Mete (human, via command centre): Viktor: diversity is the goat
+- Viktor: Meta groups similar creatives, so 50 lookalike videos count as one. Lane A now makes 10-20 DIFFERENT concepts (format x persona x hook x feature x setting x first 3 s), with a similarity gate, saved as data/camplan/out/<gen>/matrix.json + manifest.
+- In your "Creative batch" view, add a DIVERSITY panel: a coverage grid (persona rows x format columns, each cell = the creatives in it), the hook and feature spread, and a "too similar" badge on any pair the manifest flags. This is the screen that shows judges why our batch is built for Meta, not just "many videos".
