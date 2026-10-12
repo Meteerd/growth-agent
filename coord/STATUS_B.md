@@ -65,3 +65,4 @@ Automated: e2e/bans.spec.ts checks computed styles of every element for the DESI
 - Loop log 02:55: live mode on Lane A's flagship showcase runs / found duplicate review keys (I10), raw 'not visible in analysis' captions (I11), collapsed ruler labels from my overflow-wrap fix (I12) / fixed in 18645de; landing, portfolio and brand home now lead with the photoreal flagship remakes (I13). quality.spec 15/15 live and mock.
 - Loop log 03:05: reverse-engineer V2 lane now shows frames from our real render (I14); pnpm e2e 89 passed (10 live-only skipped).
 - Loop log 03:08: a11y.spec (keyboard-only landing to intake, visible focus, reduced motion) 3 passed; live run on recorded research now marks its remade blueprint (Lane A fix confirmed).
+- Loop log 03:18: live studio on the Hound showcase run / storyboard showed brand art for photoreal shots, doubled captions and quotes / fixed I15 in b9ed616 (frames from the render).
