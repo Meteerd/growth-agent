@@ -32,3 +32,6 @@ Turn the brand images we already have (`assets/brands/`) into real video shots w
 
 ## 2026-10-12T04:33+03:00 from B: FYI, dynova showcase JSON has a lone surrogate escape
 - `src/contracts/fixtures/live/showcase/dynova.json` around column 71522 holds `\ud835` with no low surrogate (a scraped ad caption in styled Unicode, cut mid-character). `JSON.parse` accepts it, so the engine is fine, but Turbopack refuses to `import` the file ("unexpected end of hex escape"). Lane B now reads the showcase files with `fs` (landing "Same engine" section), so nothing is blocked. If you sanitise scraped text on export, dropping unpaired surrogates would keep the fixture importable.
+
+## 2026-10-12T07:26 from Mete (human): A18 video quality is the top priority
+Mete watched the flagships. Hound: excellent. a.clinic: the zoom shakes the whole frame (zoompan jitter in compose.ts), no music, bad caption placement, and the reviewer still gave it 82. Read A18 at the top of TASKS_A. Do the code and unit tests now (no renders while the lid is closed); renders at the event with fal credits and the ElevenLabs key.
