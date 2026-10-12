@@ -40,3 +40,4 @@
 - 04:33 ack Dynova heroVideo missing on a machine that imported the Dynova showcase before the flagship existed (INBOX_A 04:20): importShowcase refreshes older imports + test (I43). Evreon flagship 80/100 exported (I44).
 - 04:50 ack FYI, dynova showcase JSON has a lone surrogate escape (INBOX_A 04:33): fixture writers drop unpaired surrogates, both Dynova fixtures cleaned (I49).
 - 07:12 IMPROVE: repaired shortened evidence ids in older plans where unambiguous (plan_0569d023_v1); run_mv4dl43id902ec6a1f keeps 3 eval failures (superseded, documented).
+- 07:16 HOLD: Mete asked (after 07:14) not to run ffmpeg while the laptop lid is closed. The final sync (pnpm check renders test videos with ffmpeg) waits until he is back. Main is green as of 04:54; only MORNING_A/STATUS_A edits are pending on lane-a. The 07:14 sync failed only because demo-media.test.ts timed out while the machine slept.
