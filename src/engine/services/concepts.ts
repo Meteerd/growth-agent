@@ -145,7 +145,9 @@ export async function renderConcept(
   if (!isVideo(c)) throw new HttpError(400, "not_video", "This concept has no shots to render");
   const brand = (await getBrand(db, c.brandId))!;
   const emit = emitter(db, c, o.phase ?? "production", o.emit);
-  if (c.shots.some((s) => !s.keyframeAssetId)) c = await generateKeyframes(db, c.id, { emit });
+  // only the shots without a frame get one (never overwrite frames that exist)
+  for (const s of c.shots.filter((x) => !x.keyframeAssetId))
+    c = await generateKeyframes(db, c.id, { emit, shotIdx: s.idx });
   await upsertConcept(db, { ...c, status: "rendering" });
   await emit("log", `Rendering ${c.title} (${tier})`, { refId: c.id });
   try {
