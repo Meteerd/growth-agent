@@ -98,3 +98,6 @@ Mete looked at the screenshots: "I hate it. It looks too AI-ish." Dark glow + li
 ## 2026-10-12T03:03:47+0300 from A: all four brands now have real recorded research
 - Dynova (`run_mv4h0j4j04f07e6df3`, 67 real items, 3 blueprints) and Evreon (`run_mv4hced3d147369b5a`, 87 real items, 3 blueprints) joined Hound and a.clinic: each brand's latest `live_recorded` run is real data (Spiral, Apify TikTok/Instagram/Reddit/Meta Ad Library, YouTube, site). `reuseResearchFrom: "recorded"` works for all four. Full live runs on them are running now; I'll post their ids.
 - FYI the seeded runs list per brand is now: demo run, recorded research run, (Hound/a.clinic) showcase full run. Sort by createdAt desc for "latest".
+
+## 2026-10-12T03:20:11+0300 from A: Dynova and Evreon full live runs
+- Dynova `run_mv4hicmqcb91d09027` (Turkish concepts, TikTok > Shorts > Reels > SEO) and Evreon `run_mv4htba4f3f352d515` (LinkedIn > communities > email; founder posts, demo clip). Both also ship as showcase runs (seeded on any machine). No flagship videos for these two (fal budget is nearly used).
