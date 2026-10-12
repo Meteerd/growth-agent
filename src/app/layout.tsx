@@ -1,17 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { preload } from "react-dom";
 import { PresentMode } from "@/components/shell/PresentMode";
 import { Providers } from "@/components/shell/Providers";
 import { Toaster } from "@/components/ui/Toast";
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/client/product";
 import "./globals.css";
-
-const sans = Inter_Tight({
-  variable: "--nf-sans",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
-});
-const mono = JetBrains_Mono({ variable: "--nf-mono", subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
   title: { default: PRODUCT_NAME, template: `%s / ${PRODUCT_NAME}` },
@@ -21,8 +14,11 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#F3F1EC", colorScheme: "light" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  // fonts are self-hosted in public/fonts so the demo works with the venue Wi-Fi down
+  for (const f of ["inter-tight-latin", "jetbrains-mono-latin"])
+    preload(`/fonts/${f}.woff2`, { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+    <html lang="en">
       <body>
         <PresentMode />
         <Providers>{children}</Providers>

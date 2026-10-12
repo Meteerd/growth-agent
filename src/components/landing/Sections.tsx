@@ -3,6 +3,7 @@ import houndRecorded from "@/contracts/fixtures/live/runs/hound.json";
 import houndShowcase from "@/contracts/fixtures/live/showcase/hound.json";
 import { logoOnDark } from "@/lib/client/brandAssets";
 import { countryName, VERTICAL_LABELS } from "@/lib/client/format";
+import { localMedia } from "@/lib/client/media";
 import { PRODUCT_NAME } from "@/lib/client/product";
 import { displayHost } from "@/lib/client/url";
 import { ExampleStrip, type Winner } from "./ExampleStrip";
@@ -39,7 +40,7 @@ function winners(): Winner[] {
       id: e.id,
       source: e.source,
       title: e.title,
-      thumbnailUrl: e.thumbnailUrl!,
+      thumbnailUrl: localMedia(e.thumbnailUrl!),
       url: e.url,
       views: e.metrics.views,
       outlier: e.metrics.outlierScore,
@@ -82,7 +83,7 @@ function featured(): FeaturedData | undefined {
       title: ev.title,
       author: ev.author,
       url: ev.url,
-      thumbnailUrl: ev.thumbnailUrl,
+      thumbnailUrl: localMedia(ev.thumbnailUrl),
       views: ev.metrics.views,
       outlier: ev.metrics.outlierScore,
     },
