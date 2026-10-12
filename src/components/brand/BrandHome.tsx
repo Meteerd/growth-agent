@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { DatasetBadge } from "@/components/run/DatasetBadge";
 import { RunStatusBadge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Panel, PanelHeader } from "@/components/ui/Panel";
@@ -294,9 +295,11 @@ function Runs({ brand }: { brand: Brand }) {
         </p>
       ) : (
         <ul className="flex flex-col p-2" data-testid="runs">
-          {runs.map((r) => (
-            <RunRow key={r.id} run={r} />
-          ))}
+          {[...runs]
+            .sort((a, b) => (b.createdAt ?? "").localeCompare(a.createdAt ?? ""))
+            .map((r) => (
+              <RunRow key={r.id} run={r} />
+            ))}
         </ul>
       )}
     </Panel>
@@ -311,12 +314,19 @@ function RunRow({ run: r }: { run: Run }) {
         className="group flex items-center justify-between gap-3 rounded-card px-3 py-3 transition-colors hover:bg-glass"
       >
         <div className="min-w-0">
-          <p className="truncate font-mono text-[12px] text-bone">{r.id}</p>
-          <p className="mt-0.5 font-mono text-[11px] text-bone-3">
-            {PHASE_LABELS[r.phase]} / {r.startedAt ? timeAgo(r.startedAt) : "queued"} / {formatUsd(r.costUsd)}
+          <p className="truncate text-[13px] text-bone">
+            {r.kind === "research_only" ? "Research" : "Full run"}
+            <span className="ml-2 font-mono text-[11px] text-bone-3">{r.id}</span>
+          </p>
+          <p className="mt-0.5 text-[11.5px] text-bone-3">
+            {PHASE_LABELS[r.phase]} / {r.startedAt ? timeAgo(r.startedAt) : "queued"} /{" "}
+            <span className="font-mono">{formatUsd(r.costUsd)}</span>
           </p>
         </div>
-        <RunStatusBadge status={r.status} />
+        <div className="flex shrink-0 flex-col items-end gap-1">
+          <RunStatusBadge status={r.status} />
+          <DatasetBadge run={r} />
+        </div>
       </Link>
     </li>
   );

@@ -7,6 +7,7 @@
 - Blockers: none
 - Next 3: studio and packs against the flagship showcase runs (live) -> mobile pass of the reverse-engineer view -> keep the e2e and screenshots current
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls; live checks run with LIVE_PROVIDERS empty and NEXUS_TEST=1)
+- ack all four brands now have real recorded research (INBOX_B 03:03): brand home labels each run (demo, live data, live) and lists newest first.
 - ack re "concepts lose blueprintId on runs that reuse research": fixed (INBOX_B 02:47).
 - ack Hound flagship landed (INBOX_B 02:19) and a.clinic flagship landed too (INBOX_B 02:33): heroVideo used on landing, portfolio and brand home.
 - ack A17 flagship remakes are rendering now (INBOX_B 01:33): heroVideo on brand home and portfolio, studio labels shot source.
