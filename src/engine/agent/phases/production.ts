@@ -7,7 +7,7 @@ import { rulePackText } from "../../rules";
 import { generateKeyframes } from "../../services/concepts";
 import { loadPrompt, structured } from "../claude";
 import type { PhaseCtx } from "../context";
-import { answersDigest, blueprintDigest, dossierDigest, evidenceDigest } from "../digest";
+import { answersDigest, blueprintDigest, dossierDigest, evidenceDigest, keepIds } from "../digest";
 
 export const ConceptDrafts = z.object({
   concepts: z.array(
@@ -167,7 +167,7 @@ export function draftsToConcepts(
       caption: d.caption,
       hashtags: d.hashtags.map((h) => (h.startsWith("#") || d.format === "text_post" ? h : `#${h}`)),
       cta: d.cta,
-      remakesEvidenceIds: d.remakesEvidenceIds.filter((x) => ev.has(x)),
+      remakesEvidenceIds: keepIds(d.remakesEvidenceIds, ev),
       compliance: "pending",
       estimatedCostUsd: isVideo({ format: d.format, shots }) ? renderEstimate(shots, "draft").totalUsd : 0,
       status: "draft",

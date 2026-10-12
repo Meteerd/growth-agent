@@ -52,6 +52,11 @@ if (plan) {
   // a skipped question must never be cited as something the operator said
   const skipped = qs.filter((q) => q.skipped || q.answer === undefined).map((q) => q.id);
   const planText = `${plan.summary} ${plan.channels.map((c) => c.rationale).join(" ")} ${plan.notNow.map((n) => n.reason).join(" ")}`;
+  const cited = [...planText.matchAll(/\bev_[A-Za-z0-9_]*[A-Za-z0-9]/g)].map((m) => m[0]).filter((i) => !ids.has(i));
+  check(
+    cited.length === 0,
+    `evidence ids quoted in the plan text resolve${cited.length ? ` (${[...new Set(cited)].slice(0, 3).join(", ")})` : ""}`,
+  );
   const misattributed = skipped.filter((id) => new RegExp(`you said[^.]*\\(?${id}`, "i").test(planText));
   check(
     misattributed.length === 0,

@@ -16,7 +16,7 @@ import {
 import { rulePackText } from "../../rules";
 import { loadPrompt, structured } from "../claude";
 import type { PhaseCtx } from "../context";
-import { blueprintDigest, dossierDigest, evidenceDigest } from "../digest";
+import { blueprintDigest, dossierDigest, evidenceDigest, keepIds, resolveCitations } from "../digest";
 
 export const QuestionDrafts = z.object({
   questions: z.array(
@@ -79,8 +79,8 @@ export async function consult(ctx: PhaseCtx): Promise<void | "pause"> {
       order: i + 1,
       kind: d.kind,
       prompt: d.prompt,
-      why: d.why,
-      evidenceIds: d.evidenceIds.filter((x) => ids.has(x)),
+      why: resolveCitations(d.why, ids),
+      evidenceIds: keepIds(d.evidenceIds, ids),
       options: d.options,
       scale: d.scale,
       defaultAnswer: d.defaultAnswer,
