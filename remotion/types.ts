@@ -5,6 +5,8 @@ export interface AdShot {
   clipSrc?: string;
   durationSec: number;
   text?: string;
+  /** where the caption sits (A18): "upper" third by default, moved when it would cover the subject */
+  captionRegion?: "upper" | "middle" | "lower";
 }
 
 export interface Ad916Props {

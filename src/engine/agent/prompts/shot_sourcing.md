@@ -17,6 +17,7 @@ Keep one consistent look across the cut. If most shots use the brand's illustrat
 - Shot 1 shows the hook or the pain in its first second (the overflowing stack, the dog at the door, the question on a face): never an empty, static scene.
 - A screen in the frame (phone, laptop, monitor) is never blank and never a placeholder: set `imageRef` to the brand image that belongs on it (app screen, product page, logo) and describe the screen in `imagePrompt`. If no brand image fits, show the screen at an angle or out of focus rather than an invented UI.
 - Everything that carries the message (icons, the product, a document, the screen) sits fully inside the frame with a margin, above the lower 30% where the caption goes. Nothing important is cut at an edge.
+- `captionRegion`: where the on-screen caption goes so it never covers a face, the product or the screen: "upper" (the default, upper third), "middle", or "lower" (just above the platform's bottom bar). Pick it from where the subject is in the frame you plan.
 - The action matches the voiceover of that shot ("see it in a demo" shows an open laptop with the demo, not a closed one).
 
 Keep the brand's rule pack: no before/after bodies, no distressed animals, no medicine packaging.

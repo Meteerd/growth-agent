@@ -34,28 +34,62 @@ describe("Ad916 compositor", () => {
     );
     expect(r.width).toBe(1080);
     expect(Math.abs(r.durationSec - 6)).toBeLessThan(0.2);
-    // sample inside the caption box during the clip: it must be the dark caption background, not the clip color
+    // during the clip, the caption band (upper third) must show the native caption: white fill and black outline
+    const { captionPhrases, captionTop } = await import("@/engine/video/compose");
+    const ph = captionPhrases("Caption on a clip", 3)[0]!;
+    const top = captionTop("upper", ph);
     const f = await extractFrame(out, 1.5, path.join(dir, "f.png"), 1080);
     const { data, info } = await sharp(f).raw().toBuffer({ resolveWithObject: true });
-    const y = 1920 - 470 - 40;
-    const x = 200;
-    const i = (y * info.width + x) * info.channels;
-    const lum = (data[i] + data[i + 1] + data[i + 2]) / 3;
-    expect(lum).toBeLessThan(90);
+    let min = 255;
+    let max = 0;
+    for (let y = top; y < top + ph.lines.length * ph.lh; y += 2)
+      for (let x = 100; x < 900; x += 2) {
+        const i = (y * info.width + x) * info.channels;
+        const lum = (data[i]! + data[i + 1]! + data[i + 2]!) / 3;
+        min = Math.min(min, lum);
+        max = Math.max(max, lum);
+      }
+    expect(max).toBeGreaterThan(230);
+    expect(min).toBeLessThan(40);
     expect((await probe(out)).hasAudio).toBe(true);
     expect(fs.existsSync(out)).toBe(true);
   }, 60_000);
 });
 
-describe("caption fitting", () => {
-  it("never truncates long captions (Slovak listicle line) and shrinks the font instead", async () => {
-    const { fitCaption } = await import("@/engine/video/compose");
+describe("native captions (A18)", () => {
+  it("never truncates: a long line becomes consecutive 2-line phrases that cover the shot", async () => {
+    const { captionPhrases } = await import("@/engine/video/compose");
     const t =
       "4 kroky: dotazník · konzultácia s lekárom · ePredpis, ak je vhodný · pravidelné kontroly so starostlivým tímom a odpovede na otázky";
-    const f = fitCaption(t);
-    expect(f.lines.join(" ")).toBe(t);
-    expect(f.size).toBeLessThan(58);
-    expect(fitCaption("Short hook").size).toBe(58);
-    expect(fitCaption("Starostlivosť o váhu bez čakárne 🩺").lines.join(" ")).toBe("Starostlivosť o váhu bez čakárne");
+    const ph = captionPhrases(t, 6);
+    expect(ph.length).toBeGreaterThan(1);
+    expect(ph.every((p) => p.lines.length <= 2)).toBe(true);
+    expect(ph.map((p) => p.lines.join(" ")).join(" ")).toBe(t);
+    expect(ph[0]!.t0).toBe(0);
+    expect(ph.at(-1)!.t1).toBe(6);
+    for (let i = 1; i < ph.length; i++) expect(ph[i]!.t0).toBeCloseTo(ph[i - 1]!.t1);
+    const short = captionPhrases("Short hook", 3);
+    expect(short).toHaveLength(1);
+    expect(short[0]!.size).toBe(76);
+    expect(captionPhrases("Starostlivosť o váhu bez čakárne 🩺", 3)[0]!.lines.join(" ")).toBe(
+      "Starostlivosť o váhu bez čakárne",
+    );
+    expect(captionPhrases("", 3)).toEqual([]);
+  });
+
+  it("every region stays outside the TikTok/Reels UI zones", async () => {
+    const { captionPhrases, captionTop, UI_SAFE } = await import("@/engine/video/compose");
+    for (const text of ["Short", "A caption that needs two full lines on the screen to be read"])
+      for (const region of ["upper", "middle", "lower"] as const) {
+        const ph = captionPhrases(text, 3)[0]!;
+        const top = captionTop(region, ph);
+        expect(top).toBeGreaterThanOrEqual(UI_SAFE.top);
+        expect(top + ph.lines.length * ph.lh).toBeLessThanOrEqual(UI_SAFE.bottom);
+      }
+    expect(UI_SAFE.bottom).toBeLessThanOrEqual(1920 * 0.8);
+    expect(UI_SAFE.right).toBeLessThanOrEqual(1080 * 0.85);
+    const up = captionPhrases("Hook", 2)[0]!;
+    expect(captionTop("upper", up)).toBeLessThan(captionTop("middle", up));
+    expect(captionTop("middle", up)).toBeLessThan(captionTop("lower", up));
   });
 });

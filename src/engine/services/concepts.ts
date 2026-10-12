@@ -272,7 +272,13 @@ export async function renderConcept(
       if (!a || !urlToFile(a.url) || !fs.existsSync(urlToFile(a.url)!))
         throw new Error(`keyframe missing for shot ${s.idx + 1}`);
       const clip = s.clipAssetId ? await getAsset(db, s.clipAssetId) : null;
-      shots.push({ src: a.url, clipSrc: clip?.url, durationSec: s.durationSec, text: s.onScreenText });
+      shots.push({
+        src: a.url,
+        clipSrc: clip?.url,
+        durationSec: s.durationSec,
+        text: s.onScreenText,
+        captionRegion: s.captionRegion,
+      });
     }
     const demo =
       shots.length > 0 &&
