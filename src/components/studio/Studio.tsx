@@ -114,7 +114,7 @@ function ConceptCard({ c, active, onSelect }: { c: Concept; active: boolean; onS
       <p className="font-medium text-bone text-ui leading-snug">{c.title}</p>
       <p className="line-clamp-2 font-display text-[15px] text-bone-2 leading-snug">&ldquo;{unquote(c.hook)}&rdquo;</p>
       <div className="flex flex-wrap items-center gap-1.5">
-        {c.blueprintId && !c.variantOf && <Badge tone="signal">Remake</Badge>}
+        {c.blueprintId && !c.variantOf && <Badge tone="ink">Remake</Badge>}
         {c.variantOf && <Badge tone="cyan">Variant {c.aspect}</Badge>}
         <Badge>{c.status}</Badge>
         <span className="ml-auto font-mono text-[11px] text-bone-3">

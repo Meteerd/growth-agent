@@ -105,7 +105,7 @@ export function EvidenceCard({
         </dl>
         {(tier || outlier) && (
           <div className="flex flex-wrap gap-1.5">
-            {outlier && <Badge tone="signal">{m.outlierScore!.toFixed(1)}x outlier</Badge>}
+            {outlier && <Badge tone="ink">{m.outlierScore!.toFixed(1)}x outlier</Badge>}
             {tier === "proven" && <Badge tone="pass">Proven 30d+</Badge>}
             {tier === "testing" && <Badge tone="warn">Testing</Badge>}
           </div>

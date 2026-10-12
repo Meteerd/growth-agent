@@ -113,7 +113,7 @@ export function Kit() {
           <RunStatusBadge status="waiting_input" />
           <RunStatusBadge status="done" />
           <RunStatusBadge status="failed" />
-          <Badge tone="signal">14.2x outlier</Badge>
+          <Badge tone="ink">14.2x outlier</Badge>
           <Badge tone="pass">Proven 30d+</Badge>
           <Badge tone="violet">Blueprint</Badge>
           <Badge tone="cyan">Remake</Badge>

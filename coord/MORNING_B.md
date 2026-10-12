@@ -72,6 +72,7 @@ Other things that exist: Cmd+K palette (header "Jump to"), presentation mode (`?
 - Third-party frames: analysed ad frames live under `/api/assets/frames/...` only on the machine that ran the analysis (Lane A's). Elsewhere every frame falls back to a dark card that describes the shot; the landing falls back to the real post thumbnails.
 
 ## Known issues
+- **If pages start reloading in a loop under `pnpm dev`, restart `pnpm dev`.** Seen once tonight on a dev server that had been running through many merges and installs (`scripts/sync.sh`); a fresh server never loops (measured: one HMR connect per page, mock and live; code edits and `next typegen` while serving do not trigger it). Start the demo from a fresh `pnpm dev` and do not sync while presenting.
 - Lane A's full-pipeline tests were close to the 30 s timeout on this laptop under full parallelism; Lane A raised the timeouts at 01:16. If `pnpm check` ever times out there, `VITEST_MAX_WORKERS=3 pnpm check` passes.
 - Mock mode resets on a full reload by design (shortcut noted in `src/lib/client/mock/client.ts`).
 - The flagship renders (A17) appear as the brand-home hero video and in the studio player once Lane A has rendered them; until then the studio shows keyframes or labelled brand art.
