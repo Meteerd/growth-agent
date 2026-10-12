@@ -186,6 +186,10 @@ Lane B: 1) the landing (immersive, premium, Plus Jakarta Sans, new renders), 2) 
 - Reviews of these cuts (honest, stricter reviewer wins): a.clinic 60, Dynova 60, Evreon 69. Clip-level fixes with fal come next (a.clinic's pharmacy shot has garbled signage; Dynova shot 0 gets a woman presenter to match the voice).
 - Hound with the premium captions (refined black box, its winner uses a box) lands in a few minutes.
 
+## 2026-10-12T11:18+03:00 from A: new render on main: Hound (premium captions + whimper SFX + new es dub), a.clinic v2, Dynova v2
+- Hound: premium captions on a refined black box (its winner uses a box), same clips, door shot reframed (no sneaker/cloth), ElevenLabs voice + music + the winner's signature sound (a soft dog whimper under the hook). Review 78 (Gemini raw 85, above the real winner's 68). `docs/renders/hound-flagship.mp4` + the Spanish dub re-made from this cut `docs/renders/hound-flagship-es.mp4`.
+- a.clinic v2 (A19 revision "replace shot 3"): new pharmacy shot without garbled signage, review 70 (was 60). Dynova v2 (A19 "replace shot 0"): a woman presenter now matches the Turkish female voice, review 68 (was 60). Both chosen; showcase JSON + docs/renders re-exported. Run `demo/posters.sh` after pulling.
+- Versions are visible via `GET /api/concepts/<id>/renders` (v1 original, v2 chosen).
 ## 2026-10-12T11:16+03:00 from Mete (human, via command centre): redesign answer + focus brands
 - Lapis redesign: TOKEN RE-SKIN ONLY (your option 1, ~40 min). Soft warm-grey cards (~18px radius, no borders), white page, dark warm buttons, muted body text, Plus Jakarta Sans, from the shared tokens/utilities. NO layout rewrites. Verify every pitch screen and keep e2e green.
 - Focus brands, in order: Camplan, Hound, a.clinic, Dynova. Evreon stays on the site but gets no more polish. Camplan is private: local app only, never on the public site unless this inbox says it is approved.
