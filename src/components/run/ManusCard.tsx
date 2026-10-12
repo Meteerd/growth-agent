@@ -3,25 +3,40 @@
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/Badge";
 import type { Evidence } from "@/contracts";
+import MANUS from "@/lib/client/manus-tasks.json";
 import { useEvidence } from "@/lib/client/queries";
 import { landscapeLead, manusRows } from "./manus";
 import { useRunCtx } from "./RunContext";
 
 const byTag = (items: Evidence[], tag: string) => items.find((e) => e.tags?.includes(tag));
 
+type Recorded = {
+  taskUrl: string;
+  state: string;
+  summary?: string;
+  competitors?: { name: string; note: string }[];
+  communities?: { name: string; note: string }[];
+};
+const research = (brandId?: string) =>
+  (MANUS.research as Record<string, Recorded>)[brandId?.replace(/^brand_/, "") ?? ""];
+
 /** Manus deep research: landscape, competitors and community rules, each fact sourced, with a link to the real task. */
 export function ManusCard() {
   const { run, events, revealed, runId, liveStatus } = useRunCtx();
   const { data: evidence } = useEvidence(runId);
   const finished = liveStatus === "done" || liveStatus === "failed";
-  const items = (evidence ?? []).filter((e) => e.source === "manus_research" && (finished || revealed.has(e.id)));
+  const items = (evidence ?? []).filter(
+    (e) => e.source === "manus_research" && !e.demo && (finished || revealed.has(e.id)),
+  );
   const calls = events.filter((e) => (e.data as { provider?: string } | undefined)?.provider === "manus");
-  if (!items.length && !calls.length && !run?.manusTaskUrl) return null;
-  const done = items.length > 0 || calls.some((e) => e.type === "tool_result");
-  const url = run?.manusTaskUrl ?? items.find((e) => e.url)?.url;
-  const landscape = landscapeLead(byTag(items, "landscape")?.text);
-  const competitors = manusRows(byTag(items, "competitors")?.text);
-  const communities = manusRows(byTag(items, "communities")?.text);
+  // brands whose recorded research ran without Manus got a separate real Manus task on 12 Oct (demo/manus.ts)
+  const extra = finished && !items.length ? research(run?.brandId) : undefined;
+  if (!items.length && !calls.length && !run?.manusTaskUrl && !extra) return null;
+  const done = extra ? extra.state === "done" : items.length > 0 || calls.some((e) => e.type === "tool_result");
+  const url = extra?.taskUrl ?? run?.manusTaskUrl ?? items.find((e) => e.url)?.url;
+  const landscape = extra ? landscapeLead(extra.summary) : landscapeLead(byTag(items, "landscape")?.text);
+  const competitors = extra?.competitors ?? manusRows(byTag(items, "competitors")?.text);
+  const communities = extra?.communities ?? manusRows(byTag(items, "communities")?.text);
   const summary = [
     landscape && "the channels buyers use",
     competitors.length && `${competitors.length} competitors`,

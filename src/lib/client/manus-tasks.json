@@ -1,0 +1,42 @@
+{
+  "research": {
+    "dynova": {
+      "taskId": "eEWu4CdQDEQGnGW9Hm946o",
+      "taskUrl": "https://manus.im/app/eEWu4CdQDEQGnGW9Hm946o",
+      "startedAt": "2026-10-12T06:52:52.500Z",
+      "state": "running"
+    },
+    "evreon": {
+      "taskId": "SSX4iUHYkXZNTAPR868qW6",
+      "taskUrl": "https://manus.im/app/SSX4iUHYkXZNTAPR868qW6",
+      "startedAt": "2026-10-12T06:52:55.707Z",
+      "state": "running"
+    }
+  },
+  "landings": {
+    "pack_1d68be0a_1": {
+      "taskId": "m8AmRpDsXfA82WupCBzruE",
+      "taskUrl": "https://manus.im/app/m8AmRpDsXfA82WupCBzruE",
+      "startedAt": "2026-10-12T06:53:02.941Z",
+      "state": "running"
+    },
+    "pack_1e6575ad_1": {
+      "taskId": "QyuubjsdCietBoxDE9VJhx",
+      "taskUrl": "https://manus.im/app/QyuubjsdCietBoxDE9VJhx",
+      "startedAt": "2026-10-12T06:53:05.192Z",
+      "state": "running"
+    },
+    "pack_91d09027_1": {
+      "taskId": "ELrt8tQJf89VzpgzomDi5X",
+      "taskUrl": "https://manus.im/app/ELrt8tQJf89VzpgzomDi5X",
+      "startedAt": "2026-10-12T06:53:07.024Z",
+      "state": "running"
+    },
+    "pack_f352d515_1": {
+      "taskId": "ZcKYphJ7HYprgqT5DXvkA3",
+      "taskUrl": "https://manus.im/app/ZcKYphJ7HYprgqT5DXvkA3",
+      "startedAt": "2026-10-12T06:53:10.219Z",
+      "state": "running"
+    }
+  }
+}

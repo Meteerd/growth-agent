@@ -21,6 +21,9 @@ export async function GET(req: Request) {
   }
   if (src.protocol !== "https:" || !HOSTS.test(src.hostname)) return new Response(null, { status: 400 });
 
+  // the public read-only build sends the browser to the CDN instead of filling its disk on demand
+  if (process.env.NEXT_PUBLIC_READONLY === "1") return Response.redirect(src, 302);
+
   const file = path.join(DIR, createHash("sha1").update(raw).digest("hex"));
   const ok = (body: Uint8Array, type: string) =>
     new Response(body as BodyInit, { headers: { "content-type": type, "cache-control": "public, max-age=86400" } });

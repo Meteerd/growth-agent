@@ -18,7 +18,7 @@ describe("localMedia", () => {
     expect(out.evidence[0].thumbnailUrl).toMatch(/^\/thumb\?u=https%3A/);
     expect(out.evidence[0].n).toBe(3);
     expect(out.bp.evidence.coverUrl).toMatch(/^\/thumb\?u=http%3A/);
-    expect(out.bp.frames[0].url).toBe("/api/assets/frames/0.jpg");
+    expect(out.bp.frames[0].url).toBe("/frames/0.jpg");
     expect(localizeMedia(null)).toBeNull();
   });
 });

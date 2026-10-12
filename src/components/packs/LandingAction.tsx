@@ -6,6 +6,7 @@ import { toast } from "@/components/ui/Toast";
 import type { PublishPack } from "@/contracts";
 import recorded from "@/contracts/fixtures/live/manus/landing_status.json";
 import { ApiRequestError, getClient } from "@/lib/client/api";
+import MANUS from "@/lib/client/manus-tasks.json";
 import { qk } from "@/lib/client/queries";
 
 // the recorded real Manus landing task (Hound, unpublished) stands in on Hound's TikTok pack until one is built for it
@@ -17,19 +18,29 @@ export function LandingAction({ pack, runId }: { pack: PublishPack; runId: strin
   const [busy, setBusy] = useState(false);
   const [unavailable, setUnavailable] = useState<string>();
   const url = pack.landingUrl;
+  const task = (MANUS.landings as Record<string, { taskUrl: string; state: string; title?: string }>)[pack.id];
   const landing =
     url && /^https?:\/\//.test(url)
-      ? { url, title: undefined, earlier: false }
-      : pack.brandId === RECORDED_BRAND && pack.platform === "tiktok"
-        ? { url: recorded.taskUrl, title: recorded.website.title, earlier: pack.id !== recorded.packId }
-        : undefined;
+      ? { url, title: task?.title, earlier: false, building: false }
+      : task
+        ? { url: task.taskUrl, title: task.title, earlier: false, building: task.state === "running" && !task.title }
+        : pack.brandId === RECORDED_BRAND && pack.platform === "tiktok"
+          ? {
+              url: recorded.taskUrl,
+              title: recorded.website.title,
+              earlier: pack.id !== recorded.packId,
+              building: false,
+            }
+          : undefined;
   if (landing)
     return (
       <div className="flex flex-col gap-1 rounded-card border border-line bg-raised-2 p-3" data-testid="pack-landing">
         <p className="mono-label">Landing page / built by Manus</p>
         {landing.title && <p className="font-medium text-bone text-ui">{landing.title.replace(" \u2014 ", ": ")}</p>}
         <p className="text-[12px] text-bone-2 leading-snug">
-          Manus built a matching landing page in its own workspace
+          {landing.building
+            ? "Manus is building a matching landing page in its own workspace"
+            : "Manus built a matching landing page in its own workspace"}
           {landing.earlier ? " for an earlier Hound pack on the same alone-time topic" : ""}. It stays unpublished:
           Nexus never publishes it.
         </p>

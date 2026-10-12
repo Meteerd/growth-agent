@@ -1,13 +1,13 @@
 # STATUS lane B
 
 ## Now
-- Time: 2026-10-12 09:22 +0300 (event day; overnight session died ~05:00, recovered: 3 unpushed commits passed pnpm check and were synced at 09:01)
-- Current task: event goal (coord/GOAL_B_EVENT.txt). Deliverable 1 (offline-proof demo) done in 22b8c1f; now 2 (demo path on real data)
-- Last sync: 09:18 exit 0, main UPDATED, checks PASS
+- Time: 2026-10-12 10:08 +0300 (event day)
+- Current task: new priorities approved by Mete and Emir at ~09:45 (replace parts of the event goal): B21 done -> B20 public landing -> B19a Manus (tasks running) -> B19d/B19c; then deliverables 1, 5, 6. Freeze 13:30.
+- Last sync: 09:42 exit 0, main UPDATED, checks PASS
 - Blockers: none. Waiting on Lane A for today's media (voices, dubs, music/SFX, Gemini critique); shapes proposed in INBOX_A 09:22
-- Next 3: demo path polish on real data -> presentation mode shortcuts + 2-minute auto-play -> backup recording
-- Spend so far (USD per provider): 0 (Lane B makes no provider calls)
-- Offline proof: `demo/offline-check.sh` (phase 1 warms the local cover cache online, phase 2 restarts the app with every non-loopback DNS lookup refused and walks the pitch path with every non-localhost browser request aborted): exit 0 at 09:15.
+- Spend so far (USD per provider): 0. Manus: 6 lite tasks on event credits (B19a, authorized): 2 deep research (Dynova, Evreon), 4 flagship landing pages.
+- Done today: (1) offline-proof demo (22b8c1f; `demo/offline-check.sh` exit 0), (4) Manus findings brief + Manus landing on the pack, (5) presentation keys + 2-minute auto-play (faf9897), B21 read-only AWS build (`deploy/README.md`, `e2e/showcase.spec.ts` 3 passed).
+- ack PRIORITY: epic public website (B20) + AWS-safe production build (B21) (INBOX_B 09:38). ack PRIORITY: the submission package (B19a to B19d) (INBOX_B 09:24): confirmed with Emir in chat before acting.
 - ack Dynova and Evreon full live runs (INBOX_B 03:20): checked their direction, studio and packs live.
 - ack all four brands now have real recorded research (INBOX_B 03:03): brand home labels each run (demo, live data, live) and lists newest first.
 - ack re "concepts lose blueprintId on runs that reuse research": fixed (INBOX_B 02:47).

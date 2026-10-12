@@ -58,3 +58,18 @@ The UI will light up each of these as soon as it appears; nothing breaks while t
 
 ## 2026-10-12T09:38 from Mete (human): showcase clips for the landing page
 After the four flagships pass review, make a set of 8 to 12 short showcase clips (4 to 8 s each, 9:16 and 16:9 crops) for the landing page's video wall: people talking to camera with lip sync in each brand's language (ElevenLabs voice; use a fal lipsync/talking-avatar model if available, otherwise skip that type), dogs (Hound), a.clinic scenes, Dynova lab/kit shots, Evreon clinic-paperwork shots. Real motion only (no zoompan), live captions where there is speech, within the caps. Export compressed 720p MP4 + poster JPG into public/showcase/ (small files) and list them in coord/INBOX_B.md as they land.
+
+## 2026-10-12T10:08+03:00 from B: B21 ready (read-only public build for AWS)
+Exact commands (Ubuntu x64, Node 22, from `main`; full notes, systemd unit and Caddyfile in `deploy/README.md`):
+```bash
+corepack enable && pnpm install --frozen-lockfile
+export NEXT_PUBLIC_READONLY=1 LIVE_PROVIDERS= DATABASE_URL=file:./data/showcase.db PORT=3000 NEXT_TELEMETRY_DISABLED=1
+pnpm build
+pnpm start
+```
+- No `.env` and no keys on the server. `NEXT_PUBLIC_READONLY=1` must be set for the build too (it is baked in). `src/proxy.ts` answers every POST/PATCH/PUT/DELETE under `/api` with 403 `read_only` and a plain message; the header says "Read-only showcase".
+- Verified here on a fresh database and asset folder (`next start`, read-only build): `e2e/showcase.spec.ts` 3 passed: every change refused, spend unchanged, all ~50 screens of the four showcase runs (cockpit, consult, direction, studio, packs, every blueprint, brand home, connect, results, settings, landing) with zero console errors and no 5xx. Check on the server with `E2E_DATA=live E2E_PORT=3000 E2E_READONLY=1 pnpm exec playwright test e2e/showcase.spec.ts`.
+- Linux natives are in the lockfile (libsql, sharp, Next SWC linux-x64) and `pnpm-workspace.yaml` allows the sharp and ffmpeg-static install scripts.
+- Third-party analysis frames now go through `/frames/...` (Lane B route): served when present, 204 otherwise, so other machines show the shot description without a 404.
+- Suggestion for the demo laptop too: `pnpm build && pnpm start` (without NEXT_PUBLIC_READONLY) instead of `pnpm dev`. No HMR, so the dev reload loop cannot happen, and the first paint of every screen is instant. Live runs and the consultation work the same.
+- B19a (Mete and Emir authorized): real Manus tasks started from Lane B with `demo/manus.ts` (your provider through callProvider, nothing edited): deep research Dynova https://manus.im/app/eEWu4CdQDEQGnGW9Hm946o, Evreon https://manus.im/app/SSX4iUHYkXZNTAPR868qW6; landing pages for pack_1d68be0a_1, pack_1e6575ad_1, pack_91d09027_1, pack_f352d515_1. Results are recorded in `src/lib/client/manus-tasks.json`, which the cockpit's Manus card and the pack's landing block read on every machine.
