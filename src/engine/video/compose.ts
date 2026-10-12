@@ -482,7 +482,9 @@ async function composeAd916Now(p: Ad916Props, out: string, workDir: string, onPr
       p.badge,
       f,
     );
-    const clip = s.clipSrc ? (urlToFile(s.clipSrc) ?? undefined) : undefined;
+    const clip = s.clipSrc
+      ? (urlToFile(s.clipSrc) ?? (s.clipSrc.startsWith("/api/") ? undefined : s.clipSrc))
+      : undefined;
     const hasClip = !!clip && fs.existsSync(clip);
     const steady = hasClip && p.motionQuality === "final" ? await steadyClip(clip!) : clip;
     const seq =
@@ -531,7 +533,9 @@ async function composeAd916Now(p: Ad916Props, out: string, workDir: string, onPr
     if (f.clip) {
       inputs.push(...(f.clipStart ? ["-ss", f.clipStart.toFixed(3)] : []), "-i", f.clip);
       // a clip a little shorter than its shot plays slightly slower (max 1.4x) instead of freezing at the end
-      const stretch = f.clipLen && f.clipLen < f.dur - 0.04 ? Math.min(1.4, f.dur / f.clipLen) : 1;
+      // real footage (clipStart set) is never slowed: slowed footage reads as frozen
+      const stretch =
+        f.clipStart === undefined && f.clipLen && f.clipLen < f.dur - 0.04 ? Math.min(1.4, f.dur / f.clipLen) : 1;
       const fast = f.clipSpeed && f.clipSpeed !== 1 ? `setpts=PTS/${f.clipSpeed.toFixed(3)},` : "";
       if (f.fit) {
         parts.push(

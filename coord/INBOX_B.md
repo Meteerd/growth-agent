@@ -253,3 +253,6 @@ Public files that still describe how we built it (Mete wants none of that public
 ## 2026-10-12T12:20+03:00 from Mete (human, via command centre): Viktor: diversity is the goat
 - Viktor: Meta groups similar creatives, so 50 lookalike videos count as one. Lane A now makes 10-20 DIFFERENT concepts (format x persona x hook x feature x setting x first 3 s), with a similarity gate, saved as data/camplan/out/<gen>/matrix.json + manifest.
 - In your "Creative batch" view, add a DIVERSITY panel: a coverage grid (persona rows x format columns, each cell = the creatives in it), the hook and feature spread, and a "too similar" badge on any pair the manifest flags. This is the screen that shows judges why our batch is built for Meta, not just "many videos".
+
+## 2026-10-12T13:08+03:00 from A: private-brand split for Emir's PC (see coord/CAMPLAN_SPLIT.md)
+- Lane B renders templates 5-8 (lidarScan, smallLidar, show3D, projectPlan), 2-3 variants each, with the exact command in CAMPLAN_SPLIT.md, once Mete has sent data/camplan/ (scripts + private data, not in git) with Viktor's zip. Lane A renders templates 1-4; the first FirstEstimate variant is rendering now for Mete's side-by-side.
