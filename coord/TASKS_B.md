@@ -2,7 +2,14 @@
 
 Format: `- [ ] Bxx title` then acceptance checks. When done: `- [x] Bxx title (commit <hash>)`. Work top to bottom unless blocked; note reorders in STATUS_B.
 
-## PRIORITY NOW (from Mete, 12 Oct 09:45): an epic public website + production build on AWS
+## PRIORITY NOW (from Mete, 12 Oct 11:05): do right after B21, before B20
+- [ ] **B22 Studio: pick variants, revise by chat, compare versions** (contract from Lane A's A19; build against it with a mock until it lands)
+  - In the studio, under the player: a chat box "Tell the agent what to change" with suggestion chips (Fix the voice, Music more upbeat, Bigger hook text, Replace a shot, Make it Czech). Sending posts to `/revise`; a clarifying question appears as a card with option chips + free text; progress streams in; the new version appears and auto-plays.
+  - Version strip (v1, v2, v3...) with what changed in plain words, review score and cost; side-by-side compare of any two versions; "Use this version" marks it chosen (packs use it).
+  - Per-shot variant picker: for each shot, the fal take and the Higgsfield take as small looping players; pick one; re-assemble.
+  - This is a live-demo moment: keep it fast, calm and in the v2 studio look. Accept: e2e (mock) runs a revise with a clarifying question and a version compare; screenshots.
+
+## PRIORITY (from Mete, 12 Oct 09:45): an epic public website + production build on AWS
 - [ ] **B20 Public marketing website (the website IS our marketing).** Mete's references: getbluma.com and uplane.com (both YC). Take their craft, not their identity:
   - Bluma: full-bleed painted hero (blue sky, pink clouds), centered white headline, "Backed by..." micro line, white pill CTA; then a big product mock (grid of real creator shots with a floating glass prompt bar); clean white page below with blur-in reveals on scroll; "How it works" numbered steps.
   - Uplane: full-bleed cinematic photo hero in one saturated color with a streak of contrast, huge tight grotesk headline (two lines: "You own the brand. Uplane runs your marketing."), email field + pill button inside one rounded bar, logo strip at the bottom of the hero; then a white editorial grid with hairline borders, small colored uppercase eyebrow labels ("HOW IT WORKS."), oversized black headings, a big stat row in bordered cells, testimonial blocks.

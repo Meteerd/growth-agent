@@ -123,3 +123,6 @@ The form needs a PUBLIC repo and a live demo link, plus Manus / fal / Apify answ
 
 ## 2026-10-12T09:38 from Mete (human): PRIORITY: epic public website (B20) + AWS-safe production build (B21)
 Read B20 and B21 at the top of TASKS_B. The website is our marketing: Bluma/Uplane-level craft with React Bits, built from our real media and real numbers only. The production build must run read-only with no keys and never crash; Mete's main session deploys it to AWS at the freeze. Order: B21 first (safety), then B20, then B19 (submission package; B19b Vercel is replaced by B21).
+
+## 2026-10-12T10:00 from Mete (human): B22 studio revise-by-chat + versions + variant picker
+Read B22 at the top of TASKS_B. Order: B21 (live deploy) -> B22 -> B20 landing -> B19 Manus/submission. Lane A ships the A19 contract; mock it until then.
