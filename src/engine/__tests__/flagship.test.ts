@@ -6,7 +6,7 @@ import { GET as listBrands } from "@/app/api/brands/route";
 import { BrandsResponse, Concept as ConceptSchema } from "@/contracts";
 import { type BetaMessage, setClaudeTransport } from "@/engine/agent/claude";
 import type { Db } from "@/engine/db/client";
-import { brandImages, buildFlagship, planShots, tightenCaptions } from "@/engine/flagship";
+import { brandImages, buildFlagship, planShots, repairFlagship, tightenCaptions } from "@/engine/flagship";
 import { getBrand, getConcept, listCompliance, listConcepts, upsertConcept } from "@/engine/repo";
 import { seed } from "@/engine/seed";
 import { loadFixture } from "@/engine/smoke/record";
@@ -84,5 +84,21 @@ describe("A17 flagship remake", () => {
     expect((await getConcept(db, c.id))!.shots[0]!.onScreenText).toBe(long);
     const checks = await listCompliance(db, c.id);
     expect(checks.some((k) => k.status === "fail" && k.findings.some((f) => f.ruleId === "C3"))).toBe(true);
+  });
+
+  it("repair refuses an unbuilt concept and rebuilds a removed frame on a built one (demo)", async () => {
+    const all = await listConcepts(db, runId);
+    const unbuilt = all.find((x) => !x.blueprintId)!;
+    await expect(repairFlagship(db, unbuilt.id)).rejects.toMatchObject({ status: 409 });
+    const c = all.find((x) => x.blueprintId)!;
+    const cur = (await getConcept(db, c.id))!;
+    await upsertConcept(db, {
+      ...cur,
+      shots: cur.shots.map((s, i) => (i === 1 ? { ...s, keyframeAssetId: undefined } : s)),
+    });
+    const r = await repairFlagship(db, c.id);
+    expect(r.concept.shots[1]!.keyframeAssetId).toBeTruthy();
+    expect(r.asset.model).toContain("flagship");
+    expect(r.reviews.length).toBeGreaterThanOrEqual(1);
   });
 });
