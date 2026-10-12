@@ -126,6 +126,12 @@ export const RenderWatch = z.object({
   captionsCoverFace: z.boolean(),
   /** the captions are fluent, correct words in the ad's language (no nonsense, no broken words) */
   captionsFluent: z.boolean(),
+  /** hard gate: the real product (app screen, site, kit) is visible before 60% of the runtime */
+  productBefore60: z.boolean(),
+  /** hard gate: a CTA is on screen for at least 2 s */
+  ctaOnScreen2s: z.boolean(),
+  /** where the product first appears and where the CTA lands, e.g. "product 0:12 (shot 3), CTA 0:26-0:31" */
+  productAndCta: z.string(),
   musicPresent: z.boolean(),
   voiceNatural: z.boolean(),
   shake: z.array(z.string()),
@@ -158,6 +164,7 @@ Target caption style (the brand's caption spec, chosen by the operator; it repla
 Score each shot 0-100 (80 = good enough to run as a paid ad; anything a viewer would scroll past as fake, cheap or broken is under 70) and the whole ad. Check, with timestamps ("0:04-0:07 the camera shakes"):
 - motion: real-looking footage, smooth camera, no shaking/jitter, no frozen stills pretending to be video, no AI tells (warped hands/paws, morphing faces or objects, garbled text, plastic skin);
 - captions: alive (words pop in as spoken, change every ~0.3-0.8 s; a sentence sitting still on screen fails), synced to the voice, readable, never covering faces/the dog/the product, outside the TikTok UI zones, and in the TARGET caption style above (font look, colour, outline/box) - a mismatch with the target is a failing issue;
+- product and CTA (HARD GATE): is the real product (the app screen, the website, the physical kit) visible before 60% of the runtime? Is a call to action on screen for at least 2 s? Say where (productAndCta);
 - caption language: every caption is a correct, fluent word or phrase in ${o.concept.language} (flag any nonsense, misspelled or broken word: captionsFluent false);
 - sound: music bed present and fitting the winner's sound, voice natural and native for the language (no robotic or foreign accent), mix balanced, sound effects subtle;
 - the hook in the first 2 s, pacing versus the winner, the CTA.
@@ -242,6 +249,12 @@ export function mergeRenderWatch(r: Review, w: RenderWatch, winnerRaw?: number, 
   if (!w.captionStyleMatch) cap(76, "caption style does not match the winner");
   if (w.captionsCoverFace) cap(74, "captions cover a face or the subject");
   if (w.captionsFluent === false) cap(65, "captions contain nonsense or broken words in the ad's language");
+  // hard product gate (Mete, 11:53): rejected, not just scored lower
+  const gate: string[] = [];
+  if (w.productBefore60 === false)
+    gate.push(`the real product is not visible before 60% of the runtime (${w.productAndCta})`);
+  if (w.ctaOnScreen2s === false) gate.push(`no CTA on screen for 2 s (${w.productAndCta})`);
+  if (gate.length) cap(60, `REJECTED: ${gate.join("; ")}`);
   if (!w.musicPresent) cap(75, "no music bed");
   if (!w.voiceNatural) cap(74, "voice does not sound natural/native");
   // "None detected" / "no shake" entries are not shake
@@ -249,7 +262,7 @@ export function mergeRenderWatch(r: Review, w: RenderWatch, winnerRaw?: number, 
   // the camera metric is the authority on shake: handheld drift Gemini calls "shake" does not cap a steady cut
   if (shake.length && !measuredSteady) cap(70, `shake: ${shake.join("; ")}`);
   if (w.wouldScroll) cap(70, "a viewer would scroll past");
-  const low = perShot.some((p) => p.score < 80);
+  const low = perShot.some((p) => p.score < 80) || gate.length > 0;
   return {
     ...r,
     perShot,

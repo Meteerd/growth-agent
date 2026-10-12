@@ -140,6 +140,15 @@ export function groupWords(words: CapWord[], per = 3, maxChars = 24): CapGroup[]
   });
 }
 
+/** A caption never carries over a cut: a group ends at the end of the shot it started in. */
+export function clampToCuts(groups: CapGroup[], shots: { t0: number; t1: number }[]): CapGroup[] {
+  if (!shots.length) return groups;
+  return groups.map((g) => {
+    const shot = shots.find((r) => g.t0 >= r.t0 - 1e-6 && g.t0 < r.t1);
+    return shot && g.t1 > shot.t1 ? { ...g, t1: Math.max(g.t0 + 0.2, shot.t1) } : g;
+  });
+}
+
 /** Key words: numbers, words written in capitals, and the brand/offer words passed in. */
 export function markEmphasis(words: CapWord[], keys: string[] = []): CapWord[] {
   const k = new Set(keys.map((x) => x.toLocaleLowerCase()));
@@ -393,7 +402,7 @@ function titleSvg(tr: CaptionTrack, t: number): string {
 export async function renderCaptionFrames(tr: CaptionTrack, totalSec: number, dir: string): Promise<string> {
   fs.rmSync(dir, { recursive: true, force: true });
   fs.mkdirSync(dir, { recursive: true });
-  const groups = groupWords(tr.words, tr.style.wordsPerCaption);
+  const groups = clampToCuts(groupWords(tr.words, tr.style.wordsPerCaption), tr.regions);
   const n = Math.ceil(totalSec * FPS);
   const blank = path.join(dir, "blank.png");
   await sharp({ create: { width: W, height: H, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
