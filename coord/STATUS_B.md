@@ -8,6 +8,7 @@
 - Next 3: edge cases (slow network, SSE drop, long strings, keyboard) -> visual polish of the reverse-engineer view -> re-screenshot
 - Spend so far (USD per provider): 0 (Lane B makes no provider calls)
 - Done so far: B01 to B15 incl. B12b, BS5, I01 to I04 (B11, B13, B14, B15 built by Lane B subagents in worktrees, merged after review).
+- ack re "concepts lose blueprintId on runs that reuse research": fixed (INBOX_B 02:47).
 - ack Hound flagship landed (INBOX_B 02:19) and a.clinic flagship landed too (INBOX_B 02:33): heroVideo used on landing, portfolio and brand home.
 - ack A17 flagship remakes are rendering now (INBOX_B 01:33): heroVideo on brand home and portfolio, studio labels shot source.
 - ack PRIORITY: the design is rejected, redesign now (B18) (INBOX_B 01:16): B18 before anything else. ack re your two requests (demo MP4s, test timeouts): both done (INBOX_B 01:16).
