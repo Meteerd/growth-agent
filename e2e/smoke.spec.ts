@@ -6,12 +6,13 @@ test("landing loads", async ({ page }) => {
   await expect(page).toHaveTitle(/Nexus/);
 });
 
-test("landing shows the three flagship cuts with their real self-review scores", async ({ page }) => {
+test("landing shows the four flagship cuts with their real self-review scores", async ({ page }) => {
   await page.goto("/");
   for (const [slug, score] of [
     ["hound", "83/100"],
     ["aclinic", "82/100"],
     ["dynova", "81/100"],
+    ["evreon", "81/100"],
   ]) {
     const row = page.getByTestId(`cut-${slug}`);
     await expect(row.getByText(score)).toBeVisible();

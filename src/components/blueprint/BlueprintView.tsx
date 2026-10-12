@@ -607,13 +607,11 @@ function Variants({ variants, runId }: { variants: Concept[]; runId?: string }) 
 }
 
 function SelfReview({ reviews, remake }: { reviews: Review[]; remake?: Concept }) {
-  // keep the engine's order: several reviews can share a round number (regenerate passes inside one round)
-  const rounds = reviews.map((x, i) => ({
-    ...x,
-    label: `round ${x.round}${reviews.slice(0, i).some((y) => y.round === x.round) ? ` (${reviews.slice(0, i + 1).filter((y) => y.round === x.round).length})` : ""}`,
-  }));
+  // numbered in the engine's order: round numbers repeat when a cut is rebuilt, so passes read more honestly
   const [sel, setSel] = useState<string>();
-  const r = rounds.find((x) => x.id === sel) ?? rounds.at(-1);
+  const r = reviews.find((x) => x.id === sel) ?? reviews.at(-1);
+  const pass = r ? reviews.indexOf(r) + 1 : 0;
+  const times = reviews.length === 1 ? "once" : reviews.length === 2 ? "twice" : `${reviews.length} times`;
   if (!remake || !r)
     return (
       <Panel tone="hairline" className="grid place-items-center p-6 text-center">
@@ -626,16 +624,18 @@ function SelfReview({ reviews, remake }: { reviews: Review[]; remake?: Concept }
   return (
     <Panel tone="flat" className="flex flex-col gap-3 p-4" data-testid="self-review">
       <div className="flex items-center justify-between border-line border-b pb-2">
-        <h3 className="font-semibold text-[14px]">Self-review: it watched its own video</h3>
+        <h3 className="font-semibold text-[14px]">Self-review: it watched its own video {times}</h3>
         <div className="flex flex-wrap justify-end gap-1">
-          {rounds.map((x) => (
+          {reviews.map((x, i) => (
             <button
               key={x.id}
+              type="button"
               onClick={() => setSel(x.id)}
               aria-pressed={x.id === r.id}
-              className="rounded-[4px] px-2 py-1 text-[12px] text-bone-2 shadow-[inset_0_0_0_1px_var(--color-line-strong)] aria-pressed:bg-bone aria-pressed:text-ink"
+              aria-label={`Pass ${i + 1}: ${x.overall} overall`}
+              className="rounded-[4px] px-1.5 py-1 font-mono text-[12px] text-bone-2 tabular-nums shadow-[inset_0_0_0_1px_var(--color-line-strong)] aria-pressed:bg-bone aria-pressed:text-ink"
             >
-              {x.label}
+              {x.overall}
             </button>
           ))}
         </div>
@@ -655,7 +655,7 @@ function SelfReview({ reviews, remake }: { reviews: Review[]; remake?: Concept }
             : `Regenerate shot ${(r.regeneratedShots ?? []).map((s) => s + 1).join(", ") || "weakest"}`}
         </Badge>
       </div>
-      <ul className="flex flex-col gap-1.5" aria-label={`Per-shot scores, round ${r.round}`}>
+      <ul className="flex flex-col gap-1.5" aria-label={`Per-shot scores, pass ${pass}`}>
         {r.perShot.map((p) => {
           const tone = scoreTone(p.score);
           return (
