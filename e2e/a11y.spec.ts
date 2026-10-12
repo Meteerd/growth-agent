@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test.describe("keyboard and reduced motion", () => {
   test("landing works with the keyboard only", async ({ page }) => {
     await page.goto("/");
-    const input = page.getByLabel("Brand website");
+    const input = page.getByLabel("Your brand's website");
     for (let i = 0; i < 12 && !(await input.evaluate((el) => el === document.activeElement)); i++)
       await page.keyboard.press("Tab");
     await expect(input).toBeFocused();
@@ -36,7 +36,7 @@ test.describe("keyboard and reduced motion", () => {
     await page.goto("/");
     await page.waitForTimeout(1500);
     const playing = await page
-      .locator('[data-testid="featured"] video')
+      .locator("main video")
       .evaluateAll((vs) => vs.some((v) => !(v as HTMLVideoElement).paused));
     expect(playing).toBe(false);
     await ctx.close();

@@ -4,12 +4,16 @@ import { PitchControls } from "@/components/shell/PitchControls";
 import { PresentMode } from "@/components/shell/PresentMode";
 import { Providers } from "@/components/shell/Providers";
 import { Toaster } from "@/components/ui/Toast";
-import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/client/product";
+import { PRODUCT_NAME, PRODUCT_TAGLINE, SITE_URL } from "@/lib/client/product";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: { default: PRODUCT_NAME, template: `%s / ${PRODUCT_NAME}` },
+  metadataBase: new URL(SITE_URL),
+  title: { default: `${PRODUCT_NAME}: the ads that win, rebuilt for your brand`, template: `%s / ${PRODUCT_NAME}` },
   description: PRODUCT_TAGLINE,
+  alternates: { canonical: "/" },
+  openGraph: { type: "website", siteName: PRODUCT_NAME, url: "/", description: PRODUCT_TAGLINE },
+  twitter: { card: "summary_large_image", description: PRODUCT_TAGLINE },
 };
 
 export const viewport: Viewport = { themeColor: "#F3F1EC", colorScheme: "light" };

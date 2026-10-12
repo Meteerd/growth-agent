@@ -294,3 +294,26 @@ html[data-present="1"] body {
 html[data-present="1"] [data-dev] {
   display: none !important;
 }
+
+/* landing brand strip (B20): the only looping motion on the marketing page; still under reduced motion */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 48s linear infinite;
+}
+.marquee {
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .blur-word {
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}

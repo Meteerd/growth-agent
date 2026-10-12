@@ -42,7 +42,7 @@ export function LandingAction({ pack, runId }: { pack: PublishPack; runId: strin
             ? "Manus is building a matching landing page in its own workspace"
             : "Manus built a matching landing page in its own workspace"}
           {landing.earlier ? " for an earlier Hound pack on the same alone-time topic" : ""}. It stays unpublished:
-          Nexus never publishes it.
+          Rekampols never publishes it.
         </p>
         <a
           href={landing.url}
@@ -71,7 +71,7 @@ export function LandingAction({ pack, runId }: { pack: PublishPack; runId: strin
           await qc.invalidateQueries({ queryKey: qk.packs(runId) });
           toast({
             title: "Manus is building the landing page",
-            body: "The link appears here; it is never published by Nexus.",
+            body: "The link appears here; it is never published by Rekampols.",
           });
         } catch (e) {
           if (e instanceof ApiRequestError && e.status === 409)

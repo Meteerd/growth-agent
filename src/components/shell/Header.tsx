@@ -53,9 +53,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40">
       <div className="pointer-events-none absolute inset-0 border-line border-b bg-ink" />
-      <div className="relative mx-auto flex h-16 max-w-[1440px] items-center gap-6 px-4 md:px-8">
+      <div className="relative mx-auto flex h-16 max-w-[1440px] items-center gap-3 px-4 md:gap-6 md:px-8">
         <Wordmark />
-        <nav aria-label="Main" className="ml-2 flex items-center gap-1">
+        <nav aria-label="Main" className="flex items-center gap-1 md:ml-2">
           {NAV.map((n) => {
             const active = path.startsWith(n.href);
             return (
