@@ -337,7 +337,9 @@ function Diversity({ items, onCell }: { items: Creative[]; onCell: (persona?: st
           ) : null;
         })}
         <p className={cn("font-medium text-[13px]", similar ? "text-warn" : "text-pass")}>
-          {similar ? `${similar} ${similar === 1 ? "creative" : "creatives"} flagged too similar` : "No pair flagged too similar"}
+          {similar
+            ? `${similar} ${similar === 1 ? "creative" : "creatives"} flagged too similar`
+            : "No pair flagged too similar"}
         </p>
       </div>
     </div>
