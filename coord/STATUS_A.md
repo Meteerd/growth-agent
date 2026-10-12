@@ -1,12 +1,13 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-12 09:37 +03 (event day, A18 live)
-- Current task: A18 step 4, flagship re-renders (Hound first)
-- Last sync: 09:26 exit 0, main UPDATED, checks PASS (208/208)
-- Blockers: Gemini key is on the free tier (20 requests per model per day); the watcher falls back across 3.8-flash, 3.6-flash, 3-flash-preview, 2.5-flash and 3.5-flash-lite until billing is on (Mete informed 09:20).
-- Voices (assets/voices.json, cast from the ElevenLabs library, 3 takes each, Gemini listened): a.clinic sk "Hope - Natural, Clear and Calm" (OYTbf65OHHFELVut7v2H); Hound en-GB "Lucy - Fresh & Casual" (lcMyyd2HUfFzxdCaC4Ta); Dynova tr "Fili - Warm Turkish Female" (FDs1ZX5J4e4f2c2erxtW); Evreon en-GB "Archer - Conversational" (Fahco4VZzobUeiPqni1S). Model eleven_multilingual_v2.
-- Done today: ElevenLabs provider (TTS with timestamps, voice library, music v2.5, SFX, dubbing, Scribe); Gemini watcher (Files API + JSON schema, model fallback); winners watched (caption style + music/SFX/voice in each blueprint); live per-frame captions (bundled OFL fonts, 1-3 words, pop, spoken-word highlight, key-word slam, breathing; liveness test); camera-based shake metric + automatic vidstab; per-shot caption zones by Claude vision; review = Claude frames + Gemini whole video with sound, stricter wins.
+- Time: 2026-10-12 10:26 +03 (event day)
+- Current task: A18 step 4 re-renders (a.clinic, Dynova, Evreon on fal Kling 2.5 Turbo; Hound landed 10:24) + Hound es dub; then A19 variants live check, showcase clips, Camplan connectors (keys pending)
+- Last sync: 10:18 exit 0, main UPDATED, checks PASS
+- Blockers: none hard. Gemini free-tier quota (fallback chain); fal Kling 2.1 queue timeouts (switched to 2.5 Turbo Pro, ~50 s/clip); Sora 404 on our key.
+- Voices (assets/voices.json; ElevenLabs library, 3 takes each, Gemini listened): a.clinic sk "Hope - Natural, Clear and Calm" (OYTbf65OHHFELVut7v2H); Hound en-GB "Lucy - Fresh & Casual" (lcMyyd2HUfFzxdCaC4Ta); Dynova tr "Fili - Warm Turkish Female" (FDs1ZX5J4e4f2c2erxtW); Evreon en-GB "Archer - Conversational" (Fahco4VZzobUeiPqni1S). eleven_multilingual_v2.
+- Flagships (review = Claude frames + Gemini whole video with sound, calibrated to the winner, stricter wins): Hound 77 (76/80/79/75/80/78), others rendering.
+- A19: contract + routes + engine landed; live: Hound "add a hook title" planned 27 s, video at 39 s, clips/voice/music reused (v2, not chosen).
 
 ## Log (one line per finished task, newest last)
 - 23:17 A01 done: Next.js 16.4 scaffold, check/build/dev OK
@@ -41,3 +42,4 @@
 - 07:16 HOLD: Mete asked (after 07:14) not to run ffmpeg while the laptop lid is closed. The final sync (pnpm check renders test videos with ffmpeg) waits until he is back. Main is green as of 04:54; only MORNING_A/STATUS_A edits are pending on lane-a. The 07:14 sync failed only because demo-media.test.ts timed out while the machine slept.
 - 07:23 new goal from Mete (internet back): sync first. The 07:20 sync failed again on demo-media.test.ts (renders 8 videos, 121 s under load); gave that test its own 300 s timeout (6df632d); 07:23 sync exit 0, main green. Light work only until 08:45, then FROZEN.
 - STOPPED by Mete at 07:41, A18 paused for the event. Last work commit abe91d4 (A18 so far: shake fix + metric, native captions, audio mix with music bed/ducking/-14 LUFS, measured review caps; not started: ElevenLabs provider, Gemini watcher, re-renders). Resumes at the event with coord/GOAL_A_EVENT.txt.
+- 10:24 A18: Hound flagship landed (same clips, ElevenLabs voice/music/SFX, live serif captions in the winner's style, real houndapp.xyz CTA), 77/100; A19 contract/routes/engine + test; business connectors (RevenueCat v2, PostHog HogQL, Databricks SQL, read-only, CONNECTOR_BRAND-bound, private export guard).
