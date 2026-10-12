@@ -1,17 +1,21 @@
 # STATUS lane B
 
 ## Now
-- Time: 2026-10-12 12:30 +0300 (event day)
-- Backup recording (deliverable 6): `demo/recordings/pitch-latest.mp4` (copy of `demo/recordings/pitch-1235.mp4`), 123 s, 1440x900, 30 fps H.264, 24.6 MB, the 2-minute auto-play in presentation mode on a fresh production build (/ -> /results -> portfolio, run, reverse-engineer, consult, direction, studio, packs). Silent: Mete talks over it. Re-record: `pnpm exec tsx demo/record.ts http://localhost:3000` with the app running.
-- Verification 12:38-12:45 on this tree: `demo/offline-check.sh` exit 0 (pitch path with every non-loopback DNS lookup refused and every non-localhost request aborted), `pnpm e2e` exit 0 (96 passed, 36 live-only skipped), `pnpm check` PASS in every sync.
-- Current task: PRIORITY Camplan (Mete 12:00, Emir in chat 12:2x): Creative batch view done (filters, review, approve/reject, zip + manifest.csv, diversity panel); then backup recording and the 13:30 freeze; B19 export at freeze.
-- Last sync: 12:25 exit 0, main UPDATED, checks PASS (next sync right after this commit)
-- Blockers: Manus credits exhausted (winner hunts for Hound, a.clinic, Dynova ended "not enough credits"; Camplan's hunt refused, HTTP 429). Deploys go through Mete's session.
-- Spend so far (USD per provider): 0. Manus: 9 lite tasks on event credits (authorized): 2 deep research, 4 landing pages, 3 winner hunts (failed on credits).
-- Live: https://rekampols.xyz and https://63-181-87-203.sslip.io.
-- Decision 12:50: not taking "Lane B becomes the second Camplan renderer" (INBOX_B 12:57): Emir's goal forbids generating images/video/audio, the freeze comes first, and the AirDrops have not arrived; Emir can override in chat.
-- Decisions (pitch and freeze first, logged per Emir): Camplan stays local: the batch view reads Lane A's route and only for non-showcase brands, approvals live in the browser, the zip is built in the browser, nothing Camplan in git/showcase/export; the batch view is mocked in e2e (route stub) rather than with app fixtures, so no fake creatives can appear in the app; Manus out of credits is recorded, not worked around.
-- Done today: (1) offline-proof demo (`demo/offline-check.sh`, dev and showcase), (3) voices, dubs, soundtrack marks, (4) Manus findings + landing pages, (5) presentation mode (landing -> results -> app, keys 1 to 9, 0 = auto-play), B21 read-only showcase, B20 landing + Lighthouse 86, /results with GTM chain and carousels, B22 studio versions, Lapis re-skin, Camplan creative batch + diversity, B19d SUBMISSION.md, B19c export script (dry run clean).
+- FROZEN for the demo at 2026-10-12 13:33 +0300. Final commit: 237e651 (main; lane-b identical). The only commit after it is this status note (coord only). No further changes from Lane B.
+- Last sync: 13:33 exit 0, branch lane-b pushed, main UPDATED, checks PASS (pnpm check: typegen + tsc + biome + vitest).
+- Verified on this code tree (app code unchanged since fb8732e, checked with git diff): `pnpm e2e` (mock) exit 0, 96 passed, 36 live-only skipped (13:14-13:19); `demo/offline-check.sh` exit 0 (13:21-13:23, fresh database, every non-loopback DNS lookup refused in the server, every non-localhost request aborted in the browser); live e2e suites (live.spec, journey, resilience, screens-live) passed at 13:00 against the real API routes with LIVE_PROVIDERS empty; read-only showcase build: `e2e/showcase.spec.ts` 3 passed (12:55); rekampols.xyz checked live at 12:57 (11 routes x desktop + mobile, zero console errors).
+- Backup recording: `demo/recordings/pitch-latest.mp4` (= `demo/recordings/pitch-1235.mp4`), 123 s, 1440x900, 30 fps H.264, 24.6 MB, the 2-minute auto-play in presentation mode on a fresh production build. Silent: Mete talks over it. On Lane B's laptop (git-ignored).
+- Deliverables (event goal + the order Mete and Emir approved during the day):
+  - (1) Offline-proof demo: DONE. Fonts self-hosted, covers via the local /thumb cache, analysis frames via /frames (204 when absent), renders via /renders; `demo/offline-check.sh` (dev) and `OFFLINE_MODE=showcase demo/offline-check.sh` both exit 0.
+  - (2) Demo path on real recorded data: DONE. Pitch order is now Mete's: / (how it works) -> /results -> portfolio, the run, reverse-engineer, consult, direction, studio, packs; zero console errors; Lighthouse 86 on the landing (prod, mobile).
+  - (3) New media from Lane A: DONE where the data exists: flagship renders as hero media (landing, /results, brand home, posters re-cut per render), ElevenLabs voice per brand with a sample button (brand home), dubbed versions as a language toggle (landing, /results, brand home; Hound ES, a.clinic EN, Dynova EN), music and SFX marks in the studio, carousels on /results. The Gemini critique fields never reached the contract, so they are not shown.
+  - (4) Manus visible: DONE. Findings brief on the Hound run (landscape, 10 competitors, 6 community rules, task link); research for Dynova and Evreon and landing pages for the four flagship packs (real tasks, unpublished); winner hunts failed on exhausted Manus credits (coord/WINNERS_MANUS.md).
+  - (5) Presentation mode: DONE. `?present=1`, keys 1 to 9 in pitch order, PageUp/PageDown and [ ], 0 = 2-minute auto-play, Esc stops, route progress bar.
+  - (6) Backup recording: DONE (path above).
+  - (7) Polish: DONE. Lapis-style re-skin (approved), Plus Jakarta Sans, Rekampols name, rekampols.xyz metadata and share image, e2e/screens refreshed (mock), mock e2e green.
+  - B21 read-only AWS showcase (`NEXT_PUBLIC_DATA_MODE=showcase`, deploy/README.md): DONE, live at https://rekampols.xyz. B20 landing: DONE. B22 studio versions + revise by chat + takes: DONE. Camplan creative batch + diversity panel (local only, reads Lane A's route): DONE. B19d docs/SUBMISSION.md: DONE (team name and members are TODO for the humans). B19c scripts/export-public.sh: DONE, run after this freeze into ../growth-agent-public (never pushed).
+- Not done, on purpose: rendering Camplan creatives (goal forbids generation; freeze first), Manus winner hunts (no credits).
+- Spend (Lane B): $0 on paid providers; Manus: 9 lite tasks on event credits (authorized).
 - ack Dynova and Evreon full live runs (INBOX_B 03:20): checked their direction, studio and packs live.
 - ack all four brands now have real recorded research (INBOX_B 03:03): brand home labels each run (demo, live data, live) and lists newest first.
 - ack re "concepts lose blueprintId on runs that reuse research": fixed (INBOX_B 02:47).
