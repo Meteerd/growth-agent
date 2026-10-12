@@ -1,14 +1,15 @@
 # STATUS lane A
 
 ## Now
-- Time: 2026-10-12 12:20 +03 (event day). FULL FOCUS CAMPLAN (Mete 12:00); Hound/a.clinic/Dynova frozen on main unless Mete sends beat notes. Freeze 13:30; Mete wants Hound, a.clinic, Dynova finished on main by 13:20.
-- Focus (Mete 11:15): Camplan > Hound > a.clinic > Dynova; Evreon gets no more work.
-- Current: Dynova shot 1 persona fix (same woman as shot 0, A19 revision); English versions of a.clinic/Dynova (secondary "en" dubs, market language stays primary per Mete 11:30); English 6-10 s talking heads (ElevenLabs Aurora lip sync); Camplan waits for Viktor's keys + URL (CONNECTOR_BRAND=camplan set).
-- Last sync: 11:18 exit 0, main UPDATED, checks PASS.
-- Voices (assets/voices.json, ElevenLabs library, 3 takes each, Gemini listened): a.clinic sk "Hope - Natural, Clear and Calm" (OYTbf65OHHFELVut7v2H); Hound en-GB "Lucy - Fresh & Casual" (lcMyyd2HUfFzxdCaC4Ta); Dynova tr "Fili - Warm Turkish Female" (FDs1ZX5J4e4f2c2erxtW); Evreon en-GB "Archer - Conversational" (Fahco4VZzobUeiPqni1S). English versions reuse the same voice (persona continuity), eleven_multilingual_v2.
-- Flagship reviews (Claude frames + Gemini whole video with sound, calibrated to the winner, stricter wins): Hound 78 (76/82/81/82/77/80), a.clinic v2 70, Dynova v2 68, Evreon 69 (frozen, no more work).
-- Talking-head tool: ElevenLabs Creatify Aurora (/v1/flows/video, image + the ElevenLabs speech audio drives the lips) chosen over fal Kling AI Avatar (v2 standard/pro kept as fallback); quality on par in the side-by-side, keeps the whole presenter in ElevenLabs.
-- Decisions today (conflicts resolved toward the pitch): premium caption spec over the winners' raw text style (Mete 10:53; the review judges against the target spec); market language primary, English as a dub (Mete 11:30 overrides 11:24); measured shake overrides Gemini's "handheld drift" shake; Gemini winner baseline < 40 is not used to calibrate.
+- FROZEN for the demo at 13:30 (2026-10-12). Final work commit: 3568def (main). No further changes from Lane A.
+- Steps (event goal A18/A19):
+  1. ElevenLabs everywhere: DONE. Voices cast from the library (3 takes each, Gemini listened), with-timestamps TTS driving the live captions, ElevenLabs music beds matched to each winner's sound, subtle ElevenLabs SFX (hook, cuts, end + the winner's signature sound), dubbing (Hound es; a.clinic and Dynova also have English versions as their dub toggle; the a.clinic Czech dub was NOT made, superseded by Mete's 11:30 market-language rule), Scribe for dubbed captions, ElevenLabs Aurora talking heads.
+  2. Real motion: DONE for the flagships (fal Kling clips; Kling 2.5 Turbo after 2.1 timed out; Higgsfield fallback; real-site screen recordings for CTAs; no zoompan on flagships, per-frame affine moves for any still).
+  3. Gemini watcher: DONE (Files API, whole video with sound, winners -> caption style + sound into blueprints, our renders -> critique + per-shot scores, calibrated against the winner, hard gates: static/unsynced/off-style captions, faces covered, no music, shake, product before 60% + CTA >= 2 s).
+  4. Re-render a.clinic, Dynova, Evreon + Hound audio: DONE (premium captions, centred, readable pacing, never across a cut). Not every flagship reached >= 80 under the new review (see scores); the review is honest and the stricter of Claude and Gemini wins.
+- Voice per brand: a.clinic sk "Hope - Natural, Clear and Calm" (OYTbf65OHHFELVut7v2H); Hound en-GB "Lucy - Fresh & Casual" (lcMyyd2HUfFzxdCaC4Ta); Dynova tr "Fili - Warm Turkish Female" (FDs1ZX5J4e4f2c2erxtW); Evreon en-GB "Archer - Conversational" (Fahco4VZzobUeiPqni1S). English versions reuse the same voice. Private brand voices are stored outside git.
+- Final review scores of the four flagships (cuts on main, docs/renders): Hound 74 (per shot 75/80/80/82/80/68; the same cut scored 79 one pass earlier), a.clinic 60 (REJECTED by the hard product gate: the real site appears only at 0:26), Dynova 64 (70/66/72/60/68/75), Evreon 69 (75/75/80/60/64/76/81; no more work after 11:15 per Mete).
+- Also delivered: A19 revise-by-chat + versions + variants (contract, routes, engine, tests); carousels for Hound/a.clinic/Dynova; English talking heads (Aurora/Kling Pro, Gemini lip-sync 95); REVIEW_1200.md + WINNERS_1200.md; business connectors (RevenueCat, PostHog, Databricks; read-only, one brand); private Camplan work (local only, see INBOX_B 13:21).
 
 ## Camplan runbook (private brand, local only)
 1. Keys in .env: REVENUECAT_API_KEY (+ REVENUECAT_PROJECT_ID), POSTHOG_API_KEY + POSTHOG_PROJECT_ID (+ POSTHOG_HOST us/eu), DATABRICKS_HOST/TOKEN/WAREHOUSE_ID (+ CATALOG/SCHEMA); CONNECTOR_BRAND=camplan (set). Add `revenuecat,posthog,databricks,spiral,apify,manus` to LIVE_PROVIDERS.
