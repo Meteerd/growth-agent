@@ -22,6 +22,7 @@ const { getDb } = await import("@/engine/db/client");
 const repo = await import("@/engine/repo");
 const { structured } = await import("@/engine/agent/claude");
 const { checkText } = await import("@/engine/compliance/check");
+const { rulePackText } = await import("@/engine/rules");
 const { generateImage } = await import("@/engine/providers/openai");
 const { brandImages } = await import("@/engine/flagship");
 const { brandAssetsDir } = await import("@/engine/video/files");
@@ -125,7 +126,7 @@ const SYSTEM = `You write one Instagram carousel / TikTok photo-mode post for a 
 Structure (exactly 6 slides):
 1. Hook: names the persona's pain in a few words (max ~8 words), so the right person stops scrolling.
 2-5. One idea per slide, with slide-to-slide tension so people swipe: either myth vs fact, or numbered steps. Each slide earns the next.
-6. CTA: one clear next step with the real site (${site}). Nothing salesy or pushy.
+6. CTA: one clear next step. The site (${site}) is shown in a button under the copy, so do not repeat the URL in the CTA slide's headline or body. Nothing salesy or pushy.
 
 Rules:
 - All on-slide copy (headline, body, caption, hashtags) is in ${LANG_NAME[language] ?? language}, written natively by a local social copywriter: idiomatic, natural, not a word-for-word translation of English. Correct diacritics. Sentence case, no ALL CAPS.
@@ -139,7 +140,7 @@ Rules:
   - generated: a photoreal prompt (English) for a candid iPhone photo that matches the slide: real people and places, natural light, no text, no logos, no screens with UI, no medical procedures, no bodies shown as before/after, no needles, pens or pill packs. Keep the area where the type sits calm.
   - Slide 6 background: a calm photo (brand image or generated); the logo and URL are added on top.
 - caption: 1 to 3 short sentences for the post, plus a soft CTA. hashtags: 3 to 6, local.
-- pattern: name the winning structure you remade (from the evidence hooks/formats when there is one). why: one sentence.`;
+- Brand compliance rule pack (the copy is checked against it; include any line it requires, e.g. a referral to a vet, doctor or specialist, or a 'does not diagnose' line, in the copy or caption):\n${rulePackText(brand.rulePack)}\n- pattern: name the winning structure you remade (from the evidence hooks/formats when there is one). why: one sentence.`;
 
 async function writeScript(feedback?: string): Promise<Script> {
   const content: BetaContentBlockParam[] = [

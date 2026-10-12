@@ -10,6 +10,12 @@
 - Talking-head tool: ElevenLabs Creatify Aurora (/v1/flows/video, image + the ElevenLabs speech audio drives the lips) chosen over fal Kling AI Avatar (v2 standard/pro kept as fallback); quality on par in the side-by-side, keeps the whole presenter in ElevenLabs.
 - Decisions today (conflicts resolved toward the pitch): premium caption spec over the winners' raw text style (Mete 10:53; the review judges against the target spec); market language primary, English as a dub (Mete 11:30 overrides 11:24); measured shake overrides Gemini's "handheld drift" shake; Gemini winner baseline < 40 is not used to calibrate.
 
+## Camplan runbook (private brand, local only)
+1. Keys in .env: REVENUECAT_API_KEY (+ REVENUECAT_PROJECT_ID), POSTHOG_API_KEY + POSTHOG_PROJECT_ID (+ POSTHOG_HOST us/eu), DATABRICKS_HOST/TOKEN/WAREHOUSE_ID (+ CATALOG/SCHEMA); CONNECTOR_BRAND=camplan (set). Add `revenuecat,posthog,databricks,spiral,apify,manus` to LIVE_PROVIDERS.
+2. `pnpm smoke revenuecat --live`, `pnpm smoke posthog --live`, `pnpm smoke databricks --live` (print only, nothing recorded).
+3. Onboard in the cockpit (Add brand, Camplan URL) or `POST /api/brands {url}`: intake + live research (Spiral first) + business evidence (RevenueCat/PostHog/Databricks) start; answer the consult; direction; studio.
+4. `pnpm watch-winners <conceptId>`, `pnpm voices camplan` (add a camplan brief in scripts/voices.ts), `pnpm flagship-a18 <conceptId> --mode voice_led --animate-all --screen-cta --rounds 2`, compliance, pack. Never `export-showcase` it (refused unless PUBLIC_OK_BRANDS=camplan).
+
 ## Log (one line per finished task, newest last)
 - 23:17 A01 done: Next.js 16.4 scaffold, check/build/dev OK
 - 23:28 A02 done: contracts v1.0.0 + 4 brands + 4 demo runs, 20 tests

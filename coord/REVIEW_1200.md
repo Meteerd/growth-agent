@@ -5,7 +5,7 @@ Generated from the engine's data on Lane A's laptop. Reply with notes per beat (
 ## Hound: main (EN-GB, market UK)
 
 - File: `docs/renders/hound-flagship.mp4` (33.6 s), language en, channel tiktok, format myth_vs_fact
-- Review: 79/100, per shot 81 / 82 / 80 / 78 / 80 / 81
+- Review: 74/100, per shot 75 / 80 / 80 / 82 / 80 / 68
 - Hook: "Just let them cry it out" is common advice. It can make alone time harder.
 - Angle: Gentle myth-vs-fact on alone-time practice: name the familiar 'cry it out' advice, reframe the dog's experience, swap it for tiny manageable steps, add a no-judgement line, then route to the free age quiz. Assuming alone-time is the lead topic and myth-vs-fact stays gentle, with no trainers or brands named.
 - CTA: Take the free age quiz (link in bio, houndapp.xyz)
@@ -23,12 +23,12 @@ Generated from the engine's data on Lane A's laptop. Reply with notes per beat (
 | 6 | 0:27.1-0:31.6 | Vertical 9:16 phone-camera frame, sofa in a real home with natural daylight, an adult hand only holding a smar (clip: local) | Take the free age quiz and get a 10-minute daily practice plan built for your dog. | spoken words, live | cta (40-45s): Pitches free guide and asks viewers to comment a keyword | PRODUCT: real site on screen; CTA spoken + on screen |
 | end | 0:31.6-0:33.6 | animated end card: logo, brand name, CTA pill | - | - | CTA | CTA on screen 2 s |
 
-Reviewer notes: Gemini watched it with sound (raw 85; the winner itself scores 68 raw, calibrated 100): Overall ad is well-paced and follows the target caption spec accurately. / Ensure footage maintains natural lighting consistency across shots for a more polished aesthetic.. Claude: A solid native-looking remake: real-feeling beagle footage, no visible AI artifacts or shake, music bed present, captions bold and inside the top/bottom safe zones, and the end card is on-brand. Compliance is clean: outcomes are framed as practice and progress, there is no distress or punishment, and no stats. Optionally add a vet/behaviorist note for severe cases (P3 warn). Problems: (1) shot 3's caption covers the owner leaving, the visual that carries the solution; (2) the live captions consistently lag across cuts, so previous-sentence words show at the start of the next shot (them., one., online.); (3) the pacing is s
+Reviewer notes: Gemini watched it with sound (raw 85; the winner itself scores 68 raw, calibrated 100): Ensure all target caption style specifications are closely matched throughout the video. / Maintain consistent pacing to keep viewers engaged from start to finish.. Claude: The footage reads mostly as native, real dog b-roll: calm dogs, no distress, no fabricated stats, and gentle framing that fits P1/P2. The music bed is present and shake is low. Captions are bold and short and sit inside the top/bottom safe zones, though the hook caption edges into the right 15%. The main failures are the CTA shot, where the caption sits over the app screen and the screen is badly positioned, and a weak hook framing: the dog is seen from behind, its body proportions look slightly off, and it lacks the blueprint's talking-head myth call-out. Pacing runs about 32.6s against the blueprint's 45s, with uniform ~5s shots 
 
 ## a.clinic: main (SK, market Slovakia)
 
 - File: `docs/renders/aclinic-flagship.mp4` (31.1 s), language sk, channel tiktok, format listicle
-- Review: 68/100, per shot 66 / 75 / 64 / 69 / 68 / 68
+- Review: 60/100, per shot 68 / 77 / 73 / 69 / 75 / 76
 - Hook: Starostlivosť o váhu bez čakárne 🩺
 - Angle: Convenience and doctor-led care (RX5): a clear, saveable 4-step system replaces the stress of clinic visits, with the full price shown before payment and medicine from your local pharmacy. Slovakia only.
 - CTA: Vyplň zdravotný dotazník na a.clinic
@@ -46,7 +46,7 @@ Reviewer notes: Gemini watched it with sound (raw 85; the winner itself scores 6
 | 6 | 0:25.9-0:29.1 | Vertical 9:16 photoreal close phone frame of a smartphone lying on a soft green blanket in gentle natural ligh (clip: local) | Ulož si to a začni dotazníkom na a.clinic. | spoken words, live | cta (21-24s): Closing beat inviting the viewer to save the post and try the method at the next shop (CTA | PRODUCT: real site on screen; CTA spoken + on screen |
 | end | 0:29.1-0:31.1 | animated end card: logo, brand name, CTA pill | - | - | CTA | CTA on screen 2 s |
 
-Reviewer notes: Gemini watched it with sound (raw 85; the winner itself scores 46 raw, calibrated 100): Ensure caption positioning strictly adheres to the middle placement without overlapping key visual subjects. / Maintain high visual fidelity across all transitions to prevent any slight artificial artifacting.. Claude: No Rx drug names, and the conditional 'ak lekár uzná' wording is good. The illustrated doctors are clearly fictional, so RX6 is fine, though the C4/C5 AI-label checklist still applies at posting. The main problems are the weak hook (no value line readable in the first 2 s) and the repeated cartoon-doctor-in-laptop composites, which read as AI and not native. Other problems: fake phone UI text, ghost/faded captions at cuts, and visuals that don't prove the steps (blank notes, blank notebook). The end card uses a plain blue circle in place of a real logo, so brand consistency is weak. Run
+Reviewer notes: Gemini watched it with sound (raw 68; the winner itself scores 46 raw, calibrated 92): Replace stock still images with authentic, dynamic video footage to reduce the AI/stock feel. / Ensure the real product or website interface is introduced much earlier in the video to meet engagement standards. / Maintain consistent visual pacing that matches the energetic tempo of the winner blueprint. [caps: REJECTED: the real product is not visible before 60% of the runtime (The app interface and website 'a.clinic' appear near the end around 00:26-00:30, with the CTA visible for the last 4 seconds.), a viewer would scroll past]. Claude: Compliance looks clean: no Rx products, illustrated doctors only, video consultation is stated (no RX2 issue), and no outcome promises in the script. Verify the '20 minút' chip on the website is a true operator claim. Main problems are craft. The hook lacks a benefit
 
 ## a.clinic: English version (dub toggle)
 
@@ -74,7 +74,7 @@ Reviewer notes: Gemini watched it with sound (raw 82; the winner itself scores 4
 ## Dynova: main (TR, market Turkey)
 
 - File: `docs/renders/dynova-flagship.mp4` (49.6 s), language tr, channel tiktok, format myth_vs_fact
-- Review: 64/100, per shot 72 / 66 / 70 / 60 / 69 / 70
+- Review: 64/100, per shot 70 / 66 / 72 / 60 / 68 / 75
 - Hook: Genel öneriler varken gen testi gerekli mi?
 - Angle: The presenter voices the persona's real objection in first person ('Is a genetic test worth it?'), then answers it calmly: generic advice is written for the average person, while an informational report comes from your own sample. A 'but' pivot makes clear it is not a diagnosis.
 - CTA: Kiti dynova.health'te incele.
@@ -92,15 +92,15 @@ Reviewer notes: Gemini watched it with sound (raw 82; the winner itself scores 4
 | 6 | 0:40.3-0:47.6 | Vertical 9:16 handheld selfie-angle phone frame in a sunny Istanbul apartment by the window, warm natural ligh (clip: local) | Raporda neler olduğunu merak ediyorsan takip et. Kiti dynova.health'te inceleyebilirsin. | spoken words, live | cta (86.07-92.71000000000001s): Warm sign-off inviting follows | PRODUCT: real site on screen; CTA spoken + on screen |
 | end | 0:47.6-0:49.6 | animated end card: logo, brand name, CTA pill | - | - | CTA | CTA on screen 2 s |
 
-Reviewer notes: Gemini watched it with sound (raw 75): Replace stock imagery and B-roll clips in shots 2, 3, 4, and 5 with authentic, creator-shot footage to maintain the organic talking-head aesthetic of the winning blueprint. / Ensure the final shot features the creator delivering the CTA directly to the camera rather than a blurred screen recording to drive higher engagement and conversion. [caps: no music bed]. Claude: No rule-pack violations are on screen. The script explicitly says 'teşhis koymaz' and frames the report as informational (T1 ok). There are no stats, testimonials or urgency claims. The team-credentials line needs operator confirmation, and the AI presenter is not posed as a doctor or customer (C4 ok), but the AI label must be applied at posting (C5). The ad still fails the bar: the hook question arrives late, and shot 1's background morphs. Shots 3–4 are stock B-roll with garbled in-
+Reviewer notes: Gemini watched it with sound (raw 82): The transition to stock footage in the middle shots breaks the authentic UGC aesthetic established in the hook. / Ensure brand colors and font match the precise spec provided.. Claude: No treatment or diagnosis claims, and the 'teşhis değil, bilgi' framing is good. Verify the team-background claim, and label the AI presenter per C4/C5 at posting. Main problems: (1) the hook doesn't voice the question in the first 2 s; (2) shot 1's background morphs and shakes; (3) shot 3 has garbled overlay and mirrored book text; (4) shot 4's caption is illegible on white; (5) the box logo doesn't match the end-card logo. Pacing is about 48 s against the blueprint's 93 s, and the remake swaps the winner's continuous talking head for stock b-roll in shots 2–4, which weakens the native expert-answer feel. Keep the presenter on camera through the explanation and use b
 
 ## Talking heads (landing video wall)
 
 | clip | language | length | file | label |
 |---|---|---|---|---|
 | hound-talk | en | 7.4 s | `public/showcase/hound-talk-916.mp4` | Hound (EN-GB): dog owner talking to camera (AI-generated presenter, lip-synced by elevenlabs creatify-aurora) |
-| aclinic-talk | sk | 3.2 s | `public/showcase/aclinic-talk-916.mp4` | a.clinic (SK): talking to camera (AI-generated presenter, lip-synced) |
+| aclinic-talk | en | 8.5 s | `public/showcase/aclinic-talk-916.mp4` | a.clinic (EN): talking to camera (AI-generated presenter, lip-synced by fal kling ai-avatar v2 pro) |
 | dynova-talk | tr | 4.8 s | `public/showcase/dynova-talk-916.mp4` | Dynova (TR): talking to camera (AI-generated presenter, lip-synced) |
 | evreon-talk | en | 5.1 s | `public/showcase/evreon-talk-916.mp4` | Evreon (EN-GB): practice manager talking to camera (AI-generated presenter, lip-synced) |
 
-Old vs new winners: the re-search with the stricter bar is still running; `coord/WINNERS_1200.md` lands next.
+Old vs new winners: see `coord/WINNERS_1200.md` (re-searched with the stricter bar).

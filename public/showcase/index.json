@@ -18,8 +18,8 @@
     "id": "aclinic-talk",
     "brand": "aclinic",
     "kind": "talking",
-    "language": "sk",
-    "label": "a.clinic (SK): talking to camera (AI-generated presenter, lip-synced)",
+    "language": "en",
+    "label": "a.clinic (EN): talking to camera (AI-generated presenter, lip-synced by fal kling ai-avatar v2 pro)",
     "aiPresenter": true,
     "files": {
       "vertical": "/showcase/aclinic-talk-916.mp4",
@@ -27,7 +27,7 @@
       "poster": "/showcase/aclinic-talk-916.jpg",
       "posterLandscape": "/showcase/aclinic-talk-169.jpg"
     },
-    "durationSec": 3.2
+    "durationSec": 8.53
   },
   {
     "id": "dynova-talk",

@@ -170,6 +170,14 @@ function fitHeadline(text: string, max: number, min: number, maxLines: number) {
     size -= 4;
     lines = wrap(font, text, size, MAX_W);
   }
+  // balance the lines (no one-word widow): the narrowest width that still gives the same number of lines
+  let w = MAX_W;
+  while (lines.length > 1 && w > 480) {
+    const next = wrap(font, text, size, w - 20);
+    if (next.length !== lines.length) break;
+    lines = next;
+    w -= 20;
+  }
   return { font, size, lines, lineH: Math.round(size * 1.08) };
 }
 
@@ -268,7 +276,7 @@ async function renderSlide(
     const pillH = 96;
     const groupH = logoSize + 56 + blockH + 56 + pillH;
     const g0 = Math.round((CH - groupH) / 2) - 30;
-    svg.push(`<rect width="${CW}" height="${CH}" fill="#000" opacity="0.52"/>`);
+    svg.push(`<rect width="${CW}" height="${CH}" fill="#000" opacity="0.36"/>`);
     svg.push(
       `<defs><radialGradient id="v" cx="50%" cy="50%" r="75%"><stop offset="40%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.55"/></radialGradient></defs><rect width="${CW}" height="${CH}" fill="url(#v)"/>`,
     );
@@ -314,7 +322,7 @@ async function renderSlide(
   } else if ((s.textPosition ?? "bottom") === "top") {
     top = 120;
     svg.push(
-      `<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0.78"/><stop offset="0.38" stop-color="#000" stop-opacity="0.5"/><stop offset="0.62" stop-color="#000" stop-opacity="0"/></linearGradient></defs><rect width="${CW}" height="${CH}" fill="url(#g)"/>`,
+      `<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0.85"/><stop offset="${Math.min(0.9, (top + blockH + 40) / CH).toFixed(3)}" stop-color="#000" stop-opacity="0.62"/><stop offset="${Math.min(1, (top + blockH + 300) / CH).toFixed(3)}" stop-color="#000" stop-opacity="0"/></linearGradient></defs><rect width="${CW}" height="${CH}" fill="url(#g)"/>`,
     );
   } else {
     // the block ends above the bottom ~13% (TikTok photo-mode caption), the gradient starts well above it

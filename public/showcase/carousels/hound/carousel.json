@@ -1,0 +1,354 @@
+{
+  "brand": "hound",
+  "brandName": "Hound",
+  "site": "houndapp.xyz",
+  "language": "en",
+  "size": {
+    "width": 1080,
+    "height": 1350
+  },
+  "pattern": "Myth vs fact debunk (remade from the 'Just let them cry it out' separation anxiety myth-buster and the 'alone time is trained, not forced' format)",
+  "why": "Opening on a common bad tip creates instant tension, and each myth-fact pair gives the anxious first-time owner a reason to keep swiping to the calm, doable answer.",
+  "runId": "run_mv4e0ud7671d68be0a",
+  "evidenceUsed": 40,
+  "slides": [
+    {
+      "n": 1,
+      "role": "hook",
+      "headline": "Your dog cries the second you leave?",
+      "accentWord": "cries",
+      "body": [
+        "You're not a bad owner. Swipe for what helps."
+      ],
+      "image": {
+        "source": "generated",
+        "file": "generated",
+        "prompt": "Candid iPhone photo in a small London flat hallway, soft morning daylight from a side window, a person's hand resting on the front door handle, a beagle mix sitting calmly on a doormat looking up at them, relaxed posture, wooden floor, coat hooks, warm natural tones, shallow depth of field, lower third of the frame plain floor and soft shadow, no text, no logos",
+        "phoneScreenshot": null
+      },
+      "png": "slide_1.png"
+    },
+    {
+      "n": 2,
+      "role": "point",
+      "headline": "Myth: just let them cry it out",
+      "accentWord": "Myth",
+      "body": [
+        "It's everywhere online, but pushing past their limit",
+        "can make being home alone feel scarier."
+      ],
+      "image": {
+        "source": "generated",
+        "file": "generated",
+        "prompt": "Candid iPhone photo of a cosy UK city flat living room in soft afternoon light, a medium-sized mixed breed dog lying relaxed on a rug near the sofa, head on paws, eyes open and calm, houseplant and cushions, muted warm colours, upper third of the frame is a plain pale wall, no text, no logos, no screens",
+        "phoneScreenshot": null
+      },
+      "png": "slide_2.png"
+    },
+    {
+      "n": 3,
+      "role": "point",
+      "headline": "Fact: calm alone time is a skill",
+      "accentWord": "skill",
+      "body": [
+        "Practised in tiny steps your dog can cope with.",
+        "Hound builds a plan for your dog's age and problem."
+      ],
+      "image": {
+        "source": "site_phone",
+        "file": "generated",
+        "prompt": "Photoreal close-up of a person sitting on a sofa in a bright UK flat with a relaxed dog curled up beside them, soft natural window light, warm neutral tones, gently out of focus, no text, no logos",
+        "phoneScreenshot": "https://houndapp.xyz (live screenshot, phone viewport)"
+      },
+      "png": "slide_3.png"
+    },
+    {
+      "n": 4,
+      "role": "point",
+      "headline": "Myth: you need hours of training every day",
+      "accentWord": "hours",
+      "body": [
+        "Fact: one short exercise a day, about 10 minutes.",
+        "Small, regular practice is what adds up."
+      ],
+      "image": {
+        "source": "generated",
+        "file": "generated",
+        "prompt": "Candid iPhone photo of a young adult kneeling on a kitchen floor in a small city flat, offering a treat to a calm terrier mix sitting nicely, morning light through the window, mug of tea on the counter, relaxed everyday feel, upper area of the frame is a plain cream wall, no text, no logos, no screens",
+        "phoneScreenshot": null
+      },
+      "png": "slide_4.png"
+    },
+    {
+      "n": 5,
+      "role": "point",
+      "headline": "Myth: only practise when you actually need to leave",
+      "accentWord": "practise",
+      "body": [
+        "Fact: short, easy absences on a calm day build confidence.",
+        "Track the small wins with progress and streaks."
+      ],
+      "image": {
+        "source": "generated",
+        "file": "generated",
+        "prompt": "Candid iPhone photo from inside a UK flat, a person stepping just outside the open front door with keys in hand and smiling back, a relaxed dog lying on a bed in the hallway watching calmly, soft daylight, lower third of the frame is plain wooden floor, no text, no logos",
+        "phoneScreenshot": null
+      },
+      "png": "slide_5.png"
+    },
+    {
+      "n": 6,
+      "role": "cta",
+      "headline": "Find your dog's plan in a quick quiz",
+      "accentWord": "plan",
+      "body": [
+        "Puppy, adolescent, adult or senior.",
+        "Start at houndapp.xyz"
+      ],
+      "image": {
+        "source": "generated",
+        "file": "generated",
+        "prompt": "Calm candid iPhone photo of a dog asleep on a soft blanket on a sofa in a sunlit UK flat, gentle late afternoon light, muted warm colours, lots of calm empty space in the lower half, no people, no text, no logos",
+        "phoneScreenshot": null
+      },
+      "png": "slide_6.png"
+    }
+  ],
+  "quotes": [],
+  "caption": "Leaving the house shouldn't come with a side of guilt. Calm alone time is practised in small steps, not forced. Take the age quiz at houndapp.xyz for a plan built for your dog.",
+  "hashtags": [
+    "#dogtraininguk",
+    "#separationanxiety",
+    "#puppyuk",
+    "#dogsofuk",
+    "#rescuedogsuk"
+  ],
+  "accent": "#C07848",
+  "compliance": {
+    "status": "warn",
+    "rulePack": "consumer_app_pet",
+    "history": [
+      {
+        "attempt": 0,
+        "status": "warn",
+        "findings": [
+          {
+            "ruleId": "P3",
+            "severity": "warn",
+            "message": "The post targets separation anxiety (crying when left, #separationanxiety) but never suggests a vet or qualified behaviorist for severe cases; add a short line such as 'For severe separation anxiety, talk to your vet or a qualified behaviourist' on a slide or in the caption.",
+            "excerpt": "Your dog cries the second you leave?"
+          },
+          {
+            "ruleId": "C5",
+            "severity": "info",
+            "message": "Five slides use AI-generated photoreal images of people and dogs, so apply the platform's AI-generated content label (TikTok or Meta) at posting time per the pack checklist.",
+            "excerpt": "image: generated prompt: Candid iPhone photo"
+          }
+        ]
+      }
+    ]
+  },
+  "review": {
+    "final": {
+      "slides": [
+        {
+          "slide": 1,
+          "legibility": 90,
+          "nativeFeel": 84,
+          "hookStrength": 85,
+          "overall": 85,
+          "issues": "Strong, relatable opener: the dog looking up at the owner at the door tells the story without words. The bottom gradient keeps the headline crisp. The 'cries' accent colour works. Lighting is a touch polished and staged, but there are no obvious AI tells. The subline is small but readable.",
+          "betterImagePrompt": ""
+        },
+        {
+          "slide": 2,
+          "legibility": 86,
+          "nativeFeel": 88,
+          "hookStrength": 74,
+          "overall": 82,
+          "issues": "Very native, phone-camera feel, and the dejected dog by the door matches the myth. Text sits on a plain grey wall, so it is clean. Body copy is on the small side for phone viewing. The top of the frame is mostly empty wall, so there is room to bump up the body size.",
+          "betterImagePrompt": ""
+        },
+        {
+          "slide": 3,
+          "legibility": 88,
+          "nativeFeel": 72,
+          "hookStrength": 72,
+          "overall": 78,
+          "issues": "Real product is clearly visible: the app quiz screen on a phone, which clears the gate. The floating phone over a heavily blurred background reads as a brand ad rather than a creator post. In-app copy uses US 'behavior' while the carousel is UK English. The bottom of the phone is cropped close to the edge. Consider a hand holding the phone in a real home setting for more native feel.",
+          "betterImagePrompt": ""
+        },
+        {
+          "slide": 4,
+          "legibility": 76,
+          "nativeFeel": 84,
+          "hookStrength": 70,
+          "overall": 76,
+          "issues": "Natural, warm training moment with a believable dog and hands. The body copy runs over a bright window and cabinet area on the right, so 'adds up' and '10 minutes' lose contrast. A stronger top scrim or text shadow is needed. 'Fact' is buried in the body while it is a headline on slide 3, which makes the format inconsistent.",
+          "betterImagePrompt": ""
+        },
+        {
+          "slide": 5,
+          "legibility": 84,
+          "nativeFeel": 78,
+          "hookStrength": 66,
+          "overall": 72,
+          "issues": "The dog, which is the point of the scene (calm while the owner leaves), sits bottom right and is almost fully hidden under the headline and gradient. The scene reads as just a woman leaving. The headline is long, at three lines, and the body wraps awkwardly ('confidence.' orphaned). Also, the 'streaks' claim is not shown.",
+          "betterImagePrompt": "Photoreal candid phone photo of a narrow bright UK hallway, a young woman in a dark coat at the open front door glancing back and smiling, a relaxed curly-coated dog lying calmly on a dog bed in the upper-middle of the frame clearly visible, soft natural daylight, lower third of the image plain wooden floor with empty space, no text, no logos"
+        },
+        {
+          "slide": 6,
+          "legibility": 88,
+          "nativeFeel": 74,
+          "hookStrength": 70,
+          "overall": 78,
+          "issues": "The CTA is clear, with the URL in both the body and the pill button, and the app icon adds brand recall. The dark overlay is very heavy, making the sleeping dog photo muddy and lifeless. The URL repetition is slightly redundant. Consider a lighter scrim or a warmer, brighter image of a calm dog at home alone.",
+          "betterImagePrompt": "Photoreal candid phone photo of a calm dog peacefully asleep alone on a cosy sofa with a knitted blanket in a softly lit UK living room, warm afternoon window light, houseplant nearby, lower half of the frame simple carpet with clean negative space, no people, no text, no logos"
+        }
+      ],
+      "productVisibleSlide": 3,
+      "productVisibleBeforeLast40": true,
+      "ctaOnLastSlide": true,
+      "gatePass": true,
+      "notes": "Gate passes: the real app quiz screen is visible on slide 3, and houndapp.xyz is the CTA on slide 6. Narrative flow from hook to myth/fact to quiz is solid and empathetic. Biggest fixes: (1) reshoot slide 5 so the calm dog is visible above the text; (2) add contrast behind slide 4 body copy; (3) make the myth/fact format consistent across slides; (4) fix the US 'behavior' spelling in the app screen for a UK audience; (5) lighten the slide 6 overlay. Slide 3 would feel more native as a hand-held phone shot in a real room."
+    },
+    "rounds": [
+      {
+        "slides": [
+          {
+            "slide": 1,
+            "legibility": 88,
+            "nativeFeel": 82,
+            "hookStrength": 84,
+            "overall": 84,
+            "issues": "Strong, relatable scene: a beagle staring up at an owner at the door, with a warm natural hallway. The headline sits on a clean dark gradient and reads well, and the orange 'cries' accent works. The subline is small at phone size, so bump it 10 to 15 percent. The image is slightly too polished and staged, which nudges it towards stock. The hook is good but generic: adding a specific detail such as 'howls for 20 minutes' would sharpen it.",
+            "betterImagePrompt": ""
+          },
+          {
+            "slide": 2,
+            "legibility": 78,
+            "nativeFeel": 70,
+            "hookStrength": 60,
+            "overall": 66,
+            "issues": "The image is mostly an empty sofa and a plant. The dog is pushed to the bottom edge and partly cropped, so the emotional subject of 'cry it out' is barely there. The body copy sits over busy monstera leaves and relies on a drop shadow, which gets noisy at phone size. Overall it reads like an interiors photo rather than a dog-anxiety post.",
+            "betterImagePrompt": "Photoreal candid phone photo of a medium-sized mixed-breed dog lying alone on a hallway floor with its chin on its paws, gazing at a closed front door. Soft overcast daylight, a lived-in UK flat with coats on hooks, muted warm tones and a slightly worried expression. Plain darker wall space in the upper third, natural grain, no people, no text, no logos."
+          },
+          {
+            "slide": 3,
+            "legibility": 86,
+            "nativeFeel": 76,
+            "hookStrength": 70,
+            "overall": 78,
+            "issues": "The real product is clearly shown here: the Hound site quiz on a phone with age options. The headline and body read well over the blurred background, though the body runs three lines with an orphaned 'problem.', which should be tightened. The mockup feels flat and template-like, and a hand-held phone in a real home would feel more native. The site copy uses US 'behavior' while the carousel uses UK spelling, so check consistency. The illustrated puppies on screen are fine.",
+            "betterImagePrompt": ""
+          },
+          {
+            "slide": 4,
+            "legibility": 82,
+            "nativeFeel": 84,
+            "hookStrength": 68,
+            "overall": 78,
+            "issues": "Natural, believable kitchen training moment with good eye contact between the woman and the dog. The headline is strong and the 'hours' accent lands. The body copy sits over the window and cabinets with lighter areas behind it, so contrast dips slightly and a touch more top gradient is needed. The hand and treat look fine. As a mid-carousel slide, its swipe pull is moderate.",
+            "betterImagePrompt": ""
+          },
+          {
+            "slide": 5,
+            "legibility": 76,
+            "nativeFeel": 74,
+            "hookStrength": 60,
+            "overall": 68,
+            "issues": "The dog, the key subject of 'easy absences', is lying in the lower right but is almost entirely covered by the headline and body text, so the story is lost. The headline is the longest in the set at three lines, and the body breaks badly with 'confidence.' orphaned. The woman smiling back at the camera feels posed. Shorten the headline and move the text up, or use a frame where the dog sits mid-frame with clear floor space below.",
+            "betterImagePrompt": "Photoreal candid phone photo of a relaxed curly-coated dog lying calmly on a dog bed in the mid-ground of a narrow UK hallway, while its owner, seen from behind and slightly out of focus, steps out of the open front door with keys in hand. Soft daylight and natural muted colours. Plenty of empty darker wooden floor across the bottom third, no text, no logos."
+          },
+          {
+            "slide": 6,
+            "legibility": 88,
+            "nativeFeel": 72,
+            "hookStrength": 66,
+            "overall": 76,
+            "issues": "A clear CTA with the app icon, the site in a pill button and the site repeated in the body. The URL appears twice, so drop it from the body and keep the pill. The background is heavily darkened and muddy, so the sleeping dog barely reads and the slide feels like a template overlay. Lightening the image slightly and keeping a gradient only behind the text would feel warmer.",
+            "betterImagePrompt": ""
+          }
+        ],
+        "productVisibleSlide": 3,
+        "productVisibleBeforeLast40": true,
+        "ctaOnLastSlide": true,
+        "gatePass": true,
+        "notes": "The gate passes: the real Hound site quiz appears on slide 3 and houndapp.xyz is the CTA on slide 6. The myth/fact structure is clear and the copy is in consistent UK English, apart from 'behavior' on the site screenshot. The weakest slides are 2 and 5, where the dog is hidden or cropped and text covers the subject, so fix those images first. Showing the product on a hand-held phone in a real room would lift native feel. Slide 1 is solid but could use a more specific hook. Trim the long three-line body copy on slides 3 and 5 and avoid orphaned words.",
+        "round": 1
+      },
+      {
+        "slides": [
+          {
+            "slide": 1,
+            "legibility": 90,
+            "nativeFeel": 84,
+            "hookStrength": 85,
+            "overall": 85,
+            "issues": "Strong, relatable opener: the dog looking up at the owner at the door tells the story without words. The bottom gradient keeps the headline crisp. The 'cries' accent colour works. Lighting is a touch polished and staged, but there are no obvious AI tells. The subline is small but readable.",
+            "betterImagePrompt": ""
+          },
+          {
+            "slide": 2,
+            "legibility": 86,
+            "nativeFeel": 88,
+            "hookStrength": 74,
+            "overall": 82,
+            "issues": "Very native, phone-camera feel, and the dejected dog by the door matches the myth. Text sits on a plain grey wall, so it is clean. Body copy is on the small side for phone viewing. The top of the frame is mostly empty wall, so there is room to bump up the body size.",
+            "betterImagePrompt": ""
+          },
+          {
+            "slide": 3,
+            "legibility": 88,
+            "nativeFeel": 72,
+            "hookStrength": 72,
+            "overall": 78,
+            "issues": "Real product is clearly visible: the app quiz screen on a phone, which clears the gate. The floating phone over a heavily blurred background reads as a brand ad rather than a creator post. In-app copy uses US 'behavior' while the carousel is UK English. The bottom of the phone is cropped close to the edge. Consider a hand holding the phone in a real home setting for more native feel.",
+            "betterImagePrompt": ""
+          },
+          {
+            "slide": 4,
+            "legibility": 76,
+            "nativeFeel": 84,
+            "hookStrength": 70,
+            "overall": 76,
+            "issues": "Natural, warm training moment with a believable dog and hands. The body copy runs over a bright window and cabinet area on the right, so 'adds up' and '10 minutes' lose contrast. A stronger top scrim or text shadow is needed. 'Fact' is buried in the body while it is a headline on slide 3, which makes the format inconsistent.",
+            "betterImagePrompt": ""
+          },
+          {
+            "slide": 5,
+            "legibility": 84,
+            "nativeFeel": 78,
+            "hookStrength": 66,
+            "overall": 72,
+            "issues": "The dog, which is the point of the scene (calm while the owner leaves), sits bottom right and is almost fully hidden under the headline and gradient. The scene reads as just a woman leaving. The headline is long, at three lines, and the body wraps awkwardly ('confidence.' orphaned). Also, the 'streaks' claim is not shown.",
+            "betterImagePrompt": "Photoreal candid phone photo of a narrow bright UK hallway, a young woman in a dark coat at the open front door glancing back and smiling, a relaxed curly-coated dog lying calmly on a dog bed in the upper-middle of the frame clearly visible, soft natural daylight, lower third of the image plain wooden floor with empty space, no text, no logos"
+          },
+          {
+            "slide": 6,
+            "legibility": 88,
+            "nativeFeel": 74,
+            "hookStrength": 70,
+            "overall": 78,
+            "issues": "The CTA is clear, with the URL in both the body and the pill button, and the app icon adds brand recall. The dark overlay is very heavy, making the sleeping dog photo muddy and lifeless. The URL repetition is slightly redundant. Consider a lighter scrim or a warmer, brighter image of a calm dog at home alone.",
+            "betterImagePrompt": "Photoreal candid phone photo of a calm dog peacefully asleep alone on a cosy sofa with a knitted blanket in a softly lit UK living room, warm afternoon window light, houseplant nearby, lower half of the frame simple carpet with clean negative space, no people, no text, no logos"
+          }
+        ],
+        "productVisibleSlide": 3,
+        "productVisibleBeforeLast40": true,
+        "ctaOnLastSlide": true,
+        "gatePass": true,
+        "notes": "Gate passes: the real app quiz screen is visible on slide 3, and houndapp.xyz is the CTA on slide 6. Narrative flow from hook to myth/fact to quiz is solid and empathetic. Biggest fixes: (1) reshoot slide 5 so the calm dog is visible above the text; (2) add contrast behind slide 4 body copy; (3) make the myth/fact format consistent across slides; (4) fix the US 'behavior' spelling in the app screen for a UK audience; (5) lighten the slide 6 overlay. Slide 3 would feel more native as a hand-held phone shot in a real room.",
+        "round": 2
+      }
+    ],
+    "regenerated": {
+      "slide": 2,
+      "from": "generated",
+      "prompt": "Photoreal candid phone photo of a medium-sized mixed-breed dog lying alone on a hallway floor with its chin on its paws, gazing at a closed front door. Soft overcast daylight, a lived-in UK flat with coats on hooks, muted warm tones and a slightly worried expression. Plain darker wall space in the upper third, natural grain, no people, no text, no logos."
+    }
+  },
+  "strip": "strip.jpg",
+  "minutes": 6.14,
+  "createdAt": "2026-10-12T08:51:31.218Z"
+}
