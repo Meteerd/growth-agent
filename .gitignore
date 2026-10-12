@@ -46,3 +46,13 @@ e2e/_*.spec.ts
 # private brands: never in git
 src/contracts/fixtures/live/**/camplan*
 src/contracts/fixtures/live/**/*camplan*
+# sensitive files anywhere in the tree: local databases, keys and certificates, local agent settings
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.key
+*.p12
+*.pfx
+*.crt
+.claude/settings.local.json
