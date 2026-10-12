@@ -4,8 +4,9 @@
 Hound's flagship is excellent because every shot is a real AI video clip from fal. The others fell back to stills with a shaky ffmpeg zoom after fal's balance ran out at 03:24, with no music and grey caption boxes. Task **A18** in `coord/TASKS_A.md` has the exact fixes. Do it today, in this order:
 
 1. **08:30 check-in**, then claim credits right away: **fal ($50)**, Manus (10,000), Apify. If fal gives a new key, replace `FAL_KEY` in `.env` on Mete's laptop.
-2. **ElevenLabs:** paste `ELEVENLABS_API_KEY` in `.env` (music beds + native-language voices).
-3. **Go live:** set `LIVE_PROVIDERS=anthropic,openai,firecrawl,youtube,fal,elevenlabs` (add `apify,manus,spiral` if we run new research). Run `scripts/check-keys.sh`.
+2. **Gemini (the video watcher):** get a key at aistudio.google.com (same Google account as the YouTube key) and paste `GEMINI_API_KEY` in `.env`. Gemini watches whole videos with sound: winners (motion, music, pacing) and our own renders (shake, missing music, bad captions).
+2b. **ElevenLabs:** paste `ELEVENLABS_API_KEY` in `.env` (music beds + native-language voices).
+3. **Go live:** set `LIVE_PROVIDERS=anthropic,openai,firecrawl,youtube,fal,elevenlabs,gemini` (add `apify,manus,spiral` if we run new research). Run `scripts/check-keys.sh`.
 4. **09:30 build starts.** Tell Lane A (Mete's agent): "Start A18 now." It fixes, in this order:
    - Motion: real fal clips for every shot; no ffmpeg zoompan on flagships (it shakes); smooth fallback + a shake test.
    - Music: ElevenLabs bed per ad matched to the winner's sound, ducked under the voice, stereo, about -14 LUFS.
