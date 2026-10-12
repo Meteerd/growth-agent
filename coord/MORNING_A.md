@@ -45,7 +45,7 @@ Also: `/api/mcp` (MCP server with the brand tools), Manus landing page per pack 
 4. Consultation live: start a run on the recorded research (`POST /api/brands/hound/runs {"kind":"full","reuseResearchFrom":"recorded"}`), answer 2 or 3 questions in front of the judge (Claude, live). The rest of that run takes ~10 minutes, so for direction, studio and packs switch to `run_mv4e0ud7671d68be0a` which already finished.
 5. Direction: ranked channels with six-axis scores, explicit weights, evidence links, "not now" with reasons.
 6. Studio: the flagship video, its keyframes (brand images or photoreal frames), the two review rounds with per-shot scores.
-7. Packs: download the zip; show the Manus landing page link on the Hound TikTok pack.
+7. Packs: download the flagship's TikTok pack zip (`pack_1d68be0a_1`: video, caption, hashtags, checklist, cover). The Manus-built landing page is on `pack_0569d023_1` of the earlier Hound run `run_mv4cox1z4e0569d023` (this machine only; built for an earlier Hound concept, unpublished): https://manus.im/app/495LAe3t6NDkJcXULHZL4T (opens in Mete's Manus account). `POST /api/packs/:id/landing` builds one for any pack when Manus is live (one lite task each).
 8. a.clinic in 20 seconds: same loop, Slovak content, Meta paid blocked by RX4 with the reason.
 
 ## Live vs demo (overnight)
