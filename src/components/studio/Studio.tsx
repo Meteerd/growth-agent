@@ -289,7 +289,13 @@ function Workbench({ c, events, demo }: { c: Concept; events: RunEvent[]; demo: 
           <>
             <PhoneFrame
               src={video?.url}
-              empty={c.status === "rendering" ? "Rendering" : "No render yet"}
+              empty={
+                c.status === "rendering"
+                  ? "Rendering"
+                  : c.status === "rendered"
+                    ? "Rendered on the engine machine; the file is not on this one"
+                    : "No render yet"
+              }
               overlay={c.status === "rendering" ? <RenderProgress /> : undefined}
               className="max-w-[210px]"
             />
