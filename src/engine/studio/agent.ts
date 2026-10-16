@@ -141,6 +141,10 @@ const TOOLS: ToolDef<z.ZodType>[] = [
       aspects: z.array(z.enum(ASPECTS)).optional(),
       colors: z.object({ primary: z.string(), accent: z.string(), ink: z.string(), paper: z.string() }).optional(),
       headFont: z.string().optional(),
+      logoStyle: z
+        .enum(["image", "wordmark"])
+        .optional()
+        .describe("wordmark sets the brand name in type instead of a logo image"),
       notesAdd: z.array(z.string()).optional(),
       notes: z.array(z.string()).optional().describe("replaces all notes"),
       testimonials: z.array(Testimonial).optional(),

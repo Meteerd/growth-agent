@@ -158,16 +158,20 @@ async function grounding(db: Db, brand: Brand): Promise<Grounding> {
       steal: r.body.analysis!.steal,
       slides: r.body.analysis!.slides,
     }));
+  const health = brand.rulePack !== "common" || brand.vertical === "telehealth_rx";
+  const RISKY =
+    /medic|vial|pill|syringe|injection|\bpen\b|scale|waist|tape|belly|bellies|body|bodies|weight (overlay|number)|package|blister/i;
   const brandImages = cfg.brandImages
     .map((b, i) => ({ i, url: b.url, note: b.note, file: urlToFile(b.url) ?? "" }))
-    .filter((b) => b.file && fs.existsSync(b.file));
+    .filter((b) => b.file && fs.existsSync(b.file))
+    .filter((b) => !health || !RISKY.test(`${b.note ?? ""} ${b.url}`));
   return {
     brand,
     cfg,
     playbook,
     refs,
     brandImages,
-    health: brand.rulePack !== "common" || brand.vertical === "telehealth_rx",
+    health,
   };
 }
 

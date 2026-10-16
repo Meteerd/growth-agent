@@ -50,6 +50,8 @@ export const StudioBrandConfig = z.object({
   /** asset URLs (/api/assets/...) of the logo, a light version for dark backgrounds, and real brand images */
   logo: z.string().optional(),
   logoOnDark: z.string().optional(),
+  /** wordmark: the brand name set in type instead of a logo image (for text logos like "a.clinic") */
+  logoStyle: z.enum(["image", "wordmark"]).optional(),
   brandImages: z.array(z.object({ url: z.string(), note: z.string().optional() })),
   /** a phone screenshot of the product (site or app) */
   productShot: z.string().optional(),

@@ -167,6 +167,17 @@ export function Kit({ slug, d }: { slug: string; d: BrandDetail }) {
             </label>
           ))}
           <label className="text-[12px] text-bone-3">
+            Logo on ads
+            <select
+              value={c.logoStyle ?? "image"}
+              onChange={(e) => set({ logoStyle: e.target.value as "image" | "wordmark" })}
+              className={cn(field, "mt-1 block")}
+            >
+              <option value="image">Logo image</option>
+              <option value="wordmark">Name in type</option>
+            </select>
+          </label>
+          <label className="text-[12px] text-bone-3">
             Headline font
             <select
               value={c.fonts.head}

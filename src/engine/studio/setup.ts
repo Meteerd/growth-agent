@@ -228,7 +228,7 @@ async function pickKit(
     { db: ctx.db },
     {
       route: "vision",
-      system: `You set up the brand kit for an ad generator. For each image say what it is: logo (the brand mark on light background), logo_light (a light/white version for dark backgrounds), product (the product, app or service shown), lifestyle (real-feeling photo usable behind ad copy), person (a real team member or doctor portrait), illustration, screenshot, or unusable (tiny, cropped, generic stock icon, badge, payment logo, someone else's logo). Colours: primary = the brand's main colour, accent = the colour for highlights and CTA buttons (must stand out), ink = the dark text colour, paper = the light background colour; all hex from the site's palette. headFont: the closest headline font from this list: ${HEAD_FONTS.join(", ")} (default jakarta). ctaUrl: the site host without https. offer: the main offer stated on the site (trial, first consultation price), verbatim, or "". disclaimers: lines the site requires (for example "Not veterinary advice."), verbatim, or []. defaultLanguage: the language the site speaks to its main market (BCP-47 short, e.g. sk, en, es).`,
+      system: `You set up the brand kit for an ad generator. For each image say what it is: logo (the brand mark on light background), logo_light (a light/white version for dark backgrounds), product (the product, app or service shown), lifestyle (real-feeling photo usable behind ad copy), person (a real team member or doctor portrait), illustration, screenshot, or unusable (tiny, cropped, generic stock icon, badge, payment logo, someone else's logo${brand.rulePack !== "common" ? "; for this health brand ALSO anything showing medicines, vials, pens, syringes, pills, packs, scales, tape measures, waists, bellies or bodies, or UI overlays with weight numbers" : ""}). Colours: primary = the brand's main colour, accent = the colour for highlights and CTA buttons (must stand out), ink = the dark text colour, paper = the light background colour; all hex from the site's palette. headFont: the closest headline font from this list: ${HEAD_FONTS.join(", ")} (default jakarta). ctaUrl: the site host without https. offer: the main offer stated on the site (trial, first consultation price), verbatim, or "". disclaimers: lines the site requires (for example "Not veterinary advice."), verbatim, or []. defaultLanguage: the language the site speaks to its main market (BCP-47 short, e.g. sk, en, es).`,
       user: content,
       schema: Kit,
       note: `studio setup: kit for ${brand.slug}`,
@@ -411,6 +411,7 @@ export async function setupBrand(ctx: JobCtx, input: SetupInput): Promise<{ bran
       ? kit.defaultLanguage
       : (brand.languages[0] ?? kit.defaultLanguage),
     logo: logo ? fileToUrl(byIdx(logo.index)!.file) : cfg.logo,
+    logoStyle: logo || cfg.logo ? cfg.logoStyle : "wordmark",
     logoOnDark: logoLight ? fileToUrl(byIdx(logoLight.index)!.file) : cfg.logoOnDark,
     brandImages: [
       ...prevImages,

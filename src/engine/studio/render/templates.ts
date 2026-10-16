@@ -100,6 +100,7 @@ async function rounded(file: string, w: number, h: number, r: number, fitMode: "
 }
 
 function logoPath(cfg: StudioBrandConfig, onDark: boolean): string | null {
+  if (cfg.logoStyle === "wordmark") return null;
   const u = (onDark && cfg.logoOnDark) || cfg.logo;
   if (!u) return null;
   const f = urlToFile(u);
@@ -319,7 +320,7 @@ async function logo(c: Ctx, onDark: boolean, size: number, x: number, y: number)
 
 /** Brand name as a wordmark when there is no logo file. */
 function wordmark(c: Ctx, x: number, y: number, color: string, anchor: "start" | "middle" | "end" = "start") {
-  c.svg.push(label(c.head, c.input.brand.name, 34 * c.s, { x, y, color, anchor }).svg);
+  c.svg.push(label(c.head, c.input.brand.name, 40 * c.s, { x, y, color, anchor }).svg);
 }
 
 function gradient(c: Ctx, id: string, from: "top" | "bottom", start: number, end: number, op: number) {
