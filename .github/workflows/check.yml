@@ -1,0 +1,43 @@
+name: check
+
+on:
+  push:
+    branches: [main, studio]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+      - run: pnpm check
+        env:
+          NEXUS_TEST: "1"
+
+  # Deploys the studio after a green check on the studio branch. Needs two repository secrets:
+  # STUDIO_SSH_KEY (a private key whose public half is in ~ubuntu/.ssh/authorized_keys on the server)
+  # and STUDIO_HOST (ubuntu@<ip>). Without them the job is skipped.
+  deploy-studio:
+    needs: check
+    if: github.ref == 'refs/heads/studio' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: deploy
+        env:
+          KEY: ${{ secrets.STUDIO_SSH_KEY }}
+          STUDIO_HOST: ${{ secrets.STUDIO_HOST }}
+        run: |
+          if [ -z "$KEY" ] || [ -z "$STUDIO_HOST" ]; then echo "no deploy secrets configured, skipping"; exit 0; fi
+          mkdir -p ~/.ssh && echo "$KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "${STUDIO_HOST#*@}" >> ~/.ssh/known_hosts
+          deploy/studio/deploy.sh studio

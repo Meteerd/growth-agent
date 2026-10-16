@@ -415,7 +415,7 @@ const splitPanel: Tpl = async (c) => {
   c.bg = { color: panelColor };
   if (file && c.input.slide.image.source === "product") {
     c.svg.push(rect(0, 0, c.W, ph, 0, mix(c.cfg.colors.primary, "#FFFFFF", 0.82)));
-    const p = await phone(file, c.W / 2, Math.round(c.pad * 0.8), Math.round(ph * 1.08 - c.pad * 0.8));
+    const p = await phone(file, c.W / 2, Math.round(c.pad * 0.6), Math.round(ph - c.pad * 1.1));
     c.svg.push(p.svg);
     c.over.push(p.layer);
     c.svg.push(rect(0, ph, c.W, c.H - ph, 0, panelColor));

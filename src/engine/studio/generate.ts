@@ -336,6 +336,7 @@ Use the format's template for a static (${fmt?.template ?? "its template"}). Car
 Images: source "brand" uses a real brand image (brandImage = its index; only if it fits as described); "product" uses the real phone screenshot of the site (feature, offer and how-it-works slides); "generated" needs prompt: an English scene description only (who, where, doing what, light, mood, camera), never text in the image; visualWorld is one sentence describing the shared look (people, place, palette, light) that every generated image in this ad shares so slides stay consistent. referenceImage: a brand image index to keep the real product, pet or person look in a generated image, else -1. "none" for type-only templates (comparison, notes_app, myth_fact, quiz, steps, text_slide usually).
 ${g.health ? `Health brand: images never show ${HEALTH_NEG} Never present an AI person as a patient or doctor in a testimonial.` : ""}
 Copy for Ads Manager: primaryText (key message in the first 125 characters, total under 300, plain, may include line breaks), headline (27 to 40 characters), description (under 25), cta = the Meta button (one of: Learn More, Sign Up, Book Now, Download, Install Now, Get Offer, Subscribe, Shop Now). Include any required disclaimer in primaryText.
+The picture must show what the headline says (an ad about leaving the house shows that moment, not a settings screen). Use the product shot only when the slide is about the product itself. The on-image CTA matches the Meta button's intent (Sign Up/Download -> 'Start your plan' or 'Get the app'; Learn More -> 'See how it works'; Book Now -> 'Book a consultation').
 Never invent numbers, prices, reviews, names or credentials not in the brief. No em dashes. No emoji on images.
 
 Brand compliance rule pack:
@@ -562,21 +563,23 @@ async function renderAll(
   return { files: out, minContrast };
 }
 
-/** Images, render, review, one automatic fix of the weakest slide. Updates the ad row. */
-async function produce(
+type Concept = z.infer<typeof PlanOut>["concepts"][number];
+type ReviewV = z.infer<typeof ReviewOut>;
+
+/** Images + render + review of one written version. */
+async function renderVersion(
   ctx: JobCtx,
   g: Grounding,
   ad: Ad,
   written: AdOut,
   model: ImageModel,
+  version: number,
   previous?: { slides: Slide[]; files: (string | undefined)[] },
 ) {
   const dir = studioDir("ads", g.brand.slug, ad.id);
-  const version = ad.body.versions.length + 1;
-  await updateAd(ctx.db, ad.id, { status: "rendering" });
   const imgs = await Promise.all(
     written.slides.map(async (s, i) => {
-      // revisions keep an image when its source and prompt did not change
+      // a new version keeps an image when its source and prompt did not change
       const prev = previous?.slides[i];
       if (
         prev &&
@@ -595,74 +598,94 @@ async function produce(
     image: imgs[i]!.image,
   }));
   const files = imgs.map((x) => x.file);
-  let rendered = await renderAll(g, slides, files, ad.body.aspect, dir, version);
-  let rv = await review(ctx, g, {
+  const rendered = await renderAll(g, slides, files, ad.body.aspect, dir, version);
+  const rv = await review(ctx, g, {
     title: ad.body.title,
     format: ad.format,
     copy: written.copy,
     slides,
     files: rendered.files,
   });
+  if (rendered.files.length > 1) await contactSheet(rendered.files, path.join(dir, `v${version}`, "sheet.jpg"));
+  return { written, slides, files, rendered, rv };
+}
+
+const toReview = (rv: ReviewV, minContrast: number): AdReview => ({
+  overall: rv.overall,
+  stopPower: rv.stopPower,
+  clarity: rv.clarity,
+  brandFit: rv.brandFit,
+  craft: rv.craft,
+  textCorrect: rv.textCorrect,
+  issues: [...rv.issues, ...(minContrast < 3 ? [`Low text contrast somewhere (${minContrast}:1)`] : [])],
+  fix: rv.fix,
+  slideScores: rv.slideScores,
+});
+
+/**
+ * Render and review; if the creative director scores it under the threshold, its critique goes back to the
+ * copywriter/art director as feedback for one self-revision (copy, template, image), which is gated and rendered
+ * again. The better of the two becomes the ad; both stay in its version history.
+ */
+async function produce(
+  ctx: JobCtx,
+  g: Grounding,
+  ad: Ad,
+  concept: Concept,
+  written: AdOut,
+  model: ImageModel,
+  previous?: { slides: Slide[]; files: (string | undefined)[] },
+) {
+  await updateAd(ctx.db, ad.id, { status: "rendering" });
+  const base = ad.body.versions.length;
   const settings = await getSettings(ctx.db);
-  if (rv.overall > 0 && rv.overall < settings.reviewThreshold && rv.imageIsTheProblem && rv.betterImagePrompt) {
-    const w = Math.max(0, Math.min(slides.length - 1, rv.worstSlide));
-    const s = written.slides[w]!;
-    if (s.image.source !== "none" && s.image.source !== "product") {
-      await ctx.log(`Fixing slide ${w + 1} of "${ad.body.title}": ${rv.fix}`);
-      const fixed = await slideImage(
-        ctx,
-        g,
-        { ...s, image: { ...s.image, source: "generated" } },
-        {
-          aspect: ad.body.aspect,
-          model,
-          visualWorld: written.visualWorld,
-          dir,
-          idx: w,
-          promptOverride: rv.betterImagePrompt,
-        },
-      );
-      files[w] = fixed.file;
-      slides[w] = { ...slides[w]!, image: fixed.image };
-      const v2 = await renderAll(g, slides, files, ad.body.aspect, dir, version);
-      const rv2 = await review(ctx, g, {
-        title: ad.body.title,
-        format: ad.format,
-        copy: written.copy,
-        slides,
-        files: v2.files,
+  const first = await renderVersion(ctx, g, ad, written, model, base + 1, previous);
+  const done: { at: string; slides: Slide[]; review?: AdReview }[] = [
+    { at: new Date().toISOString(), slides: first.slides, review: toReview(first.rv, first.rendered.minContrast) },
+  ];
+  let best = first;
+  if (first.rv.overall > 0 && first.rv.overall < settings.reviewThreshold) {
+    await ctx.log(`"${ad.body.title}" scored ${first.rv.overall}; self-revising: ${first.rv.fix}`);
+    try {
+      const rewritten = await writeAd(ctx, g, concept, {
+        language: ad.body.language,
+        aspect: ad.body.aspect,
+        previous: written,
+        feedback: `The creative director scored the rendered ad ${first.rv.overall}/100 (stop power ${first.rv.stopPower}, clarity ${first.rv.clarity}, craft ${first.rv.craft}). Issues: ${first.rv.issues.join(" | ")}. Most valuable change: ${first.rv.fix}. Fix all of it: you may change the template, the copy, the image source or the image prompt (for a better or more fitting picture). Keep one clear idea; the image must show what the headline says.`,
       });
-      if (rv2.overall >= rv.overall) {
-        rendered = v2;
-        rv = rv2;
+      const gc = await gate(ctx, g, rewritten, ad.body.placement, ad.id);
+      if (gc.status !== "fail") {
+        const second = await renderVersion(ctx, g, ad, rewritten, model, base + 2, {
+          slides: first.slides,
+          files: first.files,
+        });
+        done.push({
+          at: new Date().toISOString(),
+          slides: second.slides,
+          review: toReview(second.rv, second.rendered.minContrast),
+        });
+        if (second.rv.overall > first.rv.overall) best = second;
+        await ctx.log(
+          `"${ad.body.title}" self-revision scored ${second.rv.overall} (kept v${best === second ? 2 : 1})`,
+        );
       }
+    } catch (e) {
+      await ctx.log(`Self-revision failed: ${e instanceof Error ? e.message : e}`);
     }
   }
-  if (rendered.files.length > 1) await contactSheet(rendered.files, path.join(dir, `v${version}`, "sheet.jpg"));
-  const reviewOut: AdReview = {
-    overall: rv.overall,
-    stopPower: rv.stopPower,
-    clarity: rv.clarity,
-    brandFit: rv.brandFit,
-    craft: rv.craft,
-    textCorrect: rv.textCorrect,
-    issues: [
-      ...rv.issues,
-      ...(rendered.minContrast < 3 ? [`Low text contrast somewhere (${rendered.minContrast}:1)`] : []),
-    ],
-    fix: rv.fix,
-    slideScores: rv.slideScores,
-  };
+  const reviewOut = toReview(best.rv, best.rendered.minContrast);
   const cur = (await getAd(ctx.db, ad.id))!;
+  // the chosen version goes last, so "the latest version" is always what the board shows
+  const ordered = best === first && done.length > 1 ? [done[1]!, done[0]!] : done;
   const body: AdBody = {
     ...cur.body,
-    copy: written.copy,
-    slides,
+    copy: best.written.copy,
+    slides: best.slides,
     review: reviewOut,
-    versions: [...cur.body.versions, { at: new Date().toISOString(), slides, review: reviewOut }],
+    versions: [...cur.body.versions, ...ordered],
   };
-  await updateAd(ctx.db, ad.id, { status: "ready", score: rv.overall, body });
-  return { ...cur, status: "ready" as const, score: rv.overall, body };
+  await updateAd(ctx.db, ad.id, { status: "ready", score: best.rv.overall, body });
+  return { ...cur, status: "ready" as const, score: best.rv.overall, body };
 }
 
 // ---------------------------------------------------------------- compliance gate
@@ -763,7 +786,7 @@ export async function generateBatch(ctx: JobCtx, brand: Brand, input: BatchInput
       }
       await updateAd(db, row.id, { body: { ...row.body, copy: written.copy, compliance } });
       const fresh = (await getAd(db, row.id))!;
-      const doneAd = await produce(ctx, g, fresh, written, model);
+      const doneAd = await produce(ctx, g, fresh, c, written, model);
       results.push({ id: row.id, title: c.title, status: "ready", score: doneAd.score });
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
@@ -878,7 +901,7 @@ export async function reviseAd(
     },
   });
   const prevFiles = ad.body.slides.map((s) => (s.image.url ? (urlToFile(s.image.url) ?? undefined) : undefined));
-  const done = await produce(ctx, g, (await getAd(db, adId))!, written, model, {
+  const done = await produce(ctx, g, (await getAd(db, adId))!, concept, written, model, {
     slides: ad.body.slides,
     files: prevFiles,
   });

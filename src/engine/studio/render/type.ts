@@ -156,9 +156,23 @@ export function drawLines(
     const x0 = o.align === "center" ? o.x + (o.boxW - lw) / 2 : o.align === "right" ? o.x + o.boxW - lw : o.x;
     let x = x0;
     for (const w of line.split(" ")) {
-      const color = accentSet.has(norm(w)) && o.accent ? o.accent.color : o.color;
-      out.push(`<path d="${ft.font.getPath(w, x, base, ft.size, { kerning: true }).toPathData(2)}" fill="${color}"/>`);
-      x += ft.font.getAdvanceWidth(w, ft.size, { kerning: true }) + space;
+      const hit = accentSet.has(norm(w)) && o.accent;
+      // trailing punctuation keeps the base colour ("plan," colours only "plan")
+      const m = hit ? w.match(/^(.*?)([,.;:!?…"”')]+)$/u) : null;
+      const parts: [string, string][] =
+        m && m[1]
+          ? [
+              [m[1], o.accent!.color],
+              [m[2]!, o.color],
+            ]
+          : [[w, hit ? o.accent!.color : o.color]];
+      for (const [t, color] of parts) {
+        out.push(
+          `<path d="${ft.font.getPath(t, x, base, ft.size, { kerning: true }).toPathData(2)}" fill="${color}"/>`,
+        );
+        x += ft.font.getAdvanceWidth(t, ft.size, { kerning: true });
+      }
+      x += space;
     }
   }
   const g = `<g${o.opacity !== undefined ? ` opacity="${o.opacity}"` : ""}>${out.join("")}</g>`;
