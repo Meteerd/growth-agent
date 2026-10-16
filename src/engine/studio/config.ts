@@ -96,8 +96,8 @@ export interface StudioSettings {
 export const DEFAULT_SETTINGS: StudioSettings = {
   reviewThreshold: 72,
   maxAdsPerBatch: 12,
-  targetScore: 82,
-  maxRevisions: 2,
+  targetScore: 80,
+  maxRevisions: 1,
 };
 
 export async function getSettings(db: Db): Promise<StudioSettings> {
