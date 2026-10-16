@@ -622,12 +622,14 @@ async function pickImage(ctx: JobCtx, g: Grounding, files: string[], headline: s
 async function review(
   ctx: JobCtx,
   g: Grounding,
-  ad: { title: string; format: string; copy: AdOut["copy"]; slides: Slide[]; files: string[] },
+  ad: { title: string; format: string; copy: AdOut["copy"]; slides: Slide[]; files: string[]; advertiser?: string },
 ) {
   const content: BetaContentBlockParam[] = [
     {
       type: "text",
-      text: `Brand: ${g.brand.name}. Format: ${ad.format}. Intended copy per slide: ${JSON.stringify(ad.slides.map((s) => s.slots))}\nAds Manager copy: ${JSON.stringify(ad.copy)}`,
+      text: ad.advertiser
+        ? `This is ${ad.advertiser}'s own ad (not ours): judge it as their ad, for their brand, on the same scale. Do not mark it down for brand fit or rules that belong to another brand; brandFit = how well it fits ${ad.advertiser}. Format: ${ad.format}. Ads Manager copy: ${JSON.stringify(ad.copy)}`
+        : `Brand: ${g.brand.name}. Format: ${ad.format}. Intended copy per slide: ${JSON.stringify(ad.slides.map((s) => s.slots))}\nAds Manager copy: ${JSON.stringify(ad.copy)}`,
     },
   ];
   for (const [i, f] of ad.files.entries()) {
@@ -1056,7 +1058,7 @@ export async function reviewFiles(
   ctx: JobCtx,
   brand: Brand,
   files: string[],
-  o: { title: string; format: string; copy?: AdOut["copy"] },
+  o: { title: string; format: string; copy?: AdOut["copy"]; advertiser?: string },
 ) {
   const g = await grounding(ctx.db, brand);
   const slides: Slide[] = files.map(() => ({ template: "native", slots: {}, image: { source: "none" } }));
@@ -1066,5 +1068,6 @@ export async function reviewFiles(
     copy: o.copy ?? { primaryText: "", headline: "", description: "", cta: "" },
     slides,
     files,
+    advertiser: o.advertiser,
   });
 }

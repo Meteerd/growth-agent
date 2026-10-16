@@ -39,6 +39,7 @@ for (const r of refs) {
     title: r.body.analysis?.headline ?? r.advertiser,
     format: r.body.analysis?.format ?? "competitor",
     copy: { primaryText: r.body.body ?? "", headline: r.body.title ?? "", description: "", cta: r.body.cta ?? "" },
+    advertiser: r.advertiser,
   });
   scores.push(rv.overall);
   console.log(
