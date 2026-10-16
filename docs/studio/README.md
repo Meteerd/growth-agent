@@ -89,3 +89,17 @@ src/engine/studio/
   web.ts          Claude + web search (competitor discovery)
 src/app/studio, src/components/studio, src/app/api/studio   the admin UI and its API
 ```
+
+## First night on real brands (16 to 17 Oct 2026)
+
+| Brand | Competitor ads found | Ads made | Review scores | Notes |
+|---|---|---|---|---|
+| Hound (EN) | 175: Dogo's lesson-card grid runs 109 days in many languages | 10 | 58 to 73 | The first batch was mostly type-only (scores 58 to 69); the playbook-led second batch scored 64 to 73 |
+| a.clinic (SK) | 49: supplement networks dominate; real clinics are newer | 6 (+ a revision) | 60 to 70 | Wordmark logo; risky site images (vial, waist) removed; the sticky-note revision went from 61 to 70 |
+| Dynova (TR) | 79 | 6 | 63 to 73 | One chat message ran the whole autopilot: $3.66 in total on Flare |
+
+**Measured cost per ad** (including self-revision): about $0.60 to $0.75 on GPT Image 2 direct, and about $0.40 to $0.60 on GPT Image 2.5 Flare. Claude accounts for about $0.25 to $0.40 of that.
+
+**Image bake-off:** one prompt, four models (`scripts/studio/fal-smoke.ts`). GPT Image 2.5 Flare, Nano Banana 2.1, Nano Banana Pro and Seedream 5 Lite all produced believable photos. Flare looked the most candid and native, so it is the default for new brands.
+
+The review scores are deliberately harsh: 85+ means it would hold up next to the best ads in the category. Treat 70+ as ready to test.
