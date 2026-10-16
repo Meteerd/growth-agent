@@ -56,3 +56,4 @@ src/contracts/fixtures/live/**/*camplan*
 *.pfx
 *.crt
 .claude/settings.local.json
+.studio-credentials
