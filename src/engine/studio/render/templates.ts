@@ -176,11 +176,18 @@ interface Ctx {
   over: OverlayOptions[];
   bg: Buffer | { color: string };
   input: RenderInput;
+  /** a template that draws the footnote itself sets this; otherwise it is drawn at the bottom edge */
+  footDone?: boolean;
   /** text boxes drawn, for the contrast audit: [x, y, w, h, color] */
   boxes: { x: number; y: number; w: number; h: number; color: string }[];
 }
 
-const sl = (c: Ctx, k: keyof Slots) => clean(c.slots[k] as string | undefined);
+const sl = (c: Ctx, k: keyof Slots) => {
+  if (k === "footnote") c.footDone = true;
+  return clean(c.slots[k] as string | undefined);
+};
+/** read a slot without marking the footnote as drawn */
+const peek = (c: Ctx, k: keyof Slots) => clean(c.slots[k] as string | undefined);
 
 function headline(
   c: Ctx,
@@ -230,25 +237,42 @@ function para(
   },
 ) {
   if (!text) return 0;
-  const ft = fit(o.font ?? c.body, text, {
-    max: o.size * c.s,
-    min: o.size * 0.72 * c.s,
-    maxW: o.w,
-    maxLines: o.lines,
-    lineH: o.lineH ?? 1.3,
-    balance: o.align === "center",
-  });
-  const d = drawLines(ft, {
-    x: o.x,
-    top: o.top,
-    boxW: o.w,
-    color: o.color,
-    align: o.align ?? "left",
-    opacity: o.opacity,
-  });
-  c.svg.push(d.svg);
-  c.boxes.push({ x: o.x, y: o.top, w: o.w, h: d.height, color: o.color });
-  return d.height;
+  // explicit line breaks become separate paragraphs (numbered steps stay on their own lines)
+  const parts = text.split("\n").filter(Boolean);
+  let h = 0;
+  let budget = o.lines;
+  for (const [i, part] of parts.entries()) {
+    if (budget <= 0) break;
+    const ft = fit(o.font ?? c.body, part, {
+      max: o.size * c.s,
+      min: o.size * 0.72 * c.s,
+      maxW: o.w,
+      maxLines: Math.max(1, budget),
+      lineH: o.lineH ?? 1.3,
+      balance: o.align === "center",
+    });
+    const top = o.top + h + (i ? 10 * c.s : 0);
+    const d = drawLines(ft, { x: o.x, top, boxW: o.w, color: o.color, align: o.align ?? "left", opacity: o.opacity });
+    c.svg.push(d.svg);
+    c.boxes.push({ x: o.x, y: top, w: o.w, h: d.height, color: o.color });
+    h += d.height + (i ? 10 * c.s : 0);
+    budget -= ft.lines.length;
+  }
+  return h;
+}
+
+/** The footnote / disclaimer line at the bottom edge, for templates that do not place it themselves. */
+function bottomFootnote(c: Ctx, onImage: boolean) {
+  const t = peek(c, "footnote");
+  if (!t || c.footDone) return;
+  const size = 19 * c.s;
+  const ft = fit("inter_medium", t, { max: size, min: 15 * c.s, maxW: c.W - c.pad * 2, maxLines: 2, lineH: 1.25 });
+  const blockH = ft.lines.length * ft.lineH;
+  const top = c.H - 16 * c.s - blockH;
+  if (onImage) c.svg.push(rect(0, top - 12 * c.s, c.W, blockH + 28 * c.s, 0, "rgba(0,0,0,0.5)"));
+  const bgc = "color" in c.bg ? c.bg.color : "#000000";
+  const color = onImage ? "#FFFFFF" : mix(onColor(bgc, c.cfg.colors.ink), bgc, 0.35);
+  c.svg.push(drawLines(ft, { x: c.pad, top, boxW: c.W - c.pad * 2, color, align: "center" }).svg);
 }
 
 /** A filled pill with a label (CTA, eyebrow, price). Returns its width. */
@@ -292,7 +316,7 @@ function counter(c: Ctx, dark: boolean) {
   const w = label("inter_semibold", t, size, { x: 0, y: 0, color: "#fff" }).width + 32 * c.s;
   const x = c.W - c.pad - w;
   const y = c.pad * 0.7;
-  c.svg.push(rect(x, y, w, h, h / 2, dark ? "rgba(0,0,0,0.38)" : "rgba(0,0,0,0.08)"));
+  c.svg.push(rect(x, y, w, h, h / 2, dark ? "rgba(0,0,0,0.58)" : "rgba(0,0,0,0.08)"));
   c.svg.push(
     label("inter_semibold", t, size, {
       x: x + w / 2,
@@ -923,7 +947,7 @@ const mythFact: Tpl = async (c) => {
   const card = (kind: "myth" | "fact", text: string, top: number) => {
     const isMyth = kind === "myth";
     const fill = isMyth ? mix(ink, bg, 0.92) : c.cfg.colors.ink;
-    const tc = isMyth ? mix(ink, bg, 0.3) : onColor(c.cfg.colors.ink, "#111111");
+    const tc = isMyth ? mix(ink, bg, 0.15) : onColor(c.cfg.colors.ink, "#111111");
     c.svg.push(rect(c.pad, top, w, cardH, 30 * c.s, fill));
     const tagBg = isMyth ? "#D64545" : c.cfg.colors.accent;
     const tag = kind === "myth" ? sl(c, "leftLabel") || "Myth" : sl(c, "rightLabel") || "Fact";
@@ -953,7 +977,7 @@ const mythFact: Tpl = async (c) => {
       for (const [i, line] of ft.lines.entries()) {
         const lw = ft.font.getAdvanceWidth(line, ft.size);
         const ly = ty + i * ft.lineH + ft.size * 0.55;
-        c.svg.push(rect(c.pad + 36 * c.s, ly, lw, 4 * c.s, 0, "#D64545", 'opacity="0.8"'));
+        c.svg.push(rect(c.pad + 36 * c.s, ly, lw, 3 * c.s, 0, "#D64545", 'opacity="0.55"'));
       }
     }
   };
@@ -1053,6 +1077,8 @@ const textSlide: Tpl = async (c) => {
   const ink = onColor(bg, c.cfg.colors.ink);
   c.bg = { color: bg };
   const w = c.W - c.pad * 2;
+  const startSvg = c.svg.length;
+  const startBoxes = c.boxes.length;
   let y = c.pad * 1.3;
   const eyebrow = sl(c, "eyebrow");
   if (eyebrow) {
@@ -1102,6 +1128,16 @@ const textSlide: Tpl = async (c) => {
   }
   const file = c.input.imageFile;
   const by = c.H - c.pad - 64 * c.s;
+  if (!file) {
+    // type only: centre the block in the space above the logo row instead of leaving the bottom half empty
+    const free = by - 60 * c.s - y;
+    const dy = Math.max(0, free * 0.42);
+    if (dy > 20 * c.s) {
+      const moved = c.svg.splice(startSvg);
+      c.svg.push(`<g transform="translate(0 ${dy.toFixed(1)})">${moved.join("")}</g>`);
+      for (const b of c.boxes.slice(startBoxes)) b.y += dy;
+    }
+  }
   if (file) {
     const room = by - 40 * c.s - (y + 40 * c.s);
     if (room > 220 * c.s) {
@@ -1272,17 +1308,23 @@ const quiz: Tpl = async (c) => {
     y += 52 * c.s;
   }
   y += headline(c, { x: c.pad, top: y, w, color: ink, max: 80, min: 46, lines: 3, accentOn: bg }) + 44 * c.s;
-  if (file) {
-    const ih = Math.round(c.H * 0.27);
+  const opts = (c.slots.bullets ?? []).map(clean).filter(Boolean).slice(0, 4);
+  const limit = c.H - c.pad - 76 * c.s - 34 * c.s;
+  let h = 128 * c.s;
+  let ih = file ? Math.round(c.H * 0.27) : 0;
+  const need = () => (ih ? ih + 36 * c.s : 0) + opts.length * (h + 22 * c.s);
+  // nothing may run into the CTA row: shrink the photo first, then the answer rows, then drop the photo
+  while (need() > limit - y && ih > c.H * 0.15) ih -= 10 * c.s;
+  while (need() > limit - y && h > 92 * c.s) h -= 4 * c.s;
+  if (need() > limit - y) ih = 0;
+  if (file && ih) {
     c.layers.push({
-      input: await rounded(file, Math.round(w), ih, 26 * c.s),
+      input: await rounded(file, Math.round(w), Math.round(ih), 26 * c.s),
       left: Math.round(c.pad),
       top: Math.round(y),
     });
     y += ih + 36 * c.s;
   }
-  const opts = (c.slots.bullets ?? []).map(clean).filter(Boolean).slice(0, 4);
-  const h = 128 * c.s;
   for (const [i, o] of opts.entries()) {
     c.svg.push(rect(c.pad, y, w, h, 24 * c.s, "#FFFFFF", `stroke="${mix(ink, bg, 0.8)}" stroke-width="${3 * c.s}"`));
     const letterC = String.fromCharCode(65 + i);
@@ -1512,6 +1554,7 @@ export async function renderSlide(input: RenderInput): Promise<RenderResult> {
   };
   await TEMPLATES[input.slide.template](c);
   const dark = "color" in c.bg ? luminance(c.bg.color) < 0.4 : true;
+  if (input.slide.template !== "native") bottomFootnote(c, !("color" in c.bg));
   if (input.slide.template !== "native") counter(c, dark);
   const base =
     "color" in c.bg

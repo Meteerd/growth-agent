@@ -114,7 +114,15 @@ const LANG: Record<string, string> = {
 const langName = (l: string) => LANG[l.slice(0, 2)] ?? l;
 
 const STILL =
-  "Photoreal, shot on a recent iPhone, natural light, real lived-in place, candid framing, true-to-life colours, subtle grain. Absolutely no text, letters, numbers, logos, watermarks, signs or UI in the image. Not glossy, not CGI, not a stock photo, no plastic skin, natural hands.";
+  "Photoreal, shot on a recent iPhone by a friend, natural light, real lived-in place, candid and slightly imperfect framing, true-to-life colours, subtle grain. A specific real moment caught mid-action, not a posed portrait. Absolutely no text, letters, numbers, logos, watermarks, signs or UI in the image; no keyboards, screens with content, documents or labels in close-up. Not glossy, not CGI, not a stock photo: nobody smiling at the camera, no models, no plastic skin, natural hands.";
+
+/** Art direction every image prompt is written to (the writer and the self-revision both see it). */
+const ART = `Art direction for images (this decides stop power, the weakest score so far):
+- Show ONE specific moment with tension or emotion that proves the headline (the dog's face pressed to the door as keys jingle; a woman laughing mid-sentence on a video call at her kitchen table, laptop seen from behind; a hand peeling the seal of a test kit). Not a generic lifestyle scene.
+- Banned stock clichés: person holding a mug staring out a window, smiling at the camera, hands posed on a laptop, women in identical soft-lit living rooms, suits, perfect tables, salads, generic plants-and-laptop.
+- Prefer unusual but natural angles (low, over the shoulder, top-down, close-up of the subject's face or hands), real mess and texture, local places that fit the market.
+- The subject must be big and clear at thumbnail size; one focal point.
+- No text-bearing objects in focus (keyboards, screens, papers, packaging labels) because image models garble letters.`;
 const HEALTH_NEG =
   "No syringes, injection pens, pills, blister packs, medicine boxes, scales, measuring tapes, bare bellies, body comparisons, hospital beds or procedures.";
 
@@ -228,7 +236,44 @@ export interface BatchInput {
   placement?: "paid" | "organic";
 }
 
+const RankOut = z.object({
+  ranked: z.array(z.object({ index: z.number(), stopPower: z.number(), conversion: z.number(), why: z.string() })),
+});
+
+/** Plan more concepts than needed, then keep the ones a harsh judge expects to stop the scroll and convert. */
 async function plan(ctx: JobCtx, g: Grounding, input: BatchInput, count: number, carousels: number) {
+  const extraC = carousels ? Math.ceil(carousels / 2) : 0;
+  const extraS = count - carousels ? Math.ceil((count - carousels) / 2) : 0;
+  const all = await planRaw(ctx, g, input, count + extraC + extraS, carousels + extraC);
+  if (all.length <= count) return all;
+  const res = await structured(
+    { db: ctx.db },
+    {
+      route: "strategy",
+      system: `You are a ruthless performance creative lead at a top DTC agency judging ad concepts for ${g.brand.name} before anything is produced. For each concept predict stopPower (would a stranger stop scrolling in a crowded feed full of this category's ads, 0 to 100) and conversion (would the right person act, 0 to 100). Penalise generic, interchangeable, template-y or me-too ideas hard; reward specific, surprising, emotionally true hooks grounded in what wins in this market. Be calibrated: most concepts are 50 to 70. why: one line.`,
+      user: JSON.stringify({ playbook: g.playbook?.summary ?? "", concepts: all.map((c, index) => ({ index, ...c })) }),
+      schema: RankOut,
+      note: `studio rank ${g.brand.slug}: ${all.length} concepts`,
+      maxTokens: 6000,
+      demo: () => ({ ranked: all.map((_, index) => ({ index, stopPower: 50, conversion: 50, why: "" })) }),
+    },
+  );
+  await ctx.cost(res.usd);
+  const score = new Map(res.value.ranked.map((r) => [r.index, r.stopPower * 0.6 + r.conversion * 0.4]));
+  const byScore = all.map((c, i) => ({ c, s: score.get(i) ?? 0 })).sort((a, b) => b.s - a.s);
+  const pick = [
+    ...byScore.filter((x) => x.c.kind === "carousel").slice(0, carousels),
+    ...byScore.filter((x) => x.c.kind === "static").slice(0, count - carousels),
+  ];
+  // top up if the plan returned too few of one kind
+  for (const x of byScore) if (pick.length < count && !pick.includes(x)) pick.push(x);
+  await ctx.log(
+    `Kept ${pick.length} of ${all.length} concepts: ${pick.map((x) => `${x.c.title} (${Math.round(x.s)})`).join("; ")}`,
+  );
+  return pick.map((x) => x.c);
+}
+
+async function planRaw(ctx: JobCtx, g: Grounding, input: BatchInput, count: number, carousels: number) {
   const allowedFormats = FORMATS.filter((f) => {
     if (f.needs === "testimonial" && !g.cfg.testimonials.length) return false;
     if (f.needs === "offer" && !g.cfg.offer && !g.brand.dossier.offers.some((o) => o.price)) return false;
@@ -336,6 +381,10 @@ How slides work: each slide picks a template and fills its slots. Slots a templa
 - sticky: headline (the handwritten note, short), body (caption).
 - steps: headline, bullets[3] as 'Title: one line', cta, footnote.
 Images sell: a static's focal visual and a carousel's cover need a strong picture (generated scene, real brand image or the product) unless the format is text-native (notes_app, post_card, comparison, quiz, steps). In a carousel, at least half the slides carry an image (text_slide and checklist can take one). Use the format's template for a static (${fmt?.template ?? "its template"}). Carousels: cover = the format's template (must work alone as an ad), then text_slide / checklist / myth_fact / comparison / steps body slides, last = cta_end. accentWord: one word copied from that slide's headline.
+
+${ART}
+Carousels: vary the templates across slides (do not repeat the same template more than twice in a row) and give the middle slides real images too, so swiping is rewarded.
+Steps or numbered items go in bullets (one per item), never run together in a body paragraph; use a line break in body only for a new short paragraph.
 
 Images: source "brand" uses a real brand image (brandImage = its index; only if it fits as described); "product" uses the real phone screenshot of the site, drawn inside a phone (only on photo_headline, split_panel, offer_card, text_slide); "generated" needs prompt: an English scene description only (who, where, doing what, light, mood, camera), never text in the image; visualWorld is one sentence describing the shared look (people, place, palette, light) that every generated image in this ad shares so slides stay consistent. referenceImage: a brand image index to keep the real product, pet or person look in a generated image, else -1. "none" for type-only templates (comparison, notes_app, myth_fact, quiz, steps, text_slide usually).
 ${g.health ? `Health brand: images never show ${HEALTH_NEG} Never present an AI person as a patient or doctor in a testimonial.` : ""}
@@ -461,7 +510,15 @@ async function slideImage(
   ctx: JobCtx,
   g: Grounding,
   s: z.infer<typeof SlideOut>,
-  o: { aspect: Aspect; model: ImageModel; visualWorld: string; dir: string; idx: number; promptOverride?: string },
+  o: {
+    aspect: Aspect;
+    model: ImageModel;
+    visualWorld: string;
+    dir: string;
+    idx: number;
+    promptOverride?: string;
+    bestOf?: number;
+  },
 ): Promise<{ file?: string; image: Slide["image"] }> {
   // a site screenshot only works inside a phone frame; as a full-bleed background it reads as a muddy scrim
   const PHONE_OK: Slide["template"][] = ["photo_headline", "split_panel", "offer_card", "text_slide"];
@@ -483,20 +540,40 @@ async function slideImage(
     .filter(Boolean)
     .join(" ");
   const ref = g.brandImages.find((b) => b.i === s.image.referenceImage);
-  const out = path.join(o.dir, `img_${o.idx}_${Date.now().toString(36)}.png`);
-  const r = await imageSlots(() =>
-    genImage(ctx.db, {
-      model: o.model,
-      prompt,
-      aspect: o.aspect,
-      shape: shapeFor(s.template),
-      refs: ref ? [ref.file] : [],
-      out,
-      signal: ctx.signal,
-      note: `studio image ${g.brand.slug}`,
-    }),
-  );
-  await ctx.cost(r.usd);
+  const gen = (p: string, n: number) =>
+    imageSlots(() =>
+      genImage(ctx.db, {
+        model: o.model,
+        prompt: p,
+        aspect: o.aspect,
+        shape: shapeFor(s.template),
+        refs: ref ? [ref.file] : [],
+        out: path.join(o.dir, `img_${o.idx}_${n}_${Date.now().toString(36)}.png`),
+        signal: ctx.signal,
+        note: `studio image ${g.brand.slug}`,
+      }),
+    );
+  let r: Awaited<ReturnType<typeof gen>>;
+  if (o.idx === 0 && o.bestOf && o.bestOf > 1) {
+    // the hook image decides the scroll: make two takes and let a vision judge keep the stronger one
+    const takes = await Promise.all([
+      gen(prompt, 0),
+      gen(`${prompt} Alternative take: a different camera angle and a more intimate, closer moment.`, 1),
+    ]);
+    for (const t of takes) await ctx.cost(t.usd);
+    r =
+      takes[
+        await pickImage(
+          ctx,
+          g,
+          takes.map((t) => t.file),
+          s.slots.headline,
+        )
+      ] ?? takes[0]!;
+  } else {
+    r = await gen(prompt, 0);
+    await ctx.cost(r.usd);
+  }
   return {
     file: r.file,
     image: {
@@ -507,6 +584,33 @@ async function slideImage(
       usd: r.usd,
     },
   };
+}
+
+const PickOut = z.object({ best: z.number(), why: z.string() });
+
+/** Vision pick between image takes: more real (no AI tells), more arresting, closer to the headline. */
+async function pickImage(ctx: JobCtx, g: Grounding, files: string[], headline: string): Promise<number> {
+  const content: BetaContentBlockParam[] = [{ type: "text", text: `Headline these images sit under: "${headline}"` }];
+  for (const [i, f] of files.entries()) {
+    const b = await sharp(f).resize(512, 640, { fit: "inside" }).jpeg({ quality: 80 }).toBuffer();
+    content.push({ type: "text", text: `Image ${i}` });
+    content.push({ type: "image", source: { type: "base64", media_type: "image/jpeg", data: b.toString("base64") } });
+  }
+  const r = await structured(
+    { db: ctx.db },
+    {
+      route: "vision",
+      system:
+        "You pick the background photo for a paid social ad. Prefer the image that looks most like a real photo (no AI tells: warped hands, plastic skin, garbled text, uncanny faces, stock gloss), stops the scroll at thumbnail size and proves the headline. best: the image index.",
+      user: content,
+      schema: PickOut,
+      note: `studio pick image ${g.brand.slug}`,
+      maxTokens: 2000,
+      demo: () => ({ best: 0, why: "" }),
+    },
+  );
+  await ctx.cost(r.usd);
+  return Math.max(0, Math.min(files.length - 1, Math.round(r.value.best)));
 }
 
 async function review(
@@ -529,7 +633,7 @@ async function review(
     { db: ctx.db },
     {
       route: "vision",
-      system: `You are a strict paid-social creative director judging an ad before it ships on Meta. Score 0 to 100, calibrated: 85+ only if it would hold up next to the best ads in the category. stopPower: would a stranger stop on slide 1 in the feed? clarity: one idea, readable at phone size in a second. brandFit: looks and sounds like this brand, logo present but not shouting. craft: layout, type, image quality; AI tells (warped hands, plastic skin, nonsense text, uncanny faces, stock gloss) cost a lot. textCorrect: every visible word matches the intended copy exactly (no garbled or extra text in images). issues: concrete problems. fix: the single most valuable change. slideScores: one per slide. worstSlide: 0-based index of the weakest slide. imageIsTheProblem: true if a better background image would fix the worst slide; betterImagePrompt: a better English scene prompt for it (no text in image), else "". ${g.health ? "Health brand: flag any body focus, medical procedure imagery or implied outcome as a serious issue." : ""} No em dashes.`,
+      system: `You are a strict paid-social creative director judging an ad before it ships on Meta. Score 0 to 100, calibrated: 85+ only if it would hold up next to the best ads in the category. stopPower: would a stranger stop on slide 1 in the feed? clarity: one idea, readable at phone size in a second. brandFit: looks and sounds like this brand, logo present but not shouting. craft: layout, type, image quality; AI tells (warped hands, plastic skin, nonsense text, uncanny faces, stock gloss) cost a lot. textCorrect: every visible word matches the intended copy exactly (no garbled or extra text in images). issues: concrete problems. fix: the single most valuable change. Added automatically by the layout, not errors: the site URL under the last slide's button, a small brand mark on native formats, the slide counter and swipe arrow. slideScores: one per slide. worstSlide: 0-based index of the weakest slide. imageIsTheProblem: true if a better background image would fix the worst slide; betterImagePrompt: a better English scene prompt for it (no text in image), else "". ${g.health ? "Health brand: flag any body focus, medical procedure imagery or implied outcome as a serious issue." : ""} No em dashes.`,
       user: content,
       schema: ReviewOut,
       note: `studio review ${g.brand.slug}`,
@@ -606,7 +710,15 @@ async function renderVersion(
         prev.image.prompt === s.image.prompt
       )
         return { file: previous.files[i], image: prev.image };
-      return slideImage(ctx, g, s, { aspect: ad.body.aspect, model, visualWorld: written.visualWorld, dir, idx: i });
+      return slideImage(ctx, g, s, {
+        aspect: ad.body.aspect,
+        model,
+        visualWorld: written.visualWorld,
+        dir,
+        idx: i,
+        // best-of-two on the hook image when the image model is cheap enough to afford it
+        bestOf: IMAGE_MODEL_INFO[model].usd <= 0.1 ? 2 : 1,
+      });
     }),
   );
   const slides: Slide[] = written.slides.map((s, i) => ({

@@ -63,7 +63,8 @@ export function clean(t: string | undefined): string {
   return (t ?? "")
     .replace(/\p{Extended_Pictographic}|\u{FE0F}|\u{200D}/gu, "")
     .replace(/\s*—\s*/g, ", ")
-    .replace(/\s+/g, " ")
+    .replace(/[^\S\n]+/g, " ")
+    .replace(/ *\n[\s]*/g, "\n")
     .trim();
 }
 
