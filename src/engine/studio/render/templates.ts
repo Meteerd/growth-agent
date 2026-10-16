@@ -323,6 +323,29 @@ function wordmark(c: Ctx, x: number, y: number, color: string, anchor: "start" |
   c.svg.push(label(c.head, c.input.brand.name, 40 * c.s, { x, y, color, anchor }).svg);
 }
 
+/** Native formats: a small, quiet brand mark bottom right so the ad is attributable without reading as an ad. */
+async function smallMark(c: Ctx) {
+  const size = 64 * c.s;
+  const x = c.W - c.pad * 0.7 - size;
+  const y = c.H - c.pad * 0.7 - size;
+  if (await logo(c, true, size, x, y)) return;
+  const name = c.input.brand.name;
+  const fs2 = 30 * c.s;
+  const w = label(c.head, name, fs2, { x: 0, y: 0, color: "#fff" }).width + 36 * c.s;
+  const h = 56 * c.s;
+  const px = c.W - c.pad * 0.7 - w;
+  const py = c.H - c.pad * 0.7 - h;
+  c.svg.push(rect(px, py, w, h, h / 2, "rgba(255,255,255,0.92)"));
+  c.svg.push(
+    label(c.head, name, fs2, {
+      x: px + w / 2,
+      y: py + h / 2 + capHeight(c.head, fs2) / 2,
+      color: "#111111",
+      anchor: "middle",
+    }).svg,
+  );
+}
+
 function gradient(c: Ctx, id: string, from: "top" | "bottom", start: number, end: number, op: number) {
   const [a, b] = from === "top" ? [op, 0] : [0, op];
   const [s0, s1] = from === "top" ? [start, end] : [start, end];
@@ -1178,6 +1201,7 @@ const ugcCaption: Tpl = async (c) => {
   };
   box(sl(c, "headline"), 54);
   box(sl(c, "body"), 44);
+  await smallMark(c);
 };
 
 /** A short letter from a real doctor or founder: paper, header, lines, signature, small portrait. */
@@ -1311,8 +1335,9 @@ const sticky: Tpl = async (c) => {
   const s = c.s;
   const nw = Math.round(c.W * 0.66);
   const text = sl(c, "headline");
-  const ft = fit("handwritten", text, { max: 92 * s, min: 52 * s, maxW: nw - 90 * s, maxLines: 6, lineH: 1.05 });
-  const nh = Math.max(nw * 0.85, ft.lines.length * ft.lineH + 140 * s);
+  const ft = fit("handwritten", text, { max: 100 * s, min: 52 * s, maxW: nw - 90 * s, maxLines: 6, lineH: 1.05 });
+  // the note is as tall as its words (plus margins), never a half-empty square
+  const nh = Math.max(nw * 0.5, ft.lines.length * ft.lineH + 150 * s);
   const nx = (c.W - nw) / 2;
   const ny = c.H * (c.H / c.W > 1.6 ? 0.28 : 0.16);
   c.defs.push(SHADOW("note", 18 * s, 0.35, 14 * s));
@@ -1320,8 +1345,16 @@ const sticky: Tpl = async (c) => {
   c.svg.push(`<g transform="rotate(${rot} ${c.W / 2} ${ny + nh / 2})">`);
   c.svg.push(rect(nx, ny, nw, nh, 6 * s, "#FFE873", 'filter="url(#note)"'));
   c.svg.push(rect(nx, ny, nw, 46 * s, 6 * s, "#F5D94E"));
+  const accent = sl(c, "accentWord");
   c.svg.push(
-    drawLines(ft, { x: nx + 45 * s, top: ny + 80 * s, boxW: nw - 90 * s, color: "#2B2A26", align: "center" }).svg,
+    drawLines(ft, {
+      x: nx + 45 * s,
+      top: ny + 46 * s + (nh - 46 * s - ft.lines.length * ft.lineH) / 2,
+      boxW: nw - 90 * s,
+      color: "#2B2A26",
+      align: "center",
+      accent: accent ? { words: [accent], color: "#C23A2B" } : undefined,
+    }).svg,
   );
   c.svg.push("</g>");
   const body = sl(c, "body");
@@ -1334,6 +1367,7 @@ const sticky: Tpl = async (c) => {
     );
     c.svg.push(drawLines(f2, { x: c.pad * 1.2, top: by, boxW: c.W - c.pad * 2.4, color: "#111", align: "center" }).svg);
   }
+  await smallMark(c);
 };
 
 /** How it works: 3 numbered steps (title + one line each). Bullets are "Title: line". */

@@ -451,7 +451,7 @@ function zoneFor(t: Slide["template"], aspect: Aspect): string {
       : "Keep the top 45% of the frame calm and uncluttered for a headline; the subject sits in the lower half.";
   if (t === "ugc_caption") return "Subject in the lower two thirds; the area around the upper third simple.";
   if (t === "sticky")
-    return "A plain flat surface (fridge door, laptop lid, crate side, kitchen cabinet) fills the centre of the frame where a sticky note will be placed.";
+    return "An empty plain flat surface (fridge door, laptop lid, crate side, kitchen cabinet) fills the centre of the frame; no notes, papers, stickers or writing anywhere in the image (we add the note).";
   if (FULL_BLEED.includes(t)) return "Leave calm space around the centre for text.";
   if (t === "split_panel") return "Wide-ish composition, subject centred.";
   return "";
