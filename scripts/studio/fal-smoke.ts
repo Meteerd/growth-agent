@@ -13,7 +13,12 @@ const prompt =
 for (const m of models) {
   const t0 = Date.now();
   try {
-    const r = await genImage(db, { model: m as never, prompt, aspect: "4:5", out: `${out}/${m.replace(/[^a-z0-9.-]/gi, "_")}.png` });
+    const r = await genImage(db, {
+      model: m as never,
+      prompt,
+      aspect: "4:5",
+      out: `${out}/${m.replace(/[^a-z0-9.-]/gi, "_")}.png`,
+    });
     console.log(m, r.mode, r.model, `$${r.usd}`, `${Math.round((Date.now() - t0) / 1000)}s`, r.file);
   } catch (e) {
     console.log(m, "FAILED", e instanceof Error ? e.message.slice(0, 300) : e);

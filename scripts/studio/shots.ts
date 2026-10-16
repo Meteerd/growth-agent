@@ -12,7 +12,10 @@ const base = process.env.STUDIO_URL ?? "http://127.0.0.1:3100";
 const [username, password] = (process.env.STUDIO_AUTH ?? ":").split(":");
 fs.mkdirSync(out, { recursive: true });
 const browser = await chromium.launch({ args: ["--no-sandbox"] });
-const ctx = await browser.newContext({ viewport: { width: 1600, height: 1000 }, httpCredentials: { username: username!, password: password! } });
+const ctx = await browser.newContext({
+  viewport: { width: 1600, height: 1000 },
+  httpCredentials: { username: username!, password: password! },
+});
 const page = await ctx.newPage();
 const errors: string[] = [];
 page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
@@ -32,7 +35,10 @@ if (await firstAd.count()) {
   await page.keyboard.press("Escape");
 }
 for (const [i, tab] of ["Competitors", "Playbook", "Brand kit"].entries()) {
-  await page.getByRole("button", { name: new RegExp(`^${tab}`) }).first().click();
+  await page
+    .getByRole("button", { name: new RegExp(`^${tab}`) })
+    .first()
+    .click();
   await shot(`0${4 + i}_${tab.toLowerCase().replace(" ", "_")}`);
 }
 await page.goto(`${base}/studio/jobs`, { waitUntil: "networkidle" });
