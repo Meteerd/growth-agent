@@ -112,6 +112,8 @@ src/app/studio, src/components/studio, src/app/api/studio   the admin UI and its
 | a.clinic (SK) | 49: supplement networks dominate; real clinics are newer | 6 (+ a revision) | 60 to 70 | Wordmark logo; risky site images (vial, waist) removed; the sticky-note revision went from 61 to 70 |
 | Dynova (TR) | 79 | 6 | 63 to 73 | One chat message ran the whole autopilot: $3.66 in total on Flare |
 
+**After the quality pass (17 Oct, 01:00):** I aggregated the reviews of the first 22 ads. Stop power averaged 59 and was the weakest dimension; the causes were generic stock-looking photos, repetitive type-only slides and template bugs. The pass added image art direction, 1.5x concept planning with a harsh ranking step, best-of-two hook images, footnotes on every template and collision-free layouts. Batch averages: Hound 63 > 67 > **75** (every ad 72 or higher), a.clinic 67 > **72** (every ad 70 or higher). The cost of a 6-ad batch on Flare fell to about $2.25.
+
 **Measured cost per ad** (including self-revision): about $0.60 to $0.75 on GPT Image 2 direct, and about $0.40 to $0.60 on GPT Image 2.5 Flare. Claude accounts for about $0.25 to $0.40 of that.
 
 **Image bake-off:** one prompt, four models (`scripts/studio/fal-smoke.ts`). GPT Image 2.5 Flare, Nano Banana 2.1, Nano Banana Pro and Seedream 5 Lite all produced believable photos. Flare looked the most candid and native, so it is the default for new brands.
