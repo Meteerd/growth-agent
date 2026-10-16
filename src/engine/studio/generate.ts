@@ -333,7 +333,7 @@ How slides work: each slide picks a template and fills its slots. Slots a templa
 - steps: headline, bullets[3] as 'Title: one line', cta, footnote.
 Images sell: a static's focal visual and a carousel's cover need a strong picture (generated scene, real brand image or the product) unless the format is text-native (notes_app, post_card, comparison, quiz, steps). In a carousel, at least half the slides carry an image (text_slide and checklist can take one). Use the format's template for a static (${fmt?.template ?? "its template"}). Carousels: cover = the format's template (must work alone as an ad), then text_slide / checklist / myth_fact / comparison / steps body slides, last = cta_end. accentWord: one word copied from that slide's headline.
 
-Images: source "brand" uses a real brand image (brandImage = its index; only if it fits as described); "product" uses the real phone screenshot of the site (feature, offer and how-it-works slides); "generated" needs prompt: an English scene description only (who, where, doing what, light, mood, camera), never text in the image; visualWorld is one sentence describing the shared look (people, place, palette, light) that every generated image in this ad shares so slides stay consistent. referenceImage: a brand image index to keep the real product, pet or person look in a generated image, else -1. "none" for type-only templates (comparison, notes_app, myth_fact, quiz, steps, text_slide usually).
+Images: source "brand" uses a real brand image (brandImage = its index; only if it fits as described); "product" uses the real phone screenshot of the site, drawn inside a phone (only on photo_headline, split_panel, offer_card, text_slide); "generated" needs prompt: an English scene description only (who, where, doing what, light, mood, camera), never text in the image; visualWorld is one sentence describing the shared look (people, place, palette, light) that every generated image in this ad shares so slides stay consistent. referenceImage: a brand image index to keep the real product, pet or person look in a generated image, else -1. "none" for type-only templates (comparison, notes_app, myth_fact, quiz, steps, text_slide usually).
 ${g.health ? `Health brand: images never show ${HEALTH_NEG} Never present an AI person as a patient or doctor in a testimonial.` : ""}
 Copy for Ads Manager: primaryText (key message in the first 125 characters, total under 300, plain, may include line breaks), headline (27 to 40 characters), description (under 25), cta = the Meta button (one of: Learn More, Sign Up, Book Now, Download, Install Now, Get Offer, Subscribe, Shop Now). Include any required disclaimer in primaryText.
 The picture must show what the headline says (an ad about leaving the house shows that moment, not a settings screen). Use the product shot only when the slide is about the product itself. The on-image CTA matches the Meta button's intent (Sign Up/Download -> 'Start your plan' or 'Get the app'; Learn More -> 'See how it works'; Book Now -> 'Book a consultation').
@@ -459,7 +459,9 @@ async function slideImage(
   s: z.infer<typeof SlideOut>,
   o: { aspect: Aspect; model: ImageModel; visualWorld: string; dir: string; idx: number; promptOverride?: string },
 ): Promise<{ file?: string; image: Slide["image"] }> {
-  const src = s.image.source;
+  // a site screenshot only works inside a phone frame; as a full-bleed background it reads as a muddy scrim
+  const PHONE_OK: Slide["template"][] = ["photo_headline", "split_panel", "offer_card", "text_slide"];
+  const src = s.image.source === "product" && !PHONE_OK.includes(s.template) ? "none" : s.image.source;
   if (src === "none") return { image: { source: "none" } };
   if (src === "product" && g.cfg.productShot) {
     const f = urlToFile(g.cfg.productShot);
