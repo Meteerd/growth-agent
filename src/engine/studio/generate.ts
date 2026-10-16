@@ -322,13 +322,13 @@ How slides work: each slide picks a template and fills its slots. Slots a templa
 - notes_app: eyebrow (date line), headline (note title), body, bullets, footnote.
 - post_card: body (the post text, the brand's own account).
 - stat: stat, statLabel, body, footnote (real numbers only).
-- myth_fact: headline, leftLabel ('Myth' localised or 'Old way'), myth, rightLabel ('Fact' or 'New way'), fact, cta.
+- myth_fact: headline, leftLabel ('Myth' localised or 'Old way'), myth, rightLabel ('Fact' or 'New way'), fact, cta; optional photo band on top (great as a carousel cover).
 - offer_card: headline, body, price (the offer), cta, footnote (terms).
 - text_slide (carousel body): eyebrow (a big number like '01' or a short label), headline, body or bullets[2-4]; optional image.
 - cta_end (carousel last): headline, body, cta (button text; the site URL is added automatically).
 - ugc_caption: headline (hook, native caption), body (payoff) over a candid photo.
 - letter: eyebrow ('A note from ...'), headline, body, bullets (more lines), attribution ('Real Name, credential').
-- quiz: eyebrow, headline (question), bullets (3-4 options), cta.
+- quiz: eyebrow, headline (question), bullets (3-4 options), cta; optional wide photo.
 - sticky: headline (the handwritten note, short), body (caption).
 - steps: headline, bullets[3] as 'Title: one line', cta, footnote.
 Images sell: a static's focal visual and a carousel's cover need a strong picture (generated scene, real brand image or the product) unless the format is text-native (notes_app, post_card, comparison, quiz, steps). In a carousel, at least half the slides carry an image (text_slide and checklist can take one). Use the format's template for a static (${fmt?.template ?? "its template"}). Carousels: cover = the format's template (must work alone as an ad), then text_slide / checklist / myth_fact / comparison / steps body slides, last = cta_end. accentWord: one word copied from that slide's headline.
@@ -430,7 +430,17 @@ const semaphore = (n: number) => {
 };
 const imageSlots = semaphore(3);
 
+/** The shape of the slot a template puts its image in, so the picture is composed for it (no cut-off heads). */
+function shapeFor(t: Slide["template"]): "canvas" | "landscape" | "square" {
+  if (["split_panel", "checklist", "quiz", "text_slide", "myth_fact", "comparison"].includes(t)) return "landscape";
+  if (["offer_card", "letter"].includes(t)) return "square";
+  return "canvas";
+}
+
 function zoneFor(t: Slide["template"], aspect: Aspect): string {
+  if (shapeFor(t) === "landscape")
+    return "Wide landscape composition for a banner crop: the subject sits in the middle band, whole head and face visible with room above, nothing important near the top or bottom edges.";
+  if (shapeFor(t) === "square") return "Square composition, subject centred with some space around it.";
   if (t === "photo_headline")
     return aspect === "9:16"
       ? "Keep the upper half calm and simple (wall, sky, soft background) for a headline; subject in the lower half."
@@ -473,6 +483,7 @@ async function slideImage(
       model: o.model,
       prompt,
       aspect: o.aspect,
+      shape: shapeFor(s.template),
       refs: ref ? [ref.file] : [],
       out,
       signal: ctx.signal,

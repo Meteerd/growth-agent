@@ -124,6 +124,8 @@ export interface GenImageOpts {
   out: string;
   signal?: AbortSignal;
   note?: string;
+  /** the slot the image fills: the whole canvas (default), a wide banner/panel, or a square card */
+  shape?: "canvas" | "landscape" | "square";
 }
 
 export interface GenImageResult {
@@ -144,10 +146,11 @@ function placeholder(aspect: Aspect, prompt: string): Promise<Buffer> {
 export async function genImage(db: Db, o: GenImageOpts): Promise<GenImageResult> {
   const info = IMAGE_MODEL_INFO[o.model];
   fs.mkdirSync(path.dirname(o.out), { recursive: true });
+  const shape = o.shape ?? "canvas";
   const refs = (o.refs ?? []).filter((f) => fs.existsSync(f)).slice(0, 6);
   if (info.kind === "openai") {
     const g = await generateImage(db, o.prompt, {
-      size: SIZES[o.aspect].openai,
+      size: shape === "landscape" ? "1536x1024" : shape === "square" ? "1024x1024" : SIZES[o.aspect].openai,
       quality: "high",
       refs: refs.length ? refs : undefined,
       demo: () => placeholder(o.aspect, o.prompt),
@@ -155,7 +158,9 @@ export async function genImage(db: Db, o: GenImageOpts): Promise<GenImageResult>
     fs.writeFileSync(o.out, g.png);
     return { file: o.out, model: g.model, usd: g.usd, mode: g.mode };
   }
-  const { w, h } = SIZES[o.aspect];
+  const { w, h } =
+    shape === "landscape" ? { w: 1536, h: 1024 } : shape === "square" ? { w: 1024, h: 1024 } : SIZES[o.aspect];
+  const nanoRatio = shape === "landscape" ? "3:2" : shape === "square" ? "1:1" : o.aspect;
   const out = await callProvider(db, {
     provider: "fal",
     note: o.note ?? `image ${o.model}: ${o.prompt.slice(0, 50)}`,
@@ -174,7 +179,7 @@ export async function genImage(db: Db, o: GenImageOpts): Promise<GenImageResult>
               output_format: "png",
             }
           : info.kind === "fal-nano"
-            ? { prompt: o.prompt, aspect_ratio: o.aspect, resolution: "2K", num_images: 1, output_format: "png" }
+            ? { prompt: o.prompt, aspect_ratio: nanoRatio, resolution: "2K", num_images: 1, output_format: "png" }
             : { prompt: o.prompt, image_size: { width: w + (w % 16), height: h + (h % 16) }, num_images: 1 };
       if (image_urls) input.image_urls = image_urls;
       const buf = await falRun(useEdit ? info.edit! : info.t2i, input, o.signal);

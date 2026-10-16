@@ -4,7 +4,7 @@ import sharp, { type OverlayOptions } from "sharp";
 import { urlToFile } from "../../video/files";
 import type { Aspect, Slide, Slots, StudioBrandConfig, TemplateId } from "../types";
 import { SIZE } from "../types";
-import { capHeight, clean, drawLines, fit, label } from "./type";
+import { capHeight, clean, drawLines, fit, fitBox, label } from "./type";
 
 /**
  * Layout templates for statics and carousel slides. The image (generated or real) never carries text; every word
@@ -867,7 +867,33 @@ const mythFact: Tpl = async (c) => {
   const w = c.W - c.pad * 2;
   let y = c.pad * 1.1;
   const head = sl(c, "headline");
-  if (head) y += headline(c, { x: c.pad, top: y, w, color: ink, max: 64, min: 42, lines: 2, accentOn: bg }) + 40 * c.s;
+  const file = c.input.imageFile;
+  if (file) {
+    // photo band on top with the headline over a gradient: the cover of a myth-busting carousel
+    const bh = Math.round(c.H * 0.36);
+    c.layers.push({ input: await cover(file, c.W, bh), left: 0, top: 0 });
+    if (head) {
+      c.defs.push(
+        `<linearGradient id="mb" x1="0" y1="0" x2="0" y2="1"><stop offset="0.05" stop-color="#000" stop-opacity="0.05"/><stop offset="0.5" stop-color="#000" stop-opacity="0.55"/><stop offset="1" stop-color="#000" stop-opacity="0.86"/></linearGradient>`,
+      );
+      c.svg.push(`<rect width="${c.W}" height="${bh}" fill="url(#mb)"/>`);
+      const ft = fit(c.head, head, { max: 64 * c.s, min: 40 * c.s, maxW: w, maxLines: 2, lineH: 1.08 });
+      const top = bh - 36 * c.s - ft.lines.length * ft.lineH;
+      const accent = sl(c, "accentWord");
+      c.svg.push(
+        drawLines(ft, {
+          x: c.pad,
+          top,
+          boxW: w,
+          color: "#FFFFFF",
+          accent: accent ? { words: [accent], color: readable(c.cfg.colors.accent, "#000000", 3) } : undefined,
+        }).svg,
+      );
+      c.boxes.push({ x: c.pad, y: top, w, h: ft.lines.length * ft.lineH, color: "#FFFFFF" });
+    }
+    y = bh + 36 * c.s;
+  } else if (head)
+    y += headline(c, { x: c.pad, top: y, w, color: ink, max: 64, min: 42, lines: 2, accentOn: bg }) + 40 * c.s;
   const bottom = c.H - c.pad - 110 * c.s;
   const cardH = (bottom - y - 30 * c.s) / 2;
   const card = (kind: "myth" | "fact", text: string, top: number) => {
@@ -887,15 +913,15 @@ const mythFact: Tpl = async (c) => {
       upper: true,
       track: 2 * c.s,
     });
-    const ft = fit(isMyth ? "inter_semibold" : "inter_bold", text, {
+    const tagBottom = top + 36 * c.s + 52 * c.s;
+    const ft = fitBox(isMyth ? "inter_semibold" : "inter_bold", text, {
       max: 62 * c.s,
-      min: 30 * c.s,
+      min: 24 * c.s,
       maxW: w - 72 * c.s,
-      maxLines: 4,
+      maxH: top + cardH - tagBottom - 56 * c.s,
       lineH: 1.2,
       balance: false,
     });
-    const tagBottom = top + 36 * c.s + 52 * c.s;
     const ty = tagBottom + Math.max(28 * c.s, (top + cardH - tagBottom - ft.lines.length * ft.lineH) / 2 - 10 * c.s);
     c.svg.push(drawLines(ft, { x: c.pad + 36 * c.s, top: ty, boxW: w - 72 * c.s, color: tc }).svg);
     c.boxes.push({ x: c.pad + 36 * c.s, y: ty, w: w - 72 * c.s, h: ft.lines.length * ft.lineH, color: tc });
@@ -1222,7 +1248,7 @@ const quiz: Tpl = async (c) => {
   }
   y += headline(c, { x: c.pad, top: y, w, color: ink, max: 80, min: 46, lines: 3, accentOn: bg }) + 44 * c.s;
   if (file) {
-    const ih = Math.round(c.H * 0.2);
+    const ih = Math.round(c.H * 0.27);
     c.layers.push({
       input: await rounded(file, Math.round(w), ih, 26 * c.s),
       left: Math.round(c.pad),

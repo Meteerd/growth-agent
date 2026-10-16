@@ -117,6 +117,22 @@ export function fit(
   return { font: f, size, lines, lineH: Math.round(size * (o.lineH ?? 1.12)) };
 }
 
+/** Like fit, but also keeps the block within maxH pixels (shrinks until lines x line height fits). */
+export function fitBox(
+  key: string,
+  text: string,
+  o: { max: number; min: number; maxW: number; maxH: number; lineH?: number; balance?: boolean },
+): Fit {
+  let size = o.max;
+  for (;;) {
+    const lineH = o.lineH ?? 1.12;
+    const maxLines = Math.max(1, Math.floor(o.maxH / (size * lineH)));
+    const f = fit(key, text, { max: size, min: size, maxW: o.maxW, maxLines, lineH, balance: o.balance });
+    if ((f.lines.length * f.lineH <= o.maxH && f.lines.length <= maxLines) || size <= o.min) return f;
+    size -= 2;
+  }
+}
+
 export interface Drawn {
   svg: string;
   height: number;
