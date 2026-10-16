@@ -25,6 +25,7 @@ const LABEL: Record<string, string> = {
   generate_ads: "Started generating ads",
   list_ads: "Looked at the ads",
   get_ad: "Opened an ad",
+  look_at_ad: "Looked at an ad",
   revise_ad: "Started a revision",
   set_ad_status: "Changed an ad's status",
   get_job: "Checked a job",

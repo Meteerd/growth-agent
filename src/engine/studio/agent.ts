@@ -5,12 +5,14 @@ import type {
   BetaMessageParam,
   BetaToolUnion,
 } from "@anthropic-ai/sdk/resources/beta/messages/messages";
+import sharp from "sharp";
 import { z } from "zod";
 import { liveClaudeTransport, MODEL, outputSchema, type StreamParams } from "../agent/claude";
 import type { Db } from "../db/client";
 import { callProvider } from "../providers/call";
 import { claudeCost, claudeEstimate } from "../providers/prices";
 import { listBrands, patchDossier, spentByProvider } from "../repo";
+import { urlToFile } from "../video/files";
 import { getConfig, getSettings, mustBrand, setConfig, setSettings } from "./config";
 import { CAROUSELS, FORMATS } from "./formats";
 import { IMAGE_MODEL_INFO } from "./images";
@@ -314,6 +316,30 @@ const TOOLS: ToolDef<z.ZodType>[] = [
     },
   }),
   tool({
+    name: "look_at_ad",
+    description: "See an ad's rendered slides (images) to judge it yourself before advising or revising.",
+    schema: z.object({ id: z.string() }),
+    run: async (db, i) => {
+      const a = await getAd(db, i.id);
+      if (!a) return { error: "not found" };
+      const blocks: BetaContentBlockParam[] = [
+        {
+          type: "text",
+          text: `${a.body.title} (${a.format}, ${a.kind}, score ${a.score ?? "?"}). Copy: ${JSON.stringify(a.body.copy)}`,
+        },
+      ];
+      for (const s of a.body.slides.slice(0, 8)) {
+        const f = s.png ? urlToFile(s.png) : null;
+        if (!f) continue;
+        const b64 = (await sharp(f).resize(540, 675, { fit: "inside" }).jpeg({ quality: 78 }).toBuffer()).toString(
+          "base64",
+        );
+        blocks.push({ type: "image", source: { type: "base64", media_type: "image/jpeg", data: b64 } });
+      }
+      return { __blocks: blocks };
+    },
+  }),
+  tool({
     name: "revise_ad",
     description:
       "Change an ad from feedback (copy, layout, image, format). Keeps what the feedback does not touch. Returns a job id.",
@@ -536,7 +562,13 @@ export async function chatTurn(
             isError = true;
           } else {
             try {
-              content = JSON.stringify(await t.run(db, parsed.data)).slice(0, 24000);
+              const out = (await t.run(db, parsed.data)) as { __blocks?: BetaContentBlockParam[] } | unknown;
+              if (out && typeof out === "object" && "__blocks" in out && Array.isArray(out.__blocks)) {
+                sink.toolResult(u.name, "(images)", false);
+                results[idx] = { type: "tool_result", tool_use_id: u.id, content: out.__blocks as never };
+                return;
+              }
+              content = JSON.stringify(out).slice(0, 24000);
             } catch (e) {
               content = e instanceof Error ? e.message : String(e);
               isError = true;

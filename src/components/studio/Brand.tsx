@@ -233,10 +233,16 @@ function AdsBoard({ slug, d }: { slug: string; d: BrandDetail }) {
             {f !== "all" && ` ${(ads.data ?? []).filter((a) => a.status === f).length}`}
           </button>
         ))}
+        <a
+          href={`/api/studio/brands/${slug}/export?status=${filter === "all" ? "approved" : filter}`}
+          className="ml-auto rounded-md border border-line bg-white px-3 py-2 text-[13px] hover:border-line-strong"
+        >
+          Download {filter === "all" ? "approved" : filter}
+        </a>
         <button
           type="button"
           onClick={() => setGen((g) => !g)}
-          className="ml-auto rounded-md bg-bone px-4 py-2 text-[13.5px] text-white"
+          className="rounded-md bg-bone px-4 py-2 text-[13.5px] text-white"
         >
           {gen ? "Close" : "Make ads"}
         </button>
