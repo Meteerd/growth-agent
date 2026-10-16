@@ -43,7 +43,8 @@ export function defaultConfig(brand: Brand): StudioBrandConfig {
     competitors: brand.dossier.competitors.map((c) => ({ name: c.name, website: c.url, adLibraryQuery: c.name })),
     searchTerms: [],
     placement: "paid",
-    imageModel: "openai:gpt-image-2",
+    // GPT Image 2.5 Flare on fal: as photoreal as GPT Image 2 direct in the 17 Oct bake-off, ~4x cheaper
+    imageModel: "fal:gpt-image-2.5-flare",
     aspects: ["4:5"],
     logo: brand.dossier.visual.logoUrl ?? imgs.logo,
     brandImages: imgs.images.map((url) => ({ url })),
