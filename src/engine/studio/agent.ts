@@ -276,6 +276,10 @@ const TOOLS: ToolDef<z.ZodType>[] = [
       notes: z.string().optional().describe("the operator's brief for this batch"),
       refIds: z.array(z.string()).optional().describe("competitor ad ids to remake"),
       placement: z.enum(["paid", "organic"]).optional(),
+      good: z
+        .number()
+        .optional()
+        .describe("keep making new concepts until this many ads clear the quality bar (up to 2 extra rounds)"),
     }),
     run: async (db, i) => {
       const b = await mustBrand(db, i.brand);
@@ -289,7 +293,7 @@ const TOOLS: ToolDef<z.ZodType>[] = [
     description: "The brand's generated ads (newest first) with status, score and headline.",
     schema: z.object({
       brand: brandArg,
-      status: z.enum(["queued", "rendering", "ready", "approved", "rejected", "failed"]).optional(),
+      status: z.enum(["queued", "rendering", "ready", "below_bar", "approved", "rejected", "failed"]).optional(),
       limit: z.number().optional(),
     }),
     run: async (db, i) => {
@@ -469,6 +473,7 @@ How to work:
 - Ground everything: competitors' winning patterns, the brand dossier, real customer words. Never invent numbers, reviews, testimonials, doctors or prices. If the operator gives you real testimonials, an offer or a doctor's name, store them with update_brand_config.
 - Health brands (a.clinic, rule pack eu_rx_telehealth): no drug names (Wegovy, Ozempic, GLP-1...), no injections/pens, no before/after bodies, no promised kg, no "you" + condition. Paid Meta ads for prescription telehealth also need LegitScript certification: the creatives can be made, but say this when relevant.
 - Image models: openai:gpt-image-2 (direct, proven, ~$0.21/image), fal:gpt-image-2.5-flare (~$0.05), fal:nano-banana-pro (best consistency, ~$0.15), fal:nano-banana-2.1, fal:seedream-5-lite (cheapest). Text is always drawn by templates, so the model only makes the scene.
+- Only ads at or above the quality bar (default 75) are "ready"; the rest are "below_bar". When the operator wants ads to run, use generate_ads with good = how many they need, so the batch keeps going until that many clear the bar.
 - Be brief and concrete. Plain text, short paragraphs or lists. No em dashes.`;
 
 // ---------------------------------------------------------------- loop

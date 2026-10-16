@@ -255,7 +255,7 @@ export interface AdBody {
   error?: string;
 }
 
-export type AdStatus = "queued" | "rendering" | "ready" | "approved" | "rejected" | "failed";
+export type AdStatus = "queued" | "rendering" | "ready" | "below_bar" | "approved" | "rejected" | "failed";
 
 export interface Ad {
   id: string;

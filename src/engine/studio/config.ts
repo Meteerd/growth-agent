@@ -92,12 +92,15 @@ export interface StudioSettings {
   targetScore: number;
   /** how many revision rounds an ad may get on the way to the target */
   maxRevisions: number;
+  /** ads under this score are marked below bar instead of ready */
+  qualityBar: number;
 }
 export const DEFAULT_SETTINGS: StudioSettings = {
   reviewThreshold: 72,
   maxAdsPerBatch: 12,
   targetScore: 80,
   maxRevisions: 1,
+  qualityBar: 75,
 };
 
 export async function getSettings(db: Db): Promise<StudioSettings> {

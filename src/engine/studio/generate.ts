@@ -240,6 +240,8 @@ export interface BatchInput {
   notes?: string;
   refIds?: string[];
   placement?: "paid" | "organic";
+  /** keep making new concepts (up to 2 more rounds) until this many ads clear the quality bar */
+  good?: number;
 }
 
 const RankOut = z.object({
@@ -826,8 +828,11 @@ async function produce(
     review: reviewOut,
     versions: [...cur.body.versions, ...ordered],
   };
-  await updateAd(ctx.db, ad.id, { status: "ready", score: best.rv.overall, body });
-  return { ...cur, status: "ready" as const, score: best.rv.overall, body };
+  // only ads that clear the quality bar count as ready; the rest stay visible but marked below bar
+  const status =
+    best.rv.overall >= settings.qualityBar || best.rv.overall === 0 ? ("ready" as const) : ("below_bar" as const);
+  await updateAd(ctx.db, ad.id, { status, score: best.rv.overall, body });
+  return { ...cur, status, score: best.rv.overall, body };
 }
 
 // ---------------------------------------------------------------- compliance gate
@@ -862,92 +867,123 @@ export async function generateBatch(ctx: JobCtx, brand: Brand, input: BatchInput
   const model = input.model ?? g.cfg.imageModel;
   const placement = input.placement ?? g.cfg.placement;
   const batchId = newId("batch");
-  await ctx.step(`Planning ${count} ads (${carousels} carousels) in ${langName(language)}`, 0.03);
-  const concepts = await plan(ctx, g, input, count, carousels);
-  await ctx.log(`Concepts: ${concepts.map((c) => `${c.title} [${c.format}]`).join("; ")}`);
+  const results: { id: string; title: string; status: string; score: number | null }[] = [];
+  const made: string[] = [];
+  const wanted = input.good ? Math.max(1, Math.min(input.good, count)) : 0;
+  const good = () => results.filter((r) => (r.score ?? 0) >= settings.qualityBar).length;
+  for (let round = 0; round < (wanted ? 3 : 1); round++) {
+    const n = round === 0 ? count : Math.min(settings.maxAdsPerBatch, Math.ceil((wanted - good()) * 1.5));
+    if (round > 0 && good() >= wanted) break;
+    const nc = round === 0 ? carousels : Math.min(n, Math.round((carousels / count) * n));
+    if (round > 0) await ctx.log(`${good()} of ${wanted} ads clear the bar (${settings.qualityBar}); making ${n} more`);
+    await runRound(round, n, nc);
+  }
+  return { batchId, ads: results, good: good(), bar: settings.qualityBar, model: IMAGE_MODEL_INFO[model].label };
 
-  // one row per concept so the board shows them immediately
-  const rows: Ad[] = [];
-  for (const c of concepts)
-    rows.push(
-      await insertAd(db, {
-        id: newId("ad"),
-        brandId: brand.id,
-        batchId,
-        format: c.format,
-        kind: c.kind,
-        status: "queued",
-        score: null,
-        body: {
-          title: c.title,
-          angle: c.angle,
-          persona: c.persona,
-          rationale: c.rationale,
-          inspiredBy: c.inspiredBy,
-          language,
-          aspect,
-          placement,
-          copy: { primaryText: "", headline: "", description: "", cta: "" },
-          slides: [],
-          feedback: [],
-          versions: [],
-          costUsd: 0,
-        },
+  async function runRound(round: number, n: number, nc: number) {
+    await ctx.step(
+      `Planning ${n} ads (${nc} carousels) in ${langName(language)}${round ? `, round ${round + 1}` : ""}`,
+      0.03,
+    );
+    const concepts = await plan(
+      ctx,
+      g,
+      {
+        ...input,
+        notes: [
+          input.notes,
+          made.length ? `Already made in this batch (do not repeat these ideas): ${made.join("; ")}` : "",
+        ]
+          .filter(Boolean)
+          .join("\n"),
+      },
+      n,
+      nc,
+    );
+    made.push(...concepts.map((c) => c.title));
+    await ctx.log(`Concepts: ${concepts.map((c) => `${c.title} [${c.format}]`).join("; ")}`);
+
+    // one row per concept so the board shows them immediately
+    const rows: Ad[] = [];
+    for (const c of concepts)
+      rows.push(
+        await insertAd(db, {
+          id: newId("ad"),
+          brandId: brand.id,
+          batchId,
+          format: c.format,
+          kind: c.kind,
+          status: "queued",
+          score: null,
+          body: {
+            title: c.title,
+            angle: c.angle,
+            persona: c.persona,
+            rationale: c.rationale,
+            inspiredBy: c.inspiredBy,
+            language,
+            aspect,
+            placement,
+            copy: { primaryText: "", headline: "", description: "", cta: "" },
+            slides: [],
+            feedback: [],
+            versions: [],
+            costUsd: 0,
+          },
+        }),
+      );
+
+    let done = 0;
+    const work = rows.map((row, i) => async () => {
+      const c = concepts[i]!;
+      try {
+        ctx.check();
+        let written = await writeAd(ctx, g, c, { language, aspect });
+        let gc = await gate(ctx, g, written, placement, row.id);
+        if (gc.status === "fail") {
+          await ctx.log(`"${c.title}" failed compliance, rewriting: ${gc.blocking.map((f) => f.message).join("; ")}`);
+          written = await writeAd(ctx, g, c, {
+            language,
+            aspect,
+            previous: written,
+            feedback: `Compliance failed. Fix every finding: ${gc.blocking.map((f) => `[${f.ruleId}] ${f.message}${f.excerpt ? ` ("${f.excerpt}")` : ""}`).join("; ")}`,
+          });
+          gc = await gate(ctx, g, written, placement, row.id);
+        }
+        const compliance = {
+          status: gc.status,
+          findings: gc.findings.map((f) => ({ ruleId: f.ruleId, severity: f.severity, message: f.message })),
+        };
+        if (gc.status === "fail") {
+          await updateAd(db, row.id, {
+            status: "failed",
+            body: { ...row.body, copy: written.copy, compliance, error: "Failed compliance twice; not rendered." },
+          });
+          results.push({ id: row.id, title: c.title, status: "failed", score: null });
+          return;
+        }
+        await updateAd(db, row.id, { body: { ...row.body, copy: written.copy, compliance } });
+        const fresh = (await getAd(db, row.id))!;
+        const doneAd = await produce(ctx, g, fresh, c, written, model);
+        results.push({ id: row.id, title: c.title, status: doneAd.status, score: doneAd.score });
+      } catch (e) {
+        const msg = e instanceof Error ? e.message : String(e);
+        await updateAd(db, row.id, { status: "failed", body: { ...row.body, error: msg } });
+        results.push({ id: row.id, title: c.title, status: "failed", score: null });
+        await ctx.log(`"${c.title}" failed: ${msg}`);
+      } finally {
+        done++;
+        await ctx.step(`${done} of ${rows.length} ads done`, 0.1 + (0.9 * done) / rows.length);
+      }
+    });
+    // two ads at a time (each fans out its own images through the shared image semaphore)
+    const queue = [...work];
+    await Promise.all(
+      Array.from({ length: 2 }, async () => {
+        for (let w = queue.shift(); w; w = queue.shift()) await w();
       }),
     );
-
-  let done = 0;
-  const results: { id: string; title: string; status: string; score: number | null }[] = [];
-  const work = rows.map((row, i) => async () => {
-    const c = concepts[i]!;
-    try {
-      ctx.check();
-      let written = await writeAd(ctx, g, c, { language, aspect });
-      let gc = await gate(ctx, g, written, placement, row.id);
-      if (gc.status === "fail") {
-        await ctx.log(`"${c.title}" failed compliance, rewriting: ${gc.blocking.map((f) => f.message).join("; ")}`);
-        written = await writeAd(ctx, g, c, {
-          language,
-          aspect,
-          previous: written,
-          feedback: `Compliance failed. Fix every finding: ${gc.blocking.map((f) => `[${f.ruleId}] ${f.message}${f.excerpt ? ` ("${f.excerpt}")` : ""}`).join("; ")}`,
-        });
-        gc = await gate(ctx, g, written, placement, row.id);
-      }
-      const compliance = {
-        status: gc.status,
-        findings: gc.findings.map((f) => ({ ruleId: f.ruleId, severity: f.severity, message: f.message })),
-      };
-      if (gc.status === "fail") {
-        await updateAd(db, row.id, {
-          status: "failed",
-          body: { ...row.body, copy: written.copy, compliance, error: "Failed compliance twice; not rendered." },
-        });
-        results.push({ id: row.id, title: c.title, status: "failed", score: null });
-        return;
-      }
-      await updateAd(db, row.id, { body: { ...row.body, copy: written.copy, compliance } });
-      const fresh = (await getAd(db, row.id))!;
-      const doneAd = await produce(ctx, g, fresh, c, written, model);
-      results.push({ id: row.id, title: c.title, status: "ready", score: doneAd.score });
-    } catch (e) {
-      const msg = e instanceof Error ? e.message : String(e);
-      await updateAd(db, row.id, { status: "failed", body: { ...row.body, error: msg } });
-      results.push({ id: row.id, title: c.title, status: "failed", score: null });
-      await ctx.log(`"${c.title}" failed: ${msg}`);
-    } finally {
-      done++;
-      await ctx.step(`${done} of ${rows.length} ads done`, 0.1 + (0.9 * done) / rows.length);
-    }
-  });
-  // two ads at a time (each fans out its own images through the shared image semaphore)
-  const queue = [...work];
-  await Promise.all(
-    Array.from({ length: 2 }, async () => {
-      for (let w = queue.shift(); w; w = queue.shift()) await w();
-    }),
-  );
-  return { batchId, ads: results, model: IMAGE_MODEL_INFO[model].label };
+  }
 }
 
 // ---------------------------------------------------------------- revise

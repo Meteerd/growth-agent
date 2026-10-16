@@ -16,6 +16,7 @@ export const STATUS_TONE: Record<string, string> = {
   queued: "bg-bone-4/30 text-bone-2",
   rendering: "bg-signal-dim text-signal",
   ready: "bg-[#EEF3FF] text-[#2A4FA8]",
+  below_bar: "bg-[#FBF1DE] text-warn",
   approved: "bg-[#E7F3EC] text-pass",
   rejected: "bg-[#F4ECEB] text-fail",
   failed: "bg-[#F4ECEB] text-fail",
@@ -29,6 +30,7 @@ function GeneratePanel({ d, slug, onStarted }: { d: BrandDetail; slug: string; o
   const [model, setModel] = useState(d.config.imageModel);
   const [formats, setFormats] = useState<string[]>([]);
   const [notes, setNotes] = useState("");
+  const [good, setGood] = useState(0);
   const [busy, setBusy] = useState(false);
   const info = d.imageModels.find((m) => m.id === model);
   const est = info ? (count - carousels + carousels * 5) * info.usd * 1.3 + count * 0.25 : 0;
@@ -43,6 +45,7 @@ function GeneratePanel({ d, slug, onStarted }: { d: BrandDetail; slug: string; o
         model,
         formats: formats.length ? formats : undefined,
         notes: notes || undefined,
+        good: good || undefined,
       });
       toast({
         title: "Generating",
@@ -78,6 +81,20 @@ function GeneratePanel({ d, slug, onStarted }: { d: BrandDetail; slug: string; o
             max={count}
             value={carousels}
             onChange={(e) => setCarousels(Number(e.target.value))}
+            className={cn(sel, "mt-1 block w-20")}
+          />
+        </label>
+        <label
+          className="text-[12px] text-bone-3"
+          title="Keep making new concepts until this many ads score at or above the quality bar"
+        >
+          Keep going until good
+          <input
+            type="number"
+            min={0}
+            max={count}
+            value={good}
+            onChange={(e) => setGood(Number(e.target.value))}
             className={cn(sel, "mt-1 block w-20")}
           />
         </label>
@@ -219,7 +236,7 @@ function AdsBoard({ slug, d }: { slug: string; d: BrandDetail }) {
   return (
     <div>
       <div className="flex flex-wrap items-center gap-2">
-        {["all", "ready", "approved", "rejected", "failed"].map((f) => (
+        {["all", "ready", "below_bar", "approved", "rejected", "failed"].map((f) => (
           <button
             key={f}
             type="button"
@@ -229,7 +246,7 @@ function AdsBoard({ slug, d }: { slug: string; d: BrandDetail }) {
               filter === f ? "bg-bone text-white" : "text-bone-2 hover:bg-white",
             )}
           >
-            {f}
+            {f.replace("_", " ")}
             {f !== "all" && ` ${(ads.data ?? []).filter((a) => a.status === f).length}`}
           </button>
         ))}
