@@ -46,6 +46,20 @@ You approve or revise the ads, by hand or by talking to the agent.
 
 - **Money is capped.** Every paid call goes through the spend ledger, with `BUDGET_USD_*` limits in `/srv/studio/shared/.env`. The Jobs page shows spend per provider.
 
+## Open-source repos studied (and what was taken)
+
+Six repos were shallow-cloned and read on 16 Oct 2026 (`~/Desktop/Programs/rekampols-research/repos/`; full notes in `research/OSS_REPOS.md`). Nothing was run.
+
+| Repo | Taken into the studio |
+|---|---|
+| krusemediallc/arcads-claude-code (1.6k stars, MIT) | Splitting a winner into brand vs structure (`steal` / `avoid` in the teardown). The format taxonomy used to classify competitor ads. Routing: GPT Image for photoreal scenes, Nano Banana for consistency. |
+| Hainrixz/open-carrusel (MIT) | Chat drives the REST API; brand config; a slide contract an LLM fills (here: typed slots per template); and the carousel arc (hook, one idea per slide, sendable slide, CTA). |
+| RamsesAguirre777/facebook-ads-library-mcp (MIT) | Winner signals without spend data: days running and `ads_using_creative` (our `winnerScore`). Scrape the public Ad Library instead of the API, which returns only political ads outside the EU and UK. |
+| DV0x/creative-ad-agent (MIT) | Every hook grounded in a source (`inspiredBy`), a variety rule (at least 3 hook types), session-style revisions. |
+| norahe0304-art/30x-image (MIT) | A shared prompt prefix so carousel slides stay consistent (`visualWorld`), the anti-slop banned list, and generating slides in parallel instead of chaining them. |
+| athcagithub/SlideSmith (non-commercial licence: ideas only) | "LLM writes words, the renderer draws pixels". |
+| bearcarousel, creatify evaluator (READMEs) | A deterministic audit before the LLM judge (our contrast audit), and multi-dimension scoring with stop power weighted highest. |
+
 ## The agent
 
 The chat on the right is Claude Opus 5.5 with 21 tools: add brands, change any config, scan, analyse, read the playbook and competitor ads, generate, revise, approve, check jobs and spend. Long work runs as background jobs, so the agent starts them and reports back. Conversations are stored append-only per thread.
