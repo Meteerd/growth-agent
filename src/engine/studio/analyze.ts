@@ -64,7 +64,7 @@ export async function analyzeRefs(ctx: JobCtx, brand: Brand, o: { limit?: number
         for (const [n, r] of batch.entries()) {
           content.push({
             type: "text",
-            text: `AD ${n} | ${r.mediaType} | advertiser: ${r.advertiser} | running ${r.body.daysRunning ?? "?"} days, ${r.body.active ? "still active" : "stopped"} | variants using this creative: ${r.body.variants ?? 1} | CTA: ${r.body.cta ?? ""}\nPrimary text: ${(r.body.body ?? "").slice(0, 600)}\nHeadline field: ${r.body.title ?? ""}${r.body.cards.length ? `\nCards: ${r.body.cards.map((c, i) => `${i + 1}. ${c.title ?? ""} ${c.body ?? ""}`).join(" | ")}` : ""}`,
+            text: `AD ${n} | ${r.mediaType === "video_cover" ? "VIDEO AD (only its cover frame shown: judge it as the static hook people see first)" : r.mediaType} | advertiser: ${r.advertiser} | running ${r.body.daysRunning ?? "?"} days, ${r.body.active ? "still active" : "stopped"} | variants using this creative: ${r.body.variants ?? 1} | CTA: ${r.body.cta ?? ""}\nPrimary text: ${(r.body.body ?? "").slice(0, 600)}\nHeadline field: ${r.body.title ?? ""}${r.body.cards.length ? `\nCards: ${r.body.cards.map((c, i) => `${i + 1}. ${c.title ?? ""} ${c.body ?? ""}`).join(" | ")}` : ""}`,
           });
           for (const u of r.body.images.slice(0, r.mediaType === "carousel" ? 4 : 1)) {
             const b = await thumb(u, r.mediaType === "carousel" ? 360 : 540);

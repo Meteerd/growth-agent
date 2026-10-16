@@ -29,7 +29,7 @@ export function libraryUrl(o: { country: string; q?: string; pageId?: string; ac
     active_status: o.active === false ? "all" : "active",
     ad_type: "all",
     country: o.country,
-    media_type: "image",
+    media_type: "all",
   });
   if (o.pageId) {
     p.set("view_all_page_id", o.pageId);
@@ -88,7 +88,7 @@ export async function scanCompetitors(ctx: JobCtx, brand: Brand, input: ScanInpu
   const { db } = ctx;
   let cfg = await getConfig(db, brand);
   const countries = (input.countries?.length ? input.countries : cfg.countries).slice(0, 2);
-  const per = Math.min(input.perSource ?? 30, 60);
+  const per = Math.min(input.perSource ?? 40, 80);
   const comps = cfg.competitors.filter((c) => !input.only?.length || input.only.some((o) => norm(o) === norm(c.name)));
   const sources: SourceSpec[] = [];
   for (const c of comps)
@@ -144,7 +144,9 @@ export async function scanCompetitors(ctx: JobCtx, brand: Brand, input: ScanInpu
     const snap = (it.snapshot ?? {}) as J;
     const fmt = str(snap.display_format) ?? "IMAGE";
     const videos = (snap.videos as J[] | undefined) ?? [];
-    if (fmt === "VIDEO" || videos.length) continue;
+    const cover = str(videos[0]?.video_preview_image_url) ?? str(((snap.cards as J[] | undefined) ?? [])[0]?.video_preview_image_url);
+    const isVideo = fmt === "VIDEO" || videos.length > 0;
+    if (isVideo && !cover) continue;
     const src = sources.find((s) => s.url === str(it.url)) ?? sources.find((s) => str(it.url)?.includes(encodeURIComponent(s.query)));
     const pageName = str(it.page_name) ?? str(snap.page_name) ?? "Advertiser";
     // keyword search for a competitor name returns other advertisers too: keep only that page
@@ -154,7 +156,8 @@ export async function scanCompetitors(ctx: JobCtx, brand: Brand, input: ScanInpu
     const id = str(it.ad_archive_id) ?? `${i}`;
     const cardsRaw = ((snap.cards as J[] | undefined) ?? []).slice(0, 10);
     const imgsRaw = ((snap.images as J[] | undefined) ?? []).slice(0, 1);
-    const isCarousel = cardsRaw.filter((c) => str(c.original_image_url) ?? str(c.resized_image_url)).length > 1;
+    // DCO cards are alternative versions of one ad, not a carousel
+    const isCarousel = !isVideo && fmt !== "DCO" && cardsRaw.filter((c) => str(c.original_image_url) ?? str(c.resized_image_url)).length > 1;
     const images: string[] = [];
     const cards: AdRefBody["cards"] = [];
     if (isCarousel) {
@@ -164,6 +167,9 @@ export async function scanCompetitors(ctx: JobCtx, brand: Brand, input: ScanInpu
         cards.push({ title: str(c.title), body: str(c.body), image: f ? fileToUrl(f) : undefined });
         if (f) images.push(fileToUrl(f));
       }
+    } else if (isVideo) {
+      const f = await saveImage(cover!, path.join(dir, `${id}_cover.jpg`), ctx.signal);
+      if (f) images.push(fileToUrl(f));
     } else {
       const u =
         str(imgsRaw[0]?.original_image_url) ??
@@ -205,8 +211,9 @@ export async function scanCompetitors(ctx: JobCtx, brand: Brand, input: ScanInpu
       source: "meta_ad_library",
       externalId: id,
       advertiser: pageName,
-      mediaType: isCarousel ? "carousel" : "image",
-      score: winnerScore(days, variants, active),
+      mediaType: isCarousel ? "carousel" : isVideo ? "video_cover" : "image",
+      // a video's cover frame is a weaker reference for statics than a real static
+      score: Math.round(winnerScore(days, variants, active) * (isVideo ? 0.85 : 1)),
       body,
     });
     saved++;

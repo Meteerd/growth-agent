@@ -127,7 +127,8 @@ export interface AdRef {
   source: string;
   externalId: string;
   advertiser: string;
-  mediaType: "image" | "carousel";
+  /** video_cover: the cover frame of a video ad (the static hook people see first) */
+  mediaType: "image" | "carousel" | "video_cover";
   score: number;
   body: AdRefBody;
   createdAt: string;
