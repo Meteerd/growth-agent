@@ -122,7 +122,19 @@ interface Grounding {
   brand: Brand;
   cfg: StudioBrandConfig;
   playbook: Playbook | null;
-  refs: { id: string; advertiser: string; type: string; days?: number; variants?: number; format: string; hook: string; layout: string; angle: string; steal: string; slides: string[] }[];
+  refs: {
+    id: string;
+    advertiser: string;
+    type: string;
+    days?: number;
+    variants?: number;
+    format: string;
+    hook: string;
+    layout: string;
+    angle: string;
+    steal: string;
+    slides: string[];
+  }[];
   brandImages: { i: number; url: string; note?: string; file: string }[];
   health: boolean;
 }
@@ -149,7 +161,14 @@ async function grounding(db: Db, brand: Brand): Promise<Grounding> {
   const brandImages = cfg.brandImages
     .map((b, i) => ({ i, url: b.url, note: b.note, file: urlToFile(b.url) ?? "" }))
     .filter((b) => b.file && fs.existsSync(b.file));
-  return { brand, cfg, playbook, refs, brandImages, health: brand.rulePack !== "common" || brand.vertical === "telehealth_rx" };
+  return {
+    brand,
+    cfg,
+    playbook,
+    refs,
+    brandImages,
+    health: brand.rulePack !== "common" || brand.vertical === "telehealth_rx",
+  };
 }
 
 function brandBrief(g: Grounding) {
@@ -176,7 +195,11 @@ async function brandImageBlocks(g: Grounding): Promise<BetaContentBlockParam[]> 
   const out: BetaContentBlockParam[] = [];
   for (const b of g.brandImages.slice(0, 14)) {
     try {
-      const t = await sharp(b.file).flatten({ background: "#fff" }).resize(256, 256, { fit: "inside" }).jpeg({ quality: 70 }).toBuffer();
+      const t = await sharp(b.file)
+        .flatten({ background: "#fff" })
+        .resize(256, 256, { fit: "inside" })
+        .jpeg({ quality: 70 })
+        .toBuffer();
       out.push({ type: "text", text: `Brand image ${b.i}${b.note ? ` (${b.note})` : ""}` });
       out.push({ type: "image", source: { type: "base64", media_type: "image/jpeg", data: t.toString("base64") } });
     } catch {
@@ -235,7 +258,16 @@ ${rulePackText(g.brand.rulePack)}`,
       demo: () => ({
         concepts: Array.from({ length: count }, (_, i) => {
           const f = allowedFormats[i % allowedFormats.length]!;
-          return { title: `${f.name} (demo)`, format: f.id, kind: i < carousels ? ("carousel" as const) : ("static" as const), angle: "demo", persona: "demo", hookType: "demo", inspiredBy: [], rationale: "Demo mode." };
+          return {
+            title: `${f.name} (demo)`,
+            format: f.id,
+            kind: i < carousels ? ("carousel" as const) : ("static" as const),
+            angle: "demo",
+            persona: "demo",
+            hookType: "demo",
+            inspiredBy: [],
+            rationale: "Demo mode.",
+          };
         }),
       }),
     },
@@ -320,8 +352,30 @@ ${rulePackText(g.brand.rulePack)}`,
 }
 
 function demoAd(title: string, carousel: boolean, template: Slide["template"]): AdOut {
-  const empty = { eyebrow: "", headline: title, accentWord: "", body: "Demo copy (no live model).", bullets: ["One", "Two", "Three"], rows: [{ label: "Demo", us: "Yes", them: "No" }], leftLabel: "", rightLabel: "", quote: "", attribution: "", stat: "", statLabel: "", myth: "Myth", fact: "Fact", price: "", cta: "Learn more", footnote: "" };
-  const s = (t: Slide["template"]) => ({ template: t, slots: empty, image: { source: "none" as const, brandImage: -1, prompt: "", referenceImage: -1 } });
+  const empty = {
+    eyebrow: "",
+    headline: title,
+    accentWord: "",
+    body: "Demo copy (no live model).",
+    bullets: ["One", "Two", "Three"],
+    rows: [{ label: "Demo", us: "Yes", them: "No" }],
+    leftLabel: "",
+    rightLabel: "",
+    quote: "",
+    attribution: "",
+    stat: "",
+    statLabel: "",
+    myth: "Myth",
+    fact: "Fact",
+    price: "",
+    cta: "Learn more",
+    footnote: "",
+  };
+  const s = (t: Slide["template"]) => ({
+    template: t,
+    slots: empty,
+    image: { source: "none" as const, brandImage: -1, prompt: "", referenceImage: -1 },
+  });
   return {
     visualWorld: "",
     copy: { primaryText: "Demo ad.", headline: title.slice(0, 40), description: "", cta: "Learn More" },
@@ -336,7 +390,22 @@ function adText(a: AdOut): string {
     `Description: ${a.copy.description}`,
     ...a.slides.map((s, i) => {
       const sl = s.slots;
-      const parts = [sl.eyebrow, sl.headline, sl.body, ...sl.bullets, ...sl.rows.map((r) => `${r.label}: ${r.us} vs ${r.them}`), sl.quote, sl.attribution, sl.stat, sl.statLabel, sl.myth, sl.fact, sl.price, sl.cta, sl.footnote].filter(Boolean);
+      const parts = [
+        sl.eyebrow,
+        sl.headline,
+        sl.body,
+        ...sl.bullets,
+        ...sl.rows.map((r) => `${r.label}: ${r.us} vs ${r.them}`),
+        sl.quote,
+        sl.attribution,
+        sl.stat,
+        sl.statLabel,
+        sl.myth,
+        sl.fact,
+        sl.price,
+        sl.cta,
+        sl.footnote,
+      ].filter(Boolean);
       return `Slide ${i + 1} (${s.template}): ${parts.join(" | ")}${s.image.prompt ? ` | image prompt: ${s.image.prompt}` : ""}`;
     }),
   ].join("\n");
@@ -361,9 +430,13 @@ const semaphore = (n: number) => {
 const imageSlots = semaphore(3);
 
 function zoneFor(t: Slide["template"], aspect: Aspect): string {
-  if (t === "photo_headline") return aspect === "9:16" ? "Keep the upper half calm and simple (wall, sky, soft background) for a headline; subject in the lower half." : "Keep the top 45% of the frame calm and uncluttered for a headline; the subject sits in the lower half.";
+  if (t === "photo_headline")
+    return aspect === "9:16"
+      ? "Keep the upper half calm and simple (wall, sky, soft background) for a headline; subject in the lower half."
+      : "Keep the top 45% of the frame calm and uncluttered for a headline; the subject sits in the lower half.";
   if (t === "ugc_caption") return "Subject in the lower two thirds; the area around the upper third simple.";
-  if (t === "sticky") return "A plain flat surface (fridge door, laptop lid, crate side, kitchen cabinet) fills the centre of the frame where a sticky note will be placed.";
+  if (t === "sticky")
+    return "A plain flat surface (fridge door, laptop lid, crate side, kitchen cabinet) fills the centre of the frame where a sticky note will be placed.";
   if (FULL_BLEED.includes(t)) return "Leave calm space around the centre for text.";
   if (t === "split_panel") return "Wide-ish composition, subject centred.";
   return "";
@@ -395,13 +468,34 @@ async function slideImage(
   const ref = g.brandImages.find((b) => b.i === s.image.referenceImage);
   const out = path.join(o.dir, `img_${o.idx}_${Date.now().toString(36)}.png`);
   const r = await imageSlots(() =>
-    genImage(ctx.db, { model: o.model, prompt, aspect: o.aspect, refs: ref ? [ref.file] : [], out, signal: ctx.signal, note: `studio image ${g.brand.slug}` }),
+    genImage(ctx.db, {
+      model: o.model,
+      prompt,
+      aspect: o.aspect,
+      refs: ref ? [ref.file] : [],
+      out,
+      signal: ctx.signal,
+      note: `studio image ${g.brand.slug}`,
+    }),
   );
   await ctx.cost(r.usd);
-  return { file: r.file, image: { source: "generated", prompt: o.promptOverride ?? s.image.prompt, model: r.model, url: fileToUrl(r.file), usd: r.usd } };
+  return {
+    file: r.file,
+    image: {
+      source: "generated",
+      prompt: o.promptOverride ?? s.image.prompt,
+      model: r.model,
+      url: fileToUrl(r.file),
+      usd: r.usd,
+    },
+  };
 }
 
-async function review(ctx: JobCtx, g: Grounding, ad: { title: string; format: string; copy: AdOut["copy"]; slides: Slide[]; files: string[] }) {
+async function review(
+  ctx: JobCtx,
+  g: Grounding,
+  ad: { title: string; format: string; copy: AdOut["copy"]; slides: Slide[]; files: string[] },
+) {
   const content: BetaContentBlockParam[] = [
     {
       type: "text",
@@ -422,14 +516,34 @@ async function review(ctx: JobCtx, g: Grounding, ad: { title: string; format: st
       schema: ReviewOut,
       note: `studio review ${g.brand.slug}`,
       maxTokens: 6000,
-      demo: () => ({ overall: 0, stopPower: 0, clarity: 0, brandFit: 0, craft: 0, textCorrect: true, issues: ["Demo mode: not reviewed"], fix: "", slideScores: ad.files.map(() => 0), worstSlide: 0, imageIsTheProblem: false, betterImagePrompt: "" }),
+      demo: () => ({
+        overall: 0,
+        stopPower: 0,
+        clarity: 0,
+        brandFit: 0,
+        craft: 0,
+        textCorrect: true,
+        issues: ["Demo mode: not reviewed"],
+        fix: "",
+        slideScores: ad.files.map(() => 0),
+        worstSlide: 0,
+        imageIsTheProblem: false,
+        betterImagePrompt: "",
+      }),
     },
   );
   await ctx.cost(r.usd);
   return r.value;
 }
 
-async function renderAll(g: Grounding, slides: Slide[], files: (string | undefined)[], aspect: Aspect, dir: string, version: number) {
+async function renderAll(
+  g: Grounding,
+  slides: Slide[],
+  files: (string | undefined)[],
+  aspect: Aspect,
+  dir: string,
+  version: number,
+) {
   const out: string[] = [];
   let minContrast = 21;
   for (const [i, s] of slides.entries()) {
@@ -449,7 +563,14 @@ async function renderAll(g: Grounding, slides: Slide[], files: (string | undefin
 }
 
 /** Images, render, review, one automatic fix of the weakest slide. Updates the ad row. */
-async function produce(ctx: JobCtx, g: Grounding, ad: Ad, written: AdOut, model: ImageModel, previous?: { slides: Slide[]; files: (string | undefined)[] }) {
+async function produce(
+  ctx: JobCtx,
+  g: Grounding,
+  ad: Ad,
+  written: AdOut,
+  model: ImageModel,
+  previous?: { slides: Slide[]; files: (string | undefined)[] },
+) {
   const dir = studioDir("ads", g.brand.slug, ad.id);
   const version = ad.body.versions.length + 1;
   await updateAd(ctx.db, ad.id, { status: "rendering" });
@@ -457,26 +578,60 @@ async function produce(ctx: JobCtx, g: Grounding, ad: Ad, written: AdOut, model:
     written.slides.map(async (s, i) => {
       // revisions keep an image when its source and prompt did not change
       const prev = previous?.slides[i];
-      if (prev && previous?.files[i] && prev.image.source === "generated" && s.image.source === "generated" && prev.image.prompt === s.image.prompt)
+      if (
+        prev &&
+        previous?.files[i] &&
+        prev.image.source === "generated" &&
+        s.image.source === "generated" &&
+        prev.image.prompt === s.image.prompt
+      )
         return { file: previous.files[i], image: prev.image };
       return slideImage(ctx, g, s, { aspect: ad.body.aspect, model, visualWorld: written.visualWorld, dir, idx: i });
     }),
   );
-  const slides: Slide[] = written.slides.map((s, i) => ({ template: s.template, slots: s.slots, image: imgs[i]!.image }));
+  const slides: Slide[] = written.slides.map((s, i) => ({
+    template: s.template,
+    slots: s.slots,
+    image: imgs[i]!.image,
+  }));
   const files = imgs.map((x) => x.file);
   let rendered = await renderAll(g, slides, files, ad.body.aspect, dir, version);
-  let rv = await review(ctx, g, { title: ad.body.title, format: ad.format, copy: written.copy, slides, files: rendered.files });
+  let rv = await review(ctx, g, {
+    title: ad.body.title,
+    format: ad.format,
+    copy: written.copy,
+    slides,
+    files: rendered.files,
+  });
   const settings = await getSettings(ctx.db);
   if (rv.overall > 0 && rv.overall < settings.reviewThreshold && rv.imageIsTheProblem && rv.betterImagePrompt) {
     const w = Math.max(0, Math.min(slides.length - 1, rv.worstSlide));
     const s = written.slides[w]!;
     if (s.image.source !== "none" && s.image.source !== "product") {
       await ctx.log(`Fixing slide ${w + 1} of "${ad.body.title}": ${rv.fix}`);
-      const fixed = await slideImage(ctx, g, { ...s, image: { ...s.image, source: "generated" } }, { aspect: ad.body.aspect, model, visualWorld: written.visualWorld, dir, idx: w, promptOverride: rv.betterImagePrompt });
+      const fixed = await slideImage(
+        ctx,
+        g,
+        { ...s, image: { ...s.image, source: "generated" } },
+        {
+          aspect: ad.body.aspect,
+          model,
+          visualWorld: written.visualWorld,
+          dir,
+          idx: w,
+          promptOverride: rv.betterImagePrompt,
+        },
+      );
       files[w] = fixed.file;
       slides[w] = { ...slides[w]!, image: fixed.image };
       const v2 = await renderAll(g, slides, files, ad.body.aspect, dir, version);
-      const rv2 = await review(ctx, g, { title: ad.body.title, format: ad.format, copy: written.copy, slides, files: v2.files });
+      const rv2 = await review(ctx, g, {
+        title: ad.body.title,
+        format: ad.format,
+        copy: written.copy,
+        slides,
+        files: v2.files,
+      });
       if (rv2.overall >= rv.overall) {
         rendered = v2;
         rv = rv2;
@@ -491,7 +646,10 @@ async function produce(ctx: JobCtx, g: Grounding, ad: Ad, written: AdOut, model:
     brandFit: rv.brandFit,
     craft: rv.craft,
     textCorrect: rv.textCorrect,
-    issues: [...rv.issues, ...(rendered.minContrast < 3 ? [`Low text contrast somewhere (${rendered.minContrast}:1)`] : [])],
+    issues: [
+      ...rv.issues,
+      ...(rendered.minContrast < 3 ? [`Low text contrast somewhere (${rendered.minContrast}:1)`] : []),
+    ],
     fix: rv.fix,
     slideScores: rv.slideScores,
   };
@@ -510,10 +668,20 @@ async function produce(ctx: JobCtx, g: Grounding, ad: Ad, written: AdOut, model:
 // ---------------------------------------------------------------- compliance gate
 
 async function gate(ctx: JobCtx, g: Grounding, written: AdOut, placement: "paid" | "organic", targetId: string) {
-  const c = await checkText(ctx.db, { brand: g.brand, text: adText(written), paid: placement === "paid", targetType: "concept", targetId });
+  const c = await checkText(ctx.db, {
+    brand: g.brand,
+    text: adText(written),
+    paid: placement === "paid",
+    targetType: "concept",
+    targetId,
+  });
   // the LegitScript / paid-placement rule is about the account, not the creative: keep it as a warning on the ad
   const blocking = c.findings.filter((f) => f.severity === "block" && f.ruleId !== "RX4");
-  return { status: blocking.length ? ("fail" as const) : c.status === "fail" ? ("warn" as const) : c.status, findings: c.findings, blocking };
+  return {
+    status: blocking.length ? ("fail" as const) : c.status === "fail" ? ("warn" as const) : c.status,
+    findings: c.findings,
+    blocking,
+  };
 }
 
 // ---------------------------------------------------------------- batch
@@ -581,9 +749,15 @@ export async function generateBatch(ctx: JobCtx, brand: Brand, input: BatchInput
         });
         gc = await gate(ctx, g, written, placement, row.id);
       }
-      const compliance = { status: gc.status, findings: gc.findings.map((f) => ({ ruleId: f.ruleId, severity: f.severity, message: f.message })) };
+      const compliance = {
+        status: gc.status,
+        findings: gc.findings.map((f) => ({ ruleId: f.ruleId, severity: f.severity, message: f.message })),
+      };
       if (gc.status === "fail") {
-        await updateAd(db, row.id, { status: "failed", body: { ...row.body, copy: written.copy, compliance, error: "Failed compliance twice; not rendered." } });
+        await updateAd(db, row.id, {
+          status: "failed",
+          body: { ...row.body, copy: written.copy, compliance, error: "Failed compliance twice; not rendered." },
+        });
         results.push({ id: row.id, title: c.title, status: "failed", score: null });
         return;
       }
@@ -603,15 +777,23 @@ export async function generateBatch(ctx: JobCtx, brand: Brand, input: BatchInput
   });
   // two ads at a time (each fans out its own images through the shared image semaphore)
   const queue = [...work];
-  await Promise.all(Array.from({ length: 2 }, async () => {
-    for (let w = queue.shift(); w; w = queue.shift()) await w();
-  }));
+  await Promise.all(
+    Array.from({ length: 2 }, async () => {
+      for (let w = queue.shift(); w; w = queue.shift()) await w();
+    }),
+  );
   return { batchId, ads: results, model: IMAGE_MODEL_INFO[model].label };
 }
 
 // ---------------------------------------------------------------- revise
 
-export async function reviseAd(ctx: JobCtx, brand: Brand, adId: string, feedback: string, o: { model?: ImageModel } = {}) {
+export async function reviseAd(
+  ctx: JobCtx,
+  brand: Brand,
+  adId: string,
+  feedback: string,
+  o: { model?: ImageModel } = {},
+) {
   const { db } = ctx;
   const ad = await getAd(db, adId);
   if (!ad) throw new Error(`No ad ${adId}`);
@@ -622,7 +804,28 @@ export async function reviseAd(ctx: JobCtx, brand: Brand, adId: string, feedback
     copy: ad.body.copy,
     slides: ad.body.slides.map((s) => ({
       template: s.template,
-      slots: { ...SlotsOut.parse({ eyebrow: "", headline: "", accentWord: "", body: "", bullets: [], rows: [], leftLabel: "", rightLabel: "", quote: "", attribution: "", stat: "", statLabel: "", myth: "", fact: "", price: "", cta: "", footnote: "" }), ...s.slots },
+      slots: {
+        ...SlotsOut.parse({
+          eyebrow: "",
+          headline: "",
+          accentWord: "",
+          body: "",
+          bullets: [],
+          rows: [],
+          leftLabel: "",
+          rightLabel: "",
+          quote: "",
+          attribution: "",
+          stat: "",
+          statLabel: "",
+          myth: "",
+          fact: "",
+          price: "",
+          cta: "",
+          footnote: "",
+        }),
+        ...s.slots,
+      },
       image: {
         source: s.image.source,
         brandImage: g.brandImages.find((b) => b.url === s.image.url)?.i ?? -1,
@@ -632,8 +835,19 @@ export async function reviseAd(ctx: JobCtx, brand: Brand, adId: string, feedback
     })),
   };
   await ctx.step(`Revising "${ad.body.title}"`, 0.1);
-  await updateAd(db, adId, { body: { ...ad.body, feedback: [...ad.body.feedback, { at: new Date().toISOString(), text: feedback }] } });
-  const concept = { title: ad.body.title, format: ad.format, kind: ad.kind, angle: ad.body.angle, persona: ad.body.persona, hookType: "", inspiredBy: ad.body.inspiredBy, rationale: ad.body.rationale };
+  await updateAd(db, adId, {
+    body: { ...ad.body, feedback: [...ad.body.feedback, { at: new Date().toISOString(), text: feedback }] },
+  });
+  const concept = {
+    title: ad.body.title,
+    format: ad.format,
+    kind: ad.kind,
+    angle: ad.body.angle,
+    persona: ad.body.persona,
+    hookType: "",
+    inspiredBy: ad.body.inspiredBy,
+    rationale: ad.body.rationale,
+  };
   let written = await writeAd(ctx, g, concept, {
     language: ad.body.language,
     aspect: ad.body.aspect,
@@ -649,12 +863,24 @@ export async function reviseAd(ctx: JobCtx, brand: Brand, adId: string, feedback
       feedback: `Compliance failed: ${gc.blocking.map((f) => `[${f.ruleId}] ${f.message}`).join("; ")}. Also keep the operator's feedback: ${feedback}`,
     });
     gc = await gate(ctx, g, written, ad.body.placement, adId);
-    if (gc.status === "fail") throw new Error(`The revision fails compliance: ${gc.blocking.map((f) => f.message).join("; ")}`);
+    if (gc.status === "fail")
+      throw new Error(`The revision fails compliance: ${gc.blocking.map((f) => f.message).join("; ")}`);
   }
   await ctx.step("Rendering the new version", 0.4);
   const fresh = (await getAd(db, adId))!;
-  await updateAd(db, adId, { body: { ...fresh.body, compliance: { status: gc.status, findings: gc.findings.map((f) => ({ ruleId: f.ruleId, severity: f.severity, message: f.message })) } } });
+  await updateAd(db, adId, {
+    body: {
+      ...fresh.body,
+      compliance: {
+        status: gc.status,
+        findings: gc.findings.map((f) => ({ ruleId: f.ruleId, severity: f.severity, message: f.message })),
+      },
+    },
+  });
   const prevFiles = ad.body.slides.map((s) => (s.image.url ? (urlToFile(s.image.url) ?? undefined) : undefined));
-  const done = await produce(ctx, g, (await getAd(db, adId))!, written, model, { slides: ad.body.slides, files: prevFiles });
+  const done = await produce(ctx, g, (await getAd(db, adId))!, written, model, {
+    slides: ad.body.slides,
+    files: prevFiles,
+  });
   return { id: adId, score: done.score, version: done.body.versions.length };
 }

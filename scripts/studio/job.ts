@@ -23,10 +23,15 @@ const t0 = Date.now();
 const timer = setInterval(async () => {
   const { listJobs } = await import("@/engine/studio/store");
   const j = (await listJobs(db, { limit: 1 }))[0];
-  if (j) console.log(`[${Math.round((Date.now() - t0) / 1000)}s] ${Math.round(j.progress * 100)}% ${j.step ?? ""} ($${j.costUsd.toFixed(3)})`);
+  if (j)
+    console.log(
+      `[${Math.round((Date.now() - t0) / 1000)}s] ${Math.round(j.progress * 100)}% ${j.step ?? ""} ($${j.costUsd.toFixed(3)})`,
+    );
 }, 15000);
 const job = await runJobNow(kind as never, brandId, input);
 clearInterval(timer);
-console.log(JSON.stringify({ status: job.status, error: job.error, costUsd: job.costUsd, output: job.output }, null, 2));
+console.log(
+  JSON.stringify({ status: job.status, error: job.error, costUsd: job.costUsd, output: job.output }, null, 2),
+);
 console.log(job.log.map((l) => `  ${l.ts.slice(11, 19)} ${l.msg}`).join("\n"));
 process.exit(job.status === "done" ? 0 : 1);

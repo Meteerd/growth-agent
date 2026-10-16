@@ -64,11 +64,7 @@ export async function getConfig(db: Db, brand: Brand): Promise<StudioBrandConfig
   return parsed.success ? parsed.data : base;
 }
 
-export async function setConfig(
-  db: Db,
-  brand: Brand,
-  patch: Partial<StudioBrandConfig>,
-): Promise<StudioBrandConfig> {
+export async function setConfig(db: Db, brand: Brand, patch: Partial<StudioBrandConfig>): Promise<StudioBrandConfig> {
   const cur = await getConfig(db, brand);
   const next = StudioBrandConfigSchema.parse({ ...cur, ...patch });
   await kvSet(db, `brand:${brand.id}`, next);

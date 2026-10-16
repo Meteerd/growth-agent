@@ -61,7 +61,7 @@ export function fontFor(key: string, text: string): opentype.Font {
 /** Strip what the fonts cannot draw (emoji, symbols) and normalise quotes and dashes (house style: no em dashes). */
 export function clean(t: string | undefined): string {
   return (t ?? "")
-    .replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}]/gu, "")
+    .replace(/\p{Extended_Pictographic}|\u{FE0F}|\u{200D}/gu, "")
     .replace(/\s*—\s*/g, ", ")
     .replace(/\s+/g, " ")
     .trim();
@@ -142,7 +142,12 @@ export function drawLines(
   const out: string[] = [];
   const asc = (ft.font.ascender / ft.font.unitsPerEm) * ft.size;
   const space = ft.font.getAdvanceWidth(" ", ft.size);
-  const accentSet = new Set((o.accent?.words ?? []).flatMap((w) => w.split(/\s+/)).map(norm).filter(Boolean));
+  const accentSet = new Set(
+    (o.accent?.words ?? [])
+      .flatMap((w) => w.split(/\s+/))
+      .map(norm)
+      .filter(Boolean),
+  );
   let maxW = 0;
   for (const [i, line] of ft.lines.entries()) {
     const base = o.top + asc * 0.9 + i * ft.lineH;

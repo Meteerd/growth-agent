@@ -42,8 +42,8 @@ export async function webResearch(
         } as StreamParams);
         usd += claudeCost(last.model || model, last.usage);
         const searches =
-          (last.usage as { server_tool_use?: { web_search_requests?: number } }).server_tool_use
-            ?.web_search_requests ?? 0;
+          (last.usage as { server_tool_use?: { web_search_requests?: number } }).server_tool_use?.web_search_requests ??
+          0;
         usd += searches * PER_SEARCH;
         if (last.stop_reason !== "pause_turn") break;
         messages.push({ role: "assistant", content: last.content });

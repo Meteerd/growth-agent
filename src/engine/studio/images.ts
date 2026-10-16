@@ -2,9 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
 import type { Db } from "../db/client";
-import { generateImage } from "../providers/openai";
 import { callProvider } from "../providers/call";
 import { fetchRetry, okJson } from "../providers/http";
+import { generateImage } from "../providers/openai";
 import type { Aspect, ImageModel } from "./types";
 
 /**
@@ -166,7 +166,13 @@ export async function genImage(db: Db, o: GenImageOpts): Promise<GenImageResult>
       const image_urls = useEdit ? await Promise.all(refs.map(dataUri)) : undefined;
       const input: Record<string, unknown> =
         info.kind === "fal-gpt"
-          ? { prompt: o.prompt, image_size: { width: w, height: h }, quality: "high", num_images: 1, output_format: "png" }
+          ? {
+              prompt: o.prompt,
+              image_size: { width: w, height: h },
+              quality: "high",
+              num_images: 1,
+              output_format: "png",
+            }
           : info.kind === "fal-nano"
             ? { prompt: o.prompt, aspect_ratio: o.aspect, resolution: "2K", num_images: 1, output_format: "png" }
             : { prompt: o.prompt, image_size: { width: w + (w % 16), height: h + (h % 16) }, num_images: 1 };

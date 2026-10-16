@@ -4,7 +4,7 @@ import type { Brand } from "@/contracts";
 import { type BetaContentBlockParam, structured } from "../agent/claude";
 import { urlToFile } from "../video/files";
 import { getConfig } from "./config";
-import { formatLibraryText, FORMATS } from "./formats";
+import { FORMATS, formatLibraryText } from "./formats";
 import type { JobCtx } from "./jobs";
 import { kvSet, listRefs, setRefAnalysis } from "./store";
 import { type AdRef, Playbook, RefAnalysis } from "./types";
@@ -20,7 +20,12 @@ async function thumb(url: string, w = 540): Promise<string | null> {
   const f = urlToFile(url);
   if (!f) return null;
   try {
-    return (await sharp(f).resize(w, w * 1.25, { fit: "inside" }).jpeg({ quality: 78 }).toBuffer()).toString("base64");
+    return (
+      await sharp(f)
+        .resize(w, w * 1.25, { fit: "inside" })
+        .jpeg({ quality: 78 })
+        .toBuffer()
+    ).toString("base64");
   } catch {
     return null;
   }
@@ -59,7 +64,10 @@ export async function analyzeRefs(ctx: JobCtx, brand: Brand, o: { limit?: number
         ctx.check();
         const [, batch] = item;
         const content: BetaContentBlockParam[] = [
-          { type: "text", text: `Brand we work for: ${brand.name}: ${brand.dossier.oneLiner}. Market: ${brand.countries.join(", ")}.` },
+          {
+            type: "text",
+            text: `Brand we work for: ${brand.name}: ${brand.dossier.oneLiner}. Market: ${brand.countries.join(", ")}.`,
+          },
         ];
         for (const [n, r] of batch.entries()) {
           content.push({
@@ -96,7 +104,10 @@ export async function analyzeRefs(ctx: JobCtx, brand: Brand, o: { limit?: number
           await ctx.log(`A batch failed: ${e instanceof Error ? e.message : e}`);
         }
         done++;
-        await ctx.step(`Analysed ${Math.min(done * 4, todo.length)} of ${todo.length}`, 0.05 + (0.75 * done) / batches.length);
+        await ctx.step(
+          `Analysed ${Math.min(done * 4, todo.length)} of ${todo.length}`,
+          0.05 + (0.75 * done) / batches.length,
+        );
       }
     }),
   );
@@ -108,7 +119,9 @@ export async function analyzeRefs(ctx: JobCtx, brand: Brand, o: { limit?: number
 export async function writePlaybook(ctx: JobCtx, brand: Brand) {
   const { db } = ctx;
   const cfg = await getConfig(db, brand);
-  const refs = (await listRefs(db, brand.id)).filter((r) => r.body.analysis && !r.body.analysis.irrelevant).slice(0, 60);
+  const refs = (await listRefs(db, brand.id))
+    .filter((r) => r.body.analysis && !r.body.analysis.irrelevant)
+    .slice(0, 60);
   if (!refs.length) return null;
   const rows = refs.map((r) => ({
     id: r.id,
@@ -126,13 +139,27 @@ export async function writePlaybook(ctx: JobCtx, brand: Brand) {
       route: "strategy",
       system: `You are the creative strategist for ${brand.name}. From the teardown of competitor statics and carousels in its market, write the playbook the ad generator will follow. Weight the evidence by score (long-running, many variants, still active = proven). patterns: the 4 to 8 structures that win here (name, format id from the library, share = how common, refIds = the ads that show it, why it works, howWeUseIt for ${brand.name} specifically and compliantly). angles: the persuasion angles competitors lean on, with evidence and how we take a different or better position. whiteSpace: what nobody is doing that we could own. visualNorms / copyNorms: what the category looks and sounds like (so we can match it or break it on purpose). doNot: what to avoid (compliance for this brand's rules, tired clichés). Format ids: ${FORMATS.map((f) => f.id).join(", ")}. No em dashes.`,
       user: JSON.stringify({
-        brand: { name: brand.name, oneLiner: brand.dossier.oneLiner, positioning: brand.dossier.positioning, rulePack: brand.rulePack, notes: cfg.notes },
+        brand: {
+          name: brand.name,
+          oneLiner: brand.dossier.oneLiner,
+          positioning: brand.dossier.positioning,
+          rulePack: brand.rulePack,
+          notes: cfg.notes,
+        },
         competitorAds: rows,
       }),
       schema: Playbook,
       note: `studio playbook ${brand.slug}`,
       maxTokens: 16000,
-      demo: () => ({ summary: "", patterns: [], angles: [], whiteSpace: [], visualNorms: "", copyNorms: "", doNot: [] }),
+      demo: () => ({
+        summary: "",
+        patterns: [],
+        angles: [],
+        whiteSpace: [],
+        visualNorms: "",
+        copyNorms: "",
+        doNot: [],
+      }),
     },
   );
   await ctx.cost(res.usd);

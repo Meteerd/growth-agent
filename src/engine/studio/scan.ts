@@ -103,7 +103,12 @@ export async function scanCompetitors(ctx: JobCtx, brand: Brand, input: ScanInpu
       });
   if (input.includeKeywords !== false)
     for (const t of cfg.searchTerms.slice(0, 3))
-      sources.push({ label: `"${t}" (${countries[0]})`, url: libraryUrl({ country: countries[0] ?? "US", q: t }), country: countries[0] ?? "US", query: t });
+      sources.push({
+        label: `"${t}" (${countries[0]})`,
+        url: libraryUrl({ country: countries[0] ?? "US", q: t }),
+        country: countries[0] ?? "US",
+        query: t,
+      });
   if (!sources.length) throw new Error("No competitors or search terms configured for this brand. Add some first.");
 
   await ctx.step(`Searching the Meta Ad Library: ${sources.length} searches`, 0.05);
@@ -144,20 +149,31 @@ export async function scanCompetitors(ctx: JobCtx, brand: Brand, input: ScanInpu
     const snap = (it.snapshot ?? {}) as J;
     const fmt = str(snap.display_format) ?? "IMAGE";
     const videos = (snap.videos as J[] | undefined) ?? [];
-    const cover = str(videos[0]?.video_preview_image_url) ?? str(((snap.cards as J[] | undefined) ?? [])[0]?.video_preview_image_url);
+    const cover =
+      str(videos[0]?.video_preview_image_url) ??
+      str(((snap.cards as J[] | undefined) ?? [])[0]?.video_preview_image_url);
     const isVideo = fmt === "VIDEO" || videos.length > 0;
     if (isVideo && !cover) continue;
-    const src = sources.find((s) => s.url === str(it.url)) ?? sources.find((s) => str(it.url)?.includes(encodeURIComponent(s.query)));
+    const src =
+      sources.find((s) => s.url === str(it.url)) ??
+      sources.find((s) => str(it.url)?.includes(encodeURIComponent(s.query)));
     const pageName = str(it.page_name) ?? str(snap.page_name) ?? "Advertiser";
     // keyword search for a competitor name returns other advertisers too: keep only that page
-    if (src?.match && !norm(pageName).includes(norm(src.match).slice(0, 8)) && !norm(src.match).includes(norm(pageName).slice(0, 8)))
+    if (
+      src?.match &&
+      !norm(pageName).includes(norm(src.match).slice(0, 8)) &&
+      !norm(src.match).includes(norm(pageName).slice(0, 8))
+    )
       continue;
     if (src?.competitor && str(it.page_id)) pageIds.set(src.competitor, str(it.page_id)!);
     const id = str(it.ad_archive_id) ?? `${i}`;
     const cardsRaw = ((snap.cards as J[] | undefined) ?? []).slice(0, 10);
     const imgsRaw = ((snap.images as J[] | undefined) ?? []).slice(0, 1);
     // DCO cards are alternative versions of one ad, not a carousel
-    const isCarousel = !isVideo && fmt !== "DCO" && cardsRaw.filter((c) => str(c.original_image_url) ?? str(c.resized_image_url)).length > 1;
+    const isCarousel =
+      !isVideo &&
+      fmt !== "DCO" &&
+      cardsRaw.filter((c) => str(c.original_image_url) ?? str(c.resized_image_url)).length > 1;
     const images: string[] = [];
     const cards: AdRefBody["cards"] = [];
     if (isCarousel) {
@@ -222,7 +238,9 @@ export async function scanCompetitors(ctx: JobCtx, brand: Brand, input: ScanInpu
   // remember page ids so the next scan is an exact advertiser match
   if (pageIds.size) {
     cfg = await setConfig(db, brand, {
-      competitors: cfg.competitors.map((c) => (pageIds.has(c.name) && !c.pageId ? { ...c, pageId: pageIds.get(c.name) } : c)),
+      competitors: cfg.competitors.map((c) =>
+        pageIds.has(c.name) && !c.pageId ? { ...c, pageId: pageIds.get(c.name) } : c,
+      ),
     });
   }
   return { searched: sources.length, returned: items.length, saved };

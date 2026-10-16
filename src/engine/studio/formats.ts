@@ -30,7 +30,8 @@ export const FORMATS: Format[] = [
     stage: "solution",
     template: "comparison",
     when: "3 to 5 provable differences against a category default (diet apps, a private trainer, going alone). Never name a competitor.",
-    slots: "headline<=40, leftLabel (us)<=18, rightLabel (them)<=18, rows[3-5] {label<=28, us<=20, them<=20} (use Yes/No for ticks), cta<=18, footnote<=60",
+    slots:
+      "headline<=40, leftLabel (us)<=18, rightLabel (them)<=18, rows[3-5] {label<=28, us<=20, them<=20} (use Yes/No for ticks), cta<=18, footnote<=60",
     image: "none",
     vary: "who 'them' is; the row set (price vs access vs support); persona in the headline",
     health: "compare services only, never medicines; no claims you cannot substantiate",
@@ -64,7 +65,8 @@ export const FORMATS: Format[] = [
     stage: "cold",
     template: "myth_fact",
     when: "the compliant alternative to before/after: contrast the old approach with the brand's",
-    slots: "headline<=40, leftLabel='Old way' (localised), myth<=60 (the old way), rightLabel='New way', fact<=90 (the brand's way), cta<=18",
+    slots:
+      "headline<=40, leftLabel='Old way' (localised), myth<=60 (the old way), rightLabel='New way', fact<=90 (the brand's way), cta<=18",
     image: "none",
     vary: "the old way named (calorie apps, crash diets, YouTube videos, group classes)",
     health: "never body before/after; the contrast is the system, not the person",
@@ -86,7 +88,8 @@ export const FORMATS: Format[] = [
     stage: "cold",
     template: "notes_app",
     when: "confessional or list content ('things I wish I knew', 'questions to ask'); looks organic, very cheap to test",
-    slots: "eyebrow=date line<=24 (e.g. 'Today at 21:14'), headline=note title<=40, bullets[4-7] each<=45, footnote=site<=30",
+    slots:
+      "eyebrow=date line<=24 (e.g. 'Today at 21:14'), headline=note title<=40, bullets[4-7] each<=45, footnote=site<=30",
     image: "none",
     vary: "narrator (owner, trainer, doctor, patient), list type (mistakes, wins, questions)",
     health: "framed as from the brand, not a fake independent patient",
@@ -129,7 +132,8 @@ export const FORMATS: Format[] = [
     stage: "cold",
     template: "letter",
     when: "authority without polish (Letter formats over-index on spend). Only with a real, named person the operator provided",
-    slots: "eyebrow<=40 ('A note from ...'), headline<=50 (the belief being reframed), body<=140, bullets[1-3] each<=110 (more lines of the letter), attribution='Name, credential' (real)",
+    slots:
+      "eyebrow<=40 ('A note from ...'), headline<=50 (the belief being reframed), body<=140, bullets[1-3] each<=110 (more lines of the letter), attribution='Name, credential' (real)",
     image: "the person's real portrait (brand image) if available, else none",
     vary: "which belief is reframed; who signs",
     health: "real licensed doctor only, no prescribing promises, no drug talk; the safest high-trust format",
@@ -230,12 +234,28 @@ export const CAROUSELS = [
   {
     id: "problem_fix",
     name: "Fix [problem] in steps (7 cards)",
-    slides: ["hook: the problem + promise", "why it happens (reassurance)", "step 1", "step 2", "step 3", "common mistake", "CTA"],
+    slides: [
+      "hook: the problem + promise",
+      "why it happens (reassurance)",
+      "step 1",
+      "step 2",
+      "step 3",
+      "common mistake",
+      "CTA",
+    ],
   },
   {
     id: "decode",
     name: "Decode / understand (7 cards, organic first)",
-    slides: ["cover: 'N things ... is telling you'", "item 1", "item 2", "item 3", "item 4", "sendable cheat sheet", "CTA"],
+    slides: [
+      "cover: 'N things ... is telling you'",
+      "item 1",
+      "item 2",
+      "item 3",
+      "item 4",
+      "sendable cheat sheet",
+      "CTA",
+    ],
   },
 ];
 

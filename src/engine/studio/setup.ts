@@ -102,9 +102,7 @@ function imageCandidates(html: string, base: string): { url: string; hint: strin
     add(m[0].match(/content=["']([^"']+)/i)?.[1], "og");
   for (const m of html.matchAll(/<img[^>]*>/gi)) {
     const tag = m[0];
-    const src =
-      tag.match(/\s(?:data-src|src)=["']([^"']+)/i)?.[1] ??
-      tag.match(/srcset=["']([^"',\s]+)/i)?.[1];
+    const src = tag.match(/\s(?:data-src|src)=["']([^"']+)/i)?.[1] ?? tag.match(/srcset=["']([^"',\s]+)/i)?.[1];
     const alt = tag.match(/alt=["']([^"']*)/i)?.[1] ?? "";
     add(src, /logo/i.test(tag) ? `logo ${alt}` : alt);
   }
@@ -215,9 +213,16 @@ async function pickKit(
     },
   ];
   for (const [i, im] of imgs.entries()) {
-    const thumb = await sharp(im.file).flatten({ background: "#ffffff" }).resize(320, 320, { fit: "inside" }).jpeg({ quality: 72 }).toBuffer();
+    const thumb = await sharp(im.file)
+      .flatten({ background: "#ffffff" })
+      .resize(320, 320, { fit: "inside" })
+      .jpeg({ quality: 72 })
+      .toBuffer();
     content.push({ type: "text", text: `Image ${i} (${im.w}x${im.h}, ${im.hint.slice(0, 60)})` });
-    content.push({ type: "image", source: { type: "base64", media_type: "image/jpeg", data: thumb.toString("base64") } });
+    content.push({
+      type: "image",
+      source: { type: "base64", media_type: "image/jpeg", data: thumb.toString("base64") },
+    });
   }
   const r = await structured(
     { db: ctx.db },
@@ -230,7 +235,12 @@ async function pickKit(
       maxTokens: 6000,
       demo: () => ({
         images: imgs.map((_, i) => ({ index: i, role: "lifestyle" as const, note: "" })),
-        colors: { primary: page.colors[0] ?? "#2F6BFF", accent: page.colors[1] ?? page.colors[0] ?? "#2F6BFF", ink: "#141414", paper: "#FAF7F2" },
+        colors: {
+          primary: page.colors[0] ?? "#2F6BFF",
+          accent: page.colors[1] ?? page.colors[0] ?? "#2F6BFF",
+          ink: "#141414",
+          paper: "#FAF7F2",
+        },
         headFont: "jakarta",
         ctaUrl: new URL(brand.url).host,
         offer: "",
@@ -308,7 +318,9 @@ export async function setupBrand(ctx: JobCtx, input: SetupInput): Promise<{ bran
   await ctx.step(`Reading ${url.host}`, 0.08);
   const [{ page, mode }, html] = await Promise.all([
     scrape(db, brand.url, { signal: ctx.signal }).catch(async () => ({
-      page: await directFetch(brand.url, ctx.signal).catch((): ScrapeResult => ({ url: brand.url, markdown: "", source: "direct" })),
+      page: await directFetch(brand.url, ctx.signal).catch(
+        (): ScrapeResult => ({ url: brand.url, markdown: "", source: "direct" }),
+      ),
       mode: "demo" as const,
     })),
     fetch(brand.url, { signal: ctx.signal, headers: { "user-agent": "Mozilla/5.0 (rekampols studio)" } })
@@ -377,21 +389,27 @@ export async function setupBrand(ctx: JobCtx, input: SetupInput): Promise<{ bran
 
   await ctx.step("Picking the logo, photos, colours and type", 0.45);
   const siteColors = [
-    ...Object.values(page.branding?.colors ?? {}).filter((c): c is string => typeof c === "string" && c.startsWith("#")),
+    ...Object.values(page.branding?.colors ?? {}).filter(
+      (c): c is string => typeof c === "string" && c.startsWith("#"),
+    ),
     ...x.value.colors,
   ];
   const kit = await pickKit(ctx, brand, imgs, { colors: siteColors, markdown: page.markdown });
   const byIdx = (i: number) => imgs[i];
   const logo = kit.images.find((k) => k.role === "logo" && byIdx(k.index));
   const logoLight = kit.images.find((k) => k.role === "logo_light" && byIdx(k.index));
-  const usable = kit.images.filter((k) => ["product", "lifestyle", "person", "illustration"].includes(k.role) && byIdx(k.index));
+  const usable = kit.images.filter(
+    (k) => ["product", "lifestyle", "person", "illustration"].includes(k.role) && byIdx(k.index),
+  );
 
   let cfg = await getConfig(db, brand);
   const prevImages = cfg.brandImages.filter((b) => !urlToFile(b.url)?.includes(`${path.sep}site${path.sep}`));
   cfg = await setConfig(db, brand, {
     countries: brand.countries.length ? brand.countries : cfg.countries,
     languages: brand.languages.length ? brand.languages : cfg.languages,
-    defaultLanguage: brand.languages.includes(kit.defaultLanguage) ? kit.defaultLanguage : (brand.languages[0] ?? kit.defaultLanguage),
+    defaultLanguage: brand.languages.includes(kit.defaultLanguage)
+      ? kit.defaultLanguage
+      : (brand.languages[0] ?? kit.defaultLanguage),
     logo: logo ? fileToUrl(byIdx(logo.index)!.file) : cfg.logo,
     logoOnDark: logoLight ? fileToUrl(byIdx(logoLight.index)!.file) : cfg.logoOnDark,
     brandImages: [

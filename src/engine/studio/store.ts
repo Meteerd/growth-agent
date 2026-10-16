@@ -105,9 +105,7 @@ export async function upsertRef(db: Db, ref: Omit<AdRef, "id" | "createdAt"> & {
   const existing = await db
     .select()
     .from(adRefs)
-    .where(
-      and(eq(adRefs.brandId, ref.brandId), eq(adRefs.source, ref.source), eq(adRefs.externalId, ref.externalId)),
-    )
+    .where(and(eq(adRefs.brandId, ref.brandId), eq(adRefs.source, ref.source), eq(adRefs.externalId, ref.externalId)))
     .limit(1);
   if (existing[0]) {
     const prev = toRef(existing[0]);
@@ -182,7 +180,10 @@ export async function getAd(db: Db, id: string): Promise<Ad | null> {
   return r[0] ? toAd(r[0]) : null;
 }
 
-export async function listAds(db: Db, o: { brandId?: string; batchId?: string; status?: AdStatus } = {}): Promise<Ad[]> {
+export async function listAds(
+  db: Db,
+  o: { brandId?: string; batchId?: string; status?: AdStatus } = {},
+): Promise<Ad[]> {
   const conds = [
     o.brandId ? eq(ads.brandId, o.brandId) : undefined,
     o.batchId ? eq(ads.batchId, o.batchId) : undefined,
@@ -210,11 +211,7 @@ export async function appendMessage(db: Db, threadId: string, role: "user" | "as
 }
 
 export async function listMessages(db: Db, threadId: string) {
-  return db
-    .select()
-    .from(studioMessages)
-    .where(eq(studioMessages.threadId, threadId))
-    .orderBy(asc(studioMessages.seq));
+  return db.select().from(studioMessages).where(eq(studioMessages.threadId, threadId)).orderBy(asc(studioMessages.seq));
 }
 
 export async function clearThread(db: Db, threadId: string) {

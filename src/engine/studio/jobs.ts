@@ -25,8 +25,10 @@ const g = globalThis as unknown as {
   __studioHandlers?: Map<JobKind, JobHandler>;
   __studioRecovered?: boolean;
 };
-const running = (g.__studioJobs ??= new Map());
-const handlers = (g.__studioHandlers ??= new Map());
+if (!g.__studioJobs) g.__studioJobs = new Map();
+if (!g.__studioHandlers) g.__studioHandlers = new Map();
+const running = g.__studioJobs;
+const handlers = g.__studioHandlers;
 
 export class JobCancelled extends Error {
   constructor() {
@@ -57,11 +59,7 @@ export async function startJob(kind: JobKind, brandId: string | null, input: Rec
 }
 
 /** Run a job inline and wait for it (scripts, the autopilot's sub-steps). */
-export async function runJobNow(
-  kind: JobKind,
-  brandId: string | null,
-  input: Record<string, unknown>,
-): Promise<Job> {
+export async function runJobNow(kind: JobKind, brandId: string | null, input: Record<string, unknown>): Promise<Job> {
   const db = await getDb();
   await import("./handlers");
   const job = await createJob(db, { brandId, kind, input });

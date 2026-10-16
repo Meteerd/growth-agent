@@ -50,14 +50,22 @@ const TOOLS: ToolDef<z.ZodType>[] = [
       return Promise.all(
         brands.map(async (b) => {
           const ads = await listAds(db, { brandId: b.id });
-          return { slug: b.slug, name: b.name, url: b.url, countries: b.countries, ads: ads.length, approved: ads.filter((a) => a.status === "approved").length };
+          return {
+            slug: b.slug,
+            name: b.name,
+            url: b.url,
+            countries: b.countries,
+            ads: ads.length,
+            approved: ads.filter((a) => a.status === "approved").length,
+          };
         }),
       );
     },
   }),
   tool({
     name: "get_brand",
-    description: "Everything about one brand: dossier, studio config (competitors, kit, notes), playbook summary, counts.",
+    description:
+      "Everything about one brand: dossier, studio config (competitors, kit, notes), playbook summary, counts.",
     schema: z.object({ brand: brandArg }),
     run: async (db, i) => {
       const b = await mustBrand(db, i.brand);
@@ -71,11 +79,29 @@ const TOOLS: ToolDef<z.ZodType>[] = [
         url: b.url,
         vertical: b.vertical,
         rulePack: b.rulePack,
-        dossier: { oneLiner: b.dossier.oneLiner, positioning: b.dossier.positioning, offers: b.dossier.offers, voice: b.dossier.voice, proof: b.dossier.proof, claimsForbidden: b.dossier.claimsForbidden },
+        dossier: {
+          oneLiner: b.dossier.oneLiner,
+          positioning: b.dossier.positioning,
+          offers: b.dossier.offers,
+          voice: b.dossier.voice,
+          proof: b.dossier.proof,
+          claimsForbidden: b.dossier.claimsForbidden,
+        },
         config: { ...cfg, brandImages: cfg.brandImages.length },
-        playbook: pb ? { summary: pb.summary, patterns: pb.patterns.map((p) => p.name), whiteSpace: pb.whiteSpace, createdAt: pb.createdAt } : null,
+        playbook: pb
+          ? {
+              summary: pb.summary,
+              patterns: pb.patterns.map((p) => p.name),
+              whiteSpace: pb.whiteSpace,
+              createdAt: pb.createdAt,
+            }
+          : null,
         competitorAds: { total: refs.length, analysed: refs.filter((r) => r.body.analysis).length },
-        ads: { total: ads.length, ready: ads.filter((a) => a.status === "ready").length, approved: ads.filter((a) => a.status === "approved").length },
+        ads: {
+          total: ads.length,
+          ready: ads.filter((a) => a.status === "ready").length,
+          approved: ads.filter((a) => a.status === "approved").length,
+        },
       };
     },
   }),
@@ -134,7 +160,8 @@ const TOOLS: ToolDef<z.ZodType>[] = [
   }),
   tool({
     name: "update_dossier",
-    description: "Correct the brand's facts (what it is, positioning, voice, proof, claims). Operator edits are locked against later crawls.",
+    description:
+      "Correct the brand's facts (what it is, positioning, voice, proof, claims). Operator edits are locked against later crawls.",
     schema: z.object({
       brand: brandArg,
       oneLiner: z.string().optional(),
@@ -147,7 +174,13 @@ const TOOLS: ToolDef<z.ZodType>[] = [
     run: async (db, i) => {
       const b = await mustBrand(db, i.brand);
       const { brand: _b, ...patch } = i;
-      await patchDossier(db, b.id, Object.fromEntries(Object.entries(patch).filter(([, v]) => v !== undefined)), "operator", "studio chat");
+      await patchDossier(
+        db,
+        b.id,
+        Object.fromEntries(Object.entries(patch).filter(([, v]) => v !== undefined)),
+        "operator",
+        "studio chat",
+      );
       return { ok: true };
     },
   }),
@@ -170,7 +203,8 @@ const TOOLS: ToolDef<z.ZodType>[] = [
   }),
   tool({
     name: "analyze_competitors",
-    description: "Take apart the scanned competitor ads with vision and write the brand's playbook (what wins, angles, white space). Returns a job id.",
+    description:
+      "Take apart the scanned competitor ads with vision and write the brand's playbook (what wins, angles, white space). Returns a job id.",
     schema: z.object({ brand: brandArg, limit: z.number().optional(), force: z.boolean().optional() }),
     run: async (db, i) => {
       const b = await mustBrand(db, i.brand);
@@ -184,7 +218,11 @@ const TOOLS: ToolDef<z.ZodType>[] = [
     schema: z.object({ brand: brandArg }),
     run: async (db, i) => {
       const b = await mustBrand(db, i.brand);
-      return (await kvGet<Playbook>(db, `playbook:${b.id}`)) ?? { none: "No playbook yet: scan and analyse competitors first." };
+      return (
+        (await kvGet<Playbook>(db, `playbook:${b.id}`)) ?? {
+          none: "No playbook yet: scan and analyse competitors first.",
+        }
+      );
     },
   }),
   tool({
@@ -193,7 +231,9 @@ const TOOLS: ToolDef<z.ZodType>[] = [
     schema: z.object({ brand: brandArg, limit: z.number().optional(), advertiser: z.string().optional() }),
     run: async (db, i) => {
       const b = await mustBrand(db, i.brand);
-      const refs = (await listRefs(db, b.id)).filter((r) => !i.advertiser || r.advertiser.toLowerCase().includes(i.advertiser.toLowerCase()));
+      const refs = (await listRefs(db, b.id)).filter(
+        (r) => !i.advertiser || r.advertiser.toLowerCase().includes(i.advertiser.toLowerCase()),
+      );
       return refs.slice(0, i.limit ?? 12).map((r) => ({
         id: r.id,
         advertiser: r.advertiser,
@@ -219,7 +259,10 @@ const TOOLS: ToolDef<z.ZodType>[] = [
       brand: brandArg,
       count: z.number().describe("total ads, 1 to 12"),
       carousels: z.number().optional().describe("how many of them are carousels"),
-      formats: z.array(z.string()).optional().describe(`format ids: ${FORMATS.map((f) => f.id).join(", ")}`),
+      formats: z
+        .array(z.string())
+        .optional()
+        .describe(`format ids: ${FORMATS.map((f) => f.id).join(", ")}`),
       angles: z.array(z.string()).optional(),
       language: z.string().optional(),
       aspect: z.enum(ASPECTS).optional(),
@@ -238,7 +281,11 @@ const TOOLS: ToolDef<z.ZodType>[] = [
   tool({
     name: "list_ads",
     description: "The brand's generated ads (newest first) with status, score and headline.",
-    schema: z.object({ brand: brandArg, status: z.enum(["queued", "rendering", "ready", "approved", "rejected", "failed"]).optional(), limit: z.number().optional() }),
+    schema: z.object({
+      brand: brandArg,
+      status: z.enum(["queued", "rendering", "ready", "approved", "rejected", "failed"]).optional(),
+      limit: z.number().optional(),
+    }),
     run: async (db, i) => {
       const b = await mustBrand(db, i.brand);
       return (await listAds(db, { brandId: b.id, status: i.status })).slice(0, i.limit ?? 20).map((a) => ({
@@ -257,7 +304,8 @@ const TOOLS: ToolDef<z.ZodType>[] = [
   }),
   tool({
     name: "get_ad",
-    description: "One ad in full: concept, copy, slides (slots, image source and prompt), compliance, review, versions.",
+    description:
+      "One ad in full: concept, copy, slides (slots, image source and prompt), compliance, review, versions.",
     schema: z.object({ id: z.string() }),
     run: async (db, i) => {
       const a = await getAd(db, i.id);
@@ -267,7 +315,8 @@ const TOOLS: ToolDef<z.ZodType>[] = [
   }),
   tool({
     name: "revise_ad",
-    description: "Change an ad from feedback (copy, layout, image, format). Keeps what the feedback does not touch. Returns a job id.",
+    description:
+      "Change an ad from feedback (copy, layout, image, format). Keeps what the feedback does not touch. Returns a job id.",
     schema: z.object({ id: z.string(), feedback: z.string(), model: z.enum(IMAGE_MODELS).optional() }),
     run: async (db, i) => {
       const a = await getAd(db, i.id);
@@ -292,7 +341,16 @@ const TOOLS: ToolDef<z.ZodType>[] = [
     run: async (db, i) => {
       const j = await getJob(db, i.id);
       if (!j) return { error: "not found" };
-      return { kind: j.kind, status: j.status, step: j.step, progress: Math.round(j.progress * 100), costUsd: Math.round(j.costUsd * 100) / 100, error: j.error, log: j.log.slice(-6).map((l) => l.msg), output: j.output };
+      return {
+        kind: j.kind,
+        status: j.status,
+        step: j.step,
+        progress: Math.round(j.progress * 100),
+        costUsd: Math.round(j.costUsd * 100) / 100,
+        error: j.error,
+        log: j.log.slice(-6).map((l) => l.msg),
+        output: j.output,
+      };
     },
   }),
   tool({
@@ -301,7 +359,14 @@ const TOOLS: ToolDef<z.ZodType>[] = [
     schema: z.object({ brand: brandArg.optional() }),
     run: async (db, i) => {
       const b = i.brand ? await mustBrand(db, i.brand) : null;
-      return (await listJobs(db, { brandId: b?.id, limit: 10 })).map((j) => ({ id: j.id, kind: j.kind, status: j.status, step: j.step, progress: Math.round(j.progress * 100), costUsd: Math.round(j.costUsd * 100) / 100 }));
+      return (await listJobs(db, { brandId: b?.id, limit: 10 })).map((j) => ({
+        id: j.id,
+        kind: j.kind,
+        status: j.status,
+        step: j.step,
+        progress: Math.round(j.progress * 100),
+        costUsd: Math.round(j.costUsd * 100) / 100,
+      }));
     },
   }),
   tool({
@@ -316,8 +381,18 @@ const TOOLS: ToolDef<z.ZodType>[] = [
     schema: z.object({}),
     run: async (db) => ({
       spentUsd: await spentByProvider(db),
-      caps: Object.fromEntries(["ANTHROPIC", "OPENAI", "FAL", "APIFY", "FIRECRAWL"].map((p) => [p.toLowerCase(), Number(process.env[`BUDGET_USD_${p}`] ?? 0)])),
-      imageModels: Object.entries(IMAGE_MODEL_INFO).map(([id, m]) => ({ id, label: m.label, usdPerImage: m.usd, note: m.note })),
+      caps: Object.fromEntries(
+        ["ANTHROPIC", "OPENAI", "FAL", "APIFY", "FIRECRAWL"].map((p) => [
+          p.toLowerCase(),
+          Number(process.env[`BUDGET_USD_${p}`] ?? 0),
+        ]),
+      ),
+      imageModels: Object.entries(IMAGE_MODEL_INFO).map(([id, m]) => ({
+        id,
+        label: m.label,
+        usdPerImage: m.usd,
+        note: m.note,
+      })),
       settings: await getSettings(db),
     }),
   }),
@@ -369,9 +444,18 @@ export interface AgentSink {
   toolResult: (name: string, summary: string, isError: boolean) => void;
 }
 
-export async function chatTurn(db: Db, threadId: string, userText: string, context: { brand?: string }, sink: AgentSink) {
+export async function chatTurn(
+  db: Db,
+  threadId: string,
+  userText: string,
+  context: { brand?: string },
+  sink: AgentSink,
+) {
   const prior = await listMessages(db, threadId);
-  const messages: BetaMessageParam[] = prior.map((m) => ({ role: m.role as "user" | "assistant", content: m.content as BetaMessageParam["content"] }));
+  const messages: BetaMessageParam[] = prior.map((m) => ({
+    role: m.role as "user" | "assistant",
+    content: m.content as BetaMessageParam["content"],
+  }));
   const stamp = context.brand ? `[The operator is looking at brand: ${context.brand}]\n` : "";
   const userMsg: BetaMessageParam = { role: "user", content: `${stamp}${userText}` };
   messages.push(userMsg);
@@ -401,7 +485,11 @@ export async function chatTurn(db: Db, threadId: string, userText: string, conte
           } as StreamParams,
           sink.text,
         );
-        return { result: msg, usd: claudeCost(msg.model || model, msg.usage), units: `${msg.usage.input_tokens} in / ${msg.usage.output_tokens} out` };
+        return {
+          result: msg,
+          usd: claudeCost(msg.model || model, msg.usage),
+          units: `${msg.usage.input_tokens} in / ${msg.usage.output_tokens} out`,
+        };
       },
     }).catch((e) => {
       if (e instanceof Anthropic.APIError || jsonRetries++ >= 2) throw e;
@@ -421,7 +509,9 @@ export async function chatTurn(db: Db, threadId: string, userText: string, conte
     messages.push(assistant);
     await appendMessage(db, threadId, "assistant", assistant.content);
     if (msg.stop_reason === "pause_turn") continue;
-    const uses = msg.content.filter((b): b is Extract<BetaMessage["content"][number], { type: "tool_use" }> => b.type === "tool_use");
+    const uses = msg.content.filter(
+      (b): b is Extract<BetaMessage["content"][number], { type: "tool_use" }> => b.type === "tool_use",
+    );
     if (!uses.length) return;
     if (msg.stop_reason === "max_tokens") {
       sink.text("\n(The reply was cut off.)");
@@ -440,7 +530,9 @@ export async function chatTurn(db: Db, threadId: string, userText: string, conte
         } else {
           const parsed = t.schema.safeParse(u.input);
           if (!parsed.success) {
-            content = JSON.stringify({ INVALID_INPUT: parsed.error.issues.slice(0, 5).map((x) => `${x.path.join(".")}: ${x.message}`) });
+            content = JSON.stringify({
+              INVALID_INPUT: parsed.error.issues.slice(0, 5).map((x) => `${x.path.join(".")}: ${x.message}`),
+            });
             isError = true;
           } else {
             try {
@@ -468,12 +560,21 @@ export async function transcript(db: Db, threadId: string) {
   for (const r of rows) {
     const content = r.content as string | BetaContentBlockParam[];
     if (typeof content === "string") {
-      out.push({ role: r.role as "user", text: content.replace(/^\[The operator is looking at brand: [^\]]+\]\n/, ""), tools: [] });
+      out.push({
+        role: r.role as "user",
+        text: content.replace(/^\[The operator is looking at brand: [^\]]+\]\n/, ""),
+        tools: [],
+      });
       continue;
     }
     if (r.role === "user") continue; // tool results
-    const text = content.filter((b) => b.type === "text").map((b) => (b as { text: string }).text).join("");
-    const tools = content.filter((b) => b.type === "tool_use").map((b) => ({ name: (b as { name: string }).name, input: (b as { input: unknown }).input }));
+    const text = content
+      .filter((b) => b.type === "text")
+      .map((b) => (b as { text: string }).text)
+      .join("");
+    const tools = content
+      .filter((b) => b.type === "tool_use")
+      .map((b) => ({ name: (b as { name: string }).name, input: (b as { input: unknown }).input }));
     const last = out.at(-1);
     if (last?.role === "assistant") {
       last.text += text;
