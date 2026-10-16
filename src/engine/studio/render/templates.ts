@@ -4,7 +4,7 @@ import sharp, { type OverlayOptions } from "sharp";
 import { urlToFile } from "../../video/files";
 import type { Aspect, Slide, Slots, StudioBrandConfig, TemplateId } from "../types";
 import { SIZE } from "../types";
-import { capHeight, clean, drawLines, fit, fitBox, label } from "./type";
+import { capHeight, clean, drawLines, fit, fitBox, label, measure } from "./type";
 
 /**
  * Layout templates for statics and carousel slides. The image (generated or real) never carries text; every word
@@ -79,10 +79,28 @@ const NO = /^(no|nie|ne|hayır|nein|non|✗|✕|x|-|—|none|false)$/i;
 
 // ---------------------------------------------------------------- images
 
+/** Mean luminance of an image (0..1), cached per file. */
+const lumCache = new Map<string, number>();
+async function meanLum(file: string): Promise<number> {
+  let v = lumCache.get(file);
+  if (v === undefined) {
+    const st = await sharp(file).resize(64, 64, { fit: "inside" }).stats();
+    v = luminance(st.channels.slice(0, 3).map((ch) => ch.mean));
+    lumCache.set(file, v);
+  }
+  return v;
+}
+
 async function cover(file: string, w: number, h: number, o: { blur?: number; dim?: number } = {}): Promise<Buffer> {
   let img = sharp(file, file.endsWith(".svg") ? { density: 300 } : {})
     .flatten({ background: "#ffffff" })
     .resize(w, h, { fit: "cover", position: "attention" });
+  // muddy, underexposed photos lose the feed: lift them a little (never when the template dims on purpose)
+  if (!o.dim && !file.endsWith(".svg")) {
+    const l = await meanLum(file);
+    if (l < 0.12) img = img.modulate({ brightness: 1.22 }).gamma(1.15);
+    else if (l < 0.2) img = img.modulate({ brightness: 1.12 });
+  }
   if (o.blur) img = img.blur(o.blur);
   if (o.dim) img = img.modulate({ brightness: 1 - o.dim });
   return img.png().toBuffer();
@@ -92,7 +110,9 @@ async function rounded(file: string, w: number, h: number, r: number, fitMode: "
   const mask = Buffer.from(
     `<svg width="${w}" height="${h}"><rect width="${w}" height="${h}" rx="${r}" fill="#fff"/></svg>`,
   );
+  const l = file.endsWith(".svg") ? 1 : await meanLum(file);
   return sharp(file, file.endsWith(".svg") ? { density: 300 } : {})
+    .modulate({ brightness: l < 0.12 ? 1.22 : l < 0.2 ? 1.12 : 1 })
     .resize(w, h, { fit: fitMode, position: "attention", background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .composite([{ input: mask, blend: "dest-in" }])
     .png()
@@ -392,8 +412,36 @@ const photoHeadline: Tpl = async (c) => {
     c.bg = { color: c.cfg.colors.ink };
   } else if (file) c.bg = await cover(file, c.W, c.H);
   else c.bg = { color: c.cfg.colors.ink };
-  const textTop = tall ? c.H * 0.14 : c.pad * 1.25;
   const w = c.W - c.pad * 2;
+  const by0 = c.H - (tall ? c.H * 0.2 : c.pad) - 76 * c.s;
+  // put the type where the photo is calm, so it never sits on the subject's face
+  let atBottom = false;
+  let textTop = tall ? c.H * 0.14 : c.pad * 1.25;
+  if (file && !product && !("color" in c.bg)) {
+    const busy = async (top: number, height: number) =>
+      (
+        await sharp(c.bg as Buffer)
+          .extract({ left: 0, top: Math.round(top), width: c.W, height: Math.round(height) })
+          .greyscale()
+          .resize(120, 60, { fit: "fill" })
+          .stats()
+      ).channels[0]!.stdev;
+    const topBusy = await busy(0, c.H * 0.42);
+    const bottomBusy = await busy(c.H * 0.5, by0 - c.H * 0.5);
+    if (topBusy > bottomBusy * 1.25) {
+      const hf = fit(c.head, peek(c, "headline"), { max: 104 * c.s, min: 58 * c.s, maxW: w, maxLines: 4, lineH: 1.08 });
+      const bodyText = peek(c, "body");
+      const bf = bodyText
+        ? fit(c.body, bodyText, { max: 40 * c.s, min: 29 * c.s, maxW: w * 0.92, maxLines: 3, lineH: 1.3 })
+        : null;
+      const blockH =
+        (peek(c, "eyebrow") ? 80 * c.s : 0) +
+        hf.lines.length * hf.lineH +
+        (bf ? 24 * c.s + bf.lines.length * bf.lineH : 0);
+      textTop = by0 - 44 * c.s - blockH;
+      atBottom = true;
+    }
+  }
   const gradAt = c.svg.length;
   let y = textTop;
   const eyebrow = sl(c, "eyebrow");
@@ -416,7 +464,15 @@ const photoHeadline: Tpl = async (c) => {
     y += 24 * c.s;
     y += para(c, body, { x: c.pad, top: y, w: w * 0.92, color: "#FFFFFF", size: 40, lines: 3, opacity: 0.94 });
   }
-  if (file && !product) {
+  if (file && !product && atBottom) {
+    // type at the bottom: one scrim rising from the bottom edge to well above the first line
+    const start = Math.max(0, (textTop - 240 * c.s) / c.H);
+    const mid = Math.min(0.98, (textTop + 30 * c.s) / c.H);
+    c.defs.push(
+      `<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="${start.toFixed(3)}" stop-color="#000" stop-opacity="0"/><stop offset="${mid.toFixed(3)}" stop-color="#000" stop-opacity="0.6"/><stop offset="1" stop-color="#000" stop-opacity="0.85"/></linearGradient>`,
+    );
+    c.svg.splice(gradAt, 0, `<rect width="${c.W}" height="${c.H}" fill="url(#g)"/>`);
+  } else if (file && !product) {
     // the gradient runs well past the end of the type, whatever its length
     const end = Math.min(0.95, (y + 220 * c.s) / c.H);
     const mid = Math.min(0.9, (y + 40 * c.s) / c.H);
@@ -440,7 +496,7 @@ const photoHeadline: Tpl = async (c) => {
     }
   }
   const cta = sl(c, "cta");
-  const by = c.H - (tall ? c.H * 0.2 : c.pad) - 76 * c.s;
+  const by = by0;
   if (cta)
     pill(c, cta, {
       x: c.pad,
@@ -535,7 +591,18 @@ const checklist: Tpl = async (c) => {
   let bw = w;
   if (file) {
     if (tall) {
-      const ih = Math.round(Math.min((bottom - y) * 0.45, c.H * 0.3));
+      // the bullets get what they need at a comfortable size; the photo takes everything that is left
+      const est = bullets.reduce((a, b) => {
+        const f = fit("inter_semibold", b, {
+          max: 42 * c.s,
+          min: 42 * c.s,
+          maxW: w - 90 * c.s,
+          maxLines: 2,
+          lineH: 1.3,
+        });
+        return a + Math.max(f.lines.length * f.lineH, 52 * c.s) + 26 * c.s;
+      }, 0);
+      const ih = Math.round(Math.max(c.H * 0.2, Math.min(bottom - y - est - 36 * c.s, c.H * 0.46)));
       c.layers.push({
         input: await rounded(file, Math.round(w), ih, 28 * c.s),
         left: Math.round(c.pad),
@@ -558,8 +625,22 @@ const checklist: Tpl = async (c) => {
   const size = Math.min(50, Math.max(30, (room / Math.max(1, bullets.length) - rowGap) / (2 * 1.28 * c.s)));
   const r = Math.round(size * 0.62) * c.s;
   const accentBg = c.cfg.colors.accent;
+  // a question headline means a self-check: empty boxes the reader ticks in their head, not pre-ticked answers
+  const selfCheck = /\?\s*$/.test(peek(c, "headline"));
   for (const b of bullets) {
-    c.svg.push(check(bx + r, y + r + 2 * c.s, r, accentBg, onColor(accentBg, c.cfg.colors.ink)));
+    if (selfCheck)
+      c.svg.push(
+        rect(
+          bx + 2 * c.s,
+          y + 4 * c.s,
+          r * 2 - 4 * c.s,
+          r * 2 - 4 * c.s,
+          8 * c.s,
+          "none",
+          `stroke="${accentBg}" stroke-width="${4 * c.s}"`,
+        ),
+      );
+    else c.svg.push(check(bx + r, y + r + 2 * c.s, r, accentBg, onColor(accentBg, c.cfg.colors.ink)));
     const h = para(c, b, {
       x: bx + r * 2 + 22 * c.s,
       top: y,
@@ -975,7 +1056,7 @@ const mythFact: Tpl = async (c) => {
     c.boxes.push({ x: c.pad + 36 * c.s, y: ty, w: w - 72 * c.s, h: ft.lines.length * ft.lineH, color: tc });
     if (isMyth) {
       for (const [i, line] of ft.lines.entries()) {
-        const lw = ft.font.getAdvanceWidth(line, ft.size);
+        const lw = measure(ft.font, line, ft.size);
         const ly = ty + i * ft.lineH + ft.size * 0.55;
         c.svg.push(rect(c.pad + 36 * c.s, ly, lw, 3 * c.s, 0, "#D64545", 'opacity="0.55"'));
       }
@@ -1223,7 +1304,7 @@ const ugcCaption: Tpl = async (c) => {
   const box = (text: string, size: number) => {
     if (!text) return;
     const ft = fit("tiktok_bold", text, { max: size * c.s, min: 32 * c.s, maxW: w, maxLines: 3, lineH: 1.2 });
-    const lineBoxes = ft.lines.map((l) => ft.font.getAdvanceWidth(l, ft.size));
+    const lineBoxes = ft.lines.map((l) => measure(ft.font, l, ft.size));
     const padX = 26 * c.s;
     const padY = 12 * c.s;
     for (const [i, lw] of lineBoxes.entries()) {
@@ -1310,8 +1391,8 @@ const quiz: Tpl = async (c) => {
   y += headline(c, { x: c.pad, top: y, w, color: ink, max: 80, min: 46, lines: 3, accentOn: bg }) + 44 * c.s;
   const opts = (c.slots.bullets ?? []).map(clean).filter(Boolean).slice(0, 4);
   const limit = c.H - c.pad - 76 * c.s - 34 * c.s;
-  let h = 128 * c.s;
-  let ih = file ? Math.round(c.H * 0.27) : 0;
+  let h = 112 * c.s;
+  let ih = file ? Math.round(Math.min(c.H * 0.42, limit - y - opts.length * (h + 22 * c.s) - 36 * c.s)) : 0;
   const need = () => (ih ? ih + 36 * c.s : 0) + opts.length * (h + 22 * c.s);
   // nothing may run into the CTA row: shrink the photo first, then the answer rows, then drop the photo
   while (need() > limit - y && ih > c.H * 0.15) ih -= 10 * c.s;
@@ -1375,18 +1456,28 @@ const sticky: Tpl = async (c) => {
   const file = c.input.imageFile;
   c.bg = file ? await cover(file, c.W, c.H, { dim: 0.08 }) : { color: c.cfg.colors.paper };
   const s = c.s;
-  const nw = Math.round(c.W * 0.66);
+  const nw = Math.round(c.W * 0.6);
   const text = sl(c, "headline");
   const ft = fit("handwritten", text, { max: 100 * s, min: 52 * s, maxW: nw - 90 * s, maxLines: 6, lineH: 1.05 });
   // the note is as tall as its words (plus margins), never a half-empty square
   const nh = Math.max(nw * 0.5, ft.lines.length * ft.lineH + 150 * s);
   const nx = (c.W - nw) / 2;
   const ny = c.H * (c.H / c.W > 1.6 ? 0.28 : 0.16);
-  c.defs.push(SHADOW("note", 18 * s, 0.35, 14 * s));
-  const rot = -3;
+  // paper, not a UI card: soft contact shadow, a lit-to-shaded gradient, a lifted bottom corner, a strip of tape
+  c.defs.push(
+    `<filter id="note" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="${4 * s}" dy="${10 * s}" stdDeviation="${9 * s}" flood-color="#000" flood-opacity="0.28"/></filter>`,
+    `<linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF19A"/><stop offset="0.6" stop-color="#FCE36E"/><stop offset="1" stop-color="#EFCF4F"/></linearGradient>`,
+    `<linearGradient id="curl" x1="1" y1="1" x2="0.6" y2="0.6"><stop offset="0" stop-color="#000" stop-opacity="0.22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>`,
+  );
+  const rot = -2.5;
   c.svg.push(`<g transform="rotate(${rot} ${c.W / 2} ${ny + nh / 2})">`);
-  c.svg.push(rect(nx, ny, nw, nh, 6 * s, "#FFE873", 'filter="url(#note)"'));
-  c.svg.push(rect(nx, ny, nw, 46 * s, 6 * s, "#F5D94E"));
+  const curl = 46 * s;
+  c.svg.push(
+    `<path d="M${nx} ${ny} H${nx + nw} V${ny + nh - curl} Q${nx + nw - 4 * s} ${ny + nh - 4 * s} ${nx + nw - curl} ${ny + nh} H${nx} Z" fill="url(#paper)" filter="url(#note)"/>`,
+    `<path d="M${nx + nw} ${ny + nh - curl} Q${nx + nw - 4 * s} ${ny + nh - 4 * s} ${nx + nw - curl} ${ny + nh} Q${nx + nw - curl * 0.55} ${ny + nh - curl * 0.55} ${nx + nw} ${ny + nh - curl} Z" fill="#E6C445"/>`,
+    `<rect x="${nx}" y="${ny}" width="${nw}" height="${nh}" fill="url(#curl)" opacity="0.6"/>`,
+    `<rect x="${nx + nw / 2 - 70 * s}" y="${ny - 18 * s}" width="${140 * s}" height="${40 * s}" fill="#FFFFFF" opacity="0.55" transform="rotate(3 ${nx + nw / 2} ${ny})"/>`,
+  );
   const accent = sl(c, "accentWord");
   c.svg.push(
     drawLines(ft, {
@@ -1403,7 +1494,7 @@ const sticky: Tpl = async (c) => {
   if (body) {
     const by = ny + nh + 80 * s;
     const f2 = fit("tiktok_bold", body, { max: 46 * s, min: 30 * s, maxW: c.W - c.pad * 2.4, maxLines: 2, lineH: 1.2 });
-    const lw = Math.max(...f2.lines.map((l) => f2.font.getAdvanceWidth(l, f2.size)));
+    const lw = Math.max(...f2.lines.map((l) => measure(f2.font, l, f2.size)));
     c.svg.push(
       rect((c.W - lw) / 2 - 26 * s, by - 14 * s, lw + 52 * s, f2.lines.length * f2.lineH + 22 * s, 14 * s, "#FFFFFF"),
     );
@@ -1553,9 +1644,7 @@ export async function renderSlide(input: RenderInput): Promise<RenderResult> {
     boxes: [],
   };
   await TEMPLATES[input.slide.template](c);
-  const dark = "color" in c.bg ? luminance(c.bg.color) < 0.4 : true;
   if (input.slide.template !== "native") bottomFootnote(c, !("color" in c.bg));
-  if (input.slide.template !== "native") counter(c, dark);
   const base =
     "color" in c.bg
       ? await sharp({ create: { width: W, height: H, channels: 3, background: c.bg.color } })
@@ -1564,6 +1653,18 @@ export async function renderSlide(input: RenderInput): Promise<RenderResult> {
       : c.bg;
   // layers under the type first (photos, phones), then the type and shapes on top
   const under = c.layers.length ? await sharp(base).composite(c.layers).png().toBuffer() : base;
+  // the counter reads against whatever is actually behind its corner (a photo band, a panel)
+  if (input.slide.template !== "native") {
+    const corner = await sharp(under)
+      .extract({
+        left: Math.round(W - c.pad - 140 * s),
+        top: Math.round(c.pad * 0.5),
+        width: Math.round(140 * s),
+        height: Math.round(70 * s),
+      })
+      .stats();
+    counter(c, luminance(corner.channels.slice(0, 3).map((ch) => ch.mean)) < 0.45);
+  }
   const overlay = Buffer.from(
     `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><defs>${c.defs.join("")}</defs>${c.svg.join("")}</svg>`,
   );

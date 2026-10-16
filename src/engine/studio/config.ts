@@ -85,11 +85,20 @@ export async function mustBrand(db: Db, idOrSlug: string): Promise<Brand> {
 // ---------------------------------------------------------------- global settings
 
 export interface StudioSettings {
-  /** USD caps for this server's ledger, per provider (also enforced by BUDGET_USD_* env) */
+  /** legacy: kept for old saved settings */
   reviewThreshold: number;
   maxAdsPerBatch: number;
+  /** an ad under this score gets revised from the creative director's critique */
+  targetScore: number;
+  /** how many revision rounds an ad may get on the way to the target */
+  maxRevisions: number;
 }
-export const DEFAULT_SETTINGS: StudioSettings = { reviewThreshold: 72, maxAdsPerBatch: 12 };
+export const DEFAULT_SETTINGS: StudioSettings = {
+  reviewThreshold: 72,
+  maxAdsPerBatch: 12,
+  targetScore: 82,
+  maxRevisions: 2,
+};
 
 export async function getSettings(db: Db): Promise<StudioSettings> {
   return { ...DEFAULT_SETTINGS, ...((await kvGet<Partial<StudioSettings>>(db, "settings")) ?? {}) };

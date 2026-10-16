@@ -428,8 +428,13 @@ const TOOLS: ToolDef<z.ZodType>[] = [
   }),
   tool({
     name: "update_settings",
-    description: "Global studio settings: reviewThreshold (auto-fix below this score), maxAdsPerBatch.",
-    schema: z.object({ reviewThreshold: z.number().optional(), maxAdsPerBatch: z.number().optional() }),
+    description:
+      "Global studio settings: targetScore (ads under it get revised from the review, default 82), maxRevisions (rounds per ad, default 2; more rounds = better but slower and pricier), maxAdsPerBatch.",
+    schema: z.object({
+      targetScore: z.number().optional(),
+      maxRevisions: z.number().optional(),
+      maxAdsPerBatch: z.number().optional(),
+    }),
     run: async (db, i) => setSettings(db, Object.fromEntries(Object.entries(i).filter(([, v]) => v !== undefined))),
   }),
   tool({

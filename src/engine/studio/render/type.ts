@@ -68,6 +68,51 @@ export function clean(t: string | undefined): string {
     .trim();
 }
 
+// ---------------------------------------------------------------- glyph layout
+// opentype.js reads the old `kern` table only, not GPOS, so fonts like Plus Jakarta leave wide gaps around
+// punctuation ("isn ’ t", "word ."). We lay glyphs out ourselves and space punctuation by its ink, not its advance.
+const PUNCT = new Set([...".,’'‘:;!?…\")”"]);
+
+interface Placed {
+  glyph: opentype.Glyph;
+  x: number;
+}
+
+function layout(f: opentype.Font, text: string, size: number): { placed: Placed[]; width: number } {
+  const scale = size / f.unitsPerEm;
+  const glyphs = f.stringToGlyphs(text);
+  const chars = [...text];
+  const placed: Placed[] = [];
+  let x = 0;
+  for (const [i, g] of glyphs.entries()) {
+    const ch = chars[i] ?? "";
+    if (i > 0) x += f.getKerningValue(glyphs[i - 1]!, g) * scale;
+    if (PUNCT.has(ch) && g.advanceWidth) {
+      const bb = g.getBoundingBox();
+      const ink = (bb.x2 - bb.x1) * scale;
+      x += size * 0.02 - bb.x1 * scale; // a hair of space before the mark, its left bearing dropped
+      placed.push({ glyph: g, x });
+      x += bb.x1 * scale + ink + size * 0.035;
+    } else {
+      placed.push({ glyph: g, x });
+      x += (g.advanceWidth ?? 0) * scale;
+    }
+  }
+  return { placed, width: x };
+}
+
+/** Width of a string as we draw it. */
+export function measure(f: opentype.Font, text: string, size: number): number {
+  return layout(f, text, size).width;
+}
+
+/** SVG path data of a string at (x, baseline). */
+export function pathData(f: opentype.Font, text: string, x: number, y: number, size: number): string {
+  return layout(f, text, size)
+    .placed.map((p) => p.glyph.getPath(x + p.x, y, size).toPathData(2))
+    .join("");
+}
+
 export const norm = (w: string) => w.toLocaleLowerCase().replace(/[^\p{L}\p{N}%+€$£]/gu, "");
 
 export function wrap(f: opentype.Font, text: string, size: number, maxW: number): string[] {
@@ -76,7 +121,7 @@ export function wrap(f: opentype.Font, text: string, size: number, maxW: number)
   let cur = "";
   for (const w of words) {
     const next = cur ? `${cur} ${w}` : w;
-    if (cur && f.getAdvanceWidth(next, size) > maxW) {
+    if (cur && measure(f, next, size) > maxW) {
       lines.push(cur);
       cur = w;
     } else cur = next;
@@ -102,7 +147,7 @@ export function fit(
   const f = fontFor(key, t);
   let size = o.max;
   let lines = wrap(f, t, size, o.maxW);
-  while (size > o.min && (lines.length > o.maxLines || lines.some((l) => f.getAdvanceWidth(l, size) > o.maxW))) {
+  while (size > o.min && (lines.length > o.maxLines || lines.some((l) => measure(f, l, size) > o.maxW))) {
     size -= 2;
     lines = wrap(f, t, size, o.maxW);
   }
@@ -168,7 +213,7 @@ export function drawLines(
   let maxW = 0;
   for (const [i, line] of ft.lines.entries()) {
     const base = o.top + asc * 0.9 + i * ft.lineH;
-    const lw = ft.font.getAdvanceWidth(line, ft.size, { kerning: true });
+    const lw = measure(ft.font, line, ft.size);
     maxW = Math.max(maxW, lw);
     const x0 = o.align === "center" ? o.x + (o.boxW - lw) / 2 : o.align === "right" ? o.x + o.boxW - lw : o.x;
     let x = x0;
@@ -184,10 +229,8 @@ export function drawLines(
             ]
           : [[w, hit ? o.accent!.color : o.color]];
       for (const [t, color] of parts) {
-        out.push(
-          `<path d="${ft.font.getPath(t, x, base, ft.size, { kerning: true }).toPathData(2)}" fill="${color}"/>`,
-        );
-        x += ft.font.getAdvanceWidth(t, ft.size, { kerning: true });
+        out.push(`<path d="${pathData(ft.font, t, x, base, ft.size)}" fill="${color}"/>`);
+        x += measure(ft.font, t, ft.size);
       }
       x += space;
     }
@@ -206,9 +249,9 @@ export function label(
   const t = o.upper ? text.toLocaleUpperCase() : text;
   const f = fontFor(key, t);
   const track = o.track ?? 0;
-  const w = f.getAdvanceWidth(t, size) + track * Math.max(0, t.length - 1);
+  const w = (track ? f.getAdvanceWidth(t, size) : measure(f, t, size)) + track * Math.max(0, t.length - 1);
   const x = o.anchor === "middle" ? o.x - w / 2 : o.anchor === "end" ? o.x - w : o.x;
-  if (!track) return { svg: `<path d="${f.getPath(t, x, o.y, size).toPathData(2)}" fill="${o.color}"/>`, width: w };
+  if (!track) return { svg: `<path d="${pathData(f, t, x, o.y, size)}" fill="${o.color}"/>`, width: w };
   let cx = x;
   const parts: string[] = [];
   for (const ch of t) {

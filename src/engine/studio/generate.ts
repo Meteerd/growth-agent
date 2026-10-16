@@ -111,7 +111,12 @@ const LANG: Record<string, string> = {
   it: "Italian",
   pl: "Polish",
 };
-const langName = (l: string) => LANG[l.slice(0, 2)] ?? l;
+const langName = (l: string, countries: string[] = []) =>
+  l.slice(0, 2) === "en"
+    ? countries.some((c) => ["GB", "IE", "AU", "NZ"].includes(c.toUpperCase()))
+      ? "English (British spelling: practise, behaviour, colour, programme), used consistently"
+      : "English (American spelling), used consistently"
+    : (LANG[l.slice(0, 2)] ?? l);
 
 const STILL =
   "Photoreal, shot on a recent iPhone by a friend, natural light, real lived-in place, candid and slightly imperfect framing, true-to-life colours, subtle grain. A specific real moment caught mid-action, not a posed portrait. Absolutely no text, letters, numbers, logos, watermarks, signs or UI in the image; no keyboards, screens with content, documents or labels in close-up. Not glossy, not CGI, not a stock photo: nobody smiling at the camera, no models, no plastic skin, natural hands.";
@@ -122,9 +127,10 @@ const ART = `Art direction for images (this decides stop power, the weakest scor
 - Banned stock clichés: person holding a mug staring out a window, smiling at the camera, hands posed on a laptop, women in identical soft-lit living rooms, suits, perfect tables, salads, generic plants-and-laptop.
 - Prefer unusual but natural angles (low, over the shoulder, top-down, close-up of the subject's face or hands), real mess and texture, local places that fit the market.
 - The subject must be big and clear at thumbnail size; one focal point.
-- No text-bearing objects in focus (keyboards, screens, papers, packaging labels) because image models garble letters.`;
+- No text-bearing objects in focus (keyboards, screens, papers, packaging labels) because image models garble letters.
+- No famous landmarks or postcard views, no repeated scenery across slides, nothing unsafe or odd (eyes closed while driving), no sticky notes or stickers anywhere unless the template adds them.`;
 const HEALTH_NEG =
-  "No syringes, injection pens, pills, blister packs, medicine boxes, scales, measuring tapes, bare bellies, body comparisons, hospital beds or procedures.";
+  "No syringes, injection pens, pills, blister packs, medicine boxes, vials, scales, measuring tapes, blood pressure cuffs or other measuring devices on people, bare bellies, body comparisons, hospital beds or procedures.";
 
 interface Grounding {
   brand: Brand;
@@ -358,7 +364,7 @@ async function writeAd(
     { db: ctx.db },
     {
       route: "production",
-      system: `You write and art-direct one Meta ad for ${g.brand.name}: ${carousel ? "a carousel of 4 to 7 slides (cover first, CTA last)" : "a single static"}. Language of every word on the image and in the copy: ${langName(o.language)}, written natively by a local copywriter (not translated), correct diacritics, sentence case.
+      system: `You write and art-direct one Meta ad for ${g.brand.name}: ${carousel ? "a carousel of 4 to 7 slides (cover first, CTA last)" : "a single static"}. Language of every word on the image and in the copy: ${langName(o.language, g.cfg.countries)}, written natively by a local copywriter (not translated), correct diacritics, sentence case.
 
 ${RULES}
 
@@ -773,39 +779,44 @@ async function produce(
     { at: new Date().toISOString(), slides: first.slides, review: toReview(first.rv, first.rendered.minContrast) },
   ];
   let best = first;
-  if (first.rv.overall > 0 && first.rv.overall < settings.reviewThreshold) {
-    await ctx.log(`"${ad.body.title}" scored ${first.rv.overall}; self-revising: ${first.rv.fix}`);
+  // revise from the creative director's critique until the ad reaches the target or the rounds run out;
+  // each round starts from the best version so far and keeps whichever scores higher
+  for (
+    let round = 1;
+    round <= settings.maxRevisions && best.rv.overall > 0 && best.rv.overall < settings.targetScore;
+    round++
+  ) {
+    const from = best;
+    await ctx.log(`"${ad.body.title}" scored ${from.rv.overall}; revision ${round}: ${from.rv.fix}`);
     try {
       const rewritten = await writeAd(ctx, g, concept, {
         language: ad.body.language,
         aspect: ad.body.aspect,
-        previous: written,
-        feedback: `The creative director scored the rendered ad ${first.rv.overall}/100 (stop power ${first.rv.stopPower}, clarity ${first.rv.clarity}, craft ${first.rv.craft}). Issues: ${first.rv.issues.join(" | ")}. Most valuable change: ${first.rv.fix}. Fix all of it: you may change the template, the copy, the image source or the image prompt (for a better or more fitting picture). Keep one clear idea; the image must show what the headline says.`,
+        previous: from.written,
+        feedback: `The creative director scored the rendered ad ${from.rv.overall}/100 (stop power ${from.rv.stopPower}, clarity ${from.rv.clarity}, brand fit ${from.rv.brandFit}, craft ${from.rv.craft}). Issues: ${from.rv.issues.join(" | ")}. Most valuable change: ${from.rv.fix}. Fix all of it: you may change the template, the copy, the image source or the image prompt (for a better or more fitting picture). Keep one clear idea; the image must show what the headline says.`,
       });
       const gc = await gate(ctx, g, rewritten, ad.body.placement, ad.id);
-      if (gc.status !== "fail") {
-        const second = await renderVersion(ctx, g, ad, rewritten, model, base + 2, {
-          slides: first.slides,
-          files: first.files,
-        });
-        done.push({
-          at: new Date().toISOString(),
-          slides: second.slides,
-          review: toReview(second.rv, second.rendered.minContrast),
-        });
-        if (second.rv.overall > first.rv.overall) best = second;
-        await ctx.log(
-          `"${ad.body.title}" self-revision scored ${second.rv.overall} (kept v${best === second ? 2 : 1})`,
-        );
-      }
+      if (gc.status === "fail") continue;
+      const next = await renderVersion(ctx, g, ad, rewritten, model, base + 1 + round, {
+        slides: from.slides,
+        files: from.files,
+      });
+      done.push({
+        at: new Date().toISOString(),
+        slides: next.slides,
+        review: toReview(next.rv, next.rendered.minContrast),
+      });
+      if (next.rv.overall > best.rv.overall) best = next;
+      await ctx.log(`"${ad.body.title}" revision ${round} scored ${next.rv.overall} (best ${best.rv.overall})`);
     } catch (e) {
-      await ctx.log(`Self-revision failed: ${e instanceof Error ? e.message : e}`);
+      await ctx.log(`Revision failed: ${e instanceof Error ? e.message : e}`);
     }
   }
   const reviewOut = toReview(best.rv, best.rendered.minContrast);
   const cur = (await getAd(ctx.db, ad.id))!;
   // the chosen version goes last, so "the latest version" is always what the board shows
-  const ordered = best === first && done.length > 1 ? [done[1]!, done[0]!] : done;
+  const chosen = done.find((d) => d.slides === best.slides);
+  const ordered = chosen ? [...done.filter((d) => d !== chosen), chosen] : done;
   const body: AdBody = {
     ...cur.body,
     copy: best.written.copy,
