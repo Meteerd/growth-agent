@@ -15,6 +15,13 @@
       "when": 1791789023574,
       "tag": "0001_render_versions",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1792108800000,
+      "tag": "0002_studio",
+      "breakpoints": true
     }
   ]
 }

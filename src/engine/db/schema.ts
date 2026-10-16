@@ -274,3 +274,82 @@ export const providerCache = sqliteTable("provider_cache", {
   body: text("body", { mode: "json" }).notNull(),
   createdAt: text("created_at").notNull(),
 });
+
+// ---------------------------------------------------------------- Ad Studio (statics and carousels)
+
+/** Background jobs of the Ad Studio (brand setup, competitor scans, analysis, generation). */
+export const studioJobs = sqliteTable(
+  "studio_jobs",
+  {
+    id: text("id").primaryKey(),
+    brandId: text("brand_id"),
+    kind: text("kind").notNull(),
+    status: text("status").notNull(),
+    step: text("step"),
+    progress: real("progress").notNull().default(0),
+    input: text("input", { mode: "json" }).$type<Record<string, unknown>>().notNull(),
+    output: text("output", { mode: "json" }).$type<Record<string, unknown>>(),
+    log: text("log", { mode: "json" }).$type<{ ts: string; msg: string }[]>().notNull(),
+    error: text("error"),
+    costUsd: real("cost_usd").notNull().default(0),
+    createdAt: text("created_at").notNull(),
+    updatedAt: text("updated_at").notNull(),
+  },
+  (t) => [index("studio_jobs_brand_idx").on(t.brandId)],
+);
+
+/** Competitor ads (statics and carousels) pulled from ad libraries, with their teardown. */
+export const adRefs = sqliteTable(
+  "ad_refs",
+  {
+    id: text("id").primaryKey(),
+    brandId: text("brand_id").notNull(),
+    source: text("source").notNull(),
+    externalId: text("external_id").notNull(),
+    advertiser: text("advertiser").notNull(),
+    mediaType: text("media_type").notNull(),
+    score: real("score").notNull().default(0),
+    body: text("body", { mode: "json" }).$type<Record<string, unknown>>().notNull(),
+    createdAt: text("created_at").notNull(),
+  },
+  (t) => [index("ad_refs_brand_idx").on(t.brandId)],
+);
+
+/** Generated ads: one static or one carousel (slides) with copy, files, compliance and review. */
+export const ads = sqliteTable(
+  "ads",
+  {
+    id: text("id").primaryKey(),
+    brandId: text("brand_id").notNull(),
+    batchId: text("batch_id").notNull(),
+    format: text("format").notNull(),
+    kind: text("kind").notNull(),
+    status: text("status").notNull(),
+    score: real("score"),
+    body: text("body", { mode: "json" }).$type<Record<string, unknown>>().notNull(),
+    createdAt: text("created_at").notNull(),
+    updatedAt: text("updated_at").notNull(),
+  },
+  (t) => [index("ads_brand_idx").on(t.brandId), index("ads_batch_idx").on(t.batchId)],
+);
+
+/** Studio chat: full Anthropic message params per turn (append-only, so thinking blocks stay valid). */
+export const studioMessages = sqliteTable(
+  "studio_messages",
+  {
+    id: text("id").primaryKey(),
+    threadId: text("thread_id").notNull(),
+    seq: integer("seq").notNull(),
+    role: text("role").notNull(),
+    content: text("content", { mode: "json" }).notNull(),
+    createdAt: text("created_at").notNull(),
+  },
+  (t) => [index("studio_messages_thread_idx").on(t.threadId, t.seq)],
+);
+
+/** Studio settings and per-brand studio config (key -> JSON). */
+export const studioKv = sqliteTable("studio_kv", {
+  key: text("key").primaryKey(),
+  value: text("value", { mode: "json" }).notNull(),
+  updatedAt: text("updated_at").notNull(),
+});
