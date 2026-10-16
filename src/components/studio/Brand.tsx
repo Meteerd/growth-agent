@@ -345,6 +345,56 @@ export function BrandWorkspace({ slug }: { slug: string }) {
           </button>
         </div>
       </div>
+      <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-5">
+        {[
+          {
+            label: "Brand kit",
+            done: !!(d.config.logo || d.config.logoStyle === "wordmark") && d.config.brandImages.length > 0,
+            note: `${d.config.brandImages.length} images, ${d.config.competitors.length} competitors`,
+          },
+          {
+            label: "Competitor ads",
+            done: d.counts.refs > 0,
+            note: d.counts.refs ? `${d.counts.refs} found` : "Scan competitors",
+          },
+          {
+            label: "Playbook",
+            done: !!d.playbook,
+            note: d.playbook
+              ? `${d.playbook.patterns.length} winning patterns`
+              : d.counts.refs
+                ? "Analyse"
+                : "after the scan",
+          },
+          { label: "Ads", done: d.counts.ads > 0, note: d.counts.ads ? `${d.counts.ads} made` : "Make ads" },
+          {
+            label: "Approved",
+            done: d.counts.approved > 0,
+            note: d.counts.approved ? `${d.counts.approved} ready to upload` : "review the board",
+          },
+        ].map((x, i) => (
+          <div
+            key={x.label}
+            className={cn(
+              "rounded-lg border px-3 py-2",
+              x.done ? "border-line bg-white" : "border-dashed border-line-strong bg-transparent",
+            )}
+          >
+            <div className="flex items-center gap-2 text-[12.5px] font-medium">
+              <span
+                className={cn(
+                  "flex size-4 items-center justify-center rounded-full text-[10px]",
+                  x.done ? "bg-pass text-white" : "border border-line-strong text-bone-3",
+                )}
+              >
+                {x.done ? "✓" : i + 1}
+              </span>
+              {x.label}
+            </div>
+            <div className="mt-0.5 truncate text-[11.5px] text-bone-3">{x.note}</div>
+          </div>
+        ))}
+      </div>
       {running.length > 0 && (
         <div className="mt-4 space-y-1.5">
           {running.map((j) => (
