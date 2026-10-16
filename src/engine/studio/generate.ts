@@ -1047,3 +1047,24 @@ export async function reviseAd(
   });
   return { id: adId, score: done.score, version: done.body.versions.length };
 }
+
+/**
+ * Calibration: the same review rubric on any image files (for example competitors' proven winners), so our
+ * scores can be read against what already wins in the category.
+ */
+export async function reviewFiles(
+  ctx: JobCtx,
+  brand: Brand,
+  files: string[],
+  o: { title: string; format: string; copy?: AdOut["copy"] },
+) {
+  const g = await grounding(ctx.db, brand);
+  const slides: Slide[] = files.map(() => ({ template: "native", slots: {}, image: { source: "none" } }));
+  return review(ctx, g, {
+    title: o.title,
+    format: o.format,
+    copy: o.copy ?? { primaryText: "", headline: "", description: "", cta: "" },
+    slides,
+    files,
+  });
+}
