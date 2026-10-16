@@ -240,7 +240,7 @@ ${RULES}
 
 Diversity: no two concepts share the same angle + persona + format; use at least 3 hook types and at least 4 different formats when count >= 5. Lead with what the playbook shows is winning, plus at least one white-space idea nobody in the category does.
 Only use formats from this list (others need things the brand has not provided): ${allowedFormats.map((f) => f.id).join(", ")}. A carousel's format is its cover format.
-inspiredBy: ids of the competitor ads whose structure a concept remakes ([] for white space). rationale: one sentence on why this should win, citing the evidence.
+title: a short working title. angle: a short phrase (under 8 words). persona: under 8 words. hookType: one or two words. inspiredBy: ids of the competitor ads whose structure a concept remakes ([] for white space). rationale: one or two sentences on why this should win, citing the evidence. Most concepts should be visual (a strong photo or the real product as the focal point); at most a third of a batch may be type-only formats.
 ${g.health ? "This is a health brand with strict rules: no outcomes, no body focus, no drug talk, no 'you' + condition. Angles: doctor-led care, convenience, transparency, support, education." : ""}
 ${formatLibraryText()}
 
@@ -331,7 +331,7 @@ How slides work: each slide picks a template and fills its slots. Slots a templa
 - quiz: eyebrow, headline (question), bullets (3-4 options), cta.
 - sticky: headline (the handwritten note, short), body (caption).
 - steps: headline, bullets[3] as 'Title: one line', cta, footnote.
-Use the format's template for a static (${fmt?.template ?? "its template"}). Carousels: cover = the format's template (must work alone as an ad), then text_slide / checklist / myth_fact / comparison / steps body slides, last = cta_end. accentWord: one word copied from that slide's headline.
+Images sell: a static's focal visual and a carousel's cover need a strong picture (generated scene, real brand image or the product) unless the format is text-native (notes_app, post_card, comparison, quiz, steps). In a carousel, at least half the slides carry an image (text_slide and checklist can take one). Use the format's template for a static (${fmt?.template ?? "its template"}). Carousels: cover = the format's template (must work alone as an ad), then text_slide / checklist / myth_fact / comparison / steps body slides, last = cta_end. accentWord: one word copied from that slide's headline.
 
 Images: source "brand" uses a real brand image (brandImage = its index; only if it fits as described); "product" uses the real phone screenshot of the site (feature, offer and how-it-works slides); "generated" needs prompt: an English scene description only (who, where, doing what, light, mood, camera), never text in the image; visualWorld is one sentence describing the shared look (people, place, palette, light) that every generated image in this ad shares so slides stay consistent. referenceImage: a brand image index to keep the real product, pet or person look in a generated image, else -1. "none" for type-only templates (comparison, notes_app, myth_fact, quiz, steps, text_slide usually).
 ${g.health ? `Health brand: images never show ${HEALTH_NEG} Never present an AI person as a patient or doctor in a testimonial.` : ""}
