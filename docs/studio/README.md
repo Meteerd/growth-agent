@@ -116,6 +116,8 @@ src/app/studio, src/components/studio, src/app/api/studio   the admin UI and its
 
 **Calibration (`scripts/studio/calibrate.ts`):** the same reviewer scores competitors' proven winners as their own advertiser's ads. Hound's category winners (Dogo, Jake Collins, running 44 to 109 days) averaged **49** (max 56); a.clinic's (Golden Tree, Recovery clinic, 73 to 113 days) averaged **44** (max 56). Our ads average **71** (Hound max 80, a.clinic max 76) on the same rubric. They beat the incumbents on craft and clarity, and they stay compliant where the incumbents rely on kg claims and body imagery. This is a judge, not performance: the real test is a few days of spend per concept. A second revision round rarely beat the first (judge noise is about ±3), so the default is one round toward a target of 80.
 
+**Quality bar:** an ad scoring 75 or higher is `ready`; anything lower is `below_bar` (still visible and revisable, never mixed in with the ready ones). Ask for N good ads (`good: N` on generate, or just tell the agent "I need 4 ads that clear the bar") and the batch keeps making new concepts, up to two more rounds, until N pass. In the first run it was asked for 4 and delivered 5 at 76 to 78, for $4.87.
+
 **Measured cost per ad** (including self-revision): about $0.60 to $0.75 on GPT Image 2 direct, and about $0.40 to $0.60 on GPT Image 2.5 Flare. Claude accounts for about $0.25 to $0.40 of that.
 
 **Image bake-off:** one prompt, four models (`scripts/studio/fal-smoke.ts`). GPT Image 2.5 Flare, Nano Banana 2.1, Nano Banana Pro and Seedream 5 Lite all produced believable photos. Flare looked the most candid and native, so it is the default for new brands.
