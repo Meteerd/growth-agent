@@ -1601,25 +1601,19 @@ const hookOverlay: Tpl = async (c) => {
   const body = sl(c, "body");
   const bf = body ? fit(c.body, body, { max: 42 * s, min: 32 * s, maxW: w, maxLines: 2, lineH: 1.25 }) : null;
   const blockH = ft.lines.length * ft.lineH + (bf ? 30 * s + bf.lines.length * bf.lineH : 0);
-  // centred like the original layout, unless the middle of the photo is where the face is: then the type goes up
+  // find where the eye goes (the person) with sharp's attention crop, and set the type in the opposite band
   let center = c.H * 0.47;
   if (file && !("color" in c.bg)) {
-    const busy = async (top: number, height: number) =>
-      (
-        await sharp(c.bg as Buffer)
-          .extract({
-            left: Math.round(c.W * 0.15),
-            top: Math.round(top),
-            width: Math.round(c.W * 0.7),
-            height: Math.round(height),
-          })
-          .greyscale()
-          .resize(100, 50, { fit: "fill" })
-          .stats()
-      ).channels[0]!.stdev;
-    const mid = await busy(c.H * 0.34, c.H * 0.28);
-    const upper = await busy(c.H * 0.22, c.H * 0.22);
-    if (mid > upper * 1.2) center = c.H * 0.24 + blockH / 2 + 40 * s;
+    const band = Math.round(c.H * 0.34);
+    const { info } = await sharp(c.bg as Buffer)
+      .resize(c.W, band, { fit: "cover", position: "attention" })
+      .toBuffer({ resolveWithObject: true });
+    // sharp reports the crop offset as a negative number: the salient band starts at -offset
+    const subjectMid = Math.abs((info as { cropOffsetTop?: number }).cropOffsetTop ?? c.H * 0.33) + band / 2;
+    const ctaTop = c.H * 0.86 - 70 * s;
+    const top = c.H * 0.2 + blockH / 2;
+    const low = ctaTop - 60 * s - blockH / 2;
+    center = subjectMid > c.H * 0.5 ? top : Math.max(top, low);
   }
   const top0 = center - blockH / 2;
   if (file) {
@@ -1628,13 +1622,15 @@ const hookOverlay: Tpl = async (c) => {
     const m2 = Math.min(1, (top0 + blockH - 20 * s) / c.H);
     const b = Math.min(1, (top0 + blockH + 160 * s) / c.H);
     c.defs.push(
-      `<linearGradient id="hb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0.18"/><stop offset="${a.toFixed(3)}" stop-color="#000" stop-opacity="0.08"/><stop offset="${m1.toFixed(3)}" stop-color="#000" stop-opacity="0.5"/><stop offset="${m2.toFixed(3)}" stop-color="#000" stop-opacity="0.5"/><stop offset="${b.toFixed(3)}" stop-color="#000" stop-opacity="0.08"/><stop offset="1" stop-color="#000" stop-opacity="0.3"/></linearGradient>`,
+      `<linearGradient id="hb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0.16"/><stop offset="${a.toFixed(3)}" stop-color="#000" stop-opacity="0.04"/><stop offset="${m1.toFixed(3)}" stop-color="#000" stop-opacity="0.36"/><stop offset="${m2.toFixed(3)}" stop-color="#000" stop-opacity="0.36"/><stop offset="${b.toFixed(3)}" stop-color="#000" stop-opacity="0.04"/><stop offset="1" stop-color="#000" stop-opacity="0.24"/></linearGradient>`,
     );
     c.svg.push(`<rect width="${c.W}" height="${c.H}" fill="url(#hb)"/>`);
+    c.defs.push(SHADOW("ts", 10 * s, 0.45, 2 * s));
   }
   await centredMark(c, Math.min(c.H * 0.1, top0 - 130 * s), true, 60);
   let y = top0;
   const accent = sl(c, "accentWord");
+  c.svg.push(`<g${file ? ' filter="url(#ts)"' : ""}>`);
   c.svg.push(
     drawLines(ft, {
       x: (c.W - w) / 2,
@@ -1656,6 +1652,7 @@ const hookOverlay: Tpl = async (c) => {
     );
     c.boxes.push({ x: (c.W - w) / 2, y, w, h: bf.lines.length * bf.lineH, color: "#FFFFFF" });
   }
+  c.svg.push("</g>");
   const cta = sl(c, "cta");
   if (cta) {
     const h = 118 * s;
@@ -1688,7 +1685,17 @@ const stepsGrid: Tpl = async (c) => {
   y += 36 * s;
   const head = sl(c, "headline");
   const ft = fit(c.head, head, { max: 62 * s, min: 40 * s, maxW: c.W - c.pad * 2, maxLines: 2, lineH: 1.15 });
-  c.svg.push(drawLines(ft, { x: c.pad, top: y, boxW: c.W - c.pad * 2, color: ink, align: "center" }).svg);
+  const acc = sl(c, "accentWord");
+  c.svg.push(
+    drawLines(ft, {
+      x: c.pad,
+      top: y,
+      boxW: c.W - c.pad * 2,
+      color: ink,
+      align: "center",
+      accent: acc ? { words: [acc], color: readable(c.cfg.colors.accent, bg, 3) } : undefined,
+    }).svg,
+  );
   c.boxes.push({ x: c.pad, y, w: c.W - c.pad * 2, h: ft.lines.length * ft.lineH, color: ink });
   y += ft.lines.length * ft.lineH + 50 * s;
   const caps = (c.slots.bullets ?? []).map(clean).filter(Boolean).slice(0, 4);
@@ -1700,7 +1707,9 @@ const stepsGrid: Tpl = async (c) => {
   const cellW = (c.W - c.pad * 2.4 - gap) / 2;
   const capH = 96 * s;
   const rows = 2;
-  const avail = c.H - y - c.pad * 0.6;
+  const ctaText = sl(c, "cta");
+  const ctaH = ctaText ? 84 * s : 0;
+  const avail = c.H - y - c.pad * 0.6 - (ctaText ? ctaH + 30 * s : 0);
   const cellH = Math.min(cellW, (avail - rows * capH - gap * 0.4) / rows);
   const x0 = (c.W - (cellW * 2 + gap)) / 2;
   for (let i = 0; i < 4; i++) {
@@ -1733,6 +1742,16 @@ const stepsGrid: Tpl = async (c) => {
       c.boxes.push({ x: cx, y: cy + cellH + 22 * s, w: cellW, h: cf.lines.length * cf.lineH, color: ink });
     }
   }
+  if (ctaText)
+    pill(c, ctaText, {
+      x: c.W / 2,
+      y: c.H - c.pad * 0.6 - ctaH,
+      h: ctaH,
+      bg: c.cfg.colors.ink,
+      color: onColor(c.cfg.colors.ink, "#111111"),
+      size: 30,
+      anchor: "middle",
+    });
 };
 
 /** The model rendered the whole ad (text included): cover-crop it to the canvas. */

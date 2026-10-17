@@ -121,7 +121,7 @@ const langName = (l: string, countries: string[] = []) =>
     : (LANG[l.slice(0, 2)] ?? l);
 
 const STILL =
-  "Photoreal, shot on a recent iPhone by a friend, natural light, real lived-in place, candid and slightly imperfect framing, true-to-life colours, subtle grain. A specific real moment caught mid-action, not a posed portrait. Absolutely no text, letters, numbers, logos, watermarks, signs or UI in the image; no keyboards, screens with content, documents or labels in close-up. Not glossy, not CGI, not a stock photo: nobody smiling at the camera, no models, no plastic skin, natural hands.";
+  "Photoreal, shot on a recent iPhone by a friend, bright and well exposed natural daylight (never dim or gloomy), real lived-in place, candid and slightly imperfect framing, true-to-life colours, subtle grain. A specific real moment caught mid-action, not a posed portrait. Absolutely no text, letters, numbers, logos, watermarks, signs or UI in the image; no keyboards, screens with content, documents or labels in close-up. Not glossy, not CGI, not a stock photo: nobody smiling at the camera, no models, no plastic skin, natural hands.";
 
 /** Art direction every image prompt is written to (the writer and the self-revision both see it). */
 const ART = `Art direction for images (this decides stop power, the weakest score so far):
@@ -393,7 +393,7 @@ How slides work: each slide picks a template and fills its slots. Slots a templa
 - sticky: headline (the handwritten note, short), body (caption).
 - steps: headline, bullets[3] as 'Title: one line', cta, footnote.
 - hook_overlay (house style): headline (a first-person or reframe line, under 9 words), body (one short line), cta (the button text) over a dimmed calm photo; wordmark added automatically.
-- steps_grid (house style): headline (promise + where), bullets = 4 short step captions; image.gridPrompts = 4 scene prompts with the same person and home; source "generated".
+- steps_grid (house style): headline (promise + where, accentWord the key word), bullets = 4 short step captions, cta (button text); image.gridPrompts = 4 scene prompts with the same person and home; source "generated". Avoid words with a double meaning in captions (Slovak 'recept' means both prescription and recipe: say 'predpis').
 Images sell: a static's focal visual and a carousel's cover need a strong picture (generated scene, real brand image or the product) unless the format is text-native (notes_app, post_card, comparison, quiz, steps). In a carousel, at least half the slides carry an image (text_slide and checklist can take one). Use the format's template for a static (${fmt?.template ?? "its template"}). Carousels: cover = the format's template (must work alone as an ad), then text_slide / checklist / myth_fact / comparison / steps body slides, last = cta_end. accentWord: one word copied from that slide's headline.
 
 ${ART}
