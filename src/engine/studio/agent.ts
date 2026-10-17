@@ -503,11 +503,15 @@ export async function chatTurn(
   const model = MODEL();
   const tools = toolDefs();
   let jsonRetries = 0;
+  let capHit = false;
   for (let turn = 0; turn < 12; turn++) {
     const out = await callProvider(db, {
       provider: "anthropic",
       note: "studio chat",
       estimateUsd: claudeEstimate(model, Math.ceil(JSON.stringify(messages).length / 3.2) + 6000, 8000),
+      onBudgetExceeded: () => {
+        capHit = true;
+      },
       demo: (): BetaMessage | null => null,
       live: async () => {
         const msg = await liveClaudeTransport(
@@ -538,7 +542,11 @@ export async function chatTurn(
     if (out === null) continue;
     const msg = out.value;
     if (!msg) {
-      sink.text("The chat model is not live on this server (demo mode).");
+      sink.text(
+        capHit
+          ? "\n\nThe Claude budget cap on this server is reached (BUDGET_USD_ANTHROPIC in /srv/studio/shared/.env). Raise it to continue; nothing else is wrong."
+          : "The chat model is not live on this server (demo mode).",
+      );
       return;
     }
     if (msg.stop_reason === "refusal") {
