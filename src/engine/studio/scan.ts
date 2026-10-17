@@ -87,12 +87,13 @@ export interface ScanInput {
 export async function scanCompetitors(ctx: JobCtx, brand: Brand, input: ScanInput = {}) {
   const { db } = ctx;
   let cfg = await getConfig(db, brand);
-  const countries = (input.countries?.length ? input.countries : cfg.countries).slice(0, 2);
+  // every market the brand runs in (up to 3): a competitor that does not advertise in the first one still shows up
+  const countries = (input.countries?.length ? input.countries : cfg.countries).slice(0, 3);
   const per = Math.min(input.perSource ?? 40, 80);
   const comps = cfg.competitors.filter((c) => !input.only?.length || input.only.some((o) => norm(o) === norm(c.name)));
   const sources: SourceSpec[] = [];
   for (const c of comps)
-    for (const country of countries.slice(0, c.pageId ? 2 : 1))
+    for (const country of countries)
       sources.push({
         label: `${c.name} (${country})`,
         url: libraryUrl({ country, q: c.adLibraryQuery, pageId: c.pageId }),
@@ -102,13 +103,11 @@ export async function scanCompetitors(ctx: JobCtx, brand: Brand, input: ScanInpu
         match: c.pageId ? undefined : c.adLibraryQuery,
       });
   if (input.includeKeywords !== false)
-    for (const t of cfg.searchTerms.slice(0, 3))
-      sources.push({
-        label: `"${t}" (${countries[0]})`,
-        url: libraryUrl({ country: countries[0] ?? "US", q: t }),
-        country: countries[0] ?? "US",
-        query: t,
-      });
+    for (const t of cfg.searchTerms.slice(0, 4))
+      for (const country of countries.length ? countries : ["US"])
+        sources.push({ label: `"${t}" (${country})`, url: libraryUrl({ country, q: t }), country, query: t });
+  // bounded: the most specific searches (competitors) first, then terms, at most 30 searches per scan
+  sources.splice(30);
   if (!sources.length) throw new Error("No competitors or search terms configured for this brand. Add some first.");
 
   await ctx.step(`Searching the Meta Ad Library: ${sources.length} searches`, 0.05);
