@@ -25,6 +25,32 @@ export interface Format {
 
 export const FORMATS: Format[] = [
   {
+    id: "hook_overlay",
+    name: "Emotional hook over a calm photo (house style)",
+    stage: "cold",
+    template: "hook_overlay",
+    when: "the default cold static: one first-person frustration or reframe line the persona says to themselves, a calm real photo, one button. The operator's own proven layout.",
+    slots:
+      "headline<=55 (first person or reframe, e.g. 'Na šalát som sa už nemohla ani pozrieť'), body<=60 (one line: what we offer), cta<=32 (button text, e.g. 'Zistite, či je program pre vás')",
+    image:
+      "a calm, real-feeling photo of the persona in an everyday moment that matches the line; chest up; soft light",
+    vary: "the inner thought (diet fatigue, no time, embarrassed at the GP, health worry), the persona",
+    health: "the line is a feeling about dieting or the process, never about the body, weight numbers or a result",
+  },
+  {
+    id: "steps_grid",
+    name: "How it works in 4 photos (house style)",
+    stage: "solution",
+    template: "steps_grid",
+    when: "explains the whole process at a glance; strong for retargeting and for the skeptical; the operator's own proven layout",
+    slots:
+      "headline<=50 (the promise + where, e.g. 'Chudnite pod vedením lekára. Z pohodlia domova.'), bullets[4] each<=28 (one short caption per step)",
+    image:
+      "gridPrompts: 4 scenes, the SAME person and home in each (questionnaire on a laptop, video call with a doctor, a calm everyday moment, checking progress on a phone held normally)",
+    vary: "the headline promise; which moments show the steps",
+    health: "no weight numbers or charts in any photo; no trousers or waistband gestures",
+  },
+  {
     id: "us_vs_them",
     name: "Us vs Them comparison",
     stage: "solution",
@@ -286,4 +312,5 @@ export const RULES = `RULES FOR WINNING STATICS AND CAROUSELS
 7. Primary text: the key message in the first 125 characters. Headline 27 to 40 characters. Description <= 25.
 8. Write natively in the target language (not translated). Correct diacritics. Spanish: tú; Slovak/Czech medical: formal Vy. Prices in local format (49 €, 1 290 Kč).
 9. No AI-slop: no 'unlock', 'elevate', 'unleash', 'game changer', 'revolutionary', 'journey' clichés, no fake round numbers, no emoji in on-image text, no em dashes.
-10. Every hook must be grounded: in a competitor pattern that wins, the brand dossier, or real customer words.`;
+10. Every hook must be grounded: in a competitor pattern that wins, the brand dossier, or real customer words.
+11. As few words on the image as possible: a static carries one headline (max 8 words), at most one short sub-line and the button. Explanations go in the primary text, never on the image. If a slide needs a paragraph, it is the wrong slide.`;

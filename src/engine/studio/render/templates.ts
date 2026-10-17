@@ -18,6 +18,8 @@ export interface RenderInput {
   brand: { name: string; config: StudioBrandConfig };
   /** local file of the slide image (background, inset or product shot), if any */
   imageFile?: string;
+  /** steps_grid: all step photos in order (the first is imageFile) */
+  imageFiles?: string[];
   /** carousel position (counter + swipe cue), if part of a carousel */
   index?: { i: number; n: number };
   out: string;
@@ -1561,6 +1563,144 @@ const steps: Tpl = async (c) => {
     wordmark(c, c.W - c.pad, by + 52 * c.s, ink, "end");
 };
 
+/** Centred brand mark at the top: the logo image, or the name set in the headline font. */
+async function centredMark(c: Ctx, y: number, onDark: boolean, size = 64) {
+  const s = c.s;
+  if (await logo(c, onDark, size * 1.6 * s, c.W / 2 - size * 0.8 * s, y)) return y + size * 1.6 * s;
+  const color = onDark ? "#FFFFFF" : c.cfg.colors.ink;
+  const name = c.input.brand.name;
+  const dot = name.indexOf(".");
+  if (dot > 0) {
+    // brand names with a dot (a.clinic): the dot in the accent colour, like the real wordmark
+    const fz = size * s;
+    const f = fitBox(c.head, name, { max: fz, min: fz, maxW: c.W, maxH: fz * 2 });
+    const total = measure(f.font, name, f.size);
+    const x0 = c.W / 2 - total / 2;
+    const before = name.slice(0, dot);
+    const wb = measure(f.font, before, f.size);
+    const wd = measure(f.font, ".", f.size);
+    c.svg.push(label(c.head, before, f.size, { x: x0, y: y + fz, color }).svg);
+    c.svg.push(label(c.head, ".", f.size, { x: x0 + wb, y: y + fz, color: c.cfg.colors.accent }).svg);
+    c.svg.push(label(c.head, name.slice(dot + 1), f.size, { x: x0 + wb + wd, y: y + fz, color }).svg);
+  } else c.svg.push(label(c.head, name, size * s, { x: c.W / 2, y: y + size * s, color, anchor: "middle" }).svg);
+  return y + size * 1.3 * s;
+}
+
+/**
+ * The emotional hook (the operator's own best-performing layout): a calm photo dimmed, the wordmark centred at
+ * the top, a short first-person or reframe headline centred, one sub-line, and a big white button.
+ */
+const hookOverlay: Tpl = async (c) => {
+  const file = c.input.imageFile;
+  c.bg = file ? await cover(file, c.W, c.H, { dim: 0.38 }) : { color: c.cfg.colors.primary };
+  const s = c.s;
+  const w = c.W - c.pad * 2.4;
+  await centredMark(c, c.H * 0.13, true, 60);
+  const head = sl(c, "headline");
+  const ft = fit(c.head, head, { max: 84 * s, min: 52 * s, maxW: w, maxLines: 4, lineH: 1.12 });
+  const body = sl(c, "body");
+  const bf = body ? fit(c.body, body, { max: 42 * s, min: 32 * s, maxW: w, maxLines: 2, lineH: 1.25 }) : null;
+  const blockH = ft.lines.length * ft.lineH + (bf ? 30 * s + bf.lines.length * bf.lineH : 0);
+  let y = c.H * 0.47 - blockH / 2;
+  const accent = sl(c, "accentWord");
+  c.svg.push(
+    drawLines(ft, {
+      x: (c.W - w) / 2,
+      top: y,
+      boxW: w,
+      color: "#FFFFFF",
+      align: "center",
+      accent: accent ? { words: [accent], color: readable(c.cfg.colors.accent, "#000000", 3) } : undefined,
+    }).svg,
+  );
+  c.boxes.push({ x: (c.W - w) / 2, y, w, h: ft.lines.length * ft.lineH, color: "#FFFFFF" });
+  y += ft.lines.length * ft.lineH;
+  if (bf) {
+    y += 30 * s;
+    c.svg.push(
+      drawLines(bf, { x: (c.W - w) / 2, top: y, boxW: w, color: "#FFFFFF", align: "center", opacity: 0.95 }).svg,
+    );
+    c.boxes.push({ x: (c.W - w) / 2, y, w, h: bf.lines.length * bf.lineH, color: "#FFFFFF" });
+  }
+  const cta = sl(c, "cta");
+  if (cta) {
+    const h = 128 * s;
+    const fz = 40 * s;
+    const tw = label("inter_medium", cta, fz, { x: 0, y: 0, color: "#111" }).width;
+    const bw = Math.min(c.W - c.pad * 2, tw + 120 * s);
+    const by = c.H * 0.8 - h / 2;
+    c.svg.push(rect((c.W - bw) / 2, by, bw, h, h / 2, "#FFFFFF"));
+    c.svg.push(
+      label("inter_medium", cta, fz, {
+        x: c.W / 2,
+        y: by + h / 2 + capHeight("inter_medium", fz) / 2,
+        color: "#111111",
+        anchor: "middle",
+      }).svg,
+    );
+  }
+};
+
+/**
+ * How it works in four photos (the operator's own layout): light background, wordmark and headline centred, a 2x2
+ * grid of photos with black numbered squares, and a short caption under each.
+ */
+const stepsGrid: Tpl = async (c) => {
+  const bg = "#F4F4F2";
+  c.bg = { color: bg };
+  const s = c.s;
+  const ink = c.cfg.colors.ink;
+  let y = await centredMark(c, c.H * 0.045, false, 66);
+  y += 36 * s;
+  const head = sl(c, "headline");
+  const ft = fit(c.head, head, { max: 62 * s, min: 40 * s, maxW: c.W - c.pad * 2, maxLines: 2, lineH: 1.15 });
+  c.svg.push(drawLines(ft, { x: c.pad, top: y, boxW: c.W - c.pad * 2, color: ink, align: "center" }).svg);
+  c.boxes.push({ x: c.pad, y, w: c.W - c.pad * 2, h: ft.lines.length * ft.lineH, color: ink });
+  y += ft.lines.length * ft.lineH + 50 * s;
+  const caps = (c.slots.bullets ?? []).map(clean).filter(Boolean).slice(0, 4);
+  const files = (c.input.imageFiles?.length ? c.input.imageFiles : c.input.imageFile ? [c.input.imageFile] : []).slice(
+    0,
+    4,
+  );
+  const gap = 56 * s;
+  const cellW = (c.W - c.pad * 2.4 - gap) / 2;
+  const capH = 96 * s;
+  const rows = 2;
+  const avail = c.H - y - c.pad * 0.6;
+  const cellH = Math.min(cellW, (avail - rows * capH - gap * 0.4) / rows);
+  const x0 = (c.W - (cellW * 2 + gap)) / 2;
+  for (let i = 0; i < 4; i++) {
+    const col = i % 2;
+    const row = Math.floor(i / 2);
+    const cx = x0 + col * (cellW + gap);
+    const cy = y + row * (cellH + capH + gap * 0.4);
+    const f = files[i] ?? files[i % Math.max(1, files.length)];
+    if (f)
+      c.layers.push({
+        input: await rounded(f, Math.round(cellW), Math.round(cellH), 14 * s),
+        left: Math.round(cx),
+        top: Math.round(cy),
+      });
+    else c.svg.push(rect(cx, cy, cellW, cellH, 14 * s, mix(ink, bg, 0.9)));
+    const b = 58 * s;
+    c.svg.push(rect(cx - 14 * s, cy - 18 * s, b, b, 4 * s, "#111111"));
+    c.svg.push(
+      label("inter_bold", String(i + 1), 32 * s, {
+        x: cx - 14 * s + b / 2,
+        y: cy - 18 * s + b / 2 + capHeight("inter_bold", 32 * s) / 2,
+        color: "#FFFFFF",
+        anchor: "middle",
+      }).svg,
+    );
+    const cap = caps[i] ?? "";
+    if (cap) {
+      const cf = fit("inter_bold", cap, { max: 32 * s, min: 22 * s, maxW: cellW, maxLines: 2, lineH: 1.2 });
+      c.svg.push(drawLines(cf, { x: cx, top: cy + cellH + 22 * s, boxW: cellW, color: ink, align: "center" }).svg);
+      c.boxes.push({ x: cx, y: cy + cellH + 22 * s, w: cellW, h: cf.lines.length * cf.lineH, color: ink });
+    }
+  }
+};
+
 /** The model rendered the whole ad (text included): cover-crop it to the canvas. */
 const native: Tpl = async (c) => {
   const file = c.input.imageFile;
@@ -1585,11 +1725,14 @@ const TEMPLATES: Record<TemplateId, Tpl> = {
   quiz,
   sticky,
   steps,
+  hook_overlay: hookOverlay,
+  steps_grid: stepsGrid,
   native,
 };
 
 /** Which templates draw a full-bleed photo behind the type (image prompts must keep a calm zone). */
 export const FULL_BLEED: TemplateId[] = [
+  "hook_overlay",
   "photo_headline",
   "quote_card",
   "post_card",
@@ -1600,6 +1743,8 @@ export const FULL_BLEED: TemplateId[] = [
 ];
 /** Templates that use an image at all (others are type and shapes only). */
 export const USES_IMAGE: TemplateId[] = [
+  "hook_overlay",
+  "steps_grid",
   "photo_headline",
   "split_panel",
   "checklist",

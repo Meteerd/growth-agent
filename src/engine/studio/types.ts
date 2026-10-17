@@ -67,6 +67,8 @@ export const StudioBrandConfig = z.object({
   disclaimers: z.array(z.string()),
   /** the landing URL shown on CTA slides */
   ctaUrl: z.string(),
+  /** formats proven for this brand (for example the operator's own designs): at least half of each batch uses them */
+  preferredFormats: z.array(z.string()).optional(),
 });
 export type StudioBrandConfig = z.infer<typeof StudioBrandConfig>;
 
@@ -176,6 +178,8 @@ export const TEMPLATES = [
   "quiz",
   "sticky",
   "steps",
+  "hook_overlay",
+  "steps_grid",
   "native",
 ] as const;
 export type TemplateId = (typeof TEMPLATES)[number];
@@ -211,6 +215,8 @@ export interface SlideImage {
   model?: string;
   /** asset URL of the image used (background or inset) */
   url?: string;
+  /** steps_grid: the other step photos (asset URLs), in order after `url` */
+  extra?: string[];
   usd?: number;
 }
 

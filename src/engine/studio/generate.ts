@@ -60,6 +60,8 @@ const SlideOut = z.object({
     prompt: z.string(),
     /** generated images may use a brand image as a reference (product, pet, person look), -1 for none */
     referenceImage: z.number(),
+    /** steps_grid only: one English scene prompt per step (same person, same place), else [] */
+    gridPrompts: z.array(z.string()),
   }),
 });
 const PlanOut = z.object({
@@ -128,6 +130,7 @@ const ART = `Art direction for images (this decides stop power, the weakest scor
 - Prefer unusual but natural angles (low, over the shoulder, top-down, close-up of the subject's face or hands), real mess and texture, local places that fit the market.
 - The subject must be big and clear at thumbnail size; one focal point.
 - No text-bearing objects in focus (keyboards, screens, papers, packaging labels) because image models garble letters.
+- People: frame them from the waist or chest up, hands relaxed, holding something or partly out of frame; never bare feet, never hands or feet in close-up (image models break fingers and toes, and one broken hand makes the whole ad read as AI).
 - No famous landmarks or postcard views, no repeated scenery across slides, nothing unsafe or odd (eyes closed while driving), no sticky notes or stickers anywhere unless the template adds them.`;
 const HEALTH_NEG =
   "No syringes, injection pens, pills, blister packs, medicine boxes, vials, scales, measuring tapes, blood pressure cuffs or other measuring devices on people, bare bellies, body comparisons, hospital beds or procedures.";
@@ -297,6 +300,7 @@ ${RULES}
 
 Diversity: no two concepts share the same angle + persona + format; use at least 3 hook types and at least 4 different formats when count >= 5. Lead with what the playbook shows is winning, plus at least one white-space idea nobody in the category does.
 Only use formats from this list (others need things the brand has not provided): ${allowedFormats.map((f) => f.id).join(", ")}. A carousel's format is its cover format.
+${g.cfg.preferredFormats?.length ? `Preferred formats, proven for this brand by the operator: ${g.cfg.preferredFormats.join(", ")}. Use them for at least half of the concepts.` : ""}
 title: a short working title. angle: a short phrase (under 8 words). persona: under 8 words. hookType: one or two words. inspiredBy: ids of the competitor ads whose structure a concept remakes ([] for white space). rationale: one or two sentences on why this should win, citing the evidence. Most concepts should be visual (a strong photo or the real product as the focal point); at most a third of a batch may be type-only formats.
 ${g.health ? "This is a health brand with strict rules: no outcomes, no body focus, no drug talk, no 'you' + condition. Angles: doctor-led care, convenience, transparency, support, education." : ""}
 ${formatLibraryText()}
@@ -388,6 +392,8 @@ How slides work: each slide picks a template and fills its slots. Slots a templa
 - quiz: eyebrow, headline (question), bullets (3-4 options), cta; optional wide photo.
 - sticky: headline (the handwritten note, short), body (caption).
 - steps: headline, bullets[3] as 'Title: one line', cta, footnote.
+- hook_overlay (house style): headline (a first-person or reframe line, under 9 words), body (one short line), cta (the button text) over a dimmed calm photo; wordmark added automatically.
+- steps_grid (house style): headline (promise + where), bullets = 4 short step captions; image.gridPrompts = 4 scene prompts with the same person and home; source "generated".
 Images sell: a static's focal visual and a carousel's cover need a strong picture (generated scene, real brand image or the product) unless the format is text-native (notes_app, post_card, comparison, quiz, steps). In a carousel, at least half the slides carry an image (text_slide and checklist can take one). Use the format's template for a static (${fmt?.template ?? "its template"}). Carousels: cover = the format's template (must work alone as an ad), then text_slide / checklist / myth_fact / comparison / steps body slides, last = cta_end. accentWord: one word copied from that slide's headline.
 
 ${ART}
@@ -436,13 +442,83 @@ function demoAd(title: string, carousel: boolean, template: Slide["template"]): 
   const s = (t: Slide["template"]) => ({
     template: t,
     slots: empty,
-    image: { source: "none" as const, brandImage: -1, prompt: "", referenceImage: -1 },
+    image: { source: "none" as const, brandImage: -1, prompt: "", referenceImage: -1, gridPrompts: [] },
   });
   return {
     visualWorld: "",
     copy: { primaryText: "Demo ad.", headline: title.slice(0, 40), description: "", cta: "Learn More" },
     slides: carousel ? [s(template), s("text_slide"), s("text_slide"), s("cta_end")] : [s(template)],
   };
+}
+
+/** On-image word budget per template (the button and the footnote are not counted). */
+const WORD_LIMIT: Partial<Record<Slide["template"], number>> = {
+  hook_overlay: 22,
+  photo_headline: 22,
+  ugc_caption: 18,
+  sticky: 16,
+  steps_grid: 26,
+  cta_end: 16,
+  split_panel: 26,
+  offer_card: 22,
+  stat: 20,
+  quiz: 28,
+  checklist: 30,
+  myth_fact: 32,
+  text_slide: 32,
+  comparison: 34,
+  steps: 34,
+  quote_card: 32,
+  post_card: 40,
+  notes_app: 50,
+  letter: 60,
+};
+
+function visibleWords(s: AdOut["slides"][number]): number {
+  const sl = s.slots;
+  const parts = [
+    sl.eyebrow,
+    sl.headline,
+    sl.body,
+    ...sl.bullets,
+    ...sl.rows.flatMap((r) => [r.label, r.us, r.them]),
+    sl.leftLabel,
+    sl.rightLabel,
+    sl.quote,
+    sl.attribution,
+    sl.stat,
+    sl.statLabel,
+    sl.myth,
+    sl.fact,
+    sl.price,
+  ];
+  return parts.filter(Boolean).join(" ").split(/\s+/).filter(Boolean).length;
+}
+
+function overBudget(a: AdOut): string[] {
+  return a.slides.flatMap((s, i) => {
+    const lim = WORD_LIMIT[s.template];
+    const n = visibleWords(s);
+    return lim && n > lim ? [`slide ${i + 1} (${s.template}) has ${n} words on the image, max ${lim}`] : [];
+  });
+}
+
+/** Too much text loses the feed: one rewrite to cut it down before any image is made. */
+async function fitBudget(
+  ctx: JobCtx,
+  g: Grounding,
+  c: Concept,
+  written: AdOut,
+  o: { language: string; aspect: Aspect },
+) {
+  const over = overBudget(written);
+  if (!over.length) return written;
+  await ctx.log(`"${c.title}": too much text (${over.join("; ")}), cutting`);
+  return writeAd(ctx, g, c, {
+    ...o,
+    previous: written,
+    feedback: `Too much text on the image: ${over.join("; ")}. Cut every slide to its essence: one idea, headline under 8 words, at most one short sub-line, fewer and shorter bullets. Move explanations to primaryText. Keep the images.`,
+  });
 }
 
 function adText(a: AdOut): string {
@@ -561,6 +637,48 @@ async function slideImage(
         note: `studio image ${g.brand.slug}`,
       }),
     );
+  // a strict check on every generated photo: if a hand, foot or face is broken, make it again, framed safer
+  const checked = async (p: string, n: number) => {
+    let t = await gen(p, n);
+    await ctx.cost(t.usd);
+    const a = await anatomyOk(ctx, g, t.file);
+    if (!a.ok) {
+      await ctx.log(`Image redone (${a.problem.slice(0, 120)})`);
+      t = await gen(`${p} Frame the people from the chest up with hands out of frame; no feet.`, n + 10);
+      await ctx.cost(t.usd);
+    }
+    return t;
+  };
+  if (s.template === "steps_grid") {
+    const prompts = (s.image.gridPrompts.length ? s.image.gridPrompts : [prompt]).slice(0, 4);
+    const takes = await Promise.all(
+      prompts.map((p, i) =>
+        checked(
+          [
+            p,
+            o.visualWorld ? `Shared look: ${o.visualWorld}.` : "",
+            STILL,
+            "Square composition, subject centred.",
+            g.health ? HEALTH_NEG : "",
+          ]
+            .filter(Boolean)
+            .join(" "),
+          i,
+        ),
+      ),
+    );
+    return {
+      file: takes[0]!.file,
+      image: {
+        source: "generated",
+        prompt: s.image.prompt || prompts.join(" | "),
+        model: takes[0]!.model,
+        url: fileToUrl(takes[0]!.file),
+        extra: takes.slice(1).map((t) => fileToUrl(t.file)),
+        usd: takes.reduce((a, t) => a + t.usd, 0),
+      },
+    };
+  }
   let r: Awaited<ReturnType<typeof gen>>;
   if (o.idx === 0 && o.bestOf && o.bestOf > 1) {
     // the hook image decides the scroll: make two takes and let a vision judge keep the stronger one
@@ -578,9 +696,14 @@ async function slideImage(
           s.slots.headline,
         )
       ] ?? takes[0]!;
+    const a = await anatomyOk(ctx, g, r.file);
+    if (!a.ok) {
+      await ctx.log(`Hook image redone (${a.problem.slice(0, 120)})`);
+      r = await gen(`${prompt} Frame the people from the chest up with hands out of frame; no feet.`, 20);
+      await ctx.cost(r.usd);
+    }
   } else {
-    r = await gen(prompt, 0);
-    await ctx.cost(r.usd);
+    r = await checked(prompt, 0);
   }
   return {
     file: r.file,
@@ -592,6 +715,28 @@ async function slideImage(
       usd: r.usd,
     },
   };
+}
+
+const AnatomyOut = z.object({ ok: z.boolean(), problem: z.string() });
+
+/** Vision check for the AI tells that wreck an ad: extra or missing fingers, broken hands or feet, warped limbs or faces. */
+async function anatomyOk(ctx: JobCtx, g: Grounding, file: string): Promise<{ ok: boolean; problem: string }> {
+  const b = await sharp(file).resize(768, 960, { fit: "inside" }).jpeg({ quality: 82 }).toBuffer();
+  const r = await structured(
+    { db: ctx.db },
+    {
+      route: "vision",
+      system:
+        'You inspect a photo for an ad before it ships. ok = false if anything a viewer would notice looks wrong: extra, missing, fused or bent fingers; malformed hands, feet or toes; extra or impossible limbs; warped or duplicated faces; melted objects; garbled text or letters anywhere. Small natural imperfections are fine. problem: what is wrong and where, or "".',
+      user: [{ type: "image", source: { type: "base64", media_type: "image/jpeg", data: b.toString("base64") } }],
+      schema: AnatomyOut,
+      note: `studio anatomy check ${g.brand.slug}`,
+      maxTokens: 1500,
+      demo: () => ({ ok: true, problem: "" }),
+    },
+  );
+  await ctx.cost(r.usd);
+  return r.value;
 }
 
 const PickOut = z.object({ best: z.number(), why: z.string() });
@@ -609,7 +754,7 @@ async function pickImage(ctx: JobCtx, g: Grounding, files: string[], headline: s
     {
       route: "vision",
       system:
-        "You pick the background photo for a paid social ad. Prefer the image that looks most like a real photo (no AI tells: warped hands, plastic skin, garbled text, uncanny faces, stock gloss), stops the scroll at thumbnail size and proves the headline. best: the image index.",
+        "You pick the background photo for a paid social ad. Reject any image with broken anatomy (extra or missing fingers, malformed hands or feet, warped limbs). Prefer the image that looks most like a real photo (no AI tells: plastic skin, garbled text, uncanny faces, stock gloss), stops the scroll at thumbnail size and proves the headline. best: the image index.",
       user: content,
       schema: PickOut,
       note: `studio pick image ${g.brand.slug}`,
@@ -684,6 +829,9 @@ async function renderAll(
       aspect,
       brand: { name: g.brand.name, config: g.cfg },
       imageFile: files[i],
+      imageFiles: s.image.extra?.length
+        ? [files[i], ...s.image.extra.map((u) => urlToFile(u) ?? undefined)].filter((f): f is string => !!f)
+        : undefined,
       index: slides.length > 1 ? { i, n: slides.length } : undefined,
       out: path.join(dir, `v${version}`, `slide_${i + 1}.png`),
     });
@@ -799,9 +947,13 @@ async function produce(
         previous: from.written,
         feedback: `The creative director scored the rendered ad ${from.rv.overall}/100 (stop power ${from.rv.stopPower}, clarity ${from.rv.clarity}, brand fit ${from.rv.brandFit}, craft ${from.rv.craft}). Issues: ${from.rv.issues.join(" | ")}. Most valuable change: ${from.rv.fix}. Fix all of it: you may change the template, the copy, the image source or the image prompt (for a better or more fitting picture). Keep one clear idea; the image must show what the headline says.`,
       });
-      const gc = await gate(ctx, g, rewritten, ad.body.placement, ad.id);
+      const trimmed = await fitBudget(ctx, g, concept, rewritten, {
+        language: ad.body.language,
+        aspect: ad.body.aspect,
+      });
+      const gc = await gate(ctx, g, trimmed, ad.body.placement, ad.id);
       if (gc.status === "fail") continue;
-      const next = await renderVersion(ctx, g, ad, rewritten, model, base + 1 + round, {
+      const next = await renderVersion(ctx, g, ad, trimmed, model, base + 1 + round, {
         slides: from.slides,
         files: from.files,
       });
@@ -938,7 +1090,7 @@ export async function generateBatch(ctx: JobCtx, brand: Brand, input: BatchInput
       const c = concepts[i]!;
       try {
         ctx.check();
-        let written = await writeAd(ctx, g, c, { language, aspect });
+        let written = await fitBudget(ctx, g, c, await writeAd(ctx, g, c, { language, aspect }), { language, aspect });
         let gc = await gate(ctx, g, written, placement, row.id);
         if (gc.status === "fail") {
           await ctx.log(`"${c.title}" failed compliance, rewriting: ${gc.blocking.map((f) => f.message).join("; ")}`);
@@ -1032,6 +1184,7 @@ export async function reviseAd(
         brandImage: g.brandImages.find((b) => b.url === s.image.url)?.i ?? -1,
         prompt: s.image.prompt ?? "",
         referenceImage: -1,
+        gridPrompts: [],
       },
     })),
   };
