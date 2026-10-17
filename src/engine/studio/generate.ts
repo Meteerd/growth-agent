@@ -1036,7 +1036,7 @@ export async function generateBatch(ctx: JobCtx, brand: Brand, input: BatchInput
 
   async function runRound(round: number, n: number, nc: number) {
     await ctx.step(
-      `Planning ${n} ads (${nc} carousels) in ${langName(language)}${round ? `, round ${round + 1}` : ""}`,
+      `Planning ${n} ads (${nc} carousels) in ${langName(language, g.cfg.countries).split(" (")[0]}${round ? `, round ${round + 1}` : ""}`,
       0.03,
     );
     const concepts = await plan(
