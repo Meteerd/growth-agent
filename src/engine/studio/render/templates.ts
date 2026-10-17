@@ -1592,16 +1592,48 @@ async function centredMark(c: Ctx, y: number, onDark: boolean, size = 64) {
  */
 const hookOverlay: Tpl = async (c) => {
   const file = c.input.imageFile;
-  c.bg = file ? await cover(file, c.W, c.H, { dim: 0.38 }) : { color: c.cfg.colors.primary };
+  // a light dim keeps the photo alive; the darkening sits in a soft band behind the type only
+  c.bg = file ? await cover(file, c.W, c.H, { dim: 0.12 }) : { color: c.cfg.colors.primary };
   const s = c.s;
   const w = c.W - c.pad * 2.4;
-  await centredMark(c, c.H * 0.13, true, 60);
   const head = sl(c, "headline");
   const ft = fit(c.head, head, { max: 84 * s, min: 52 * s, maxW: w, maxLines: 4, lineH: 1.12 });
   const body = sl(c, "body");
   const bf = body ? fit(c.body, body, { max: 42 * s, min: 32 * s, maxW: w, maxLines: 2, lineH: 1.25 }) : null;
   const blockH = ft.lines.length * ft.lineH + (bf ? 30 * s + bf.lines.length * bf.lineH : 0);
-  let y = c.H * 0.47 - blockH / 2;
+  // centred like the original layout, unless the middle of the photo is where the face is: then the type goes up
+  let center = c.H * 0.47;
+  if (file && !("color" in c.bg)) {
+    const busy = async (top: number, height: number) =>
+      (
+        await sharp(c.bg as Buffer)
+          .extract({
+            left: Math.round(c.W * 0.15),
+            top: Math.round(top),
+            width: Math.round(c.W * 0.7),
+            height: Math.round(height),
+          })
+          .greyscale()
+          .resize(100, 50, { fit: "fill" })
+          .stats()
+      ).channels[0]!.stdev;
+    const mid = await busy(c.H * 0.34, c.H * 0.28);
+    const upper = await busy(c.H * 0.22, c.H * 0.22);
+    if (mid > upper * 1.2) center = c.H * 0.24 + blockH / 2 + 40 * s;
+  }
+  const top0 = center - blockH / 2;
+  if (file) {
+    const a = Math.max(0, (top0 - 160 * s) / c.H);
+    const m1 = Math.min(1, (top0 + 20 * s) / c.H);
+    const m2 = Math.min(1, (top0 + blockH - 20 * s) / c.H);
+    const b = Math.min(1, (top0 + blockH + 160 * s) / c.H);
+    c.defs.push(
+      `<linearGradient id="hb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0.18"/><stop offset="${a.toFixed(3)}" stop-color="#000" stop-opacity="0.08"/><stop offset="${m1.toFixed(3)}" stop-color="#000" stop-opacity="0.5"/><stop offset="${m2.toFixed(3)}" stop-color="#000" stop-opacity="0.5"/><stop offset="${b.toFixed(3)}" stop-color="#000" stop-opacity="0.08"/><stop offset="1" stop-color="#000" stop-opacity="0.3"/></linearGradient>`,
+    );
+    c.svg.push(`<rect width="${c.W}" height="${c.H}" fill="url(#hb)"/>`);
+  }
+  await centredMark(c, Math.min(c.H * 0.1, top0 - 130 * s), true, 60);
+  let y = top0;
   const accent = sl(c, "accentWord");
   c.svg.push(
     drawLines(ft, {
@@ -1610,7 +1642,9 @@ const hookOverlay: Tpl = async (c) => {
       boxW: w,
       color: "#FFFFFF",
       align: "center",
-      accent: accent ? { words: [accent], color: readable(c.cfg.colors.accent, "#000000", 3) } : undefined,
+      accent: accent
+        ? { words: [accent], color: readable(mix(c.cfg.colors.accent, "#FFFFFF", 0.35), "#000000", 4.5) }
+        : undefined,
     }).svg,
   );
   c.boxes.push({ x: (c.W - w) / 2, y, w, h: ft.lines.length * ft.lineH, color: "#FFFFFF" });
@@ -1618,17 +1652,17 @@ const hookOverlay: Tpl = async (c) => {
   if (bf) {
     y += 30 * s;
     c.svg.push(
-      drawLines(bf, { x: (c.W - w) / 2, top: y, boxW: w, color: "#FFFFFF", align: "center", opacity: 0.95 }).svg,
+      drawLines(bf, { x: (c.W - w) / 2, top: y, boxW: w, color: "#FFFFFF", align: "center", opacity: 0.96 }).svg,
     );
     c.boxes.push({ x: (c.W - w) / 2, y, w, h: bf.lines.length * bf.lineH, color: "#FFFFFF" });
   }
   const cta = sl(c, "cta");
   if (cta) {
-    const h = 128 * s;
-    const fz = 40 * s;
+    const h = 118 * s;
+    const fz = 38 * s;
     const tw = label("inter_medium", cta, fz, { x: 0, y: 0, color: "#111" }).width;
     const bw = Math.min(c.W - c.pad * 2, tw + 120 * s);
-    const by = c.H * 0.8 - h / 2;
+    const by = c.H * 0.86 - h / 2;
     c.svg.push(rect((c.W - bw) / 2, by, bw, h, h / 2, "#FFFFFF"));
     c.svg.push(
       label("inter_medium", cta, fz, {

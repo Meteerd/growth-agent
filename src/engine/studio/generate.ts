@@ -575,6 +575,8 @@ function shapeFor(t: Slide["template"]): "canvas" | "landscape" | "square" {
 }
 
 function zoneFor(t: Slide["template"], aspect: Aspect): string {
+  if (t === "hook_overlay")
+    return "The person sits in the lower third of the frame or to one side, never in the centre; the middle and upper middle of the frame are calm, softly lit wall or window space for a centred headline. Bright, warm, natural daylight, not dim or gloomy.";
   if (shapeFor(t) === "landscape")
     return "Wide landscape composition for a banner crop: the subject sits in the middle band, whole head and face visible with room above, nothing important near the top or bottom edges.";
   if (shapeFor(t) === "square") return "Square composition, subject centred with some space around it.";
