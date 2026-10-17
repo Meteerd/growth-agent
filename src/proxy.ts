@@ -1,7 +1,10 @@
 import { timingSafeEqual } from "node:crypto";
 import { type NextRequest, NextResponse } from "next/server";
 
-/** Constant-time compare of the Basic auth header against STUDIO_AUTH ("user:password"). */
+/**
+ * Constant-time compare of the Basic auth header against STUDIO_AUTH: one or more "user:password" pairs separated
+ * by commas (one login per person, so a login can be rotated or revoked on its own).
+ */
 function authorized(req: NextRequest, expected: string): boolean {
   const h = req.headers.get("authorization") ?? "";
   if (!h.startsWith("Basic ")) return false;
@@ -12,8 +15,12 @@ function authorized(req: NextRequest, expected: string): boolean {
     return false;
   }
   const a = Buffer.from(got);
-  const b = Buffer.from(expected);
-  return a.length === b.length && timingSafeEqual(a, b);
+  let ok = false;
+  for (const pair of expected.split(",")) {
+    const b = Buffer.from(pair.trim());
+    if (a.length === b.length && timingSafeEqual(a, b)) ok = true;
+  }
+  return ok;
 }
 
 export function proxy(req: NextRequest) {
